@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Bit-Circuit Synthesis — zero-Mathlib binary circuit closure and carry-less F_2[x] laws
+  description: >-
+    A zero-Mathlib, zero-built-in-arithmetic Lean 4 formalization constructed directly from
+    canonical binary words (BBin/BPos) and 1-bit multiplexer gates. Contains 1,799 universal
+    bit-circuit theorems plus universal proofs of carry-less F_2[x] degree additivity,
+    integral-domain closure, carried vs. carry-less degree-jump contrast, Artin-Schreier
+    additivity and fiber pairing, iterated Frobenius trace telescoping, and additive Hilbert's
+    Theorem 90, using at most propext (zero Classical.choice, zero Quot.sound).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bit-circuit-synthesis
+  license: Apache-2.0

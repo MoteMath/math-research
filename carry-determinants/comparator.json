@@ -1,0 +1,24 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarryDeterminantsChallenge.carryMatrix_det_eq_zero_of_non_extremal",
+    "CarryDeterminantsChallenge.existsUnique_placeValue_perm",
+    "CarryDeterminantsChallenge.mixedCarryPolyMatrix_det_ne_zero_iff",
+    "CarryDeterminantsChallenge.baseCarryPolyMatrix_det_ne_zero_iff",
+    "CarryDeterminantsChallenge.binaryCarryPolyMatrix_det_ne_zero",
+    "CarryDeterminantsChallenge.det_mixedHankelMatrix",
+    "CarryDeterminantsChallenge.det_carryMatrix_full",
+    "CarryDeterminantsChallenge.det_weightedLinearCarryMatrix",
+    "CarryDeterminantsChallenge.det_kummer_padicValNat_choose",
+    "CarryDeterminantsChallenge.det_binary_carry_word",
+    "CarryDeterminantsChallenge.det_thueMorse_pow_two"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

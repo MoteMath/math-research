@@ -1,0 +1,13 @@
+import Solution
+
+#print axioms CarryDeterminantsChallenge.carryMatrix_det_eq_zero_of_non_extremal
+#print axioms CarryDeterminantsChallenge.existsUnique_placeValue_perm
+#print axioms CarryDeterminantsChallenge.mixedCarryPolyMatrix_det_ne_zero_iff
+#print axioms CarryDeterminantsChallenge.baseCarryPolyMatrix_det_ne_zero_iff
+#print axioms CarryDeterminantsChallenge.binaryCarryPolyMatrix_det_ne_zero
+#print axioms CarryDeterminantsChallenge.det_mixedHankelMatrix
+#print axioms CarryDeterminantsChallenge.det_carryMatrix_full
+#print axioms CarryDeterminantsChallenge.det_weightedLinearCarryMatrix
+#print axioms CarryDeterminantsChallenge.det_kummer_padicValNat_choose
+#print axioms CarryDeterminantsChallenge.det_binary_carry_word
+#print axioms CarryDeterminantsChallenge.det_thueMorse_pow_two

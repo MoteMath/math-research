@@ -1,0 +1,12 @@
+name = "combinatorial-inequalities"
+version = "0.1.0"
+defaultTargets = ["CombInequalities", "Solution"]
+
+[[lean_lib]]
+name = "CombInequalities"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

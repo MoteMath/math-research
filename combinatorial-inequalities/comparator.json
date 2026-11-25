@@ -1,0 +1,25 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CombInequalitiesChallenge.stackInv_le_popInv",
+    "CombInequalitiesChallenge.avoids321_three_stack2Inv_le_pat231",
+    "CombInequalitiesChallenge.stackDes_le_peaksCnt",
+    "CombInequalitiesChallenge.stackInv_le_pat231",
+    "CombInequalitiesChallenge.avoids231_two_inv_le_disp2_add_des",
+    "CombInequalitiesChallenge.sidon_sym_defect_eq",
+    "CombInequalitiesChallenge.two_card_add_symDefect_le_diffset_add_one",
+    "CombInequalitiesChallenge.three_diffset_le_two_sum2Diff1_add_one",
+    "CombInequalitiesChallenge.connected_diam_le_indP4_add_two",
+    "CombInequalitiesChallenge.albertson_le_orderedIndP3",
+    "CombInequalitiesChallenge.disproof_avoids231_inv_disp_lds",
+    "CombInequalitiesChallenge.disproof_bipartite_dom_indNu_diam"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

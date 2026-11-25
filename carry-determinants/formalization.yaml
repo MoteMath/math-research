@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carry Determinants — exact mixed-radix Hankel and carry determinant factorizations
+  description: >-
+    A complete, sorry-free Lean 4 / Mathlib formalization of Cantor non-vanishing and exact
+    closed-form multivariate determinant factorizations for mixed-radix Hankel and carry matrices
+    over any commutative ring. Includes exact product formulas for the binary carry-word matrix
+    det((i + j) ^^^ i ^^^ j), the Kummer p-adic valuation binomial matrix det(v_p(choose(i+j, i))),
+    weighted linear carry matrices, and the power-of-two Thue-Morse Hankel matrix.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: carry-determinants
+  license: Apache-2.0
