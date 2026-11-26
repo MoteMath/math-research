@@ -1,0 +1,12 @@
+name = "grpo-k3-kl-horizons"
+version = "0.1.0"
+defaultTargets = ["GrpoK3Kl", "Solution"]
+
+[[lean_lib]]
+name = "GrpoK3Kl"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

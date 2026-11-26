@@ -1,0 +1,12 @@
+name = "kahan-neumaier-fp8-bounds"
+version = "0.1.0"
+defaultTargets = ["KahanNeumaierFp8", "Solution"]
+
+[[lean_lib]]
+name = "KahanNeumaierFp8"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

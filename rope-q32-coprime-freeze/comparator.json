@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "RopeQ32CoprimeChallenge.rope_bf16_fp16_consecutive_freeze_run_exact",
+    "RopeQ32CoprimeChallenge.rope_high_freq_random_phase_horizon_exact",
+    "RopeQ32CoprimeChallenge.q32_modular_odd_dyadic_zero_drift_exact",
+    "RopeQ32CoprimeChallenge.quantized_rotation_norm_drift_exact",
+    "RopeQ32CoprimeChallenge.relative_position_factorization_error_decomposition",
+    "RopeQ32CoprimeChallenge.dyadic_cayley_relative_composition_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

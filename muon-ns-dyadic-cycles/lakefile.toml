@@ -1,0 +1,12 @@
+name = "muon-ns-dyadic-cycles"
+version = "0.1.0"
+defaultTargets = ["MuonNsDyadic", "Solution"]
+
+[[lean_lib]]
+name = "MuonNsDyadic"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

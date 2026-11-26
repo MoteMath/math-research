@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms RopeQ32CoprimeChallenge.rope_bf16_fp16_consecutive_freeze_run_exact
+#print axioms RopeQ32CoprimeChallenge.rope_high_freq_random_phase_horizon_exact
+#print axioms RopeQ32CoprimeChallenge.q32_modular_odd_dyadic_zero_drift_exact
+#print axioms RopeQ32CoprimeChallenge.quantized_rotation_norm_drift_exact
+#print axioms RopeQ32CoprimeChallenge.relative_position_factorization_error_decomposition
+#print axioms RopeQ32CoprimeChallenge.dyadic_cayley_relative_composition_exact

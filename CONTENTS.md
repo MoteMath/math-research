@@ -677,3 +677,81 @@ All statements are in [`bitserial-lut-dag-bounds/Challenge.lean`](bitserial-lut-
 | `popcnt_zero_lut_exact_bitserial_dot_identity` | `BitSerialLutDag.PopcntDot` | Universal bit-exact `POPCNT` dot-product identity for binary/ternary weights against arbitrary $b$-bit signed/unsigned activations. |
 | `lut_vs_popcnt_amortization_crossover_exact` | `BitSerialLutDag.PopcntDot` | Exact rational LUT-vs-`POPCNT` amortization crossover and RDNA 3 no-crossover dominance theorem (`POPCNT` wins for all `M, N, K > 0`). |
 | `tmac_int16_overflow_threshold_exact` | `BitSerialLutDag.PopcntDot` | Universal `int16` safety bound (`K _ {\max} = 258` symmetric `int8`) and exact full-`int8` wrap-by-1 trap (`+32768 → -32768`) at `K = 256/128/64`. |
+
+## 53. [`muon-ns-dyadic-cycles/`](muon-ns-dyadic-cycles/)
+
+All statements are in [`muon-ns-dyadic-cycles/Challenge.lean`](muon-ns-dyadic-cycles/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`muon-ns-dyadic-cycles/MuonNsDyadic/Defs.lean`](muon-ns-dyadic-cycles/MuonNsDyadic/Defs.lean). See [`muon-ns-dyadic-cycles/README.md`](muon-ns-dyadic-cycles/README.md) for the BF16 Jordan period-2/4/8 bifurcation, FP8/BF16 optimal dyadic quintics, and Polar-Express overshoot cliff proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `jordan_bf16_nonunit_sum_and_period2_limit_cycle` | `MuonNsDyadic.JordanCycles` | Proves Jordan's BF16 `(55/16, -153/32, 65/32)` sums to `11/16 ≠ 1`, traps Muon matrix-form in period-2 `{11/16, 71/64}`, with exact `23/64` worst-case `[0.01, 1]` deviation. |
+| `jordan_bf16_parenthesization_bifurcation` | `MuonNsDyadic.JordanCycles` | Exact BF16 RNE parenthesization period-doubling bifurcation across Muon (period 2), Monomial (period 4), and Horner (period 8) on all `861` `[0.01, 1]` values. |
+| `fp8_e4m3fn_optimal_quintic_exact_zero_error` | `MuonNsDyadic.OptimalDyadic` | Certifies GPU-discovered FP8-E4M3FN `(2, -9/8, 1/8)` achieves exact `0` 5-step error across all `28` `[0.05, 1]` values and `0` NaN/overflow on all `56` positive unit FP8 values. |
+| `bf16_optimal_dyadic_quintic_one_ulp_confinement` | `MuonNsDyadic.OptimalDyadic` | Certifies GPU-discovered BF16 `(35/16, -31/16, 3/4)` confines all `564` `[0.05, 1]` BF16 values within 1 ULP (`1/128`, `44×–46×` tighter than Jordan). |
+| `polar_express_bf16_fp8_one_ulp_overshoot_cliff` | `MuonNsDyadic.OvershootPareto` | Exact 1-ULP overshoot cliffs for Polar-Express (`129/128 → +Inf` BF16; `9/8 → NaN` FP8-E4M3FN) and MXFP4 saturation of Jordan `(3, -4, 2)` to `6`. |
+| `universal_stationary_quintic_pareto_law` | `MuonNsDyadic.OvershootPareto` | Universal rational stationary quintic law: $a + b + c = 1 \implies p'(1) = 1 - 2a + 2c$, $|p'(1)| < 1 \iff a - 2 < c < a - 1$. |
+
+## 54. [`kahan-neumaier-fp8-bounds/`](kahan-neumaier-fp8-bounds/)
+
+All statements are in [`kahan-neumaier-fp8-bounds/Challenge.lean`](kahan-neumaier-fp8-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`kahan-neumaier-fp8-bounds/KahanNeumaierFp8/Defs.lean`](kahan-neumaier-fp8-bounds/KahanNeumaierFp8/Defs.lean). See [`kahan-neumaier-fp8-bounds/README.md`](kahan-neumaier-fp8-bounds/README.md) for the Dual Kahan-vs-Neumaier Separation, `FP8-E4M3FN` Kulisch-in-`int32_t`, and microbatch XOR-VDC SR proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `microbatch_rne_freeze_threshold_exact` | `KahanNeumaierFp8.RneFreeze` | Universal RNE freeze threshold $\rho _ {\mathrm{freeze,min}}(P) = 2^{P+1}$ (`8, 16, 256, 2048`) and max non-freeze ratio $2^{P+2} - 2$ with early-spike erasure vs pairwise tree preservation. |
+| `kahan_late_dipole_spike_total_erasure_vs_neumaier` | `KahanNeumaierFp8.KahanNeumaier` | First half of Dual Separation: late dipole `[1^m, +S, -S]` causes `100%` Kahan erasure vs `100%` exact Neumaier recovery. |
+| `neumaier_self_swamping_ceiling_beats_by_kahan` | `KahanNeumaierFp8.KahanNeumaier` | Second half of Dual Separation: Neumaier self-swamps at exact ceiling $M _ {\mathrm{Neumaier,max}}(P) = 2^{P+2}$ (`16, 32, 512, 4096`), beaten by Kahan's per-step fold-back. |
+| `fp8_e4m3fn_kulisch_int32_9362_exact` | `KahanNeumaierFp8.KulischInt32` | Exact signed Kulisch bit-width law certifying up to $M \le 9{,}362$ arbitrary finite OCP `FP8-E4M3FN` values sum bit-exactly in `int32_t` (tight overflow at `9,363`). |
+| `microbatch_xor_vdc_sr_zero_bias_and_stratification` | `KahanNeumaierFp8.XorVdcSr` | Bit-exact microbatch XOR-VDC SR bijection on $\mathrm{Fin}(2^K)$, exact zero bias, `< 1` ULP deterministic bound, and exact $M\times$ MSE reduction (`1/6` vs `M/6`). |
+| `shared_exponent_int32_block_accum_associativity` | `KahanNeumaierFp8.BlockAccum` | Unconditional associativity, block-split additivity, and permutation invariance of shared-exponent `int32_t`/`int64_t` block accumulation. |
+
+## 55. [`grpo-k3-kl-horizons/`](grpo-k3-kl-horizons/)
+
+All statements are in [`grpo-k3-kl-horizons/Challenge.lean`](grpo-k3-kl-horizons/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`grpo-k3-kl-horizons/GrpoK3Kl/Defs.lean`](grpo-k3-kl-horizons/GrpoK3Kl/Defs.lean). See [`grpo-k3-kl-horizons/README.md`](grpo-k3-kl-horizons/README.md) for the negative-`k3` KL, FP8/BF16 clip-window collapse, binary-reward over-weighting, and one-pass negative-variance proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `schulman_k3_exact_nonnegativity_and_quadratic_bound` | `GrpoK3Kl.SchulmanK3` | Exact rational Schulman `k3` non-negativity, quadratic Taylor sandwich, global stabilizer $k _ 3^{\mathrm{stab}}(d) \ge d^2/3$, and `[2/2]` Padé non-negativity. |
+| `bf16_k3_negative_kl_and_deadzone_exact` | `GrpoK3Kl.SchulmanK3` | Bit-exact `BF16`/`FP16` RNE negative-KL violations for both Order A (`0x3b01 → -1/256`) and Order B (`0x3b7f → -255/65536`) plus exact dead-zero bands. |
+| `fp8_bf16_logprob_cancellation_clip_collapse` | `GrpoK3Kl.LogProbClipping` | Exact binade-ULP clip-escape proof certifying total `[4/5, 6/5]` PPO/GRPO clip-window collapse at $|\log p| \ge 2$ (`FP8-E4M3`), `32` (`BF16`), `256` (`FP16`). |
+| `direct_logit_diff_binade_invariance` | `GrpoK3Kl.LogProbClipping` | Direct logit-difference tail-shift invariance capping error at $2^{-(m+1)} B$ independent of tail binade (`128×–256×` tighter than naive BF16 ULP). |
+| `grpo_binary_reward_extreme_overweighting_exact` | `GrpoK3Kl.GrpoAdvantage` | Exact binary-reward GRPO over-weighting ratios $G - 1$ and $G^2/(4(G - 1))$ (`1024/63 > 16` at `G = 64`) versus `Dr.GRPO` ($|A _ i| \le 1$). |
+| `grpo_bf16_onepass_negvar_and_fp8_mean_stall` | `GrpoK3Kl.GrpoAdvantage` | Bit-exact `BF16` one-pass negative-variance (`-1/8 < 0`) and `FP8-E4M3` $G = 64$ mean-saturation stall (`64/64 = 1 ≠ 4`). |
+
+## 56. [`deltanet-householder-e8/`](deltanet-householder-e8/)
+
+All statements are in [`deltanet-householder-e8/Challenge.lean`](deltanet-householder-e8/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`deltanet-householder-e8/DeltaNetHouseholderE8/Defs.lean`](deltanet-householder-e8/DeltaNetHouseholderE8/Defs.lean). See [`deltanet-householder-e8/README.md`](deltanet-householder-e8/README.md) for the Universal 2-ULP Safe Ceiling, WY triangular inverse growth, and `2 E _ 8` Weyl reflection proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `householder_spectral_stability_iff_exact` | `DeltaNetHouseholderE8.HouseholderSpectral` | Universal rational Householder spectral contraction `iff` law $0 \le \beta\|k\| _ 2^2 \le 2$ and strict explosion above `2`. |
+| `quantized_unit_norm_supremum_exact` | `DeltaNetHouseholderE8.QuantizedTwoUlp` | Exact RNE binade-bottom unit-norm squared supremum $S _ {\max}^{(1)}(m) = ((2^{m+1}+2)/(2^{m+1}+1))^2 > 1$ with 8D `FP8-E4M3` witness `287/256`. |
+| `universal_two_ulp_safe_ceiling_theorem` | `DeltaNetHouseholderE8.QuantizedTwoUlp` | Universal theorem for all $m \ge 2$: `1` ULP below `2` always explodes, whereas `2` ULPs below `2` (`7/4` FP8, `127/64` BF16, `1023/512` FP16) is unconditionally contractive. |
+| `wy_triangular_inverse_norm_growth_exact` | `DeltaNetHouseholderE8.WyTriangular` | Exact aligned-key WY inverse $T _ {i,j} = (-1)^{i-j} \cdot 2$ with exact row $\ell _ 1$-norm $2i + 1$ and $\|T\| _ \infty = 2C - 1$ (`127` at `C = 64`). |
+| `d8_and_e8_weyl_root_zero_ulp_orthogonality` | `DeltaNetHouseholderE8.WeylE8Closure` | Exact zero-remainder division `(2 * dot w x) % 8 = 0` (`>>> 2`), lattice closure, norm preservation, and involutivity for `D _ 8` and all `240` roots of `2 E _ 8`. |
+| `non_weyl_hamming_closure_obstruction` | `DeltaNetHouseholderE8.WeylE8Closure` | Exact integer-closure obstruction for non-Weyl `Hamming[8,4,4]` (`(2 * dot v x) % 4 = 2`, non-integer reflection entry `1/2`). |
+
+## 57. [`rope-q32-coprime-freeze/`](rope-q32-coprime-freeze/)
+
+All statements are in [`rope-q32-coprime-freeze/Challenge.lean`](rope-q32-coprime-freeze/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`rope-q32-coprime-freeze/RopeQ32Coprime/Defs.lean`](rope-q32-coprime-freeze/RopeQ32Coprime/Defs.lean). See [`rope-q32-coprime-freeze/README.md`](rope-q32-coprime-freeze/README.md) for the BF16/FP16 freeze-run horizons, `Q32` Hensel-lifting relative invariance, and Dyadic Cayley rotation proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `rope_bf16_fp16_consecutive_freeze_run_exact` | `RopeQ32Coprime.FreezeHorizon` | Universal binade ULP freeze-run law (`32, 256, 1024, 8192` BF16 at `4K..1M`) and exact `FP16` `+Inf` overflow cliff at `m = 65,520`. |
+| `rope_high_freq_random_phase_horizon_exact` | `RopeQ32Coprime.FreezeHorizon` | Exact high-frequency random-phase threshold at $m = 2^{p+1} + 1$ (`257` BF16, `2049` FP16) where `ulp ≥ 2 rad > π/2`. |
+| `q32_modular_odd_dyadic_zero_drift_exact` | `RopeQ32Coprime.Q32Modular` | Universal Hensel-lifting theorem: odd-frequency `Q32` modular phase is a bijection on $\mathrm{Fin}(2^{32})$ with exact zero-drift relative-position additivity. |
+| `quantized_rotation_norm_drift_exact` | `RopeQ32Coprime.RotationNormDrift` | Exact worst-case unit-circle norm drift `1/4` (`MXFP4-E2M1`), `21/256` (`FP8-E4M3`), and `0` identically for Dyadic Cayley rotations. |
+| `relative_position_factorization_error_decomposition` | `RopeQ32Coprime.RelativeErrorCayley` | Exact algebraic separation of phase-truncation vs rotation-quantization logit error proving `Q32 + FP8` (`65/512 < 1`) strictly beats frozen BF16/FP16. |
+| `dyadic_cayley_relative_composition_exact` | `RopeQ32Coprime.RelativeErrorCayley` | Exact $\mathrm{SO}(2, \mathbb{Q})$ group orthogonality, composition, and relative-position factorization laws for rational Cayley rotations. |
+
+## 58. [`mrope-3d-coprime-bounds/`](mrope-3d-coprime-bounds/)
+
+All statements are in [`mrope-3d-coprime-bounds/Challenge.lean`](mrope-3d-coprime-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mrope-3d-coprime-bounds/Mrope3dCoprime/Defs.lean`](mrope-3d-coprime-bounds/Mrope3dCoprime/Defs.lean). See [`mrope-3d-coprime-bounds/README.md`](mrope-3d-coprime-bounds/README.md) for the separable `3/4` floor vs Coupled 3D shattering, BF16 Width freeze, and interleaved `> 10^6×` gain proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `separable_3d_mrope_axis_floor_theorem` | `Mrope3dCoprime.SeparableFloor` | Universal Separable-Axis Floor Theorem proving Qwen2-VL `(16, 24, 24)` exact `3/4` floor and unconditional Dirichlet–Welch bound $3/4 - 1/(4(N - 1))$. |
+| `coupled_3d_mrope_shatters_separable_floor` | `Mrope3dCoprime.SeparableFloor` | Proves Coupled 3D phases shatter the separable floor, with exact 64-pair $\mathbb{Z} _ 4^3$ zero-sidelobe and 27-pair $\{1, 2, 3\}^3$ ($|K| \le 1/3$) witnesses. |
+| `contiguous_mrope_bf16_width_freeze_exact` | `Mrope3dCoprime.Bf16FreezeResolution` | Proves `100%` BF16 cosine freeze across all 24 contiguous Width pairs (`40..63`) and all 63 patch offsets at $b = 10^6$. |
+| `interleaved_vs_contiguous_mrope_resolution_gap` | `Mrope3dCoprime.Bf16FreezeResolution` | Exact geometric-series ratio certifying `> 10^7×` leading-pair and `> 10^6×` full-sum local spatial resolution gain for stride-3 / Qwen3-VL interleaved `mRoPE`. |
+| `q32_3d_modular_phase_exact_relative_invariance` | `Mrope3dCoprime.Q32ModularPhase` | Exact 3D `Q32` modular relative-position homomorphism, cross-modal text-diagonal $(m, m, m)$ invariance, and full $2^{32}$ period along odd-frequency axes. |
+| `cross_modal_fp_phase_drift_vs_q32_exact` | `Mrope3dCoprime.Q32ModularPhase` | Proves total cross-modal `BF16` collapse (`ulp = 1024`) and `FP16` `+Inf` overflow at $m = 131{,}072$ versus exact injective `Q32` phase. |

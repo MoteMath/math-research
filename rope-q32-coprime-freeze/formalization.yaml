@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Long-Context RoPE Phase-Freeze, Random-Phase Horizon, Q32 Coprime Modular Bijection, Quantized Rotation Norm-Drift, and Dyadic Cayley Group Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    arithmetic and algebraic laws for long-context Rotary Position Embeddings (RoPE):
+    exact BF16/FP16/FP32 binade ULP consecutive-token freeze runs (32, 256, 1024, 8192 in BF16;
+    FP16 +Inf overflow cliff at m = 65520 freezing 65552 tokens in 128K), the exact high-frequency
+    random-phase horizon at m = 2^{p+1} + 1 (257 BF16, 2049 FP16), full-period 2^32 bijection and
+    zero-drift relative additivity of odd-frequency Q32 modular phase, exact worst-case unit-circle
+    norm drift (1/4 for MXFP4-E2M1, 21/256 for FP8-E4M3, 0 identically for Dyadic Cayley rotations),
+    exact phase-vs-rotation error decomposition explaining phase-precision dominance at 128K, and
+    exact SO(2, Q) group composition and orthogonality of rational Cayley rotations.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: rope-q32-coprime-freeze
+  license: Apache-2.0

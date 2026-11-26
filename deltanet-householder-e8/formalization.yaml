@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact DeltaNet / RWKV-7 Householder Spectral Stability, Universal 2-ULP Ceiling, WY Triangular Inverse Growth, and E8 Weyl Root Zero-ULP Orthogonality
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    rational, IEEE-754 RNE, and integer-lattice laws for DeltaNet, Gated DeltaNet, RWKV-7,
+    and PaTH Householder state transitions: the exact rational spectral-contraction iff law
+    0 <= beta * ||k||_2^2 <= 2, the IEEE-754 RNE quantized unit-norm squared supremum
+    S_max^(1)(m) = ((2^{m+1}+2)/(2^{m+1}+1))^2 > 1 with the exact 287/256 FP8-E4M3 witness,
+    the Universal 2-ULP Safe Ceiling Theorem (1 ULP below 2 is always unsafe, 2 ULPs below 2
+    is unconditionally safe for all m >= 2: 127/64 BF16, 1023/512 FP16, 7/4 FP8-E4M3),
+    the exact WY triangular inverse T = (I + 2 strictLower(1 1^T))^{-1} alternating formula
+    and row L1-norm ||T||_infty = 2C - 1 (127 at C = 64), exact zero-remainder D8 and 240-root
+    2*E8 Weyl reflections preserving Euclidean norm and lattice closure with pure bit-shift
+    division, and the non-Weyl Hamming[8,4,4] integer-closure obstruction.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: deltanet-householder-e8
+  license: Apache-2.0

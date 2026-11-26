@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Mrope3dCoprimeChallenge.separable_3d_mrope_axis_floor_theorem",
+    "Mrope3dCoprimeChallenge.coupled_3d_mrope_shatters_separable_floor",
+    "Mrope3dCoprimeChallenge.contiguous_mrope_bf16_width_freeze_exact",
+    "Mrope3dCoprimeChallenge.interleaved_vs_contiguous_mrope_resolution_gap",
+    "Mrope3dCoprimeChallenge.q32_3d_modular_phase_exact_relative_invariance",
+    "Mrope3dCoprimeChallenge.cross_modal_fp_phase_drift_vs_q32_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

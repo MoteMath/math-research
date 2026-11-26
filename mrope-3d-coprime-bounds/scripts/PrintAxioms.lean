@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms Mrope3dCoprimeChallenge.separable_3d_mrope_axis_floor_theorem
+#print axioms Mrope3dCoprimeChallenge.coupled_3d_mrope_shatters_separable_floor
+#print axioms Mrope3dCoprimeChallenge.contiguous_mrope_bf16_width_freeze_exact
+#print axioms Mrope3dCoprimeChallenge.interleaved_vs_contiguous_mrope_resolution_gap
+#print axioms Mrope3dCoprimeChallenge.q32_3d_modular_phase_exact_relative_invariance
+#print axioms Mrope3dCoprimeChallenge.cross_modal_fp_phase_drift_vs_q32_exact

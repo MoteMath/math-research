@@ -1,0 +1,12 @@
+name = "rope-q32-coprime-freeze"
+version = "0.1.0"
+defaultTargets = ["RopeQ32Coprime", "Solution"]
+
+[[lean_lib]]
+name = "RopeQ32Coprime"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

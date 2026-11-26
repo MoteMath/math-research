@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms GrpoK3KlChallenge.schulman_k3_exact_nonnegativity_and_quadratic_bound
+#print axioms GrpoK3KlChallenge.bf16_k3_negative_kl_and_deadzone_exact
+#print axioms GrpoK3KlChallenge.fp8_bf16_logprob_cancellation_clip_collapse
+#print axioms GrpoK3KlChallenge.direct_logit_diff_binade_invariance
+#print axioms GrpoK3KlChallenge.grpo_binary_reward_extreme_overweighting_exact
+#print axioms GrpoK3KlChallenge.grpo_bf16_onepass_negvar_and_fp8_mean_stall

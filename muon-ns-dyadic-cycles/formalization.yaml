@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Quantized Newton-Schulz and Muon Quintic Limit Cycles, Parenthesization Bifurcations, Optimal Dyadic Schemes, and Overshoot Cliffs
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    rational and bit-exact IEEE-754 / OCP-FP8 / MXFP4 RNE laws for quantized Newton-Schulz
+    and Muon orthogonalization: Jordan's BF16 non-unit sum a+b+c = 11/16 and exact period-2
+    limit cycle {11/16, 71/64} (unfixable by FP32 inner accumulation), exact parenthesization
+    period-doubling bifurcation across Muon matrix-form (period 2), monomial (period 4), and
+    Horner (period 8), exact zero-error 5-step convergence of the GPU-discovered FP8-E4M3FN
+    optimal dyadic quintic (2, -9/8, 1/8) across all representable values in [0.05, 1],
+    exact 1-ULP (1/128) confinement of the BF16 optimal dyadic quintic (35/16, -31/16, 3/4)
+    across all 564 BF16 values in [0.05, 1] (44x tighter than Jordan), exact 1-ULP overshoot
+    cliffs of Polar-Express in BF16 (129/128) and FP8-E4M3FN (9/8) plus MXFP4-E2M1 saturation
+    of Jordan (3, -4, 2) to 6, and the universal stationary quintic slope-vs-fixed-point
+    Pareto law explaining the 2-phase hybrid architecture.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: muon-ns-dyadic-cycles
+  license: Apache-2.0

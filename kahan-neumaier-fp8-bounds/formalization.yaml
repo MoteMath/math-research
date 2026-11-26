@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Low-Precision Microbatch Accumulation, Dual Kahan-vs-Neumaier Separation, FP8-E4M3FN Kulisch-in-INT32, and XOR-VDC Stratification Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    laws for low-precision microbatch gradient accumulation across FP8-E5M2, FP8-E4M3FN, BF16,
+    and FP16: the exact IEEE-754 RNE freeze threshold 2^{P+1} and max non-freeze bound
+    2^{P+2} - 2 with early-spike erasure vs pairwise tree preservation, the Dual Kahan-vs-Neumaier
+    Separation Theorem (late-dipole 100% Kahan erasure vs exact Neumaier recovery, and Neumaier's
+    exact self-swamping ceiling M_{Neumaier,max}(P) = 2^{P+2} beaten by Kahan's per-step fold-back),
+    the exact signed Kulisch bit-width law and OCP FP8-E4M3FN Kulisch-in-INT32 exactness up to
+    M <= 9,362 (with tight overflow at 9,363), microbatch-stratified XOR-VDC stochastic rounding
+    exact zero bias and M-times MSE reduction (1/6 vs M/6, < 1 ULP deterministic error), and
+    unconditional associativity and permutation invariance of shared-exponent INT32/INT64 block
+    accumulation.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: kahan-neumaier-fp8-bounds
+  license: Apache-2.0

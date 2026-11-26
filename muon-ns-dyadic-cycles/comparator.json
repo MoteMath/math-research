@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MuonNsDyadicChallenge.jordan_bf16_nonunit_sum_and_period2_limit_cycle",
+    "MuonNsDyadicChallenge.jordan_bf16_parenthesization_bifurcation",
+    "MuonNsDyadicChallenge.fp8_e4m3fn_optimal_quintic_exact_zero_error",
+    "MuonNsDyadicChallenge.bf16_optimal_dyadic_quintic_one_ulp_confinement",
+    "MuonNsDyadicChallenge.polar_express_bf16_fp8_one_ulp_overshoot_cliff",
+    "MuonNsDyadicChallenge.stationary_quintic_slope_vs_fixedpoint_pareto"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

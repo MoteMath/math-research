@@ -1,0 +1,12 @@
+name = "deltanet-householder-e8"
+version = "0.1.0"
+defaultTargets = ["DeltaNetHouseholderE8", "Solution"]
+
+[[lean_lib]]
+name = "DeltaNetHouseholderE8"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact 3D Multimodal mRoPE Separable-Axis Floor, Coupled-3D Barrier Shattering, BF16 Width Freeze, Interleaved Resolution Gap, and Q32 Modular Phase Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    algebraic, number-theoretic, and IEEE-754 RNE laws for 3D multimodal Rotary Position
+    Embeddings (mRoPE): the universal Separable-Axis Floor Theorem forcing max |K| >= 3/4
+    for any separable (16, 24, 24) schedule (with exact Dirichlet-Welch Gram lower bound),
+    Coupled 3D rotary phase barrier shattering (exact algebraic 64-pair 0-sidelobe and
+    27-pair all-nonzero-axis <= 1/3 < 1/2 < 3/4 witnesses), 100% BF16 cosine freeze across
+    all 24 contiguous Width pairs (pairs 40..63) for all 63 patch offsets, the exact
+    b^{76/64} (> 10^6x at b = 10^6) local spatial resolution gain of interleaved over
+    contiguous mRoPE, exact zero-error Q32 modular 3D relative-position homomorphism and
+    full 2^32 period for odd frequencies, and complete cross-modal BF16 ULP collapse
+    (ulp(2^17) = 1024) and FP16 overflow (> 65504) at m = 131,072 versus exact Q32 phase.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mrope-3d-coprime-bounds
+  license: Apache-2.0

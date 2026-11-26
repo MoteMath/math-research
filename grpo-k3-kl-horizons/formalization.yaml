@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact GRPO / RLHF Schulman k3 KL Non-Negativity Failure, FP8/BF16 Clip-Window Collapse, Binary-Reward Over-Weighting, and One-Pass Negative-Variance Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    rational and IEEE-754 RNE laws for low-precision RLHF / GRPO (DeepSeek-R1) / PPO training:
+    exact Schulman k3 KL non-negativity and quadratic Taylor/Pade bounds, bit-exact BF16/FP16
+    negative-KL and dead-zero violations for both Order A ((exp(d)-d)-1, witness 0x3b01 -> -1/256)
+    and Order B ((exp(d)-1)-d, negative across the entire small-positive half-space), the FP8-E4M3
+    (|log p| >= 2) and BF16 (|log p| >= 32) PPO/GRPO clip-window collapse horizon, direct
+    logit-difference binade invariance, exact binary-reward GRPO extreme-difficulty over-weighting
+    (G-1 squared advantage ratio and G/(2*sqrt(G-1)) > 4 at G=64) vs Dr.GRPO |A_i| <= 1, and
+    bit-exact BF16 one-pass negative-variance NaN witnesses plus FP8-E4M3 G=64 mean-saturation stall.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: grpo-k3-kl-horizons
+  license: Apache-2.0
