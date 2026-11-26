@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "VcacheIprXorvdcChallenge.ipr_attention_averaging_sr_vs_rne_exact",
+    "VcacheIprXorvdcChallenge.cross_format_int2_sr_beats_int4_mxfp4_rne",
+    "VcacheIprXorvdcChallenge.xor_vdc_stratified_sr_superconvergence_and_iid_halving",
+    "VcacheIprXorvdcChallenge.rank1_attention_sink_ipr_crossover_exact",
+    "VcacheIprXorvdcChallenge.rank1_split_wht_orthogonality_and_output_inversion",
+    "VcacheIprXorvdcChallenge.sub4bit_vcache_packing_density_and_exact_int64_bounds"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

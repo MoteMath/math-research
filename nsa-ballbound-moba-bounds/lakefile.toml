@@ -1,0 +1,12 @@
+name = "nsa-ballbound-moba-bounds"
+version = "0.1.0"
+defaultTargets = ["NsaBallBoundMoba", "Solution"]
+
+[[lean_lib]]
+name = "NsaBallBoundMoba"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

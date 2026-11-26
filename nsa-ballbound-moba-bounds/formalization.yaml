@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Integer Block-Sparse Attention (NSA / MoBA) Selection Blindspots, Zero-Sqrt Ball-Bound Certificates, Quest-AABB Geometric Separation, Quantization-Absorbing Bounds, 3-Branch Convex-Gate Breakdown, and 2-Bitplane POPCNT Dominance
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    algebraic and geometric laws for block-sparse attention (NSA / MoBA / Quest):
+    exact antipodal-pair and buried-needle blindspots forcing 0% worst-case recall for Mean-Key
+    selection across all block sizes B >= 2; exact zero-sqrt Cauchy-Schwarz Ball-Bound soundness
+    certifying 0 false negatives with only +1 scalar per block; strict half-metadata and
+    all-dimension sqrt(d) geometric separation where Quest-AABB over-estimates by sqrt(d)x
+    (2x at d=4, 8x at d=64) while Ball-Bound is exact (0 slack); quantization-absorbing Ball-Bound
+    preserving 0 false negatives across all summary precisions (1-bit through FP8); exact 3-branch
+    NSA convex-gate breakdown under distant antipodal needles and collapse to 0 error under
+    Ball-Bound; and exact 2-bitplane POPCNT dot-product conservation with 4x/8x bandwidth reduction
+    and zero per-coordinate multiplications.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: nsa-ballbound-moba-bounds
+  license: Apache-2.0

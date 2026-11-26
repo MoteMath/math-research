@@ -1,0 +1,6 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages": [],
+ "name": "«vcache-ipr-xorvdc-bounds»",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}

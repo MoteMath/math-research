@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Attention Value-Cache IPR Phase Transition, Cross-Format SR-vs-RNE Inversion, XOR-VDC Stratified Super-Convergence, Rank-1 Sink/WHT Orthogonality, and 128K Bit-Packing Bounds
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    algebraic and discrete laws governing long-context multi-head attention Value-cache
+    quantization: exact simplex IPR attention-averaging MSE decomposition for SR vs RNE with
+    phase transition threshold N_eff* = (sigma_SR^2 - sigma_RNE^2) / mu_bias^2 and 2.000x
+    peaked-head RNE advantage; exact cross-format inversion where lower-bit SR (INT2-SR /
+    Ternary-SR) strictly beats higher-bit RNE (INT4-RNE / MXFP4-RNE) at half the VRAM;
+    exact discrete bijection, zero bias, < 1 ULP deterministic sum error (O(1/L^2)
+    super-convergence), and exact 2x variance halving for zero-carry XOR-VDC stratified SR
+    on Fin (2^K); exact Rank-1 attention-sink IPR closed form and alpha >= 3/4 phase flip
+    (N_eff < 16/9 < 2) restored by high-precision sink exemption; exact Rank-1 mean split
+    and Walsh-Hadamard orthogonality yielding single output-side inverse WHT with zero
+    per-token cost; and exact sub-4-bit V-cache bit-packing compression ratios (1 : 4 : 8 :
+    64/7 > 9.14x) with zero-overflow int64 accumulator bounds for 128K-context P * V decode.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: vcache-ipr-xorvdc-bounds
+  license: Apache-2.0

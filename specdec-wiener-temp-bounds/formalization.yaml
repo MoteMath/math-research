@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Wiener-MMSE Draft Temperature Optimality, Quantized Speculative Acceptance Bounds, Yield-Speedup Unimodality, and Sub-4-Bit Self-Speculative Dominance Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    algebraic and rational laws for quantized speculative decoding: unique completed-square
+    optimality of the Wiener-MMSE draft temperature T_MMSE = 1 + sigma_q^2 / sigma_z^2 for
+    noisy quantized logits (and general Wiener projection beta* = Cov(z, z_tilde) / Var(z_tilde)),
+    strict algebraic dominance of T_MMSE over both uncalibrated T = 1 and variance-matching
+    T_var = sqrt(1 + rho^2) with exact recovery fraction 1 - 1 / (T_var + 1)^2 in (3/4, 1),
+    exact speculative acceptance-TV identity alpha(p, q) = 1 - TV(p, q) with multiplicative
+    logit-perturbation lower bounds and exact Renyi-2 collision sensitivity factor
+    sum_v p_v (1 - 2 p_v + ||p||_2^2) = 1 - ||p||_2^2, exact closed-form speculative yield,
+    speedup, and discrete unimodal marginal-benefit optimality, universal self-speculative
+    bandwidth ceilings and certified sub-4-bit (INT2/INT3/INT4) dominance over FP8 and BF16,
+    and exact rational binary and 3-class softmax acceptance rescue witnesses at zero extra
+    compute via fused dequantization scale absorption.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: specdec-wiener-temp-bounds
+  license: Apache-2.0

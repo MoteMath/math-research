@@ -755,3 +755,68 @@ All statements are in [`mrope-3d-coprime-bounds/Challenge.lean`](mrope-3d-coprim
 | `interleaved_vs_contiguous_mrope_resolution_gap` | `Mrope3dCoprime.Bf16FreezeResolution` | Exact geometric-series ratio certifying `> 10^7×` leading-pair and `> 10^6×` full-sum local spatial resolution gain for stride-3 / Qwen3-VL interleaved `mRoPE`. |
 | `q32_3d_modular_phase_exact_relative_invariance` | `Mrope3dCoprime.Q32ModularPhase` | Exact 3D `Q32` modular relative-position homomorphism, cross-modal text-diagonal $(m, m, m)$ invariance, and full $2^{32}$ period along odd-frequency axes. |
 | `cross_modal_fp_phase_drift_vs_q32_exact` | `Mrope3dCoprime.Q32ModularPhase` | Proves total cross-modal `BF16` collapse (`ulp = 1024`) and `FP16` `+Inf` overflow at $m = 131{,}072$ versus exact injective `Q32` phase. |
+
+## 59. [`vcache-ipr-xorvdc-bounds/`](vcache-ipr-xorvdc-bounds/)
+
+All statements are in [`vcache-ipr-xorvdc-bounds/Challenge.lean`](vcache-ipr-xorvdc-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`vcache-ipr-xorvdc-bounds/VcacheIprXorvdc/Defs.lean`](vcache-ipr-xorvdc-bounds/VcacheIprXorvdc/Defs.lean). See [`vcache-ipr-xorvdc-bounds/README.md`](vcache-ipr-xorvdc-bounds/README.md) for the IPR SR-vs-RNE phase transition, `XOR-VDC` super-convergence, and Rank-1 sink/WHT proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `ipr_attention_averaging_sr_vs_rne_exact` | `VcacheIprXorvdc.IprPhaseTransition` | Exact simplex IPR attention-averaging MSE decomposition, RNE-vs-SR threshold $N _ {\mathrm{eff}}^* = (\sigma _ {\mathrm{SR}}^2 - \sigma _ {\mathrm{RNE}}^2)/\mu _ {\mathrm{bias}}^2$, and `2.000×` peaked-head RNE advantage. |
+| `cross_format_int2_sr_beats_int4_mxfp4_rne` | `VcacheIprXorvdc.IprPhaseTransition` | Exact cross-format inversion proving `INT2-SR` and `Ternary-SR` strictly beat `INT4-RNE` and `MXFP4-RNE` once $N _ {\mathrm{eff}} > \sigma _ {\mathrm{SR,low}}^2/\mu _ {\mathrm{bias,high}}^2$. |
+| `xor_vdc_stratified_sr_superconvergence_and_iid_halving` | `VcacheIprXorvdc.XorVdcStratified` | Exact `Fin (2^K)` bijection, zero bias, `< 1` ULP $O(1/L^2)$ super-convergence, and consecutive MSB-flip `2×` i.i.d. variance halving for `XOR-VDC` stratified SR. |
+| `rank1_attention_sink_ipr_crossover_exact` | `VcacheIprXorvdc.Rank1SinkWht` | Exact Rank-1 sink $\mathrm{IPR}(\alpha, L) = \alpha^2 + (1 - \alpha)^2/(L - 1)$ proving $\alpha \ge 3/4 \implies N _ {\mathrm{eff}} < 16/9 < 2$, restored to $L - 1$ by high-precision sink protection. |
+| `rank1_split_wht_orthogonality_and_output_inversion` | `VcacheIprXorvdc.Rank1SinkWht` | Universal Sylvester WHT orthogonality $H _ {2^m}^T H _ {2^m} = 2^m I$ with Rank-1 mean-split commutation requiring only one output-side inverse WHT. |
+| `sub4bit_vcache_packing_density_and_exact_int64_bounds` | `VcacheIprXorvdc.PackingInt64Bounds` | Exact `128K` V-cache compression ratios (`1 : 4 : 8 : 64/7 > 9.14×`), 5-trit/byte bijection, and zero-overflow `int64` `P * V` accumulator bounds. |
+
+## 60. [`specdec-wiener-temp-bounds/`](specdec-wiener-temp-bounds/)
+
+All statements are in [`specdec-wiener-temp-bounds/Challenge.lean`](specdec-wiener-temp-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`specdec-wiener-temp-bounds/SpecDecWienerTemp/Defs.lean`](specdec-wiener-temp-bounds/SpecDecWienerTemp/Defs.lean). See [`specdec-wiener-temp-bounds/README.md`](specdec-wiener-temp-bounds/README.md) for the Wiener-MMSE draft temperature rescue and sub-4-bit self-speculative dominance proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `wiener_mmse_temperature_uniquely_minimizes_logit_mse` | `SpecDecWienerTemp.WienerMMSE` | Exact completed-square SOS proof that $T _ {\mathrm{MMSE}}^* = 1 + \sigma _ q^2/\sigma _ z^2$ uniquely minimizes quantized-draft logit MSE at $\sigma _ z^2 \sigma _ q^2/(\sigma _ z^2 + \sigma _ q^2)$. |
+| `wiener_mmse_strictly_beats_variance_matching_and_uncalibrated` | `SpecDecWienerTemp.WienerMMSE` | Irrational-free algebraic dominance $\mathrm{MSE}(T _ {\mathrm{MMSE}}^*) < \mathrm{MSE}(T _ {\mathrm{var}}) < \mathrm{MSE}(1)$ across all $\sigma _ z^2, \sigma _ q^2 > 0$. |
+| `quantized_draft_tv_acceptance_lower_bound_exact` | `SpecDecWienerTemp.AcceptanceTV` | Exact acceptance–TV identity $\alpha = 1 - \mathrm{TV}$, ratio/multiplicative perturbation bounds, and Rényi-2 collision sensitivity identity $1 - \|p\| _ 2^2$. |
+| `expected_specdec_yield_and_speedup_exact` | `SpecDecWienerTemp.SpecDecYield` | Closed-form geometric yield $(1 - \alpha^{\gamma+1})/(1 - \alpha)$, net speedup, and exact discrete marginal-benefit unimodality in lookahead $\gamma$. |
+| `sub4bit_self_speculative_dominance_over_fp8_bf16` | `SpecDecWienerTemp.Sub4BitDominance` | Universal bandwidth ceilings ($S \le 1$ `BF16`, $S < 2$ `FP8` for all $\alpha, \gamma$) vs certified `INT2` (`2.976×`), `INT3`, and `INT4` self-speculative dominance. |
+| `wiener_temperature_exact_acceptance_rescue_witnesses` | `SpecDecWienerTemp.AcceptanceRescue` | Exact binary and multi-class rational-base softmax ensembles proving strict acceptance rescue at $T _ {\mathrm{MMSE}}^*$ with zero-cost scale absorption. |
+
+## 61. [`rag-popcnt-matryoshka-bounds/`](rag-popcnt-matryoshka-bounds/)
+
+All statements are in [`rag-popcnt-matryoshka-bounds/Challenge.lean`](rag-popcnt-matryoshka-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`rag-popcnt-matryoshka-bounds/RagPopcntMatryoshka/Defs.lean`](rag-popcnt-matryoshka-bounds/RagPopcntMatryoshka/Defs.lean). See [`rag-popcnt-matryoshka-bounds/README.md`](rag-popcnt-matryoshka-bounds/README.md) for the 2-stage `POPCNT + INT4` oversampling hierarchy and Matryoshka spectral-decay crossover proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `popcnt_binary_and_twoplane_exact_dot_identities` | `RagPopcntMatryoshka.PopcntIdentities` | Universal bit-exact `XOR+POPCNT` bipolar, 1.58-bit ternary, and 2-bit 4-level symmetric `POPCNT` dot-product identities with zero multipliers. |
+| `two_stage_oversample_snr_squared_hierarchy` | `RagPopcntMatryoshka.OversampleSnr` | Exact Cantelli concentration and rational $\mathrm{SNR}^2$ hierarchy $\eta _ {\mathrm{1b}}^2 = 4/\pi^2 < 1/2 < 4/5 < \eta _ {\mathrm{1.58b}}^2 < \eta _ {\mathrm{2b}}^2 < 1$ (`> 1.99×` / `> 2.17×`). |
+| `matryoshka_vs_full_dim_binary_spectral_crossover_exact` | `RagPopcntMatryoshka.MatryoshkaCrossover` | Exact Euclidean-fidelity crossover `iff` $E(d _ M) < \eta _ q^2$, strict monotonicity under steeper spectra, and equal-byte `192 B/vec` flat-vs-steep bounds. |
+| `hypercube_sign_wht_automatic_spectral_normalization` | `RagPopcntMatryoshka.HypercubeNorm` | Constant hypercube norm $\|\mathrm{sgn}(H x)\| _ 2^2 = D$ and positive-scale invariance explaining hypercube immunity to unnormalized inner-product hijack. |
+| `stage2_int4_rescore_gap_preservation_exact` | `RagPopcntMatryoshka.Int4RescoreGap` | Universal Top-$K$ ranking preservation and pure-integer Stage-2 symmetric `INT4` margin certification ($64\|q\| _ 1 < \text{gap}$). |
+| `rag_memory_and_bandwidth_speedup_roofline_exact` | `RagPopcntMatryoshka.RooflineSpeedup` | Exact `16×`/`8×` VRAM compression (`192/384 MiB` vs `3072 MiB` FP16 at `1M × 1536`) and exact 2-stage byte-transfer ratio $1/16 + MK/(4N)$ (`> 15.9×`). |
+
+## 62. [`flashattn-dyadic-slack-bounds/`](flashattn-dyadic-slack-bounds/)
+
+All statements are in [`flashattn-dyadic-slack-bounds/Challenge.lean`](flashattn-dyadic-slack-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`flashattn-dyadic-slack-bounds/FlashAttnDyadicSlack/Defs.lean`](flashattn-dyadic-slack-bounds/FlashAttnDyadicSlack/Defs.lean). See [`flashattn-dyadic-slack-bounds/README.md`](flashattn-dyadic-slack-bounds/README.md) for the dyadic-slack zero-mantissa-error, `L = 65,520` FP16 cliff, and identical-cancellation normalization proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `dyadic_power_of_two_rescale_zero_mantissa_error` | `FlashAttnDyadicSlack.DyadicRescale` | Exact IEEE-754 proof that multiplying normal floats by $2^{-k}$ shifts only the exponent with `0` mantissa error vs eager `1/2`-ULP midpoint drift. |
+| `eager_online_softmax_one_ulp_per_step_collapse` | `FlashAttnDyadicSlack.DyadicRescale` | Universal inductive eager 1-ULP-per-step collapse $\mathrm{seqPow}(p, m \cdot 2^p) = 2^{-m}$ strictly underestimating true exponential decay. |
+| `slack_threshold_fp16_fp8_overflow_boundary_exact` | `FlashAttnDyadicSlack.SlackOverflow` | Exact integer slack overflow `iff` boundaries for `FP8-E4M3` ($\tau \le 8$) and `FP16` tile width `64` ($\tau \le 9$), certifying safe windows `[4, 6]` / `[6, 8]`. |
+| `fp16_flat_attention_65520_overflow_cliff_exact` | `FlashAttnDyadicSlack.SlackOverflow` | Bit-exact IEEE-754 `FP16` RNE flat-attention overflow cliff at exact `L = 65,520` (`65,504 + 16`), causing `100%` `+Inf`/`NaN` for all $L \ge 65{,}520$. |
+| `dyadic_exponent_normalization_cancels_identically` | `FlashAttnDyadicSlack.DyadicNormKulisch` | Zero-mantissa-error `2^{-1}` normalization keeping $0 \le \ell < 2^{14}$ for arbitrary $L$ while cancelling identically in $(2^{-k} O)/(2^{-k} \ell) = O/\ell$. |
+| `flash_tile_int32_kulisch_associativity_and_exactness` | `FlashAttnDyadicSlack.DyadicNormKulisch` | Exact signed `int32` (`Q8.20`) `64`-element `P * V` Kulisch zero-overflow, zero-drift, and `List.Perm` permutation invariance proof. |
+
+## 63. [`nsa-ballbound-moba-bounds/`](nsa-ballbound-moba-bounds/)
+
+All statements are in [`nsa-ballbound-moba-bounds/Challenge.lean`](nsa-ballbound-moba-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`nsa-ballbound-moba-bounds/NsaBallBoundMoba/Defs.lean`](nsa-ballbound-moba-bounds/NsaBallBoundMoba/Defs.lean). See [`nsa-ballbound-moba-bounds/README.md`](nsa-ballbound-moba-bounds/README.md) for the MoBA antipodal blindspot, Zero-Sqrt Ball-Bound, and Quest-AABB separation proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `moba_antipodal_and_buried_needle_blindspot_exact` | `NsaBallBoundMoba.MobaBlindspot` | Universal antipodal-pair ($B \ge 2$) and buried-needle ($B \ge 3$) blindspot forcing $q^T S _ b \le 0$ while $\max _ j q^T k _ j = 2\|q\| _ 2^2 > 0$. |
+| `zero_sqrt_ball_bound_exact_soundness_zero_fn` | `NsaBallBoundMoba.BallBoundExact` | Universal pure-integer Cauchy–Schwarz soundness certifying exact `0` false negatives for Zero-Sqrt Ball-Bound with `+1` scalar per block. |
+| `ball_bound_strictly_tighter_than_quest_aabb_and_half_metadata` | `NsaBallBoundMoba.QuestAabbSeparation` | Exact `(d + 1)/(2d)` metadata dominance (`65/128` at $d = 64$) and all-dimension ($d = m^2$) sphere witness where Quest-AABB over-estimates by exact $\sqrt{d}\times$. |
+| `quantization_absorbing_ball_bound_zero_fn_all_precisions` | `NsaBallBoundMoba.BallBoundExact` | Quantization-absorbing Ball-Bound preserving exact `0` false negatives across all summary precisions (`1-bit` through `FP8`). |
+| `nsa_three_branch_convex_gate_antipodal_breakdown` | `NsaBallBoundMoba.NsaGateAndPopcnt` | Exact NSA 3-branch convex-gate lower bound $\ge E _ 0^2$ under distant antipodal needles, collapsing to `0` under Ball-Bound selection. |
+| `popcnt_twoplane_summary_bandwidth_dominance` | `NsaBallBoundMoba.NsaGateAndPopcnt` | Exact `9/3/1`-weighted `2-Bitplane POPCNT` dot-product identity with `4×`/`8×` bit-bandwidth reduction vs `INT8`/`FP16`. |

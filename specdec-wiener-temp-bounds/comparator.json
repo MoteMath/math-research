@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SpecDecWienerTempChallenge.wiener_mmse_temperature_uniquely_minimizes_logit_mse",
+    "SpecDecWienerTempChallenge.wiener_mmse_strictly_beats_variance_matching_and_uncalibrated",
+    "SpecDecWienerTempChallenge.quantized_draft_tv_acceptance_lower_bound_exact",
+    "SpecDecWienerTempChallenge.expected_specdec_yield_and_speedup_exact",
+    "SpecDecWienerTempChallenge.sub4bit_self_speculative_dominance_over_fp8_bf16",
+    "SpecDecWienerTempChallenge.wiener_temperature_exact_acceptance_rescue_witnesses"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

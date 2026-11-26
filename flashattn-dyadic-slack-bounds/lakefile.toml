@@ -1,0 +1,12 @@
+name = "flashattn-dyadic-slack-bounds"
+version = "0.1.0"
+defaultTargets = ["FlashAttnDyadicSlack", "Solution"]
+
+[[lean_lib]]
+name = "FlashAttnDyadicSlack"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

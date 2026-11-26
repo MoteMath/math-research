@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "RagPopcntMatryoshkaChallenge.popcnt_binary_and_twoplane_exact_dot_identities",
+    "RagPopcntMatryoshkaChallenge.two_stage_oversample_snr_squared_hierarchy",
+    "RagPopcntMatryoshkaChallenge.matryoshka_vs_full_dim_binary_spectral_crossover_exact",
+    "RagPopcntMatryoshkaChallenge.hypercube_sign_wht_automatic_spectral_normalization",
+    "RagPopcntMatryoshkaChallenge.stage2_int4_rescore_gap_preservation_exact",
+    "RagPopcntMatryoshkaChallenge.rag_memory_and_bandwidth_speedup_roofline_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

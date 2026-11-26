@@ -1,0 +1,12 @@
+name = "vcache-ipr-xorvdc-bounds"
+version = "0.1.0"
+defaultTargets = ["VcacheIprXorvdc", "Solution"]
+
+[[lean_lib]]
+name = "VcacheIprXorvdc"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

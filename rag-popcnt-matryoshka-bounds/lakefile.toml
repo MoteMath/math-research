@@ -1,0 +1,12 @@
+name = "rag-popcnt-matryoshka-bounds"
+version = "0.1.0"
+defaultTargets = ["RagPopcntMatryoshka", "Solution"]
+
+[[lean_lib]]
+name = "RagPopcntMatryoshka"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

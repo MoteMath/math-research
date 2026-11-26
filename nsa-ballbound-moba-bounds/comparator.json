@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "NsaBallBoundMobaChallenge.moba_antipodal_and_buried_needle_blindspot_exact",
+    "NsaBallBoundMobaChallenge.zero_sqrt_ball_bound_exact_soundness_zero_fn",
+    "NsaBallBoundMobaChallenge.ball_bound_strictly_tighter_than_quest_aabb_and_half_metadata",
+    "NsaBallBoundMobaChallenge.quantization_absorbing_ball_bound_zero_fn_all_precisions",
+    "NsaBallBoundMobaChallenge.nsa_three_branch_convex_gate_antipodal_breakdown",
+    "NsaBallBoundMobaChallenge.popcnt_twoplane_summary_bandwidth_dominance"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

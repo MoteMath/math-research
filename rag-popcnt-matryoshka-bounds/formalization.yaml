@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact 2-Stage Binary/Ternary/2-Bit POPCNT + INT4 RAG Retrieval, Matryoshka Spectral Crossover, Hypercube Normalization, and Bandwidth-Roofline Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    algebraic and rational laws for pure-integer 2-stage RAG retrieval and Matryoshka embeddings:
+    bit-exact 1-bit XOR+POPCNT, 1.58-bit ternary 2-bitplane POPCNT, and 2-bit 4-level 2-bitplane
+    POPCNT inner-product identities with zero multipliers and exact word-block associativity;
+    the exact Cantelli SNR^2 tail-concentration law and 2.00x/2.18x SNR^2 dominance hierarchy
+    explaining exponential oversample collapse; the exact Matryoshka prefix-truncation vs full-dim
+    quantized spectral-decay crossover iff and strict monotonicity under power-law decay;
+    exact constant hypercube norm and scale-invariance explaining why 1-Bit+WHT resists norm-ratio
+    hijack across all spectral decays; exact Stage-2 symmetric INT4 margin-preservation bounds;
+    and exact VRAM compression (16x/8x vs FP16, 32x/16x vs FP32) and 2-stage bandwidth-roofline
+    speedup (>12x) for 1M x 1536 retrieval.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: rag-popcnt-matryoshka-bounds
+  license: Apache-2.0

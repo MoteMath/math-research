@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FlashAttnDyadicSlackChallenge.dyadic_power_of_two_rescale_zero_mantissa_error",
+    "FlashAttnDyadicSlackChallenge.eager_online_softmax_one_ulp_per_step_collapse",
+    "FlashAttnDyadicSlackChallenge.slack_threshold_fp16_fp8_overflow_boundary_exact",
+    "FlashAttnDyadicSlackChallenge.fp16_flat_attention_65520_overflow_cliff_exact",
+    "FlashAttnDyadicSlackChallenge.dyadic_exponent_normalization_cancels_identically",
+    "FlashAttnDyadicSlackChallenge.flash_tile_int32_kulisch_associativity_and_exactness"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

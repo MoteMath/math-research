@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact FlashAttention Dyadic Lazy-Rescale Slack Bounds, One-ULP-Per-Step Collapse, FP16 65520 Overflow Cliff, Dyadic Exponent Normalization, and INT32 Kulisch Tile Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    arithmetic and algebraic laws for online-softmax FlashAttention: zero mantissa rounding
+    error of exact dyadic power-of-two rescaling (2^-k) vs eager half-ULP drift, universal
+    inductive one-ULP-per-step collapse under eager rescaling near the 1-ULP boundary
+    (seqPow(p, m * 2^p) = 2^-m), exact FP8-E4M3 (max 448, tau <= 8) and FP16 (max 65504,
+    Bc = 64, tau <= 9) lazy-slack overflow boundaries certifying Pareto-safe windows, the
+    bit-exact IEEE-754 FP16 flat-attention overflow cliff at L = 65520 (65504 + 16),
+    unconditional boundedness and exact ratio cancellation of dyadic exponent normalization
+    at |l| >= 2^14 for arbitrary sequence length L, and exact signed int32 Kulisch tile
+    accumulator width, zero-drift exactness, and permutation invariance for 64-element
+    FP8/UE3M1 P * V tiles.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: flashattn-dyadic-slack-bounds
+  license: Apache-2.0
