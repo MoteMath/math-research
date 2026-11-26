@@ -1,0 +1,12 @@
+name = "sorting-operators"
+version = "0.1.0"
+defaultTargets = ["SortingOperators", "Solution"]
+
+[[lean_lib]]
+name = "SortingOperators"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

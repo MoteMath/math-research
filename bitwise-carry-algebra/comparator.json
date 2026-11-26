@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitwiseCarryChallenge.carryWord_cocycle",
+    "BitwiseCarryChallenge.carryPop_cocycle",
+    "BitwiseCarryChallenge.gray_add_xor_eq_gray_carryWord",
+    "BitwiseCarryChallenge.popcnt_gray_carryWord",
+    "BitwiseCarryChallenge.borrowWord_eq_carryWord",
+    "BitwiseCarryChallenge.sumSquare_carryPop",
+    "BitwiseCarryChallenge.sumSquare_carryBlocks",
+    "BitwiseCarryChallenge.count_zero_and_one_carryBlock"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Sorting Operators: Cross-operator inequalities for West stack-sorting and bubble sort
+  description: >-
+    A zero-Mathlib Lean 4 formalization of universal cross-operator inequalities and structural
+    identities relating West's stack-sorting operator and single-pass bubble sort, including
+    dual maximum-splitting recurrences, inversion and descent dominance, coincidence on
+    321-avoiding lists with a strictness counterexample, and the pattern bound
+    inv(B(xs)) <= pat321(xs) + pat231(xs).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: sorting-operators
+  license: Apache-2.0

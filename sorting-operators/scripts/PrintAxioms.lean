@@ -1,0 +1,11 @@
+import Solution
+
+#print axioms SortingOperatorsChallenge.inv_bubble_add_des_le_inv
+#print axioms SortingOperatorsChallenge.des_bubble_le_des
+#print axioms SortingOperatorsChallenge.westSort_split_max
+#print axioms SortingOperatorsChallenge.bubblePass_split_max
+#print axioms SortingOperatorsChallenge.inv_westSort_le_bubble
+#print axioms SortingOperatorsChallenge.des_westSort_le_bubble
+#print axioms SortingOperatorsChallenge.westSort_eq_bubble_of_avoids321
+#print axioms SortingOperatorsChallenge.exists_not_avoids321_westSort_eq_bubble
+#print axioms SortingOperatorsChallenge.inv_bubble_le_pat321_add_pat231

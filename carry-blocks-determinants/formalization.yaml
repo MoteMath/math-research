@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carry-Blocks, Plateau Hankel, and Ultrametric XOR Determinants
+  description: >-
+    Lean 4 / Mathlib formalization of four closed-form determinant families over arbitrary
+    commutative rings: exponential and unimodular mixed-radix carry-blocks matrices, binary
+    Gray-code carry-transition matrices, universal 0-based and 1-based plateau Hankel matrices
+    (including mixed-radix digit lengths), and ultrametric XOR bit-length matrices.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: carry-blocks-determinants
+  license: Apache-2.0

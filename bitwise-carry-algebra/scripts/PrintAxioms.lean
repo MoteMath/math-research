@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BitwiseCarryChallenge.carryWord_cocycle
+#print axioms BitwiseCarryChallenge.carryPop_cocycle
+#print axioms BitwiseCarryChallenge.gray_add_xor_eq_gray_carryWord
+#print axioms BitwiseCarryChallenge.popcnt_gray_carryWord
+#print axioms BitwiseCarryChallenge.borrowWord_eq_carryWord
+#print axioms BitwiseCarryChallenge.sumSquare_carryPop
+#print axioms BitwiseCarryChallenge.sumSquare_carryBlocks
+#print axioms BitwiseCarryChallenge.count_zero_and_one_carryBlock

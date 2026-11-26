@@ -1,0 +1,12 @@
+import Solution
+
+#print axioms CarryBlocksChallenge.det_mixedCarryBlocks_exp
+#print axioms CarryBlocksChallenge.det_mixedCarryBlocks_linear
+#print axioms CarryBlocksChallenge.det_binaryCarryBlocks
+#print axioms CarryBlocksChallenge.det_grayCarryTransitions
+#print axioms CarryBlocksChallenge.det_plateauHankel_one
+#print axioms CarryBlocksChallenge.det_plateauHankel_zero
+#print axioms CarryBlocksChallenge.det_mixedDigitLen_one
+#print axioms CarryBlocksChallenge.det_mixedDigitLen_zero
+#print axioms CarryBlocksChallenge.det_bitlen_xor_add_const
+#print axioms CarryBlocksChallenge.det_bitlen_xor

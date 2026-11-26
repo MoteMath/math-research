@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Bitwise Carry Algebra: 2-cocycle laws, Gray-carry transitions, and exact square sums
+  description: >-
+    A zero-Mathlib Lean 4 formalization of binary carry-word 2-cocycle identities, Gray-code
+    carry-transition laws, borrow-carry duality, and exact closed-form enumerations of carry
+    popcounts, maximal carry blocks, zero-carry pairs, and single-carry-block pairs over
+    [0, 2^k) x [0, 2^k).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bitwise-carry-algebra
+  license: Apache-2.0
