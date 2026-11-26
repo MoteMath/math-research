@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "UniversalVertexInvrootChallenge.universal_invroot_vertex_identity_and_positivity",
+    "UniversalVertexInvrootChallenge.universal_invroot_cubic_convergence",
+    "UniversalVertexInvrootChallenge.deg9_shared_square_and_rounding_floor_dominance",
+    "UniversalVertexInvrootChallenge.bf16_inv_sqrt_vertex_certified",
+    "UniversalVertexInvrootChallenge.bf16_inv_cbrt_vertex_certified",
+    "UniversalVertexInvrootChallenge.bf16_inv_eighth_vertex_certified"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

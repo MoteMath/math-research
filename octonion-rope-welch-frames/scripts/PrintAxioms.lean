@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms OctonionRopeWelchChallenge.quaternion_pow2_rigidity_obstruction
+#print axioms OctonionRopeWelchChallenge.pythagorean_and_octonion_rope_exact_orthogonal
+#print axioms OctonionRopeWelchChallenge.welch_frame_energy_lower_bound
+#print axioms OctonionRopeWelchChallenge.welch_tight_sparse_ternary_frames_exact
+#print axioms OctonionRopeWelchChallenge.softmax_topk_gap_l1_exact
+#print axioms OctonionRopeWelchChallenge.softmax_quantized_logit_l1_exact

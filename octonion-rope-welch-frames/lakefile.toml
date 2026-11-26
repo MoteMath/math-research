@@ -1,0 +1,12 @@
+name = "octonion-rope-welch-frames"
+version = "0.1.0"
+defaultTargets = ["OctonionRopeWelch", "Solution"]
+
+[[lean_lib]]
+name = "OctonionRopeWelch"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

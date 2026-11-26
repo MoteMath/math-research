@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "OctonionRopeWelchChallenge.quaternion_pow2_rigidity_obstruction",
+    "OctonionRopeWelchChallenge.pythagorean_and_octonion_rope_exact_orthogonal",
+    "OctonionRopeWelchChallenge.welch_frame_energy_lower_bound",
+    "OctonionRopeWelchChallenge.welch_tight_sparse_ternary_frames_exact",
+    "OctonionRopeWelchChallenge.softmax_topk_gap_l1_exact",
+    "OctonionRopeWelchChallenge.softmax_quantized_logit_l1_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

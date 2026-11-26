@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Octonion RoPE, Welch-Tight Sparse Ternary Frames, and Exact Softmax L1 Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the 4D power-of-2
+    quaternion rigidity obstruction (r_4(2^r) = 24, 0 primitive solutions for r >= 3), universal
+    2D Pythagorean, 4D quaternion, and 8D Cayley-Dickson octonion RoPE exact orthogonality (with
+    a pure bit-shift >> 16 Llama-2 octonion witness), the universal integer Welch Frobenius lower bound
+    with five exact Welch-tight sparse ternary attention-key sketch frames (ratio = 1.00000, zero
+    multiplications), and the exact tight Softmax Top-K (Gap-Delta) and quantized-logit (+/- eps) L1 laws.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: octonion-rope-welch-frames
+  license: Apache-2.0

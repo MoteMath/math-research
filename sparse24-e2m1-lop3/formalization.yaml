@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Sparse 2:4 Metadata, 5t8b, E2M1 Multiplier & 2-Quinary LOP3 Circuits
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of GPU-synthesized
+    sub-byte LOP3 circuits and exact lower-bound theorems: a 10-LOP3 direct-sign 5-trit/8-bit
+    to 5xE2M1 unpacker with a >= 5-essential-variable (depth >= 2) lower bound, tight 1-LOP3
+    (mask and unordered index) and 3-LOP3 (ordered index) 3-bit 2:4-sparse decoders, a 12-LOP3
+    8-bit triple 2:4-mask unpacker with the unique (1,1,1) fiber-product direct-wire bound,
+    a 25-LOP3 exact zero-FP E2M1 x E2M1 magnitude multiplier (64/64 exact), and a 4-LOP3
+    depth-2 2-quinary/5-bit to 2xE2M1 unpacker with a 4-wire impossibility theorem.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: sparse24-e2m1-lop3
+  license: Apache-2.0

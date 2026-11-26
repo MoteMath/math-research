@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms Sparse24E2M1Lop3Challenge.unpack_5t8b_to_e2m1_ten_lop3_and_lower_bound
+#print axioms Sparse24E2M1Lop3Challenge.sparse24_3bit_single_lop3_tight
+#print axioms Sparse24E2M1Lop3Challenge.sparse24_3bit_ordered_three_lop3_tight
+#print axioms Sparse24E2M1Lop3Challenge.sparse24_8bit_triple_twelve_lop3_and_wire_bound
+#print axioms Sparse24E2M1Lop3Challenge.e2m1_mag_mul_25lop3_exact
+#print axioms Sparse24E2M1Lop3Challenge.quinary_2w5b_to_e2m1_four_lop3_and_wire_bound

@@ -1,0 +1,12 @@
+name = "sparse24-e2m1-lop3"
+version = "0.1.0"
+defaultTargets = ["Sparse24E2M1Lop3", "Solution"]
+
+[[lean_lib]]
+name = "Sparse24E2M1Lop3"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

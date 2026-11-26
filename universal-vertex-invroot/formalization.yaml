@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Universal Vertex Inverse-p-th Root — all-p coupled G^{-1/p} vertex law, cubic convergence, BF16 certificates & degree-9 polar rounding floor
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the universal all-p
+    coupled matrix inverse p-th root (G^{-1/p}) vertex law: exact completed-square equivalence,
+    global strict positivity (>= 3/4), exact monomial cancellation condition number 1 + 4/p + 2/p^2
+    versus unit vertex-sum condition number, universal all-p cubic convergence with exact leading
+    constant (p+1)(2p+1)/(6p^2), exact 4-matmul shared-square degree-9 identity and rounding-floor
+    dominance of 3-matmul degree-5 over 4-matmul degree-9 across BF16/FP8, and continuous 6-step
+    worst-case BF16 confinement certificates for p in {2, 3, 8} via a cleared-denominator Int
+    interval engine with zero native_decide.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: universal-vertex-invroot
+  license: Apache-2.0
