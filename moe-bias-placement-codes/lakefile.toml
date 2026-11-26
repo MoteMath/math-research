@@ -1,0 +1,12 @@
+name = "moe-bias-placement-codes"
+version = "0.1.0"
+defaultTargets = ["MoeBiasPlacement", "Solution"]
+
+[[lean_lib]]
+name = "MoeBiasPlacement"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

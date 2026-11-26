@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Mxfp6Ef21RotationsChallenge.mxfp6_e3m2_nvfp6_ef21_universal",
+    "Mxfp6Ef21RotationsChallenge.mxfp6_e2m3_nvfp6_ef21_universal",
+    "Mxfp6Ef21RotationsChallenge.mxfp6_e2m3_vs_e3m2_exact_crossover",
+    "Mxfp6Ef21RotationsChallenge.hadamard_weight_quantization_defect_and_min_dyadic_coherence",
+    "Mxfp6Ef21RotationsChallenge.goethals_seidel_native_e2m1_orthonormal_exact",
+    "Mxfp6Ef21RotationsChallenge.quaternion_4of8_sparse_orthogonality_universal"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

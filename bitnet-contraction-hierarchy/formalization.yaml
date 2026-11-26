@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: BitNet Contraction Hierarchy, Multi-Level Critical Dimensions, and Two-Stage Ternary Crossover
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the universal
+    non-negativity of nearest-neighbor ternary rounding, the exact three-tier BitNet heuristic
+    contraction hierarchy (AbsMean = (2d-1)/d^2, AbsMax = 4/(d+3), AbsMax/2 = 12/(d+15), and
+    RMS in exact algebraic squared form (d*alpha + 1)^2 >= 3d + 1 with rational attainment at
+    d = 8 and d = 16), the universal multi-level shifted-sqrt critical phase-transition dimension
+    d_crit(G_M) = 8 M^2 + 4 (36 Quinary, 76 INT3, 396 INT4) and exact codebook harmonic constants,
+    and the exact d = 3 vs d = 4 Greedy vs Joint Disjoint 2-stage residual ternary crossover.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bitnet-contraction-hierarchy
+  license: Apache-2.0

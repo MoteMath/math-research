@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Multi-Draft Speculative Decoding OT Gaps, Quantized-Draft Loss, and Modular BitVec Reversible Transformers
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the universal
+    multi-draft speculative decoding correlated-vs-i.i.d. optimal transport multiplicative gap
+    K^K / (K^K - (K-1)^K) and additive gap ((K-1)/K)^K with exact witnesses for all K >= 1,
+    constructive counterexamples refuting both default-order and oracle-sorted Cyclic Madow
+    optimality, the exact tight quantized-draft acceptance loss laws for K = 1 ((R-1)/(R+1))
+    and correlated K >= 2 ((K-1)(R^2-1)/(1+(K-1)R^2)), unconditional bit-exact modular BitVec b
+    reversible Transformer invertibility for all bit-widths b and depths L, and exact unimodularity
+    and hyperbolic instability of the 2x2 floating-point reversible Jacobian M(gamma).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: spec-decoding-ot-bounds
+  license: Apache-2.0

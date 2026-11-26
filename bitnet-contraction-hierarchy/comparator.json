@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitnetContractionChallenge.ternary_nearest_nonneg_contraction",
+    "BitnetContractionChallenge.bitnet_absmean_contraction_exact",
+    "BitnetContractionChallenge.bitnet_absmax_and_half_contraction_exact",
+    "BitnetContractionChallenge.bitnet_rms_contraction_exact_algebraic",
+    "BitnetContractionChallenge.multilevel_shifted_sqrt_dcrit_exact",
+    "BitnetContractionChallenge.two_stage_ternary_greedy_vs_disjoint_crossover"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

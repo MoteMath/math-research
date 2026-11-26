@@ -1,0 +1,12 @@
+name = "mxfp6-ef21-rotations"
+version = "0.1.0"
+defaultTargets = ["Mxfp6Ef21Rotations", "Solution"]
+
+[[lean_lib]]
+name = "Mxfp6Ef21Rotations"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

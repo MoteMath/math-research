@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: MXFP6 EF21 Phase Diagrams, Native Orthonormal Matrices, and 4:8-Sparse Quaternion Rotations
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving universal all-B EF21
+    contraction phase diagrams for OCP MXFP6-E3M2, NVFP6-E3M2, MXFP6-E2M3, and NVFP6-E2M3 with exact
+    tightness, the exact E2M3 vs E3M2 crossover theorems (B=43/44 for MXFP6, B=178/179 for NVFP6),
+    Hadamard weight-quantization defects and minimum dyadic coherence bounds, exact Goethals-Seidel
+    native E2M1/E3M2/E2M3 orthonormal matrices (16x16 and 32x32), and universal 4:8-sparse Hamilton
+    quaternion orthogonal factorizations.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mxfp6-ef21-rotations
+  license: Apache-2.0

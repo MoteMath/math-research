@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MoeBiasPlacementChallenge.aux_loss_free_mean_bias_drift_exact",
+    "MoeBiasPlacementChallenge.dead_zone_fixed_point_threshold_exact",
+    "MoeBiasPlacementChallenge.fanout_intra_gpu_dispersion_duality",
+    "MoeBiasPlacementChallenge.affine_plane_ag2_zero_hotspot_placement",
+    "MoeBiasPlacementChallenge.eplb_redundant_expert_pigeonhole_bound",
+    "MoeBiasPlacementChallenge.quantized_router_zero_flip_thresholds"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

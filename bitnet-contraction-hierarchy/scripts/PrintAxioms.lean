@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms BitnetContractionChallenge.ternary_nearest_nonneg_contraction
+#print axioms BitnetContractionChallenge.bitnet_absmean_contraction_exact
+#print axioms BitnetContractionChallenge.bitnet_absmax_and_half_contraction_exact
+#print axioms BitnetContractionChallenge.bitnet_rms_contraction_exact_algebraic
+#print axioms BitnetContractionChallenge.multilevel_shifted_sqrt_dcrit_exact
+#print axioms BitnetContractionChallenge.two_stage_ternary_greedy_vs_disjoint_crossover

@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: MoE Bias Dynamics, Affine-Plane Expert Placement Codes & Quantized Router Margin Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of six exact Mixture-of-Experts
+    routing and placement laws: DeepSeek-V3 aux-loss-free sign-bias linear drift bound and exact mean-centered
+    invariance, sharp dead-zone fixed-point phase transition at tau_min = max(r, E-r)/E, discrete-convexity
+    fanout vs intra-GPU dispersion duality, explicit Resolvable Affine Plane AG(2, 4) and AG(2, 8) zero-hotspot
+    expert-to-GPU placement BIBD codes, exact EPLB redundant-expert pigeonhole capacity lower bound, and exact
+    uniform and floating-point quantized-router zero-flip margin thresholds.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: moe-bias-placement-codes
+  license: Apache-2.0

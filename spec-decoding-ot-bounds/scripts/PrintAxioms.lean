@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms SpecDecodingOtChallenge.multidraft_corr_vs_iid_exact_gaps
+#print axioms SpecDecodingOtChallenge.cyclic_madow_optimality_refutation_exact
+#print axioms SpecDecodingOtChallenge.quantized_draft_loss_k1_exact
+#print axioms SpecDecodingOtChallenge.quantized_draft_loss_multidraft_exact
+#print axioms SpecDecodingOtChallenge.modular_bitvec_reversible_exact_inverse
+#print axioms SpecDecodingOtChallenge.symplectic_float_reversible_unimodular

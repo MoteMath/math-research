@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SpecDecodingOtChallenge.multidraft_corr_vs_iid_exact_gaps",
+    "SpecDecodingOtChallenge.cyclic_madow_optimality_refutation_exact",
+    "SpecDecodingOtChallenge.quantized_draft_loss_k1_exact",
+    "SpecDecodingOtChallenge.quantized_draft_loss_multidraft_exact",
+    "SpecDecodingOtChallenge.modular_bitvec_reversible_exact_inverse",
+    "SpecDecodingOtChallenge.symplectic_float_reversible_unimodular"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
