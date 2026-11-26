@@ -1,0 +1,12 @@
+name = "mxfp-doublelog-ftz-law"
+version = "0.1.0"
+defaultTargets = ["MxfpDoublelogFtz", "Solution"]
+
+[[lean_lib]]
+name = "MxfpDoublelogFtz"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

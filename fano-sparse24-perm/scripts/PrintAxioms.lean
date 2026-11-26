@@ -1,0 +1,7 @@
+import Solution
+
+#print axioms FanoSparse24PermChallenge.structured_topk_ef21_contraction_exact
+#print axioms FanoSparse24PermChallenge.mxfp4_anchor_dilution_48_beats_24_exact
+#print axioms FanoSparse24PermChallenge.fano_plane_sparse24_obstruction_exact
+#print axioms FanoSparse24PermChallenge.sunflower_sparse24_obstruction_exact
+#print axioms FanoSparse24PermChallenge.order_statistic_k2k_nmse_laws_exact

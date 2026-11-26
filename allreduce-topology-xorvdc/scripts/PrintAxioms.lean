@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms AllReduceXorVdcChallenge.allreduce_subulp_drift_ring_vs_tree_exact
+#print axioms AllReduceXorVdcChallenge.allreduce_cancel_wipeout_ring_vs_tree_exact
+#print axioms AllReduceXorVdcChallenge.cross_rank_xor_vdc_bijection_and_exact_mse
+#print axioms AllReduceXorVdcChallenge.bf16_residual_stream_freeze_depth_exact
+#print axioms AllReduceXorVdcChallenge.kahan_compensated_residual_exact_recovery
+#print axioms AllReduceXorVdcChallenge.fixed_scale_ternary_saturation_barrier

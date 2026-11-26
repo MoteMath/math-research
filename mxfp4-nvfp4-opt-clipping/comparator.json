@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Mxfp4OptClippingChallenge.mxfp4_e8m0_scale_down_piecewise_linear_crossover",
+    "Mxfp4OptClippingChallenge.mxfp4_opt_e8m0_all_b_ef21_three_regime_law",
+    "Mxfp4OptClippingChallenge.nvfp4_ceil_vs_nearest_e4m3_all_b_ef21_exact",
+    "Mxfp4OptClippingChallenge.nvfp4_opt_e4m3_b16_and_b1_synergy_exact",
+    "Mxfp4OptClippingChallenge.mxfp4_opt_e8m0_never_drops_two_exponents",
+    "Mxfp4OptClippingChallenge.e2m1_neg_zero_repurposing_exact_gain"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

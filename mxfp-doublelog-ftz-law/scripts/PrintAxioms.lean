@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms MxfpDoublelogFtzChallenge.mxfp_e1_equals_e0_and_signed_unsigned_duality
+#print axioms MxfpDoublelogFtzChallenge.mxfp_universal_ef21_closed_form
+#print axioms MxfpDoublelogFtzChallenge.mxfp_doublelog_crossover_4b_cancellation_law
+#print axioms MxfpDoublelogFtzChallenge.mxfp_e8m0_doublelog_shift_law
+#print axioms MxfpDoublelogFtzChallenge.mxfp_ftz_four_to_the_b_underflow_penalty
+#print axioms MxfpDoublelogFtzChallenge.mxfp_ftz_hardware_bifurcation_e4m3_vs_e2mb

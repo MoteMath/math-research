@@ -1,0 +1,12 @@
+name = "fano-sparse24-perm"
+version = "0.1.0"
+defaultTargets = ["FanoSparse24Perm", "Solution"]
+
+[[lean_lib]]
+name = "FanoSparse24Perm"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

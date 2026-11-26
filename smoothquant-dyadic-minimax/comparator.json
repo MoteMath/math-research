@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SmoothquantDyadicChallenge.smoothquant_asymmetric_amgm_optimal_scale",
+    "SmoothquantDyadicChallenge.dyadic_smoothquant_perchannel_l2_5_over_4_sharp",
+    "SmoothquantDyadicChallenge.dyadic_smoothquant_perchannel_l1_9_over_8_sharp",
+    "SmoothquantDyadicChallenge.dyadic_smoothquant_pertensor_5_2_vs_phase_shift_3_2",
+    "SmoothquantDyadicChallenge.smoothquant_hadamard_noncommutation_separation",
+    "SmoothquantDyadicChallenge.channel_outlier_coupling_paradox_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

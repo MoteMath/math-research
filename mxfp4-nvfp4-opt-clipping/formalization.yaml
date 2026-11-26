@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Optimal Clipping, Double-Quantization Scale-Rounding, and E2M1 -0 Repurposing Laws for OCP MXFP4 and NVFP4
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the exact
+    MXFP4 (E2M1 + E8M0) piecewise-linear scale-down crossover law, the universal all-B 3-regime
+    opt-E8M0 EF21 minimax contraction law (47/431 at B=32, 23/151 at B=64, 1/5 at B=145), the
+    NVFP4 (E2M1 + E4M3) ceil-E4M3 vs zero-search nearest-E4M3 all-B EF21 contraction laws
+    (199/4231 vs 151/4759 at B=16), the opt-E4M3 B=16 minimax bound (23/887) and B=1 non-top-level
+    scale synergy (1/625 vs 1/289 vs 1/64), the exact dominance theorem explaining why opt-E8M0
+    never drops two exponents (e <= e_ceil - 2), and the exact EF21 / MSE gains from repurposing
+    the redundant OCP E2M1 -0 code (0b1000) to c in {1/4, 5, 8}.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mxfp4-nvfp4-opt-clipping
+  license: Apache-2.0

@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FlashAttnBwdSignflipChallenge.softmax_jacobian_zero_sum_and_cancellation_free_identity",
+    "FlashAttnBwdSignflipChallenge.peaked_softmax_half_spurious_signflip_threshold",
+    "FlashAttnBwdSignflipChallenge.direct_p_dp_midpoint_dc_leakage_exact",
+    "FlashAttnBwdSignflipChallenge.flashattn_do_o_orthogonal_divergence_amplification",
+    "FlashAttnBwdSignflipChallenge.key_centering_dq_invariance_exact",
+    "FlashAttnBwdSignflipChallenge.unsigned_ue3m1_vs_mxfp4_dynamic_range_16x_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

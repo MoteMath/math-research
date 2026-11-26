@@ -1,0 +1,12 @@
+name = "ce-lse-fp8-horizon"
+version = "0.1.0"
+defaultTargets = ["CeLseHorizon", "Solution"]
+
+[[lean_lib]]
+name = "CeLseHorizon"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

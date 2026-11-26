@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "UnsignedFp4SoftmaxVChallenge.unsigned_fp4_e1m3_collapse_to_uint4",
+    "UnsignedFp4SoftmaxVChallenge.unsigned_fp4_all_b_ef21_regime_classification",
+    "UnsignedFp4SoftmaxVChallenge.softmax_simplex_rtn_drift_exact",
+    "UnsignedFp4SoftmaxVChallenge.stratified_xor_vdc_simplex_zero_drift",
+    "UnsignedFp4SoftmaxVChallenge.attention_v_centering_simplex_drift_annihilation",
+    "UnsignedFp4SoftmaxVChallenge.raw_v_e2m1_level_collapse_vs_centered_invariance"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

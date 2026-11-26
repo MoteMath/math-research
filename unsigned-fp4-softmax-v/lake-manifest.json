@@ -1,0 +1,6 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages": [],
+ "name": "«unsigned-fp4-softmax-v»",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}

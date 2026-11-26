@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "AllReduceXorVdcChallenge.allreduce_subulp_drift_ring_vs_tree_exact",
+    "AllReduceXorVdcChallenge.allreduce_cancel_wipeout_ring_vs_tree_exact",
+    "AllReduceXorVdcChallenge.cross_rank_xor_vdc_bijection_and_exact_mse",
+    "AllReduceXorVdcChallenge.bf16_residual_stream_freeze_depth_exact",
+    "AllReduceXorVdcChallenge.kahan_compensated_residual_exact_recovery",
+    "AllReduceXorVdcChallenge.fixed_scale_ternary_saturation_barrier"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

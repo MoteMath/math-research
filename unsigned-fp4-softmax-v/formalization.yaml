@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Unsigned FP4 Softmax Attention Quantization, E1M3-to-UINT4 Collapse, Stratified XOR-VDC Zero-Drift, and V-Centering Bias Annihilation Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    laws for low-precision attention probability and Value quantization: exact E1M3-to-UINT4
+    collapse, all-B unsigned FP4 EF21 contraction regime classification, exact RTN simplex
+    drift bounds across UE3M1/UE2M2/FP8-E4M3, stratified XOR-VDC zero simplex-sum drift,
+    exact V-centering simplex-drift annihilation, and raw V E2M1 level collapse vs centered
+    15/15 invariance.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: unsigned-fp4-softmax-v
+  license: Apache-2.0

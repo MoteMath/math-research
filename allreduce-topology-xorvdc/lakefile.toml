@@ -1,0 +1,12 @@
+name = "allreduce-topology-xorvdc"
+version = "0.1.0"
+defaultTargets = ["AllReduceXorVdc", "Solution"]
+
+[[lean_lib]]
+name = "AllReduceXorVdc"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

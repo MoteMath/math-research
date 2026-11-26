@@ -1,0 +1,12 @@
+name = "smoothquant-dyadic-minimax"
+version = "0.1.0"
+defaultTargets = ["SmoothquantDyadic", "Solution"]
+
+[[lean_lib]]
+name = "SmoothquantDyadic"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

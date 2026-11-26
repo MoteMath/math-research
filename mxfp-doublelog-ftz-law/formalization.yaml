@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Universal MXFP Double-Logarithmic Exponent Crossover Law and Flush-to-Zero Hardware Bifurcation
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    universal laws for OCP Microscaling Floating-Point (MXFP) formats across all bit-widths b,
+    exponent widths e, and block sizes B: exact E1-to-E0 collapse and signed-unsigned duality,
+    universal EF21 contraction closed form, the double-logarithmic 4^b-cancellation crossover
+    law, exact E8M0 double-log shift law, the 4^b FTZ underflow penalty, and exact hardware
+    FTZ bifurcation separating FP8-E4M3 from E2Mb formats.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mxfp-doublelog-ftz-law
+  license: Apache-2.0

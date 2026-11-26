@@ -1,0 +1,12 @@
+name = "flashattn-bwd-signflip"
+version = "0.1.0"
+defaultTargets = ["FlashAttnBwdSignflip", "Solution"]
+
+[[lean_lib]]
+name = "FlashAttnBwdSignflip"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms CeLseHorizonChallenge.ce_gradient_zero_sum_conservation_exact
+#print axioms CeLseHorizonChallenge.fp8_e4m3_dual_horizon_and_rne_overshoot_cliff
+#print axioms CeLseHorizonChallenge.fp8_e5m2_128k_vocab_conservation_collapse
+#print axioms CeLseHorizonChallenge.fp16_loss_scale_empty_window_collapse_exact
+#print axioms CeLseHorizonChallenge.lse_naive_swamping_vs_pairwise_tree_exact
+#print axioms CeLseHorizonChallenge.label_smoothing_fp8_total_erasure_exact

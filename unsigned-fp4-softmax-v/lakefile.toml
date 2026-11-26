@@ -1,0 +1,12 @@
+name = "unsigned-fp4-softmax-v"
+version = "0.1.0"
+defaultTargets = ["UnsignedFp4SoftmaxV", "Solution"]
+
+[[lean_lib]]
+name = "UnsignedFp4SoftmaxV"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

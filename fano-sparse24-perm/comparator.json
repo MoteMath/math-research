@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FanoSparse24PermChallenge.structured_topk_ef21_contraction_exact",
+    "FanoSparse24PermChallenge.mxfp4_anchor_dilution_48_beats_24_exact",
+    "FanoSparse24PermChallenge.fano_plane_sparse24_obstruction_exact",
+    "FanoSparse24PermChallenge.sunflower_sparse24_obstruction_exact",
+    "FanoSparse24PermChallenge.order_statistic_k2k_nmse_laws_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
