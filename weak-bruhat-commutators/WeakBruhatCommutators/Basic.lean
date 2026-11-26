@@ -490,7 +490,7 @@ private theorem sumInvBool_eq_invCnt : ∀ xs : List Nat, xs.Nodup →
               simp only [isInvBool, isBeforeBool, hax, ↓reduceIte]
               rfl
 
-/-- **Inversion-count dominance from Left Weak Bruhat Order:**
+/-- **Inversion-count dominance from Right Weak Bruhat Order:**
 If `xs.Perm ys`, `xs.Nodup`, and `WeakBruhatLe xs ys`, then `invCnt xs ≤ invCnt ys`. -/
 theorem invCnt_le_of_weakBruhatLe {xs ys : List Nat}
     (hperm : xs.Perm ys) (hnd : xs.Nodup) (hle : WeakBruhatLe xs ys) :

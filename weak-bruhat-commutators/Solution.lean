@@ -14,10 +14,6 @@ namespace WeakBruhatCommutatorsChallenge
 
 open WeakBruhatCommutators
 
-theorem invSet_bubblePass_iff (xs : List Nat) (hnd : xs.Nodup) (a b : Nat) :
-    IsInv (bubblePass xs) a b ↔ IsInv xs a b ∧ ∃ c, a < c ∧ IsInv xs c b :=
-  WeakBruhatCommutators.invSet_bubblePass_iff hnd a b
-
 theorem desBot_bubblePass_iff (xs : List Nat) (hnd : xs.Nodup) (b : Nat) :
     IsDesBot (bubblePass xs) b ↔ IsDesBot xs b ∧ 2 ≤ leftInv xs b :=
   WeakBruhatCommutators.desBot_bubblePass_iff hnd b
@@ -26,14 +22,6 @@ theorem bubbleOrder_bubblePass_mono (xs ys : List Nat)
     (hperm : xs.Perm ys) (hnd : xs.Nodup) (hle : BubbleLe xs ys) :
     BubbleLe (bubblePass xs) (bubblePass ys) :=
   WeakBruhatCommutators.bubbleOrder_bubblePass_mono hperm hnd hle
-
-theorem westSort_weakBruhat_bubblePass (xs : List Nat) (hnd : xs.Nodup) :
-    WeakBruhatLe (westSort xs) (bubblePass xs) :=
-  WeakBruhatCommutators.westSort_weakBruhat_bubblePass hnd
-
-theorem westSort_weakBruhat_popSort (xs : List Nat) (hnd : xs.Nodup) :
-    WeakBruhatLe (westSort xs) (popSort xs) :=
-  WeakBruhatCommutators.westSort_weakBruhat_popSort hnd
 
 theorem iterBubble_west_commutator (k : Nat) (xs : List Nat) (hnd : xs.Nodup) :
     BubbleLe (iterBubble k (westSort xs)) (westSort (iterBubble k xs)) :=
@@ -58,18 +46,5 @@ theorem invCnt_iterBubble_pop_le (k : Nat) (xs : List Nat) (hnd : xs.Nodup) :
 theorem desCnt_iterBubble_pop_le (k : Nat) (xs : List Nat) (hnd : xs.Nodup) :
     desCnt (iterBubble k (popSort xs)) ≤ desCnt (popSort (iterBubble k xs)) :=
   WeakBruhatCommutators.desCnt_iterBubble_pop_le k hnd
-
-theorem exists_westSort_popSort_not_weakBruhat_mono :
-    ∃ u v : List Nat,
-      u.Perm v ∧ u.Nodup ∧ WeakBruhatLe u v ∧
-      ¬ WeakBruhatLe (westSort u) (westSort v) ∧
-      ¬ WeakBruhatLe (popSort u) (popSort v) :=
-  WeakBruhatCommutators.exists_westSort_popSort_not_weakBruhat_mono
-
-theorem exists_bubble_pop_incomparable :
-    ∃ xs : List Nat, xs.Nodup ∧
-      ¬ WeakBruhatLe (bubblePass xs) (popSort xs) ∧
-      ¬ WeakBruhatLe (popSort xs) (bubblePass xs) :=
-  WeakBruhatCommutators.exists_bubble_pop_incomparable
 
 end WeakBruhatCommutatorsChallenge

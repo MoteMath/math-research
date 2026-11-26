@@ -118,7 +118,7 @@ theorem bubbleCarry_last_of_gt_head (m : Nat) : ∀ (l₁ : List Nat) (x : Nat) 
   simp only [hnot, ↓reduceIte] at heq
   refine ⟨out, by simpa [List.append_assoc] using heq, hperm⟩
 
-/-- On any `Nodup` list `xs`, `bubblePass` never creates a new inversion (`B(xs) ≤_L xs`). -/
+/-- On any `Nodup` list `xs`, `bubblePass` never creates a new inversion (`B(xs) ≤_R xs`). -/
 theorem bubblePass_weakBruhat_self {xs : List Nat} (hnd : xs.Nodup) :
     WeakBruhatLe (bubblePass xs) xs := by
   intro a b ⟨hba, hbef⟩
@@ -185,7 +185,7 @@ theorem bubblePass_weakBruhat_self {xs : List Nat} (hnd : xs.Nodup) :
     exact before_asymm hnd_B hbef hbef_ba
 
 /-- **Theorem 1 (`invSet_bubblePass_iff`):** Exact set-theoretic characterization of `bubblePass`
-in Left Weak Bruhat Order: for any `Nodup` list `xs`,
+in Right Weak Bruhat Order: for any `Nodup` list `xs`,
 `IsInv (bubblePass xs) a b ↔ IsInv xs a b ∧ ∃ c, a < c ∧ IsInv xs c b`. -/
 theorem invSet_bubblePass_iff {xs : List Nat} (hnd : xs.Nodup) (a b : Nat) :
     IsInv (bubblePass xs) a b ↔ IsInv xs a b ∧ ∃ c, a < c ∧ IsInv xs c b := by
@@ -304,7 +304,7 @@ theorem invSet_bubblePass_iff {xs : List Nat} (hnd : xs.Nodup) (a b : Nat) :
           (bubbleCarry_perm _ _).mem_iff.mpr (by simp)
         exact before_append_of_mem ha_in_out hb_in
 
-/-- **Theorem 2 (`invSet_bubblePass_mono`):** Single-pass bubble sort is monotone in Left Weak
+/-- **Theorem 2 (`invSet_bubblePass_mono`):** Single-pass bubble sort is monotone in Right Weak
 Bruhat Order! -/
 theorem invSet_bubblePass_mono {xs ys : List Nat} (hnd_x : xs.Nodup) (hnd_y : ys.Nodup)
     (hle : WeakBruhatLe xs ys) :

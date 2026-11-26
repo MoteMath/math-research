@@ -479,7 +479,7 @@ theorem invSet_westSort_iff : ∀ {xs : List Nat}, xs.Nodup → ∀ (a b : Nat),
                     hmr_before a c har hc_r hac_b, hmr_before c b hc_r hbr hcb_b⟩
                 exact ⟨hba, before_append_left (before_append_right hSr.2)⟩
 
-/-- `westSort xs ≤_L xs` on any `Nodup` list. -/
+/-- `westSort xs ≤_R xs` on any `Nodup` list. -/
 theorem westSort_weakBruhat_self {xs : List Nat} (hnd : xs.Nodup) :
     WeakBruhatLe (westSort xs) xs := by
   intro a b h
@@ -825,7 +825,7 @@ theorem invSet_popSort_iff : ∀ {xs : List Nat}, xs.Nodup → ∀ (a b : Nat),
                 exact ⟨hba, before_append_of_mem (List.mem_reverse.mpr ha_run)
                   ((popSort_perm rest).mem_iff.mpr hb_rest)⟩
 
-/-- `popSort xs ≤_L xs` on any `Nodup` list. -/
+/-- `popSort xs ≤_R xs` on any `Nodup` list. -/
 theorem popSort_weakBruhat_self {xs : List Nat} (hnd : xs.Nodup) :
     WeakBruhatLe (popSort xs) xs := by
   intro a b h

@@ -7,18 +7,18 @@ import WeakBruhatCommutators.WestPop
 /-!
 # Weak-Bruhat and Descent-Bottom Commutators for Bubble, West, and Pop-Stack Sorting
 
-Proves the complete Weak-Bruhat (`≤_L`) and Bubble-Refined (`⪯_B = ≤_L ∧ DesBotSub`) commutator
+Proves the complete Weak-Bruhat (`≤_R`) and Bubble-Refined (`⪯_B = ≤_R ∧ DesBotSub`) commutator
 and sandwich theory for single/iterated bubble sort (`B^k`), West's stack-sorting operator (`S`),
 and pop-stack sorting (`P`) on arbitrary duplicate-free lists (`List.Nodup`):
 
 - Operator sandwich laws:
-  - `westSort_weakBruhat_bubblePass`: `S(xs) ≤_L B(xs)`
-  - `westSort_weakBruhat_popSort`: `S(xs) ≤_L P(xs)`
-  - `westSort_bubblePass_weakBruhat_westSort`: `S(B(xs)) ≤_L S(xs)`
-  - `popSort_bubblePass_weakBruhat_popSort`: `P(B(xs)) ≤_L P(xs)`
+  - `westSort_weakBruhat_bubblePass`: `S(xs) ≤_R B(xs)`
+  - `westSort_weakBruhat_popSort`: `S(xs) ≤_R P(xs)`
+  - `westSort_bubblePass_weakBruhat_westSort`: `S(B(xs)) ≤_R S(xs)`
+  - `popSort_bubblePass_weakBruhat_popSort`: `P(B(xs)) ≤_R P(xs)`
 - Non-splitting `k = 1` commutators in both `WeakBruhatLe` and `DesBotSub`:
-  - `bubble_west_weakBruhat_west_bubble`: `B(S(xs)) ≤_L S(B(xs))`
-  - `bubble_pop_weakBruhat_pop_bubble`: `B(P(xs)) ≤_L P(B(xs))`
+  - `bubble_west_weakBruhat_west_bubble`: `B(S(xs)) ≤_R S(B(xs))`
+  - `bubble_pop_weakBruhat_pop_bubble`: `B(P(xs)) ≤_R P(B(xs))`
   - `desBot_bubble_west_sub_west_bubble`: `DesBot(B(S(xs))) ⊆ DesBot(S(B(xs)))`
   - `desBot_bubble_pop_sub_pop_bubble`: `DesBot(B(P(xs))) ⊆ DesBot(P(B(xs)))`
 - Iterated `B^k` commutator laws in `BubbleLe` (`k : Nat`):
@@ -26,8 +26,8 @@ and pop-stack sorting (`P`) on arbitrary duplicate-free lists (`List.Nodup`):
   - `iterBubble_pop_commutator`: `B^k(P(xs)) ⪯_B P(B^k(xs))`
 - Inversion-count and descent-count commutator inequalities (`invCnt`, `desCnt`) for all `k`.
 - Sharp separation witnesses:
-  - `exists_westSort_popSort_not_weakBruhat_mono`: neither `S` nor `P` is `≤_L`-monotone.
-  - `exists_bubble_pop_incomparable`: `B` and `P` are incomparable in `≤_L`.
+  - `exists_westSort_popSort_not_weakBruhat_mono`: neither `S` nor `P` is `≤_R`-monotone.
+  - `exists_bubble_pop_incomparable`: `B` and `P` are incomparable in `≤_R`.
 -/
 
 namespace WeakBruhatCommutators
@@ -242,7 +242,7 @@ end HelperBridges
 
 section SandwichLaws
 
-/-- **Sandwich Theorem 1 (`westSort_weakBruhat_bubblePass`):** `S(xs) ≤_L B(xs)` for every `Nodup`
+/-- **Sandwich Theorem 1 (`westSort_weakBruhat_bubblePass`):** `S(xs) ≤_R B(xs)` for every `Nodup`
 list `xs`. -/
 theorem westSort_weakBruhat_bubblePass {xs : List Nat} (hnd : xs.Nodup) :
     WeakBruhatLe (westSort xs) (bubblePass xs) := by
@@ -250,7 +250,7 @@ theorem westSort_weakBruhat_bubblePass {xs : List Nat} (hnd : xs.Nodup) :
   obtain ⟨hab, c, hac, _, hcb⟩ := (invSet_westSort_iff hnd a b).mp h
   exact (invSet_bubblePass_iff hnd a b).mpr ⟨hab, c, hac, ⟨Nat.lt_trans hab.1 hac, hcb⟩⟩
 
-/-- **Sandwich Theorem 2 (`westSort_weakBruhat_popSort`):** `S(xs) ≤_L P(xs)` for every `Nodup`
+/-- **Sandwich Theorem 2 (`westSort_weakBruhat_popSort`):** `S(xs) ≤_R P(xs)` for every `Nodup`
 list `xs`. -/
 theorem westSort_weakBruhat_popSort {xs : List Nat} (hnd : xs.Nodup) :
     WeakBruhatLe (westSort xs) (popSort xs) := by
@@ -260,7 +260,7 @@ theorem westSort_weakBruhat_popSort {xs : List Nat} (hnd : xs.Nodup) :
   refine ⟨hab, hasAscentBetween_extend_right hnd (hasAscentBetween_of_lt hnd hac hac_b) hcb_b⟩
 
 /-- **Monotone Dominance 1 (`westSort_bubblePass_weakBruhat_westSort`):**
-`S(B(xs)) ≤_L S(xs)` for every `Nodup` list `xs`. -/
+`S(B(xs)) ≤_R S(xs)` for every `Nodup` list `xs`. -/
 theorem westSort_bubblePass_weakBruhat_westSort {xs : List Nat} (hnd : xs.Nodup) :
     WeakBruhatLe (westSort (bubblePass xs)) (westSort xs) := by
   have hnd_B : (bubblePass xs).Nodup := ((bubblePass_perm xs).nodup_iff).mpr hnd
@@ -287,7 +287,7 @@ theorem westSort_bubblePass_weakBruhat_westSort {xs : List Nat} (hnd : xs.Nodup)
     exact ⟨d, Nat.lt_trans hac hcd, had_xs, hdb.2⟩
 
 /-- **Monotone Dominance 2 (`popSort_bubblePass_weakBruhat_popSort`):**
-`P(B(xs)) ≤_L P(xs)` for every `Nodup` list `xs`. -/
+`P(B(xs)) ≤_R P(xs)` for every `Nodup` list `xs`. -/
 theorem popSort_bubblePass_weakBruhat_popSort {xs : List Nat} (hnd : xs.Nodup) :
     WeakBruhatLe (popSort (bubblePass xs)) (popSort xs) := by
   have hnd_B : (bubblePass xs).Nodup := ((bubblePass_perm xs).nodup_iff).mpr hnd
@@ -391,7 +391,7 @@ theorem inv_west_bubble_of_gt_before_left {xs : List Nat} (hnd : xs.Nodup) {a b 
     exact ⟨y, hay, hay_B, bubblePass_before_of_gt_before hnd hyb_bef hy_lt_M hMb⟩
 
 /-- **Main Commutator Theorem 1 (`bubble_west_weakBruhat_west_bubble`):**
-`B(S(xs)) ≤_L S(B(xs))` for every duplicate-free list `xs`. -/
+`B(S(xs)) ≤_R S(B(xs))` for every duplicate-free list `xs`. -/
 theorem bubble_west_weakBruhat_west_bubble {xs : List Nat} (hnd : xs.Nodup) :
     WeakBruhatLe (bubblePass (westSort xs)) (westSort (bubblePass xs)) := by
   have hnd_S : (westSort xs).Nodup := ((westSort_perm xs).nodup_iff).mpr hnd
@@ -414,7 +414,7 @@ theorem bubble_west_weakBruhat_west_bubble {xs : List Nat} (hnd : xs.Nodup) :
     exact inv_west_bubble_of_gt_before_left hnd hab_S hac₂ hc₂a_b
 
 /-- **Main Commutator Theorem 2 (`bubble_pop_weakBruhat_pop_bubble`):**
-`B(P(xs)) ≤_L P(B(xs))` for every duplicate-free list `xs`. -/
+`B(P(xs)) ≤_R P(B(xs))` for every duplicate-free list `xs`. -/
 theorem bubble_pop_weakBruhat_pop_bubble {xs : List Nat} (hnd : xs.Nodup) :
     WeakBruhatLe (bubblePass (popSort xs)) (popSort (bubblePass xs)) := by
   have hnd_P : (popSort xs).Nodup := ((popSort_perm xs).nodup_iff).mpr hnd
@@ -1003,7 +1003,7 @@ section IteratedAndCorollaries
 
 /-- **Iterated Bubble–West Commutator (`iterBubble_west_commutator`):**
 For every `k : Nat` and every duplicate-free list `xs`,
-`B^k(S(xs)) ⪯_B S(B^k(xs))` (simultaneous Left Weak Bruhat and Descent-Bottom inclusion). -/
+`B^k(S(xs)) ⪯_B S(B^k(xs))` (simultaneous Right Weak Bruhat and Descent-Bottom inclusion). -/
 theorem iterBubble_west_commutator (k : Nat) {xs : List Nat} (hnd : xs.Nodup) :
     BubbleLe (iterBubble k (westSort xs)) (westSort (iterBubble k xs)) := by
   induction k with
@@ -1026,7 +1026,7 @@ theorem iterBubble_west_commutator (k : Nat) {xs : List Nat} (hnd : xs.Nodup) :
 
 /-- **Iterated Bubble–Pop Commutator (`iterBubble_pop_commutator`):**
 For every `k : Nat` and every duplicate-free list `xs`,
-`B^k(P(xs)) ⪯_B P(B^k(xs))` (simultaneous Left Weak Bruhat and Descent-Bottom inclusion). -/
+`B^k(P(xs)) ⪯_B P(B^k(xs))` (simultaneous Right Weak Bruhat and Descent-Bottom inclusion). -/
 theorem iterBubble_pop_commutator (k : Nat) {xs : List Nat} (hnd : xs.Nodup) :
     BubbleLe (iterBubble k (popSort xs)) (popSort (iterBubble k xs)) := by
   induction k with
@@ -1092,8 +1092,8 @@ end IteratedAndCorollaries
 section SeparationWitnesses
 
 /-- **Sharpness 1 (`exists_westSort_popSort_not_weakBruhat_mono`):**
-Unlike `bubblePass`, neither `westSort` nor `popSort` is monotone in Left Weak Bruhat Order:
-`u = [0, 1, 3, 4, 2] ≤_L [0, 1, 4, 3, 2] = v`, yet `S(u) ≰_L S(v)` and `P(u) ≰_L P(v)`. -/
+Unlike `bubblePass`, neither `westSort` nor `popSort` is monotone in Right Weak Bruhat Order:
+`u = [0, 1, 3, 4, 2] ≤_R [0, 1, 4, 3, 2] = v`, yet `S(u) ≰_R S(v)` and `P(u) ≰_R P(v)`. -/
 theorem exists_westSort_popSort_not_weakBruhat_mono :
     ∃ u v : List Nat,
       u.Perm v ∧ u.Nodup ∧ WeakBruhatLe u v ∧
@@ -1148,9 +1148,9 @@ theorem exists_westSort_popSort_not_weakBruhat_mono :
     exact before_asymm hnd_Pv h2.2 h23
 
 /-- **Sharpness 2 (`exists_bubble_pop_incomparable`):**
-In contrast to `S(xs) ≤_L B(xs)` and `S(xs) ≤_L P(xs)`, the operators `B` and `P` are
-incomparable in Left Weak Bruhat Order: at `xs = [3, 1, 2, 0]`, `B(xs) = [1, 2, 0, 3]` and
-`P(xs) = [1, 3, 0, 2]` have neither `B(xs) ≤_L P(xs)` nor `P(xs) ≤_L B(xs)`. -/
+In contrast to `S(xs) ≤_R B(xs)` and `S(xs) ≤_R P(xs)`, the operators `B` and `P` are
+incomparable in Right Weak Bruhat Order: at `xs = [3, 1, 2, 0]`, `B(xs) = [1, 2, 0, 3]` and
+`P(xs) = [1, 3, 0, 2]` have neither `B(xs) ≤_R P(xs)` nor `P(xs) ≤_R B(xs)`. -/
 theorem exists_bubble_pop_incomparable :
     ∃ xs : List Nat, xs.Nodup ∧
       ¬ WeakBruhatLe (bubblePass xs) (popSort xs) ∧

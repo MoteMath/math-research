@@ -8,9 +8,9 @@ Released under Apache 2.0 license as described in the file LICENSE.
 
 Pure-`Init` (zero Mathlib) definitions of single-pass and iterated bubble sort (`bubblePass`,
 `iterBubble`), West's stack-sorting operator (`westSort`), pop-stack sorting (`popSort`),
-the value-inversion set (`IsInv`) defining Left Weak Bruhat Order (`WeakBruhatLe`),
-the descent-bottom set (`IsDesBot`, `DesBotSub`), the Bubble-Refined Order (`BubbleLe`),
-and the numeric statistics `invCnt`, `desCnt`, `leftInv`.
+the value-inversion set (`IsInv`) defining Right Weak Bruhat Order (`WeakBruhatLe`, following
+the Björner–Brenti / Defant one-line convention), the descent-bottom set (`IsDesBot`, `DesBotSub`),
+the Bubble-Refined Order (`BubbleLe`), and the numeric statistics `invCnt`, `desCnt`, `leftInv`.
 -/
 
 namespace WeakBruhatCommutators
@@ -77,7 +77,7 @@ def IsDesBot (xs : List Nat) (b : Nat) : Prop :=
 def HasAscentBetween (xs : List Nat) (a b : Nat) : Prop :=
   ∃ l₁ l₂ l₃ u v, xs = l₁ ++ a :: l₂ ++ b :: l₃ ∧ u < v ∧ Adj (a :: l₂ ++ [b]) u v
 
-/-- Left Weak Bruhat Order on value-inversion sets: `InvSet(xs) ⊆ InvSet(ys)`. -/
+/-- Right Weak Bruhat Order on value-inversion sets: `Inv_val(xs) ⊆ Inv_val(ys)`. -/
 def WeakBruhatLe (xs ys : List Nat) : Prop :=
   ∀ a b, IsInv xs a b → IsInv ys a b
 
@@ -85,7 +85,7 @@ def WeakBruhatLe (xs ys : List Nat) : Prop :=
 def DesBotSub (xs ys : List Nat) : Prop :=
   ∀ b, IsDesBot xs b → IsDesBot ys b
 
-/-- Bubble-Refined Order `xs ⪯_B ys`: simultaneous Left Weak Bruhat and descent-bottom inclusion. -/
+/-- Bubble-Refined Order `xs ⪯_B ys`: simultaneous Right Weak Bruhat and descent-bottom inclusion. -/
 def BubbleLe (xs ys : List Nat) : Prop :=
   WeakBruhatLe xs ys ∧ DesBotSub xs ys
 

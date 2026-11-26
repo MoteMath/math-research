@@ -15,29 +15,20 @@ lake env lean scripts/PrintAxioms.lean
 ## Recorded results
 
 - `lake build`: completed successfully (10 jobs); zero errors and zero warnings across `WeakBruhatCommutators.*` and `Solution`.
-- `lake build Challenge`: completed with 13 expected `declaration uses 'sorry'` warnings in `Challenge.lean` only.
+- `lake build Challenge`: completed with 8 expected `declaration uses 'sorry'` warnings in `Challenge.lean` only.
 - Custom axioms (`axiom ...`) outside comments: **0**.
 - Occurrences of `sorry` outside `Challenge.lean`: **0**.
-- Axiom audit: every headline theorem uses only standard Lean 4 axioms (`[propext, Classical.choice, Quot.sound]`; `exists_bubble_pop_incomparable` uses only `[propext, Quot.sound]`).
+- Axiom audit: every headline theorem uses only standard Lean 4 axioms (`[propext, Classical.choice, Quot.sound]`).
 
 ### `#print axioms` output (`scripts/PrintAxioms.lean`), verbatim
 
 ```text
-'WeakBruhatCommutatorsChallenge.invSet_bubblePass_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WeakBruhatCommutatorsChallenge.desBot_bubblePass_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WeakBruhatCommutatorsChallenge.bubbleOrder_bubblePass_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
-'WeakBruhatCommutatorsChallenge.westSort_weakBruhat_bubblePass' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'WeakBruhatCommutatorsChallenge.westSort_weakBruhat_popSort' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WeakBruhatCommutatorsChallenge.iterBubble_west_commutator' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WeakBruhatCommutatorsChallenge.iterBubble_pop_commutator' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WeakBruhatCommutatorsChallenge.invCnt_iterBubble_west_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WeakBruhatCommutatorsChallenge.desCnt_iterBubble_west_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WeakBruhatCommutatorsChallenge.invCnt_iterBubble_pop_le' depends on axioms: [propext, Classical.choice, Quot.sound]
 'WeakBruhatCommutatorsChallenge.desCnt_iterBubble_pop_le' depends on axioms: [propext, Classical.choice, Quot.sound]
-'WeakBruhatCommutatorsChallenge.exists_westSort_popSort_not_weakBruhat_mono' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'WeakBruhatCommutatorsChallenge.exists_bubble_pop_incomparable' depends on axioms: [propext, Quot.sound]
 ```

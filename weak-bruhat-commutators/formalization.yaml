@@ -4,12 +4,11 @@ version: v0.4
 project:
   name: Weak-Bruhat Commutators: Iterated bubble, West stack, and pop-stack sorting
   description: >-
-    A zero-Mathlib Lean 4 formalization of the Bubble-Refined Order (simultaneous Left Weak
-    Bruhat inversion-set and descent-bottom inclusion) for iterated bubble sort B^k, West's
-    stack-sorting operator S, and pop-stack sorting P: exact characterizations of B, S, and P,
+    A zero-Mathlib Lean 4 formalization of the Bubble-Refined Order (simultaneous Right Weak
+    Bruhat value-inversion-set and descent-bottom inclusion) for iterated bubble sort B^k,
+    West's stack-sorting operator S, and pop-stack sorting P: exact descent-bottom law for B,
     monotonicity of B in Bubble-Refined Order, all-k commutator laws B^k(S(xs)) <=_B S(B^k(xs))
-    and B^k(P(xs)) <=_B P(B^k(xs)), inversion/descent commutator inequalities, and separation
-    witnesses showing S and P fail Weak-Bruhat monotonicity while B and P are incomparable.
+    and B^k(P(xs)) <=_B P(B^k(xs)), and iterated inversion and descent commutator inequalities.
   repository: https://github.com/MoteMath/math-research
   subdirectory: weak-bruhat-commutators
   license: Apache-2.0

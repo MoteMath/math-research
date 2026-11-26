@@ -2,19 +2,14 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "WeakBruhatCommutatorsChallenge.invSet_bubblePass_iff",
     "WeakBruhatCommutatorsChallenge.desBot_bubblePass_iff",
     "WeakBruhatCommutatorsChallenge.bubbleOrder_bubblePass_mono",
-    "WeakBruhatCommutatorsChallenge.westSort_weakBruhat_bubblePass",
-    "WeakBruhatCommutatorsChallenge.westSort_weakBruhat_popSort",
     "WeakBruhatCommutatorsChallenge.iterBubble_west_commutator",
     "WeakBruhatCommutatorsChallenge.iterBubble_pop_commutator",
     "WeakBruhatCommutatorsChallenge.invCnt_iterBubble_west_le",
     "WeakBruhatCommutatorsChallenge.desCnt_iterBubble_west_le",
     "WeakBruhatCommutatorsChallenge.invCnt_iterBubble_pop_le",
-    "WeakBruhatCommutatorsChallenge.desCnt_iterBubble_pop_le",
-    "WeakBruhatCommutatorsChallenge.exists_westSort_popSort_not_weakBruhat_mono",
-    "WeakBruhatCommutatorsChallenge.exists_bubble_pop_incomparable"
+    "WeakBruhatCommutatorsChallenge.desCnt_iterBubble_pop_le"
   ],
   "definition_names": [],
   "permitted_axioms": [
