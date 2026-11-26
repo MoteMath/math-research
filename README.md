@@ -2,51 +2,84 @@
 
 Machine-checked Lean 4 formalizations of exact determinant factorizations, binary-arithmetic dynamics, spectral graph counts, and combinatorial inequalities developed at MoteMath.
 
-Each subdirectory is a self-contained Lake project with its own toolchain pin, `README.md` (including a **Synthetic Score**, a **For Mathematicians** summary, and a **For Non-Mathematicians** plain-English explanation), `AUDIT.md`, and build instructions; build from inside the subdirectory. Projects follow the [Palomar](https://palomar-registry.org/) submission layout (`Challenge.lean`, `Solution.lean`, `comparator.json`, `formalization.yaml` at each project root).
+Each subdirectory is a self-contained Lake project with its own toolchain pin, `README.md` (with a **Synthetic Score**, **For Mathematicians** summary, and **For Non-Mathematicians** overview), `AUDIT.md`, and build instructions. Projects follow the [Palomar](https://palomar-registry.org/) submission layout (`Challenge.lean`, `Solution.lean`, `comparator.json`, `formalization.yaml`).
 
 ## Synthetic Score Matrix
 
-To help readers triage the collection quickly, each project carries a **heuristic synthetic score** out of `100` across five `1–10` dimensions (self-assessed, not a substitute for peer review):
+Each project carries a heuristic self-rating out of `100` across five `1–10` dimensions (not a substitute for peer review):
 
 ```math
-\mathrm{Score} = 3\cdot\mathrm{Nov} + 2\cdot\mathrm{Sur} + 2\cdot\mathrm{Gen} + 2\cdot\mathrm{Use} + 1\cdot\mathrm{Ver} \in [10, 100].
+\mathrm{Score} = 3\cdot\mathrm{Nov} + 2\cdot\mathrm{Sur} + 2\cdot\mathrm{Gen} + 2\cdot\mathrm{Use} + 1\cdot\mathrm{Ver}.
 ```
 
-- **Novelty (`Nov`, 30%):** Distance from published literature and OEIS (`9–10`: no close published analogue or OEIS match; `7–8`: new family/mechanism beyond known special cases; `5–6`: refinement/generalization adjacent to existing work).
-- **Surprise / Depth (`Sur`, 20%):** Non-obviousness of the statement and proof mechanism (unexpected collapses, cross-domain bridges, resistance to naive induction).
-- **Generality (`Gen`, 20%):** Breadth of hypotheses (arbitrary commutative rings / characteristic-free, mixed radix, all sizes/widths, exact `iff` characterizations).
-- **Usefulness (`Use`, 20%):** Bridge value to hardware/bit-level arithmetic, coding theory, spectral graph theory, combinatorics, or reusable Lean infrastructure.
-- **Verification (`Ver`, 10%):** Formalization hygiene (`10`: pure `Init`/`Std` with zero Mathlib + Palomar Comparator + `nanoda`; `9`: full Mathlib + Palomar Comparator + `nanoda`, zero `sorry`, standard axioms only).
+- **Nov (30%):** Novelty — distance from published literature and OEIS.
+- **Sur (20%):** Surprise & Depth — non-obviousness of the collapse or proof mechanism.
+- **Gen (20%):** Generality — arbitrary rings/radices, all sizes/widths, exact `iff` laws.
+- **Use (20%):** Usefulness — bridge value to bit-level arithmetic, graphs, or combinatorics.
+- **Ver (10%):** Verification — `10` for pure `Init`/`Std` (zero Mathlib) + Palomar `nanoda`; `9` for Mathlib + Palomar `nanoda` (all zero `sorry`, standard axioms only).
 
-| Rank | Project | Nov (30%) | Sur (20%) | Gen (20%) | Use (20%) | Ver (10%) | **Score** | Plain-English Snapshot |
-| :---: |---| :---: | :---: | :---: | :---: | :---: | :---: |---|
-| 1 | [`clmul-lift-determinants/`](clmul-lift-determinants/) | 9 | 10 | 9 | 7 | 9 | **88 / 100** | Odd carry-less multiplication tables have determinant $0$ almost everywhere — except right next to powers of $2$ ($2^k - 1, 2^k, 2^k + 1$), where they snap to exact powers of $2$ via a hidden bit-reversed Hadamard matrix. |
-| 2 | [`zero-carry-spanning-trees/`](zero-carry-spanning-trees/) | 9 | 9 | 9 | 7 | 9 | **86 / 100** | Exact closed-form count of minimal wiring layouts (spanning trees) for networks linking binary/mixed-radix IDs that add with zero carries, governed by an alternating-harmonic spectrum. |
-| 3 | [`skew-thue-morse-pfaffian/`](skew-thue-morse-pfaffian/) | 9 | 9 | 8 | 7 | 9 | **84 / 100** | Mirror-antisymmetric Thue–Morse sign grids collapse to determinant **exactly $1$** at every even size across shifts $s \in \{0, 1, 2\}$ (jumping to $9$ at $s = 3$) and $0$ at every odd size. |
-| 4 | [`bitrev-increment-cycles/`](bitrev-increment-cycles/) | 8 | 9 | 8 | 7 | 10 | **82 / 100** | Repeatedly reversing $k$ bits and adding $1$ sweeps **all** $2^k$ states in one cycle iff $k$ is odd, but collapses to a tiny square-root-length loop ($2^{m+2} - 1$) for every even $k = 2(m+1)$. |
-| 5 | [`carry-determinants/`](carry-determinants/) | 7 | 8 | 10 | 8 | 9 | **82 / 100** | Mixed-radix addition carry tables have nonzero determinant iff $n - 1$ uses only extremal digits (a Cantor-set pattern), and factor cleanly into products unifying Kummer $p$-adic and Thue–Morse determinants. |
-| 6 | [`weak-bruhat-commutators/`](weak-bruhat-commutators/) | 7 | 8 | 8 | 7 | 10 | **77 / 100** | Running stack-sort or pop-stack-sort **before** $k$ bubble-sort passes always leaves cards at least as sorted as running them **after**, proved for all $k$ via a new Bubble-Refined Order. |
-| 7 | [`carry-blocks-determinants/`](carry-blocks-determinants/) | 6 | 7 | 9 | 7 | 9 | **73 / 100** | Tables counting separate carry streaks in mixed-radix addition always have determinant $\pm 1$, alongside universal plateau-Hankel invariance and division-free ultrametric XOR determinants. |
-| 8 | [`combinatorial-inequalities/`](combinatorial-inequalities/) | 6 | 6 | 7 | 6 | 10 | **66 / 100** | Four universal "speed limits" on stack-sorting, permutation displacement, and integer difference sets proved for all sizes with zero Mathlib (`Std`-only). |
-| 9 | [`sorting-operators/`](sorting-operators/) | 5 | 5 | 7 | 6 | 10 | **61 / 100** | One pass of stack-sort always beats or ties one pass of bubble-sort on every list, agreeing identically on `321`-avoiding lists (pure `Init`, no `Classical.choice`). |
+| Project | Nov | Sur | Gen | Use | Ver | Score |
+|---| :---: | :---: | :---: | :---: | :---: | :---: |
+| [`clmul-lift-determinants/`](clmul-lift-determinants/) | 9 | 10 | 9 | 7 | 9 | **88** |
+| [`zero-carry-spanning-trees/`](zero-carry-spanning-trees/) | 9 | 9 | 9 | 7 | 9 | **86** |
+| [`skew-thue-morse-pfaffian/`](skew-thue-morse-pfaffian/) | 9 | 9 | 8 | 7 | 9 | **84** |
+| [`bitrev-increment-cycles/`](bitrev-increment-cycles/) | 8 | 9 | 8 | 7 | 10 | **82** |
+| [`carry-determinants/`](carry-determinants/) | 7 | 8 | 10 | 8 | 9 | **82** |
+| [`weak-bruhat-commutators/`](weak-bruhat-commutators/) | 7 | 8 | 8 | 7 | 10 | **77** |
+| [`carry-blocks-determinants/`](carry-blocks-determinants/) | 6 | 7 | 9 | 7 | 9 | **73** |
+| [`combinatorial-inequalities/`](combinatorial-inequalities/) | 6 | 6 | 7 | 6 | 10 | **66** |
+| [`sorting-operators/`](sorting-operators/) | 5 | 5 | 7 | 6 | 10 | **61** |
 
-## Project Catalog & Prior Art
+## Findings
 
-| Project | Score | Summary of Results (For Mathematicians) | Closest Prior Art | Lean / Mathlib | Axioms |
-|---| :---: |---|---|---|---|
-| [`clmul-lift-determinants/`](clmul-lift-determinants/) | **88** | Exact single-monomial determinant formulas for the odd carry-less $\mathbb{F} _ 2[x]$-lift polynomial matrix $(M _ n(t)) _ {i, j} = \mathrm{lift} _ {\mathbb{Z}}(P _ {2i+1} \cdot _ {\mathbb{F} _ 2[x]} P _ {2j+1})(t)$ at $n \in \{2^k - 1, 2^k, 2^k + 1\}$, identical vanishing on every gap $2^k + 2 \le n \le 2^{k+1} - 2$ over arbitrary commutative rings $R$, and the complete non-vanishing locus characterization over integral domains via division-free polynomial Schur reduction to bit-reversed Sylvester Hadamard matrices | Carry-less $\mathbb{F} _ 2[x]$ multiplication (`CLMUL`) and Sylvester Hadamard matrices are classical primitives; no prior literature or OEIS match found for the $\{2^k - 1, 2^k, 2^k + 1\}$ vanishing locus or monomial determinant formulas | `leanprover/lean4:v4.34.1` / Mathlib `v4.34.1` | `propext`, `Classical.choice`, `Quot.sound` |
-| [`zero-carry-spanning-trees/`](zero-carry-spanning-trees/) | **86** | Alternating-harmonic spectrum of mixed-radix zero-carry transition matrices via Kronecker-Pascal triangularization, and exact Kirchhoff spanning-tree formulas over arbitrary commutative rings, specializing to the binary bitwise-disjoint (`i &&& j = 0`) graph count $\tau(G _ {2^k}) = \prod _ {m=2}^k (2^m - (-1)^m)^{\binom{k}{m}}$ | Single-radix $k = 1$ case is a threshold graph (Hammer & Kelmans 1996); for $k \ge 2$, $G _ b$ contains induced $P _ 4$ (non-cograph) and the binary sequence $3, 243, 71744535, \dots$ does not appear in OEIS | `leanprover/lean4:v4.34.1` / Mathlib `v4.34.1` | `propext`, `Classical.choice`, `Quot.sound` |
-| [`skew-thue-morse-pfaffian/`](skew-thue-morse-pfaffian/) | **84** | Identical unimodularity $\det(A _ {2m}^{(s)}) = 1$ for $s \in \{0, 1, 2\}$ and odd-size vanishing $\det(A _ {2m+1}^{(s)}) = 0$ for all $s, m$ over arbitrary commutative rings $R$ (including char $2$), where $(A _ n^{(s)}) _ {i, j} = \mathrm{sgn}(j - i)(-1)^{s _ 2(i + j + s)}$, via half-swap involution Schur annihilation and a rank-1 null-vector bridge | Symmetric Thue-Morse Hankel determinants are studied in APWW (1998) and OEIS A186026 (nontrivial powers of $2$); no prior publication or OEIS match found for the skew-symmetric Pfaffian unimodularity across $s \in \{0, 1, 2\}$ | `leanprover/lean4:v4.34.1` / Mathlib `v4.34.1` | `propext`, `Classical.choice`, `Quot.sound` |
-| [`bitrev-increment-cycles/`](bitrev-increment-cycles/) | **82** | Exact parity dichotomy for $f _ k(x) = (\mathrm{bitrev} _ k(x) + 1) \bmod 2^k$: single full-period Hamiltonian cycle of length $2^k$ iff $k$ is odd, exact minimal orbit period $2^{m+2} - 1$ of $0$ for even $k = 2(m + 1)$, and the $3/4/5$-step $k \to k + 2$ return-map renormalization law | Bit-reversal involution is standard in radix-2 FFT / Van der Corput constructions; no prior proof of this odd/even Hamiltonian dichotomy or $k \to k + 2$ return-map law found in the literature or OEIS | `leanprover/lean4:v4.34.1` / `Init` only (no Mathlib) | `propext`, `Classical.choice`, `Quot.sound` |
-| [`carry-determinants/`](carry-determinants/) | **82** | Cantor extremal-digit non-vanishing characterization (base $B \ge 2$ and mixed radix) and closed-form multivariate determinant factorizations for mixed-radix multiplicative Hankel and carry matrices over arbitrary commutative rings, with corollaries for `det((i + j) ^^^ i ^^^ j)`, the $p$-adic Kummer matrix $v _ p\binom{i+j}{i}$, weighted linear carry matrices, and the power-of-two Thue-Morse Hankel determinant $2^{2^k - 1}$ | Bacher & Chapman (2004, `math/0212144`) and Bacher (`0708.1430`) cover the base-$2$ specializations $X = 0, i$; Sobolewski & Ulas (2026, `2607.09376`) prove an algebraically equivalent base-$2$ additive formula covering $p = 2$ Kummer; APWW (1998) and OEIS A186026 study Thue-Morse Hankel determinants mod $2$ | `leanprover/lean4:v4.34.1` / Mathlib `v4.34.1` | `propext`, `Classical.choice`, `Quot.sound` |
-| [`weak-bruhat-commutators/`](weak-bruhat-commutators/) | **77** | Bubble-Refined Order ($\preceq _ B$: value-inversion inclusion plus descent-bottom inclusion), exact descent-bottom law for bubble sort, $\preceq _ B$-monotonicity of $B$, and universal all-$k$ iterated commutator laws $B^k(S(xs)) \preceq _ B S(B^k(xs))$ and $B^k(P(xs)) \preceq _ B P(B^k(xs))$ with inversion and descent corollaries | Knuth (TAOCP Vol. 3, §5.2.2), Chung–Claesson–Dukes–Graham (2010), Albert et al. (`1008.5299`), West (1990), Ungar (1982), and Defant (`2104.02675`, `2104.03215`) on weak-order sorting operators | `leanprover/lean4:v4.34.1` / `Init` only (no Mathlib) | `propext`, `Classical.choice`, `Quot.sound` |
-| [`carry-blocks-determinants/`](carry-blocks-determinants/) | **73** | Closed-form determinant families over arbitrary commutative rings: exponential and linear mixed-radix carry-blocks matrices, binary Gray-code carry-transition matrices, 0-based and 1-based plateau Hankel matrices (with mixed-radix digit-length corollaries), and ultrametric XOR bit-length matrices | Builds on mixed-radix carry reductions; `bitlen(i ^^^ j)` is a $(\mathbb{Z}/2\mathbb{Z})^k$-circulant (Walsh-Hadamard) matrix and half the leaf-distance matrix of a complete binary tree (cf. Graham & Pollak 1971; Martínez–Michon–San Martín 1994; Nabben & Varga 1994) | `leanprover/lean4:v4.34.1` / Mathlib `v4.34.1` | `propext`, `Classical.choice`, `Quot.sound` |
-| [`combinatorial-inequalities/`](combinatorial-inequalities/) | **66** | Four universally quantified permutation and additive-set inequalities proved for all $n, N \in \mathbb{N}$: the sharp factor-3 two-stack bound $3\,\mathrm{inv}(S^2(p)) \le \mathrm{pat} _ {231}(p)$ on $\mathrm{Av}(321)$, $\mathrm{des}(S(p)) \le \mathrm{peaks}(p)$, a quadratic descent-excess Spearman bound on $\mathrm{Av}(231)$, and $3|A - A| \le 2|2A - A| + 1$ | West (1990), Zeilberger (1992), and Defant (`1809.03123`) for stack-sorting; Diaconis & Graham (1977) for Spearman displacement vs. inversions; Freiman / Ruzsa / Bukh sumset-dilate bounds | `leanprover/lean4:v4.34.1` / `Std` only (no Mathlib) | `propext`, `Classical.choice`, `Quot.sound` |
-| [`sorting-operators/`](sorting-operators/) | **61** | Cross-operator inequalities and identities relating West's stack-sorting operator $S$ and single-pass bubble sort $B$: $\mathrm{inv}(S) \le \mathrm{inv}(B)$, $\mathrm{des}(S) \le \mathrm{des}(B)$, coincidence $S = B$ on $\mathrm{Av}(321)$ with an explicit strictness witness, and $\mathrm{inv}(B) \le \mathrm{pat} _ {321} + \mathrm{pat} _ {231}$ | West (1990), Chung–Claesson–Dukes–Graham (2010), Albert–Atkinson–Bouvel–Claesson–Dukes (2011, `1008.5299`), and Defant (`1809.03123`, `2104.02675`) | `leanprover/lean4:v4.34.1` / `Init` only (no Mathlib) | `propext`, `Quot.sound` (no `Classical.choice`) |
+### 1. [`clmul-lift-determinants/`](clmul-lift-determinants/) — **88 / 100**
+- **Plain English:** Odd carry-less multiplication tables have determinant $0$ almost everywhere — except right next to powers of $2$ ($2^k - 1, 2^k, 2^k + 1$), where they snap to exact powers of $2$ via a hidden bit-reversed Hadamard matrix.
+- **For Mathematicians:** Division-free polynomial Schur reduction of $(M _ n(t)) _ {i,j} = \mathrm{lift} _ {\mathbb{Z}}(P _ {2i+1} \cdot _ {\mathbb{F} _ 2[x]} P _ {2j+1})(t)$ to $(-2 t^{k+1}) H _ {k,m}^{\mathrm{rev}}$ over any commutative ring $R$, yielding exact single-monomial determinants at $n \in \{2^k - 1, 2^k, 2^k + 1\}$, identical gap vanishing on $2^k + 2 \le n \le 2^{k+1} - 2$, and the full `iff` non-vanishing locus over integral domains.
+- **Prior art & stack:** Carry-less $\mathbb{F} _ 2[x]$ multiplication and Sylvester Hadamard matrices are classical; no prior literature or OEIS match found for this locus or determinant family. Lean `v4.34.1` / Mathlib (`propext`, `Classical.choice`, `Quot.sound`).
+
+### 2. [`zero-carry-spanning-trees/`](zero-carry-spanning-trees/) — **86 / 100**
+- **Plain English:** Exact closed-form count of minimal wiring layouts (spanning trees) for networks linking binary or mixed-radix IDs that add with zero carries.
+- **For Mathematicians:** Kronecker reversed-Pascal triangularization yields the exact alternating-harmonic spectrum of mixed-radix zero-carry transition matrices over $\mathbb{Q}$ and Kirchhoff cofactor counts over any commutative ring $R$, specializing to $\tau(G _ {2^k}) = \prod _ {m=2}^k (2^m - (-1)^m)^{\binom{k}{m}}$ for `i &&& j = 0`.
+- **Prior art & stack:** Single-radix $k = 1$ is a threshold graph (Hammer & Kelmans 1996); for $k \ge 2$, $G _ b$ contains induced $P _ 4$ (non-cograph) and $3, 243, 71744535, \dots$ is absent from OEIS. Lean `v4.34.1` / Mathlib (`propext`, `Classical.choice`, `Quot.sound`).
+
+### 3. [`skew-thue-morse-pfaffian/`](skew-thue-morse-pfaffian/) — **84 / 100**
+- **Plain English:** Mirror-antisymmetric Thue–Morse sign grids collapse to determinant **exactly $1$** at every even size across shifts $s \in \{0, 1, 2\}$ (jumping to $9$ at $s = 3$) and $0$ at every odd size.
+- **For Mathematicians:** Half-swap involution Schur annihilation ($B^T A _ N^{-1} B = 0$) and a rank-1 null-vector bridge prove $\det(A _ {2m}^{(s)}) = 1$ for $s \in \{0, 1, 2\}$ and $\det(A _ {2m+1}^{(s)}) = 0$ for all $s, m$ over every commutative ring $R$ (including char $2$), where $(A _ n^{(s)}) _ {i,j} = \mathrm{sgn}(j - i)(-1)^{s _ 2(i + j + s)}$.
+- **Prior art & stack:** Symmetric Thue–Morse Hankel determinants (APWW 1998; OEIS A186026) grow as nontrivial powers of $2$; no prior publication or OEIS match found for skew-symmetric unimodularity. Lean `v4.34.1` / Mathlib (`propext`, `Classical.choice`, `Quot.sound`).
+
+### 4. [`bitrev-increment-cycles/`](bitrev-increment-cycles/) — **82 / 100**
+- **Plain English:** Repeatedly reversing $k$ bits and adding $1$ sweeps **all** $2^k$ states in one cycle iff $k$ is odd, but collapses to a tiny square-root-length loop ($2^{m+2} - 1$) for every even $k = 2(m+1)$.
+- **For Mathematicians:** Complete odd/even Hamiltonian-cycle dichotomy for $f _ k(x) = (\mathrm{bitrev} _ k(x) + 1) \bmod 2^k$ proved via an exact $3/4/5$-step $k \to k + 2$ return-map renormalization law on the slice $(0, m, 0)$.
+- **Prior art & stack:** Bit-reversal is standard in radix-2 FFT / Van der Corput constructions; no prior proof of this parity dichotomy or return-map law found in the literature or OEIS. Lean `v4.34.1` / pure `Init` (`propext`, `Classical.choice`, `Quot.sound`).
+
+### 5. [`carry-determinants/`](carry-determinants/) — **82 / 100**
+- **Plain English:** Mixed-radix addition carry tables have nonzero determinant iff $n - 1$ uses only extremal digits (a Cantor-set pattern), and factor cleanly into products unifying Kummer $p$-adic and Thue–Morse determinants.
+- **For Mathematicians:** Cantor extremal-digit `iff` non-vanishing characterization and division-free multivariate mixed-radix Hankel/carry factorizations over arbitrary commutative rings $R$, with corollaries for `(i + j) ^^^ i ^^^ j`, $v _ p\binom{i+j}{i}$, weighted linear carries, and $\det((-1)^{s _ 2(i+j)}) _ {2^k} = 2^{2^k - 1}$.
+- **Prior art & stack:** Base-$2$ specializations overlap with Bacher & Chapman (2004), Bacher (2007), APWW (1998), and Sobolewski & Ulas (2026, `2607.09376`); mixed-radix Cantor characterization and multivariate exponential formulas extend them. Lean `v4.34.1` / Mathlib (`propext`, `Classical.choice`, `Quot.sound`).
+
+### 6. [`weak-bruhat-commutators/`](weak-bruhat-commutators/) — **77 / 100**
+- **Plain English:** Running stack-sort or pop-stack-sort **before** $k$ bubble-sort passes always leaves cards at least as sorted as running them **after**, for every deck and every $k$.
+- **For Mathematicians:** Introduces the Bubble-Refined Order ($\preceq _ B$: value-inversion inclusion plus descent-bottom inclusion), proves $\preceq _ B$-monotonicity of $B$, and establishes all-$k$ commutators $B^k(S(xs)) \preceq _ B S(B^k(xs))$ and $B^k(P(xs)) \preceq _ B P(B^k(xs))$ with inversion and descent corollaries.
+- **Prior art & stack:** Builds on Knuth (TAOCP Vol. 3, §5.2.2), West (1990), Ungar (1982), Chung–Claesson–Dukes–Graham (2010), Albert et al. (`1008.5299`), and Defant (`2104.02675`, `2104.03215`). Lean `v4.34.1` / pure `Init` (`propext`, `Classical.choice`, `Quot.sound`).
+
+### 7. [`carry-blocks-determinants/`](carry-blocks-determinants/) — **73 / 100**
+- **Plain English:** Tables counting separate carry streaks in mixed-radix addition always have determinant $\pm 1$, alongside a plateau rule where determinants ignore the top-left corner and an exact XOR bit-length formula.
+- **For Mathematicians:** Division-free determinant formulas over arbitrary commutative rings $R$ for exponential and linear mixed-radix carry-blocks, binary Gray-code carry transitions, 0-based and 1-based plateau Hankel matrices, mixed-radix digit lengths, and shifted ultrametric matrices $(\mathrm{bitlen}(i \oplus j) + t) _ {2^k}$.
+- **Prior art & stack:** Carry-blocks build on `carry-determinants/`; `bitlen(i ^^^ j)` sits in the classical tree-distance / ultrametric / $(\mathbb{Z}/2\mathbb{Z})^k$-circulant lineage (Graham & Pollak 1971; Martínez–Michon–San Martín 1994; Nabben & Varga 1994). Lean `v4.34.1` / Mathlib (`propext`, `Classical.choice`, `Quot.sound`).
+
+### 8. [`combinatorial-inequalities/`](combinatorial-inequalities/) — **66 / 100**
+- **Plain English:** Four universal "speed limits" on stack-sorting, permutation displacement, and integer difference sets proved for every size without exception.
+- **For Mathematicians:** Four universal bounds for all $n, N \in \mathbb{N}$: $3\,\mathrm{inv}(S^2(p)) \le \mathrm{pat} _ {231}(p)$ on $\mathrm{Av}(321)$, $\mathrm{des}(S(p)) \le \mathrm{peaks}(p)$, $2\,\mathrm{inv}(p) \le \mathrm{disp2}(p) + \mathrm{des}(p)(\mathrm{des}(p) + 1)$ on $\mathrm{Av}(231)$, and $3|A - A| \le 2|2A - A| + 1$.
+- **Prior art & stack:** Adjacent to West (1990), Zeilberger (1992), Defant (`1809.03123`), Diaconis & Graham (1977), and Freiman / Ruzsa / Bukh sumset-dilate bounds. Lean `v4.34.1` / pure `Std` (`propext`, `Classical.choice`, `Quot.sound`).
+
+### 9. [`sorting-operators/`](sorting-operators/) — **61 / 100**
+- **Plain English:** One pass of stack-sort always beats or ties one pass of bubble-sort on every list, producing the exact same output whenever there is no 3-step decreasing chain.
+- **For Mathematicians:** Constructive cross-operator comparison of West stack-sort $S$ and single-pass bubble sort $B$: $\mathrm{inv}(S) \le \mathrm{inv}(B)$, $\mathrm{des}(S) \le \mathrm{des}(B)$, $S = B$ on $\mathrm{Av}(321)$ with strictness witness `[2, 1, 3, 0]`, and $\mathrm{inv}(B) \le \mathrm{pat} _ {321} + \mathrm{pat} _ {231}$.
+- **Prior art & stack:** Adjacent to West (1990), Chung–Claesson–Dukes–Graham (2010), Albert et al. (`1008.5299`), and Defant (`1809.03123`, `2104.02675`). Lean `v4.34.1` / pure `Init` (`propext`, `Quot.sound` only — no `Classical.choice`).
 
 ## Navigating the collection
 
-- Use [CONTENTS.md](CONTENTS.md) for a theorem-by-theorem map across all projects.
+- Use [CONTENTS.md](CONTENTS.md) for a theorem-by-theorem map across all 9 projects.
 - Inside each project folder:
   - Read `README.md` for its **Synthetic Score**, **For Mathematicians** summary, **For Non-Mathematicians** plain-English overview, and prior-art citations.
   - Read `Challenge.lean` (and its small definitions module) to inspect the exact statements being proved without reading any proof code.
