@@ -1,0 +1,12 @@
+name = "ternary-lop3-kulisch"
+version = "0.1.0"
+defaultTargets = ["TernaryLop3Kulisch", "Solution"]
+
+[[lean_lib]]
+name = "TernaryLop3Kulisch"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

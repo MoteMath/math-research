@@ -1,0 +1,12 @@
+name = "deltanet-wy-stability"
+version = "0.1.0"
+defaultTargets = ["DeltanetWyStability", "Solution"]
+
+[[lean_lib]]
+name = "DeltanetWyStability"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

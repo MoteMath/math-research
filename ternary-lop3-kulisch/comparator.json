@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "TernaryLop3KulischChallenge.ternary_k2_4_lop3_exact_and_lb",
+    "TernaryLop3KulischChallenge.ternary_k3_7_lop3_exact",
+    "TernaryLop3KulischChallenge.harley_seal_n7_8_lop3_exact_and_lb",
+    "TernaryLop3KulischChallenge.fp8_e4m3_exact_kulisch_49bit_int64_theorem",
+    "TernaryLop3KulischChallenge.swar64_ternary_int2_dot_zero_overflow",
+    "TernaryLop3KulischChallenge.fp8_e5m2_vs_e4m3_kulisch_width_gap"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

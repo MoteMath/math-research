@@ -1,0 +1,12 @@
+name = "fp8-e4m3-lop3-circuits"
+version = "0.1.0"
+defaultTargets = ["Fp8E4m3Lop3", "Solution"]
+
+[[lean_lib]]
+name = "Fp8E4m3Lop3"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

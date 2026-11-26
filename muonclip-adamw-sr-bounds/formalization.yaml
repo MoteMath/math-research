@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact MuonClip Pitchfork Symmetry Breaking, Low-Bit AdamW Weight-Decay Freeze Radii, SR-EMA Markov Chain, and Preconditioner Jensen Bias Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the exact
+    MuonClip pitchfork symmetry-breaking phase transition at gamma_c = 1/4, RTN logit-cap overshoot
+    bounds (289/256 in FP8-E4M3, 66049/65536 in BF16) vs universal RTZ safety, exact m-bit binary
+    floating-point AdamW weight-decay freeze radii (2^{-(m+2)}) and universal decay thresholds
+    (1/(2^{m+1}+2)), the exact 2-state SR-EMA Markov chain (zero bias, beta-independent variance,
+    lambda_2 = beta, autocorrelation inflation (1+beta)/(1-beta)), closed-form m-bit preconditioner
+    Jensen bias laws comparing SR(v_t), SR(sqrt(v_t)), and SR(1/sqrt(v_t)), and asymmetric
+    MuonClip Frobenius norm-ratio perturbation laws.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: muonclip-adamw-sr-bounds
+  license: Apache-2.0

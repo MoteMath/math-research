@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "DeltanetWyStabilityChallenge.deltanet_spectral_stability_iff",
+    "DeltanetWyStabilityChallenge.mxfp4_mxfp6_fp8_bf16_norm_blowup_and_beta_safe",
+    "DeltanetWyStabilityChallenge.wy_inverse_closed_form_and_aligned_contraction",
+    "DeltanetWyStabilityChallenge.euler_product_binomial_peak_explosion",
+    "DeltanetWyStabilityChallenge.block_schur_wy_exact_inverse"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

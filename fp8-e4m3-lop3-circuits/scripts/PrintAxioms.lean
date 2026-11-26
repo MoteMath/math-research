@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms Fp8E4m3Lop3Challenge.fp8_e4m3_rsqrt_15_lop3_exact
+#print axioms Fp8E4m3Lop3Challenge.fp8_e4m3_rsqrt_full_33_lop3_exact
+#print axioms Fp8E4m3Lop3Challenge.fp8_e4m3_activations_lop3_exact
+#print axioms Fp8E4m3Lop3Challenge.fp8_e4m3_times_e2m1_28_lop3_exact
+#print axioms Fp8E4m3Lop3Challenge.fp8_e4m3_lop3_fanin_lower_bound
+#print axioms Fp8E4m3Lop3Challenge.fp8_e4m3_exact_dyadic_value_law

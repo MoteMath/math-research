@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms TernaryLop3KulischChallenge.ternary_k2_4_lop3_exact_and_lb
+#print axioms TernaryLop3KulischChallenge.ternary_k3_7_lop3_exact
+#print axioms TernaryLop3KulischChallenge.harley_seal_n7_8_lop3_exact_and_lb
+#print axioms TernaryLop3KulischChallenge.fp8_e4m3_exact_kulisch_49bit_int64_theorem
+#print axioms TernaryLop3KulischChallenge.swar64_ternary_int2_dot_zero_overflow
+#print axioms TernaryLop3KulischChallenge.fp8_e5m2_vs_e4m3_kulisch_width_gap

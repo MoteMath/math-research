@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Gated DeltaNet & Mamba-2 Quantized-Key Stability, Chunkwise WY Inversion, Euler Binomial Explosion, and Recursive Block-Schur Exactness
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the exact spectral stability
+    characterization for Gated DeltaNet rank-1 updates, exact subnormal-inclusive OCP MXFP4 (700/431, max-fit
+    380/227) and universal m-bit normal-range quantized-key squared-norm blowup bounds and safe step-size ceilings,
+    the universal closed-form chunkwise WY inverse identity (I + L) T = I with aligned contraction vs quantized
+    exponential explosion, the exact binomial power law for aligned strictly-lower-triangular matrices proving
+    catastrophic Euler-product intermediate peaks, and universal 2x2 Block-Schur inverse exactness.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: deltanet-wy-stability
+  license: Apache-2.0

@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms MuonclipAdamwSrChallenge.muonclip_pitchfork_symmetry_breaking_exact
+#print axioms MuonclipAdamwSrChallenge.muonclip_rtn_overshoot_vs_rtz_safety
+#print axioms MuonclipAdamwSrChallenge.adamw_weight_decay_freeze_radii_exact
+#print axioms MuonclipAdamwSrChallenge.sr_ema_two_state_markov_exact
+#print axioms MuonclipAdamwSrChallenge.preconditioner_jensen_bias_exact_sqrt_vs_v
+#print axioms MuonclipAdamwSrChallenge.asymmetric_muonclip_ratio_limit_exact

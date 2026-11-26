@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MuonclipAdamwSrChallenge.muonclip_pitchfork_symmetry_breaking_exact",
+    "MuonclipAdamwSrChallenge.muonclip_rtn_overshoot_vs_rtz_safety",
+    "MuonclipAdamwSrChallenge.adamw_weight_decay_freeze_radii_exact",
+    "MuonclipAdamwSrChallenge.sr_ema_two_state_markov_exact",
+    "MuonclipAdamwSrChallenge.preconditioner_jensen_bias_exact_sqrt_vs_v",
+    "MuonclipAdamwSrChallenge.asymmetric_muonclip_ratio_limit_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

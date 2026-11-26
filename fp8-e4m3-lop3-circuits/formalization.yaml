@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: OCP FP8-E4M3FN SFU-Free & E4M3xE2M1 Zero-FP LOP3 Circuits
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of Wave 3A
+    (w3-fp8-e4m3-sfu-free) GPU-synthesized exact 0-ULP LOP3 circuits and information-theoretic
+    fan-in lower bounds on OCP FP8-E4M3FN and FP4-E2M1: a 15-LOP3 positive rsqrt circuit with
+    exact algebraic RNE certification, a 33-LOP3 full-domain rsqrt circuit, exact 0-ULP LOP3
+    DAGs for exp (67 LOP3), gelu (82 LOP3, tight 1-LOP3 y6), and silu (93 LOP3, tight 0-LOP3 y7),
+    a 28-LOP3 zero-FP E4M3xE2M1 exact aligned product circuit verified across all 4,096 pairs,
+    a universal LOP3 DAG fan-in and depth lower bound, and the exact OCP FP8-E4M3FN dyadic value law.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: fp8-e4m3-lop3-circuits
+  license: Apache-2.0

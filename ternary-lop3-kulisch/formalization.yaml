@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Minimal-LOP3 Ternary & Harley-Seal Counters, SWAR64 Zero-Carry-Bleed & Exact FP8 Kulisch Accumulation
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of Wave 4A
+    GPU-synthesized LOP3 parallel/ternary counters, SWAR64 zero-carry-bleed packing laws,
+    and exact OCP FP8-E4M3 vs FP8-E5M2 Kulisch accumulator bit-width theorems: a tight
+    4-LOP3 K=2 balanced-ternary counter with an exact >= 4 general-DAG lower bound, a
+    7-LOP3 depth-3 K=3 balanced-ternary counter with a >= 5 general-DAG lower bound, an
+    8-LOP3 depth-3 N=7 Harley-Seal 7->3 compressor with >= 5 DAG and >= 4 carry-bit lower
+    bounds, the exact 37-bit/49-bit int64 OCP FP8-E4M3 Kulisch accumulation theorem
+    (exact up to K <= 175,304,904), exact SWAR64 ternary (P=6, S=10, L<=255) and INT2
+    (P=5, S=12, L<=455) zero-carry-bleed and tightness laws, and the 28-bit OCP FP8-E5M2
+    vs FP8-E4M3 Kulisch width-gap theorem proving single-int64 exact accumulation is
+    impossible for E5M2 even at K=1.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: ternary-lop3-kulisch
+  license: Apache-2.0

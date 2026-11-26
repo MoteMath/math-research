@@ -1,0 +1,6 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages": [],
+ "name": "«fp8-e4m3-lop3-circuits»",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}
