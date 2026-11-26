@@ -496,3 +496,119 @@ All statements are in [`paley32-mxfp4-outliers/Challenge.lean`](paley32-mxfp4-ou
 | `hall16_five_classes_orthogonality_and_k4_k8_duality` | `Paley32Mxfp4.Hall16Bent` | Complete Hall-16 Classes I–V exact `k = 4` (`140, 76, 44, 28, 28`) vs `k = 8` (`30, 54, 90, 114, 156`) duality separation. |
 | `bent_diagonal_n16_anti_resonance_exact` | `Paley32Mxfp4.Hall16Bent` | Explicit 4-variable bent diagonal (`0x356`) orthogonality + flattening `80 / 140` Sylvester-16 affine 2-planes to exact PAPR `= 1`. |
 | `mxfp4_e8m0_bulk_crush_threshold_exact` | `Paley32Mxfp4.UniversalBounds` | Universal OCP MXFP4 E8M0 bulk-crush threshold $k^2 M^2 > 576(B - k)$ and Hybrid $k$-Split bit-budget dominance over MXFP6. |
+
+## 39. [`mxfp4-nvfp4-opt-clipping/`](mxfp4-nvfp4-opt-clipping/)
+
+All statements are in [`mxfp4-nvfp4-opt-clipping/Challenge.lean`](mxfp4-nvfp4-opt-clipping/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxfp4-nvfp4-opt-clipping/Mxfp4OptClipping/Defs.lean`](mxfp4-nvfp4-opt-clipping/Mxfp4OptClipping/Defs.lean). See [`mxfp4-nvfp4-opt-clipping/README.md`](mxfp4-nvfp4-opt-clipping/README.md) for the optimal `E8M0`/`E4M3` clipping, never-drop-two-exponents, and `-0.0` repurposing proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `mxfp4_e8m0_scale_down_piecewise_linear_crossover` | `Mxfp4OptClipping.Mxfp4E8M0` | Exact piecewise-linear `E8M0` scale-down gain $\Phi(M) \in \{0, 2M - 7, 6M - 27\}$ and universal block `iff`. |
+| `mxfp4_opt_e8m0_all_b_ef21_three_regime_law` | `Mxfp4OptClipping.Mxfp4E8M0` | Universal all-$B$ 3-regime optimal-`E8M0` EF21 law with tight witnesses (`47/431` at $B = 32$, `23/151` at $B = 64$, `1/5` at $B = 145$). |
+| `nvfp4_ceil_vs_nearest_e4m3_all_b_ef21_exact` | `Mxfp4OptClipping.Nvfp4E4M3` | Exact all-$B$ `NVFP4` ceil-vs-nearest `E4M3` EF21 laws (`199/4231` vs `151/4759` at $B = 16$, $u = 5$ transitions at $B = 12, 20$). |
+| `nvfp4_opt_e4m3_b16_and_b1_synergy_exact` | `Mxfp4OptClipping.Nvfp4E4M3` | Optimal `NVFP4` `E4M3` contraction `23/887` at $B = 16$ ($\lambda = 428/887$) and `1/625` at $B = 1$ ($s = 13/8$ synergy). |
+| `mxfp4_opt_e8m0_never_drops_two_exponents` | `Mxfp4OptClipping.Mxfp4E8M0` | Exact inequality $(3 - 6s)(2M - 3 - 6s) \ge 3M - 27/4 > 9/4$ proving optimal `E8M0` never drops two exponents. |
+| `e2m1_neg_zero_repurposing_exact_gain` | `Mxfp4OptClipping.E2M1NegZero` | Exact `-0.0` repurposing laws ($c = 8 	o 47/431$, $c = 1/4 	o 95/1631$ with $B = 33, 49$ transitions, $c = 5 	o 1/49$ at $B = 1$). |
+
+## 40. [`smoothquant-dyadic-minimax/`](smoothquant-dyadic-minimax/)
+
+All statements are in [`smoothquant-dyadic-minimax/Challenge.lean`](smoothquant-dyadic-minimax/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`smoothquant-dyadic-minimax/SmoothquantDyadic/Defs.lean`](smoothquant-dyadic-minimax/SmoothquantDyadic/Defs.lean). See [`smoothquant-dyadic-minimax/README.md`](smoothquant-dyadic-minimax/README.md) for the asymmetric AM-GM, dyadic minimax, and SmoothQuant–Hadamard proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `smoothquant_asymmetric_amgm_optimal_scale` | `SmoothquantDyadic.AmGmScale` | Exact asymmetric AM-GM optimal SmoothQuant migration scale over $\mathbb{Q}$. |
+| `dyadic_smoothquant_perchannel_l2_5_over_4_sharp` | `SmoothquantDyadic.DyadicMinimax` | Sharp `5/4` ($+25\%$) per-channel dyadic power-of-two rounding penalty in $L _ 2$ with exact attainment. |
+| `dyadic_smoothquant_perchannel_l1_9_over_8_sharp` | `SmoothquantDyadic.DyadicMinimax` | Sharp `9/8` ($+12.5\%$) per-channel dyadic power-of-two rounding penalty in $L _ 1$ with exact attainment. |
+| `dyadic_smoothquant_pertensor_5_2_vs_phase_shift_3_2` | `SmoothquantDyadic.DyadicMinimax` | Exact per-tensor dyadic penalty reduction from `5/2` (naive) to `3/2` (phase-shifted). |
+| `smoothquant_hadamard_noncommutation_separation` | `SmoothquantDyadic.NonCommutation` | Exact order-of-operations separation proving SmoothQuant and Hadamard rotations fail to commute. |
+| `channel_outlier_coupling_paradox_exact` | `SmoothquantDyadic.NonCommutation` | Exact channel-outlier coupling paradox showing simultaneous weight/activation spike tradeoffs. |
+
+## 41. [`flashattn-bwd-signflip/`](flashattn-bwd-signflip/)
+
+All statements are in [`flashattn-bwd-signflip/Challenge.lean`](flashattn-bwd-signflip/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`flashattn-bwd-signflip/FlashAttnBwdSignflip/Defs.lean`](flashattn-bwd-signflip/FlashAttnBwdSignflip/Defs.lean). See [`flashattn-bwd-signflip/README.md`](flashattn-bwd-signflip/README.md) for the spurious sign-flip, `dO · fl(O)` divergence, key-centering, and `U-E3M1` proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `softmax_jacobian_zero_sum_and_cancellation_free_identity` | `FlashAttnBwdSignflip.SoftmaxJacobian` | Exact Softmax-Jacobian zero-sum conservation and cancellation-free backward identity. |
+| `peaked_softmax_half_spurious_signflip_threshold` | `FlashAttnBwdSignflip.SignflipCliff` | Razor-sharp `50%` spurious sign-flip phase transition at tail mass $arepsilon \le 2^{-(m+2)}$ (`1/512` BF16, `1/32` FP8-E4M3, `1/16` FP8-E5M2, `1/8` U-E3M1). |
+| `direct_p_dp_midpoint_dc_leakage_exact` | `FlashAttnBwdSignflip.SignflipCliff` | Exact direct $P \cdot dP$ midpoint DC-leakage law $1/(2^{m+1} + 1)$. |
+| `flashattn_do_o_orthogonal_divergence_amplification` | `FlashAttnBwdSignflip.OrthogonalDivergence` | Exact FlashAttention $D _ i = dO \cdot \mathrm{fl}(O)$ orthogonal divergence amplification $u _ {\mathrm{fwd}} \cdot \kappa _ {\mathrm{orth}}$. |
+| `key_centering_dq_invariance_exact` | `FlashAttnBwdSignflip.OrthogonalDivergence` | Exact key-centering invariance $dQ = dS(K - ar{K})$ and backward bias elimination. |
+| `unsigned_ue3m1_vs_mxfp4_dynamic_range_16x_exact` | `FlashAttnBwdSignflip.UnsignedRange` | Exact `16×` dynamic-range advantage of unsigned `U-E3M1` over signed `MXFP4-E2M1` on nonnegative probabilities. |
+
+## 42. [`unsigned-fp4-softmax-v/`](unsigned-fp4-softmax-v/)
+
+All statements are in [`unsigned-fp4-softmax-v/Challenge.lean`](unsigned-fp4-softmax-v/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`unsigned-fp4-softmax-v/UnsignedFp4SoftmaxV/Defs.lean`](unsigned-fp4-softmax-v/UnsignedFp4SoftmaxV/Defs.lean). See [`unsigned-fp4-softmax-v/README.md`](unsigned-fp4-softmax-v/README.md) for the unsigned FP4 regime classification, XOR-VDC zero simplex drift, and `V`-centering proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `unsigned_fp4_e1m3_collapse_to_uint4` | `UnsignedFp4SoftmaxV.UnsignedFormats` | Exact collapse of unsigned `U-E1M3` onto uniform `UINT4`. |
+| `unsigned_fp4_all_b_ef21_regime_classification` | `UnsignedFp4SoftmaxV.UnsignedFormats` | Complete all-$B$ unsigned FP4 EF21 contraction regime classification. |
+| `softmax_simplex_rtn_drift_exact` | `UnsignedFp4SoftmaxV.SimplexDriftSr` | Exact RTN simplex-sum drift bounds across `U-E3M1`, `U-E2M2` (`< 25%`), and OCP `FP8-E4M3` (`127/2187 < 6%`). |
+| `stratified_xor_vdc_simplex_zero_drift` | `UnsignedFp4SoftmaxV.SimplexDriftSr` | Exact zero simplex-sum drift for pair-antithetic and zero-carry stratified XOR-VDC SR across all dyadic residues. |
+| `attention_v_centering_simplex_drift_annihilation` | `UnsignedFp4SoftmaxV.VCentering` | Exact algebraic identity annihilating first-order simplex-drift bias $\delta _ P \mu _ V \equiv 0$ via `V`-centering. |
+| `raw_v_e2m1_level_collapse_vs_centered_invariance` | `UnsignedFp4SoftmaxV.VCentering` | Raw `V` collapses to `≤ 2` signed `E2M1` levels at $|\mu|/R \ge 4$ (`15, 12, 8, 4, 2, 1`), while centered `V _ c` retains `15/15`. |
+
+## 43. [`mxfp-doublelog-ftz-law/`](mxfp-doublelog-ftz-law/)
+
+All statements are in [`mxfp-doublelog-ftz-law/Challenge.lean`](mxfp-doublelog-ftz-law/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxfp-doublelog-ftz-law/MxfpDoublelogFtz/Defs.lean`](mxfp-doublelog-ftz-law/MxfpDoublelogFtz/Defs.lean). See [`mxfp-doublelog-ftz-law/README.md`](mxfp-doublelog-ftz-law/README.md) for the universal `4^b`-cancellation double-logarithmic exponent law and FTZ hardware bifurcation proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `mxfp_e1_equals_e0_and_signed_unsigned_duality` | `MxfpDoublelogFtz.GridDuality` | Universal `E1 ≡ E0` collapse and signed–unsigned duality across all bit-widths $b$ and exponent widths $e$. |
+| `mxfp_universal_ef21_closed_form` | `MxfpDoublelogFtz.Ef21Envelopes` | Exact universal all-$(b, e, B)$ MXFP EF21 contraction closed form. |
+| `mxfp_doublelog_crossover_4b_cancellation_law` | `MxfpDoublelogFtz.DoubleLogLaw` | Exact `4^b`-cancellation crossover theorem proving optimal exponent width $e^*(B) \sim \log _ 2 \log _ 2 B$ is independent of $b$. |
+| `mxfp_e8m0_doublelog_shift_law` | `MxfpDoublelogFtz.DoubleLogLaw` | Exact OCP `E8M0` double-logarithmic shift law across all bit-widths. |
+| `mxfp_ftz_four_to_the_b_underflow_penalty` | `MxfpDoublelogFtz.FtzBifurcation` | Universal `4^b` Flush-to-Zero underflow penalty on worst-case block MSE. |
+| `mxfp_ftz_hardware_bifurcation_e4m3_vs_e2mb` | `MxfpDoublelogFtz.FtzBifurcation` | Exact hardware FTZ bifurcation separating `FP8-E4M3` from `E2M _ b` formats. |
+
+## 44. [`ssm-decay-collapse-bounds/`](ssm-decay-collapse-bounds/)
+
+All statements are in [`ssm-decay-collapse-bounds/Challenge.lean`](ssm-decay-collapse-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ssm-decay-collapse-bounds/SsmDecayCollapse/Defs.lean`](ssm-decay-collapse-bounds/SsmDecayCollapse/Defs.lean). See [`ssm-decay-collapse-bounds/README.md`](ssm-decay-collapse-bounds/README.md) for the one-ULP-per-step sequential collapse, additive swamping, and zero-multiplier shift-subtract proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `ieee_decay_stall_midpoint_exact` | `SsmDecayCollapse.IeeeRneDecay` | Universal $p \ge 1$ IEEE-754 RNE decay-stall midpoint $1 - 2^{-(p+2)}$ with exact specializations (`FP8`, `BF16`, `FP16`, `FP32`). |
+| `one_ulp_per_step_sequential_collapse` | `SsmDecayCollapse.IeeeRneDecay` | Universal 1-ULP-per-step sequential collapse $\mathrm{seqPow}(p, m \cdot 2^p) = 2^{-m}$ (BF16 half-life `128` vs `177.10`, $2^{-32}$ at $T = 4096$). |
+| `additive_swamping_exact_divergence` | `SsmDecayCollapse.AdditiveSwamping` | Exact linear additive swamping divergence $T \cdot 2^{-(p+1)}$ (`4` at $T = 1024$, `512` at $T = 131,072$ in BF16). |
+| `dyadic_shift_subtract_tight_bounds` | `SsmDecayCollapse.ShiftSubtract` | Tight asymmetric signed-integer invariant interval $[-2^R B _ {\max}, 2^R B _ {\max} + (2^R - 1)]$ with exact attainment of both endpoints. |
+| `dyadic_shift_subtract_zero_input_stall_asymmetry` | `SsmDecayCollapse.ShiftSubtract` | Under zero input, positive states $[0, 2^r - 1]$ stall permanently while every negative state strictly increases to $0$. |
+| `csd_two_tap_half_life_gap_reduction` | `SsmDecayCollapse.ShiftSubtract` | 2-tap zero-multiplier CSD shift-subtract cuts worst adjacent decay-rate ratio from `2` to `3/2` with `65,536×` range over BF16. |
+
+## 45. [`ce-lse-fp8-horizon/`](ce-lse-fp8-horizon/)
+
+All statements are in [`ce-lse-fp8-horizon/Challenge.lean`](ce-lse-fp8-horizon/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ce-lse-fp8-horizon/CeLseHorizon/Defs.lean`](ce-lse-fp8-horizon/CeLseHorizon/Defs.lean). See [`ce-lse-fp8-horizon/README.md`](ce-lse-fp8-horizon/README.md) for the `V = 1024` / `V = 131,072` FP8 conservation cliffs, FP16 loss-scale empty-window theorem, and pairwise `LogSumExp` proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `ce_gradient_zero_sum_conservation_exact` | `CeLseHorizon.CeConservation` | Exact discrete Cross-Entropy gradient zero-sum conservation $\sum (p _ v - \delta _ {v,y}) = 0$. |
+| `fp8_e4m3_dual_horizon_and_rne_overshoot_cliff` | `CeLseHorizon.Fp8Horizons` | Exact OCP `FP8-E4M3` dual horizon (`V > 512` RTZ `-15/16`, `V = 1023` RNE overshoot `+255/256`, `V = 1024` cliff to `-1`). |
+| `fp8_e5m2_128k_vocab_conservation_collapse` | `CeLseHorizon.Fp8Horizons` | Exact IEEE `FP8-E5M2` 128K vocab cliff (`V > 65536` RTZ `-7/8`, `V = 131,071` RNE `+32767/32768`, `V = 131,072` cliff to `-1`). |
+| `fp16_loss_scale_empty_window_collapse_exact` | `CeLseHorizon.Fp16LossScale` | Exact FP16 power-of-two loss-scale empty-window collapse at $2^{30} - 2^{18}$ (normal) and $2^{41} - 2^{29}$ (subnormal). |
+| `lse_naive_swamping_vs_pairwise_tree_exact` | `CeLseHorizon.LsePairwise` | Exact naive `1 + sum` and sequential `2^p t` `LogSumExp` stall vs zero-error pairwise tree `treeSum k t = 2^k t`. |
+| `label_smoothing_fp8_total_erasure_exact` | `CeLseHorizon.Fp8Horizons` | Exact 100% FP8-E4M3 and FP8-E5M2 erasure of label smoothing $arepsilon / V$ for $arepsilon \le 1/8, V \ge 131,072$. |
+
+## 46. [`allreduce-topology-xorvdc/`](allreduce-topology-xorvdc/)
+
+All statements are in [`allreduce-topology-xorvdc/Challenge.lean`](allreduce-topology-xorvdc/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`allreduce-topology-xorvdc/AllReduceXorVdc/Defs.lean`](allreduce-topology-xorvdc/AllReduceXorVdc/Defs.lean). See [`allreduce-topology-xorvdc/README.md`](allreduce-topology-xorvdc/README.md) for the Binary-Tree wipeout paradox, zero-comm cross-rank XOR-VDC `TP×` variance theorem, and BF16 residual freeze depth proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `allreduce_subulp_drift_ring_vs_tree_exact` | `AllReduceXorVdc.TopologyDrift` | Exact `(TP - 1)`-fold Ring vs Binary-Tree/Direct sub-ULP drift separation (`63×` at `TP = 64`). |
+| `allreduce_cancel_wipeout_ring_vs_tree_exact` | `AllReduceXorVdc.CancelWipeout` | Exact combinatorial wipeout laws: Ring `2/TP` vs Binary-Tree `TP/(2(TP - 1)) > 1/2` (`> 16×` worse at `TP = 64`) vs Direct `0`. |
+| `cross_rank_xor_vdc_bijection_and_exact_mse` | `AllReduceXorVdc.CrossRankXorVdc` | Top-$K$ bijection on `Fin (2^K)`, zero bias, `< 1` ULP sum error, and exact MSE scaling (`64×` vs Ind-SR, `2048×` vs RNE at `TP = 64`). |
+| `bf16_residual_stream_freeze_depth_exact` | `AllReduceXorVdc.ResidualFreeze` | Exact BF16 residual-stream freeze depth $L _ {\mathrm{freeze}}(p) = 2^{15 - 2p}$ (`32, 128, 512`) and boundary tie-to-even stall. |
+| `kahan_compensated_residual_exact_recovery` | `AllReduceXorVdc.ResidualFreeze` | Exact Kahan conservation $s _ L + c _ L = s _ 0 + \sum x _ i$ and $|c _ L| \le u / 2$ across arbitrary depth $L$. |
+| `fixed_scale_ternary_saturation_barrier` | `AllReduceXorVdc.TopologyDrift` | Identical $\pm S$ saturation across Ring, Tree, and Direct (`1×` ratio) proving dynamic rescaling is mandatory for ternary collectives. |
+
+## 47. [`fano-sparse24-perm/`](fano-sparse24-perm/)
+
+All statements are in [`fano-sparse24-perm/Challenge.lean`](fano-sparse24-perm/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`fano-sparse24-perm/FanoSparse24Perm/Defs.lean`](fano-sparse24-perm/FanoSparse24Perm/Defs.lean). See [`fano-sparse24-perm/README.md`](fano-sparse24-perm/README.md) for the Fano-plane $PG(2, 2)$ obstruction, sunflower barrier, and `4:8` vs `2:4` MXFP4 anchor-dilution proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `structured_topk_ef21_contraction_exact` | `FanoSparse24Perm.Ef21Structured` | Universal structured top-$k$ EF21 contraction $lpha(k:m) = k/m$ with tight attainment (`1/2` for `2:4, 4:8, 8:16`). |
+| `mxfp4_anchor_dilution_48_beats_24_exact` | `FanoSparse24Perm.Ef21Structured` | Universal rational Dinkelbach certificates proving `4:8 + MXFP4` (`18/37`) beats `2:4 + MXFP4` (`72/151`, gap `54/5587`). |
+| `fano_plane_sparse24_obstruction_exact` | `FanoSparse24Perm.FanoObstruction` | Constructive proof that the 7 lines of $PG(2, 2)$ form the exact minimal weight-3 `2:4`-permutation barrier ($R _ {\mathrm{crit}}(2, 3) = 7$). |
+| `sunflower_sparse24_obstruction_exact` | `FanoSparse24Perm.SunflowerObstruction` | Exact $S _ 8$ Venn-region proof that `≤ 3` weight-4 rows stay feasible while 4 sunflower rows kill all 35 ($R _ {\mathrm{crit}}(2, 4) = 4$). |
+| `order_statistic_k2k_nmse_laws_exact` | `FanoSparse24Perm.OrderStatsNmse` | Exact Uniform $(k + 2)/(4(2k + 1))$ and Rényi-Laplace (`23/288` vs `79211/1411200`, `-29.72%`) `k:2k` NMSE laws. |
