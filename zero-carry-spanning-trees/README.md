@@ -1,5 +1,23 @@
 # Zero-Carry Spanning Trees
 
+## Synthetic Score
+
+| Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **9 / 10** | **9 / 10** | **9 / 10** | **7 / 10** | **9 / 10** | **86 / 100** |
+
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): unrecorded exact spanning-tree sequence and alternating-harmonic spectrum on non-cograph mixed-radix carry-free graphs, proved over arbitrary commutative rings.*
+
+## For Mathematicians
+
+For any mixed-radix base sequence $b = (b _ 0, \dots, b _ {k-1})$ with $N = \prod _ {r < k} b _ r$, the mixed-radix zero-carry graph $G _ b$ on $\{0, \dots, N - 1\}$ connects distinct vertices $i \ne j$ whenever $d _ r(i) + d _ r(j) < b _ r$ for all $r < k$ (for $b _ r = 2$, this is the bitwise-disjoint graph `i &&& j = 0`, which contains induced $P _ 4$ for $k \ge 2$ and is therefore neither a threshold graph nor a cograph). Factoring the graph Laplacian as a Kronecker difference $L _ b = B _ {b,k}(I - W _ {b,k})$ and conjugating each 1D transition factor by the unimodular reversed Pascal matrix $(P _ b) _ {i,j} = \binom{b - 1 - i}{j}$ upper-triangularizes $W _ {b,k}$ with exact alternating-harmonic eigenvalues $\prod _ {r < k} (-1)^{d _ r(j)} / (d _ r(j) + 1) \in \mathbb{Q}$. A rank-1 perturbation preserving triangularity evaluates the Kirchhoff cofactor $\det(L _ b^{(0,0)})$ over every commutative ring $R$, specializing in base $2$ to $\tau(G _ {2^k}) = \prod _ {m=2}^k (2^m - (-1)^m)^{\binom{k}{m}}$ (weighted powers of Jacobsthal numbers).
+
+## For Non-Mathematicians
+
+Imagine labeling $2^k$ computers with $k$-bit binary IDs (like `000` through `111`) and drawing a cable between two computers whenever their binary IDs can be added together with **no carries** — meaning they never both have a `1` in the same bit position. A "spanning tree" is a minimal wiring layout that keeps every computer connected using the fewest possible cables without loops. Even though this network gets tangled and irregular as $k$ grows, we prove an exact, tiny formula for the total number of spanning trees: $3$ for $4$ computers, $243$ for $8$, $71{,}744{,}535$ for $16$, and in general an exact product of powers of numbers $2^m \pm 1$ — and the same formula works even if each digit uses a different number base.
+
+---
+
 Machine-checked Lean 4 / Mathlib formalization of the alternating-harmonic spectrum and exact Kirchhoff spanning-tree count of mixed-radix zero-carry graphs over arbitrary commutative rings.
 
 ## Main results

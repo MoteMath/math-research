@@ -1,5 +1,23 @@
 # Skew-Symmetric Thue–Morse Pfaffian Unimodularity (`skew-thue-morse-pfaffian`)
 
+## Synthetic Score
+
+| Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **9 / 10** | **9 / 10** | **8 / 10** | **7 / 10** | **9 / 10** | **84 / 100** |
+
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): unrecorded unimodular Pfaffian collapse across three consecutive shifts via half-swap involution Schur annihilation, proved over arbitrary commutative rings including characteristic $2$.*
+
+## For Mathematicians
+
+Let $A _ n^{(s)}$ be the $n \times n$ skew-symmetric Thue–Morse Hankel-sign matrix with entries $(A _ n^{(s)}) _ {i,j} = \mathrm{sgn}(j - i)\,(-1)^{s _ 2(i + j + s)}$, where $s _ 2$ is the binary digit sum. Whereas the classical symmetric Thue–Morse Hankel determinants $\det((-1)^{s _ 2(i+j)})$ grow as nontrivial powers of $2$ (Allouche–Peyrière–Wen–Wen 1998; OEIS A186026), we prove that over every commutative ring $R$ (including characteristic $2$), $\det(A _ {2m}^{(s)}) = 1$ identically for all $m \in \mathbb{N}$ and all three shifts $s \in \{0, 1, 2\}$ (sharply failing at $s = 3$, where $\det(A _ 4^{(3)}) = 9$), while $\det(A _ {2m+1}^{(s)}) = 0$ for all $s, m$. For $s \in \{0, 1\}$, the half-swap involution $J$ satisfies $J A _ {2^p} J = -A _ {2^p}$ and $J B = -B$, forcing the off-diagonal Schur term $B^T A _ {2^p}^{-1} B$ to vanish identically; for $s = 2$, an explicit inductively constructed null vector $w \in \ker(A _ {2m+1}^{(0)})$ bridges $\det(A _ {2m}^{(2)})$ to $\det(A _ {2m}^{(0)})$ via two unimodular congruences on $A _ {2m+1}^{(0)} + e _ 0 e _ 0^T$.
+
+## For Non-Mathematicians
+
+Take a grid of $+1$s and $-1$s built from the Thue–Morse sequence (a famous "fair-sharing" binary pattern where you count whether the binary digits of $i + j$ have an even or odd number of $1$s), set the main diagonal to $0$, and flip the sign on the lower-left half so the table is mirror-antisymmetric. Normally, computing the determinant of a huge $2m \times 2m$ matrix like this produces gigantic numbers. Amazingly, no matter how big the even grid is ($2 \times 2$, $100 \times 100$, or a billion by a billion), the determinant collapses to **exactly $1$** — and this stays true if you shift the pattern by $1$ or $2$ steps, before suddenly breaking at shift $3$ (where it jumps to $9$). Meanwhile, every odd-sized grid has determinant **exactly $0$**.
+
+---
+
 A complete, sorry-free Lean 4 / Mathlib formalization proving that the skew-symmetric Thue–Morse Hankel-sign matrices
 
 ```math

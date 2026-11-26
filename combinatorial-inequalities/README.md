@@ -1,5 +1,23 @@
 # Combinatorial Inequalities
 
+## Synthetic Score
+
+| Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **6 / 10** | **6 / 10** | **7 / 10** | **6 / 10** | **10 / 10** | **66 / 100** |
+
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): four crisp, universally quantified permutation and additive-set bounds in pure `Std` (zero Mathlib), closely adjacent to the West/Defant stack-sorting, Diaconis–Graham footrule, and Freiman/Ruzsa/Bukh sumset traditions.*
+
+## For Mathematicians
+
+Formalized purely in Lean 4 `Std` (zero Mathlib), this project proves four universally quantified combinatorial inequalities for all $n, N \in \mathbb{N}$: (1) the sharp factor-$3$ two-stack bound $3\,\mathrm{inv}(S^2(p)) \le \mathrm{pat} _ {231}(p)$ on $321$-avoiding permutations $p \in \mathrm{Av} _ n(321)$, where $S$ is West's stack-sorting map; (2) the descent-peak bound $\mathrm{des}(S(p)) \le \mathrm{peaks}(p)$ for all $p \in S _ n$; (3) the reverse Diaconis–Graham excess ceiling $2\,\mathrm{inv}(p) \le \mathrm{disp2}(p) + \mathrm{des}(p)(\mathrm{des}(p) + 1)$ on $\mathrm{Av} _ n(231)$; and (4) the finite-integer sumset-dilate inequality $3|A - A| \le 2|2A - A| + 1$ for normalized subsets $A \subseteq [0, N - 1]$.
+
+## For Non-Mathematicians
+
+This collection proves four universal "speed limits" on shuffling lists and combining sets of whole numbers, valid for **every** size without exception. Three of them measure how well a single-stack sorting machine cleans up a scrambled list — for instance, the number of downward steps left after one stack-sorting pass can never exceed the number of "peaks" (numbers taller than both neighbors) in the original list, and on lists without any 3-step decreasing triple, running the stack sorter twice cuts out-of-order pairs to at most one-third of the `2-3-1` patterns. The fourth shows that for any set of integers $A$, the number of distinct differences $a - b$ is tightly capped by the number of combinations $2a - b$.
+
+---
+
 Zero-Mathlib Lean 4 formalization of four universal permutation and additive-set inequalities proved for all $n, N \in \mathbb{N}$ using only Lean's `Std` library.
 
 ## Main results

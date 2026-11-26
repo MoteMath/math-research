@@ -1,5 +1,23 @@
 # Sorting Operators
 
+## Synthetic Score
+
+| Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **5 / 10** | **5 / 10** | **7 / 10** | **6 / 10** | **10 / 10** | **61 / 100** |
+
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): clean, constructive (`Init`-only, zero `Classical.choice`) cross-operator comparison between West stack-sort $S$ and single-pass bubble sort $B$, adjacent to Chung–Claesson–Dukes–Graham (2010), Albert et al. (2011), and Defant's weak-order framework.*
+
+## For Mathematicians
+
+Using only Lean 4's core `Init` library and constructive axioms (`[propext, Quot.sound]`, no `Classical.choice`), we prove five universal theorems comparing West's stack-sorting operator $S$ and single-pass bubble sort $B$ on arbitrary duplicate-free lists $xs$ of natural numbers: inversion dominance $\mathrm{inv}(S(xs)) \le \mathrm{inv}(B(xs))$, descent dominance $\mathrm{des}(S(xs)) \le \mathrm{des}(B(xs))$, exact coincidence $S(xs) = B(xs)$ on every $321$-avoiding list together with the explicit minimal strictness witness `[2, 1, 3, 0]` (which contains `321` yet satisfies $S = B$), and the quantitative pattern bound $\mathrm{inv}(B(xs)) \le \mathrm{pat} _ {321}(xs) + \mathrm{pat} _ {231}(xs)$ refining the classical characterization $B(\sigma) = \mathrm{id} \iff \sigma \in \mathrm{Av}(231, 321)$.
+
+## For Non-Mathematicians
+
+Compare two famous one-pass sorting steps on a row of distinct numbers: a single sweep of "bubble sort" (which walks left-to-right swapping any bigger item past its smaller neighbor) versus "stack sort" (which holds items on a temporary vertical stack whenever a smaller item arrives). We prove that for **any** starting list of any length, one pass of stack sort **always** beats or ties one pass of bubble sort — leaving no more out-of-order pairs and no more downward steps. Whenever the list has no 3-step downward chain (`big, medium, small`), both methods produce the **exact same output**, though `[2, 1, 3, 0]` shows they can occasionally agree even when a 3-step downward chain is present.
+
+---
+
 Zero-Mathlib (`Init`-only) Lean 4 formalization of universal cross-operator inequalities and structural identities relating West's stack-sorting operator $S$ and a single bubble-sort pass $B$ on duplicate-free lists of natural numbers. Every theorem depends only on `[propext, Quot.sound]` (no `Classical.choice`).
 
 ## Main results

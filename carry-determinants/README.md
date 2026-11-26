@@ -1,5 +1,23 @@
 # Carry Determinants
 
+## Synthetic Score
+
+| Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **7 / 10** | **8 / 10** | **10 / 10** | **8 / 10** | **9 / 10** | **82 / 100** |
+
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): maximal generality (mixed radix, multivariate, division-free over arbitrary commutative rings) and a new Cantor extremal-digit `iff` criterion, discounted honestly for base-$2$ overlap with Bacher–Chapman (2004), APWW (1998), and Sobolewski–Ulas (2026).*
+
+## For Mathematicians
+
+For any mixed-radix sequence $b : \mathbb{N} \to \mathbb{N}$ with place values $P _ r = \prod _ {j < r} b _ j$ and $N = P _ k$, we prove two central families of division-free determinant theorems over arbitrary commutative rings $R$. First, the $n \times n$ polynomial mixed-radix carry determinant $\det(X^{\sum _ r e _ r(i,j)})$ is nonzero over a nontrivial ring $R$ **if and only if** every mixed-radix digit of $n - 1$ is extremal ($0$ or $b _ r - 1$), proved via a unique place-value pairing permutation and tropical degree-uniqueness (extending base-$2$ Pascal/carry non-vanishing to general bases and mixed radices). Second, at full size $N = P _ k$, the multivariate mixed-radix multiplicative Hankel and carry matrices factor completely into explicit binomial products over $R$, yielding exact closed forms for arbitrarily weighted linear carry matrices, the Kummer $p$-adic valuation matrix $v _ p\binom{i+j}{i}$, the binary carry-word matrix $(i + j) \oplus i \oplus j$, and the power-of-two Thue–Morse Hankel determinant $2^{2^k - 1}$ as immediate specializations.
+
+## For Non-Mathematicians
+
+When you add two numbers by hand — whether in base $10$, binary, or a mixed-base system like hours/minutes/seconds — some columns generate a "carry" into the next place value. If you fill an $n \times n$ grid with how many carries occur when adding row $i$ and column $j$ (or powers of variables tracking which columns carried), two remarkable laws emerge. First, the grid's determinant is nonzero **only** when $n - 1$ is written entirely with the smallest or largest allowed digit in every position (in base $10$, digits $0$ and $9$ only — a Cantor-set pattern!). Second, at full size (like $10^k \times 10^k$ or $2^k \times 2^k$), the determinant collapses into a clean product formula that simultaneously computes famous number-theory determinants involving binomial coefficients and binary digit sums.
+
+---
+
 Machine-checked Lean 4 / Mathlib formalization of Cantor non-vanishing and exact closed-form multivariate determinant factorizations for mixed-radix Hankel and carry matrices over any commutative ring.
 
 ## Main results

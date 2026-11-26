@@ -1,5 +1,23 @@
 # Carry-Blocks, Plateau Hankel, and Ultrametric XOR Determinants
 
+## Synthetic Score
+
+| Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **6 / 10** | **7 / 10** | **9 / 10** | **7 / 10** | **9 / 10** | **73 / 100** |
+
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): division-free characteristic-independent proofs for carry-blocks unimodularity, universal plateau Hankel invariance, and ultrametric XOR bit-length matrices (the last sitting in the classical tree-distance / Walsh–Hadamard circulant lineage).*
+
+## For Mathematicians
+
+We formalize three division-free families of exact determinant evaluations valid over every commutative ring $R$ (including characteristic $2$). First, letting $\mathrm{carryBlocks} _ b(k, i, j)$ count maximal contiguous `1`-runs in the mixed-radix carry vector of $i + j$, we prove $\det(x^{\mathrm{carryBlocks} _ b(k, i, j)}) _ {0 \le i,j < P _ k} = (-1)^{\binom{P _ k - 1}{2}}(x - 1)^{P _ k - 1}$, extract linear unimodularity $\det(\mathrm{carryBlocks} _ b(k, i, j)) _ {1 \le i,j < P _ k} = (-1)^{\binom{P _ k - 1}{2}}$ over $R[X]$ without division, and deduce the binary Gray-code carry-transition determinant $(-1)^{\binom{2^k - 1}{2}} 2^{2^k - 1}$. Second, we prove universal 1-based and 0-based plateau Hankel formulas whose values depend only on two plateau constants $a, d$ and are completely invariant to all lower-index entries, yielding exact mixed-radix digit-length Hankel determinants. Third, we give a ring-universal formula for the shifted $(\mathbb{Z}/2\mathbb{Z})^k$-circulant ultrametric matrix $(\mathrm{bitlen}(i \oplus j) + t) _ {0 \le i,j < 2^k}$.
+
+## For Non-Mathematicians
+
+When you add two numbers in binary, carries often ripple in streaks (like adding `1` to `01111`, which creates one long unbroken chain of carries). If you build a table counting how many **separate carry streaks** happen when adding $i + j$, its determinant is always $+1$ or $-1$ — no matter how big the table or what mixed number bases you use! In the same project, we prove a "plateau rule" showing that if a table's entries flatten out on the right side, its determinant completely ignores almost everything in the top-left corner, and we give an exact formula for tables measuring the highest bit where two numbers $i$ and $j$ differ.
+
+---
+
 Lean 4 (Mathlib `v4.34.1`) formalization of exact closed-form determinant families valid over an arbitrary commutative ring $R$ (all proofs are division-free and hold in every characteristic).
 
 ## Main results

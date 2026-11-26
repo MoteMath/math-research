@@ -1,5 +1,23 @@
 # Weak-Bruhat Commutators
 
+## Synthetic Score
+
+| Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **7 / 10** | **8 / 10** | **8 / 10** | **7 / 10** | **10 / 10** | **77 / 100** |
+
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): introduces the Bubble-Refined Order ($\preceq _ B$) to overcome non-monotonicity of $S$ and $P$ in Right Weak Bruhat Order and prove all-$k$ iterated commutators in pure `Init`.*
+
+## For Mathematicians
+
+West's stack-sorting operator $S$ and pop-stack sorting $P$ both fail to be monotone in the Right Weak Bruhat Order $\le _ R$ (value-inversion set inclusion $\mathrm{Inv} _ {\mathrm{val}}(xs) \subseteq \mathrm{Inv} _ {\mathrm{val}}(ys)$), blocking direct inductive proofs of iterated commutator inequalities with $k$-pass bubble sort $B^k$. We introduce the **Bubble-Refined Order** $xs \preceq _ B ys \iff \mathrm{Inv} _ {\mathrm{val}}(xs) \subseteq \mathrm{Inv} _ {\mathrm{val}}(ys) \wedge \mathrm{DesBot}(xs) \subseteq \mathrm{DesBot}(ys)$, prove an exact characterization of the descent-bottom set under a bubble-sort pass ($b \in \mathrm{DesBot}(B(xs)) \iff b \in \mathrm{DesBot}(xs) \wedge \mathrm{leftInv}(xs, b) \ge 2$), establish $\preceq _ B$-monotonicity of $B$, and lift the base $k = 1$ commutator inclusions to the universal all-$k$ laws $B^k(S(xs)) \preceq _ B S(B^k(xs))$ and $B^k(P(xs)) \preceq _ B P(B^k(xs))$ for every $k \in \mathbb{N}$ and every duplicate-free list $xs$ (with immediate cardinality corollaries for inversions and descents).
+
+## For Non-Mathematicians
+
+Suppose you have a shuffled row of numbered cards and two different sorting machines: "bubble sort" (which walks down the row swapping out-of-order neighbors) and "stack sort" or "pop-stack sort" (which routes cards through a vertical stack or reverses descending runs). Does it matter which machine you run first? We prove a universal rule: running the stack machine **first** and then $k$ passes of bubble sort **always** leaves the cards at least as sorted (fewer out-of-order pairs and fewer downward steps) as running $k$ passes of bubble sort first and the stack machine second — for every starting deck and every number of passes $k$. The proof works by inventing a slightly stricter way of comparing "how scrambled" two decks are that tracks both out-of-order pairs and where drops end.
+
+---
+
 Zero-Mathlib (`Init`-only) Lean 4 formalization of the Bubble-Refined Order (`WeakBruhatLe` together with `DesBotSub`) and universal all-$k$ commutator laws for iterated bubble sort $B^k$, West's stack-sorting operator $S$, and pop-stack sorting $P$ on duplicate-free lists of natural numbers.
 
 ## Proof architecture

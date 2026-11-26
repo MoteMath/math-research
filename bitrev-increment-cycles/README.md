@@ -1,5 +1,23 @@
 # Bit-Reversal Increment Cycles (`bitrev-increment-cycles`)
 
+## Synthetic Score
+
+| Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **8 / 10** | **9 / 10** | **8 / 10** | **7 / 10** | **10 / 10** | **82 / 100** |
+
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): striking exponential odd/even phase transition proved via a $k \to k + 2$ return-map renormalization law in pure `Init` with zero Mathlib dependencies.*
+
+## For Mathematicians
+
+Consider the bijection $f _ k(x) = (\mathrm{bitrev} _ k(x) + 1) \bmod 2^k$ on $\mathbb{Z} / 2^k \mathbb{Z}$ ($k \ge 1$), the composition of the $k$-bit reversal involution with the cyclic increment $+1$. We establish a complete parity dichotomy: $f _ k$ is a single full-period cycle of length $2^k$ **if and only if** $k$ is odd, whereas for every even width $k = 2(m + 1)$ the orbit of $0$ has exact minimal period $2^{m + 2} - 1$ (quadratically shorter than $2^k$). The proof derives an exact $k \to k + 2$ first-return renormalization law on the embedded slice $(0, m, 0) = 2m$, where trajectories return in $3$, $4$, or $5$ steps; when $k$ is odd the even period $2^k$ triggers the parity-switching $5$-step transition to sweep all $2^{k+2}$ states, whereas when $k$ is even the odd period $2^{m+2} - 1$ closes via the $3$-step return without ever switching parity.
+
+## For Non-Mathematicians
+
+Take a $k$-bit binary number, reverse its bits left-to-right, add $1$ (wrapping around if it overflows $k$ bits), and repeat. Because each step is reversible, starting at $0$ will eventually loop back to $0$. You might expect the loop length to grow smoothly with $k$, or depend chaotically on $k$. Instead, there is a sharp odd-versus-even split: whenever the number of bits $k$ is **odd** ($3, 5, 7, \dots$), starting from $0$ visits **every single one** of the $2^k$ numbers before returning to $0$! Whenever $k$ is **even** ($4, 6, 8, \dots$), the loop collapses to roughly the **square root** of the space — for example, with $20$ bits (over a million numbers), $0$ returns to itself after only $2{,}047$ steps.
+
+---
+
 A complete, sorry-free, **pure-`Init` (zero Mathlib)** Lean 4 formalization of the exact parity dichotomy for the $k$-bit reversal-plus-one permutation
 
 ```math

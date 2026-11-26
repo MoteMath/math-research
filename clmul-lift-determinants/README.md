@@ -1,5 +1,23 @@
 # Carry-Less $\mathbb{F} _ 2[x]$-Lift Monomial Determinants (`clmul-lift-determinants`)
 
+## Synthetic Score
+
+| Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **9 / 10** | **10 / 10** | **9 / 10** | **7 / 10** | **9 / 10** | **88 / 100** |
+
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): high novelty and surprise for an unrecorded $\{2^k - 1, 2^k, 2^k + 1\}$ vanishing locus and exact bit-reversed Hadamard Schur collapse over arbitrary commutative rings.*
+
+## For Mathematicians
+
+Let $P _ a(x) = \sum _ {r : \mathrm{bit} _ r(a)=1} x^r \in \mathbb{F} _ 2[x]$ and let $\mathrm{lift} _ {\mathbb{Z}} : \mathbb{F} _ 2[x] \to \mathbb{Z}[t]$ lift each binary coefficient directly into $\{0, 1\} \subset \mathbb{Z}$. For the $n \times n$ symmetric polynomial matrix $(M _ n(t)) _ {i,j} = \mathrm{lift} _ {\mathbb{Z}}(P _ {2i+1} \cdot _ {\mathbb{F} _ 2[x]} P _ {2j+1})(t)$ over an arbitrary commutative ring $R$, we construct an explicit division-free elimination matrix $X _ {k,m}(t) \in R^{2^k \times m}$ whose Schur complement collapses identically to $(-2 t^{k+1}) H _ {k,m}^{\mathrm{rev}}$, a scaled leading principal submatrix of the bit-reversed Sylvester Hadamard matrix $(H _ {k,m}^{\mathrm{rev}}) _ {r,j} = (-1)^{\mathrm{popcnt} _ k(\mathrm{bitrev} _ k(r) \mathbin{\&} j)}$. This yields closed-form single-monomial determinants $\pm 2^a t^b$ at every $n \in \{2^k - 1, 2^k, 2^k + 1\}$, identical vanishing $\det(M _ n(t)) = 0$ on every gap $2^k + 2 \le n \le 2^{k+1} - 2$ over every commutative ring $R$, and a complete non-vanishing characterization over integral domains with $2 \ne 0$ and $t \ne 0$.
+
+## For Non-Mathematicians
+
+Computers can multiply binary numbers in two ways: ordinary multiplication (which carries overflow bits to the left) and "carry-less" multiplication (which simply forgets all carries, a core operation built into modern CPUs for encryption and error-correcting codes). If you make an $n \times n$ multiplication table of odd numbers using carry-less multiplication and compute its determinant (a single summary number measuring how independent the table's rows are), you might expect messy, unpredictable values. Instead, the determinant is **almost always zero** — except when the table size $n$ is right next to a power of $2$ ($2^k - 1$, $2^k$, or $2^k + 1$, like $7, 8, 9$ or $15, 16, 17$), where it snaps into an exact power of $2$! Even more surprisingly, the hidden reason is a bit-reversed checkerboard pattern (a Hadamard matrix) buried inside the table.
+
+---
+
 A complete, sorry-free Lean 4 / Mathlib formalization proving that the odd carry-less multiplication (`CLMUL`) $\{0, 1\}$-lift polynomial matrix
 
 ```math
