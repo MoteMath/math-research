@@ -1,0 +1,7 @@
+import Solution
+
+#print axioms BinaryLynessChallenge.feistelStep_iter_six_of_even_parity
+#print axioms BinaryLynessChallenge.feistelStep_iter_twelve_of_odd_parity
+#print axioms BinaryLynessChallenge.lynessStep_pow_two_period_six
+#print axioms BinaryLynessChallenge.lynessStep_period_six_iff
+#print axioms BinaryLynessChallenge.orLynessStep_pow_two_period_twelve

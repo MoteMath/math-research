@@ -1,0 +1,12 @@
+name = "ArxFibonacciIsospectrality"
+version = "0.1.0"
+defaultTargets = ["ArxFibonacciIsospectrality", "Solution"]
+
+[[lean_lib]]
+name = "ArxFibonacciIsospectrality"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

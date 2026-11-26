@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ArxFibonacciChallenge.xor_add_pow_two_mod",
+    "ArxFibonacciChallenge.arxFibStep_fixed_point_iff",
+    "ArxFibonacciChallenge.arxFibStep_exact_minPeriod",
+    "ArxFibonacciChallenge.arxFibStep_isospectral_bijection",
+    "ArxFibonacciChallenge.arxFibStep3_breaks_isospectrality"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BinaryLynessChallenge.feistelStep_iter_six_of_even_parity",
+    "BinaryLynessChallenge.feistelStep_iter_twelve_of_odd_parity",
+    "BinaryLynessChallenge.lynessStep_pow_two_period_six",
+    "BinaryLynessChallenge.lynessStep_period_six_iff",
+    "BinaryLynessChallenge.orLynessStep_pow_two_period_twelve"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

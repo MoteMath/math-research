@@ -1,0 +1,12 @@
+name = "binary-lyness-periods"
+version = "0.1.0"
+defaultTargets = ["BinaryLynessPeriods", "Solution"]
+
+[[lean_lib]]
+name = "BinaryLynessPeriods"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

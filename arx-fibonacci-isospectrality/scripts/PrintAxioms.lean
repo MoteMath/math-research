@@ -1,0 +1,7 @@
+import Solution
+
+#print axioms ArxFibonacciChallenge.xor_add_pow_two_mod
+#print axioms ArxFibonacciChallenge.arxFibStep_fixed_point_iff
+#print axioms ArxFibonacciChallenge.arxFibStep_exact_minPeriod
+#print axioms ArxFibonacciChallenge.arxFibStep_isospectral_bijection
+#print axioms ArxFibonacciChallenge.arxFibStep3_breaks_isospectrality

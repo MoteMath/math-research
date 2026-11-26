@@ -1,0 +1,13 @@
+name: arx-fibonacci-isospectrality
+version: "0.1.0"
+lean_toolchain: leanprover/lean4:v4.34.1
+dependencies: []
+challenge_module: Challenge
+solution_module: Solution
+description: >-
+  Pure Lean 4 Init formalization proving that the XOR-keyed modular ARX Fibonacci map
+  G_{c,m}(x, y) = (y mod 2^m, (x + (y ^^^ c)) mod 2^m) has an exact key-independent
+  cycle spectrum for every m >= 1 and every key c, via an exact finite-level 2-adic
+  perturbation law, closed-form minimal period formula 3 * 2^(m - 1 - r0), and
+  period-preserving involution (x, y) |-> (x ^^^ c, y ^^^ c), together with an explicit
+  contrast witness showing the 3*x variant breaks key-invariance.

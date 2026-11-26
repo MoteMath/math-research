@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Binary Lyness Periods — exact power-of-two period-6 and period-12 dichotomies for XOR-addition Feistel recurrences
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving that the nonlinear
+    binary Feistel recurrence F_c(x, y) = (y, x ^^^ (y + c)) on unbounded N x N has universal period 6
+    if and only if c = 0 or c = 2^r, together with general even-carry (period 6) and odd-carry (period 12)
+    carry-renormalization theorems and the period-12 bitwise-OR twin H_{2^r}(x, y) = (y, x ^^^ (y ||| (y + 2^r))).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: binary-lyness-periods
+  license: Apache-2.0
