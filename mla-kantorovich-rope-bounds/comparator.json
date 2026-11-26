@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MlaKantorovichRopeChallenge.kantorovich_bilinear_spectral_leakage_exact",
+    "MlaKantorovichRopeChallenge.absorbed_kv_gl_invariance_exact",
+    "MlaKantorovichRopeChallenge.decoupled_nope_rope_256_85_crossover_exact",
+    "MlaKantorovichRopeChallenge.parseval_tight_frame_multihead_interference_cap",
+    "MlaKantorovichRopeChallenge.pythagorean_1105_multi_angle_rope_exact",
+    "MlaKantorovichRopeChallenge.subbyte_mla_memory_compression_ratios_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

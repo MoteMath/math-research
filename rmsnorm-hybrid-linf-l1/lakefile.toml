@@ -1,0 +1,12 @@
+name = "rmsnorm-hybrid-linf-l1"
+version = "0.1.0"
+defaultTargets = ["RmsnormHybridLinfL1", "Solution"]
+
+[[lean_lib]]
+name = "RmsnormHybridLinfL1"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

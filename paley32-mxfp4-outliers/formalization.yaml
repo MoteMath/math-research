@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Paley-32 Zero-Subgroup-Collapse, Hall-16 Duality, Bent Anti-Resonance, and OCP MXFP4 Outlier Bounds
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving:
+    (1) the universal real-orthogonal k-sparse PAPR lower bound k/n and Hadamard flatness equality
+    characterization; (2) Paley-32 vs Sylvester-32 orthogonality and exhaustive k=4 zero-subgroup-collapse
+    (Paley-32 max c4 = 5 vs Sylvester-32 1,240 affine 2-planes with c4 = 8); (3) universal k=8
+    zero-collapse and exact 49/64 (-23.44%) fourth-moment reduction (12,544 vs 16,384) for Paley-32;
+    (4) Hall-16 Classes I-V orthogonality, k=4 closed-quadruple counts (140, 76, 44, 28, 28), and
+    k=8 double-peak-8 duality separation (30, 54, 90, 114, 156); (5) 4-variable bent diagonal
+    anti-resonance flattening 80 of 140 Sylvester-16 affine 2-planes to exact PAPR = 1; and
+    (6) the exact OCP MXFP4 E8M0 bulk-crush threshold and Hybrid k-Split bit-budget dominance over MXFP6.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: paley32-mxfp4-outliers
+  license: Apache-2.0

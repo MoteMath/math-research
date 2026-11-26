@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms Paley32Mxfp4Challenge.universal_orthogonal_k_sparse_papr_lower_bound
+#print axioms Paley32Mxfp4Challenge.paley32_orthogonality_and_zero_k4_collapse
+#print axioms Paley32Mxfp4Challenge.paley32_vs_sylvester32_k8_l4_reduction
+#print axioms Paley32Mxfp4Challenge.hall16_five_classes_orthogonality_and_k4_k8_duality
+#print axioms Paley32Mxfp4Challenge.bent_diagonal_n16_anti_resonance_exact
+#print axioms Paley32Mxfp4Challenge.mxfp4_e8m0_bulk_crush_threshold_exact

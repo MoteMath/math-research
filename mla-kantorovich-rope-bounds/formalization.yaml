@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Kantorovich-Hadamard MLA Preconditioning, Decoupled NoPE+RoPE Mixed-Precision Crossovers, Parseval Multi-Head Interference Caps, and Pythagorean R=1105 RoPE Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    algebraic laws governing DeepSeek-style Multi-Head Latent Attention (MLA) and RoPE quantization:
+    universal bilinear Kantorovich spectral leakage ((kappa + 1/kappa)^2 / 4) vs zero-FLOP diagonal
+    balancing, exact GL(d_c) absorbed-KV attention logit invariance, the exact 256/85 decoupled
+    NoPE+RoPE mixed-precision bit-allocation crossover ((3,8) vs (4,4)), Parseval tight-frame
+    H-head interference contraction (d_c^2 independent of H, exact Hx contraction vs coherent MLA)
+    with constructive Walsh-Hadamard witnesses for H in {8, 16, 32, 64}, Brahmagupta-Fibonacci
+    exact Pythagorean R = 1105 multi-angle RoPE rotations, and exact sub-byte MLA KV-cache
+    compression ratios (1024/3x vs BF16 MHA-128 and 6x vs BF16 MLA).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mla-kantorovich-rope-bounds
+  license: Apache-2.0

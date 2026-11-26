@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact L_inf + L1 Hybrid Norm Minimax Law, Low-Precision RMSNorm Swamping Horizons, and 1-Pass vs 2-Pass LayerNorm Variance Stability
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the exact
+    upper and lower rational envelopes for the L_inf + L1 hybrid norm H_{alpha,beta}(x) relative
+    to RMS(x), the universal d^{1/4} minimax optimality law kappa*(d) = sqrt((sqrt(d)+1)/2) with
+    no-O(1)-distortion lower bound, exact pure-bitshift dyadic instantiations for Llama-3 8B
+    (d=4096, kappa^2=65/2) and 70B (d=8192, kappa^2=97/2), exact IEEE-754 RNE sum(x_i^2) swamping
+    horizons S_swamp(p)=2^p across BF16/FP16/FP8-E4M3/FP8-E5M2/MXFP4-E2M1, bit-exact 1-pass
+    LayerNorm negative-variance witnesses in BF16 (c=243/16), FP16 (c=1047/16), FP8-E4M3 (c=13),
+    and FP8-E5M2 (c=8), and unconditional non-negativity of 2-pass shifted-mean variance in exact
+    rational and every monotonic non-negative rounding arithmetic.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: rmsnorm-hybrid-linf-l1
+  license: Apache-2.0

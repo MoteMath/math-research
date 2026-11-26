@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Mxfp8FrontierChallenge.fp8_e1m6_collapse_to_int8_exact",
+    "Mxfp8FrontierChallenge.mxfp8_e4m3_vs_e5m2_all_b_crossover_exact",
+    "Mxfp8FrontierChallenge.mxfp8_e8m0_complete_five_regime_frontier",
+    "Mxfp8FrontierChallenge.deepseek_fp32_scale_complete_five_regime_frontier",
+    "Mxfp8FrontierChallenge.delayed_scaling_spike_clipping_crossover_exact",
+    "Mxfp8FrontierChallenge.fp8_block_scaling_bias_invariance_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Paley32Mxfp4Challenge.universal_orthogonal_k_sparse_papr_lower_bound",
+    "Paley32Mxfp4Challenge.paley32_orthogonality_and_zero_k4_collapse",
+    "Paley32Mxfp4Challenge.paley32_vs_sylvester32_k8_l4_reduction",
+    "Paley32Mxfp4Challenge.hall16_five_classes_orthogonality_and_k4_k8_duality",
+    "Paley32Mxfp4Challenge.bent_diagonal_n16_anti_resonance_exact",
+    "Paley32Mxfp4Challenge.mxfp4_e8m0_bulk_crush_threshold_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

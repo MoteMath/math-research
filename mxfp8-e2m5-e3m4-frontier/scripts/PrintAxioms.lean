@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms Mxfp8FrontierChallenge.fp8_e1m6_collapse_to_int8_exact
+#print axioms Mxfp8FrontierChallenge.mxfp8_e4m3_vs_e5m2_all_b_crossover_exact
+#print axioms Mxfp8FrontierChallenge.mxfp8_e8m0_complete_five_regime_frontier
+#print axioms Mxfp8FrontierChallenge.deepseek_fp32_scale_complete_five_regime_frontier
+#print axioms Mxfp8FrontierChallenge.delayed_scaling_spike_clipping_crossover_exact
+#print axioms Mxfp8FrontierChallenge.fp8_block_scaling_bias_invariance_exact

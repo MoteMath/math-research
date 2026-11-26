@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Universal All-B MXFP8 E2M5/E3M4 Microscaling Frontier, E4M3 vs E5M2 Crossover, and Delayed-Scaling Spike-Clipping Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the exact
+    bit-level collapse of IEEE-subnormal E1M6_FN onto E0M7 (INT8), universal all-B EF21
+    contraction laws and exact E4M3_OCP vs E5M2_IEEE crossovers (B* = 637,534,211 under E8M0
+    and B* = 2,630,667,468 under continuous DeepSeek-V3 FP32 scaling), the complete five-regime
+    globally optimal E_a M_b microscaling frontiers (INT8 -> E2M5 -> E3M4 -> E4M3 -> E5M2) under
+    both E8M0 and continuous FP32 scaling, the exact delayed-scaling spike-clipping phase
+    transition rho*(M, m) = ((2^{m+1} + 1) / 2^{m+1}) * 2^M (9/8 * 2^M for E4M3 vs E5M2), and
+    exact block-scaled exponent-bias invariance vs the 4x per-bit delayed-scaling headroom tax.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mxfp8-e2m5-e3m4-frontier
+  license: Apache-2.0

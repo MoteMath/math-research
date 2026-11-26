@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "KroneckerCyclicFrustrationChallenge.sum_of_two_kronecker_optimal_cond_exact",
+    "KroneckerCyclicFrustrationChallenge.multihead_two_head_zero_frustration_and_kfac_gap",
+    "KroneckerCyclicFrustrationChallenge.multihead_cyclic_frustration_karp_cycle_bound",
+    "KroneckerCyclicFrustrationChallenge.monarch_coherence_factorization_and_lower_bound",
+    "KroneckerCyclicFrustrationChallenge.octonion_sparse_e2m1_monarch_blocks_exact",
+    "KroneckerCyclicFrustrationChallenge.kfac_cross_scale_suboptimality_witness"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

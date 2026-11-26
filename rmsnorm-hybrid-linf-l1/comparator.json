@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "RmsnormHybridLinfL1Challenge.hybrid_linf_l1_exact_upper_and_lower_envelopes",
+    "RmsnormHybridLinfL1Challenge.hybrid_linf_l1_minimax_d_quarter_law",
+    "RmsnormHybridLinfL1Challenge.dyadic_llama3_d4096_hybrid_norm_exact",
+    "RmsnormHybridLinfL1Challenge.bf16_fp16_fp8_sumsq_swamping_horizon_exact",
+    "RmsnormHybridLinfL1Challenge.bf16_fp16_onepass_layernorm_negative_variance_exact",
+    "RmsnormHybridLinfL1Challenge.twopass_shifted_mean_variance_nonneg_universal"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

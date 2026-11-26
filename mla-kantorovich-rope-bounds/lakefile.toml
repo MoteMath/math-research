@@ -1,0 +1,12 @@
+name = "mla-kantorovich-rope-bounds"
+version = "0.1.0"
+defaultTargets = ["MlaKantorovichRope", "Solution"]
+
+[[lean_lib]]
+name = "MlaKantorovichRope"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

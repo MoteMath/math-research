@@ -431,3 +431,68 @@ All statements are in [`ring-attention-kulisch-bounds/Challenge.lean`](ring-atte
 | `descending_mi_phase_transition_paradox` | `RingAttnKulisch.DescParadox` | Constructive separation showing `DESC` beats `L2R` on narrow spans (0 rescales) yet suffers catastrophic swamping worse than `ASC`/`TREE` on sinks. |
 | `fixed_point_kulisch_topology_partition_invariance` | `RingAttnKulisch.KulischInvariance` | Universal permutation/tree/partition invariance of fixed-point Kulisch accumulation + exact width $W _ {\mathrm{inv}}(P, p) = p + 2\lceil\log _ 2 P\rceil + 4$ (`int32` FP8, `int64` FP16). |
 | `fixed_point_sink_cliff_elimination` | `RingAttnKulisch.KulischInvariance` | Exact `F = p + log _ 2 P` fractional bit threshold eliminating the bulk-vanishing cliff across all $P = 2^k$. |
+
+## 34. [`mxfp8-e2m5-e3m4-frontier/`](mxfp8-e2m5-e3m4-frontier/)
+
+All statements are in [`mxfp8-e2m5-e3m4-frontier/Challenge.lean`](mxfp8-e2m5-e3m4-frontier/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxfp8-e2m5-e3m4-frontier/Mxfp8Frontier/Defs.lean`](mxfp8-e2m5-e3m4-frontier/Mxfp8Frontier/Defs.lean). See [`mxfp8-e2m5-e3m4-frontier/README.md`](mxfp8-e2m5-e3m4-frontier/README.md) for the complete 5-regime `E _ a M _ b` microscaling frontiers and delayed-scaling crossovers.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `fp8_e1m6_collapse_to_int8_exact` | `Mxfp8Frontier.GridCollapse` | Universal `E1 M _ m ≡ E0 M _ {m+1}` grid collapse specializing to `E1M6_FN ≡ INT8` and the strict 5-format chain. |
+| `mxfp8_e4m3_vs_e5m2_all_b_crossover_exact` | `Mxfp8Frontier.E4M3vsE5M2` | Exact all-$B$ `E4M3_OCP` vs `E5M2_IEEE` crossovers: $B^* = 637{,}534{,}211$ (E8M0) and $B^* = 2{,}630{,}667{,}468$ (DeepSeek-V3 FP32). |
+| `mxfp8_e8m0_complete_five_regime_frontier` | `Mxfp8Frontier.FiveRegimes` | Complete OCP E8M0 frontier: `INT8 [1..4] → E2M5 [5..47] → E3M4 [48..11,379] → E4M3 [11,380..637M] → E5M2`. |
+| `deepseek_fp32_scale_complete_five_regime_frontier` | `Mxfp8Frontier.FiveRegimes` | Complete DeepSeek-V3 FP32-scale frontier: `INT8 [2..12] → E2M5 [13..230]` (`> 6.77x` at `1×128`) `→ E3M4 [231..54,668]` (`> 3.32x` at `128×128`). |
+| `delayed_scaling_spike_clipping_crossover_exact` | `Mxfp8Frontier.DelayedScaling` | Universal delayed-scaling spike crossover $\rho^*(M, m) = \frac{2^{m+1} + 1}{2^{m+1}} \cdot 2^M$, exact `(9/8) * 2^M` for `E4M3` vs `E5M2`. |
+| `fp8_block_scaling_bias_invariance_exact` | `Mxfp8Frontier.DelayedScaling` | Exact list-level block-scaled exponent-bias invariance vs `4×` per-bit delayed-scaling headroom capacity tax. |
+
+## 35. [`kronecker-cyclic-frustration/`](kronecker-cyclic-frustration/)
+
+All statements are in [`kronecker-cyclic-frustration/Challenge.lean`](kronecker-cyclic-frustration/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`kronecker-cyclic-frustration/KroneckerCyclicFrustration/Defs.lean`](kronecker-cyclic-frustration/KroneckerCyclicFrustration/Defs.lean). See [`kronecker-cyclic-frustration/README.md`](kronecker-cyclic-frustration/README.md) for the Sum-of-2-Kronecker, Karp cyclic frustration, and Octonion Monarch proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `sum_of_two_kronecker_optimal_cond_exact` | `KroneckerCyclicFrustration.SumTwoKronecker` | Universal Sum-of-2-Kronecker lower bound $\kappa^2 \ge \frac{(1 + \alpha _ {\max}\beta _ {\max})(1 + \alpha _ {\min}\beta _ {\min})}{(1 + \alpha _ {\max}\beta _ {\min})(1 + \alpha _ {\min}\beta _ {\max})}$ attained by Corner-Geometric-Mean. |
+| `multihead_two_head_zero_frustration_and_kfac_gap` | `KroneckerCyclicFrustration.MultiHeadFrustration` | Universal 2-head zero-frustration ($\sqrt{M}$) vs K-FAC quadratic penalty $(1 + M)^2 / (4M)$. |
+| `multihead_cyclic_frustration_karp_cycle_bound` | `KroneckerCyclicFrustration.MultiHeadFrustration` | Universal Karp multiplicative cycle-product lower bound $\le \kappa^L$ and sharp $2(H - 1)/H \in \{1, 4/3, 3/2, 7/4\}$ cyclic frustration separation. |
+| `monarch_coherence_factorization_and_lower_bound` | `KroneckerCyclicFrustration.MonarchCoherence` | Universal 2-stage Monarch coherence factorization $\mu^2(L P R) = \mu^2(A)\mu^2(B) \ge (\mathrm{nnz}(A)\mathrm{nnz}(B))^{-1}$. |
+| `octonion_sparse_e2m1_monarch_blocks_exact` | `KroneckerCyclicFrustration.MonarchCoherence` | Exact orthogonality, row sparsity, optimal coherence, and zero-E2M1-error membership for sparse Quaternion ($4 \times 4$) and Octonion ($8 \times 8$) Monarch blocks. |
+| `kfac_cross_scale_suboptimality_witness` | `KroneckerCyclicFrustration.SumTwoKronecker` | Explicit exact rational cross-scale witness proving `> 1,000x` $\kappa^2$ suboptimality of K-FAC vs Corner-Geometric-Mean. |
+
+## 36. [`mla-kantorovich-rope-bounds/`](mla-kantorovich-rope-bounds/)
+
+All statements are in [`mla-kantorovich-rope-bounds/Challenge.lean`](mla-kantorovich-rope-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mla-kantorovich-rope-bounds/MlaKantorovichRope/Defs.lean`](mla-kantorovich-rope-bounds/MlaKantorovichRope/Defs.lean). See [`mla-kantorovich-rope-bounds/README.md`](mla-kantorovich-rope-bounds/README.md) for the Kantorovich-Hadamard, NoPE+RoPE crossover, Parseval multi-head, and $R = 1105$ RoPE proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `kantorovich_bilinear_spectral_leakage_exact` | `MlaKantorovichRope.KantorovichGL` | Universal bilinear Kantorovich leakage bound $(\kappa + \kappa^{-1})^2 / 4$ with exact 2-level attainment and optimal diagonal balancing $D _ j^2 = w _ j / \gamma _ j$. |
+| `absorbed_kv_gl_invariance_exact` | `MlaKantorovichRope.KantorovichGL` | Universal zero-FLOP $\mathrm{GL}(d _ c)$ absorbed-KV attention logit invariance including orthogonal-diagonal $M = U D$. |
+| `decoupled_nope_rope_256_85_crossover_exact` | `MlaKantorovichRope.NopeRopeMemory` | Exact DeepSeek `(3, 8)` (`2048 b/tok`, `-11.1%`) vs `(4, 4)` crossover iff $\alpha _ R / \alpha _ c > 256/85$ plus universal $(d _ c, d _ R, b _ c, b _ R)$ law. |
+| `parseval_tight_frame_multihead_interference_cap` | `MlaKantorovichRope.ParsevalMultihead` | Universal Parseval / row-orthogonal Bessel $H$-head cap ($d _ c^2$ vs $H d _ c^2$) with inductive $2^k$ Walsh–Hadamard witnesses for $H \in \{8, 16, 32, 64\}$. |
+| `pythagorean_1105_multi_angle_rope_exact` | `MlaKantorovichRope.PythagoreanRoPE` | Brahmagupta–Fibonacci $R = 1105 = 5 \cdot 13 \cdot 17$ exact integer RoPE pairs with orthogonality, norm conservation, and relative-position composition. |
+| `subbyte_mla_memory_compression_ratios_exact` | `MlaKantorovichRope.NopeRopeMemory` | Exact `1024/3x` (`341.33x`) compression vs BF16 MHA-128 and `6x` vs BF16 MLA for fused `Tern512 + RoPE64_INT8`. |
+
+## 37. [`rmsnorm-hybrid-linf-l1/`](rmsnorm-hybrid-linf-l1/)
+
+All statements are in [`rmsnorm-hybrid-linf-l1/Challenge.lean`](rmsnorm-hybrid-linf-l1/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`rmsnorm-hybrid-linf-l1/RmsnormHybridLinfL1/Defs.lean`](rmsnorm-hybrid-linf-l1/RmsnormHybridLinfL1/Defs.lean). See [`rmsnorm-hybrid-linf-l1/README.md`](rmsnorm-hybrid-linf-l1/README.md) for the $\Theta(d^{1/4})$ hybrid norm minimax law, swamping horizons, and negative-variance proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `hybrid_linf_l1_exact_upper_and_lower_envelopes` | `RmsnormHybridLinfL1.HybridNorm` | Universal sharp rational upper/lower envelopes for $\alpha\|x\| _ \infty + \frac{\beta}{d}\|x\| _ 1$ relative to $\mathrm{RMS}(x)$ with exact attainment. |
+| `hybrid_linf_l1_minimax_d_quarter_law` | `RmsnormHybridLinfL1.HybridNorm` | Universal minimax identity $(2\kappa^2 - 1)^2 - d \ge 0$, unique square-dim optimum $\kappa^2 = (s + 1)/2$ iff $\beta = s\alpha$, and no-$O(1)$ lower bound. |
+| `dyadic_llama3_d4096_hybrid_norm_exact` | `RmsnormHybridLinfL1.HybridNorm` | Pure-bitshift Llama-3 8B ($d = 4096, \kappa^2 = 65/2$, `> 126x` vs `L1`) and 70B ($d = 8192, \kappa^2 = 97/2$, `> 168x` vs `L1`) witnesses. |
+| `bf16_fp16_fp8_sumsq_swamping_horizon_exact` | `RmsnormHybridLinfL1.SwampingAndNegVar` | Universal $S _ {\mathrm{swamp}}(p) = 2^p$ IEEE-754 RNE swamping threshold + exact minimal outlier witnesses across BF16, FP16, FP8-E4M3, FP8-E5M2, MXFP4. |
+| `bf16_fp16_onepass_layernorm_negative_variance_exact` | `RmsnormHybridLinfL1.SwampingAndNegVar` | Bit-exact 1-pass LayerNorm negative-variance (`NaN`) witnesses for BF16 (`0x4173`), FP16 (`0x5417`), FP8-E4M3 (`0x55`), and FP8-E5M2 (`0x48`). |
+| `twopass_shifted_mean_variance_nonneg_universal` | `RmsnormHybridLinfL1.SwampingAndNegVar` | Universal non-negativity of 2-pass shifted-mean variance in exact `Rat` and every monotonic non-negative rounding arithmetic. |
+
+## 38. [`paley32-mxfp4-outliers/`](paley32-mxfp4-outliers/)
+
+All statements are in [`paley32-mxfp4-outliers/Challenge.lean`](paley32-mxfp4-outliers/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`paley32-mxfp4-outliers/Paley32Mxfp4/Defs.lean`](paley32-mxfp4-outliers/Paley32Mxfp4/Defs.lean). See [`paley32-mxfp4-outliers/README.md`](paley32-mxfp4-outliers/README.md) for the universal PAPR bound, `AGL(1, 31)` Paley-32 proof, Hall-16 duality, and E8M0 bulk-crush proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `universal_orthogonal_k_sparse_papr_lower_bound` | `Paley32Mxfp4.UniversalBounds` | Universal real-orthogonal $k$-sparse PAPR lower bound $\ge k/n$ with Hadamard flatness `iff` ($1 \le k < n$). |
+| `paley32_orthogonality_and_zero_k4_collapse` | `Paley32Mxfp4.Paley32` | Exact `P32^T P32 = 32 I`, `1,240` Sylvester-32 `c _ 4 = 8` planes, vs exhaustive Paley-32 `maxC4 ≤ 5` over all `35,960` 4-subsets via `AGL(1, 31)`. |
+| `paley32_vs_sylvester32_k8_l4_reduction` | `Paley32Mxfp4.Paley32` | Universal Paley-32 `c _ 8 ≤ 3` and exact `49/64` fourth-moment cut (`12,544` vs `16,384`) over all `1.346B` signed 8-sparse vectors via transpose duality. |
+| `hall16_five_classes_orthogonality_and_k4_k8_duality` | `Paley32Mxfp4.Hall16Bent` | Complete Hall-16 Classes I–V exact `k = 4` (`140, 76, 44, 28, 28`) vs `k = 8` (`30, 54, 90, 114, 156`) duality separation. |
+| `bent_diagonal_n16_anti_resonance_exact` | `Paley32Mxfp4.Hall16Bent` | Explicit 4-variable bent diagonal (`0x356`) orthogonality + flattening `80 / 140` Sylvester-16 affine 2-planes to exact PAPR `= 1`. |
+| `mxfp4_e8m0_bulk_crush_threshold_exact` | `Paley32Mxfp4.UniversalBounds` | Universal OCP MXFP4 E8M0 bulk-crush threshold $k^2 M^2 > 576(B - k)$ and Hybrid $k$-Split bit-budget dominance over MXFP6. |

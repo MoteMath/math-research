@@ -1,0 +1,12 @@
+name = "kronecker-cyclic-frustration"
+version = "0.1.0"
+defaultTargets = ["KroneckerCyclicFrustration", "Solution"]
+
+[[lean_lib]]
+name = "KroneckerCyclicFrustration"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

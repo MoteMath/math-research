@@ -1,0 +1,12 @@
+name = "mxfp8-e2m5-e3m4-frontier"
+version = "0.1.0"
+defaultTargets = ["Mxfp8Frontier", "Solution"]
+
+[[lean_lib]]
+name = "Mxfp8Frontier"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
