@@ -1,0 +1,9 @@
+import Solution
+
+#print axioms SparseE2M1Challenge.walshHadamard_doubly24_factorization
+#print axioms SparseE2M1Challenge.single24_coherence_lower_bound
+#print axioms SparseE2M1Challenge.walsh_weighing_attains_coherence_bound
+#print axioms SparseE2M1Challenge.skewConference_e2m1_orthogonal
+#print axioms SparseE2M1Challenge.q32_pow2_e2m1_exact
+#print axioms SparseE2M1Challenge.q16_skew41_e2m1_exact
+#print axioms SparseE2M1Challenge.g4k_doubly24_e2m1_orthogonal

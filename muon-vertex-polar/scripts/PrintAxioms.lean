@@ -1,0 +1,9 @@
+import Solution
+
+#print axioms MuonVertexPolarChallenge.shifted_square_equiv_monomial
+#print axioms MuonVertexPolarChallenge.shifted_square_quadratic_error_at_one
+#print axioms MuonVertexPolarChallenge.noisyShiftedStep_envelope
+#print axioms MuonVertexPolarChallenge.bf16_stationary_shifted_certified
+#print axioms MuonVertexPolarChallenge.bf16_dp5_shifted_certified
+#print axioms MuonVertexPolarChallenge.fp8_pure_dp5_shifted_certified
+#print axioms MuonVertexPolarChallenge.fp8_hybrid_dp5_shifted_certified

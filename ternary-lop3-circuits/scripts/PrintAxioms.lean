@@ -1,0 +1,9 @@
+import Solution
+
+#print axioms TernaryLop3Challenge.unpack_3t5b_sound_and_surjective
+#print axioms TernaryLop3Challenge.unpack_3t5b_six_gate_lower_bound
+#print axioms TernaryLop3Challenge.unpack_5t8b_sound_and_surjective
+#print axioms TernaryLop3Challenge.unpack_5t8b_four_var_impossibility
+#print axioms TernaryLop3Challenge.ternary_int4_exact5_sound
+#print axioms TernaryLop3Challenge.ternary_fp4_exact5_sound
+#print axioms TernaryLop3Challenge.csa32_popcnt_conservation

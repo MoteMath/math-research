@@ -1,0 +1,12 @@
+name = "sparse-e2m1-rotations"
+version = "0.1.0"
+defaultTargets = ["SparseE2M1Rotations", "Solution"]
+
+[[lean_lib]]
+name = "SparseE2M1Rotations"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

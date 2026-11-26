@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Muon Vertex Polar — shifted-square rounding-error annihilation and certified BF16/FP8 polar schedules
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the shifted-square (vertex)
+    reparameterization of odd quintic polar polynomials for the Muon optimizer, proving exact algebraic
+    equivalence to monomial form, quadratic rounding-error annihilation at x = 1, a pointwise degree-5
+    adversarial rounding envelope, a Bernstein degree-5 nonnegativity certificate engine, and continuous
+    5-step worst-case trajectory confinement theorems for BF16 stationary, BF16 DP, pure FP8 E4M3 DP,
+    and hybrid FP8 DP schedules.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: muon-vertex-polar
+  license: Apache-2.0

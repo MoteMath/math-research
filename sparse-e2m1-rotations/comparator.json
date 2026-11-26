@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SparseE2M1Challenge.walshHadamard_doubly24_factorization",
+    "SparseE2M1Challenge.single24_coherence_lower_bound",
+    "SparseE2M1Challenge.walsh_weighing_attains_coherence_bound",
+    "SparseE2M1Challenge.skewConference_e2m1_orthogonal",
+    "SparseE2M1Challenge.q32_pow2_e2m1_exact",
+    "SparseE2M1Challenge.q16_skew41_e2m1_exact",
+    "SparseE2M1Challenge.g4k_doubly24_e2m1_orthogonal"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

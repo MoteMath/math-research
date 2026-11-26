@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "TernaryLop3Challenge.unpack_3t5b_sound_and_surjective",
+    "TernaryLop3Challenge.unpack_3t5b_six_gate_lower_bound",
+    "TernaryLop3Challenge.unpack_5t8b_sound_and_surjective",
+    "TernaryLop3Challenge.unpack_5t8b_four_var_impossibility",
+    "TernaryLop3Challenge.ternary_int4_exact5_sound",
+    "TernaryLop3Challenge.ternary_fp4_exact5_sound",
+    "TernaryLop3Challenge.csa32_popcnt_conservation"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

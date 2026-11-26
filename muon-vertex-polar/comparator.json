@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MuonVertexPolarChallenge.shifted_square_equiv_monomial",
+    "MuonVertexPolarChallenge.shifted_square_quadratic_error_at_one",
+    "MuonVertexPolarChallenge.noisyShiftedStep_envelope",
+    "MuonVertexPolarChallenge.bf16_stationary_shifted_certified",
+    "MuonVertexPolarChallenge.bf16_dp5_shifted_certified",
+    "MuonVertexPolarChallenge.fp8_pure_dp5_shifted_certified",
+    "MuonVertexPolarChallenge.fp8_hybrid_dp5_shifted_certified"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
