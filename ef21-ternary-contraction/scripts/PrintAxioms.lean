@@ -1,0 +1,7 @@
+import Solution
+
+#print axioms EF21TernaryChallenge.ternary_ef21_contraction_exact
+#print axioms EF21TernaryChallenge.alphaTern_harmonic_sandwich
+#print axioms EF21TernaryChallenge.mxfp4_nvfp4_ef21_contraction_universal
+#print axioms EF21TernaryChallenge.symmetric_2bit_no_zero_collapse
+#print axioms EF21TernaryChallenge.mantissa_sr_variance_law

@@ -1,0 +1,17 @@
+name = "ef21-ternary-contraction"
+version = "0.1.0"
+defaultTargets = ["EF21Ternary", "Solution"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.34.1"
+
+[[lean_lib]]
+name = "EF21Ternary"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

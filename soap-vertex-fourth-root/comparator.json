@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SoapVertexFourthRootChallenge.vertex_fourth_root_equiv_monomial",
+    "SoapVertexFourthRootChallenge.taylor2_fourth_root_vertex_exact",
+    "SoapVertexFourthRootChallenge.noisyFourthRootStep_envelope",
+    "SoapVertexFourthRootChallenge.bf16_fourth_root_dp5_certified",
+    "SoapVertexFourthRootChallenge.bf16_fourth_root_eps1e4_certified",
+    "SoapVertexFourthRootChallenge.fp8_hybrid_fourth_root_dp5_certified",
+    "SoapVertexFourthRootChallenge.fp8_pure_fourth_root_linear_dp5_certified"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

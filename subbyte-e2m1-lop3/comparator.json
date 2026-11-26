@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SubbyteE2M1Lop3Challenge.unpack_2t4b_to_e2m1_zero_lop3",
+    "SubbyteE2M1Lop3Challenge.unpack_3t5b_to_e2m1_four_lop3",
+    "SubbyteE2M1Lop3Challenge.unpack_3t5b_to_e2m1_three_gate_lower_bound",
+    "SubbyteE2M1Lop3Challenge.quinary_3w7b_five_var_impossibility",
+    "SubbyteE2M1Lop3Challenge.asymmetric_2bit_polarity_flip_exact",
+    "SubbyteE2M1Lop3Challenge.compressor_4to2_lop3_depth_inversion"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,12 @@
+name = "subbyte-e2m1-lop3"
+version = "0.1.0"
+defaultTargets = ["SubbyteE2M1Lop3", "Solution"]
+
+[[lean_lib]]
+name = "SubbyteE2M1Lop3"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

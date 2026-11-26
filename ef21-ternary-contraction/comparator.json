@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "EF21TernaryChallenge.ternary_ef21_contraction_exact",
+    "EF21TernaryChallenge.alphaTern_harmonic_sandwich",
+    "EF21TernaryChallenge.mxfp4_nvfp4_ef21_contraction_universal",
+    "EF21TernaryChallenge.symmetric_2bit_no_zero_collapse",
+    "EF21TernaryChallenge.mantissa_sr_variance_law"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
