@@ -15,7 +15,7 @@ lake env lean scripts/PrintAxioms.lean
 ## Recorded results
 
 - `lake build`: completed successfully (7 jobs); zero errors and zero warnings across `SortingOperators.*` and `Solution`.
-- `lake build Challenge`: completed with 9 expected `declaration uses 'sorry'` warnings in `Challenge.lean` only.
+- `lake build Challenge`: completed with 5 expected `declaration uses 'sorry'` warnings in `Challenge.lean` only.
 - Custom axioms (`axiom ...`) outside comments: **0**.
 - Occurrences of `sorry` outside `Challenge.lean`: **0**.
 - Axiom audit: every headline theorem uses only `[propext, Quot.sound]` (no `Classical.choice`).
@@ -23,10 +23,6 @@ lake env lean scripts/PrintAxioms.lean
 ### `#print axioms` output (`scripts/PrintAxioms.lean`), verbatim
 
 ```text
-'SortingOperatorsChallenge.inv_bubble_add_des_le_inv' depends on axioms: [propext, Quot.sound]
-'SortingOperatorsChallenge.des_bubble_le_des' depends on axioms: [propext, Quot.sound]
-'SortingOperatorsChallenge.westSort_split_max' depends on axioms: [propext, Quot.sound]
-'SortingOperatorsChallenge.bubblePass_split_max' depends on axioms: [propext, Quot.sound]
 'SortingOperatorsChallenge.inv_westSort_le_bubble' depends on axioms: [propext, Quot.sound]
 'SortingOperatorsChallenge.des_westSort_le_bubble' depends on axioms: [propext, Quot.sound]
 'SortingOperatorsChallenge.westSort_eq_bubble_of_avoids321' depends on axioms: [propext, Quot.sound]

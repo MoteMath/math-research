@@ -2,10 +2,6 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "SortingOperatorsChallenge.inv_bubble_add_des_le_inv",
-    "SortingOperatorsChallenge.des_bubble_le_des",
-    "SortingOperatorsChallenge.westSort_split_max",
-    "SortingOperatorsChallenge.bubblePass_split_max",
     "SortingOperatorsChallenge.inv_westSort_le_bubble",
     "SortingOperatorsChallenge.des_westSort_le_bubble",
     "SortingOperatorsChallenge.westSort_eq_bubble_of_avoids321",

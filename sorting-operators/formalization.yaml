@@ -5,10 +5,9 @@ project:
   name: Sorting Operators: Cross-operator inequalities for West stack-sorting and bubble sort
   description: >-
     A zero-Mathlib Lean 4 formalization of universal cross-operator inequalities and structural
-    identities relating West's stack-sorting operator and single-pass bubble sort, including
-    dual maximum-splitting recurrences, inversion and descent dominance, coincidence on
-    321-avoiding lists with a strictness counterexample, and the pattern bound
-    inv(B(xs)) <= pat321(xs) + pat231(xs).
+    identities relating West's stack-sorting operator and single-pass bubble sort: inversion and
+    descent dominance inv(S) <= inv(B) and des(S) <= des(B), coincidence S = B on 321-avoiding
+    lists with a strictness counterexample, and inv(B(xs)) <= pat321(xs) + pat231(xs).
   repository: https://github.com/MoteMath/math-research
   subdirectory: sorting-operators
   license: Apache-2.0

@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ZeroCarrySpanningTreesChallenge.det_zeroCarryWalk_charpoly",
+    "ZeroCarrySpanningTreesChallenge.det_zeroCarryCofactor_mixed",
+    "ZeroCarrySpanningTreesChallenge.det_zeroCarryCofactor_base",
+    "ZeroCarrySpanningTreesChallenge.det_binaryZeroCarryCofactor",
+    "ZeroCarrySpanningTreesChallenge.det_singleRadixZeroCarryCofactor"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

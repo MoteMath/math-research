@@ -2,14 +2,12 @@
 version: v0.4
 
 project:
-  name: Combinatorial Inequalities — universal permutation, additive-set, and graph theorems
+  name: Combinatorial Inequalities — permutation stack-sorting and additive-set bounds
   description: >-
-    A self-contained, zero-Mathlib Lean 4 formalization of universal combinatorial inequalities
-    and counterexample disproofs discovered through binary math. Proves West stack vs.
-    pop-stack inversion dominance inv(S(p)) <= inv(P(p)), the sharp factor-3 two-stack bound
-    3 * inv(S^2(p)) <= pat231(p) on Av(321), des(S(p)) <= peaks(p), quantitative reflection-asymmetry
-    and difference-folding bounds for finite integer subsets, quantitative graph diameter and
-    irregularity bounds, and two explicit disproofs.
+    A self-contained, zero-Mathlib Lean 4 formalization of universal permutation and additive-set
+    inequalities: the sharp factor-3 two-stack bound 3 * inv(S^2(p)) <= pat231(p) on Av(321),
+    des(S(p)) <= peaks(p), the quadratic descent-excess Spearman bound on Av(231), and the
+    difference-folding bound 3 |A - A| <= 2 |2A - A| + 1 for finite integer subsets.
   repository: https://github.com/MoteMath/math-research
   subdirectory: combinatorial-inequalities
   license: Apache-2.0

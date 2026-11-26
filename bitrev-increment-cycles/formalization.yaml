@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Bit-Reversal Increment Cycles — parity dichotomy for f_k(x) = (bitrev_k(x) + 1) mod 2^k
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the exact parity
+    dichotomy for the bit-reversal-plus-one permutation on k-bit words: f_k is a single full-period
+    Hamiltonian cycle of length 2^k if and only if k is odd, whereas for every even k = 2(m+1)
+    the orbit of 0 has exact minimal period 2^{m+2} - 1, proved via the exact 3/4/5-step
+    k -> k + 2 return-map law.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bitrev-increment-cycles
+  license: Apache-2.0

@@ -1,0 +1,12 @@
+name = "bitrev-increment-cycles"
+version = "0.1.0"
+defaultTargets = ["BitrevIncrementCycles", "Solution"]
+
+[[lean_lib]]
+name = "BitrevIncrementCycles"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

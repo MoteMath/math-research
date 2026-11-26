@@ -14,24 +14,6 @@ namespace SortingOperatorsChallenge
 
 open SortingOperators
 
-theorem inv_bubble_add_des_le_inv (xs : List Nat) :
-    invCnt (bubblePass xs) + desCnt xs ≤ invCnt xs :=
-  SortingOperators.inv_bubble_add_des_le_inv xs
-
-theorem des_bubble_le_des (xs : List Nat) :
-    desCnt (bubblePass xs) ≤ desCnt xs :=
-  SortingOperators.des_bubble_le_des xs
-
-theorem westSort_split_max (L R : List Nat) (m : Nat)
-    (hL : ∀ a ∈ L, a < m) (hR : ∀ b ∈ R, b < m) :
-    westSort (L ++ m :: R) = westSort L ++ westSort R ++ [m] :=
-  SortingOperators.westSort_split_max L R m hL hR
-
-theorem bubblePass_split_max (L R : List Nat) (m : Nat)
-    (hL : ∀ a ∈ L, a < m) (hR : ∀ b ∈ R, b < m) :
-    bubblePass (L ++ m :: R) = bubblePass L ++ R ++ [m] :=
-  SortingOperators.bubblePass_split_max L R m hL hR
-
 theorem inv_westSort_le_bubble (xs : List Nat) (hnd : xs.Nodup) :
     invCnt (westSort xs) ≤ invCnt (bubblePass xs) :=
   SortingOperators.inv_westSort_le_bubble xs hnd

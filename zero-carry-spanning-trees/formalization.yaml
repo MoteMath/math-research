@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Zero-Carry Spanning Trees — exact mixed-radix Kirchhoff spanning-tree formulas
+  description: >-
+    A complete, sorry-free Lean 4 / Mathlib formalization of the alternating-harmonic spectrum
+    and exact Kirchhoff spanning-tree count of mixed-radix zero-carry graphs via Kronecker-Pascal
+    triangularization over any commutative ring, specializing to the binary bitwise-disjoint
+    graph spanning-tree formula prod_{m=2}^k (2^m - (-1)^m)^{C(k, m)}.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: zero-carry-spanning-trees
+  license: Apache-2.0

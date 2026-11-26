@@ -1,14 +1,6 @@
 import Solution
 
-#print axioms CombInequalitiesChallenge.stackInv_le_popInv
 #print axioms CombInequalitiesChallenge.avoids321_three_stack2Inv_le_pat231
 #print axioms CombInequalitiesChallenge.stackDes_le_peaksCnt
-#print axioms CombInequalitiesChallenge.stackInv_le_pat231
 #print axioms CombInequalitiesChallenge.avoids231_two_inv_le_disp2_add_des
-#print axioms CombInequalitiesChallenge.sidon_sym_defect_eq
-#print axioms CombInequalitiesChallenge.two_card_add_symDefect_le_diffset_add_one
 #print axioms CombInequalitiesChallenge.three_diffset_le_two_sum2Diff1_add_one
-#print axioms CombInequalitiesChallenge.connected_diam_le_indP4_add_two
-#print axioms CombInequalitiesChallenge.albertson_le_orderedIndP3
-#print axioms CombInequalitiesChallenge.disproof_avoids231_inv_disp_lds
-#print axioms CombInequalitiesChallenge.disproof_bipartite_dom_indNu_diam

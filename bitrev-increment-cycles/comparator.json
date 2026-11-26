@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitrevIncrementChallenge.bitrevInc_odd_single_cycle",
+    "BitrevIncrementChallenge.bitrevInc_even_zero_period",
+    "BitrevIncrementChallenge.bitrevInc_single_cycle_iff_odd",
+    "BitrevIncrementChallenge.bitrevInc_return_map"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

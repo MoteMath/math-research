@@ -15,28 +15,6 @@ namespace SortingOperatorsChallenge
 
 open SortingOperators
 
-/-- One bubble-sort pass reduces inversions by at least the descent count of the input. -/
-theorem inv_bubble_add_des_le_inv (xs : List Nat) :
-    invCnt (bubblePass xs) + desCnt xs ≤ invCnt xs := by
-  sorry
-
-/-- A single bubble-sort pass never increases the descent count. -/
-theorem des_bubble_le_des (xs : List Nat) :
-    desCnt (bubblePass xs) ≤ desCnt xs := by
-  sorry
-
-/-- Exact maximum-splitting recurrence for West's stack-sorting operator. -/
-theorem westSort_split_max (L R : List Nat) (m : Nat)
-    (hL : ∀ a ∈ L, a < m) (hR : ∀ b ∈ R, b < m) :
-    westSort (L ++ m :: R) = westSort L ++ westSort R ++ [m] := by
-  sorry
-
-/-- Exact maximum-splitting recurrence for a single bubble-sort pass. -/
-theorem bubblePass_split_max (L R : List Nat) (m : Nat)
-    (hL : ∀ a ∈ L, a < m) (hR : ∀ b ∈ R, b < m) :
-    bubblePass (L ++ m :: R) = bubblePass L ++ R ++ [m] := by
-  sorry
-
 /-- West stack-sorting leaves no more inversions than a single bubble-sort pass. -/
 theorem inv_westSort_le_bubble (xs : List Nat) (hnd : xs.Nodup) :
     invCnt (westSort xs) ≤ invCnt (bubblePass xs) := by
