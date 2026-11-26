@@ -1,0 +1,12 @@
+name = "weak-bruhat-commutators"
+version = "0.1.0"
+defaultTargets = ["WeakBruhatCommutators", "Solution"]
+
+[[lean_lib]]
+name = "WeakBruhatCommutators"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
