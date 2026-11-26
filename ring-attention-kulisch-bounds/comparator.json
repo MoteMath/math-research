@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "RingAttnKulischChallenge.online_softmax_merge_exact_associativity",
+    "RingAttnKulischChallenge.attention_sink_l2r_desc_vanishing_law",
+    "RingAttnKulischChallenge.binary_tree_vs_l2r_sink_survival_separation",
+    "RingAttnKulischChallenge.descending_mi_phase_transition_paradox",
+    "RingAttnKulischChallenge.fixed_point_kulisch_topology_partition_invariance",
+    "RingAttnKulischChallenge.fixed_point_sink_cliff_elimination"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

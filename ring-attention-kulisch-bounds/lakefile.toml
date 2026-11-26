@@ -1,0 +1,12 @@
+name = "ring-attention-kulisch-bounds"
+version = "0.1.0"
+defaultTargets = ["RingAttnKulisch", "Solution"]
+
+[[lean_lib]]
+name = "RingAttnKulisch"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

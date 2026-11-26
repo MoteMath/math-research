@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "LoftqCyclesRank1Challenge.rank1_onebit_ef21_contraction_exact",
+    "LoftqCyclesRank1Challenge.rank1_ternary_2x2_contraction_exact",
+    "LoftqCyclesRank1Challenge.coupled_orthogonal_beats_block_2x2_rotations",
+    "LoftqCyclesRank1Challenge.loftq_alternating_monotone_energy_and_4m2_saturation",
+    "LoftqCyclesRank1Challenge.loftq_explicit_3x3_symmetric_2cycle_witness",
+    "LoftqCyclesRank1Challenge.loftq_explicit_3x3_symmetric_3cycle_witness"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

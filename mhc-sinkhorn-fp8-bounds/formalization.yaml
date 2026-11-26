@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact BF16 / FP8-E4M3FN Sinkhorn-Knopp Stagnation, Spectral Overshoot, Support Collapse, and Dyadic-Orthogonal Mixers for mHC
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of six exact theorems for
+    DeepSeek Manifold-Constrained Hyper-Connections (mHC): universal exact rational Sinkhorn diagonal
+    scaling invariance, bit-exact RNE BF16 and FP8-E4M3FN anti-diagonal swamping permanent fixed points
+    with certified Rayleigh-quotient spectral overshoot and exponential L-layer blowup, exact rational
+    support-collapse fixed points attaining spectral norm sqrt(n - 1) (including the GPU-discovered n = 4
+    sqrt(2) witness), Mode-B exact-sum symmetric overshoot fixed points (527/512 in FP8-E4M3FN and
+    131327/131072 in BF16) with L = 128 blowup, universal doubly-stochastic inter-stream contraction
+    ||H v||_2^2 <= (1 - n*eps)^2 ||v||_2^2 on V_perp, and zero-division dyadic-orthogonal stream mixers
+    (n = 4 Hamilton-Quaternion / Hadamard and n = 8 dyadic Householder) preserving ||x||_2^2 identically
+    to arbitrary depth L.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mhc-sinkhorn-fp8-bounds
+  license: Apache-2.0

@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms RingAttnKulischChallenge.online_softmax_merge_exact_associativity
+#print axioms RingAttnKulischChallenge.attention_sink_l2r_desc_vanishing_law
+#print axioms RingAttnKulischChallenge.binary_tree_vs_l2r_sink_survival_separation
+#print axioms RingAttnKulischChallenge.descending_mi_phase_transition_paradox
+#print axioms RingAttnKulischChallenge.fixed_point_kulisch_topology_partition_invariance
+#print axioms RingAttnKulischChallenge.fixed_point_sink_cliff_elimination

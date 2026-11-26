@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MhcSinkhornFp8Challenge.sinkhorn_diagonal_scaling_invariance",
+    "MhcSinkhornFp8Challenge.antidiagonal_swamping_bf16_fp8_fixed_point",
+    "MhcSinkhornFp8Challenge.fp8_support_collapse_sqrt_n_minus_1_fixed_point",
+    "MhcSinkhornFp8Challenge.mode_b_exact_sum_symmetric_overshoot_fixed_point",
+    "MhcSinkhornFp8Challenge.sinkhorn_interstream_contraction_bound",
+    "MhcSinkhornFp8Challenge.dyadic_orthogonal_zero_division_mixers_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Zero-Carry XOR-VDC Stochastic Rounding, Walsh-Hadamard Spectral Laws, and Double-Quantized FP4 GEMM Bias-Variance Theorems
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving exact discrete
+    unbiasedness and closed-form pairwise covariance for 1-PRNG zero-carry XOR-VDC stochastic rounding,
+    exact Walsh-Hadamard diagonalization and trace conservation (29/32 modes at B=32, 14/16 at B=16,
+    exact 359/576 and 61/96 E2M1 variance ratios), universal harmonic-mean worst-case relative SR
+    variance bounds on OCP E2M1, universal antithetic variance halving and exact midpoint cancellation,
+    double-quantized GEMM bias obstructions (max |bias| = 1/4) vs 0-extra-bit bitrev_10 Hammersley
+    (exact max |bias| = 3527/1048576), and exact zero-bias 32-bit split-word XOR-VDC double GEMM.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: xor-vdc-fp4-dither
+  license: Apache-2.0

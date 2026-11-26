@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "XorVdcFp4DitherChallenge.xor_vdc_sr_unbiased_and_covariance_exact",
+    "XorVdcFp4DitherChallenge.xor_vdc_walsh_spectrum_and_trace_conservation",
+    "XorVdcFp4DitherChallenge.e2m1_harmonic_mean_worst_case_sr_variance",
+    "XorVdcFp4DitherChallenge.antithetic_pair_sr_variance_halving",
+    "XorVdcFp4DitherChallenge.double_quant_gemm_bias_obstruction_and_hammersley",
+    "XorVdcFp4DitherChallenge.split_32bit_word_xor_vdc_zero_bias_double_gemm"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

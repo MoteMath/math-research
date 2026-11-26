@@ -1,0 +1,12 @@
+name = "xor-vdc-fp4-dither"
+version = "0.1.0"
+defaultTargets = ["XorVdcFp4Dither", "Solution"]
+
+[[lean_lib]]
+name = "XorVdcFp4Dither"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

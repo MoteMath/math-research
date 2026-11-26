@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact LoftQ Limit Cycles, 4M^2 Saturation, Rank-1 1-Bit/Ternary EF21 Contraction, and Coupled Orthogonal Matrices
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving:
+    (1) universal exact 1/(mn) rank-1 1-bit sign EF21 matrix contraction for all m, n >= 1;
+    (2) exact algebraic (2+sqrt(2))/8 rank-1 ternary EF21 contraction at (2,2) over Q(sqrt(2));
+    (3) explicit coupled orthogonal/integer matrices at n=3,4 strictly beating block-diagonal I_k tensor R(pi/8);
+    (4) LoftQ Euclidean-projection monotone energy descent, Omega(d sigma^2 / M^2) spiked separation, and exact 4M^2 saturation;
+    (5) exact kernel-checked 3x3 symmetric LoftQ permanent 2-cycle witness W_cyc2;
+    (6) exact kernel-checked 3x3 symmetric LoftQ permanent 3-cycle witness W_cyc3.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: loftq-cycles-rank1-ef21
+  license: Apache-2.0

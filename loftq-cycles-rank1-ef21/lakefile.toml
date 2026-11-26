@@ -1,0 +1,12 @@
+name = "loftq-cycles-rank1-ef21"
+version = "0.1.0"
+defaultTargets = ["LoftqCyclesRank1", "Solution"]
+
+[[lean_lib]]
+name = "LoftqCyclesRank1"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
