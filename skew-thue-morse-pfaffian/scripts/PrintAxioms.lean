@@ -1,0 +1,6 @@
+import Solution
+
+#print axioms SkewThueMorseChallenge.det_skewThueMorse_even
+#print axioms SkewThueMorseChallenge.det_skewThueMorse_shift1_even
+#print axioms SkewThueMorseChallenge.det_skewThueMorse_shift2_even
+#print axioms SkewThueMorseChallenge.det_skewThueMorse_odd

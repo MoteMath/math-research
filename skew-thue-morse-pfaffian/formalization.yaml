@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Skew-Symmetric Thue-Morse Pfaffian — exact unimodularity det(A_{2m}^{(s)}) = 1
+  description: >-
+    A complete, sorry-free Lean 4 / Mathlib formalization proving that the skew-symmetric
+    Thue-Morse matrices (A_{2m}^{(s)})_{i,j} = sgn(j - i) * (-1)^{s_2(i + j + s)} are
+    unimodular (det = 1) for all m and shifts s in {0, 1, 2}, and singular (det = 0) at all
+    odd sizes 2m + 1, over arbitrary commutative rings, via a half-swap involution Schur
+    annihilation proof.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: skew-thue-morse-pfaffian
+  license: Apache-2.0

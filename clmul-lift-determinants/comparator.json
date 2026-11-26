@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ClmulLiftChallenge.det_oddClmulMatrix_pow_two",
+    "ClmulLiftChallenge.det_oddClmulMatrix_pow_two_add_one",
+    "ClmulLiftChallenge.det_oddClmulMatrix_pow_two_sub_one",
+    "ClmulLiftChallenge.det_oddClmulMatrix_eq_zero_of_gap",
+    "ClmulLiftChallenge.det_oddClmulMatrix_ne_zero_iff"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

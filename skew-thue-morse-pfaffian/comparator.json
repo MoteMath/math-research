@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SkewThueMorseChallenge.det_skewThueMorse_even",
+    "SkewThueMorseChallenge.det_skewThueMorse_shift1_even",
+    "SkewThueMorseChallenge.det_skewThueMorse_shift2_even",
+    "SkewThueMorseChallenge.det_skewThueMorse_odd"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

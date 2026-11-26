@@ -1,0 +1,7 @@
+import Solution
+
+#print axioms ClmulLiftChallenge.det_oddClmulMatrix_pow_two
+#print axioms ClmulLiftChallenge.det_oddClmulMatrix_pow_two_add_one
+#print axioms ClmulLiftChallenge.det_oddClmulMatrix_pow_two_sub_one
+#print axioms ClmulLiftChallenge.det_oddClmulMatrix_eq_zero_of_gap
+#print axioms ClmulLiftChallenge.det_oddClmulMatrix_ne_zero_iff

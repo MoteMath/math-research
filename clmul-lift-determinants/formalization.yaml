@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carry-Less F_2[x]-Lift Monomial Determinants — exact vanishing locus and closed forms
+  description: >-
+    A complete, sorry-free Lean 4 / Mathlib formalization proving that the n x n odd carry-less
+    F_2[x]-lift matrix M_n(t)_{i,j} = lift_Z(P_{2i+1} *_{F_2[x]} P_{2j+1})(t) satisfies a
+    Schur reduction to bit-reversed Sylvester Hadamard matrices over arbitrary commutative rings,
+    giving exact monomial determinants at n in {2^k - 1, 2^k, 2^k + 1} and identical vanishing
+    on every gap 2^k + 2 <= n <= 2^{k+1} - 2.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: clmul-lift-determinants
+  license: Apache-2.0
