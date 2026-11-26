@@ -29,6 +29,7 @@ Each project carries a heuristic self-rating out of `100` across five `1–10` d
 | [`carry-determinants/`](carry-determinants/) | 7 | 8 | 10 | 8 | 9 | **82** |
 | [`weak-bruhat-commutators/`](weak-bruhat-commutators/) | 7 | 8 | 8 | 7 | 10 | **77** |
 | [`carry-blocks-determinants/`](carry-blocks-determinants/) | 6 | 7 | 9 | 7 | 9 | **73** |
+| [`grh-ultra-compact-lean/`](grh-ultra-compact-lean/) | 4 | 6 | 10 | 9 | 9 | **71** |
 | [`combinatorial-inequalities/`](combinatorial-inequalities/) | 6 | 6 | 7 | 6 | 10 | **66** |
 | [`sorting-operators/`](sorting-operators/) | 5 | 5 | 7 | 6 | 10 | **61** |
 
@@ -79,19 +80,24 @@ Each project carries a heuristic self-rating out of `100` across five `1–10` d
 - **For Mathematicians:** Division-free determinant formulas over arbitrary commutative rings $R$ for exponential and linear mixed-radix carry-blocks, binary Gray-code carry transitions, 0-based and 1-based plateau Hankel matrices, mixed-radix digit lengths, and shifted ultrametric matrices $(\mathrm{bitlen}(i \oplus j) + t) _ {2^k}$.
 - **Prior art & stack:** Carry-blocks build on `carry-determinants/`; `bitlen(i ^^^ j)` sits in the classical tree-distance / ultrametric / $(\mathbb{Z}/2\mathbb{Z})^k$-circulant lineage (Graham & Pollak 1971; Martínez–Michon–San Martín 1994; Nabben & Varga 1994). Lean `v4.34.1` / Mathlib (`propext`, `Classical.choice`, `Quot.sound`).
 
-### 10. [`combinatorial-inequalities/`](combinatorial-inequalities/) — **66 / 100**
+### 10. [`grh-ultra-compact-lean/`](grh-ultra-compact-lean/) — **71 / 100**
+- **Plain English:** Compresses the already-short `grh-compact` Lean 4 formalization of the Riemann Hypothesis and Dirichlet GRH from `796` files (`76,166` lines of code, `112,854` total lines) down to **`490` files and `53,691` lines of pure code (`54,986` total lines)** without altering a single byte of the theorem statements.
+- **For Mathematicians:** Source-compacted derivative of `lsernau/grh-lean` (`grh-compact`, commit `72fead10`) proving Mathlib's `RiemannHypothesis` and critical-strip zero localization $\mathrm{Re}(s) = 1/2$ for all Dirichlet $L$-functions $L(s, \chi)$ ($N \ge 1$), achieving `-38.44%` modules, `-29.51%` pure LoC, and `-51.28%` total lines with `src/Statements.lean`, `Challenge.lean`, `src/Main.lean`, and `comparator.json` preserved byte-for-byte unchanged.
+- **Prior art & stack:** Strictly derived from `lsernau/grh-lean` (`grh-compact/`, Apache-2.0, Copyright 2026 Anthropic, PBC; mathematical proof by Levent Alpöge, formalized with Claude; see <https://alpo.ge/remark.pdf>). Lean `v4.35.0` / Mathlib `56a005855ea` (`propext`, `Classical.choice`, `Quot.sound`).
+
+### 11. [`combinatorial-inequalities/`](combinatorial-inequalities/) — **66 / 100**
 - **Plain English:** Four universal "speed limits" on stack-sorting, permutation displacement, and integer difference sets proved for every size without exception.
 - **For Mathematicians:** Four universal bounds for all $n, N \in \mathbb{N}$: $3\,\mathrm{inv}(S^2(p)) \le \mathrm{pat} _ {231}(p)$ on $\mathrm{Av}(321)$, $\mathrm{des}(S(p)) \le \mathrm{peaks}(p)$, $2\,\mathrm{inv}(p) \le \mathrm{disp2}(p) + \mathrm{des}(p)(\mathrm{des}(p) + 1)$ on $\mathrm{Av}(231)$, and $3|A - A| \le 2|2A - A| + 1$.
 - **Prior art & stack:** Adjacent to West (1990), Zeilberger (1992), Defant (`1809.03123`), Diaconis & Graham (1977), and Freiman / Ruzsa / Bukh sumset-dilate bounds. Lean `v4.34.1` / pure `Std` (`propext`, `Classical.choice`, `Quot.sound`).
 
-### 11. [`sorting-operators/`](sorting-operators/) — **61 / 100**
+### 12. [`sorting-operators/`](sorting-operators/) — **61 / 100**
 - **Plain English:** One pass of stack-sort always beats or ties one pass of bubble-sort on every list, producing the exact same output whenever there is no 3-step decreasing chain.
 - **For Mathematicians:** Constructive cross-operator comparison of West stack-sort $S$ and single-pass bubble sort $B$: $\mathrm{inv}(S) \le \mathrm{inv}(B)$, $\mathrm{des}(S) \le \mathrm{des}(B)$, $S = B$ on $\mathrm{Av}(321)$ with strictness witness `[2, 1, 3, 0]`, and $\mathrm{inv}(B) \le \mathrm{pat} _ {321} + \mathrm{pat} _ {231}$.
 - **Prior art & stack:** Adjacent to West (1990), Chung–Claesson–Dukes–Graham (2010), Albert et al. (`1008.5299`), and Defant (`1809.03123`, `2104.02675`). Lean `v4.34.1` / pure `Init` (`propext`, `Quot.sound` only — no `Classical.choice`).
 
 ## Navigating the collection
 
-- Use [CONTENTS.md](CONTENTS.md) for a theorem-by-theorem map across all 11 projects.
+- Use [CONTENTS.md](CONTENTS.md) for a theorem-by-theorem map across all 12 projects.
 - Inside each project folder:
   - Read `README.md` for its **Synthetic Score**, **For Mathematicians** summary, **For Non-Mathematicians** plain-English overview, and prior-art citations.
   - Read `Challenge.lean` (and its small definitions module) to inspect the exact statements being proved without reading any proof code.

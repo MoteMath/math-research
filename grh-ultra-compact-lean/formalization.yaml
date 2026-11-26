@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Ultra-Compact Generalized Riemann Hypothesis for Dirichlet L-functions in Lean 4
+  description: >-
+    Ultra-compact Lean 4.35.0 / Mathlib formalization of the Riemann Hypothesis and the Generalized
+    Riemann Hypothesis for Dirichlet L-functions (490 files, 53,691 lines of code), derived
+    via source compaction and module folding from the compact edition of Levent Alpoge and Claude's
+    Lean 4 proof while preserving the exact theorem statements and Palomar Comparator configuration
+    byte-for-byte unchanged.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: grh-ultra-compact-lean
+  license: Apache-2.0

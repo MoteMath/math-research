@@ -1,0 +1,12 @@
+import Lib.Weil.Construction.FockThetaFunctions
+import Lib.CM.FormalGroup.FormalHeight
+import Lib.LocalGL.Green.LabelIdempotents
+import Lib.SiegelWeil.Formula.ZeroTermHeight
+import Lib.ClassField.HeckeCharacter.LevelModulus
+import Lib.Cohomology.Etale.TestRings
+open NumberField HasFiniteType Nat
+variable {E V} [Field E] [CMType E] [Fintype V] {p} [Fact (Nat.Prime p)] {κ : InfinitePlace E → _} {G} [Group G] [TopologicalSpace G] {Γ K} [@HasFiniteType G _ Γ K _] {B} {f : G → WeylIndex V κ → ℂ}
+lemma weylGauge_classSum_le_one g {e A} [PadicPlace p] (hA : ∀ x, Nat.card (classAut Γ K x) ∣ A) {c : ℂ} (h : ∀ x, weylGauge κ e g (c • f x) ≤ 1) : weylGauge κ e g ((A * c) • classSum Γ K f) ≤ 1 := by simpa [mul_smul, cast_smul_eq_nsmul] using! smul_classSum_mem (AddSubmonoid.mk ⟨{x | weylGauge .. ≤ 1}, by simp_all [weylGauge, (IsUltrametricDist.norm_add_le_max ..).trans]⟩ (by simp [weylGauge])) hA h
+lemma sqrt_weylNormSq_classSum_le (σ : ℂ ≃+* ℂ) (h : ∀ x, √(weylNormSq (σ ∘ f x)) ≤ B) : √(weylNormSq (σ ∘ classSum Γ K f)) ≤ Nat.card (DoubleCosets Γ K) * B := by
+ simp [classSum]; grw [sqrt_weylNormSq_sum_le]
+ simp [← algebraMap_smul ℂ]; grw [cast_inv_le_one, h]; simp
