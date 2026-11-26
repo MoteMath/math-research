@@ -820,3 +820,55 @@ All statements are in [`nsa-ballbound-moba-bounds/Challenge.lean`](nsa-ballbound
 | `quantization_absorbing_ball_bound_zero_fn_all_precisions` | `NsaBallBoundMoba.BallBoundExact` | Quantization-absorbing Ball-Bound preserving exact `0` false negatives across all summary precisions (`1-bit` through `FP8`). |
 | `nsa_three_branch_convex_gate_antipodal_breakdown` | `NsaBallBoundMoba.NsaGateAndPopcnt` | Exact NSA 3-branch convex-gate lower bound $\ge E _ 0^2$ under distant antipodal needles, collapsing to `0` under Ball-Bound selection. |
 | `popcnt_twoplane_summary_bandwidth_dominance` | `NsaBallBoundMoba.NsaGateAndPopcnt` | Exact `9/3/1`-weighted `2-Bitplane POPCNT` dot-product identity with `4×`/`8×` bit-bandwidth reduction vs `INT8`/`FP16`. |
+
+## 64. [`relu2-teal-deadzone-bounds/`](relu2-teal-deadzone-bounds/)
+
+All statements are in [`relu2-teal-deadzone-bounds/Challenge.lean`](relu2-teal-deadzone-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`relu2-teal-deadzone-bounds/Relu2TealDeadzone/Defs.lean`](relu2-teal-deadzone-bounds/Relu2TealDeadzone/Defs.lean). See [`relu2-teal-deadzone-bounds/README.md`](relu2-teal-deadzone-bounds/README.md) for the `ReLU^2` kurtosis, Uniform-PRE vs FP-POST `4×` split, and `TEAL`/`CATS` deadzone reclamation proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `relu2_exact_kurtosis_seventy_thirds_and_outlier_amplification` | `Relu2TealDeadzone.KurtosisOutliers` | Exact `ReLU` kurtosis `6` and `ReLU^2` kurtosis `70/3`, plus exact $c^4$ outlier-moment amplification (`> 75×` on 1% `4×` outliers). |
+| `relu2_quantization_order_uniform_pre_beats_post` | `Relu2TealDeadzone.QuantOrderDichotomy` | Uniform quantizer `POST`-vs-`PRE` deadzone ratio $2N$ (`> 5×` wider for `INT4-u4`) and strict `PRE` dominance for $x < M(1/2 - 1/(4N))$. |
+| `relu2_quantization_order_fp_post_beats_pre_exact_4x` | `Relu2TealDeadzone.QuantOrderDichotomy` | Opposite floating-point dichotomy: exact two-sided squared-error inflation $(2 - \varepsilon)^2 \le \mathrm{ratio} \le (2 + \varepsilon)^2 \to 4\times$ (`+6.02 dB`). |
+| `teal_cats_shifted_deadzone_reclamation_uniform_exact` | `Relu2TealDeadzone.DeadzoneReclamation` | Exact `TEAL`/`CATS` shifted-deadzone uniform MSE reduction $(1 - \tau/M)^{-2}$ at zero extra bits (`4×, 16×, 64×`). |
+| `teal_cats_fp_superquadratic_logarithmic_density_bonus` | `Relu2TealDeadzone.DeadzoneReclamation` | Exact floating-point step contraction $\frac{x - \tau}{x}\cdot\frac{M}{M - \tau} < 1$ proving strictly super-quadratic MSE gain $> (1 - \tau/M)^{-2}$ on $(\tau, M)$. |
+| `prune_before_quantize_mask_flip_and_bitmask_crossover` | `Relu2TealDeadzone.MaskFlipBitmask` | Exact pre-pruning mask-flip boundary $[\tau - \Delta/2, \tau + \Delta/2)$ and `uint64_t` bitmask sparse `W4` crossover $s^* = \mathrm{ov}/(1 + \mathrm{ov}) < 1/5$. |
+
+## 65. [`ssm-tustin-pade-horizons/`](ssm-tustin-pade-horizons/)
+
+All statements are in [`ssm-tustin-pade-horizons/Challenge.lean`](ssm-tustin-pade-horizons/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ssm-tustin-pade-horizons/SsmTustinPade/Defs.lean`](ssm-tustin-pade-horizons/SsmTustinPade/Defs.lean). See [`ssm-tustin-pade-horizons/README.md`](ssm-tustin-pade-horizons/README.md) for the Tustin Nyquist cliff, `ZOH` blackout, and subtraction-free `Padé-(0,2)` stability proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `tustin_nyquist_snap_to_minus_one_horizon_exact` | `SsmTustinPade.TustinNyquist` | Universal IEEE-754 RNE Tustin Nyquist snap-to-`-1.0` horizon $z _ {\mathrm{osc}}(p) = 2^{p+1} + 8$ (`24, 40, 520, 4104`) and unconditional binades $k \ge p + 2$. |
+| `tustin_vs_zoh_infinite_memory_stall_two_x_gap` | `SsmTustinPade.StallBlackout` | Exact `2×` small-$z$ infinite-memory (`+1.0`) stall separation between Tustin/`Padé-(0,2)` ($z \le 2^{-p}$) and `ZOH` ($z \le 2^{-(p+1)}$). |
+| `zoh_b_bar_catastrophic_cancellation_blackout_horizon` | `SsmTustinPade.StallBlackout` | Exact `100%` `ZOH` $\bar{B}$ blackout for $z \le 2^{-(p+1)}$ and exact `(0, 1]` blackout ratio $(B - f - 2)/B$ (`118/127 > 92.91%` BF16). |
+| `pade02_unconditional_positivity_and_contraction_exact` | `SsmTustinPade.Pade02Laws` | Exact $0 < A _ {\mathrm{pade02}}(z) < 1$ for all $z > 0$ (zero unstable/Nyquist poles), $O(z^3)$ Taylor matching, and `FP8-E4M3FN` overflow thresholds. |
+| `pade02_b_bar_zero_blackout_and_fourth_order_accuracy` | `SsmTustinPade.Pade02Laws` | Subtraction-free $0 < B _ {\mathrm{pade02}}(z) \le 1$ (`0%` blackout), exact 4th-order accuracy $\le z^4/360$ on `(0, 1]` (`19×` tighter than Tustin at `z = 1`). |
+| `ssm_trajectory_energy_conservation_and_nyquist_blowup` | `SsmTustinPade.TrajectoryEnergy` | Exact inductive $O(T^2)$ Nyquist/stall energy blowup at $a = \pm 1$ vs uniform boundedness $|h _ T| \le |b|/(1 - a)$ for `Padé-(0,2)`. |
+
+## 66. [`vlm-tome-cumulant-bounds/`](vlm-tome-cumulant-bounds/)
+
+All statements are in [`vlm-tome-cumulant-bounds/Challenge.lean`](vlm-tome-cumulant-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`vlm-tome-cumulant-bounds/VlmTomeCumulant/Defs.lean`](vlm-tome-cumulant-bounds/VlmTomeCumulant/Defs.lean). See [`vlm-tome-cumulant-bounds/README.md`](vlm-tome-cumulant-bounds/README.md) for the unweighted TV ceiling, Cumulant-2 logit bonus, WHT matching dichotomy, and ViT schedule proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `unweighted_merge_tv_distortion_and_exact_ceiling` | `VlmTomeCumulant.ProportionalAttention` | Exact unweighted-merge TV distortion $(s - 1) p'(1 - p')/(1 + (s - 1) p')$, exact ceiling $(r - 1)/(r + 1)$ for $r^2 = s$, and enclosures for `s = 2, 8, 32`. |
+| `proportional_attention_zero_dispersion_exact_invariance` | `VlmTomeCumulant.ProportionalAttention` | Exact zero-dispersion probability and Value-output invariance (`0` TV distortion) under proportional attention (`+ln s`). |
+| `within_cluster_dispersion_jensen_underweight_and_cumulant2_bonus` | `VlmTomeCumulant.ProportionalAttention` | Discrete Jensen underweighting on dispersed clusters and identical 2nd-order $O(\sigma^2)$ partition-residual cancellation via the Cumulant-2 Logit Bonus (`+ln s + σ^2/2`). |
+| `bipartite_wht_int4_outlier_rescue_vs_binary_walsh_tie` | `VlmTomeCumulant.WalshHadamardSimHash` | Orthogonal `H _ {2^k}` $1/\sqrt{d}$ outlier flattening rescuing `INT4`/`MXFP4` paired with equidistant $2^{k-1}$ Walsh-code Hamming ties degrading 1-bit SimHash. |
+| `vit_front_loaded_dominates_constant_r_schedule` | `VlmTomeCumulant.ScheduleFlopBounds` | Exact Abel-summation proof that front-loaded ViT schedules strictly dominate ToMe `Constant-r` on both FLOPs and compounding drift. |
+| `late_loaded_merging_flop_infeasibility_ceiling` | `VlmTomeCumulant.ScheduleFlopBounds` | Exact `> 2/3` baseline FLOP lower bound proving infeasibility of any $\ge 3/2$ (`1.5×`) FLOP speedup for final-third late-loaded merging. |
+
+## 67. [`embed-zipf-lazystamp-bounds/`](embed-zipf-lazystamp-bounds/)
+
+All statements are in [`embed-zipf-lazystamp-bounds/Challenge.lean`](embed-zipf-lazystamp-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`embed-zipf-lazystamp-bounds/EmbedZipfLazyStamp/Defs.lean`](embed-zipf-lazystamp-bounds/EmbedZipfLazyStamp/Defs.lean). See [`embed-zipf-lazystamp-bounds/README.md`](embed-zipf-lazystamp-bounds/README.md) for the tied-embedding flush, BF16 `v_t` freeze, `Lazy-Stamp AdamW`, and Zipf mixed-precision proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `tied_embedding_dense_pushdown_zero_sum_and_asymmetry` | `EmbedZipfLazyStamp.TiedGrad` | Exact tied-embedding column-sum conservation $\sum _ v g _ {\mathrm{out}}[v, j] = 0$ and sparse-input vs dense-output asymmetry ratio $p _ y^{-1} \cdot p _ v$. |
+| `rare_token_rne_weight_flush_and_fp8_subnormal_underflow` | `EmbedZipfLazyStamp.RneFlush` | Universal IEEE-754/OCP RNE half-ULP weight-update flush, `FP8` subnormal blackout (`2^{-10}`, `2^{-17}`), and exact Zipf-rank flush thresholds. |
+| `bf16_sparse_adamw_v_decay_freeze_exact` | `EmbedZipfLazyStamp.Bf16Freeze` | Universal sharp $1 - \beta _ 2 \le 2^{-(p+2)}$ permanent EMA decay-freeze law trapping `BF16` $\beta _ 2 = 0.999$ and $\eta\lambda = 10^{-4}$ across all $K$ steps. |
+| `lazy_stamp_adamw_exact_equivalence_to_dense_updates` | `EmbedZipfLazyStamp.LazyAdamW` | Exact inductive equivalence of $O(1)$ `Lazy-Stamp AdamW` to $\Delta$ dense steps, breaking `BF16` $\beta _ 2 = 0.999$ freeze for `100%` of states at $\Delta = 4$. |
+| `lazy_stamp_bandwidth_and_work_speedup_exact` | `EmbedZipfLazyStamp.BandwidthSpeedup` | Exact $V / U$ memory-traffic and FLOP speedup (`32×` at `131,072 / 4,096`, `≥ 25×` for `U ≤ 5,242`) and savings fraction $1 - U / V$. |
+| `zipf_mixed_precision_embedding_allocation_pareto` | `EmbedZipfLazyStamp.ZipfPareto` | Exact Cauchy–Schwarz/AM-GM optimality of $4^{b _ r - b _ s} = p _ r / p _ s$ with certified `< 2.0 b/param` Zipf allocations beating uniform `4-bit` (`MXFP4`) at half VRAM. |

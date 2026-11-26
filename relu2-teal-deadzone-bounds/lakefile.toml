@@ -1,0 +1,12 @@
+name = "relu2-teal-deadzone-bounds"
+version = "0.1.0"
+defaultTargets = ["Relu2TealDeadzone", "Solution"]
+
+[[lean_lib]]
+name = "Relu2TealDeadzone"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Squared-ReLU Kurtosis, Quantization-Order Dichotomy, TEAL/CATS Shifted Deadzone Reclamation, and Bitmask Sparsity Crossover Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    rational and integer laws for sparse FFN activation quantization:
+    exact ReLU (6) and ReLU^2 (70/3) kurtosis under Gaussian moments and p*c^8 outlier amplification,
+    the exact Uniform vs Floating-Point quantization-order dichotomy (PRE beats POST on INT4 with
+    sqrt(2N) narrower zero-underflow deadzone, whereas POST beats PRE by exact asymptotic 4x on
+    FP8/MXFP4/NVFP4), exact TEAL/CATS shifted deadzone reclamation (1 - tau/M)^(-2) at zero extra
+    bits for uniform quantizers, strictly super-quadratic logarithmic density bonus for floating-point
+    quantizers across the entire active region (tau, M), exact quantize-before-prune mask-flip zone
+    vs zero-flip prune-before-quantize, and the exact uint64 bitmask sparsity crossover law
+    s* = 1 - 1 / (1 + overhead).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: relu2-teal-deadzone-bounds
+  license: Apache-2.0

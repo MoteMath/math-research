@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "VlmTomeCumulantChallenge.unweighted_merge_tv_distortion_and_exact_ceiling",
+    "VlmTomeCumulantChallenge.proportional_attention_zero_dispersion_exact_invariance",
+    "VlmTomeCumulantChallenge.within_cluster_dispersion_jensen_underweight_and_cumulant2_bonus",
+    "VlmTomeCumulantChallenge.bipartite_wht_int4_outlier_rescue_vs_binary_walsh_tie",
+    "VlmTomeCumulantChallenge.vit_front_loaded_dominates_constant_r_schedule",
+    "VlmTomeCumulantChallenge.late_loaded_merging_flop_infeasibility_ceiling"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

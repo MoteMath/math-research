@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact VLM Vision-Token Merging (ToMe) Proportional-Attention Distortion, Cumulant-2 Jensen Bonus, Walsh-Hadamard INT4 Rescue vs SimHash Tie, and ViT Schedule FLOP Bounds
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    algebraic and rational laws governing Vision-Language Model (VLM) token merging (ToMe /
+    Prumerge): exact unweighted-merge Total Variation distortion (s - 1) p' (1 - p') / (1 + (s - 1) p')
+    and sharp ceiling (sqrt(s) - 1) / (sqrt(s) + 1) with exact attainment and rational enclosures;
+    exact zero-distortion probability and Value-output invariance of proportional attention (+ln s)
+    on zero-dispersion clusters; exact discrete Jensen underweighting on dispersed clusters and
+    2nd-order Cumulant-2 logit bonus (+ln s + sigma^2 / 2) residual cancellation; exact recursive
+    orthogonal Walsh-Hadamard transform (H_{2^k}) inner-product preservation, 1/sqrt(d) channel-outlier
+    flattening rescuing INT4/MXFP4 matching, and explicit 1-bit SimHash / Walsh-code Hamming-tie
+    degradation; exact ViT front-loaded vs Constant-r strict FLOP and compounding-drift dominance
+    via summation by parts; and the exact 3/2 (1.5x) FLOP-reduction infeasibility ceiling for
+    pure late-loaded merging in the final third of layers.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: vlm-tome-cumulant-bounds
+  license: Apache-2.0

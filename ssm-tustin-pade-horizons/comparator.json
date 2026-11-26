@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SsmTustinPadeChallenge.tustin_nyquist_snap_to_minus_one_horizon_exact",
+    "SsmTustinPadeChallenge.tustin_vs_zoh_infinite_memory_stall_two_x_gap",
+    "SsmTustinPadeChallenge.zoh_b_bar_catastrophic_cancellation_blackout_horizon",
+    "SsmTustinPadeChallenge.pade02_unconditional_positivity_and_contraction_exact",
+    "SsmTustinPadeChallenge.pade02_b_bar_zero_blackout_and_fourth_order_accuracy",
+    "SsmTustinPadeChallenge.ssm_trajectory_energy_conservation_and_nyquist_blowup"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

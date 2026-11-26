@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "EmbedZipfLazyStampChallenge.tied_embedding_dense_pushdown_zero_sum_and_asymmetry",
+    "EmbedZipfLazyStampChallenge.rare_token_rne_weight_flush_and_fp8_subnormal_underflow",
+    "EmbedZipfLazyStampChallenge.bf16_sparse_adamw_v_decay_freeze_exact",
+    "EmbedZipfLazyStampChallenge.lazy_stamp_adamw_exact_equivalence_to_dense_updates",
+    "EmbedZipfLazyStampChallenge.lazy_stamp_bandwidth_and_work_speedup_exact",
+    "EmbedZipfLazyStampChallenge.zipf_mixed_precision_embedding_allocation_pareto"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,12 @@
+name = "ssm-tustin-pade-horizons"
+version = "0.1.0"
+defaultTargets = ["SsmTustinPade", "Solution"]
+
+[[lean_lib]]
+name = "SsmTustinPade"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
