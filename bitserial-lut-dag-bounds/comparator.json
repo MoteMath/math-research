@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitSerialLutDagChallenge.binary_lut_dag_lower_bound_exact",
+    "BitSerialLutDagChallenge.tmac_depth2_optimal_12_vs_14_circuit",
+    "BitSerialLutDagChallenge.ternary_lut_dag_bounds_and_symmetry",
+    "BitSerialLutDagChallenge.popcnt_zero_lut_exact_bitserial_dot_identity",
+    "BitSerialLutDagChallenge.lut_vs_popcnt_amortization_crossover_exact",
+    "BitSerialLutDagChallenge.tmac_int16_overflow_threshold_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

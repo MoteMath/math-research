@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms MxintMxfpSwarChallenge.mxint_all_b_ef21_contraction_exact
+#print axioms MxintMxfpSwarChallenge.mxint_vs_mxfp_exact_blocksize_crossover
+#print axioms MxintMxfpSwarChallenge.kulisch_mxint_zero_overflow_swar_exact
+#print axioms MxintMxfpSwarChallenge.half_integer_zero_free_o_one_over_b_collapse
+#print axioms MxintMxfpSwarChallenge.mxint4_asym_beats_sym_crossover_b16
+#print axioms MxintMxfpSwarChallenge.mxint_exact_integer_associativity

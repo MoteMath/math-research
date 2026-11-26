@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SamplingHorizonsChallenge.gumbel_max_impossible_token_horizon_exact",
+    "SamplingHorizonsChallenge.specdec_exact_losslessness_vs_finite_residual_crash",
+    "SamplingHorizonsChallenge.specdec_q32_integer_exact_zero_leak",
+    "SamplingHorizonsChallenge.descending_cdf_swamping_erasure_law",
+    "SamplingHorizonsChallenge.fenwick_pairwise_tree_zero_swamping_exact",
+    "SamplingHorizonsChallenge.top_p_nucleus_mass_shortfall_lower_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

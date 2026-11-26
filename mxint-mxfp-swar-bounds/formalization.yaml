@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact MXINT vs MXFP Block-Size Dominance Frontier, Zero-Overflow Kulisch SWAR Accumulator Bounds, and Half-Integer O(1/B) Collapse
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    rational and integer laws for microscaling integer (MXINT) versus floating-point (MXFP)
+    block quantization and zero-rounding Kulisch dot-product accumulation: universal all-B
+    EF21 contraction bounds with tight attainment for symmetric MXINT_w under Continuous AbsMax
+    and OCP E8M0 scaling, exact integer block-size phase-transition thresholds B*(w) where
+    MXFP_w overtakes MXINT_w (including B*=223/57 for MXINT8 vs OCP MXFP8-E4M3), exact signed
+    Kulisch accumulator bit-width laws enabling zero-overflow int12 MXINT4 and 2-lane int16 SWAR
+    MXINT6 at B=32 (while asymmetric MXINT6 overflows int16 by exact 1), exact O(1/B) rescaled
+    collapse and E8M0 divergence thresholds for zero-free half-integer MXINT_w, the exact B>=16
+    asymmetric [-8,7] vs symmetric [-7,7] AbsMax crossover and E8M0 non-power-of-two scale cliff,
+    and unconditional associativity and permutation invariance of exact integer Kulisch dot products.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mxint-mxfp-swar-bounds
+  license: Apache-2.0

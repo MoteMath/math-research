@@ -1,0 +1,12 @@
+name = "swiglu-kurtosis-diag-opt"
+version = "0.1.0"
+defaultTargets = ["SwiGluKurtosis", "Solution"]
+
+[[lean_lib]]
+name = "SwiGluKurtosis"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

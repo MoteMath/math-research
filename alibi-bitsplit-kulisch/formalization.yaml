@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Quantized ALiBi Horizons, Bilinear Bit-Split Geometry, MXFP Parity, and Mixed-Format Kulisch Accumulator Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    rational, integer, and IEEE-754 RNE laws for quantized LLM arithmetic: exact ALiBi
+    content-swamping thresholds and power-of-2 binade asymmetry across BF16/FP8-E4M3/FP16
+    plus zero-error dyadic slopes, exact finite-level symmetric INT_b bilinear bit-split
+    crossover thresholds (125/22, 24025/92, 10143/2350), absmax-pinned super-outlier bit-split
+    reversal (W5A3 beating W4A4 and W4A2 beating W3A3), MXFP5xMXFP7 (W5A7) mantissa-parity
+    dominance over symmetric MXFP6xMXFP6 (W6A6), exact single-bit tight signed Kulisch
+    accumulator widths across four mixed formats (FP4xINT4, FP4xINT8, INT4xFP8-E4M3,
+    FP4xFP8-E4M3), and exact int64_t Kulisch associativity and permutation invariance vs an
+    explicit K=32 INT4xFP8-E4M3 FP32 RNE non-associativity witness.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: alibi-bitsplit-kulisch
+  license: Apache-2.0

@@ -1,0 +1,12 @@
+name = "alibi-bitsplit-kulisch"
+version = "0.1.0"
+defaultTargets = ["AlibiBitsplitKulisch", "Solution"]
+
+[[lean_lib]]
+name = "AlibiBitsplitKulisch"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

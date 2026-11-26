@@ -1,0 +1,8 @@
+import Solution
+
+#print axioms BitSerialLutDagChallenge.binary_lut_dag_lower_bound_exact
+#print axioms BitSerialLutDagChallenge.tmac_depth2_optimal_12_vs_14_circuit
+#print axioms BitSerialLutDagChallenge.ternary_lut_dag_bounds_and_symmetry
+#print axioms BitSerialLutDagChallenge.popcnt_zero_lut_exact_bitserial_dot_identity
+#print axioms BitSerialLutDagChallenge.lut_vs_popcnt_amortization_crossover_exact
+#print axioms BitSerialLutDagChallenge.tmac_int16_overflow_threshold_exact

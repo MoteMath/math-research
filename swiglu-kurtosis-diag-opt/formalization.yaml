@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact SwiGLU/ReGLU Gated-Bilinear Kurtosis Amplification, Zero-FLOP Diagonal Equivalence, Asymmetric Bit Allocation, and MXFP4-vs-NVFP4 Underflow Laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    rational and algebraic laws for low-precision SwiGLU/ReGLU feed-forward networks:
+    the exact 2x gating-sparsity kurtosis multiplication law Kurt(ReLU(G)*U) = 2*Kurt(G)*Kurt(U),
+    strict correlated bilinear kurtosis amplification (reaching 70/3 vs 18 for Gaussian moments),
+    exact zero-FLOP diagonal channel-scaling invariance W_down S^{-1} (phi(g) * (S u)) = W_down (phi(g) * u),
+    exact AM-GM/SOS optimal diagonal scaling MSE law with W4A4/W8A4/W16A4 rational certificates,
+    exact asymmetric gate-up-down bit-allocation dominance ((4,5,3) and (5,4,3) vs (4,4,4),
+    plus negative-biased Llama-3/Qwen-3 sensitivity ordering), and the exact MXFP4 (B=32, M/24
+    underflow floor) vs NVFP4 (B=16, 100% clean sub-block preservation) outlier underflow gap.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: swiglu-kurtosis-diag-opt
+  license: Apache-2.0

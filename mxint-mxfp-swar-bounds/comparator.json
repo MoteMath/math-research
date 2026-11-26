@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MxintMxfpSwarChallenge.mxint_all_b_ef21_contraction_exact",
+    "MxintMxfpSwarChallenge.mxint_vs_mxfp_exact_blocksize_crossover",
+    "MxintMxfpSwarChallenge.kulisch_mxint_zero_overflow_swar_exact",
+    "MxintMxfpSwarChallenge.half_integer_zero_free_o_one_over_b_collapse",
+    "MxintMxfpSwarChallenge.mxint4_asym_beats_sym_crossover_b16",
+    "MxintMxfpSwarChallenge.mxint_exact_integer_associativity"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

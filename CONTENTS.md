@@ -612,3 +612,68 @@ All statements are in [`fano-sparse24-perm/Challenge.lean`](fano-sparse24-perm/C
 | `fano_plane_sparse24_obstruction_exact` | `FanoSparse24Perm.FanoObstruction` | Constructive proof that the 7 lines of $PG(2, 2)$ form the exact minimal weight-3 `2:4`-permutation barrier ($R _ {\mathrm{crit}}(2, 3) = 7$). |
 | `sunflower_sparse24_obstruction_exact` | `FanoSparse24Perm.SunflowerObstruction` | Exact $S _ 8$ Venn-region proof that `≤ 3` weight-4 rows stay feasible while 4 sunflower rows kill all 35 ($R _ {\mathrm{crit}}(2, 4) = 4$). |
 | `order_statistic_k2k_nmse_laws_exact` | `FanoSparse24Perm.OrderStatsNmse` | Exact Uniform $(k + 2)/(4(2k + 1))$ and Rényi-Laplace (`23/288` vs `79211/1411200`, `-29.72%`) `k:2k` NMSE laws. |
+
+## 48. [`mxint-mxfp-swar-bounds/`](mxint-mxfp-swar-bounds/)
+
+All statements are in [`mxint-mxfp-swar-bounds/Challenge.lean`](mxint-mxfp-swar-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxint-mxfp-swar-bounds/MxintMxfpSwar/Defs.lean`](mxint-mxfp-swar-bounds/MxintMxfpSwar/Defs.lean). See [`mxint-mxfp-swar-bounds/README.md`](mxint-mxfp-swar-bounds/README.md) for the `MXINT` vs `MXFP` EF21 crossover, `int16` SWAR packing, and half-integer collapse proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `mxint_all_b_ef21_contraction_exact` | `MxintMxfpSwar.Ef21Bounds` | Universal all-$B$ ($B \ge 1, w \ge 2$) exact symmetric `MXINT _ w` EF21 bounds $(B - 1)/(4 M^2 + B - 1)$ (AbsMax) and $B/(M^2 + B - 1)$ (`E8M0`). |
+| `mxint_vs_mxfp_exact_blocksize_crossover` | `MxintMxfpSwar.Ef21Bounds` | Exact integer crossovers $B^*(w)$ where `MXFP _ w` overtakes `MXINT _ w` (`223/57` for `MXINT8` vs `MXFP8-E4M3`, winning at `B = 16, 32`). |
+| `kulisch_mxint_zero_overflow_swar_exact` | `MxintMxfpSwar.KulischSwar` | Exact `B = 32` Kulisch dot bounds: `MXINT4` in `int12` (`±1568`), symmetric `MXINT6` in `int16` (`±30752`, 2-lane SWAR), asymmetric `MXINT6` overflows by `1` (`+32768`). |
+| `half_integer_zero_free_o_one_over_b_collapse` | `MxintMxfpSwar.HalfIntAsym` | Exact $O(1/B)$ half-integer rescaled collapse and `E8M0` divergence thresholds $4^{w-1} - 2^{w-1} + 1 \in \{3, 13, 57, 993, 16257\}$. |
+| `mxint4_asym_beats_sym_crossover_b16` | `MxintMxfpSwar.HalfIntAsym` | Exact `B = 15` tie (`1/15`), asymmetric `[-8, 7]` beats `[-7, 7]` for all $B \ge 16$, plus exact `4×` `7 vs 8` `E8M0` scale cliff. |
+| `mxint_exact_integer_associativity` | `MxintMxfpSwar.KulischSwar` | Unconditional `Int` associativity, block-split additivity, and permutation invariance for `intDot`. |
+
+## 49. [`sampling-gumbel-cdf-bounds/`](sampling-gumbel-cdf-bounds/)
+
+All statements are in [`sampling-gumbel-cdf-bounds/Challenge.lean`](sampling-gumbel-cdf-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`sampling-gumbel-cdf-bounds/SamplingHorizons/Defs.lean`](sampling-gumbel-cdf-bounds/SamplingHorizons/Defs.lean). See [`sampling-gumbel-cdf-bounds/README.md`](sampling-gumbel-cdf-bounds/README.md) for the Gumbel impossible horizon, `Q32` speculative decoding, and descending-CDF vs Fenwick proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `gumbel_max_impossible_token_horizon_exact` | `SamplingHorizons.GumbelHorizon` | Exact finite-$b$-bit Gumbel-Max impossible-token horizon with rational certificates $\Delta _ {\mathrm{impossible}}(24) < 19.45 < 20$ and $\Delta _ {\mathrm{impossible}}(8) < 7.26 < 8$. |
+| `specdec_exact_losslessness_vs_finite_residual_crash` | `SamplingHorizons.SpecDec` | Exact rational SpecDec losslessness vs bit-exact `FP8-E4M3` (`V = 64`) and `BF16` (`V = 2`) zero-residual `NaN` crash witnesses. |
+| `specdec_q32_integer_exact_zero_leak` | `SamplingHorizons.SpecDec` | Exact division-free `Q32` integer speculative decoding (`accept + Z = 2^{32}`, zero over-accepts, zero crashes, exact `0` TV leak). |
+| `descending_cdf_swamping_erasure_law` | `SamplingHorizons.CdfSwamping` | Exact RNE descending-CDF swamping cutoff $2^{-(m+2)}$ (`1/512` BF16, `1/4096` FP16, `2^{-25}` FP32) erasing all remaining tail tokens. |
+| `fenwick_pairwise_tree_zero_swamping_exact` | `SamplingHorizons.CdfSwamping` | Balanced binary-tree / Fenwick pairwise sum over $2^k$ dyadic tail probabilities `2^{-r}` computes exact `2^k * 2^{-r}` with zero rounding error. |
+| `top_p_nucleus_mass_shortfall_lower_bound` | `SamplingHorizons.CdfSwamping` | Exact cumulative mass shortfall & TV distance lower bound `K * t` (Llama-3 `V = 128,256` BF16 witness with TV `9/16 > 1/2`). |
+
+## 50. [`alibi-bitsplit-kulisch/`](alibi-bitsplit-kulisch/)
+
+All statements are in [`alibi-bitsplit-kulisch/Challenge.lean`](alibi-bitsplit-kulisch/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`alibi-bitsplit-kulisch/AlibiBitsplitKulisch/Defs.lean`](alibi-bitsplit-kulisch/AlibiBitsplitKulisch/Defs.lean). See [`alibi-bitsplit-kulisch/README.md`](alibi-bitsplit-kulisch/README.md) for the `ALiBi` swamping, finite-level bit-split, `W5A7 > W6A6`, and mixed-format Kulisch proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `alibi_content_swamping_and_dyadic_slope_exact` | `AlibiBitsplitKulisch.AlibiSwamping` | Universal RNE `ALiBi` content-swamping threshold $B \ge 2^{p+1}|x|$, `BF16`/`FP8`/`FP16` (`d = 65,520`) horizons, and zero mul-error for dyadic slopes. |
+| `bilinear_int_asymmetric_bitsplit_crossovers_exact` | `AlibiBitsplitKulisch.BitsplitMxfp` | Exact finite-level symmetric `INT _ b` bilinear crossovers (`125/22`, `24025/92`, `10143/2350`, `49/5`, `10571/2254`). |
+| `absmax_pinned_superoutlier_bitsplit_reversal` | `AlibiBitsplitKulisch.BitsplitMxfp` | Exact absmax-pinned super-outlier reversal (`W5A3 > W4A4` iff $S^2 > 125/22$, `W4A2 > W3A3` iff $S^2 > 49/5$). |
+| `mxfp_w5a7_beats_w6a6_mantissa_parity_exact` | `AlibiBitsplitKulisch.BitsplitMxfp` | Exact 12-bit mantissa-parity dominance of `W5A7` (`MXFP5-E2M2 × MXFP7-E3M3`) over `W6A6` (`MXFP6-E3M2 × MXFP6-E3M2`) by `8/5`. |
+| `mixed_format_signed_kulisch_width_exact` | `AlibiBitsplitKulisch.KulischExact` | Single-bit tight signed Kulisch widths across `FP4×INT4`, `FP4×INT8`, `INT4×FP8-E4M3` (`27..36b`), and `FP4×FP8-E4M3` (`28..37b`). |
+| `kulisch_int64_exact_associativity_vs_fp32_drift` | `AlibiBitsplitKulisch.KulischExact` | Constructive `int64 _ t` Kulisch permutation invariance vs explicit `K = 32` `INT4 × FP8-E4M3` FP32 non-associativity witness. |
+
+## 51. [`swiglu-kurtosis-diag-opt/`](swiglu-kurtosis-diag-opt/)
+
+All statements are in [`swiglu-kurtosis-diag-opt/Challenge.lean`](swiglu-kurtosis-diag-opt/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`swiglu-kurtosis-diag-opt/SwiGluKurtosis/Defs.lean`](swiglu-kurtosis-diag-opt/SwiGluKurtosis/Defs.lean). See [`swiglu-kurtosis-diag-opt/README.md`](swiglu-kurtosis-diag-opt/README.md) for the `2×` ReGLU kurtosis, zero-FLOP diagonal equivalence, and asymmetric bit-allocation proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `reglu_exact_two_x_kurtosis_multiplication_law` | `SwiGluKurtosis.KurtosisLaws` | Exact `2×` gating-sparsity kurtosis identity $\mathrm{Kurt}(\mathrm{ReLU}(G) \cdot U) = 2\,\mathrm{Kurt}(G)\,\mathrm{Kurt}(U)$ with Gaussian (`18`) and Laplace (`72`) witnesses. |
+| `correlated_bilinear_kurtosis_amplification_exact` | `SwiGluKurtosis.KurtosisLaws` | Exact correlated kurtosis amplification $2\mathbb{E}[G^8]/(\mathbb{E}[G^4])^2$ and Gaussian-mixture curve (`70/3` at $\rho = 1$, `76/3` at $\rho = 1/2$). |
+| `swiglu_zero_flop_diagonal_equivalence_identity` | `SwiGluKurtosis.DiagonalEquiv` | Exact zero-FLOP diagonal invariance $W _ {\mathrm{down}} S^{-1}(\phi(g) \odot (S u)) = W _ {\mathrm{down}}(\phi(g) \odot u)$ leaving nonlinear `W _ {\mathrm{gate}}` untouched. |
+| `swiglu_optimal_diagonal_scale_amgm_law` | `SwiGluKurtosis.DiagonalEquiv` | Exact AM-GM/SOS optimal diagonal scale $\lambda^2 = K\sqrt{\varepsilon _ a / \varepsilon _ w}$ with clamped optimality and `W4A4`/`W8A4`/`W16A4` certificates. |
+| `gated_ffn_asymmetric_bit_allocation_dominance` | `SwiGluKurtosis.BitAllocAndFP4` | Universal 3-term cube AM-GM lower bound and exact integer-bit dominance `iff` laws (`(4, 5, 3) < (4, 4, 4) ↔ S _ u > 4 S _ d`). |
+| `mxfp4_block32_vs_nvfp4_block16_kurtosis_underflow_gap` | `SwiGluKurtosis.BitAllocAndFP4` | `MXFP4` (`B = 32`) flushes all 31 background entries `< M/24` to zero, while `NVFP4` (`B = 16`) preserves 100% of the clean sub-block. |
+
+## 52. [`bitserial-lut-dag-bounds/`](bitserial-lut-dag-bounds/)
+
+All statements are in [`bitserial-lut-dag-bounds/Challenge.lean`](bitserial-lut-dag-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`bitserial-lut-dag-bounds/BitSerialLutDag/Defs.lean`](bitserial-lut-dag-bounds/BitSerialLutDag/Defs.lean). See [`bitserial-lut-dag-bounds/README.md`](bitserial-lut-dag-bounds/README.md) for the `2^(g-1) + g - 2` linear DAG lower bound, `(12, 2)` vs T-MAC `(14, 3)` circuit, and `int16` wrap-by-1 trap proofs.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `binary_lut_dag_lower_bound_exact` | `BitSerialLutDag.BinaryDag` | Universal 2-input linear DAG lower bound $2^{g-1} + g - 2$ ops and $\lceil\log _ 2 g\rceil$ depth for all $g \ge 2$ (`2, 5, 10, 19` ops). |
+| `tmac_depth2_optimal_12_vs_14_circuit` | `BitSerialLutDag.BinaryDag` | Exact soundness & completeness of `g = 4` `(12 ops, depth 2)` circuit beating T-MAC `(14, 3)` plus `(11, 3)` and lower-bound-tight `(10, 4)` circuits. |
+| `ternary_lut_dag_bounds_and_symmetry` | `BitSerialLutDag.TernaryDag` | Exact symmetry-halved ternary LUT size $(3^g - 1)/2$, lower bound $(3^g - 1)/2 - g$, minimal $g = 2, 3, 4$ DAGs, and `(≤2, 4)` sparse DAG. |
+| `popcnt_zero_lut_exact_bitserial_dot_identity` | `BitSerialLutDag.PopcntDot` | Universal bit-exact `POPCNT` dot-product identity for binary/ternary weights against arbitrary $b$-bit signed/unsigned activations. |
+| `lut_vs_popcnt_amortization_crossover_exact` | `BitSerialLutDag.PopcntDot` | Exact rational LUT-vs-`POPCNT` amortization crossover and RDNA 3 no-crossover dominance theorem (`POPCNT` wins for all `M, N, K > 0`). |
+| `tmac_int16_overflow_threshold_exact` | `BitSerialLutDag.PopcntDot` | Universal `int16` safety bound (`K _ {\max} = 258` symmetric `int8`) and exact full-`int8` wrap-by-1 trap (`+32768 → -32768`) at `K = 256/128/64`. |

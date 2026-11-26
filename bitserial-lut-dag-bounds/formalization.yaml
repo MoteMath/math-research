@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Bit-Serial POPCNT & Sign-Folded Binary/Ternary LUT Precomputation DAG Bounds for Low-Bit LLM GEMM
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
+    combinatorial, circuit-complexity, and pure-silicon arithmetic laws for low-bit LLM GEMM:
+    the universal 2-input linear DAG lower bound 2^(g-1) + g - 2 ops and ceil(log2 g) depth
+    for sign-folded binary LUT precomputation (2, 5, 10, 19 for g = 2, 3, 4, 5), exact soundness
+    and dominance of the balanced (12 ops, depth 2) binary g=4 circuit over naive T-MAC (14 ops,
+    depth 3) alongside the RDNA 3 (11 ops, depth 3) and lower-bound-tight (10 ops, depth 4)
+    Pareto frontier, exact symmetry-halved ternary LUT size (3^g - 1)/2 and zero-waste minimal
+    ternary DAGs (including structured 2:4 sparsity compression), the universal exact bit-serial
+    POPCNT dot-product identity for binary and ternary weights against arbitrary b-bit signed or
+    unsigned activations, exact LUT-vs-POPCNT amortization crossover and RDNA 3 no-crossover
+    dominance laws, and exact int16 accumulation overflow thresholds (K_max = 258 symmetric vs
+    K_max = 255 full int8 two's-complement wrap-by-1 trap at K = 256).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bitserial-lut-dag-bounds
+  license: Apache-2.0
