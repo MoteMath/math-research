@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BruhatTitsCarryGaugeAutomataChallenge.carryCount_eq_evalMat",
+    "BruhatTitsCarryGaugeAutomataChallenge.sound",
+    "BruhatTitsCarryGaugeAutomataChallenge.thm_2x2_5point_rigidity",
+    "BruhatTitsCarryGaugeAutomataChallenge.thm_2x2_k_equiv_3_mod_8",
+    "BruhatTitsCarryGaugeAutomataChallenge.thm_3x3_exact_v2",
+    "BruhatTitsCarryGaugeAutomataChallenge.thm_phi4_unbounded",
+    "BruhatTitsCarryGaugeAutomataChallenge.nonvacuous_3x3_k4",
+    "BruhatTitsCarryGaugeAutomataChallenge.sharpness_3x3_all_five_weights"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

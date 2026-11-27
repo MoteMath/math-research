@@ -1,0 +1,12 @@
+name = "zeckendorf-binary-carry-bridge"
+version = "0.1.0"
+defaultTargets = ["ZeckendorfBinaryCarryBridge", "Solution"]
+
+[[lean_lib]]
+name = "ZeckendorfBinaryCarryBridge"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

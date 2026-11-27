@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: 2-Adic Bruhat–Tits Lattice-Gauge Automaton Engine for Carry-Bounded Base-2 Representations
+  description: >-
+    **Mechanism:** **2-Adic Bruhat–Tits Lattice-Gauge Automaton Engine (`LatticeGaugeCert`)** paired with the **First-Principles Carry-Bounded Representation Compiler (`carryCount_eq_evalMat`)** and **Modular Quotient Automaton Engine (`ModQuotientCert`)**.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bruhat-tits-carry-gauge-automata
+  license: Apache-2.0

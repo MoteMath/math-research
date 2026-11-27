@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms MahlerVanderput2adicCertsChallenge.vdp_reconstruct
+#print axioms MahlerVanderput2adicCertsChallenge.z2_density_identity
+#print axioms MahlerVanderput2adicCertsChallenge.q_gray_alternating_duality_even
+#print axioms MahlerVanderput2adicCertsChallenge.theta2_bitwise_inverse_Z2
+#print axioms MahlerVanderput2adicCertsChallenge.triadic_holder_2_3_sharp
+#print axioms MahlerVanderput2adicCertsChallenge.shear_carry_1lipschitz_sharp
+#print axioms MahlerVanderput2adicCertsChallenge.exp2c_neg_one_inv
+#print axioms MahlerVanderput2adicCertsChallenge.nonvacuity_all_compilers

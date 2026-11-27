@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ZeckendorfBinaryCarryBridgeChallenge.popcount_add_carry",
+    "ZeckendorfBinaryCarryBridgeChallenge.master_carry_bridge_iff",
+    "ZeckendorfBinaryCarryBridgeChallenge.not_diff_basis_refutation",
+    "ZeckendorfBinaryCarryBridgeChallenge.rbonacci_uniqueness",
+    "ZeckendorfBinaryCarryBridgeChallenge.rbonacci_master_invariants",
+    "ZeckendorfBinaryCarryBridgeChallenge.sparse_r6_diff_basis_infinite_law",
+    "ZeckendorfBinaryCarryBridgeChallenge.witness_nonvacuity_sparse_r6",
+    "ZeckendorfBinaryCarryBridgeChallenge.sharpness_non_confluence_still_obeys_carry_bridge"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Pure-Silicon 2-Adic Dual-Basis Certificate Engine (adic-1)
+  description: >-
+    **Mechanism:** **2-Adic Dual-Basis Certificate Engine (Rooted Van der Put Basis + Discrete Mahler Forward-Difference Basis + Finite 2-Adic Lattice Contraction, Sharpness, and Kernel-Invariant Compilers)** **Silicon Principle (Finite $\to$ Infinite Bridge):** In standalone Lean 4.36.0 (zero Mathlib, zero floats), we model the ring of 2-adic integers $\mathbb{Z} _ 2$ natively as
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mahler-vanderput-2adic-certs
+  license: Apache-2.0

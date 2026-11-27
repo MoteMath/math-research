@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MbaHenselBlockJetLiftingChallenge.evalMod_coherent",
+    "MbaHenselBlockJetLiftingChallenge.symDeriv0_sound",
+    "MbaHenselBlockJetLiftingChallenge.quadLiftFromJet_sound",
+    "MbaHenselBlockJetLiftingChallenge.thm1_constructive_lifts",
+    "MbaHenselBlockJetLiftingChallenge.witness2_one_root",
+    "MbaHenselBlockJetLiftingChallenge.witness3_quad_lift_concrete",
+    "MbaHenselBlockJetLiftingChallenge.sharpness1_even_mask",
+    "MbaHenselBlockJetLiftingChallenge.sharpness3_below_mask_threshold"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

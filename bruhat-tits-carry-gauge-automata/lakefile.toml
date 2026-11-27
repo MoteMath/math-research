@@ -1,0 +1,12 @@
+name = "bruhat-tits-carry-gauge-automata"
+version = "0.1.0"
+defaultTargets = ["BruhatTitsCarryGaugeAutomata", "Solution"]
+
+[[lean_lib]]
+name = "BruhatTitsCarryGaugeAutomata"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

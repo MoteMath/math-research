@@ -1825,3 +1825,78 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 | `walsh_bitrev_parity_dichotomy_odd` | `WalshGrayConjugacySpectra.Theorems` | THEOREM C1 (Bit-Reversal Spectral Parity Dichotomy): (W_k P_{R_k})^2 = 2^k I ∀ k, with: - Odd width k = 2r + 1: balanced (Tr = 0 via Weyl–Heisenberg anticommutator); - Even width k = 2r (r ≥ 1): asymmetric by 2^r, with exact integer projector traces giving m_+ = 2^{2r-1} + 2^{r-1} and m_- = 2^{2r-1} - 2^{r-1}. |
 | `walsh_gray_rot_period` | `WalshGrayConjugacySpectra.Theorems` | THEOREM D1 (Gray ∘ Butterfly-Rotation 2k-Cycle Periodicity): ∀ k ≥ 2, (W_k P_{G_k C_k})^{2k} = 2^{k^2} I_{2^k}. |
 | `sharp_nonlinear_inc2_not_scaled_perm` | `WalshGrayConjugacySpectra.Theorems` | Machine-checked infinite theorem `sharp_nonlinear_inc2_not_scaled_perm` proved in pure Lean 4 `Init`. |
+
+## 132. [`bruhat-tits-carry-gauge-automata/`](bruhat-tits-carry-gauge-automata/)
+
+**Mechanism:** **2-Adic Bruhat–Tits Lattice-Gauge Automaton Engine (`LatticeGaugeCert`)** paired with the **First-Principles Carry-Bounded Representation Compiler (`carryCount_eq_evalMat`)** and **Modular Quotient Automaton Engine (`ModQuotientCert`)**.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `carryCount_eq_evalMat` | `BruhatTitsCarryGaugeAutomata.Theorems` | **First-Principles Combinatorial Equivalence Theorem**: For ANY digit weight table `w` with `w 0 = 1`, ANY carry cap `C`, ANY bit-width `width`, and ANY `n < 2 ^ width`, the direct combinatorial weighted count of carry-bounded representations `carryCount w C width n c` equals the `(C + 1)`-dimensional binary matrix product `evalMat (carryMat w C false) (carryMat w C true) (e0Vec C) n c`. |
+| `sound` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Master Engine Theorem 4 (Exact Modular Quotient Soundness, `∀ n : Nat`)**. |
+| `thm_2x2_5point_rigidity` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Infinite Theorem A4 (2×2 5-Point Finite-to-Infinite 2-Adic Rigidity IFF)**: For ANY integer weights `(1, w1, w2, w3)`, matching `ExactVal2 (f2 w1 w2 w3 n) (phi3 n)` on ALL `n : Nat` is equivalent to matching on just the 5 points `{1, 2, 3, 7, 8}`, and equivalent to the exact mod-8 congruence `w1 % 4 = 3 ∧ w2 % 4 = 3 ∧ w3 % 4 = 1 ∧ (w1 + w2 + w3) % 8 = 7`. |
+| `thm_2x2_k_equiv_3_mod_8` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Infinite Theorem A5 (Binomial Specialization for ALL `k = 8*t + 3`, `k`-way 1-Bit-Carry Addition)**. |
+| `thm_3x3_exact_v2` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Infinite Theorem C1 (3×3 Exact Unbounded 2-Adic Valuation Law)**: For ALL `(w1, w2, w3, w4, w5) ∈ ℤ⁵` with `w1 % 8 = 4 ∧ w2 % 4 = 2 ∧ w3 % 8 = 4 ∧ w4 % 2 = 1 ∧ w5 % 16 = 0`, and ALL `n : Nat`, `ExactVal2 (f3 w1 w2 w3 w4 w5 n) (phi4 n)`. |
+| `thm_phi4_unbounded` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Unboundedness Witness for `Φ_4`**: `∀ m, phi4 (2^(m+2) - 1) = m + 2`. |
+| `nonvacuous_3x3_k4` | `BruhatTitsCarryGaugeAutomata.Theorems` | Non-vacuity witness 3: `k = 4, C = 2` inhabits `LatticeGaugeCert` (3×3). |
+| `sharpness_3x3_all_five_weights` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Sharpness Counterexample 7 (All 5 Individual Weight Moduli in 3×3 Family, failing at `n = 1, 2, 3, 4, 5`)**. |
+
+## 133. [`lucas-mask-walsh-binom-fractals/`](lucas-mask-walsh-binom-fractals/)
+
+**Name:** The Three-Stage Lucas-Mask Bit-Slice & 2-Adic Bit-Smoothness Engine (`LucasMaskEngine`). **Core Silicon Principle (Finite $\to$ Infinite Bridge):** Treating Lucas's theorem mod $2$ as a silicon bitmask filter $k \subseteq _ 2 n$ (`k &&& n = k`, equivalently `k & ~n = 0`), we construct a **reusable three-stage infinite proof engine** that lifts finite LSB bit-slice tra
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `delta_two_state_div` | `LucasMaskWalshBinomFractals.Theorems` | The 2-state closed bit-slice divisibility invariant: For every `N`, every submask `j <=_2 N`: - State 0: for all `c` with `2 * c <= N`, `2^(popcount j - c) / Delta (N - 2*c) j c`. - State 1: for all `c >= 1` with `2 * c <= N + 1`, `2^(popcount j - c) / Delta (N - 2*c + 1) j c`. |
+| `bitUnit_sq_lift` | `LucasMaskWalshBinomFractals.Theorems` | **Stage 2 Law 3 (Higher Squaring Lift):** For all `s >= 1`, `BitUnit n s g -> BitUnit n (s + 1) (g^2)`. |
+| `bitSmooth_pow_odd` | `LucasMaskWalshBinomFractals.Theorems` | **Stage 2 Compiler (Odd Exponents):** If `f ∈ BitSmooth n E` with `f 0 = 1`, then for EVERY odd `r`, `f^r ∈ BitSmooth n E`. |
+| `walsh_bitSmooth_spike` | `LucasMaskWalshBinomFractals.Theorems` | **Stage 3 Bridge A (Unique Walsh Spike Theorem for `BitSmooth`):** For ANY `f ∈ BitSmooth n E` and ANY mask `m <=_2 n`: `walsh n m f ≡ (if m = E then 2^(popcount n) else 0) (mod 2^(popcount n + 1))`. |
+| `walsh_lucas_binom_odd_pow` | `LucasMaskWalshBinomFractals.Theorems` | **Main Theorem 1 (Walsh-Lucas Unique Spike Theorem for Odd Powers):** For ALL `n : Nat`, ALL odd `r : Nat`, and ALL masks `m <=_2 n`: `∑_{k <=_2 n} (-1)^popcount(k &&& m) * C(n, k)^r ≡ 2^(popcount n) * [m = E(n)] (mod 2^(popcount n + 1))`. |
+| `walsh_lucas_binom_even_pow` | `LucasMaskWalshBinomFractals.Theorems` | **Main Theorem 3 (Walsh-Lucas Higher-Modulus Congruence for Even Powers):** For ALL `n : Nat`, ALL positive even `r : Nat` (`r ≠ 0`, `r % 2 = 0`), and ALL `m <=_2 n`: `∑_{k <=_2 n} (-1)^popcount(k &&& m) * C(n, k)^r ≡ 2^(popcount n) * [m = 0] (mod 2^(popcount n + v2(r) + 1))`. |
+| `walsh_lucas_mixed_product` | `LucasMaskWalshBinomFractals.Theorems` | **Main Theorem 4 (Mixed-Product XOR-Spike Theorem):** For ALL `n, n1, n2 : Nat` with `n <=_2 n1` and `n <=_2 n2`, ALL odd `r1, r2`, and ALL `m <=_2 n`, the unique Walsh spike mask of `C(n1, k)^r1 * C(n2, k)^r2` on the Lucas cube of `n` is `(E(n1) ^^^ E(n2)) &&& n`. |
+| `sharpness_squaring_jump_needs_spike_mask` | `LucasMaskWalshBinomFractals.Theorems` | Machine-checked infinite theorem `sharpness_squaring_jump_needs_spike_mask` proved in pure Lean 4 `Init`. |
+
+## 134. [`mahler-vanderput-2adic-certs/`](mahler-vanderput-2adic-certs/)
+
+**Mechanism:** **2-Adic Dual-Basis Certificate Engine (Rooted Van der Put Basis + Discrete Mahler Forward-Difference Basis + Finite 2-Adic Lattice Contraction, Sharpness, and Kernel-Invariant Compilers)** **Silicon Principle (Finite $\to$ Infinite Bridge):** In standalone Lean 4.36.0 (zero Mathlib, zero floats), we model the ring of 2-adic integers $\mathbb{Z} _ 2$ natively as
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `vdp_reconstruct` | `MahlerVanderput2adicCerts.Theorems` | Theorem 2A.1: Exact Finite Van der Put Reconstruction on `BitVec w`. |
+| `z2_density_identity` | `MahlerVanderput2adicCerts.Theorems` | Universal Density Identity Principle on `Z2`: Any two continuous functions on `Z2` that agree on `Nat` agree on ALL of `Z2`. |
+| `q_gray_alternating_duality_even` | `MahlerVanderput2adicCerts.Theorems` | THEOREM Ia (Infinite q-Deformed Gray-Alternating 2-Adic Duality — Even Branch): For EVERY even `q : Int` and EVERY `x : Z2`: `Θ_q((2x) ^^^ x) = -(q - 1) * Φ_q(x)`. |
+| `theta2_bitwise_inverse_Z2` | `MahlerVanderput2adicCerts.Theorems` | COROLLARY (Exact Closed-Form Bitwise Inverse of Alternating Binary `Θ_2` on all of `Z2`): `∀ x : Z2, Θ_2((-2x) ^^^ (-x)) = x`. |
+| `triadic_holder_2_3_sharp` | `MahlerVanderput2adicCerts.Theorems` | THEOREM IIa (Sharpness Lower Bound via Compiler B): NO extension of `u_tri · g_tri` to `Z2` can achieve modulus `μ(3k) > 2k` for ANY `k`! |
+| `shear_carry_1lipschitz_sharp` | `MahlerVanderput2adicCerts.Theorems` | THEOREM IIb (Exact Period-2 Sharpness Lower Bound via Compiler B): NO extension can achieve modulus `μ(2k) > 2k`! |
+| `exp2c_neg_one_inv` | `MahlerVanderput2adicCerts.Theorems` | Non-vacuity witness at `x = -1 ∈ Z2`: `(1 + 2c)^(-1) * (1 + 2c) = 1` in `Z2`! |
+| `nonvacuity_all_compilers` | `MahlerVanderput2adicCerts.Theorems` | Explicit kernel-checked non-vacuity witnesses for all three finite certificate engines. |
+
+## 135. [`mba-hensel-block-jet-lifting/`](mba-hensel-block-jet-lifting/)
+
+**Mechanism:** **The MBA-Hensel & Affine Block-Jet Lifting Engine** (standalone Lean 4.36.0, zero Mathlib, zero floating-point arithmetic, zero `sorry`, zero `native_decide`). Mixed Bitwise-Arithmetic (MBA) expressions over the 10-operator silicon algebra define exact projective systems $\mathrm{evalMod}\ w\ e : \mathbb{N} \to \mathbb{Z}/2^w\mathbb{Z}$ that are universally **2-
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `evalMod_coherent` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `evalMod_coherent` proved in pure Lean 4 `Init`. |
+| `symDeriv0_sound` | `MbaHenselBlockJetLifting.Theorems` | **Engine Theorem 3.1 (Soundness of Symbolic MBA Differential Compiler `symDeriv0`):** |
+| `quadLiftFromJet_sound` | `MbaHenselBlockJetLifting.Theorems` | **Engine Theorem 4.2 (Single-Step Exact Quadratic Lifting & Uniqueness `w → 2*w`):** |
+| `thm1_constructive_lifts` | `MbaHenselBlockJetLifting.Theorems` | **Main Theorem 1b (Constructive Infinite Bit-by-Bit Lifts of Both 2-Adic Roots):** |
+| `witness2_one_root` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `witness2_one_root` proved in pure Lean 4 `Init`. |
+| `witness3_quad_lift_concrete` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `witness3_quad_lift_concrete` proved in pure Lean 4 `Init`. |
+| `sharpness1_even_mask` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `sharpness1_even_mask` proved in pure Lean 4 `Init`. |
+| `sharpness3_below_mask_threshold` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `sharpness3_below_mask_threshold` proved in pure Lean 4 `Init`. |
+
+## 136. [`zeckendorf-binary-carry-bridge/`](zeckendorf-binary-carry-bridge/)
+
+**Mechanism:** **The $(r + 1)$-State Carry-Bridge Transducer & Difference-Basis Certificate Compiler (`CarryBridgeEngine`)** Every bitmask $x \in \mathbb{N}$ can be read simultaneously in base $2$ ($\sum b _ i 2^i$) and in any binary-weight linear-recurrence numeration system $G _ {k+r} = \sum _ {j \in S} G _ {k+j}$ specified by a finite bitmask certificate `RecCert = (r, maskS
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `popcount_add_carry` | `ZeckendorfBinaryCarryBridge.Theorems` | Kummer-Legendre Binary Carry-Count Identity: `popcount a + popcount b = popcount (a + b) + popcount (carryInMask a b)`. |
+| `master_carry_bridge_iff` | `ZeckendorfBinaryCarryBridge.Theorems` | **MASTER CARRY-BRIDGE EQUIVALENCE (Transducer ↔ Binary Carry-Eigenvalue ↔ Bit-Balance):** For any valid `RecCert c`, any `x p : Nat`, and any `r`-spaced `d : Nat`: `TransducerAccepts c x p d ↔ (p = x + c.mS * d ∧ carryInMask x (c.mS * d) = (2^(c.r+1) - 2) * d)`. |
+| `not_diff_basis_refutation` | `ZeckendorfBinaryCarryBridge.Theorems` | **CONVERSE / SHARPNESS DIRECTION OF THE DICHOTOMY:** If `c` is valid (`r ≥ 2`, `0 ∈ S`, `maskS < 2^r`) and NOT a difference basis (`c.isDiffBasis = false`), then there is an explicit 2-step derivation `x →_δ w1 →_0 p` at `x = maskS /// (maskS <<< δ)` with `d = 2^δ + 1` that VIOLATES both `r`-spacing AND the binary carry-eigenvalue law! |
+| `rbonacci_uniqueness` | `ZeckendorfBinaryCarryBridge.Theorems` | **CANONICAL `r`-BONACCI UNIQUENESS THEOREM (ALL `r ≥ 2`):** Two canonical `r`-Zeckendorf bitmasks with the same `r`-bonacci value MUST be equal! |
+| `rbonacci_master_invariants` | `ZeckendorfBinaryCarryBridge.Theorems` | **COMPLETE SUITE OF COROLLARIES FOR CANONICAL `r`-BONACCI NORMALIZATION (ALL `r ≥ 2`):** For EVERY `r ≥ 2` and EVERY `x : Nat`, there exists a UNIQUE canonical `(p, d)` with `noROnes r p ∧ evalRecNat (rBonacciWeight r) p = evalRecNat (rBonacciWeight r) x ∧ p = x + d`, and it satisfies ALL SEVEN pure-silicon invariants simultaneously! |
+| `sparse_r6_diff_basis_infinite_law` | `ZeckendorfBinaryCarryBridge.Theorems` | Infinite theorem instantiated automatically from `certDB6A_ok` (`decide`) via the Carry-Bridge Engine: for the sparse difference-basis recurrence `G_{k+6} = G_{k+5} + G_{k+3} + G_{k+1} + G_k` (`m_S = 21`), EVERY rewrite derivation `x →* p` obeys `carryInMask x (21 * d) = 126 * d`, `p ^^^ x = clmul 107 d`, `popcount x = popcount p + 3 * popcount d`, and `popcount (carryInMask x (21 * d)) = 6 * popcount d`! |
+| `witness_nonvacuity_sparse_r6` | `ZeckendorfBinaryCarryBridge.Theorems` | Non-vacuity witness 3: non-`r`-bonacci sparse difference basis `certDB6A` (`r=6, S={0,1,3,5}, m_S=21`) has a genuine non-trivial 2-step derivation `x = 0b101011101011 = 2795 → 4139 → p = 4160` (`d = 65 = 2^6 + 1`)! |
+| `sharpness_non_confluence_still_obeys_carry_bridge` | `ZeckendorfBinaryCarryBridge.Theorems` | **SHARPNESS 3 (Difference-Basis Carry-Bridge Holds Even Under Non-Confluence!):** For `certDB4A` (`r = 4, S = {0, 1, 3}, m_S = 5`, a genuine difference basis), starting from `x = 47 (0b101111)`, firing `k = 2` reaches `67` while firing `k = 0` reaches `52` (`67 ≠ 52`: non-confluent!), YET BOTH derivations satisfy `carryInMask x (5 * d) = 30 * d`! |

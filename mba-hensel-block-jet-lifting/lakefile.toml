@@ -1,0 +1,12 @@
+name = "mba-hensel-block-jet-lifting"
+version = "0.1.0"
+defaultTargets = ["MbaHenselBlockJetLifting", "Solution"]
+
+[[lean_lib]]
+name = "MbaHenselBlockJetLifting"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

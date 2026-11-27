@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Bitwise-Weighted Binomial & Lucas-Mask Fractal Engine (adic-9)
+  description: >-
+    **Name:** The Three-Stage Lucas-Mask Bit-Slice & 2-Adic Bit-Smoothness Engine (`LucasMaskEngine`). **Core Silicon Principle (Finite $\to$ Infinite Bridge):** Treating Lucas's theorem mod $2$ as a silicon bitmask filter $k \subseteq _ 2 n$ (`k &&& n = k`, equivalently `k & ~n = 0`), we construct a **reusable three-stage infinite proof engine** that lifts finite LSB bit-slice tra
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: lucas-mask-walsh-binom-fractals
+  license: Apache-2.0

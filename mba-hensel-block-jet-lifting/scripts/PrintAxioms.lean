@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms MbaHenselBlockJetLiftingChallenge.evalMod_coherent
+#print axioms MbaHenselBlockJetLiftingChallenge.symDeriv0_sound
+#print axioms MbaHenselBlockJetLiftingChallenge.quadLiftFromJet_sound
+#print axioms MbaHenselBlockJetLiftingChallenge.thm1_constructive_lifts
+#print axioms MbaHenselBlockJetLiftingChallenge.witness2_one_root
+#print axioms MbaHenselBlockJetLiftingChallenge.witness3_quad_lift_concrete
+#print axioms MbaHenselBlockJetLiftingChallenge.sharpness1_even_mask
+#print axioms MbaHenselBlockJetLiftingChallenge.sharpness3_below_mask_threshold

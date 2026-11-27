@@ -1,0 +1,12 @@
+name = "lucas-mask-walsh-binom-fractals"
+version = "0.1.0"
+defaultTargets = ["LucasMaskWalshBinomFractals", "Solution"]
+
+[[lean_lib]]
+name = "LucasMaskWalshBinomFractals"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

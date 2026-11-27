@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms LucasMaskWalshBinomFractalsChallenge.delta_two_state_div
+#print axioms LucasMaskWalshBinomFractalsChallenge.bitUnit_sq_lift
+#print axioms LucasMaskWalshBinomFractalsChallenge.bitSmooth_pow_odd
+#print axioms LucasMaskWalshBinomFractalsChallenge.walsh_bitSmooth_spike
+#print axioms LucasMaskWalshBinomFractalsChallenge.walsh_lucas_binom_odd_pow
+#print axioms LucasMaskWalshBinomFractalsChallenge.walsh_lucas_binom_even_pow
+#print axioms LucasMaskWalshBinomFractalsChallenge.walsh_lucas_mixed_product
+#print axioms LucasMaskWalshBinomFractalsChallenge.sharpness_squaring_jump_needs_spike_mask

@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MahlerVanderput2adicCertsChallenge.vdp_reconstruct",
+    "MahlerVanderput2adicCertsChallenge.z2_density_identity",
+    "MahlerVanderput2adicCertsChallenge.q_gray_alternating_duality_even",
+    "MahlerVanderput2adicCertsChallenge.theta2_bitwise_inverse_Z2",
+    "MahlerVanderput2adicCertsChallenge.triadic_holder_2_3_sharp",
+    "MahlerVanderput2adicCertsChallenge.shear_carry_1lipschitz_sharp",
+    "MahlerVanderput2adicCertsChallenge.exp2c_neg_one_inv",
+    "MahlerVanderput2adicCertsChallenge.nonvacuity_all_compilers"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

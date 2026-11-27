@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "LucasMaskWalshBinomFractalsChallenge.delta_two_state_div",
+    "LucasMaskWalshBinomFractalsChallenge.bitUnit_sq_lift",
+    "LucasMaskWalshBinomFractalsChallenge.bitSmooth_pow_odd",
+    "LucasMaskWalshBinomFractalsChallenge.walsh_bitSmooth_spike",
+    "LucasMaskWalshBinomFractalsChallenge.walsh_lucas_binom_odd_pow",
+    "LucasMaskWalshBinomFractalsChallenge.walsh_lucas_binom_even_pow",
+    "LucasMaskWalshBinomFractalsChallenge.walsh_lucas_mixed_product",
+    "LucasMaskWalshBinomFractalsChallenge.sharpness_squaring_jump_needs_spike_mask"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

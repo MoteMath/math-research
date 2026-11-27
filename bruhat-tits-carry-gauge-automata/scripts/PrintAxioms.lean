@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BruhatTitsCarryGaugeAutomataChallenge.carryCount_eq_evalMat
+#print axioms BruhatTitsCarryGaugeAutomataChallenge.sound
+#print axioms BruhatTitsCarryGaugeAutomataChallenge.thm_2x2_5point_rigidity
+#print axioms BruhatTitsCarryGaugeAutomataChallenge.thm_2x2_k_equiv_3_mod_8
+#print axioms BruhatTitsCarryGaugeAutomataChallenge.thm_3x3_exact_v2
+#print axioms BruhatTitsCarryGaugeAutomataChallenge.thm_phi4_unbounded
+#print axioms BruhatTitsCarryGaugeAutomataChallenge.nonvacuous_3x3_k4
+#print axioms BruhatTitsCarryGaugeAutomataChallenge.sharpness_3x3_all_five_weights

@@ -1,0 +1,12 @@
+name = "mahler-vanderput-2adic-certs"
+version = "0.1.0"
+defaultTargets = ["MahlerVanderput2adicCerts", "Solution"]
+
+[[lean_lib]]
+name = "MahlerVanderput2adicCerts"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
