@@ -330,7 +330,7 @@ def verify_polynomial_degree_optimality():
 
 def verify_parametric_inv_sqrt_and_circuit_tightness():
     """
-    Verify v2 S-Tier extensions:
+    Verify v2 extensions:
       1. Parametric all-order-d ramified inverse-square-root S_d (d = 2..10):
          exact valuation law (d-1)*m_k = (d-1)*(d^k*(m0-2)+2) + (d^k-1)*(s2(d)-1),
          power-of-2 collapse S_{2^r}^k = S_2^(r*k), and strict super-gain when s2(d) >= 2.
@@ -408,7 +408,7 @@ def verify_parametric_inv_sqrt_and_circuit_tightness():
         for t in range(min(1 << (N - 1), 256)):
             a = 2 * t + 1
             assert (a * eval_poly(f_opt, a)) % mod == 1
-    print("[OK] S-Tier v2 parametric S_d (d=2..10), WZ central-binomial convolution,")
+    print("[OK] v2 parametric S_d (d=2..10), WZ central-binomial convolution,")
     print("     S_{2^r} = S_2^r collapse, and exact depth-k 2^(k+1)-bit tightness (k=1,2,3) verified!")
 
 

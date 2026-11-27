@@ -33,6 +33,30 @@
 
 ---
 
+## Verbatim `#print axioms` Output
+
+```text
+$ lake env lean scripts/PrintAxioms.lean
+'BitnetContractionChallenge.ternary_nearest_nonneg_contraction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BitnetContractionChallenge.bitnet_absmean_contraction_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'BitnetContractionChallenge.bitnet_absmax_and_half_contraction_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BitnetContractionChallenge.bitnet_rms_contraction_exact_algebraic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BitnetContractionChallenge.multilevel_shifted_sqrt_dcrit_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'BitnetContractionChallenge.two_stage_ternary_greedy_vs_disjoint_crossover' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+```
+
+---
+
 ## For Mathematicians / Non-Mathematicians / Prior-Art Summary
 
 See [`README.md`](README.md) for the complete **For Mathematicians**, **For Non-Mathematicians**, **Prior-Art Context**, and **Synthetic Score** (`91 / 100`) sections.

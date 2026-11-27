@@ -3115,7 +3115,7 @@ theorem no_depth0_circuit_reaches_4_bits :
   omega
 
 -- Witness 7: Exact tightness of depth-2 circuit achieving N = 2^(2+1) = 8 bits (mod 256)
--- (directly answers referee-7's challenge for depth-2 degree-4 8-bit circuit!)
+-- (the depth-2 degree-4 8-bit circuit case)
 theorem depth2_8bit_circuit_exists :
     ∃ C : PolyCircuit, mulDepth C ≤ 2 ∧
       ∀ a : Int, OddInt a → DivPow2 (1 - a * evalCircuit C a) 8 :=
