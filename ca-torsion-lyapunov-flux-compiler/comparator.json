@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CaTorsionLyapunovFluxCompilerChallenge.thm_pat101_conservation_0xac8c",
+    "CaTorsionLyapunovFluxCompilerChallenge.thm_strict_fp_termination_0x2c48",
+    "CaTorsionLyapunovFluxCompilerChallenge.thm_global_acyclicity_0x2c48",
+    "CaTorsionLyapunovFluxCompilerChallenge.thm_travelingWave_locking_rule152",
+    "CaTorsionLyapunovFluxCompilerChallenge.thm_microcanonical_0xf0e0",
+    "CaTorsionLyapunovFluxCompilerChallenge.thm_blinker_convergence_rule108",
+    "CaTorsionLyapunovFluxCompilerChallenge.thm_mod3_torsion_0xb0f0",
+    "CaTorsionLyapunovFluxCompilerChallenge.thm_mod2_torsion_0x83bc"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

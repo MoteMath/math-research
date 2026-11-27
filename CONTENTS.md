@@ -887,3 +887,48 @@ Pure-Init Lean 4 2-adic compactness engine: finite prefix-tree certificates prov
 | `grayQuad2_val_ceiling` | `TwoAdicCarryFirewallCovers.Theorems` | $2^{15} \nmid G(n)^2 + 3n + 60$ for all $n$, where $G(n) = n \oplus (n \gg 1)$ (744.7x compression). |
 | `grayQuad2_neq_shift15` | `TwoAdicCarryFirewallCovers.Theorems` | $G(n)^2 + 3n + 60 \ne n \ll 15$ for all $n$. |
 | `T8_nontrivial_6cycle_never_drops` | `TwoAdicCarryFirewallCovers.Theorems` | For $T _ 8$ the positive 6-cycle through $975$ never drops below $975$ (sharpness of the $k \le 5$ range). |
+
+## 69. [`bitwise-grundy-periodicity-compiler/`](bitwise-grundy-periodicity-compiler/)
+
+Pure Lean 4 Init (zero Mathlib) formalization of borrow-guarded subtraction games: Kummer borrow-popcount identity, dyadic borrow-wall periodicity, a kernel-checked Sprague-Grundy periodicity compiler, the multi-heap XOR theorem and the aperiodic borrow-parity boundary.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `kummer_borrow_popcount` | `BitwiseGrundyPeriodicityCompiler.Theorems` | For $s \le n$: $\mathrm{popcount}(n - s) + \mathrm{popcount}(s) = \mathrm{popcount}(n) + \mathrm{borrowCount}(n, s)$. |
+| `borrowCount_le_shift_inv` | `BitwiseGrundyPeriodicityCompiler.Theorems` | For $s < 2^k$ and $s \le n$: $\mathrm{borrowCount}(n + m \cdot 2^{k+B}, s) \le B \iff \mathrm{borrowCount}(n, s) \le B$. |
+| `isWinningMulti_iff_nimSum_ne_zero` | `BitwiseGrundyPeriodicityCompiler.Theorems` | For every game $G$ and every list of heaps $hs$: $\mathrm{IsWinningMulti}(G, hs) \iff \mathrm{nimSum}(hs.\mathrm{map}(g _ G)) \ne 0$. |
+| `dyadic_borrow_wall_periodicity` | `BitwiseGrundyPeriodicityCompiler.Theorems` | If all guards of $G$ are wall guards, then $g _ G(n + 2^{\mathrm{gameShiftBits}(G)}) = g _ G(n)$ for all $n$. |
+| `checkCert_sound_grundy` | `BitwiseGrundyPeriodicityCompiler.Theorems` | If $\mathrm{checkCert}(G, c) = \mathrm{true}$, then $g _ G(n) = \mathrm{evalPeriodic}(c, n)$ for all $n$. |
+| `G_coprime_p5_period_5` | `BitwiseGrundyPeriodicityCompiler.Theorems` | For the game $\{2\,(\text{borrow-free}), 3, 7\}$ and all $n \ge 15$: $g(n + 5) = g(n)$. |
+| `grundyParity_not_eventually_periodic` | `BitwiseGrundyPeriodicityCompiler.Theorems` | For all $n _ 0$ and $p > 0$ there is $n \ge n _ 0$ with $g _ {\mathrm{par}}(n + p) \ne g _ {\mathrm{par}}(n)$. |
+| `grundyParity_oneHeap_periodic_vs_twoHeap_aperiodic` | `BitwiseGrundyPeriodicityCompiler.Theorems` | For $n \ge 12$, $g _ {\mathrm{par}}(n) \ne 0 \iff n \bmod 4 \in \{0, 3\}$; for $k \ge 3$, $g _ {\mathrm{par}}(4k) \oplus g _ {\mathrm{par}}(4) = 0 \iff v _ 2(k)$ is even. |
+
+## 70. [`ca-torsion-lyapunov-flux-compiler/`](ca-torsion-lyapunov-flux-compiler/)
+
+Pure-Init Lean 4 potential/flux/Lyapunov certificate compiler: a finite kernel-decidable check on a cellular-automaton rule proves conservation, torsion, convergence and acyclicity laws on rings of every length.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `thm_pat101_conservation_0xac8c` | `CaTorsionLyapunovFluxCompiler.Theorems` | For every $w \ge 1$, $x$ and $t$, the nonlinear rule 0xac8c conserves the number of cyclic 101 windows: $\Phi(T ^ t x) = \Phi(x)$. |
+| `thm_strict_fp_termination_0x2c48` | `CaTorsionLyapunovFluxCompiler.Theorems` | Rule 0x2c48 satisfies $T(T ^ {4w} x) = T ^ {4w} x$ on every ring of length $w \ge 1$. |
+| `thm_global_acyclicity_0x2c48` | `CaTorsionLyapunovFluxCompiler.Theorems` | If $T ^ P x = x$ for some $P \ge 1$ under rule 0x2c48, then $T x = x$ (no non-trivial cycles on any ring). |
+| `thm_travelingWave_locking_rule152` | `CaTorsionLyapunovFluxCompiler.Theorems` | Under rule 152, $T(T ^ {3w} x) = \mathrm{ringRot}(1, T ^ {3w} x)$ for every ring and configuration. |
+| `thm_microcanonical_0xf0e0` | `CaTorsionLyapunovFluxCompiler.Theorems` | For rule 0xf0e0 and $x ^ \ast = T ^ w x$: $T x ^ \ast = \mathrm{ringRot}(1, x ^ \ast)$ and $\# _ {11}(x ^ \ast) = \# _ {11}(x)$. |
+| `thm_blinker_convergence_rule108` | `CaTorsionLyapunovFluxCompiler.Theorems` | For ECA rule 108 and $y = T ^ {2w} x$: $T(T y) = y$. |
+| `thm_mod3_torsion_0xb0f0` | `CaTorsionLyapunovFluxCompiler.Theorems` | Rule 0xb0f0 satisfies $\Phi(T ^ t x) \equiv \Phi(x) \pmod 3$ for all $w \ge 1$, $x$, $t$, with no integer lift. |
+| `thm_mod2_torsion_0x83bc` | `CaTorsionLyapunovFluxCompiler.Theorems` | Rule 0x83bc satisfies $\Phi(T ^ t x) \equiv \Phi(x) \pmod 2$ for all $w \ge 1$, $x$, $t$, with no integer lift. |
+
+## 71. [`carried-ca-coboundary-rigidity/`](carried-ca-coboundary-rigidity/)
+
+Pure Lean 4 Init formalization (zero Mathlib, toolchain v4.34.1): one-sided weighted-defect rigidity for strongly connected causal bijective bit transducers and exact conservation laws for carried Rule 30, Fredkin routers, bounded-walk involutions and a period-4 carried hybrid automaton.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `CarriedCaCoboundaryRigidityChallenge.causal_bij_weight_rigidity` | `CarriedCaCoboundaryRigidity.Theorems` | A strongly connected causal bijective Mealy transducer (any state type) with a nowhere-zero weight sequence and a one-sided bounded weighted defect is the identity on every finite bit word. |
+| `CarriedCaCoboundaryRigidityChallenge.causal_bij_unbounded_both_sides` | `CarriedCaCoboundaryRigidity.Theorems` | A non-identity strongly connected causal bijective transducer has weighted defect unbounded above and unbounded below for every nowhere-zero weight sequence. |
+| `CarriedCaCoboundaryRigidityChallenge.carriedRule30_alt_bound` | `CarriedCaCoboundaryRigidity.Theorems` | One pass of carried Rule 30 (T30) changes the alternating sum of any bit word by at most 1. |
+| `CarriedCaCoboundaryRigidityChallenge.carriedRule30_iter_alt_exact` | `CarriedCaCoboundaryRigidity.Theorems` | Zero-flushed iterates of T30 conserve the alternating sum exactly for every iterate count t and every word. |
+| `CarriedCaCoboundaryRigidityChallenge.altSemigroup_exact` | `CarriedCaCoboundaryRigidity.Theorems` | Every finite composition of the flushed Rule 30 and Rule 46 passes conserves the alternating sum and the value modulo 3. |
+| `CarriedCaCoboundaryRigidityChallenge.fredkinRouter_iter_popcount_exact` | `CarriedCaCoboundaryRigidity.Theorems` | For every delay d and every iterate count t, the zero-flushed carried Fredkin router conserves popcount exactly. |
+| `CarriedCaCoboundaryRigidityChallenge.walkInv_involutive` | `CarriedCaCoboundaryRigidity.Theorems` | For every capacity K, the bounded-walk transducer walkInv K is an involution on all finite bit words. |
+| `CarriedCaCoboundaryRigidityChallenge.rule54_105_period4` | `CarriedCaCoboundaryRigidity.Theorems` | The nonlinear carried hybrid automaton T54_105 satisfies $T ^ 4 = \mathrm{id}$ on all finite bit words. |

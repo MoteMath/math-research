@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: CA Torsion Lyapunov Flux Compiler — kernel-checked potential/flux certificates for binary cellular automata on rings of every length
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a pure-data
+    sliding-window potential/flux certificate for one-dimensional binary cellular automata.
+    A finite kernel-decidable check over 2^M windows yields theorems for every ring length
+    w >= 1, every configuration and every time: exact integer conservation laws, Z/dZ torsion
+    conservation laws with no integer lift, strict Hamming-dissipation convergence in linear time
+    with global acyclicity, rigid traveling-wave locking, and period-2 blinker convergence via a
+    verified two-step rule compiler.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: ca-torsion-lyapunov-flux-compiler
+  license: Apache-2.0

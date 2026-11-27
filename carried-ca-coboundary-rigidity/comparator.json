@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarriedCaCoboundaryRigidityChallenge.causal_bij_weight_rigidity",
+    "CarriedCaCoboundaryRigidityChallenge.causal_bij_unbounded_both_sides",
+    "CarriedCaCoboundaryRigidityChallenge.carriedRule30_alt_bound",
+    "CarriedCaCoboundaryRigidityChallenge.carriedRule30_iter_alt_exact",
+    "CarriedCaCoboundaryRigidityChallenge.altSemigroup_exact",
+    "CarriedCaCoboundaryRigidityChallenge.fredkinRouter_iter_popcount_exact",
+    "CarriedCaCoboundaryRigidityChallenge.walkInv_involutive",
+    "CarriedCaCoboundaryRigidityChallenge.rule54_105_period4"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

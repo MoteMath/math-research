@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Bitwise Grundy Periodicity Compiler — dyadic borrow-wall periodicity, Sprague-Grundy reflection and aperiodic borrow-parity subtraction games
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of subtraction games whose move
+    legality depends on the binary borrow/carry structure of n - s: the Kummer borrow-popcount identity,
+    dyadic localization of borrow counts, the dyadic borrow-wall periodicity theorem for every wall-guarded game,
+    a kernel-checked certificate compiler (checkCert) that lifts finite binary tables to exact infinite
+    periodicity and winning-bitmask laws, the full multi-heap Sprague-Grundy XOR theorem, and a proved
+    aperiodic borrow-parity game.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bitwise-grundy-periodicity-compiler
+  license: Apache-2.0

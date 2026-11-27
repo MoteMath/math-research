@@ -1,0 +1,23 @@
+{
+    "challenge_module":  "Challenge",
+    "solution_module":  "Solution",
+    "theorem_names":  [
+                          "BitwiseGrundyPeriodicityCompilerChallenge.kummer_borrow_popcount",
+                          "BitwiseGrundyPeriodicityCompilerChallenge.borrowCount_le_shift_inv",
+                          "BitwiseGrundyPeriodicityCompilerChallenge.isWinningMulti_iff_nimSum_ne_zero",
+                          "BitwiseGrundyPeriodicityCompilerChallenge.dyadic_borrow_wall_periodicity",
+                          "BitwiseGrundyPeriodicityCompilerChallenge.checkCert_sound_grundy",
+                          "BitwiseGrundyPeriodicityCompilerChallenge.G_coprime_p5_period_5",
+                          "BitwiseGrundyPeriodicityCompilerChallenge.grundyParity_not_eventually_periodic",
+                          "BitwiseGrundyPeriodicityCompilerChallenge.grundyParity_oneHeap_periodic_vs_twoHeap_aperiodic"
+                      ],
+    "definition_names":  [
+
+                         ],
+    "permitted_axioms":  [
+                             "propext",
+                             "Classical.choice",
+                             "Quot.sound"
+                         ],
+    "enable_nanoda":  true
+}

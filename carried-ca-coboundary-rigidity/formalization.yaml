@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carried Cellular-Automaton Coboundary Rigidity - conservation-versus-bijectivity no-go and exact conservation laws for carried-hybrid binary automata
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a bit-sliced transducer composition
+    and coboundary engine. It proves that a strongly connected causal bijective Mealy bit transducer with a
+    nowhere-zero weight sequence cannot have a one-sided bounded weighted defect unless it is the identity, the
+    exact alternating-weight and mod-3 conservation of carried Wolfram Rule 30 under all flushed iterates and
+    semigroup compositions, popcount conservation for every carried Fredkin router, involutivity of every
+    bounded-walk transducer, and exact period 4 of a nonlinear carried hybrid automaton.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: carried-ca-coboundary-rigidity
+  license: Apache-2.0
