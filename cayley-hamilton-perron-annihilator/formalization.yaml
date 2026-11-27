@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: CHKAE  Verified Cayley–Hamilton, Krylov & Perron-Cone Annihilator Engine
+  description: >-
+    **Mechanism Name:** **CHKAE** (*Verified Cayley–Hamilton, Krylov & Perron-Cone Annihilator Engine*). **Silicon Principle (Finite Binary Matrix/Polynomial Certificate $\to$ Infinite Universal Law $\forall n \in \mathbb{N}$):** In pure silicon binary mathematics, global bit-level sums over $n$-bit words (carried vs. carryless parity correlations, $k$-way binary carry-parity parti
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: cayley-hamilton-perron-annihilator
+  license: Apache-2.0

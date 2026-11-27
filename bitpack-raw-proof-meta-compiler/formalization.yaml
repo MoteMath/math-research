@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: BitPackMC v1  Verified Lean 4 Compact Raw-Bit Proof-Carrying Certificate Meta-Compiler
+  description: >-
+    **Mechanism:** **BitPackMC v1** — a standalone, kernel-verified **Compact Raw-Bit Proof-Carrying Certificate Meta-Compiler** in Lean 4.36.0. **Pure-Silicon Principle (Finite Raw Bytes $\to$ Infinite $\forall x, y \in \mathbb{N}$ Theorems):** Rather than encoding reflection proofs as bulky algebraic ASTs or trusting external solvers, BitPackMC compiles *both* the target universa
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bitpack-raw-proof-meta-compiler
+  license: Apache-2.0

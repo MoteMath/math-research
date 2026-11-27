@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "DyadicBallContractionCompilerChallenge.checkParamTree_sound",
+    "DyadicBallContractionCompilerChallenge.contraction_fixed_point_unique",
+    "DyadicBallContractionCompilerChallenge.bring_quintic_residual_decay",
+    "DyadicBallContractionCompilerChallenge.bring_direct_oscillatory_contraction",
+    "DyadicBallContractionCompilerChallenge.certHalley_valid",
+    "DyadicBallContractionCompilerChallenge.certBringAlt_valid",
+    "DyadicBallContractionCompilerChallenge.mutation_reject_halley_no_subdivision",
+    "DyadicBallContractionCompilerChallenge.mutation_reject_bring_alt_expanding_region"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

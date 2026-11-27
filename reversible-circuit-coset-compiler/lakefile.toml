@@ -1,0 +1,12 @@
+name = "reversible-circuit-coset-compiler"
+version = "0.1.0"
+defaultTargets = ["ReversibleCircuitCosetCompiler", "Solution"]
+
+[[lean_lib]]
+name = "ReversibleCircuitCosetCompiler"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BitpackRawProofMetaCompilerChallenge.checkCert_sound
+#print axioms BitpackRawProofMetaCompilerChallenge.soundness_verifyRawCert
+#print axioms BitpackRawProofMetaCompilerChallenge.gray_3x_uncertainty
+#print axioms BitpackRawProofMetaCompilerChallenge.pop_5x_9x_lower
+#print axioms BitpackRawProofMetaCompilerChallenge.pop_3x_or_11x_sharp
+#print axioms BitpackRawProofMetaCompilerChallenge.pop_2var_3x_plus_y_xor
+#print axioms BitpackRawProofMetaCompilerChallenge.pop_eq_3x_plus_y_cascade
+#print axioms BitpackRawProofMetaCompilerChallenge.bit_eq_3x_plus_y_collapse

@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ReversibleCircuitCosetCompilerChallenge.sound_checkWindowEq",
+    "ReversibleCircuitCosetCompilerChallenge.sound_coset_order",
+    "ReversibleCircuitCosetCompilerChallenge.thm_d6_C_power_mod",
+    "ReversibleCircuitCosetCompilerChallenge.thm_b3_AST_power_mod",
+    "ReversibleCircuitCosetCompilerChallenge.thm_ptoff_dihedral_family",
+    "ReversibleCircuitCosetCompilerChallenge.thm_t3_sharp_collapse_w2",
+    "ReversibleCircuitCosetCompilerChallenge.mut_window_out_of_bounds",
+    "ReversibleCircuitCosetCompilerChallenge.mut_order_lower_inflated"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

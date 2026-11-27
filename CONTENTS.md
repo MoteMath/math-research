@@ -1900,3 +1900,123 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 | `sparse_r6_diff_basis_infinite_law` | `ZeckendorfBinaryCarryBridge.Theorems` | Infinite theorem instantiated automatically from `certDB6A_ok` (`decide`) via the Carry-Bridge Engine: for the sparse difference-basis recurrence `G_{k+6} = G_{k+5} + G_{k+3} + G_{k+1} + G_k` (`m_S = 21`), EVERY rewrite derivation `x →* p` obeys `carryInMask x (21 * d) = 126 * d`, `p ^^^ x = clmul 107 d`, `popcount x = popcount p + 3 * popcount d`, and `popcount (carryInMask x (21 * d)) = 6 * popcount d`! |
 | `witness_nonvacuity_sparse_r6` | `ZeckendorfBinaryCarryBridge.Theorems` | Non-vacuity witness 3: non-`r`-bonacci sparse difference basis `certDB6A` (`r=6, S={0,1,3,5}, m_S=21`) has a genuine non-trivial 2-step derivation `x = 0b101011101011 = 2795 → 4139 → p = 4160` (`d = 65 = 2^6 + 1`)! |
 | `sharpness_non_confluence_still_obeys_carry_bridge` | `ZeckendorfBinaryCarryBridge.Theorems` | **SHARPNESS 3 (Difference-Basis Carry-Bridge Holds Even Under Non-Confluence!):** For `certDB4A` (`r = 4, S = {0, 1, 3}, m_S = 5`, a genuine difference basis), starting from `x = 47 (0b101111)`, firing `k = 2` reaches `67` while firing `k = 0` reaches `52` (`67 ≠ 52`: non-confluent!), YET BOTH derivations satisfy `carryInMask x (5 * d) = 30 * d`! |
+
+## 137. [`binary-partition-window-automata/`](binary-partition-window-automata/)
+
+**Mechanism:** **Dual-Layer Binary Partition Congruence Automaton Engine** (`WindowAutomatonCert` + Symbolic 2-Adic Decimation Lifting). For any finite duplicate-free digit set $D \subseteq \mathbb{N}$ containing $0$ with $L = \max(D) \ge 1$, the $D$-restricted binary partition function $B _ D(n)$ counts representations $n = \sum _ {i \ge 0} d _ i 2^i$ with $d _ i \in D$. Rathe
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `soundness` | `BinaryPartitionWindowAutomata.Theorems` | **Master Automaton Lifting Soundness Theorem (Finite Certificate → ∀ n : Nat).** |
+| `b5_forbids_three_mod4_via_dfa` | `BinaryPartitionWindowAutomata.Theorems` | Machine-checked infinite theorem `b5_forbids_three_mod4_via_dfa` proved in pure Lean 4 `Init`. |
+| `b4_coupled_8n_5_mod4` | `BinaryPartitionWindowAutomata.Theorems` | Machine-checked infinite theorem `b4_coupled_8n_5_mod4` proved in pure Lean 4 `Init`. |
+| `mutation_rejects_bad_q0` | `BinaryPartitionWindowAutomata.Theorems` | Hostile mutation tests: corrupting `q0`, `d1`, or `D` makes `isValid = false` (non-vacuous checker). |
+| `br_universal_mod4_carry_law` | `BinaryPartitionWindowAutomata.Theorems` | **Theorem B (Universal Carry-Valuation Law for All Odd `r = 2^t * u - 1`):** For every `t ≥ 1`, every odd `u`, and every `j : Nat`, `b_{2^t * u - 1}(2 * u * j) mod 4 = Φ_t(j mod 2^t)` — strictly periodic of period `2^t`, independent of the odd factor `u`, and governed by the parity of `v_2(j mod 2^t)`. |
+| `sharpness_r3_even_v2` | `BinaryPartitionWindowAutomata.Theorems` | Boundary sharpness counterexamples in `r` (even `v_2(r+1)` hits `3 mod 4`). |
+| `sharpness_b5_fails_mod8` | `BinaryPartitionWindowAutomata.Theorems` | Modulus sharpness counterexamples (congruences hold mod 4, FAIL mod 8!). |
+| `sharpness_gap023_offset17_fails` | `BinaryPartitionWindowAutomata.Theorems` | Machine-checked infinite theorem `sharpness_gap023_offset17_fails` proved in pure Lean 4 `Init`. |
+
+## 138. [`bitpack-raw-proof-meta-compiler/`](bitpack-raw-proof-meta-compiler/)
+
+**Mechanism:** **BitPackMC v1** — a standalone, kernel-verified **Compact Raw-Bit Proof-Carrying Certificate Meta-Compiler** in Lean 4.36.0. **Pure-Silicon Principle (Finite Raw Bytes $\to$ Infinite $\forall x, y \in \mathbb{N}$ Theorems):** Rather than encoding reflection proofs as bulky algebraic ASTs or trusting external solvers, BitPackMC compiles *both* the target universa
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `checkCert_sound` | `BitpackRawProofMetaCompiler.Theorems` | General Soundness Meta-Theorem for `checkCert`. |
+| `soundness_verifyRawCert` | `BitpackRawProofMetaCompiler.Theorems` | Machine-checked infinite theorem `soundness_verifyRawCert` proved in pure Lean 4 `Init`. |
+| `gray_3x_uncertainty` | `BitpackRawProofMetaCompiler.Theorems` | Theorem 1 (13-byte cert, Schema 0): Exact Gray-Code / 3x Convex-Hull Uncertainty Principle. |
+| `pop_5x_9x_lower` | `BitpackRawProofMetaCompiler.Theorems` | Theorem 3 (26-byte cert, Schema 0): Non-Subadditive (5, 9) Sharp 2/3 Lower Bound. |
+| `pop_3x_or_11x_sharp` | `BitpackRawProofMetaCompiler.Theorems` | Theorem 5 (23-byte cert, Schema 0): Bitwise-OR Separation Law (3, 11) Sharp 2/3 Lower Bound. |
+| `pop_2var_3x_plus_y_xor` | `BitpackRawProofMetaCompiler.Theorems` | Theorem 7 (14-byte cert, Schema 0): 2-Variable Mixed Carry-XOR Sharp 1/3 Lower Bound. |
+| `pop_eq_3x_plus_y_cascade` | `BitpackRawProofMetaCompiler.Theorems` | Theorem 8 (29-byte cert, Schema 1): 2-Var Exact Carry-Cascade Popcount Conservation Law. |
+| `bit_eq_3x_plus_y_collapse` | `BitpackRawProofMetaCompiler.Theorems` | Theorem 10 (19-byte cert, Schema 2): 2-Var Coupled Carry-Collapse Identity. |
+
+## 139. [`cayley-hamilton-perron-annihilator/`](cayley-hamilton-perron-annihilator/)
+
+**Mechanism Name:** **CHKAE** (*Verified Cayley–Hamilton, Krylov & Perron-Cone Annihilator Engine*). **Silicon Principle (Finite Binary Matrix/Polynomial Certificate $\to$ Infinite Universal Law $\forall n \in \mathbb{N}$):** In pure silicon binary mathematics, global bit-level sums over $n$-bit words (carried vs. carryless parity correlations, $k$-way binary carry-parity parti
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `matAnn_sound` | `CayleyHamiltonPerronAnnihilator.Theorems` | Machine-checked infinite theorem `matAnn_sound` proved in pure Lean 4 `Init`. |
+| `scaledVal_exact_valuation` | `CayleyHamiltonPerronAnnihilator.Theorems` | Machine-checked infinite theorem `scaledVal_exact_valuation` proved in pure Lean 4 `Init`. |
+| `carrySumK_eq_obs` | `CayleyHamiltonPerronAnnihilator.Theorems` | Exact semantic bridge for ALL `k ≥ 1` and ALL `n : Nat`. |
+| `thm_Z5_and_K7_pos` | `CayleyHamiltonPerronAnnihilator.Theorems` | **THEOREM 2a (Strict Positivity of `Z_5` and `K_7`):** For ALL `n : Nat`, both `Z_corr 5 n > 0` and `K_corr 7 n > 0`. |
+| `thm_C3_odd_part_mod4` | `CayleyHamiltonPerronAnnihilator.Theorems` | Machine-checked infinite theorem `thm_C3_odd_part_mod4` proved in pure Lean 4 `Init`. |
+| `thm_C5_pos_for_all_ge_8` | `CayleyHamiltonPerronAnnihilator.Theorems` | **THEOREM 5b (Eventual Strict Positivity of `C_5` Beyond Descartes' Rule of Signs):** |
+| `sharpness_K23_fails` | `CayleyHamiltonPerronAnnihilator.Theorems` | **Sharpness Witness 1 (Carried-vs-Carryless Positivity Fails at `c = 23`!):** |
+| `sharpness_K7_Z5_shift` | `CayleyHamiltonPerronAnnihilator.Theorems` | **Sharpness Witness 5 (`+3` shift in `K_7(n+3) = 2*Z_5(n)` is sharp):** |
+
+## 140. [`circulant-carry-bit-splitting-cones/`](circulant-carry-bit-splitting-cones/)
+
+This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.36.0 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `hermitian_row0_telescope_symm` | `CirculantCarryBitSplittingCones.Theorems` | **REUSABLE MECHANISM I (General Involutive Row-0 Telescoping & Palindromy Theorem):** If `H` is `rev`-Hermitian over `Z[Z/mZ]`, `v 0 = e_0`, and row 0 of `H` satisfies `H 0 j = delta_{0,j} e_0 + rev(v j)`, then: 1. `(H^(k+1) v)_0 = (H^k v)_0 + quadForm(v, H^k)` for all `k : Nat`, 2. `rev((H^k v)_0) = (H^k v)_0` for all `k : Nat`. |
+| `mersenne_mod3_recurrence` | `CirculantCarryBitSplittingCones.Theorems` | **THEOREM 1b (Exact 3-Term Recurrence & Exponential Positivity for Mod-3 Mersenne):** For ALL `k : Nat`: 1. `D_3(k + 3) = 4 * D_3(k + 2) + 4 * D_3(k + 1) - D_3(k)`, 2. `D_3(k) ≥ 4^k > 0`, hence class `0 (mod 3)` strictly dominates BOTH `1` and `2 (mod 3)` on every dyadic block `[0, 2^(3k))`. |
+| `mersenne_mod6_dominance_breaks_at_2_pow_72` | `CirculantCarryBitSplittingCones.Theorems` | **THEOREM 1c (Kernel-Checked Sharp Phase Transition at m = 6, N = 2^72):** Although `c_0(2^(6k)) > c_r(2^(6k))` for all `1 ≤ k ≤ 11` (up to `2^66 ≈ 7.38 × 10^19`), at `k = 12` (`N = 2^72 = 4,722,366,482,869,645,213,696`), Mod-6 Mersenne 0-dominance SHARPLY BREAKS with exact deficit `-4,543,260,596,431,345`. |
+| `mersenne_palindromy_naive_involutions_fail` | `CirculantCarryBitSplittingCones.Theorems` | Machine-checked infinite theorem `mersenne_palindromy_naive_involutions_fail` proved in pure Lean 4 `Init`. |
+| `or_mul5_strict_evil_dominance` | `CirculantCarryBitSplittingCones.Theorems` | **THEOREM 2 (Nonlinear Bitwise-OR Evil Dominance for `n /// 5*n`, ALL `N ≥ 1`):** For EVERY `N ≥ 1`, strictly more `n < N` have `s_2(n /// 5*n)` even than odd. |
+| `mul3_newman_benchmark` | `CirculantCarryBitSplittingCones.Theorems` | **THEOREM 4 (Classical Newman 1969 Benchmark Recovered in 9 Rows):** Demonstrates engine reuse across both linear (`3*n`) and nonlinear (`n /// 3*n`, `n /// 5*n`) binary carry transducers. |
+| `hostile_mutation_U0_rejected` | `CirculantCarryBitSplittingCones.Theorems` | Machine-checked infinite theorem `hostile_mutation_U0_rejected` proved in pure Lean 4 `Init`. |
+| `engineII_three_way_sharpness` | `CirculantCarryBitSplittingCones.Theorems` | **3-WAY SHARPNESS COUNTEREXAMPLES FOR ENGINE II:** Replacing `///` by `^^^`, replacing `///` by `&&&`, or replacing `c ∈ {3, 5}` by `c = 7` all break strict evil dominance immediately at `N = 3` (`evil = 1 < 2 = odious`). |
+
+## 141. [`dyadic-ball-contraction-compiler/`](dyadic-ball-contraction-compiler/)
+
+**Name:** *Adaptive 2D Dyadic Ball-Arithmetic, Algebraic Secant-Slope & Binary-Tree Telescoping Contraction Compiler* (`DyadicCompiler`). **Core Silicon Principle (Finite Binary Certificate $\to$ Infinite $\forall n \in \mathbb{N}$ & $\forall p \in P _ 0$ Theorems):** 1. **Exact Dyadic Balls $(m, e, r)$ with Verified Outward Binary Rounding:** Every interval is stored as a triple
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `checkParamTree_sound` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `checkParamTree_sound` proved in pure Lean 4 `Init`. |
+| `contraction_fixed_point_unique` | `DyadicBallContractionCompiler.Theorems` | Meta-Theorem 5: Uniqueness of Fixed Points in B0. |
+| `bring_quintic_residual_decay` | `DyadicBallContractionCompiler.Theorems` | Exact algebraic residual identity for Bring Newton step: /x^5 + (1 + p)x - 1/ = (1 + p + 5 x^4) * /F_p(x) - x/ ≤ 7 * /F_p(x) - x/ on [0, 1/2] × [1/2, 1]! |
+| `bring_direct_oscillatory_contraction` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `bring_direct_oscillatory_contraction` proved in pure Lean 4 `Init`. |
+| `certHalley_valid` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `certHalley_valid` proved in pure Lean 4 `Init`. |
+| `certBringAlt_valid` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `certBringAlt_valid` proved in pure Lean 4 `Init`. |
+| `mutation_reject_halley_no_subdivision` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `mutation_reject_halley_no_subdivision` proved in pure Lean 4 `Init`. |
+| `mutation_reject_bring_alt_expanding_region` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `mutation_reject_bring_alt_expanding_region` proved in pure Lean 4 `Init`. |
+
+## 142. [`dyadic-jsr-polytope-monoid-checker/`](dyadic-jsr-polytope-monoid-checker/)
+
+**Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/certcomp-4/Proof.lean)). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `switched_polytope_sound` | `DyadicJsrPolytopeMonoidChecker.Theorems` | **MAIN SOUNDNESS META-THEOREM 1 (DFA-Switched Exact Dyadic Operator-Norm Contraction):** If `checkSwitchedPolytopeCert cert = true`, then for EVERY word `w` of arbitrary length accepted by the DFA (`runDFA cert.step q0 w = some qn`) and EVERY row `p : Fin d`, the exact `Z[1/2]` row `ℓ_1` norm of `dyadicWordProd M w` satisfies: `‖(dyadicWordProd M w)_p‖_1 ≤_{Z[1/2]} C_const * (lamNum / 2^lamShift)^/w/`. |
+| `convex_hull_infinite_alphabet_sound` | `DyadicJsrPolytopeMonoidChecker.Theorems` | **MAIN SOUNDNESS META-THEOREM 2 (Infinite-Alphabet Dyadic Convex-Hull Contraction):** One finite polytope certificate checked by `decide` on `m` vertex matrices AUTOMATICALLY certifies uniform exponential contraction for ALL arbitrary-length, time-varying products drawn from the ENTIRE INFINITE dyadic convex hull `conv_{Z[1/2]}(M_0, ..., M_{m-1})`! |
+| `periodic_eigen_sound` | `DyadicJsrPolytopeMonoidChecker.Theorems` | **MAIN SOUNDNESS META-THEOREM 4 (Exact Periodic Eigen-Witness JSR Lower Bound):** If `checkPeriodicEigenCert cert = true`, then for EVERY `k : Nat`, the `k`-fold repeated word `w_0^k` (length `/w_0/ * k`) attains exact `ℓ_∞` operator norm at least `(/eig/ / 2^(s * /w_0/))^k`! |
+| `thm1_convex_hull_contraction` | `DyadicJsrPolytopeMonoidChecker.Theorems` | **THEOREM 1C (Infinite-Alphabet Dyadic Convex-Hull Contraction):** Every arbitrary-length sequence of time-varying dyadic convex combinations of `M0, M1` contracts at the exact same rate `4 * (15/16)^n`. |
+| `thm1_sharpness_unbounded` | `DyadicJsrPolytopeMonoidChecker.Theorems` | Machine-checked infinite theorem `thm1_sharpness_unbounded` proved in pure Lean 4 `Init`. |
+| `thm3_signed_cone_subradius` | `DyadicJsrPolytopeMonoidChecker.Theorems` | **THEOREM 3A (Strict Positivity & Exponential Subradius `≥ 5/4` for Signed-Entry Matrices):** |
+| `thm4_unconstrained_lower` | `DyadicJsrPolytopeMonoidChecker.Theorems` | Machine-checked infinite theorem `thm4_unconstrained_lower` proved in pure Lean 4 `Init`. |
+| `mut8_bad_naf_dfa_rejected` | `DyadicJsrPolytopeMonoidChecker.Theorems` | Machine-checked infinite theorem `mut8_bad_naf_dfa_rejected` proved in pure Lean 4 `Init`. |
+
+## 143. [`reversible-circuit-coset-compiler/`](reversible-circuit-coset-compiler/)
+
+**Name:** `RevCert` — **Three-Layer Causal Truncation, Carry-Slice Bisimulation & Coset-Table Reversible-Circuit Compiler**
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `sound_checkWindowEq` | `ReversibleCircuitCosetCompiler.Theorems` | Layer 1A Soundness Meta-Theorem: lifts finite width-w0 equivalence to ALL w ≥ w0! |
+| `sound_coset_order` | `ReversibleCircuitCosetCompiler.Theorems` | Layer 2B Meta-Theorem 3 (Universal Order & Modulo-d Power Reduction ∀ n : Nat, ∀ w ≥ w0!): If `repeatWord d word` returns to coset 0, then W^d = id AND W^n = W^(n % d) for EVERY exponent n : Nat and EVERY bit-width w ≥ w0! |
+| `thm_d6_C_power_mod` | `ReversibleCircuitCosetCompiler.Theorems` | Theorem I.5 (Universal D6 Power-Mod-6 Reduction ∀ n : Nat, ∀ w ≥ 1): C^n = C^(n % 6). |
+| `thm_b3_AST_power_mod` | `ReversibleCircuitCosetCompiler.Theorems` | Theorem II.3 (Universal Modulo-6 Power Reduction ∀ n : Nat, ∀ w ≥ 3): (bCnot(0,1) · bSwap(0,1) · bToff(0,1,2))^n = (bCnot(0,1) · bSwap(0,1) · bToff(0,1,2))^(n % 6). |
+| `thm_ptoff_dihedral_family` | `ReversibleCircuitCosetCompiler.Theorems` | Theorem III.2 (Infinite Family of Hybrid Toffoli-Add Involutions ∀ n : Nat, ∀ w : Nat): (P_toff(0,1,3;2)^n · rNot(3))^2 = Id for ALL exponents n and ALL bit-widths w! |
+| `thm_t3_sharp_collapse_w2` | `ReversibleCircuitCosetCompiler.Theorems` | Sharpness III.c (Width Threshold of T3): T3 = Id for w ≤ 2, while T3 ≠ Id for ALL w ≥ 3! |
+| `mut_window_out_of_bounds` | `ReversibleCircuitCosetCompiler.Theorems` | Machine-checked infinite theorem `mut_window_out_of_bounds` proved in pure Lean 4 `Init`. |
+| `mut_order_lower_inflated` | `ReversibleCircuitCosetCompiler.Theorems` | Machine-checked infinite theorem `mut_order_lower_inflated` proved in pure Lean 4 `Init`. |
+
+## 144. [`strided-bitset-2adic-ultrametric/`](strided-bitset-2adic-ultrametric/)
+
+**Mechanism:** **Bitmask-Slice Carry-Convolution Bridge + 2-Adic Odd-Parity Ultrametric Dominance Engine** (with a kernel-`decide`-executable **Finite-Certificate Unit-Carry Compiler**). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** For any period (stride) $m \ge 1$ and periodic bitmask $M \in \mathbb{N}$, define the $m$-periodic binary-support set generalizing the
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `maskRepCount_slice` | `StridedBitset2adicUltrametric.Theorems` | **Master Bit-Slice Carry-Convolution Bridge:** Lifts the combinatorial tuple count `maskRepCount m masks n` directly from the binary-support predicate `InMask` to the exact base-`2^m` carry-convolution recurrence! |
+| `ultrametric_odd_parity_lift` | `StridedBitset2adicUltrametric.Theorems` | **General Odd-Parity Ultrametric Dominance Engine (`ultrametric_odd_parity_lift`):** For ANY base `B ≥ 2`, ANY carry-convolution recurrence `f (B * q + r) = ∑_{c ≤ q} w c r * f (q - c)` with `f 0 = 1`, and ANY candidate valuation functional `V : Nat → Nat` with `V 0 = 0`: if at every `n = B * q + r > 0`, every active term `w c r > 0` satisfies `v2 (w c r) + V (q - c) ≥ V (B * q + r)` AND an **ODD** number of active terms achieve equality, then `∀ n : Nat, f n > 0 ∧ v2 (f n) = V n`. |
+| `nonbinomial_3S2_add_N_v2` | `StridedBitset2adicUltrametric.Theorems` | **Non-Binomial Application 1 (Proved `∀ n : Nat` via `decide`):** The mixed periodic bitmask sumset `3 * S_2 + N` (`masks = [1, 1, 1, 3]` at stride `m = 2`, non-binomial digit weights `w0 = [1, 4, 7, 8]`, `w1 = [7, 4, 1, 0]`). |
+| `even_window_strided_v2` | `StridedBitset2adicUltrametric.Theorems` | **THEOREM 1 (2-Parameter Infinite Family — Even-Window Strided Valuation Law):** For ALL strides `m ≥ 1`, ALL even multiplicities `k = 2^m + 2*t ∈ [2^m, 2^(m+1) - 2]`, and ALL `n : Nat`, the combinatorial sumset count `r_{k S_m}(n)` is strictly positive and has exact 2-adic valuation `evenWindowVal m t n` (with strict even-local-minimum alternation). |
+| `upper_endpoint_v2_collapse` | `StridedBitset2adicUltrametric.Theorems` | **COROLLARY 1A (Universal `(2^(m+1) - 2)`-Collapse Theorem):** For EVERY stride `m ≥ 1` and EVERY `n : Nat`, the `(2^(m+1) - 2)`-fold `m`-strided Moser-de Bruijn sumset representation count has the EXACT 2-adic valuation of `n + 1`! `∀ m ≥ 1, ∀ n : Nat, v2 (stridedRepCount m (2^(m+1) - 2) n) = v2 (n + 1)`. |
+| `pow2_strided_r_invariance` | `StridedBitset2adicUltrametric.Theorems` | **COROLLARY 2A (Exact `r`-Invariance / Stability Law):** For ALL strides `m ≥ 1`, ALL powers `r1, r2 ≥ m`, and ALL `a : Nat`, `v2 (r_{2^r1 S_m}(2^r1 * a)) = v2 (r_{2^r2 S_m}(2^r2 * a))`. |
+| `witness_three_way_tie_survives` | `StridedBitset2adicUltrametric.Theorems` | Non-vacuity witness 3: Theorem 2 genuinely hits 3-way ties (tie multiplicity 3, odd -> no cancellation)! At `m = 2, r = 3 (K = 8), n = 12 (q = 3, rem = 0)`, the three recurrence terms are `C(8,0)*r(3) = 56`, `C(8,4)*r(2) = 70*28 = 1960`, `C(8,8)*r(1) = 8`, ALL with `v2 = 3`, summing to `2024` which still has `v2 = 3`! |
+| `sharpness_above_window_cancellation` | `StridedBitset2adicUltrametric.Theorems` | **Sharpness Counterexample 3 (Even `k > 2^(m+1) - 2`, non-power-of-two):** At `m = 2, k = 10` (even, `10 > 6`, not a power of 2), at `n = 4`: terms `C(10,0)*r(1) = 10` and `C(10,4)*r(0) = 210` both have `v2 = 1`, causing a 2-way tie with 2-adic cancellation (`stridedRepCount 2 10 4 = 220`, `v2 220 = 2 > 1`)! |

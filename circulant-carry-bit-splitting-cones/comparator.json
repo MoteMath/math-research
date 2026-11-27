@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CirculantCarryBitSplittingConesChallenge.hermitian_row0_telescope_symm",
+    "CirculantCarryBitSplittingConesChallenge.mersenne_mod3_recurrence",
+    "CirculantCarryBitSplittingConesChallenge.mersenne_mod6_dominance_breaks_at_2_pow_72",
+    "CirculantCarryBitSplittingConesChallenge.mersenne_palindromy_naive_involutions_fail",
+    "CirculantCarryBitSplittingConesChallenge.or_mul5_strict_evil_dominance",
+    "CirculantCarryBitSplittingConesChallenge.mul3_newman_benchmark",
+    "CirculantCarryBitSplittingConesChallenge.hostile_mutation_U0_rejected",
+    "CirculantCarryBitSplittingConesChallenge.engineII_three_way_sharpness"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

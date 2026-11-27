@@ -1,0 +1,12 @@
+name = "dyadic-ball-contraction-compiler"
+version = "0.1.0"
+defaultTargets = ["DyadicBallContractionCompiler", "Solution"]
+
+[[lean_lib]]
+name = "DyadicBallContractionCompiler"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

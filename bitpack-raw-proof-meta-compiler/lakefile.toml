@@ -1,0 +1,12 @@
+name = "bitpack-raw-proof-meta-compiler"
+version = "0.1.0"
+defaultTargets = ["BitpackRawProofMetaCompiler", "Solution"]
+
+[[lean_lib]]
+name = "BitpackRawProofMetaCompiler"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

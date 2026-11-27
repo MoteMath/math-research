@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BinaryPartitionWindowAutomataChallenge.soundness",
+    "BinaryPartitionWindowAutomataChallenge.b5_forbids_three_mod4_via_dfa",
+    "BinaryPartitionWindowAutomataChallenge.b4_coupled_8n_5_mod4",
+    "BinaryPartitionWindowAutomataChallenge.mutation_rejects_bad_q0",
+    "BinaryPartitionWindowAutomataChallenge.br_universal_mod4_carry_law",
+    "BinaryPartitionWindowAutomataChallenge.sharpness_r3_even_v2",
+    "BinaryPartitionWindowAutomataChallenge.sharpness_b5_fails_mod8",
+    "BinaryPartitionWindowAutomataChallenge.sharpness_gap023_offset17_fails"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "StridedBitset2adicUltrametricChallenge.maskRepCount_slice",
+    "StridedBitset2adicUltrametricChallenge.ultrametric_odd_parity_lift",
+    "StridedBitset2adicUltrametricChallenge.nonbinomial_3S2_add_N_v2",
+    "StridedBitset2adicUltrametricChallenge.even_window_strided_v2",
+    "StridedBitset2adicUltrametricChallenge.upper_endpoint_v2_collapse",
+    "StridedBitset2adicUltrametricChallenge.pow2_strided_r_invariance",
+    "StridedBitset2adicUltrametricChallenge.witness_three_way_tie_survives",
+    "StridedBitset2adicUltrametricChallenge.sharpness_above_window_cancellation"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

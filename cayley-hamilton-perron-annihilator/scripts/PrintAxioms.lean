@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms CayleyHamiltonPerronAnnihilatorChallenge.matAnn_sound
+#print axioms CayleyHamiltonPerronAnnihilatorChallenge.scaledVal_exact_valuation
+#print axioms CayleyHamiltonPerronAnnihilatorChallenge.carrySumK_eq_obs
+#print axioms CayleyHamiltonPerronAnnihilatorChallenge.thm_Z5_and_K7_pos
+#print axioms CayleyHamiltonPerronAnnihilatorChallenge.thm_C3_odd_part_mod4
+#print axioms CayleyHamiltonPerronAnnihilatorChallenge.thm_C5_pos_for_all_ge_8
+#print axioms CayleyHamiltonPerronAnnihilatorChallenge.sharpness_K23_fails
+#print axioms CayleyHamiltonPerronAnnihilatorChallenge.sharpness_K7_Z5_shift

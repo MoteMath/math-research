@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Verified Reversible-Circuit Commutation, Carry-Bisimulation & Coset-Table Compiler (RevCert)
+  description: >-
+    **Name:** `RevCert` — **Three-Layer Causal Truncation, Carry-Slice Bisimulation & Coset-Table Reversible-Circuit Compiler**
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: reversible-circuit-coset-compiler
+  license: Apache-2.0

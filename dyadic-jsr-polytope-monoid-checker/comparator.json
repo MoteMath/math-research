@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "DyadicJsrPolytopeMonoidCheckerChallenge.switched_polytope_sound",
+    "DyadicJsrPolytopeMonoidCheckerChallenge.convex_hull_infinite_alphabet_sound",
+    "DyadicJsrPolytopeMonoidCheckerChallenge.periodic_eigen_sound",
+    "DyadicJsrPolytopeMonoidCheckerChallenge.thm1_convex_hull_contraction",
+    "DyadicJsrPolytopeMonoidCheckerChallenge.thm1_sharpness_unbounded",
+    "DyadicJsrPolytopeMonoidCheckerChallenge.thm3_signed_cone_subradius",
+    "DyadicJsrPolytopeMonoidCheckerChallenge.thm4_unconstrained_lower",
+    "DyadicJsrPolytopeMonoidCheckerChallenge.mut8_bad_naf_dfa_rejected"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

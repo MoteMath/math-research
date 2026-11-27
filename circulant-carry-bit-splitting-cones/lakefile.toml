@@ -1,0 +1,12 @@
+name = "circulant-carry-bit-splitting-cones"
+version = "0.1.0"
+defaultTargets = ["CirculantCarryBitSplittingCones", "Solution"]
+
+[[lean_lib]]
+name = "CirculantCarryBitSplittingCones"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

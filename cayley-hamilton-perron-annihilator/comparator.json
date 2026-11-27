@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CayleyHamiltonPerronAnnihilatorChallenge.matAnn_sound",
+    "CayleyHamiltonPerronAnnihilatorChallenge.scaledVal_exact_valuation",
+    "CayleyHamiltonPerronAnnihilatorChallenge.carrySumK_eq_obs",
+    "CayleyHamiltonPerronAnnihilatorChallenge.thm_Z5_and_K7_pos",
+    "CayleyHamiltonPerronAnnihilatorChallenge.thm_C3_odd_part_mod4",
+    "CayleyHamiltonPerronAnnihilatorChallenge.thm_C5_pos_for_all_ge_8",
+    "CayleyHamiltonPerronAnnihilatorChallenge.sharpness_K23_fails",
+    "CayleyHamiltonPerronAnnihilatorChallenge.sharpness_K7_Z5_shift"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

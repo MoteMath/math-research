@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitpackRawProofMetaCompilerChallenge.checkCert_sound",
+    "BitpackRawProofMetaCompilerChallenge.soundness_verifyRawCert",
+    "BitpackRawProofMetaCompilerChallenge.gray_3x_uncertainty",
+    "BitpackRawProofMetaCompilerChallenge.pop_5x_9x_lower",
+    "BitpackRawProofMetaCompilerChallenge.pop_3x_or_11x_sharp",
+    "BitpackRawProofMetaCompilerChallenge.pop_2var_3x_plus_y_xor",
+    "BitpackRawProofMetaCompilerChallenge.pop_eq_3x_plus_y_cascade",
+    "BitpackRawProofMetaCompilerChallenge.bit_eq_3x_plus_y_collapse"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

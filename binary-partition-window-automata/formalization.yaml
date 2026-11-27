@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Binary Partition Window-Automaton Compiler & Symbolic 2-Adic Decimation Engine (adic-18)
+  description: >-
+    **Mechanism:** **Dual-Layer Binary Partition Congruence Automaton Engine** (`WindowAutomatonCert` + Symbolic 2-Adic Decimation Lifting). For any finite duplicate-free digit set $D \subseteq \mathbb{N}$ containing $0$ with $L = \max(D) \ge 1$, the $D$-restricted binary partition function $B _ D(n)$ counts representations $n = \sum _ {i \ge 0} d _ i 2^i$ with $d _ i \in D$. Rathe
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: binary-partition-window-automata
+  license: Apache-2.0
