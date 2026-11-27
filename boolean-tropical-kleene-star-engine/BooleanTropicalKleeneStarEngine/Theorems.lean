@@ -2980,13 +2980,11 @@ theorem inVk_succ_iff (k v : Nat) :
     · have h1 := inVk_xor (inVk_lift hv) (inVk_new_gen hodd)
       rwa [Nat.xor_assoc, Nat.xor_self, Nat.xor_zero] at h1
 
-/-- Key bridge lemma: `phiBit k (2^k - 1) ^^^ (2^k - 1)` — actually we ONLY need
-    `inVk (k + 1) ((2^k - 1) ^^^ parGauge k (finMax k))`!
-    CHECK THAT!!
-    - `popcount (2^k - 1) = k`, so `parGauge k (finMax k) = if k % 2 = 1 then 2^k else 0`!
-    - When `k` is EVEN: `(2^k - 1) ^^^ 0 ∈ V_k ⊆ V_{k+1}`!
-    - When `k` is ODD: `(2^k - 1) ^^^ 2^k = ((2^k - 1) ^^^ 2^(k-1)) ^^^ (2^k ^^^ 2^(k-1)) ∈ V_k ⊕ (3·2^(k-1)) ⊆ V_{k+1}`!!
-    **IT IS IN `V_{k+1}` FOR EVERY `k` — BOTH EVEN AND ODD!!** -/
+/-- Key bridge lemma: we only need `inVk (k + 1) ((2^k - 1) ^^^ parGauge k (finMax k))`.
+    - `popcount (2^k - 1) = k`, so `parGauge k (finMax k) = if k % 2 = 1 then 2^k else 0`.
+    - When `k` is even: `(2^k - 1) ^^^ 0 ∈ V_k ⊆ V_{k+1}`.
+    - When `k` is odd: `(2^k - 1) ^^^ 2^k = ((2^k - 1) ^^^ 2^(k-1)) ^^^ (2^k ^^^ 2^(k-1)) ∈ V_k ⊕ (3·2^(k-1)) ⊆ V_{k+1}`.
+    So it lies in `V_{k+1}` for every `k`, both even and odd. -/
 theorem bridge_in_Vk_succ (k : Nat) :
     inVk (k + 1) ((2 ^ k - 1) ^^^ parGauge k (finMax k)) := by
   have hmask := mask_mod_Vk k

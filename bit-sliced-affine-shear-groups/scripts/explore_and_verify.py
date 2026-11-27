@@ -375,7 +375,7 @@ def verify_sharpness_variants():
         ),
         3,
     )
-    # Actually test B_rev o AR(0) at w=3:
+    # test B_rev o AR(0) at w=3:
     o_brev_ar = exact_perm_order_2d(lambda a, b, M: (bitrev(a, 3), bitrev((b + a) & M, 3)), 3)
     assert o_brev_ar == 24
     # Test B_rev o AR(0) at w=4:

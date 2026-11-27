@@ -1284,7 +1284,7 @@ theorem odd_sub1_eq_and_not1 {w : Nat} (hw : 1 ≤ w) (b : BitVec w) (hb : b.toN
     rw [h1', Nat.add_mod_left, Nat.mod_eq_of_lt (by omega)]
   have hbm1_even : (b - 1#w).toNat % 2 = 0 := by rw [hsub_nat]; omega
   -- Show `(b &&& ~~~1#w) + 1#w = b`? Even simpler: `(b &&& ~~~1#w) ^^^ 1#w = b` and compare with `b - 1#w` via bits!
-  -- Actually `toNat` of `(b &&& ~~~1#w)` is `2 * (b.toNat / 2) = b.toNat - 1`!
+  -- Here `toNat` of `(b &&& ~~~1#w)` is `2 * (b.toNat / 2) = b.toNat - 1`.
   -- Prove via bits using `(b - 1#w) + 1#w = b` and zero carry!
   have hbm0 : (b - 1#w).getLsbD 0 = false := by rw [getLsbD_zero_iff_mod2 hw, hbm1_even]; rfl
   have hcarry0 : ∀ j, BitVec.carry j (b - 1#w) 1#w false = false := by

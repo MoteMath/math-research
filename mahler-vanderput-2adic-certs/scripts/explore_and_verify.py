@@ -309,7 +309,7 @@ for c in [-2, -1, 1, 2, 3]:
             for y in range(16):
                 assert (pow(base, x + y, mod) - (pow(base, x, mod) * pow(base, y, mod))) % mod == 0
         # Non-vacuity at x = -1: base^(-1) * base == 1 mod 2^w
-        # Using f_exp(2^w - 1) mod 2^w (valid because base^(2^w) == 1 mod 2^w? Wait: only for w>=1, (1+2c)^(2^w) == 1 mod 2^(w+1)!)
+        # Using f_exp(2^w - 1) mod 2^w (valid because base^(2^w) == 1 mod 2^w? only for w>=1, (1+2c)^(2^w) == 1 mod 2^(w+1)!)
         assert (pow(base, mod - 1, mod) * base) % mod == 1
 print("PASS: Mahler coefficients a_n((1+2c)^x) = (2c)^n verified for c in [-2..3], n=0..15;")
 print("      group homomorphism and x = -1 inverse verified mod 2^w.")

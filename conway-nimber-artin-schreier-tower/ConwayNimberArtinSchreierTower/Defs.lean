@@ -1603,10 +1603,9 @@ theorem popcount_missing_bit_add_lt (m j t : Nat) (hj : j < m) (ht : t < m) (hne
       have : 2 ^ t < 2 ^ j := Nat.pow_lt_pow_right (by decide) htj
       omega
     exact popcount_lt_of_lt_two_pow_sub_one m _ hval
-  · -- t > j: carry overflows out of bit m! Write val = 2^m + (2^t - 1 - 2^j) < 2^m + (2^m - 1)
-    -- Wait: 2^m - 1 - 2^j + 2^t = 2^m + (2^t - 2^j - 1)!
-    -- Actually, bit t..m-1 all become 0, bit m becomes 1, bits 0..t-1 stay (except bit j = 0)!
-    -- Let's prove directly by induction on m!
+  · -- t > j: carry overflows out of bit m. Write val = 2^m + (2^t - 1 - 2^j) < 2^m + (2^m - 1).
+    -- Here 2^m - 1 - 2^j + 2^t = 2^m + (2^t - 2^j - 1): bits t..m-1 become 0, bit m becomes 1,
+    -- and bits 0..t-1 stay (except bit j = 0). Proved directly.
     have hgt : j < t := by omega
     have hsum : 2 ^ m - 1 - 2 ^ j + 2 ^ t = 2 ^ m + (2 ^ t - 1 - 2 ^ j) := by
       have : 2 ^ j < 2 ^ t := Nat.pow_lt_pow_right (by decide) hgt

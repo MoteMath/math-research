@@ -3679,12 +3679,10 @@ theorem evenSum_irregular (k : Nat) (hk : 2 ≤ k) :
                        ⟨1, by have : 2 ^ 2 ≤ 2 ^ k := Nat.pow_le_pow_right (by decide) hk; omega⟩ =
     evenSumLaplacian k ⟨2, by have : 2 ^ 2 ≤ 2 ^ k := Nat.pow_le_pow_right (by decide) hk; omega⟩
                        ⟨2, by have : 2 ^ 2 ≤ 2 ^ k := Nat.pow_le_pow_right (by decide) hk; omega⟩ + 1 := by
-  -- Compare `deg(1)` and `deg(2)` directly via `sumFin_pow2_succ` and bijection `y ↦ y - 1`!
-  -- Actually, compute `∑_{y=0}^{2^k - 1} evenSumH(v2(1 + y)) - evenSumH(v2(1 + 1))` vs
-  -- `∑_{y=0}^{2^k - 1} evenSumH(v2(2 + y)) - evenSumH(v2(2 + 2))`!
-  -- The two FULL sums differ ONLY at the boundary endpoints `y = 0` (`1+0=1, v2=0 -> 1`)
-  -- and `y = 2^k - 1` (`2 + 2^k - 1 = 2^k + 1, v2=0 -> 1`), which CANCEL IDENTICALLY!!
-  -- So `deg(1) - deg(2) = evenSumH(v2(4)) - evenSumH(v2(2)) = evenSumH(2) - evenSumH(1) = 1 - 0 = 1`!!
+  -- Compare `deg(1)` and `deg(2)` directly via `sumFin_pow2_succ` and the bijection `y ↦ y - 1`.
+  -- The two full sums `∑_{y=0}^{2^k - 1} evenSumH(v2(1 + y))` and `∑_{y=0}^{2^k - 1} evenSumH(v2(2 + y))` differ only at the
+  -- boundary endpoints `y = 0` (`1+0=1, v2=0 -> 1`) and `y = 2^k - 1` (`2 + 2^k - 1 = 2^k + 1, v2=0 -> 1`), which cancel.
+  -- So `deg(1) - deg(2) = evenSumH(v2(4)) - evenSumH(v2(2)) = evenSumH(2) - evenSumH(1) = 1 - 0 = 1`.
   have h4 : 4 ≤ 2 ^ k := by have := Nat.pow_le_pow_right (by decide : 0 < 2) hk; simpa using this
   let v1 : Fin (2 ^ k) := ⟨1, by omega⟩
   let v2x : Fin (2 ^ k) := ⟨2, by omega⟩

@@ -1306,37 +1306,9 @@ theorem det_row_block_swap {p q : Nat} (M : Matrix (p + q)) :
       funext i j; simp
     rw [hEq, Nat.mul_zero, altSign_zero, Int.one_mul]
   | succ q =>
-    -- Cycle row `p + q` to row 0 (sign `altSign (p + q)`), then wait —
-    -- even easier: cycle row `p` to row 0 (sign `altSign p`), leaving `q` more bottom rows to cycle past `p` rows!
-    -- Wait: cycling row `p + q` to row 0 moves the LAST row to 0, then we rotate the remaining!
-    -- Even cleaner: let M1 move row `p + q` to row 0, no, move row `p` to row `0`!
-    -- Wait: let's move row `p + q` to row `0` on `M'`:
-    -- If `M1` is `M` with the top `p` rows and next `q` rows swapped (keeping row `p+q` at the end),
-    -- wait: `Fin (p + (q + 1))` = `Fin ((p + q) + 1)`.
-    -- Let `M1` have row `p + q` moved to row `q` (no, move row `p + q` to row `0` in the result!).
-    -- Check: in the target matrix `T`:
-    --   row 0 of T is row p of M
-    --   row 1 of T is row p+1 of M
-    --   ...
-    --   row q of T is row p+q of M
-    --   row q+1 of T is row 0 of M
-    --   ...
-    --   row p+q of T is row p-1 of M.
-    -- Compare with `T_prev` (moving `q` rows instead of `q+1`, applied to `M` with row `p+q` moved to row `0`!):
-    -- Let `M1` be `M` with row `p + q` moved to row `0`? Wait: row `0` of `M1` is row `p+q`, rows `1..p` are `0..p-1`, rows `p+1..p+q` are `p..p+q-1`.
-    -- No! Look at `det_row_cycle_to_zero`: moving row `p` to row `0` of `M` produces:
-    --   `M1` with row `0` = `M p`, rows `1..p` = `M 0..M (p-1)`, rows `p+1..p+q` = `M (p+1)..M (p+q)`!
-    -- Now in `M1`, row `0` is ALREADY in its final position (row 0 of T)!
-    -- Wait: in `M1`, the remaining `p + q` rows (indices `1..p+q`) are:
-    --   `M 0..M (p-1)` (top `p` rows) followed by `M (p+1)..M (p+q)` (bottom `q` rows)!
-    -- Applying `ih` to the bottom `p + q` rows (Wait: `ih` works on a `(p+q) × (p+q)` matrix, not inside a `(p+q+1) × (p+q+1)` matrix!).
-    -- EVEN SIMPLER: prove `det_row_cycle_range` or just apply `det_row_cycle_to_zero` `q + 1` times in REVERSE order:
-    --   To get `T` from `M`, move row `p+q` to row 0 (`altSign (p+q)`), Wait: no!
-    --   Move row `p+q` to row 0: rows become `[p+q, 0..p-1, p..p+q-1]`.
-    --   Move row `p+q` (= old `p+q-1`) to row 0: rows become `[p+q-1, p+q, 0..p-1, p..p+q-2]`.
-    --   Repeat `q+1` times!! Each step moves the LAST row `p+q` to row 0, with sign `altSign (p + q)`!
-    --   WAIT A SECOND!! Doing that `q+1` times gives `altSign ((q+1) * (p+q))` = `altSign (p*(q+1) + q*(q+1))` = `altSign (p*(q+1))` because `q*(q+1)` is ALWAYS EVEN!!
-    --   OH!! MY!! GOD!! ONE-LINE PROOF!!
+    -- Rotate the last row to the top q+1 times. Each rotation contributes the sign
+    -- altSign (p + q), so the total sign is altSign ((q+1) * (p+q)) = altSign (p * (q+1)),
+    -- because q * (q+1) is always even.
     have hRot : ∀ (k : Nat) (hk : k ≤ p + q + 1) (A : Matrix (p + (q + 1))),
         det (fun (i j : Fin (p + (q + 1))) =>
           A (if h : i.val < k then ⟨p + q + 1 - k + i.val, by omega⟩ else ⟨i.val - k, by have := i.isLt; omega⟩) j) =

@@ -192,7 +192,7 @@ def verify_theorem_a_mod3():
         if k <= 10:
             for xi in range(N):
                 # MSB-first automaton uses bits from LSB to MSB in backward recursion!
-                # Wait: check bit order: for s = sum b_j 2^j, MSB-first reads b_{k-1} first, then ..., then b_0.
+                # check bit order: for s = sum b_j 2^j, MSB-first reads b_{k-1} first, then ..., then b_0.
                 # Backward recursion starts at accept_vec after b_0, so step 0 uses xi_0, ..., step k-1 uses xi_{k-1}!
                 tval = eval_automaton_transfer(3, 0, delta_mod3_msb, [1, 0, 0], xi, k)
                 assert tval == a_wht[xi], f"Transfer mismatch k={k}, xi={xi}: {tval} != {a_wht[xi]}"

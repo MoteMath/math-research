@@ -885,14 +885,10 @@ private lemma binCarryWord_testBit_succ (x y r : ℕ) :
 private lemma binBlocks_eq_sum_starts (n k : ℕ) (hn : n < 2 ^ (k + 1)) (h0 : n % 2 = 0) :
     binBlocks n = ∑ r ∈ Finset.range k,
       if n.testBit (r + 1) = true ∧ n.testBit r = false then 1 else 0 := by
-  -- Count `1`-to-`0` starts `(testBit (r+1) = true ∧ testBit r = false)` = `0`-to-`1` ends!
-  -- Actually in `binBlocks n`, it counts `(testBit r = true ∧ testBit (r+1) = false)` for `r ≥ 0`!
-  -- Both count the exact number of maximal contiguous `1`-runs when bit `0` and bit `k+1` are `0`!
-  -- Let's prove via `2 * binBlocks n = popcnt (gray n)` = number of `r ≤ k` with `testBit r ≠ testBit (r+1)`!
-  -- Even simpler: by induction on `k`! Wait: `binBlocks n` counts `1 -> 0` transitions, while
-  -- `carryBlocks` counts `0 -> 1` transitions! Both equal the number of maximal `1`-runs.
-  -- Prove directly by induction on `k`: for ANY `m < 2^k` and any `b0 : Bool`,
-  -- `binBlocks (2 * m + b0.toNat) = ...`!
+  -- `binBlocks n` counts `1 -> 0` transitions `(testBit r = true ∧ testBit (r+1) = false)`, while
+  -- `carryBlocks` counts `0 -> 1` transitions; both equal the number of maximal `1`-runs.
+  -- Prove directly by induction on `k`: for any `m < 2^k` and any `b0 : Bool`,
+  -- `binBlocks (2 * m + b0.toNat) = ...`.
   suffices hgen : ∀ k m : ℕ, m < 2 ^ k →
       (∑ r ∈ Finset.range k,
         if m.testBit r = true ∧ (r = 0 ∨ m.testBit (r - 1) = false) then 1 else 0) = binBlocks m by

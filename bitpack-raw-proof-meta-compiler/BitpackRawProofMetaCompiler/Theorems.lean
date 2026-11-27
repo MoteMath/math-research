@@ -1075,7 +1075,7 @@ theorem reject_goal_mismatch :
         weights := [-2, 3, 3], offset := 0 } = false := by decide
 
 -- 12. Tightened false conjecture attack: valid cert rejected when claiming 4*pop(x) <= 5*(pop(3x)+pop(11x))
---     (Wait: 4/5 = 0.80 > 3/4 = 0.75 is FALSE!)
+--     (4/5 = 0.80 > 3/4 = 0.75, so this claim is false.)
 theorem reject_false_tightened_goal :
     verifyGoal cert3x11x
       { schema := .popIneq, twoVar := false,

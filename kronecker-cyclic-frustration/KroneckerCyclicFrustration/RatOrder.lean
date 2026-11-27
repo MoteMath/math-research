@@ -402,7 +402,7 @@ theorem finProdRat_shift {L : Nat} (hL : 0 < L) (f : Fin L → Rat) :
     -- or directly prove for any `k ≤ m`:
     -- `finProdRat (fun i : Fin (k + 1) => f ⟨i.val + 1, _⟩)` * f ⟨0, _⟩ =
     -- `finProdRat (fun i : Fin (k + 1) => f ⟨i.val, _⟩)` * f ⟨k + 1, _⟩`
-    -- Wait: let's do an even simpler auxiliary identity on `k ≤ m`!
+    -- Auxiliary identity on `k ≤ m`.
     have aux : ∀ (k : Nat) (hk : k ≤ m),
         f ⟨0, Nat.succ_pos m⟩ * finProdRat (fun i : Fin k => f ⟨i.val + 1, Nat.lt_of_lt_of_le (Nat.succ_lt_succ i.isLt) (Nat.succ_le_succ hk)⟩) =
         finProdRat (fun i : Fin k => f ⟨i.val, Nat.lt_of_lt_of_le i.isLt (Nat.le_succ_of_le hk)⟩) * f ⟨k, Nat.lt_succ_of_le hk⟩ := by

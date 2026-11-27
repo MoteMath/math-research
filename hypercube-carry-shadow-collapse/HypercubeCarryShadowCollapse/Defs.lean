@@ -1365,9 +1365,9 @@ def domAbsRHS : BitExpr 4 := .shl1 (.bcarry a0 a3)
     (6 reachable states in the 1 × 8 × 4 product automaton). -/
 def domAbsCert : Nat := 2223046689
 
-/-- Law 8 (THE 4-OPERAND DOMINATED CARRY-ABSORPTION LAW — Proved automatically by Engine #1!).
+/-- Law 8 (the 4-operand dominated carry-absorption law).
     Whenever d ⊆ b ⊆ a and d ⊆ c ⊆ a, BOTH intermediate operands b and c completely vanish:
-      C(C(a, b), C(c, d)) = 2 * C(a, d) !! -/
+      C(C(a, b), C(c, d)) = 2 * C(a, d). -/
 theorem carryMask_dominated_absorption {a b c d : Nat}
     (hba : bsub b a) (hca : bsub c a) (hdb : bsub d b) (hdc : bsub d c) :
     carryMask (carryMask a b) (carryMask c d) = 2 * carryMask a d := by
@@ -2086,7 +2086,7 @@ theorem applyAxes_closed_form_on_dom {m : Nat} (axes : List (Fin m)) (hnodup : a
           have hz1 := (ih hnodup_rest I1).1 hI1J1
           dsimp only [z]
           rw [hz0, hz1, carryMask_two_pow_mul, ← hI0J0, hI1]
-        · -- Subcase I0 ≠ J0 (so I1 ≠ J1 too!) — powered by Dominated Carry-Absorption Law!!
+        · -- Subcase I0 ≠ J0 (so I1 ≠ J1 too), by the dominated carry-absorption law.
           have hpos : 0 < rest.length := hrest_len_pos hI0J0
           have hI1neJ1 : I1 ≠ J1 := by
             intro heq

@@ -761,7 +761,7 @@ theorem invSet_popSort_iff : ∀ {xs : List Nat}, xs.Nodup → ∀ (a b : Nat),
                 -- `u < v` lies in the contiguous segment from `a` to `b`!
                 obtain ⟨p₁, p₂, hp⟩ := List.append_of_mem ha_run
                 obtain ⟨q₁, q₂, hq⟩ := List.append_of_mem hb_rest
-                -- Wait: split `a :: p₂` at `u` (its last element) and `q₁ ++ [b]` at `v` (its first element):
+                -- Split `a :: p₂` at `u` (its last element) and `q₁ ++ [b]` at `v` (its first element):
                 have hseg : a :: (p₂ ++ q₁) ++ [b] = (a :: p₂) ++ (q₁ ++ [b]) := by
                   simp [List.append_assoc]
                 have hadj_uv : Adj (a :: (p₂ ++ q₁) ++ [b]) u v := by

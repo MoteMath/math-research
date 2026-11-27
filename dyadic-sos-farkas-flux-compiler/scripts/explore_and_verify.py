@@ -464,7 +464,7 @@ def build_all_certificates():
     # --- Theorem 3B: Continuous Dyadic Hypercube [0,1]^n Genuinely-Cubic Asymmetric 3-Pattern (>= n, SHARP) ---
     #   p(a,b,c) = 3*(1-a)*(1-b) + 3*a*b + 2*a*(1-b)*c - 1
     #   flux(a,b) = a + 2*b - 2*a*b
-    #   shifted = (1-b)*((1-a-c)^2 + a*(1-a) + c*(1-c)) + (1-b)*(1-a)*(1-c) - wait:
+    #   shifted = (1-b)*((1-a-c)^2 + a*(1-a) + c*(1-c)) + (1-b)*(1-a)*(1-c) - 
     #   Earlier: shifted = 2*(1-b)*(1-a)*(1-c) + 2*a*b!
     #   Check: (1-b)*(1-a)*(1-c) uses idxs [1, 3, 5] with const_gram(2, 0), and a*b uses idxs [0, 2] with const_gram(2, 0)!
     #   Even nicer: write 2*(1-b)*(1-a)*(1-c) = (1-b)*(1-a-c)^2 + (1-b)*a*(1-a) + (1-b)*c*(1-c) - (1-b)*a*c + (1-b)*(1-a)*(1-c) ->
@@ -532,8 +532,7 @@ def build_all_certificates():
     bL5b = sympy_to_dpoly(2*a**2 + 2*b**2, v3)
     bR5b = sympy_to_dpoly(2*a**2 + 2*b**2, v3)
     flux5b = sympy_to_dpoly(-4*a*b, v3)
-    # bulk shifted: (c - 2*b + a + 2*b)^2 = (a + c)^2!
-    # Wait: check! (c - 2b + a + 2b)^2 = (a + c)^2!!
+    # bulk shifted: (c - 2*b + a + 2*b)^2 = (a + c)^2
     gram5b_bulk = rank1_gram([((0, 1),), ((2, 1),)], [1, 1], weight=1, shift=0)
     gram5b_left = rank1_gram([((0, 1),), ((1, 1),)], [1, 1], weight=2, shift=0)
     gram5b_right = rank1_gram([((0, 1),), ((1, 1),)], [1, -1], weight=2, shift=0)
@@ -549,17 +548,9 @@ def build_all_certificates():
     # --- Theorem 6: Fixed-Dimension Nonlinear Dyadic Positivstellensatz Refutation (Disk vs Half-Plane) ---
     #   g0 = 1 - x^2 - y^2 >= 0, g1 = x + y - 23/16 >= 0  ==>  False!
     #   Identity: -17/256 == (x - y)^2 + (x + y - 23/16)^2 + 2*(1 - x^2 - y^2) + (23/8)*(x + y - 23/16)
-    #   Wait: let's check sign!
-    #   2*(1 - x^2 - y^2) + (23/8)*(x + y - 23/16) + (x - y)^2 + (x + y - 23/16)^2
-    #     = 2 - (x+y)^2 + (23/8)(x+y) - 529/128 + (x+y)^2 - (23/8)(x+y) + 529/256
-    #     = 2 - 529/256 = -17/256!
-    #   WAIT A SECOND! That means:
-    #     -17/256 == -( ... )? NO!
-    #   Careful with signs! If g0 >= 0 and g1 >= 0, then RHS >= 0, so -17/256 >= 0 => False!!
-    #   Let's double check!
-    #   RHS = (x-y)^2 + (x+y - 23/16)^2 + 2*g0 + (23/8)*g1 >= 0 whenever g0 >= 0, g1 >= 0!
-    #   And algebraically, RHS == -17/256!!
-    #   Therefore target = -17/256 satisfies target == RHS >= 0, hence -17/256 >= 0, CONTRADICTION!
+    #   Expanding: 2*(1 - x^2 - y^2) + (23/8)*(x + y - 23/16) + (x - y)^2 + (x + y - 23/16)^2
+    #     = 2 - (x+y)^2 + (23/8)(x+y) - 529/128 + (x+y)^2 - (23/8)(x+y) + 529/256 = 2 - 529/256 = -17/256.
+    #   If g0 >= 0 and g1 >= 0 the right-hand side is >= 0, so -17/256 >= 0: a contradiction.
     x_s, y_s = sp.symbols('x y')
     v2 = {x_s: 0, y_s: 1}
     g0_ref = sympy_to_dpoly(1 - x_s**2 - y_s**2, v2)

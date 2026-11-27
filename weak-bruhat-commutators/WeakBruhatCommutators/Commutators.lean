@@ -911,7 +911,7 @@ theorem desBot_bubble_pop_sub_pop_bubble {xs : List Nat} (hnd : xs.Nodup) :
       have hsd_x1z : StrictlyDec (x₁ :: seg ++ [z]) := by
         have hnot_asc := hclaim1 x₁ ha2x₁ (hxs_eq ▸ ⟨p₁, seg, p₃, rfl⟩)
         rw [hxs_eq, hasAscentBetween_iff_not_strictlyDec hnd_eq] at hnot_asc
-        -- `¬ ¬ StrictlyDec` is decidable on finite lists? Wait: prove `StrictlyDec` directly from `hnot_asc`!
+        -- Prove `StrictlyDec` directly from `hnot_asc`.
         apply strictlyDec_of_no_adj_ascent
         · have h1 : (x₁ :: seg ++ z :: p₃).Nodup :=
             (List.nodup_append.mp (by simpa [List.append_assoc] using hnd_eq)).2.1

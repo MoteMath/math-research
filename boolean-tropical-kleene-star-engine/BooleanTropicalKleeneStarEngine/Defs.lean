@@ -631,19 +631,15 @@ def inVk (k v : Nat) : Prop :=
     - For `x = 2^k + x'` (`x' < 2^k`):
       - If `k` is EVEN (`k+1` odd): `phiRed (k+1) (2^k + x') = (if popcount x' % 2 = 1 then 2^k else 0) ^^^ phiRed k x'`
       - If `k` is ODD (`k+1` even): `phiRed (k+1) (2^k + x') = (if popcount x' % 2 = 1 then 2^(k-1) else 0) ^^^ phiRed k x'`
-        Wait — notice `(2^k ^^^ 2^(k-1)) = 3 * 2^(k-1) ∈ V_{k+1}`!!
-        SO WE CAN SIMPLY DEFINE THE POTENTIAL UNIFORMLY BY:
-        `phiBit (k : Nat) (x : Nat) : Nat`:
-        - `phiBit 0 _ = 0`
-        - `phiBit (k+1) x = phiBit k (x % 2^k) ^^^ (if x.testBit k ∧ popcount (x % 2^k) % 2 = 1 then 2^k else 0)`!
-        WAIT A SECOND!! CHECK THAT!!
-        For EVERY `k`: `phiBit (k+1) (2^k + x') = phiBit k x' ^^^ (if popcount x' % 2 = 1 then 2^k else 0)`
-        = `phiBit k x' ^^^ parGauge k x'`!!
-        AND `phiBit (k+1) x' = phiBit k x'`!!
-        CHECK IF `phiBit k x` IS IN THE **EXACT SAME COSET** MOD `V_k` AS `phiRed k x`!!
-        When `k` is odd (`k = 2m+1`, so `k+1 = 2m+2`): `2^k ^^^ 2^(k-1) = 3 * 4^m ∈ V_{k+1}`,
-        so `2^k ≡ 2^(k-1) (mod V_{k+1})`!!
-        **OH!! MY!! GOD!! `phiBit` IS LITERALLY 3 LINES LONG, HAS NO PARITY CASE-SPLIT AT ALL, AND SATISFIES `phiBit (k+1) (2^k + x') = parGauge k x' ^^^ phiBit k x'` DEFINITIONALLY!!** -/
+      Note that `(2^k ^^^ 2^(k-1)) = 3 * 2^(k-1) ∈ V_{k+1}`, so the potential can be defined uniformly by
+      `phiBit (k : Nat) (x : Nat) : Nat`:
+      - `phiBit 0 _ = 0`
+      - `phiBit (k+1) x = phiBit k (x % 2^k) ^^^ (if x.testBit k ∧ popcount (x % 2^k) % 2 = 1 then 2^k else 0)`.
+      For every `k`: `phiBit (k+1) (2^k + x') = phiBit k x' ^^^ parGauge k x'` and `phiBit (k+1) x' = phiBit k x'`.
+      `phiBit k x` lies in the same coset mod `V_k` as `phiRed k x`: when `k = 2m+1` (so `k+1 = 2m+2`),
+      `2^k ^^^ 2^(k-1) = 3 * 4^m ∈ V_{k+1}`, so `2^k ≡ 2^(k-1) (mod V_{k+1})`.
+      Hence `phiBit` needs no parity case split and satisfies
+      `phiBit (k+1) (2^k + x') = parGauge k x' ^^^ phiBit k x'` by definition. -/
 def phiBit : Nat → Nat → Nat
   | 0, _ => 0
   | k + 1, x =>

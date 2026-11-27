@@ -189,7 +189,7 @@ def shift_add_booth_csa_multiply(x_u: int, y_u: int, w: int, m: int, k: int) -> 
 
         # Next cycle's Carry-Save state:
         # Notice c_lsb in {0,1} can be folded into C_next (or injected into CSA)!
-        # Wait: let's check if (q_S mod 2^W) and (q_C + c_lsb) works, OR if c_lsb
+        # let's check if (q_S mod 2^W) and (q_C + c_lsb) works, OR if c_lsb
         # is folded via a 3:2 CSA with S_next, C_next, c_lsb!
         # Even simpler: C2 >> k has top k+2 bits = 0, so (C2 >> k) + c_lsb NEVER overflows W bits,
         # OR we keep 3-input reduction with c_lsb at next step!
@@ -424,7 +424,7 @@ def verify_all():
     for W in range(3, 12):
         # S = 2^(W-1) + 2, C = 2^(W-1) + 2 -> S + C = 4 mod 2^W (V = +4, inside [-2^(W-2), 2^(W-2)-1] for W >= 5;
         # even simpler: S = 2^(W-1), C = 2^(W-1) -> S + C = 0 mod 2^W, V = 0!
-        # Wait: for S = 2^(W-1), C = 2^(W-1): signed(S) = -2^(W-1), signed(C) = -2^(W-1), sum = -2^W != 0!
+        # for S = 2^(W-1), C = 2^(W-1): signed(S) = -2^(W-1), signed(C) = -2^(W-1), sum = -2^W != 0!
         # Arithmetic right shift by k=1: (-2^(W-2)) + (-2^(W-2)) = -2^(W-1) != 0 = floor(0 / 2)!
         S = 1 << (W - 1)
         C = 1 << (W - 1)

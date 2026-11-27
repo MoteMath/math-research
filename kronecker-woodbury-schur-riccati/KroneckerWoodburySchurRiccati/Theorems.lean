@@ -222,19 +222,9 @@ theorem det_blockLower {m n : Nat} (A : Mat m m R) (C : Mat n m R) (D : Mat n n 
 
 theorem det_blockUpper {m n : Nat} (A : Mat m m R) (B : Mat m n R) (D : Mat n n R) :
     det (fromBlocks A B (matZero n m) D) = det A * det D := by
-  -- Factor: fromBlocks A B 0 D = fromBlocks A 0 0 D * fromBlocks I ...? No,
-  -- Wait: fromBlocks I B 0 D has rows m..m+n-1 = [0, D], so as AltMultilin in D it is det D * det (fromBlocks I B 0 I) = det D!
-  -- Even simpler: fromBlocks A B 0 D = fromBlocks A 0 0 I * ... no:
-  -- Factor: fromBlocks (I_m) 0 0 D * fromBlocks A B 0 I_n = fromBlocks A B 0 D!
-  -- Wait: check that product!
-  -- (I_m * A + 0 * 0, I_m * B + 0 * I_n; 0 * A + D * 0, 0 * B + D * I_n) = (A, B; 0, D)!!
-  -- AND fromBlocks A B 0 I_n = fromBlocks A 0 0 I_n ... no, A*B!
-  -- Wait: fromBlocks A B 0 I_n * fromBlocks I 0 0 I doesn't separate A and B unless we apply AltMultilin in D!
-  -- Actually: fromBlocks A B 0 D = fromBlocks I_m 0 0 D * fromBlocks A B 0 I_n!
-  -- And for fromBlocks A B 0 I_n: fromBlocks I_m B 0 I_n * fromBlocks A 0 0 I_n = fromBlocks A B 0 I_n!!
-  -- CHECK THAT PRODUCT!!
-  -- (I_m * A + B * 0, I_m * 0 + B * I_n; 0 * A + I_n * 0, 0 * 0 + I_n * I_n) = (A, B; 0, I_n)!!
-  -- WHOA!! ZERO EXTRA WORK!! JUST TWO LINES WITH det_mul, det_blockLower, det_blockUpper_one_diag!!
+  -- Factor: fromBlocks A B 0 D = fromBlocks I_m 0 0 D * fromBlocks A B 0 I_n, and
+  -- fromBlocks A B 0 I_n = fromBlocks I_m B 0 I_n * fromBlocks A 0 0 I_n;
+  -- then use det_mul, det_blockLower and det_blockUpper_one_diag.
   have hfac1 : fromBlocks A B (matZero n m) D =
       matMul (fromBlocks (matOne m) (matZero m n) (matZero n m) D)
              (fromBlocks A B (matZero n m) (matOne n)) := by
@@ -932,7 +922,7 @@ theorem theorem1_carryGenWalsh_singular_at_2 (k : Nat) (hk : 1 ≤ k) :
     unfold carryGenWalshMat; rw [walshPerturbedMat_eq_affineTower, castMatQ_affineTower]; rfl
   rw [hM]
   -- Show for all k ≥ 1, the matrix has identical column 0 and column 1 (so v = e_0 - e_1 is in kernel)!
-  -- Wait: even cleaner, prove by induction on k ≥ 1 that for every row r, M_k(r, 0) = M_k(r, 1)!
+  -- Prove by induction on k ≥ 1 that for every row r, M_k(r, 0) = M_k(r, 1).
   have hcol01 : ∀ (m : Nat) (hm : 1 ≤ m),
       ∀ r : Fin (powB 2 m),
         affineTower walsh2Q (castMatQ (carryGenB 2)) 1 m r ⟨0, powB_pos (by omega) m⟩ =

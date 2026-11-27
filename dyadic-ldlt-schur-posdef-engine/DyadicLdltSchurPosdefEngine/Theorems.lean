@@ -2037,8 +2037,7 @@ theorem expVdc_strictlyPosDef_all_n_iff {c β : Dyad} (hβ : zero <ᵈ β) :
       -- Direct algebraic normalization via exact Int arithmetic!
       have hnorm : ofInt 8 * ((c - β * (one - pow2Neg k)) - pow2Neg 2 * (c - β * (pow2Neg 1 - pow2Neg k))) ≈
                    ofInt 6 * β * pow2Neg k - (ofInt 7 * β - ofInt 6 * c) := by
-        -- Prove directly at the Int level by cancelling shifts!
-        -- Wait: even cleaner, use a 10-line Dyad ring calc on (8c - 2c) + (-8β + β) + (8 - 2)β*2^{-k}!
+        -- Dyad ring calculation on (8c - 2c) + (-8β + β) + (8 - 2)β*2^{-k}.
         let p := pow2Neg k
         have ht1 : ofInt 8 * (c - β * (one - p)) ≈ ofInt 8 * c - ofInt 8 * β + ofInt 8 * β * p := by
           have ha := mul_sub (ofInt 8) c (β * (one - p))
@@ -2077,8 +2076,7 @@ theorem expVdc_strictlyPosDef_all_n_iff {c β : Dyad} (hβ : zero <ᵈ β) :
           have hsub_abc : ∀ x1 y1 z1 x2 y2 z2 : Dyad,
               (x1 - y1 + z1) - (x2 - y2 + z2) ≈ (x1 - x2) - (y1 - y2) + (z1 - z2) := by
             intro x1 y1 z1 x2 y2 z2
-            -- Check in Int after clearing common shift? Wait: just rearrange with Dyad laws?
-            -- Wait: let's prove `(a + b) - (c + d) ≈ (a - c) + (b - d)` once!
+            -- Rearrange with the Dyad laws, proving `(a + b) - (c + d) ≈ (a - c) + (b - d)` once.
             have hadd_sub : ∀ a b u v : Dyad, (a + b) - (u + v) ≈ (a - u) + (b - v) := by
               intro a b u v
               calc

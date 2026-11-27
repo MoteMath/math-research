@@ -1531,7 +1531,7 @@ theorem carryMask_mod_two_pow_add (x w : Nat) :
   by_cases hlast : r + 1 < 2 ^ w
   · -- By induction on q, carryMask (r + 2^w * q) = carryMask r identically!
     suffices carryMask (r + 2 ^ w * q) = carryMask r by rw [this]
-    -- Actually, r + 2^w * q and r + 1 + 2^w * q share identical bits ≥ w!
+  -- r + 2^w * q and r + 1 + 2^w * q share identical bits ≥ w.
     apply Nat.eq_of_testBit_eq
     intro i
     unfold carryMask

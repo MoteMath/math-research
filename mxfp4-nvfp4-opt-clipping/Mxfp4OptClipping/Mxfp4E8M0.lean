@@ -287,8 +287,7 @@ theorem lam0_bulk_le3 {w u : Rat} (hw_lo : (1 / 10 : Rat) ≤ w) (hw_hi : w ≤ 
       (by rw [hquad_eq]; exact hfl) (by rw [hquad_eq]; exact hfr)
     rw [hquad_eq] at hc
     exact Rat.le_trans hle hc
-  -- Split on [0, 3]: only need [0, 1/8], [1/8, 1/4], [1/4, 3/8], [3/8, 3/4], [3/4, 3]
-  -- Actually split on [0, 1/8], [1/8, 1/4], [1/4, 3/8], [3/8, 5/8], [5/8, 3/4], [3/4, 7/8], [7/8, 5/4], [5/4, 7/4], [7/4, 5/2], [5/2, 3]!
+  -- Split on [0, 1/8], [1/8, 1/4], [1/4, 3/8], [3/8, 5/8], [5/8, 3/4], [3/4, 7/8], [7/8, 5/4], [5/4, 7/4], [7/4, 5/2], [5/2, 3]
   cases Rat.le_total (a := a) (b := (1 / 8 : Rat)) with
   | inl h1 =>
     exact hstep 0 0 0 (1 / 8) ha0 h1 (e2m1ErrSq_le_0 1 u) (e2m1ErrSq_le_0 (1 / 2) u)
@@ -422,14 +421,8 @@ theorem opt_e8m0_bound_of_cut (B : Nat) (w M_cut : Rat)
         have h3 : sq ((3 : Rat) - 3) - w * sq 3 ≤ -(((B - 1 : Nat) : Rat) * ((1 - w) / 64)) := by
           have hB0 : (0 : Rat) ≤ ((B - 1 : Nat) : Rat) := rat_natCast_nonneg (B - 1)
           have h12_3 : sq (M_cut - 3) - w * sq M_cut ≤ -(((B - 1 : Nat) : Rat) * ((1 - w) / 64)) := by grind
-          -- Note at M = 3: -9*w ≤ 0, while at M_cut: (M_cut-3)^2 - w*M_cut^2? Wait: just compare directly!
-          -- Since h12_sum holds and (M_cut - 3)^2 >= 0, we check -9*w + (B-1)*(1-w)/64 <= 0 directly from h1_5 or h12_sum!
-          -- Actually for B <= 49, w >= 1/25, wait: at B=49, w=1/7, -9/7 + 48*(6/7)/64 = -9/7 + 9/14 = -9/14 < 0!
-          -- In general: (B-1)*(1-w)/64 <= (B-1)*(1-w)/16 <= 25*w - 1? Not always for small w:
-          -- Even simpler: (M_cut - 3)^2 - w * M_cut^2 >= -9*w? Let's check!
-          -- (M_cut - 3)^2 - w * M_cut^2 - (-9*w) = (M_cut - 3)*(M_cut - 3 - w*(M_cut + 3)) — wait, could be negative!
-          -- Instead, check -9*w + (B-1)*(1-w)/64 <= 0 directly: since h1_5 gives (B-1)*(1-w)/16 <= 25*w - 1,
-          -- dividing by 4 gives (B-1)*(1-w)/64 <= (25*w - 1)/4 < 9*w (since 25w - 1 < 36w)!
+          -- Since h1_5 gives (B-1)*(1-w)/16 ≤ 25*w - 1, dividing by 4 gives
+          -- (B-1)*(1-w)/64 ≤ (25*w - 1)/4 < 9*w (because 25w - 1 < 36w), which closes the bound.
           have hdiv4 : ((B - 1 : Nat) : Rat) * ((1 - w) / 64) ≤ (25 * w - 1) / 4 := by grind
           unfold sq; grind
         exact err_sub_wsq_le_on hw_hi hM_lo hle_cut h3 (by grind)

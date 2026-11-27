@@ -2696,7 +2696,7 @@ theorem sharpness_carry_in_even_not_unimod :
     ¬ (∃ U : Unimod (2 ^ 2), U.val = carryParMat 2 1) := by
   intro ⟨U, hU⟩
   -- Explicit nonzero kernel vector v = (1, 0, -1, 1)? Check: C_2^(1) = [[0,1,0,1],[1,1,1,0],[0,1,1,0],[1,0,0,0]]?
-  -- Wait: use HasSNF.zero_entry_kernel directly from our proved Theorem 1c!
+  -- Use HasSNF.zero_entry_kernel directly (Theorem 1c).
   have hsnf := snf_carry_parity_one_dichotomy 2
   have hzero : (if 2 % 2 = 1 then 1 else if (⟨3, by decide⟩ : Fin (2 ^ 2)).1 + 1 = 2 ^ 2 then 0 else 1) = 0 := by
     decide

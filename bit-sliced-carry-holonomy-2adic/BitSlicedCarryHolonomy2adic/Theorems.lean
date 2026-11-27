@@ -1152,7 +1152,7 @@ theorem xor_add_pow2_of_lt (y c k : Nat) (hy : y < 2 ^ k) :
     ((y + 2 ^ k) ^^^ c) % 2 ^ (k + 2) =
       ((y ^^^ c) + 2 ^ k * (if c.testBit k then 3 else 1)) % 2 ^ (k + 2) := by
   -- Compare bit-by-bit for `i < k + 2`!
-  -- Actually even simpler: relate `(y + 2^k) ^^^ c` directly to `y ^^^ c` as exact `Nat`!
+  -- Relate `(y + 2^k) ^^^ c` directly to `y ^^^ c` as exact `Nat`.
   have hlow : ∀ i < k, ((y + 2 ^ k) ^^^ c).testBit i = (y ^^^ c).testBit i := by
     intro i hi
     rw [Nat.testBit_xor, Nat.testBit_xor, testBit_add_pow2_lt y k i hi]

@@ -221,10 +221,10 @@ def verify_all():
         # Explicit nonzero null vector: at k=1, H2 + 1*B_sing = [[1,1],[1,1]] has kernel w = [1, -1].
         # For k >= 1, since M_1 is already singular, w_k = [1,-1] \otimes e_0 \otimes ... or directly
         # for k=1: v = [1, -1]; for general k >= 1: e_0^{k-1} \otimes [1, -1] (i.e. i=0 vs i=1? Let's check!)
-        # Actually row(0) and row(1) in bit-0? No, at bit k-1: M_k = [[M_{k-1}, M_{k-1}], [M_{k-1}, -M_{k-1}+2J]].
+        # row(0) and row(1) in bit-0? No, at bit k-1: M_k = [[M_{k-1}, M_{k-1}], [M_{k-1}, -M_{k-1}+2J]].
         # At k=1, M_1 = [[1,1],[1,1]], so M_1 * [1, -1]^T = 0.
         # In general for any k >= 1: M_k(i, j) for j=0 vs j=1:
-        # Wait: LSB bit 0 is identical for j=0 (0) and j=1 (1): wait at r=0, (0,0)->1, (0,1)->1, (1,0)->1, (1,1)->-1+2=1!
+        # LSB bit 0 is identical for j=0 (0) and j=1 (1):, at r=0, (0,0)->1, (0,1)->1, (1,0)->1, (1,1)->-1+2=1!
         # EVERY bit-0 output of M_1 is 1! So column 0 == column 1 for ALL k >= 1!
         # Hence v = e_0 - e_1 is ALWAYS in ker(M_k) for EVERY k >= 1!
         v = [Fraction(0)] * (1 << k)
@@ -383,7 +383,7 @@ def verify_all():
     print("\n[Sharpness Counterexamples]")
     # 1. Singular core C = [[1,1],[1,1]] (det(C)=0):
     #    Even with B = I_2 and m0 = 1, M_1 = [[2,1],[1,2]] is invertible (det=3),
-    #    but M_2 has rank <= 4? Wait: M_2 = (J_2 \otimes M_1) + (I_2 \otimes J_2) is singular!
+    #    but M_2 has rank <= 4? M_2 = (J_2 \otimes M_1) + (I_2 \otimes J_2) is singular!
     C_sing = [[Fraction(1), Fraction(1)], [Fraction(1), Fraction(1)]]
     M1_cs = build_transducer_entrywise(C_sing, B_eq, Fraction(1), 1)
     M2_cs = build_transducer_entrywise(C_sing, B_eq, Fraction(1), 2)

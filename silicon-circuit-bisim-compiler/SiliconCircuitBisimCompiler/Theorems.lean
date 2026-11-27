@@ -2298,7 +2298,7 @@ theorem bitonicSort_sound (C : Cell2) (hC : checkComparatorCell C = true) :
       have hCntR : countFalse (fun i : Fin (2 ^ k) => merged ⟨2 ^ k + i.val, by have := i.isLt; simp [Nat.pow_succ]; omega⟩) =
                    countFalse xsR := by
         -- `merged (2^k + i) = decide (countFalse xsR ≤ 2^k - 1 - i) = decide (i < 2^k - countFalse xsR)`
-        -- Wait: countFalse of `1^{2^k - zR} 0^{zR}` equals `zR`!
+        -- countFalse of `1^{2^k - zR} 0^{zR}` equals `zR`.
         have hRevCnt : ∀ (m z : Nat), z ≤ m →
             countFalse (fun i : Fin m => decide (z ≤ m - 1 - i.val)) = z := by
           intro m z hz

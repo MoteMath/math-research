@@ -524,7 +524,7 @@ theorem popcountBits_bitrev (b x : Nat) :
   | succ b ih =>
     -- Split `x` into `x % 2^b` and top bit, or directly induct using `bitrev (b+1)`
     have hmod_lt : x % 2 ^ (b + 1) < 2 ^ (b + 1) := Nat.mod_lt x (Nat.two_pow_pos (b + 1))
-    -- Wait: prove `bitrev` and `popcountBits` depend only on `x % 2^b` first!
+    -- Prove first that `bitrev` and `popcountBits` depend only on `x % 2^b`.
     have hbr_mod : ∀ n y, bitrev n (y % 2 ^ n) = bitrev n y := by
       intro n
       induction n with

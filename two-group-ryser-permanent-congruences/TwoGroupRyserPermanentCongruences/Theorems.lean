@@ -3300,8 +3300,7 @@ theorem isPow2Nat_iff (n : Nat) : isPow2Nat n = true ↔ ∃ b : Nat, n = 2 ^ b 
             by_cases he : m % 2 = 0
             · exact he
             · exfalso
-              -- If m is odd and m ≥ 3, then (m &&& (m - 1)) has bit 1 or higher? Wait: m - 1 = m - 1 (even),
-              -- so m &&& (m - 1) = m - 1 ≠ 0!
+              -- If m is odd and m ≥ 3, then m - 1 is even, so m &&& (m - 1) = m - 1 ≠ 0.
               have hsub : m &&& (m - 1) = m - 1 := by
                 have hm_eq : m = (m - 1) + 1 := by omega
                 have hbit0 : (m - 1) % 2 = 0 := by omega

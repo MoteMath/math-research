@@ -195,51 +195,14 @@ print("  Partial sums S_k = sum_{b<k} 2^(b+1)/(4^(b+1)-1):")
 for k in [1, 2, 3, 4, 5, 8]:
     print(f"    k={k}: {S_exact[k]}")
 
-# Let's check a CLEAN DYADIC UPPER BOUND tail_bound(k) on sum_{b >= k} 2^{-(b+1)} / (1 - 4^{-(b+1)})!
-# Wait: for k >= 1:
-#   b = 0: 2/3
-#   b = 1: 4/15
-#   b >= 2: 1 - 4^{-(b+1)} >= 63/64 > 3/4 (even simpler: for b >= 1, 1 - 4^{-(b+1)} >= 15/16,
-#     so sum_{b >= k} 2^{-(b+1)} / (1 - 4^{-(b+1)}) <= (16/15) * 2^{-k}!)
-# Let's test if a pure dyadic affine tail bound works for the Schur state (c, beta)!
-# In the Schur system for K^{(W)}:
+# A pure dyadic upper bound U(k) for the tail sum_{b >= k} 2^{-(b+1)} / (1 - 4^{-(b+1)}) is needed for the Schur state (c, beta):
 #   leftState(c, beta, k)  = (c, beta)
 #   rightState(c, beta, k) = ((1 - 4^{-(k+1)}) c - beta * 2^{-(k+1)}, (1 - 4^{-(k+1)}) beta)
-# Look at the ratio c/beta!
-#   left:  c'/beta' = c/beta
-#   right: c'/beta' = c/beta - 2^{-(k+1)} / (1 - 4^{-(k+1)})
-# Even simpler: track the dyadic quantity:
-#   For k >= 1: let T(k) = (16/15) * 2^{-k} ? Wait: we want PURE DYADIC arithmetic with NO 15!
-#   Try T(0) = 5/4? Wait:
-#   Check T(0) = 19/16? No, S_inf = 1.186569... and 19/16 = 1.1875 > S_inf!!
-#   HOLD ON! CHECK 19/16 = 1.1875 vs S_inf = 1.186569!!
-#   Even easier: at c = 5/4 = 20/16:
-#   Check exact piecewise dyadic bound U(k) satisfying:
-#     U(k) >= U(k+1) + 2^{-(k+1)} / (1 - 4^{-(k+1)})  <=>  (1 - 4^{-(k+1)}) * (U(k) - U(k+1)) >= 2^{-(k+1)}!
-#   Try U(k) = (9/8) * 2^{-k} for k >= 1, and U(0) = 5/4 - 1/16 = 19/16? Wait:
-#   For k >= 1, U(k) - U(k+1) = (9/8) * 2^{-(k+1)}.
-#   Need (1 - 4^{-(k+1)}) * (9/8) >= 1.
-#   Check k = 1: (15/16) * (9/8) = 135/128 >= 128/128 = 1! TRUE!!
-#   Check k >= 1: 1 - 4^{-(k+1)} >= 15/16, so (1 - 4^{-(k+1)}) * (9/8) >= 135/128 > 1! TRUE FOR ALL k >= 1!!
-#   Now check k = 0: need (1 - 1/4) * (U(0) - U(1)) >= 1/2!
-#   U(1) = 9/16. Need (3/4) * (U(0) - 9/16) >= 1/2 <=> U(0) - 9/16 >= 2/3 <=> U(0) >= 9/16 + 2/3 = 59/48 = 1.229166... < 5/4 = 60/48!!
-#   OMG!! CHECK U(0) = 5/4 - 1/64 = 79/64 = 1.234375!!
-#   (3/4) * (79/64 - 9/16) = (3/4) * (43/64) = 129/256 > 128/256 = 1/2!!
-#   WAIT A SECOND!! CHECK THAT!!
-#   Define U(0) = 79/64, and for k >= 1, U(k) = 9/8 * 2^{-k}!
-#   At k = 0: (3/4)*(79/64 - 9/16) = 129/256 >= 1/2!
-#   At k >= 1: (1 - 4^{-(k+1)})*(9/8 * 2^{-(k+1)}) >= (15/16)*(9/8)*2^{-(k+1)} = (135/128)*2^{-(k+1)} >= 2^{-(k+1)}!
-#   SO AT c = 5/4 = 80/64, beta = 1:
-#   c - U(0)*beta = 1/64 > 0!
-#   AND THE PRODUCT LOWER BOUND:
-#   Define P(k) = 2/3 + 1/3 * 4^{-k}? Even cleaner pure dyadic P(k):
-#   Define P(0) = 5/8, or better: P(k) = 1 - (1/2) * 2^{-2k} = 1 - 2^{-(2k+1)}?
-#   Check P(0) = 2/3: P(k) = 1 - (1/3)*4^{-k} satisfies:
-#     (1 - 4^{-(k+1)}) * (1 - (1/3) 4^{-k}) ? No, going UP from k to k+1:
-#     We multiply by (1 - 4^{-(k+1)}) when going from k+1 to k!
-#   Let's check the EXACT dyadic invariant for:
-#     c - U(k) * beta >= margin * Q(k)!
-#   Check in Python right now!
+# Candidate: U(0) = 79/64 and U(k) = (9/8) * 2^{-k} for k >= 1. The step inequality needed is
+#   (1 - 4^{-(k+1)}) * (U(k) - U(k+1)) >= 2^{-(k+1)}.
+# For k >= 1, 1 - 4^{-(k+1)} >= 15/16, so the left side is >= (15/16)(9/8) 2^{-(k+1)} = (135/128) 2^{-(k+1)} >= 2^{-(k+1)}.
+# For k = 0: (3/4) * (79/64 - 9/16) = 129/256 >= 1/2.
+# At c = 5/4, beta = 1 this gives c - U(0) * beta = 1/64 > 0. Checked exactly below.
 
 def U_bound(k):
     if k == 0:
@@ -252,71 +215,19 @@ for k in range(20):
     rhs = Fraction(1, 1 << (k + 1))
     assert lhs >= rhs, f"Failed U_bound at k={k}: {lhs} < {rhs}"
 
-# Also check the product lower bound:
-# Going from scale k+1 down to scale k, beta multiplies by (1 - 4^{-(k+1)})!
-# Let's check exact product prod_{j=0}^{k-1} (1 - 4^{-(j+1)}) >= 2/3 + 1/(3 * 4^k) > 2/3!
-# Wait: check pure dyadic lower bound on prod_{j=0}^{k-1} (1 - 4^{-(j+1)}):
-# Define B(k) = 11/16 + (5/16) * 4^{-k}? Wait:
-#   B(0) = 1.
-#   B(1) = 11/16 + 5/64 = 49/64 > 48/64 = 3/4 (oops, too big!).
-#   Try B(k) = 2/3 + (1/3) * 4^{-k} (or scaled by 3: 3 * beta >= (2 + 4^{-k}) * beta_init)!
-#   Check induction on 3 * P_k >= 2 + 4^{-k}:
-#     Base k=0: 3 * 1 = 3 >= 2 + 1 = 3!
-#     Step k -> k+1:
-#       3 * P_{k+1} = 3 * P_k * (1 - 4^{-(k+1)}) >= (2 + 4^{-k}) * (1 - 4^{-(k+1)})
-#                   = 2 + 4^{-k} - 2*4^{-(k+1)} - 4^{-(2k+1)}
-#                   = 2 + 2*4^{-(k+1)} - 4^{-(2k+1)}
-#                   >= 2 + 4^{-(k+1)}  (since 4^{-(k+1)} >= 4^{-(2k+1)} for all k >= 0!)
-#   OH!! MY!! GOD!! THAT'S A 2-LINE ALGEBRAIC PROOF WITH ZERO FRACTIONS EXCEPT 4^{-k}!!
-#   AND WHAT DOES THAT GIVE FOR D(r) AT c = 5/4, beta = 1?!
-#   Since c_leaf - U(0) * beta_leaf >= (c - U(k)*beta) * ... wait: let's check what happens to the margin
-#   M(c, beta, k) = c - U(k) * beta!
-#   Wait: at k=0: M(c, beta, 0) = c - (79/64)*beta -> wait, at the leaf k=0, we have U(0) = 79/64, wait no:
-#   At bit k (going from k+1 to k):
-#     - Left child:  c' = c, beta' = beta. Notice U(k) > U(k+1)! So wait: going DOWN from k+1 to k,
-#       we are adding bit k (NOT bits >= k)!
-#     AHA!! Good thing we checked direction!!
-#     At scale k+1, the REMAINING bits to process are bits 0, 1, ..., k!
-#     So the sum over remaining bits is S_k = sum_{b=0}^{k-1} 2^{-(b+1)} / (1 - 4^{-(b+1)})!
-#     Define V(k) = upper bound on S_k = sum_{b=0}^{k-1} 2^{-(b+1)} / (1 - 4^{-(b+1)})!
-#     - V(0) = 0  (no bits left!)
-#     - V(1) = 3/4? Wait: S_1 = 2/3, so V(1) = 11/16 = 0.6875 > 2/3!
-#     - For k >= 1: V(k) = 79/64 - (9/8) * 2^{-k}!
-#       Check V(1) = 79/64 - 9/16 = 43/64 = 0.671875 > 2/3 = 0.666666...!
-#       Check V(k) <= 79/64 < 5/4 for ALL k >= 0!
-#       Check step from k+1 to k:
-#         - Left child (bit k = 0): c' = c, beta' = beta.
-#           c' - V(k) * beta' = c - V(k)*beta >= c - V(k+1)*beta  (since V(k) <= V(k+1) and beta >= 0!)
-#         - Right child (bit k = 1): c' = f_k * c - beta * 2^{-(k+1)}, beta' = f_k * beta  (where f_k = 1 - 4^{-(k+1)}).
-#           c' - V(k) * beta' = f_k * c - (2^{-(k+1)} + f_k * V(k)) * beta
-#                             = f_k * (c - V(k+1) * beta) + (f_k * (V(k+1) - V(k)) - 2^{-(k+1)}) * beta!
-#           We ONLY need: f_k * (V(k+1) - V(k)) >= 2^{-(k+1)} for ALL k >= 0!!
-#           CHECK k = 0: f_0 = 3/4, V(1) - V(0) = 43/64 - 0 = 43/64.
-#             (3/4) * (43/64) = 129/256 > 128/256 = 1/2 = 2^{-1}!! YES!!
-#           CHECK k >= 1: f_k >= 15/16, V(k+1) - V(k) = (9/8) * 2^{-(k+1)}.
-#             f_k * (V(k+1) - V(k)) >= (15/16) * (9/8) * 2^{-(k+1)} = (135/128) * 2^{-(k+1)} >= 2^{-(k+1)}!! YES!!
-#         - AND THEREFORE:
-#           M(rightState) >= f_k * M(state),  and  M(leftState) >= M(state) >= f_k * M(state)!!
-#           AND AT LEAF k = 0: M(c_leaf, beta_leaf, 0) = c_leaf - 0 = c_leaf = D(r)!!
-#           SO AT EVERY LEAF r < 2^k:
-#             D(r) >= (prod_{j=0}^{k-1} f_j) * (c - V(k) * beta)
-#                  >= (2/3) * (5/4 - 79/64) = (2/3) * (1/64) = 1/96 > 1/128!!
-#           WAIT A SECOND! Can we get an even tighter pure dyadic bound (like 1/32 or 1/24)?!
-#           Check V(k) = 19/16 - (9/8)*2^{-k} -> at k=1: 19/16 - 9/16 = 10/16 = 5/8 < 2/3 (too small).
-#           Check V(1) = 43/64, and for k >= 2, V(k) = 77/64 - (17/16)*2^{-k}!
-#           Wait: check V(k) = 153/128 - (9/8)*2^{-k} for k >= 2?
-#           Even simpler! At c = 5/4 = 80/64, beta = 1:
-#           Using V(0) = 0, V(k) = 79/64 - (9/8) * 2^{-k} (for k >= 1) is ONLY 2 cases (k=0 vs k>=1),
-#           gives D(r) >= 1/96 > 1/128 (or with 3/4 * 1/64? No, 2/3 * 1/64 = 1/96, pure dyadic >= 1/128)
-#           AND WAIT: what if we use 17/16 instead of 9/8 for k >= 2?
-#           With V(0)=0, V(1)=11/16, V(k)=19/16 - (17/16)*2^{-k} for k>=2:
-#             k=0: (3/4)*(11/16) = 33/64 >= 1/2!
-#             k=1: V(2)-V(1) = (19/16 - 17/64) - 11/16 = 59/64 - 44/64 = 15/64 -> (15/16)*(15/64) = 225/1024 < 256/1024 (too small).
-#           Try V(0)=0, V(1)=43/64, V(k) = 77/64 - (17/16)*2^{-k} for k >= 2:
-#             k=1: V(2)-V(1) = (77/64 - 17/64) - 43/64 = 17/64 -> (15/16)*(17/64) = 255/1024 (1/1024 shy!).
-#           Try V(0)=0, V(1)=171/256, V(k) = 307/256 - (33/32)*2^{-k} for k >= 2 -> let's not complicate!
-#           2 cases: V(0) = 0, V(k) = 79/64 - (9/8)*2^{-k} (k >= 1) is SO CLEAN and proves D(r) >= 1/128 (and 96 * D(r) >= 1)
-#           for ALL n and ALL r < n in ~15 lines of Lean!
+# Product lower bound: prod_{j<k} (1 - 4^{-(j+1)}) >= 2/3 + (1/3) 4^{-k}, by induction on 3 * P_k >= 2 + 4^{-k}:
+#   base k = 0: 3 >= 3;
+#   step: 3 P_{k+1} >= (2 + 4^{-k}) (1 - 4^{-(k+1)}) = 2 + 2*4^{-(k+1)} - 4^{-(2k+1)} >= 2 + 4^{-(k+1)}.
+# Going from scale k+1 to scale k adds bit k, so the remaining bits are 0..k and the relevant sum is
+#   S_k = sum_{b=0}^{k-1} 2^{-(b+1)} / (1 - 4^{-(b+1)}).
+# Define V(0) = 0 and V(k) = 79/64 - (9/8) * 2^{-k} for k >= 1; then V(k) <= 79/64 < 5/4 for all k.
+# With f_k = 1 - 4^{-(k+1)}, the margin M(c, beta, k) = c - V(k) * beta satisfies:
+#   left child:  M(c, beta, k) >= M(c, beta, k+1) since V(k) <= V(k+1);
+#   right child: c' - V(k) beta' = f_k (c - V(k+1) beta) + (f_k (V(k+1) - V(k)) - 2^{-(k+1)}) beta,
+#     so it suffices that f_k (V(k+1) - V(k)) >= 2^{-(k+1)} for all k >= 0:
+#     k = 0: (3/4)(43/64) = 129/256 > 1/2;  k >= 1: (15/16)(9/8) 2^{-(k+1)} = (135/128) 2^{-(k+1)} >= 2^{-(k+1)}.
+# At a leaf (k = 0), M = c_leaf = D(r), so D(r) >= (prod f_j)(c - V(k) beta) >= (2/3)(5/4 - 79/64) = 1/96 > 1/128.
+# This two-case V gives D(r) >= 1/128 (indeed 96 D(r) >= 1) for all n and all r < n; the checks below are exact.
 
 def V_bound(k):
     if k == 0:

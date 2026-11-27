@@ -1672,7 +1672,7 @@ theorem Dbar_hasRank_full (n : Nat) : HasRank (DbarMat n) n := by
       · -- Apply Exact Involutive Schur-Complement Elimination with pivot Dbar(2^d)!
         have hinvol := Dbar_pow2_invol d
         apply hasRank_schur_inv hinvol hinvol
-        -- Schur complement = 0 ⊕ KT * Dbar(2^d) * K = Dbar(r)!!
+        -- Schur complement = 0 ⊕ KT * Dbar(2^d) * K = Dbar(r).
         have hschur : ∀ i j : Fin r,
             matXor (matZero r r) (matMul KT (matMul (DbarMat (2 ^ d)) K)) i j = DbarMat r i j := by
           intro i j

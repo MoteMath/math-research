@@ -4224,17 +4224,14 @@ theorem gb_mobius_lead_at_one (k : Nat) (hk : 3 ≤ k) :
                   (pAdd (pMul E (pMul E (pMul P3 P3)))
                   (pAdd (pMul (pLin 4) (pMul E (pMul E (pMul P3 P4))))
                         (pMul (pAdd (pMul pVar pVar) (pAdd (pScale (-5) pVar) (pConst 7))) (pMul E (pMul E (pMul P4 P4)))))))))))
-        -- Notice `pEval Q2 1 = (c0 - c1 - c2)^2 = 4 * c2^2`, and at `q = 2`, wait: we cancel `(q - 2)` AND `(q - 1)`!
-        -- Express `pEval Q2 q` as `(q - 2) * (-4 * c2^2) + (q - 1) * S(q)`?
-        -- Even better: `pEval (mobU2 v') q` IS ALREADY a polynomial `Poly`!
-        -- So `(q - 2) * (q - 1) * pEval (mobU2 v') q = (q - 1)^2 * pEval Q2 q`!
-        -- Cancel `(q - 1)` FIRST: `(q - 2) * pEval (mobU2 v') q = (q - 1) * pEval Q2 q`!
-        -- Now evaluate at `q = 1`: `(-1) * pEval (mobU2 v') 1 = 0`, so `pEval (mobU2 v') 1 = 0`!
-        -- Write `pEval (mobU2 v') q = (q - 1) * pEval R q` where `R = pQuotLin (mobU2 v') 1`!
-        -- Then `(q - 2) * pEval R q = pEval Q2 q` (canceling `(q - 1)` again)!
-        -- Plug `q = 1`: `(-1) * pEval R 1 = pEval Q2 1 = 4 * c2^2`, hence `pEval R 1 = -4 * c2^2`!!
-        -- Apply `pEval_horner R 1 q`: `pEval (mobU2 v') q = (q - 1) * (-4 * c2^2 + (q - 1) * pEval (pQuotLin R 1) q)`!!
-        -- WHOA!! ZERO `(q - 2)`-quotient needed!!
+        -- At q = 1: pEval Q2 1 = (c0 - c1 - c2)^2 = 4 * c2^2.
+        -- (q - 2) * (q - 1) * pEval (mobU2 v') q = (q - 1)^2 * pEval Q2 q; cancelling (q - 1) gives
+        -- (q - 2) * pEval (mobU2 v') q = (q - 1) * pEval Q2 q.
+        -- At q = 1 this forces pEval (mobU2 v') 1 = 0, so pEval (mobU2 v') q = (q - 1) * pEval R q
+        -- with R = pQuotLin (mobU2 v') 1, and (q - 2) * pEval R q = pEval Q2 q.
+        -- At q = 1: (-1) * pEval R 1 = pEval Q2 1 = 4 * c2^2, hence pEval R 1 = -4 * c2^2.
+        -- By pEval_horner R 1 q: pEval (mobU2 v') q = (q - 1) * (-4 * c2^2 + (q - 1) * pEval (pQuotLin R 1) q),
+        -- so no (q - 2)-quotient is needed.
         have hQ2_eq : ∀ q : Int, (q - 2) * ((q - 1) * pEval (mobU2 (stepChromPoly gbSpec (gbChromVec k) (gbChromVec k))) q) =
             (q - 1) ^ 2 * pEval Q2 q := by
           intro q; rw [mobius_step_2, hU0 q, hU1 q, hU2 q, hU3 q, hU4 q]

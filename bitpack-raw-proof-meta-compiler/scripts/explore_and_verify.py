@@ -748,26 +748,12 @@ def main():
     print(f"  T5 tightened (2 -> 201/100): FAILS at x=2^101-1: "
           f"100*(2*pop(3x)+pop(G(x)))={lhs_t5} < 201*pop(x)={rhs_t5}")
 
-    # 7. T_2var: 1/3 -> test 34/100 = 17/50!
-    # Check x = sum_{j=0}^{r-1} 2^{2j} = (4^r - 1)/3 (pop = r), y = 4^r - 3*x = 1? No, check x = y = 0101...
-    # Wait: if x_bits = [1, 1], y_bits = [1, 0] repeating (LSB):
-    # At bit 0: bx=1, by=1 -> 3+1=4 (out=0, c=2), x^y=0. At bit 1: bx=1, by=0 -> 3+0+2=5 (out=1, c=2)? No:
-    # Let's take x = (1 << (2*r)) - 1 (all 1s, pop=2r), y = 1 + (1 << (2*r)) - ... wait: 3*x + y = 2^{2r+2} => y = 2^{2r+2} - 3*(2^{2r}-1) = 2^{2r} + 3!
-    # Wait: if x = 2^m - 1 (pop = m) and y = 2^m + 3 (pop = 3): 3x + y = 4*2^m (pop=1), x^y = 2^{m+1} - 4 (pop=m-1).
-    # What achieves 1/3?! x_bits = [1, 1], y_bits = [1, 1]? No, let's check x = (2^{2r}-1)//3 * 2 = 1010...10, y = 2^{2r} - 3*x?
-    # Better: directly construct x, y from repeating 2-bit block (bx, by) = (1,1), (0,1)!
-    # Check: (1,1): 3+1+c -> c=2 if c=0.. Wait: solve 3*x + y = 2^M with x, y sharing bits:
-    # 3*(...111...) + (...111...) = 4*(...111...) -> pop(3x+y)=pop(x), pop(x^y)=0 -> ratio 1/2!
-    # Solve 3*x + y = 0 (2-adically): y = -3x! If x = ...010101 (1/3 in Z_2, wait -1/3 = ...10101011),
-    # then x = -1/3 => -3x = 1! Wait: if x = (4^r - 1)//3, then 3x = 4^r - 1, so y = 1 gives ratio 1.
-    # If x = 1011011... (cycle 1,1,0 -> 3/7): -3*(3/7) = -9/7 = -2 + 5/7 -> y has cycle 5/7 (1,0,1) -> 1 bit diff per 3 bits, pop(x)=2r, pop(y)=2r, pop(x^y)=2r -> ratio 1/2.
-    # Wait: check ALL period-2/3/4 cycles for (3x+y, x^y) directly!
+    # 7. T_2var: test 34/100 = 17/50 in place of 1/3, using a periodic family (see the cycle below).
     r = 60
-    # Cycle (bx, by): (1,1) -> t=4(out=0,c=2); from c=2: (1,1)->t=6(0,3); from c=3: (0,1)->t=4(0,2)!
-    # WHOA!! LOOK AT THAT CYCLE FROM c=2:
-    #   (bx, by) = (1, 1) -> 3+1+2 = 6 (out=0, c'=3), x^y=0, pop(x)+pop(y)=2!
-    #   (bx, by) = (0, 1) -> 0+1+3 = 4 (out=0, c'=2), x^y=1, pop(x)+pop(y)=1!
-    # Total per 2-bit cycle: pop(3x+y)=0, pop(x^y)=1, pop(x)+pop(y)=3 -> RATIO = 1/3 EXACT!!
+    # Extremal 2-bit cycle of (bx, by) pairs (1,1), (0,1) starting from carry c = 2:
+    #   (bx, by) = (1, 1) -> 3+1+2 = 6 (out=0, carry 3), x^y bit 0, pop(x)+pop(y) contribution 2
+    #   (bx, by) = (0, 1) -> 0+1+3 = 4 (out=0, carry 2), x^y bit 1, pop(x)+pop(y) contribution 1
+    # Per cycle: pop(3x+y) = 0, pop(x^y) = 1, pop(x)+pop(y) = 3, so the ratio is exactly 1/3.
     xb = [1] + [1, 0] * r
     yb = [1] + [1, 1] * r
     x_2v = int("".join(map(str, xb[::-1])), 2)

@@ -344,10 +344,8 @@ theorem powerSum_boundary_one (k m : Nat) (hm : m ≤ 2 ^ k) :
     have hsplit :
         xorSumRange (2 ^ (m + 1) - 1) (fun r => if submask r (2 ^ (m + 1) - 1) then mul (pow (pow2 k m) (2 ^ (m + 1) - 1 - r)) (powerSum k m r) else zero) =
         xorSumRange (m + 1) (fun j => mul (pow (pow2 k m) (2 ^ j)) (powerSum k m (2 ^ (m + 1) - 1 - 2 ^ j))) := by
-      -- Induct on n to peel off each j ∈ [0, m]:
-      -- Actually, easier: show LHS ⊕ RHS = 0? No, just prove a general lemma on xorSumRange
-      -- over `2^(m+1) - 1` when only elements `2^(m+1) - 1 - 2^j` (j ≤ m) are nonzero!
-      -- Every r < 2^(m+1) - 1 with popcount r ≥ m has popcount r = m and is 2^(m+1) - 1 - 2^j!
+      -- General lemma on xorSumRange over `2^(m+1) - 1`: only the elements `2^(m+1) - 1 - 2^j` (j ≤ m) are nonzero.
+      -- Every r < 2^(m+1) - 1 with popcount r ≥ m has popcount r = m and is 2^(m+1) - 1 - 2^j.
       have hex_j : ∀ r < 2 ^ (m + 1) - 1, m ≤ popcount r → ∃ j ≤ m, r = 2 ^ (m + 1) - 1 - 2 ^ j := by
         intro r hr hpc
         -- Count how many bits in 0..m are 0 in r: since r < 2^(m+1) - 1, at least one bit j ≤ m is 0.

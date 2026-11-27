@@ -169,7 +169,7 @@ def predicted_feistel_spectrum(m: int, k: int, h_vals: list[int]) -> tuple[int, 
         if t >= 1:
             if g == (1 << t) - 1:
                 # For t = k (g = 2^k - 1), v = 0 is spliced into L0, leaving 2^(k-k) = 1 fixed point
-                # (Wait: v with ctz(v) = k - 1 is v = 2^(k-1), count = 1, distinct from v = 0!)
+                # (v with ctz(v) = k - 1 is v = 2^(k-1), count = 1, distinct from v = 0!)
                 fp_a = 1 << (k - t)
                 fp += fp_a
                 rem = (1 << k) - (1 << (k - t)) - fp_a

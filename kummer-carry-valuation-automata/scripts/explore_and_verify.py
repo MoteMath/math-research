@@ -132,13 +132,13 @@ def build_sxor_cva():
     """
     2 * v2(binom(n + (n ^ 2n), n)) - (2 * s2(n) + s2(n ^ 2n))
     State (prev, c) encoded as 2*prev + c in Fin 4.
-    Wait: check if state (prev=1, c=0) is reachable?
+    check if state (prev=1, c=0) is reachable?
     From (0,0) on b=1: xb=1, s=2 -> (1, 1).
     From (1,1) on b=0: xb=1, s=2 -> (0, 1). On b=1: xb=0, s=2 -> (1, 1).
     From (0,1) on b=0: xb=0, s=1 -> (0, 0). On b=1: xb=1, s=3 -> (1, 1).
     So (1, 0) is unreachable! Still let's check if phi works on all 4 states OR on Fin 3!
     Let's check both Fin 4 (with reachability mask) and direct Fin 3!
-    Wait: for (1,0): on b=0, xb=1, s=1 -> (0,0), w = 1 - 2*1 = -1. tau = 1 - 2*pop(1) = -1.
+    for (1,0): on b=0, xb=1, s=1 -> (0,0), w = 1 - 2*1 = -1. tau = 1 - 2*pop(1) = -1.
     On b=1, xb=0, s=1 -> (1,0), w = 0 - 2*1 = -2 != 0! So (1,0) does NOT satisfy coboundary —
     that's a great demonstration of why reachability masks / Fin 3 reachable encoding matters!
     """

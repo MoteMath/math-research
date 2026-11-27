@@ -771,7 +771,7 @@ def main():
     # Better: at r=0, clmul(a, b) = clmul(a, b) — what about (clmul(a, allOnes) & clmul(b, allOnes))? That IS lane-safe.
     # Take: clmul(a, 1 ^ (1<<<1)) & 1 = a & 1 (lane-safe).
     # Take a NON-lane-safe identity that holds at r=0 ONLY because allOnes=1+x+..., namely:
-    # (clmul(a, b) & (allOnes ^ 1)) vs ... wait: clmul(a, b) <<< 1 = clmul(a <<< 1, b): still holds!
+    # (clmul(a, b) & (allOnes ^ 1)) vs ... clmul(a, b) <<< 1 = clmul(a <<< 1, b): still holds!
     # Take: clmul(a, b) & allOnes = clmul(a, b)! If you naively dilate allOnes -> E_1 without dilating clmul(a, b),
     # you get clmul(a, b) & E_1 = clmul(a, b), which FAILS at w=2, a=0b10, b=0b01!
     w, a_v, b_v = 2, 0b10, 0b01

@@ -512,7 +512,7 @@ def find_sharpness_witnesses() -> None:
 
     # Witness B: Two DIFFERENT valid 4:2 cells (of the 64) on the SAME 4 nonzero words
     # producing DIFFERENT carry-save pairs AND hitting A_2 states +-1!
-    X4 = [3, 1, 2, 4]  # Wait, let's search smallest all-nonzero 4-tuple hitting state +-1 between 4:2 cells!
+    X4 = [3, 1, 2, 4]  # let's search smallest all-nonzero 4-tuple hitting state +-1 between 4:2 cells!
     found_42 = None
     for a in range(1, 8):
         for b in range(1, 8):

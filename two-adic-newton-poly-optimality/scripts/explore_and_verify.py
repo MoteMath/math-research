@@ -311,7 +311,7 @@ def verify_polynomial_degree_optimality():
         # R_D(2D+3) = 2^(D+1) * (D+1)! has EXACT valuation N_max!
         a_test = 2 * D + 3
         rem = (1 - a_test * eval_poly(f_D, a_test)) % mod_next
-        # (Wait: if c_inv is inverted mod 2^(N_max+1), then 1 - a_test*f_D(a_test) == c_inv * 2^(D+1)*(D+1)! mod 2^(N_max+1),
+        # (if c_inv is inverted mod 2^(N_max+1), then 1 - a_test*f_D(a_test) == c_inv * 2^(D+1)*(D+1)! mod 2^(N_max+1),
         #  which has exact valuation N_max!)
         if D <= 7:
             print(f"     D={D:2d} -> N_max = 2({D+1}) - s2({D+1}) = {N_max:2d}  (verified exact)")

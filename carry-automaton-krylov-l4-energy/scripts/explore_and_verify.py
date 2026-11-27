@@ -115,7 +115,7 @@ def mask9_100_xor_111_auto():
 
 def cubic_L4_auto():
     # m = 2, psi(b1, b2) = b1 & b2 -> psi_bits = [0, 0, 0, 1]
-    # phi(q) = ((q>>1)==3) ^ (q&1) -> [0, 1, 0, 1, 0, 1, 1, 0] (mask = 0b01101010 = 106? Wait: let's check!)
+    # phi(q) = ((q>>1)==3) ^ (q&1) -> [0, 1, 0, 1, 0, 1, 1, 0] (mask = 0b01101010 = 106? let's check!)
     return bij_tail_auto("L4-cubic (111^1**1)", 2, [0, 0, 0, 1])
 
 

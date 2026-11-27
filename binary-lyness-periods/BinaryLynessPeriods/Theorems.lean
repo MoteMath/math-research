@@ -395,7 +395,7 @@ theorem lynessStep_iter_mod (c m n x y : Nat) :
           Nat.mod_mod, Nat.mod_mod]
     have h1 := ih y (x ^^^ (y + c))
     have h2 := ih (y % 2 ^ m) (x % 2 ^ m ^^^ (y % 2 ^ m + c % 2 ^ m))
-    -- Wait: RHS has lynessStep (c % 2^m), so prove a 2-step version with arbitrary c1, c2 having same mod!
+    -- The right-hand side has lynessStep (c % 2^m), so prove a 2-step version for arbitrary c1, c2 with the same residue.
     have hstep_mod : ∀ c1 c2 x1 y1 x2 y2 : Nat,
         c1 % 2 ^ m = c2 % 2 ^ m → x1 % 2 ^ m = x2 % 2 ^ m → y1 % 2 ^ m = y2 % 2 ^ m →
         ((iter (lynessStep c1) n (x1, y1)).1 % 2 ^ m, (iter (lynessStep c1) n (x1, y1)).2 % 2 ^ m) =

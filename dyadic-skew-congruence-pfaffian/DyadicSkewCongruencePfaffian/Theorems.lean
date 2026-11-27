@@ -876,7 +876,7 @@ theorem pfaffian_congruence_blockIdSkew : ∀ (n m : Nat) (D : Mat (2 * n)) (A :
           rw [Int.sub_eq_add_neg]
       -- Step 3: Now track `pfaffian (m + (n + 1))` on `congruence (I_{2m} ⊕ (E^T D1 E)) A`!
       -- LHS: factor (I ⊕ E^T D1 E) = (I ⊕ E^T)(I ⊕ Eswap^T)(I ⊕ D)(I ⊕ Eswap)(I ⊕ E)
-      -- Wait: `I ⊕ (E^T D1 E) = (I ⊕ (Eswap * E)^T) * (I ⊕ D) * (I ⊕ (Eswap * E))`!
+      -- `I ⊕ (E^T D1 E) = (I ⊕ (Eswap * E)^T) * (I ⊕ D) * (I ⊕ (Eswap * E))`.
       have hfactor_L :
           castMat (show 2 * m + 2 * (n + 1) = 2 * (m + (n + 1)) by omega) (blockDiag (matId (2 * m)) (congruence E D1)) =
           matMul (castMat (by omega) (blockDiag (matId (2 * m)) (matTrans Ux)))

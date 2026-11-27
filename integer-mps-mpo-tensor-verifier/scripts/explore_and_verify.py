@@ -526,7 +526,7 @@ def main():
         (0,0): [[1, 0], [0, 0]], (0,1): [[0, 0], [0, 0]],
         (1,0): [[0, 0], [0, 0]], (1,1): [[0, 1], [1, 0]],
     }, [1, 0])
-    # Wait: let's check Mid_Gray's exact W on columns [e_0, e_3]!
+    # let's check Mid_Gray's exact W on columns [e_0, e_3]!
     P_Gray = [[1, 0], [0, 0], [0, 0], [0, 1]]
     Mid_Gray_W = {}
     for b1 in (0, 1):

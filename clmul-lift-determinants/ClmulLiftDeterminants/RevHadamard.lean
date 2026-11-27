@@ -529,7 +529,7 @@ theorem det_revHadamard_sub_one_rat (k : ℕ) (hk : 1 ≤ k) :
     simpa [Matrix.mul_apply, Matrix.transpose_apply, Matrix.smul_apply, Matrix.one_apply,
       (bitrevPerm k).injective.eq_iff] using hij
   -- Multiply H * adjugate H = det H • 1 on the left by Hᵀ? No: multiply H * Hᵀ = 2^k • 1 on left by adjugate H!
-  -- Wait: adjugate H * H = det H • 1, so adjugate H * (H * Hᵀ) = det H • Hᵀ = (2^k) • adjugate H!
+  -- adjugate H * H = det H • 1, so adjugate H * (H * Hᵀ) = det H • Hᵀ = (2^k) • adjugate H.
   have hadj_eq : ((2 ^ k : ℕ) : ℚ) • Matrix.adjugate H = H.det • H.transpose := by
     calc ((2 ^ k : ℕ) : ℚ) • Matrix.adjugate H
         = Matrix.adjugate H * (((2 ^ k : ℕ) : ℚ) • (1 : Matrix (Fin (2 ^ k)) (Fin (2 ^ k)) ℚ)) := by

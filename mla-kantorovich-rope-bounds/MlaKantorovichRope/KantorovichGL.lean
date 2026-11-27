@@ -392,8 +392,8 @@ theorem kantorovich_diagonal_balancing_optimal {n : Nat} (w γ dSq : Fin n → R
   · -- Prove by Lagrange-like identity: ∑_i ∑_j (w_i^2 / d_i) * (d_j * γ_j^2) ...
     -- Even cleaner: write a_j = w_j / d_j, b_j = d_j * γ_j is not rational if d_j = √dSq_j.
     -- Directly prove: ∑_i ∑_j dSq_i dSq_j (w_i γ_j / dSq_i - w_j γ_i / dSq_j)^2 ≥ 0!
-    -- Wait: (w_i γ_j * dSq_j - w_j γ_i * dSq_i)^2 / (dSq_i * dSq_j)
-    -- = (w_i^2 / dSq_i) * (dSq_j * γ_j^2) + (w_j^2 / dSq_j) * (dSq_i * γ_i^2) - 2 (w_i γ_i)(w_j γ_j)!
+    -- (w_i γ_j * dSq_j - w_j γ_i * dSq_i)^2 / (dSq_i * dSq_j)
+    -- = (w_i^2 / dSq_i) * (dSq_j * γ_j^2) + (w_j^2 / dSq_j) * (dSq_i * γ_i^2) - 2 (w_i γ_i)(w_j γ_j)
     have hnonneg : (0 : Rat) ≤
         finSum n (fun i => finSum n (fun j =>
           ((w i * γ j * dSq j - w j * γ i * dSq i) *

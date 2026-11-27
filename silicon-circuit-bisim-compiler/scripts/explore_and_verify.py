@@ -249,13 +249,13 @@ def omega_net(cell_fn, k: int, ctrls: List[bool], xs: List[bool]) -> List[bool]:
     # Let's test exact identity:
     # Notice: stride_layer(cell, xs) == shuffle(apply_pairs(cell, unshuffle(xs)))?
     # Let's check: unshuffle puts (0, 2, 4...) then (1, 3, 5...)? No!
-    # shuffle puts (xs[0], xs[h], xs[1], xs[h+1], ...)!!
-    # So apply_pairs(cell, shuffle(xs)) pairs (xs[0], xs[h]), (xs[1], xs[h+1])!!
-    # And unshuffle(apply_pairs(cell, shuffle(xs))) == stride_layer(cell, xs)!!
+    # shuffle puts (xs[0], xs[h], xs[1], xs[h+1], ...).
+    # So apply_pairs(cell, shuffle(xs)) pairs (xs[0], xs[h]), (xs[1], xs[h+1]).
+    # And unshuffle(apply_pairs(cell, shuffle(xs))) == stride_layer(cell, xs).
     # NOW look what happens when you iterate (unshuffle o apply_pairs(c_j)) vs (apply_pairs(c_j) o shuffle)!
-    # Stage 0: ys = unshuffle(apply_pairs(c0, shuffle(xs))) -> wait, let's test the pure k-stage loop:
+    # Stage 0: ys = unshuffle(apply_pairs(c0, shuffle(xs))) ->, let's test the pure k-stage loop:
     # loop j=0..k-1: xs = apply_pairs(ctrls[j], shuffle(xs))!
-    # Wait: shuffle^k = id on 2^k wires!
+    # shuffle^k = id on 2^k wires!
     # Let's test BOTH variants on a non-commuting, non-symmetric cell!
     cur = list(xs)
     for c in ctrls:
