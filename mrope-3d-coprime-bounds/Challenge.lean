@@ -10,7 +10,7 @@ import Mrope3dCoprime.Defs
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. `separable_3d_mrope_axis_floor_theorem`: Universal Separable-Axis Floor Theorem & Qwen2-VL `(16, 24, 24)` `3/4` floor.
 2. `coupled_3d_mrope_shatters_separable_floor`: Coupled 3D rotary phase elimination of the additive floor (`0` and `≤ 1/3 < 1/2 < 3/4` witnesses).
-3. `contiguous_mrope_bf16_width_freeze_exact`: 100% `BF16` cosine freeze across all 24 contiguous Width pairs (`40..63`) for all 63 patch offsets.
+3. `contiguous_mrope_bf16_width_freeze_exact`: in the modelled `BF16` rounding, every cosine value in the stated interval snaps to `1.0` for all 24 contiguous Width pairs (`40..63`) and all 63 patch offsets.
 4. `interleaved_vs_contiguous_mrope_resolution_gap`: Exact `b^{76/64}` (`> 10^6×` at `b = 10^6`) local spatial resolution gain of interleaved over contiguous `mRoPE`.
 5. `q32_3d_modular_phase_exact_relative_invariance`: Exact zero-error `Q32` modular 3D relative-position homomorphism and full `2^32` period for odd frequencies.
 6. `cross_modal_fp_phase_drift_vs_q32_exact`: Cross-modal `BF16` ULP collapse (`ulp(2^17) = 1024`) and `FP16` overflow (`2^17 > 65504`) at `m = 131,072` vs exact `Q32`.
@@ -23,8 +23,10 @@ open Mrope3dCoprime
 /-- Theorem 1 (`separable_3d_mrope_axis_floor_theorem`):
     Universal Separable-Axis Floor Theorem for any axis-partitioned 3D `mRoPE` splitting
     `P = PT + PH + PW` rotary pairs independently across `(T, H, W)`, specialized to Qwen2-VL
-    `(16, 24, 24)` (`P = 64`) with exact `48/64 = 3/4` floor, pigeonhole nonnegative-average
-    guarantee, and unconditional Gram/Parseval Dirichlet-Welch lower bound `3/4 - 1/(4(N - 1))`. -/
+    `(16, 24, 24)` (`P = 64`): the kernel is `>= 3/4` at every lag where the T-axis sum is nonnegative
+    (hypothesis `0 <= sepAxisSum`), a lag with nonnegative T-axis sum and kernel `>= 3/4` when the average
+    over lags is nonnegative, and, under the hypothesis that the T-axis sums are Gram inner products
+    of vectors of squared norm 16, a lower bound `3/4 - 1/(4(N - 1))` for some pair of positions. -/
 theorem separable_3d_mrope_axis_floor_theorem :
     (∀ (PT PH PW : Nat)
       (cT : Fin PT → Int → Rat) (cH : Fin PH → Int → Rat) (cW : Fin PW → Int → Rat),
@@ -94,7 +96,7 @@ theorem coupled_3d_mrope_shatters_separable_floor :
     Proves that in contiguous `mRoPE` (`pairs 40..63`, base `b = 10^6`), every Width pair
     satisfies `θ_k < 2^{-12}`, and for every patch offset `ΔW ∈ [1, 63]`,
     `1 - (1/2)(ΔW · θ_k)^2 > 1 - 2^{-13} > 1 - 2^{-9}`, forcing `bf16SnapsToOne c`
-    (100% `BF16` cosine freeze across all 24 Width pairs and all 63 patch offsets). -/
+    (in the modelled `BF16` rounding, for all 24 Width pairs and all 63 patch offsets). -/
 theorem contiguous_mrope_bf16_width_freeze_exact :
     (ratPow (pow2Rat 12) 64 < ratPow (1000000 : Rat) 40) ∧
     (∀ (k : Nat) (θ : Rat), 40 ≤ k → k ≤ 63 → (0 : Rat) ≤ θ →

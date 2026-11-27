@@ -10,7 +10,7 @@
 
 ## For Mathematicians
 
-We formalize six exact, universal and bit-exact theorems over exact rational (`Rat`) and pure-`Nat` IEEE-754 RNE arithmetic in pure Lean 4 `Init`:
+We formalize six exact theorems over exact rational (`Rat`) arithmetic and over hand-written pure-`Nat` round-to-nearest-even (RNE) models of BF16 and FP8-E4M3FN (nonnegative values only; not the full IEEE-754 / OCP formats) in pure Lean 4 `Init`:
 
 1. **Exact Rational Diagonal Scaling Invariance (`sinkhorn_diagonal_scaling_invariance`):**
    For every $n \in \mathbb{N}$, positive rational matrix $A \in \mathbb{Q} _ {>0}^{n \times n}$, and positive diagonal scalings $D _ 1 = \mathrm{diag}(d _ 1, \dots, d _ n)$, $D _ 2 = \mathrm{diag}(e _ 1, \dots, e _ n)$:
@@ -20,8 +20,8 @@ We formalize six exact, universal and bit-exact theorems over exact rational (`R
    This certifies the algebraic exactness of log-domain row-max shifting in Sinkhorn–Knopp.
 
 2. **Anti-Diagonal Swamping Permanent Fixed Points in BF16 & FP8-E4M3FN (`antidiagonal_swamping_bf16_fp8_fixed_point`):**
-   Let $H _ {\mathrm{anti}}(n, 1, u, \varepsilon)$ have entry $1$ on the anti-diagonal $i + j = n - 1$, half-ULP $u$ below ($i + j > n - 1$), and $\varepsilon$ above ($i + j < n - 1$), with $(u, \varepsilon) = (2^{-8}, 2^{-14})$ in IEEE-754 BF16 (`0x3F80`, `0x3B80`, `0x3880`) and $(2^{-4}, 2^{-9})$ in OCP FP8-E4M3FN (`0x38`, `0x18`, `0x01`). For every $2 \le n \le 16$:
-   - Sequential left-to-right RNE hardware row and column sums equal `1.0` identically, making $H _ {\mathrm{anti}}$ a **permanent Mode-A Sinkhorn fixed point** for all iteration counts $T \in \mathbb{N}$.
+   Let $H _ {\mathrm{anti}}(n, 1, u, \varepsilon)$ have entry $1$ on the anti-diagonal $i + j = n - 1$, half-ULP $u$ below ($i + j > n - 1$), and $\varepsilon$ above ($i + j < n - 1$), with $(u, \varepsilon) = (2^{-8}, 2^{-14})$ in the modelled BF16 format (`0x3F80`, `0x3B80`, `0x3880`) and $(2^{-4}, 2^{-9})$ in the modelled FP8-E4M3FN format (`0x38`, `0x18`, `0x01`). For every $2 \le n \le 16$:
+   - Row and column sums computed in the model by sequential left-to-right RNE addition (an assumed summation order; no hardware is involved) equal `1.0` identically, making $H _ {\mathrm{anti}}$ a **permanent Mode-A Sinkhorn fixed point** for all iteration counts $T \in \mathbb{N}$.
    - The true exact rational last row and column sums are $1 + (n - 1) u$: `259/256`, `263/256`, `271/256` (BF16) and `19/16`, `23/16`, `31/16` (FP8-E4M3FN) at $n = 4, 8, 16$.
    - The all-ones Rayleigh quotient strictly exceeds $1$ ($\|H \mathbf{1}\| _ 2^2 > \|\mathbf{1}\| _ 2^2$) and Collatz–Wielandt iteration certifies exponential $L$-layer blowup $\lambda^{2L} \|\mathbf{1}\| _ 2^2 \le \|H^L \mathbf{1}\| _ 2^2$ for all $L \in \mathbb{N}$ with $\lambda = 1 + (n - 1)\varepsilon > 1$.
 
@@ -53,11 +53,11 @@ We formalize six exact, universal and bit-exact theorems over exact rational (`R
 
 DeepSeek's Manifold-Constrained Hyper-Connections (`mHC`) mixes $n$ parallel residual streams ($n = 4, 8$) using Sinkhorn–Knopp normalization so that signal magnitudes stay bounded across deep networks. When implemented in low-precision AI formats (`BF16` and `FP8-E4M3FN`), however, Sinkhorn–Knopp suffers from **three provable structural failure modes**:
 
-1. **Silent rounding stagnation & exponential blowup:** An anti-diagonal matrix tricks native `BF16` and `FP8-E4M3FN` hardware into reporting every row and column sum as `1.0` forever — stopping Sinkhorn dead at step 1 — while the true matrix amplifies signals exponentially with depth. Even if sums are accumulated in infinite precision (Mode B), rounding the output back to `FP8` or `BF16` leaves irreducible fixed points that still amplify signals by $> 40\times$ (`FP8`) or $> 1.28\times$ (`BF16`) over 128 layers.
+1. **Silent rounding stagnation & exponential blowup:** In the model, an anti-diagonal matrix makes every row and column sum round to `1.0` forever — stopping Sinkhorn at step 1 — while the true matrix amplifies signals exponentially with depth. This is a statement about the hand-written model with left-to-right summation, not a measurement of `BF16` or `FP8-E4M3FN` hardware. Even if sums are accumulated in infinite precision (Mode B), rounding the output back to `FP8` or `BF16` leaves irreducible fixed points that still amplify signals by $> 40\times$ (`FP8`) or $> 1.28\times$ (`BF16`) over 128 layers.
 2. **Underflow support collapse:** When small entries underflow to `0` in `FP8`, Sinkhorn can lock permanently into a sparse fixed point with spectral norm $\sqrt{n - 1}$ (at $n = 4$, our GPU-discovered witness has exact norm $\sqrt{2}$, amplifying by $2^{64}\times$ over 128 layers).
 3. **Exponential inter-stream collapse:** Even when Sinkhorn works *perfectly* in exact arithmetic, any positive doubly-stochastic matrix exponentially shrinks differences between residual streams at rate $(1 - n\varepsilon)^L$, collapsing all streams toward their average.
 
-**The zero-division fix:** Replacing iterative Sinkhorn–Knopp with exact **dyadic-orthogonal mixers** ($n = 4$ Hamilton-Quaternion / Hadamard with `>> 1` shifts, or $n = 8$ dyadic Householder with `>> 3` shifts) requires **zero divisions, zero exponentials, and zero iterations**, and is machine-verified in Lean 4 to preserve exact residual energy and 100% of inter-stream diversity to arbitrary network depth $L$.
+**The zero-division fix:** Replacing iterative Sinkhorn–Knopp with exact **dyadic-orthogonal mixers** ($n = 4$ Hamilton-Quaternion / Hadamard with `>> 1` shifts, or $n = 8$ dyadic Householder with `>> 3` shifts) requires **zero divisions, zero exponentials, and zero iterations**, and is machine-verified in Lean 4 (for the stated mixers) to preserve exact residual energy to arbitrary network depth $L$.
 
 ---
 
@@ -82,6 +82,10 @@ DeepSeek's Manifold-Constrained Hyper-Connections (`mHC`) mixes $n$ parallel res
    Implements exact pure-`Nat` RNE rounding (`rneDiv`, `natDivToFp8`, `natDivToBf16`), proves the structural sequential-swamping lemma `seqSumFin_swamp` across all $2 \le n \le 16$, certifies exact spectral norms of $a I + b J$ via Cauchy–Schwarz, and verifies $L = 128$ powers via pure-`Nat` cross-multiplication.
 4. **Support Collapse & Dyadic-Orthogonal Isometries (`MhcSinkhornFp8/CollapseAndOrthogonal.lean`):**
    Certifies `collapseMat4` and the universal `collapseMatGen n` ($n \ge 3$) family, proves `Q^T Q = I` implies exact norm preservation across arbitrary heterogeneous layer lists, and certifies the $n = 4$ quaternion/Hadamard and $n = 8$ dyadic Householder families.
+
+## Scope of the formal statement
+
+The BF16 and FP8-E4M3FN formats are hand-written nonnegative-only round-to-nearest-even models (`fp8NumDen`, `natDivToBf16`); they are not the full IEEE-754 / OCP formats, and the 'hardware' row sums assume sequential left-to-right accumulation. Theorem 2 is proved for `2 <= n <= 16` only. Theorem 6 (orthogonal mixers preserve the norm) is a textbook fact.
 
 ## Prior-Art Context
 

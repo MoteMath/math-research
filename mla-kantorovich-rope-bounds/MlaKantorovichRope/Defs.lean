@@ -146,7 +146,7 @@ def ropeApply (c s R : Rat) (v : Fin 2 → Rat) : Fin 2 → Rat :=
 def pythPrimitive1105 : List (Nat × Nat) :=
   [(1104, 47), (1073, 264), (943, 576), (817, 744)]
 
-/-- All 10 verified Wave 7C campaign Pythagorean RoPE pairs sharing denominator `R = 1105`. -/
+/-- All 10 listed Pythagorean RoPE pairs sharing denominator `R = 1105`. -/
 def pythCampaign1105 : List (Nat × Nat) :=
   [(1105, 0), (1104, 47), (1092, 169), (1073, 264), (1020, 425),
    (1001, 468), (975, 520), (952, 561), (884, 663), (817, 744)]

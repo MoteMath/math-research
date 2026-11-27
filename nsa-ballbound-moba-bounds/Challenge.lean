@@ -9,7 +9,7 @@ import NsaBallBoundMoba.Defs
 
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. `MoBA` / `NSA` Mean-Key antipodal-pair (`B ≥ 2`) and buried-needle (`B ≥ 3`) blindspots
-   forcing `0%` worst-case needle recall (`q^T S_b ≤ 0` while `max_j q^T k_j = 2‖q‖_2^2 > 0`).
+   (`q^T S_b ≤ 0` while `max_j q^T k_j = 2‖q‖_2^2 > 0`), a constructed worst case rather than a measured recall.
 2. Zero-Sqrt Exact Ball-Bound Cauchy–Schwarz soundness certifying exact `0` false negatives
    with zero square roots and only `+1` scalar per block (`d + 1` scalars total).
 3. Strict half-metadata (`(d + 1)/(2d) = 1/2 + 1/(2d)`, `65/128` at `d = 64`) and exact
@@ -32,8 +32,8 @@ open NsaBallBoundMoba
     Exact integer and rational proof that for block-mean key selection (`MoBA` / `NSA`),
     both the antipodal-pair block (`B ≥ 2`) and the buried-needle block (`B ≥ 3`) yield
     block-mean score `q^T S_b ≤ 0` (and rational mean score `≤ 0`) even while the needle
-    key attains `q^T k_0 = 2 ‖q‖_2^2 > 0`, forcing `0%` worst-case needle recall against
-    any positive-mean distractor block. -/
+    key attains `q^T k_0 = 2 ‖q‖_2^2 > 0` (a constructed worst case for mean-key
+    selection; no recall is measured). -/
 theorem moba_antipodal_and_buried_needle_blindspot_exact :
     (∀ (d B : Nat) (q : Fin d → Int), 2 ≤ B → 0 < normSqInt q →
       dotInt q (blockSum (antipodalBlock B q)) = 0 ∧

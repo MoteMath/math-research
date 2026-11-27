@@ -11,8 +11,8 @@ Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. Exact bit-level collapse of IEEE-subnormal `E1M6_FN` onto `E0M7` (`INT8`) and the 5-format chain.
 2. Exact universal all-`B` `MXFP8-E4M3` vs `MXFP8-E5M2` EF21 contraction laws and sharp crossover
    boundaries (`B* = 637,534,211` under E8M0; `B* = 2,630,667,468` under continuous FP32 scaling).
-3. Complete 5-regime globally optimal `E_a M_b` microscaling frontier under OCP `E8M0` scaling.
-4. Complete 5-regime globally optimal `E_a M_b` microscaling frontier under continuous `DeepSeek-V3 FP32` scaling.
+3. Complete 5-regime `E_a M_b` microscaling frontier (comparison of the hard-coded `alpha` functions of five formats) under OCP `E8M0` scaling.
+4. Complete 5-regime `E_a M_b` microscaling frontier (comparison of the hard-coded `alpha` functions of five formats) under continuous `DeepSeek-V3 FP32` scaling.
 5. Exact delayed-scaling spike-clipping phase transition `ρ*(M, m) = ((2^{m+1} + 1) / 2^{m+1}) * 2^M`
    (`(9/8) * 2^M` for `E4M3` vs `E5M2`).
 6. Exact block-scaled exponent-bias invariance vs the `4x` per-bit delayed-scaling headroom tax.
@@ -73,7 +73,7 @@ theorem mxfp8_e4m3_vs_e5m2_all_b_crossover_exact :
   sorry
 
 /-- Theorem 3 (Complete Five-Regime OCP `E8M0` Microscaling Frontier):
-    Universal all-`B` (`∀ B ≥ 1`) classification proving strict global optimality of:
+    Universal all-`B` (`∀ B ≥ 1`) comparison of the hard-coded `alpha` functions, proving the strict ordering (smallest worst-case MSE among the five modelled formats):
     `INT8` (`1..4`) → `E2M5` (`5..47`, including OCP `B = 32`) → `E3M4` (`48..11,379`,
     including `B = 64..1024`) → `E4M3_OCP` (`11,380..637,534,210`) → `E5M2_IEEE` (`≥ 637,534,211`),
     with `> 3.65x` lower worst-case MSE for `E3M4` than `E4M3_OCP` at `B = 128`. -/
@@ -107,7 +107,7 @@ theorem mxfp8_e8m0_complete_five_regime_frontier :
   sorry
 
 /-- Theorem 4 (Complete Five-Regime Continuous `DeepSeek-V3 FP32` Microscaling Frontier):
-    Universal all-`B` (`∀ B ≥ 1`) classification proving tie at `B = 1` and strict global optimality of:
+    Universal all-`B` (`∀ B ≥ 1`) comparison of the hard-coded `alpha` functions, proving a tie at `B = 1` and the strict ordering (smallest worst-case MSE among the five modelled formats):
     `INT8` (`2..12`) → `E2M5` (`13..230`, including DeepSeek-V3 `1×128` tile with `> 6.77x` lower
     worst-case MSE than `E4M3_OCP`) → `E3M4` (`231..54,668`, including DeepSeek-V3 `128×128 = 16,384`
     block with `> 3.32x` lower worst-case MSE than `E4M3_OCP`) → `E4M3_OCP` (`54,669..2,630,667,467`) →

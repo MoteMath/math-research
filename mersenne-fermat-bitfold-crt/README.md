@@ -47,11 +47,15 @@ The trusted statements are in [`Challenge.lean`](Challenge.lean) (namespace `Mer
 - [`MersenneFermatBitfoldCrt/Theorems.lean`](MersenneFermatBitfoldCrt/Theorems.lean): all proofs (zero `sorry`, zero `native_decide`, zero custom axioms, no imports beyond `Init`).
 - [`scripts/explore_and_verify.py`](scripts/explore_and_verify.py): exact pure-`int` replay and sharpness checks (no floating point).
 
+## Scope of the formal statement
+
+All eight headline statements quantify over all `k`, `r`, `d` as stated. The minimal-depth dichotomy (`d + 2` versus `d + 1`) is proved only under the hypotheses `d >= 2`, `k >= 2` and `d <= 2^k`; it makes no claim outside that range.
+
 ## Prior-Art Context
 
 - **Mersenne and Fermat folding and Crandall primes:** bit folding for reduction modulo $2^k \pm 1$ is classical (Crandall and Fagin, *Discrete weighted transforms and large-integer arithmetic*, 1994; Crandall and Pomerance, *Prime Numbers: A Computational Perspective*, 2001) and underlies Nussbaumer convolution and Fermat number transforms (Nussbaumer 1981, Rader 1972).
-- **Carry counting and CRT idempotents:** carry counts follow Kummer (1852); the factorization $2^{2^d k} - 1 = (2^k - 1) \prod (2^{2^j k} + 1)$ is classical. The `referee-10` prober (#134) notes that the conservation law and the CRT-idempotent parts are classical (Kummer, Nussbaumer, Crandall-Fagin); the swarm-new parts are the sharp-to-the-integer absorption thresholds, the exact minimal-depth dichotomy, the three-round Crandall threshold $c^2 \le 2^k$ and the explicit Rademacher square-wave idempotents with exact popcounts.
-- **Referee verdict:** `PASS` by `referee-4` (#47), Novelty 3.7/5 (Tier A); `referee-10` index score 77/100 (Class IV, 1,737,144 exact probe cases, 0 mismatches).
+- **Carry counting and CRT idempotents:** carry counts follow Kummer (1852); the factorization $2^{2^d k} - 1 = (2^k - 1) \prod (2^{2^j k} + 1)$ is classical. The conservation law and the CRT-idempotent parts are classical (Kummer, Nussbaumer, Crandall-Fagin). The authors consider the sharp-to-the-integer absorption thresholds, the exact minimal-depth dichotomy, the three-round Crandall threshold $c^2 \le 2^k$ and the explicit Rademacher square-wave idempotents with exact popcounts to be less standard; no prior record was found by the authors, and the search was not recorded.
+- **Review status:** not independently reviewed. The package is checked only by the Lean build, the comparator manifest and the finite replay in `scripts/explore_and_verify.py` (which proves nothing by itself).
 
 ## Build & Verification
 

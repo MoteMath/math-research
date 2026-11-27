@@ -7,7 +7,7 @@ import OctonionRopeWelch.Defs
 /-!
 # Trusted Challenge Statements (`octonion-rope-welch-frames`)
 
-Universal and exact pure-`Init` Lean 4 statements for Wave 2C (`w2-sparse-attn-rope`):
+Universal and exact pure-`Init` Lean 4 statements for:
 1. `quaternion_pow2_rigidity_obstruction`: 4D power-of-2 quaternion rigidity (`r_4(2^r) = 24`,
    0 primitive solutions for all `r ≥ 3`).
 2. `pythagorean_and_octonion_rope_exact_orthogonal`: universal 2D Pythagorean, 4D quaternion,

@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **9 / 10** | **10 / 10** | **8 / 10** | **10 / 10** | **91 / 100** |
 
-*Heuristic self-rating (weighted `3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 91 / 100`): universal all-$B$ EF21 contraction phase diagrams for OCP MXFP6 (`E3M2` and `E2M3`) under both E8M0 power-of-2 and continuous max-abs (`NVFP6`) scaling with exact tightness and attainment, sharp `E2M3` vs `E3M2` hardware crossover theorems ($B = 43 / 44$ for MXFP6, $B = 178 / 179$ for NVFP6), Hadamard weight-quantization defects and minimum dyadic coherence bounds at $n = 8, 32$, exact Goethals–Seidel native `E2M1`/`E3M2`/`E2M3` orthonormal matrices (`16 × 16` and zero-free `32 × 32`), and universal 4:8-sparse Hamilton quaternion orthogonal factorizations in arbitrary $4m$ dimensions — all formalized in pure Lean 4 `Init` (zero Mathlib, zero `native_decide`).*
+*Heuristic self-rating (weighted `3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 91 / 100`): universal all-$B$ EF21 contraction phase diagrams for OCP MXFP6 (`E3M2` and `E2M3`) under both E8M0 power-of-2 and continuous max-abs (`NVFP6`) scaling with exact tightness and attainment, `E2M3` vs `E3M2` crossover theorems (for the modelled quantizers) ($B = 43 / 44$ for MXFP6, $B = 178 / 179$ for NVFP6), Hadamard weight-quantization defects and minimum dyadic coherence bounds at $n = 8, 32$, exact Goethals–Seidel native `E2M1`/`E3M2`/`E2M3` orthonormal matrices (`16 × 16` and zero-free `32 × 32`), and universal 4:8-sparse Hamilton quaternion orthogonal factorizations in arbitrary $4m$ dimensions — all formalized in pure Lean 4 `Init` (zero Mathlib, zero `native_decide`).*
 
 ## For Mathematicians
 
@@ -28,7 +28,7 @@ We formalize six exact, universal theorems over exact rational (`Rat`) and integ
    ```
    For both `MXFP6` formats ($\max _ i |y _ i| \le M$, $\exists i _ 0, M/2 < |y _ {i _ 0}|$), we prove the universal upper bound $\sum (q(y _ i) - y _ i)^2 \le (1 - \alpha(B)) \sum y _ i^2$ **and** universal tightness ($\forall \varepsilon > 0, \exists y$ beating $1 - \alpha(B) - \varepsilon$, with exact attainment for $B \le 7169$ in `E3M2` and $B \le 61$ in `E2M3`, and limit witnesses $(M/2 + t, m _ 0, \dots, m _ 0)$ beyond). For both `NVFP6` formats ($\exists i _ 0, |y _ {i _ 0}| = M$), we prove both the universal upper bound and **exact rational attainment** for every $B \ge 1$.
 
-2. **Exact `E2M3` vs `E3M2` Hardware Crossover (`mxfp6_e2m3_vs_e3m2_exact_crossover`):**
+2. **Exact `E2M3` vs `E3M2` Crossover in the model (`mxfp6_e2m3_vs_e3m2_exact_crossover`):**
    - **OCP MXFP6 (E8M0):** $\alpha _ {\mathrm{MXFP6\text{-}E3M2}}(B) < \alpha _ {\mathrm{MXFP6\text{-}E2M3}}(B)$ for all $1 \le B \le 43$ (including OCP standard $B = 32$: $4608/4655 > 327680/331807$), whereas $\alpha _ {\mathrm{MXFP6\text{-}E2M3}}(B) < \alpha _ {\mathrm{MXFP6\text{-}E3M2}}(B)$ for **all** $B \ge 44$.
    - **Continuous NVFP6:** Exact tie $\alpha(1) = 1$ at $B = 1$, $\alpha _ {\mathrm{NVFP6\text{-}E3M2}}(B) < \alpha _ {\mathrm{NVFP6\text{-}E2M3}}(B)$ for all $2 \le B \le 178$, and $\alpha _ {\mathrm{NVFP6\text{-}E2M3}}(B) < \alpha _ {\mathrm{NVFP6\text{-}E3M2}}(B)$ for **all** $B \ge 179$.
 
@@ -45,10 +45,10 @@ We formalize six exact, universal theorems over exact rational (`Rat`) and integ
 
 Modern AI accelerators compress neural network activations and gradients into **6-bit microscaling floating-point formats (MXFP6)**, which come in two flavors: **`E2M3`** (more precision digits, narrower number range) and **`E3M2`** (wider number range, slightly coarser precision). Engineers have to choose between `E2M3` and `E3M2`, choose a block size $B$, and choose a rotation matrix to spread out large outlier channels before quantizing.
 
-This package gives **100% machine-checked answers** in Lean 4 to all three design questions:
+This package gives machine-checked answers, for the stated models, to three design questions:
 
 1. **Exact error-feedback guarantees for every block size $B = 1, 2, 3, \dots, \infty$:** We prove the exact worst-case contraction rate of both `E3M2` and `E2M3` under both OCP power-of-2 scaling (`MXFP6`) and continuous scaling (`NVFP6`), with matching worst-case examples showing the bounds cannot be improved by even a hair.
-2. **A sharp switchover rule between `E2M3` and `E3M2`:** For standard OCP `MXFP6`, `E2M3` is strictly better up to block size **$B = 43$** (including the OCP standard $B = 32$), and **`E3M2` is strictly better for every block size $B \ge 44$** because `E2M3` runs out of dynamic range and underflows $55.75\times$ earlier. Under continuous `NVFP6` scaling, the exact crossover moves to **$B = 178 / 179$** (with a tie at $B = 1$).
+2. **A switchover rule between `E2M3` and `E3M2` (in the model):** For the modelled `MXFP6` quantizers, `E2M3` is strictly better up to block size **$B = 43$** (including the OCP standard $B = 32$), and **`E3M2` is strictly better for every block size $B \ge 44$** because `E2M3` runs out of dynamic range and underflows $55.75\times$ earlier. Under continuous `NVFP6` scaling, the exact crossover moves to **$B = 178 / 179$** (with a tie at $B = 1$).
 3. **Zero-error native rotations & fast 4:8-sparse quaternion stages:** Storing standard Walsh–Hadamard rotations $H _ 8 / \sqrt{8}$ or $H _ {32} / \sqrt{32}$ in 4-bit or 6-bit weights introduces an unavoidable $12.5\%$ (`E2M1`/`E3M2`) or $5.47\%$ (`E2M3`) orthogonality error because $\sqrt{8}$ and $\sqrt{32}$ are irrational. We certify exact $16 \times 16$ and $32 \times 32$ Goethals–Seidel orthonormal rotations whose weights live **natively on all three OCP grids (`E2M1`, `E3M2`, `E2M3`) with 0.00% weight error**, alongside universal multi-stage 4:8-sparse Hamilton quaternion rotations that preserve exact lengths in any dimension $4m$ at a fraction of the compute cost.
 
 ---
@@ -73,11 +73,15 @@ This package gives **100% machine-checked answers** in Lean 4 to all three desig
 3. **Block-Reduced Goethals–Seidel & Universal Quaternion Algebra (`Mxfp6Ef21Rotations/Rotations.lean`):**
    Splits `4m × 4m` matrix products into $4 \times 4$ blocks of `m × m` matrices (`goethalsSeidel_isOrthogonal_of_blocks`), certifying `GS_n16_E2M1_low` and `GS_n32_E2M1_pm13` via fast `4 × 4` and `8 × 8` block checks. Universal Hamilton 4-square orthogonality, row-4-sparsity (`blockDiagQuat_isRow4Sparse`), permutation orthogonality (`permMat_isOrthogonal`), and multi-stage closure (`matProd_isOrthogonal`) hold symbolically for all $a, b, c, d \in \mathbb{Z}$ and all $m \in \mathbb{N}$.
 
+## Scope of the formal statement
+
+The quantizer `symQuant` is a hand-written nearest-grid model of the E3M2 and E2M3 value sets (ties rounded down); it is not the OCP hardware encoder. Within that model the bounds are universal over all `y : Fin B -> Rat` (the `3600/(B+3599)` branch is a supremum approached from outside the `|y| > 14` region and is not attained). The Goethals-Seidel `16 x 16` and `32 x 32` orthogonality statements are finite checks.
+
 ## Prior-Art Context
 
-- **EF21 error-feedback compression:** Richtárik, Sokolov, and Fatkhullin (NeurIPS 2021) introduced EF21 and proved convergence for any $\alpha$-contractive compressor satisfying $\mathbb{E}\|C(x) - x\|^2 \le (1 - \alpha)\|x\|^2$. Our Theorems 1–3 give the first exact, machine-checked, all-$B$ phase diagrams and `E2M3`/`E3M2` crossover boundaries for the **OCP Microscaling Formats (MX) v1.0** `MXFP6` (`E3M2`, `E2M3`) and continuous `NVFP6` formats.
+- **EF21 error-feedback compression:** Richtárik, Sokolov, and Fatkhullin (NeurIPS 2021) introduced EF21 and proved convergence for any $\alpha$-contractive compressor satisfying $\mathbb{E}\|C(x) - x\|^2 \le (1 - \alpha)\|x\|^2$. Our Theorems 1–3 give exact, machine-checked, all-$B$ phase diagrams and `E2M3`/`E3M2` crossover boundaries for the modelled `MXFP6` (`E3M2`, `E2M3`) and continuous `NVFP6` quantizers (hand-written nearest-grid models, not the OCP MX v1.0 hardware encoder). No prior record was found by the authors; the search was not recorded.
 - **Goethals–Seidel arrays & Hadamard rotations:** Goethals and Seidel (1970) introduced 4-circulant orthogonal arrays for constructing Hadamard and weighing matrices, while incoherence rotations such as QuIP# (Tseng et al., ICML 2024), QuaRot (Ashkboos et al., NeurIPS 2024), and SpinQuant (Liu et al., ICLR 2025) rely on Walsh–Hadamard transforms. Theorems 4–5 quantify Hadamard's irrational weight-quantization defect at $n = 8, 32$ and certify exact Goethals–Seidel orthonormal matrices whose weights incur 0.00% quantization error across `E2M1`, `E3M2`, and `E2M3`.
-- **Hamilton quaternions & structured sparse rotations:** Hamilton's four-square orthogonal matrices provide exact $4 \times 4$ orthogonal blocks; coupling block-diagonal quaternion layers with permutations yields hardware-friendly 4:8-sparse orthogonal factorizations (Theorem 6) that preserve exact $\ell _ 2$ norm in arbitrary $4m$ dimensions.
+- **Hamilton quaternions & structured sparse rotations:** Hamilton's four-square orthogonal matrices provide exact $4 \times 4$ orthogonal blocks; coupling block-diagonal quaternion layers with permutations yields 4:8-sparse orthogonal factorizations (Theorem 6) that preserve exact $\ell _ 2$ norm in arbitrary $4m$ dimensions.
 
 ## Build & Verification
 

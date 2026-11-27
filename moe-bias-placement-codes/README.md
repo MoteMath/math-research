@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **9 / 10** | **9 / 10** | **9 / 10** | **10 / 10** | **91 / 100** |
 
-*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 91 / 100`): pure Lean 4 `Init` (zero Mathlib) formalization of six universal Mixture-of-Experts routing, placement, and quantization laws from Wave 3C (`w3-moe-routing-codes`) — DeepSeek-V3 aux-loss-free sign-bias linear drift and exact mean-centered invariance, the sharp dead-zone fixed-point phase transition at $\tau _ {\min} = \max(r, E - r) / E$, discrete-convexity fanout vs intra-GPU dispersion duality, explicit Resolvable Affine Plane $AG(2, 4)$ and $AG(2, 8)$ zero-hotspot BIBD placement codes, the universal EPLB redundant-expert pigeonhole capacity bound, and exact uniform and floating-point quantized-router zero-flip margin thresholds.*
+*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 91 / 100`): pure Lean 4 `Init` (zero Mathlib) formalization of six universal Mixture-of-Experts routing, placement, and quantization laws — DeepSeek-V3-style aux-loss-free sign-bias linear drift and exact mean-centered invariance, the sharp dead-zone fixed-point phase transition at $\tau _ {\min} = \max(r, E - r) / E$, discrete-convexity fanout vs intra-GPU dispersion duality, explicit Resolvable Affine Plane $AG(2, 4)$ and $AG(2, 8)$ zero-hotspot BIBD placement codes, the universal EPLB redundant-expert pigeonhole capacity bound, and exact uniform and floating-point quantized-router zero-flip margin thresholds.*
 
 ## For Mathematicians
 
@@ -51,13 +51,13 @@ All six theorems are proved directly over Lean 4's `Init` (`Nat`, `Int`, `Rat`, 
      ```math
      z_k (2^{m+1} - 1) > z_j (2^{m+1} + 1) \implies z'_k > z'_j,
      ```
-     with exact tie witness at equality, yielding exact hardware ratio thresholds $5/3$ (`E2M1`), $9/7$ (`E3M2`), $17/15$ (`E2M3` / `FP8-E4M3`), $257/255$ (`BF16`), and $2049/2047$ (`FP16`).
+     with exact tie witness at equality, yielding ratio thresholds (for the pure relative-error model with unit roundoff $u$, not RNE or subnormals) $5/3$ (`E2M1`), $9/7$ (`E3M2`), $17/15$ (`E2M3` / `FP8-E4M3`), $257/255$ (`BF16`), and $2049/2047$ (`FP16`).
 
 ## For Non-Mathematicians
 
 Large Mixture-of-Experts (MoE) AI models like DeepSeek-V3 route each word token to only a small handful of "expert" sub-networks spread across many GPUs. If routing biases drift, or too many active experts land on the same GPU, or low-precision arithmetic flips which experts win, training and inference slow down or break. This package proves six exact mathematical laws in Lean 4 that govern how MoE routers behave:
 
-- **Why DeepSeek-V3's bias trick drifts — and the one-line fix:** Pure `+1/-1` load-balancing updates can drift the average bias by up to $(E - 2) / E$ of the step size every single iteration, eventually swamping low-precision BF16 logits. Subtracting the mean update at each step eliminates drift completely while keeping routing choices 100% identical.
+- **Why DeepSeek-V3's bias trick drifts — and the one-line fix:** Pure `+1/-1` load-balancing updates can drift the average bias by up to $(E - 2) / E$ of the step size every single iteration, eventually swamping low-precision BF16 logits. Subtracting the mean update at each step removes the drift in the model, and routing choices are unchanged because a constant shift does not change the ranking.
 - **Why exact balance is often impossible (and where the phase transition happens):** Whenever the total token slots don't divide evenly across experts, integer loads cannot match the average. Pure sign updates therefore *never* settle to a fixed point — until you add a dead zone of exact width $\tau _ {\min} = \max(r, E - r) / E$, where fixed points suddenly appear.
 - **The communication vs hotspot trade-off:** Sending a token to fewer GPUs saves network traffic, but mathematically forces a strict minimum number of experts to collide on the same GPU.
 - **Zero-hotspot affine-plane layouts:** Using finite-field geometry ($AG(2, 4)$ for 16 experts on 4 GPUs and $AG(2, 8)$ for 64 experts on 8 GPUs), every transverse expert group spreads evenly with 1 expert per GPU (zero hotspots), while aligned groups stay on a single GPU (zero cross-GPU traffic).
@@ -75,7 +75,11 @@ Large Mixture-of-Experts (MoE) AI models like DeepSeek-V3 route each word token 
 | `fanout_intra_gpu_dispersion_duality` | Universal discrete-convexity lower bound `∑ c_g (c_g - 1) ≥ q (K + r - f)` for all `0 < f ≤ K` and positive balanced attainment witness. |
 | `affine_plane_ag2_zero_hotspot_placement` | Explicit `AG(2, 4)` (`E = 16, G = 4`) and `AG(2, 8)` (`E = 64, G = 8`) BIBD placement codes: vertical lines have fanout `1`, transverse lines map bijectively across all `q` GPUs (`Intra = 0`), and every pair of distinct experts determines a unique line. |
 | `eplb_redundant_expert_pigeonhole_bound` | Universal redundant-expert pigeonhole bound `∑_{i ∈ S} w_i ≤ Lmax * (h + R)` and existence of `i ∈ S` with `w_i / rep_i ≥ (∑_{j ∈ S} w_j) / (h + R)`. |
-| `quantized_router_zero_flip_thresholds` | Universal zero-flip margin sufficiency and exact tightness for uniform (`Δ > 2ε`) and floating-point (`z_k (2^(m+1) - 1) > z_j (2^(m+1) + 1)`) quantization, plus exact hardware ratios (`5/3`, `9/7`, `17/15`, `257/255`, `2049/2047`). |
+| `quantized_router_zero_flip_thresholds` | Universal zero-flip margin sufficiency and exact tightness for uniform (`Δ > 2ε`) and floating-point (`z_k (2^(m+1) - 1) > z_j (2^(m+1) + 1)`) quantization, plus ratio thresholds under the pure relative-error model (`5/3`, `9/7`, `17/15`, `257/255`, `2049/2047`). |
+
+## Scope of the formal statement
+
+The Lean objects are abstract update rules and the finite-field planes `AG(2,4)` and `AG(2,8)`, not the DeepSeek-V3 router. In `affine_plane_ag2_zero_hotspot_placement` the GPU is defined as the first coordinate (`ag24Gpu p = p.1`), so that every transverse line meets each GPU exactly once is immediate from the definition; the field-theoretic content is the unique line through two points, checked for these two planes by `decide`. The mean-centred update (Theorem 1) subtracts a constant. The quantized-router thresholds assume a pure relative error `u`, not round-to-nearest-even or subnormals.
 
 ## Prior-Art Context
 

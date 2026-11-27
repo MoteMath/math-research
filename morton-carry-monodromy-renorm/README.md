@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **10 / 10** | **10 / 10** | **9 / 10** | **8 / 10** | **10 / 10** | **94 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): flagship Carry-Monodromy Renormalization (CMR) finite-automaton compiler for non-bit-triangular Morton/radix-B digit-permutation +1 dynamics, yielding the all-dimension (d+1)^n Flag-Helix bijection, full 2D swap cycle spectrum, non-nilpotent 4D full-period 16^n law, and the Delayed-Fracture Trap, formalized in pure Lean 4 Init.*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): Carry-Monodromy Renormalization (CMR) finite-automaton compiler for non-bit-triangular Morton/radix-B digit-permutation +1 dynamics, yielding the all-dimension (d+1)^n Flag-Helix bijection, full 2D swap cycle spectrum, non-nilpotent 4D full-period 16^n law, and the Delayed-Fracture Trap, formalized in pure Lean 4 Init.*
 
 ## For Mathematicians
 
@@ -52,7 +52,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 - **T-functions & 2-adic ergodicity:** Klimov–Shamir (2002, 2004) and Anashin–Khrennikov (2009) characterize bit-triangular T-functions where bit $k$ depends only on bits $\le k$. Morton digit permutations violate bit-triangularity inside every $d$-bit limb.
 - **Self-similar groups & rooted-tree odometers:** Nekrashevych (2005, *Self-Similar Groups*) studies wreath-product recursions on rooted trees; CMR specializes wreath-section return maps directly to carry-coupled radix-$B$ modular arithmetic with a constructive finite-automaton Lean 4 lifting compiler.
-- **Distinct from global bit-reversal:** Completely disjoint from `bitrev-increment-cycles` (global palindrome/involution reversal); audited as S-Tier flagship with novel all-$d$ Flag-Helix, full 2D spectrum, non-nilpotent 4D $16^n$ Hamiltonicity, and Delayed-Fracture Trap.
+- **Distinct from global bit-reversal:** Completely disjoint from `bitrev-increment-cycles` (global palindrome/involution reversal). Not independently reviewed; the all-$d$ Flag-Helix, full 2D spectrum, non-nilpotent 4D $16^n$ Hamiltonicity and Delayed-Fracture Trap are the authors' own results, and no prior record was found by the authors (the search was not recorded).
 
 ## Build & Verification
 

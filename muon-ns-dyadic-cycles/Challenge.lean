@@ -13,10 +13,10 @@ Universal and bit-exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 2. Exact BF16 parenthesization bifurcation of Jordan's quintic:
    Muon matrix-form (period 2, err `23/64`), Monomial (period 4, err `11/32`),
    and Horner (period 8, err `87/256`).
-3. GPU-discovered FP8-E4M3FN globally optimal dyadic quintic `(2, -9/8, 1/8)`:
+3. GPU-found FP8-E4M3FN dyadic quintic `(2, -9/8, 1/8)` (optimality is not proved):
    `a + b + c = 1`, `p'(1) = -3/4`, exact zero (`0`) 5-step error across all 28
    representable values in `[0.05, 1]` with zero NaN/overflow across all 56 unit values.
-4. GPU-discovered BF16 globally optimal dyadic quintic `(35/16, -31/16, 3/4)`:
+4. GPU-found BF16 dyadic quintic `(35/16, -31/16, 3/4)` (optimality is not proved):
    `a + b + c = 1`, `p'(1) = 1/8`, exact period-1 fixed point, and `≤ 1/128` (1 BF16 ULP,
    `44x` tighter than Jordan) confinement across all 564 BF16 values in `[0.05, 1]`.
 5. Exact 1-ULP overshoot instability cliffs of Polar-Express 5-step in BF16 (`129/128 → +Inf`)

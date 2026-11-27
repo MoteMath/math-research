@@ -6,7 +6,7 @@ project:
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
     algebraic and geometric laws for block-sparse attention (NSA / MoBA / Quest):
-    exact antipodal-pair and buried-needle blindspots forcing 0% worst-case recall for Mean-Key
+    constructed antipodal-pair and buried-needle worst cases (block-mean score <= 0 with a needle key present) for Mean-Key
     selection across all block sizes B >= 2; exact zero-sqrt Cauchy-Schwarz Ball-Bound soundness
     certifying 0 false negatives with only +1 scalar per block; strict half-metadata and
     all-dimension sqrt(d) geometric separation where Quest-AABB over-estimates by sqrt(d)x

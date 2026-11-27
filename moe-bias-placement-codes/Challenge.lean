@@ -7,7 +7,7 @@ import MoeBiasPlacement.Defs
 /-!
 # Trusted Challenge Statements (`moe-bias-placement-codes`)
 
-Statements of the six headline theorems for Wave 3C (`w3-moe-routing-codes`):
+Statements of the six headline theorems (`moe-bias-placement-codes`):
 1. `aux_loss_free_mean_bias_drift_exact`: Exact worst-case mean-bias drift bound `((E - 2)/E) * γ`,
    attainment witness, and exact zero-drift / pairwise-difference invariance of mean-centered sign updates.
 2. `dead_zone_fixed_point_threshold_exact`: Sharp dead-zone phase transition at `τ_min = max(r, E-r)/E`

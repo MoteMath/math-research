@@ -5,7 +5,7 @@ namespace MinkowskiRaneySingularityEngineChallenge
 open RaneyMinkowski RaneyMinkowski.RaneyCert
 open RatQ Mat2
 
-/-- **Theorem 1 (Stern-Brocot / Minkowski Bijection)**: For every bitstring `w`, `?(med(sbMat w)) ≈q dyadMid w = (2 · bitsToNat w + 1) / 2^(/w/+1)`. -/
+/-- **Theorem 1 (Stern-Brocot mediant of `sbMat w` maps to the dyadic midpoint)**: For every bitstring `w`, `?(med(sbMat w)) ≈q dyadMid w = (2 · bitsToNat w + 1) / 2^(/w/+1)`. -/
 theorem minkowskiQ_sbMat_mediant (w : List Bool) :
     mediantQ (sbMat w) ≈q dyadMid w := by
   sorry
@@ -17,7 +17,7 @@ theorem hellinger_tv_singularity {n : Nat} {C : RaneyCert n} (H : HellingerCert 
       ≤q mkPos (H.v s) H.vMin H.vMin_pos * (mkPos H.rNum H.rDen H.rDen_pos).pow k := by
   sorry
 
-/-- **Theorem 2a (Constructive Mutual Singularity μ_? ⊥ 2_* μ_? ∀ k : Nat)**: For every depth `k`, the total-variation overlap between `μ_?` and `2_* μ_?` decays as `≤ (65/57) · (63/64)^k`. -/
+/-- **Theorem 2a (Overlap bound at depth `k` for μ_? and 2_* μ_?, ∀ k : Nat)**: For every depth `k`, the total-variation overlap between `μ_?` and `2_* μ_?` decays as `≤ (65/57) · (63/64)^k`. -/
 theorem singularity_D2 (k : Nat) :
     sumWordsQ k (fun w => minQ (dyad 1 k) (colMeasure (⟨1, 0, 0, 2⟩ * sbMat w)))
       ≤q mkPos 65 57 (by decide) * (mkPos 63 64 (by decide)).pow k := by
@@ -29,7 +29,7 @@ theorem bit_expansion_D2 (k : Nat) :
     k * 2 ^ k * 14 := by
   sorry
 
-/-- **Theorem 4a (Exact Rational Integral ∫ ?(2x) dμ_?(x) = 9/13, ∀ k : Nat)** -/
+/-- **Theorem 4a (Convergence bound toward 9/13: `|avg_k - 9/13| ≤ (65/48)(9/16)^k`, ∀ k : Nat; the integral itself is not stated)** -/
 theorem integral_convergence_D2 (k : Nat) :
     abs (RaneyCert.avgMediantQ ⟨1, 0, 0, 2⟩ k - mkPos 9 13 (by decide))
       ≤q mkPos 65 48 (by decide) * (mkPos 9 16 (by decide)).pow k := by

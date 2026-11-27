@@ -31,12 +31,16 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `walsh_lucas_binom_odd_pow` | **Main Theorem 1 (Walsh-Lucas Unique Spike Theorem for Odd Powers):** For ALL `n : Nat`, ALL odd `r : Nat`, and ALL masks `m <=_2 n`: `∑_{k <=_2 n} (-1)^popcount(k &&& m) * C(n, k)^r ≡ 2^(popcount n) * [m = E(n)] (mod 2^(popcount n + 1))`. |
 | `walsh_lucas_binom_even_pow` | **Main Theorem 3 (Walsh-Lucas Higher-Modulus Congruence for Even Powers):** For ALL `n : Nat`, ALL positive even `r : Nat` (`r ≠ 0`, `r % 2 = 0`), and ALL `m <=_2 n`: `∑_{k <=_2 n} (-1)^popcount(k &&& m) * C(n, k)^r ≡ 2^(popcount n) * [m = 0] (mod 2^(popcount n + v2(r) + 1))`. |
 | `walsh_lucas_mixed_product` | **Main Theorem 4 (Mixed-Product XOR-Spike Theorem):** For ALL `n, n1, n2 : Nat` with `n <=_2 n1` and `n <=_2 n2`, ALL odd `r1, r2`, and ALL `m <=_2 n`, the unique Walsh spike mask of `C(n1, k)^r1 * C(n2, k)^r2` on the Lucas cube of `n` is `(E(n1) ^^^ E(n2)) &&& n`. |
-| `sharpness_squaring_jump_needs_spike_mask` | Machine-checked infinite theorem `sharpness_squaring_jump_needs_spike_mask` proved in pure Lean 4 `Init`. |
+| `sharpness_squaring_jump_needs_spike_mask` | Machine-checked finite instance (a concrete sharpness witness for `n = 3`: `f_ce`, `mobius = 40`, not divisible by `2^(popcount 3 + 2)`), proved in pure Lean 4 `Init`. |
+
+## Scope of the formal statement
+
+Seven of the eight headline statements quantify over all `n`, `r`, `m` (Walsh-Lucas congruences for the stated objects); `sharpness_squaring_jump_needs_spike_mask` is a single concrete instance (`n = 3`, function `f_ce`), not an infinite theorem.
 
 ## Prior-Art Context
 
 - - **Classical Prior Art:** - *Lucas (1878)*, *Kummer (1852)*, and *Fine (1947)* characterize $\binom{n}{k} \bmod 2$, $v _ 2\binom{n}{k}$, and the count $2^{\mathrm{pc}(n)}$ of odd binomial coefficients in row $n$ (and more generally binomial coefficients modulo prime powers). - *Granville (1997)*, *Davis–Webb (1990)*, *Huard–Spearman–Williams (1998)*, and *Rowland (2011)* establish $p$-adic generalizations of Lucas's theorem modulo $p^q$, explicit binary/base-$p$ patterns for $\binom{n}{k} \bmod p^2$ and $\bmod p^3$, and regular/automatic-sequence structure for binomial residues across Pascal's triangle (from which our Bonus Theorem 5, $\bino
-- Hostile-verified PASS by `referee-4`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

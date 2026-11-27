@@ -7,8 +7,7 @@ import Paley32Mxfp4.Defs
 /-!
 # Trusted Challenge Statements (`paley32-mxfp4-outliers`)
 
-Pure-`Init` (zero Mathlib) Lean 4 formalization of the six headline theorems from Wave 5A
-(`w5-fp4-block-outliers`):
+Pure-`Init` (zero Mathlib) Lean 4 formalization of the six headline theorems of this package:
 1. Universal real-orthogonal `k`-sparse PAPR lower bound (`≥ k/n`) and Hadamard flatness equality.
 2. Paley-32 vs Sylvester-32 orthogonality, explicit Sylvester-32 8-spike collapse witness,
    and exhaustive `k = 4` zero-subgroup-collapse theorem (`maxC4 paley32 ≤ 5`, `1,240` Sylvester affine 2-planes).

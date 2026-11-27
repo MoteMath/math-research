@@ -10,7 +10,7 @@
 
 ## For Mathematicians
 
-We formalize four exact algebraic and extremal results discovered in the Wave 2C (`w2-sparse-attn-rope`) campaign, all over $\mathbb{Z}$ and $\mathbb{Q}$ with zero transcendental functions and zero Mathlib dependencies:
+We formalize four exact algebraic and extremal results found in a GPU/CPU search campaign (no log of it is included here), all over $\mathbb{Z}$ and $\mathbb{Q}$ with zero transcendental functions and zero Mathlib dependencies:
 
 1. **4D Power-of-2 Quaternion Rigidity Obstruction ($r _ 4(2^r) = 24$):**
    Modulo $8$, every integer square lies in $\{0, 1, 4\} \pmod 8$, so for every $r \ge 3$ and every $(a, b, c, d) \in \mathbb{Z}^4$,
@@ -45,7 +45,7 @@ We formalize four exact algebraic and extremal results discovered in the Wave 2C
 
 Modern large language models spend most of their inference compute inside **attention**, which relies on three core building blocks: (1) **RoPE** (Rotary Position Embedding), which rotates token vectors by position-dependent angles; (2) **KV-cache compression**, which sketches long key vectors into smaller dimensions; and (3) **Softmax**, which turns raw attention scores into probabilities and is frequently approximated via top-$K$ pruning or low-bit quantization.
 
-This repository provides 100% machine-checked Lean 4 proofs for four concrete mathematical breakthroughs across all three building blocks:
+This repository provides machine-checked Lean 4 proofs of four results across the three building blocks:
 - **Why 4D bit-shift rotations fail — and how 8D octonions fix it:** You might try to build a 4D rotation whose normalization is a pure binary bit-shift (dividing by a power of $2$, with zero division hardware). We prove mathematically that this is **impossible** in 4D: there are always only 24 trivial solutions for every power of $2$, no matter how large. Moving to 8D **octonions** completely breaks this barrier, giving exact zero-drift rotations normalized by a single `>> 16` bit-shift.
 - **Multiplication-free attention-key sketches hitting the physical limit:** The Welch bound is the fundamental lower limit on how little interference (coherence) you can have when compressing $d$ directions into $m < d$ dimensions. We prove the exact integer Welch bound and certify five GPU-discovered sparse matrices made purely of $\{-1, 0, +1\}$ (requiring **zero multiplications**, only 3–5 additions per dimension) that hit the Welch limit with exact ratio `1.00000`.
 - **Exact worst-case accuracy guarantees for sparse and quantized Softmax:** We prove the exact, un-improvable worst-case $\ell _ 1$ probability error formulas for both top-$K$ attention pruning (as a function of the score gap $\Delta$) and $\pm \epsilon$ quantized attention logits ($2 \tanh(\epsilon / 2)$, strictly tighter than the naive linear bound $\epsilon$), along with explicit worst-case inputs that attain equality.
@@ -75,6 +75,10 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of 4D
    Frobenius duality `frobenius_gram_eq_frame` ($\|S^T S\| _ F^2 = \|S S^T\| _ F^2$) combined with integer Cauchy–Schwarz (`sumInt_cauchy_schwarz`) proves Theorem 3 universally. The same duality yields `welch_tight_of_rowOrthogonal`: verifying the tight-frame identity $S S^T = c I _ m$ ($m c = d s$) certifies exact Welch equality $m \, \Phi(S) = d s^2 (d - m)$ for all five matrices in seconds without brute-forcing $d^2$-term Gram sums.
 4. **Rational Softmax $\ell _ 1$ Laws (`OctonionRopeWelch/Softmax.lean`):**
    Working directly over Lean 4 `Init`'s built-in `Rat`, Theorem 5 proves $\|p - q\| _ 1 = 2 T / (H + T)$ and cross-multiplies via double-sum comparison $T (K E) \le H (N - K)$. Theorem 6 partitions indices by $p' _ i \le p _ i$, derives $a (1 - a') \le R^2 a' (1 - a)$, and closes $(R + 1)(a - a') \le R - 1$ via the exact sum-of-squares identity $(R - 1)(R(1 - a) - a)^2 \ge 0$, followed by explicit sharpness witnesses for all $N \ge 2$.
+
+## Scope of the formal statement
+
+The `Llama-2` and `llama2Octonion0` names refer to an integer vector `x` chosen so that `sum x_i^2 = (2^16)^2`; no Llama-2 model or RoPE frequency table is computed. Theorem 1 is the classical count `r4(2^r) = 24` (Jacobi) for integer quaternions, Theorem 3 is the standard Welch bound, and Theorems 5-6 are elementary `l1` bounds on softmax; only Theorem 4 (five finite frames) is a finite check.
 
 ## Prior-Art Context
 

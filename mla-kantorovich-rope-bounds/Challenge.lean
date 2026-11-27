@@ -150,7 +150,7 @@ theorem parseval_tight_frame_multihead_interference_cap :
 /-- Theorem 5 (Exact Pythagorean `R = 1105` Multi-Angle RoPE Rotations):
     Verifies `1105 = 5 * 13 * 17` and `1105^2 = 1,221,025`, all 4 primitive Brahmagupta-Fibonacci
     Pythagorean RoPE pairs `(1104, 47)`, `(1073, 264)`, `(943, 576)`, `(817, 744)` with
-    `Nat.gcd c s = 1` and strict ordering, all 10 Wave 7C campaign RoPE pairs, and universal
+    `Nat.gcd c s = 1` and strict ordering, all 10 listed RoPE pairs, and universal
     exact orthogonality, norm conservation, inner-product invariance, and relative-position
     Brahmagupta-Fibonacci composition. -/
 theorem pythagorean_1105_multi_angle_rope_exact :

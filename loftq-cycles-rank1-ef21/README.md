@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **10 / 10** | **9 / 10** | **8 / 10** | **10 / 10** | **91 / 100** |
 
-*Heuristic self-rating (weighted `3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 91 / 100`): universal all-$(m, n)$ exact rank-1 1-bit sign EF21 contraction law $\alpha = 1/(mn)$, exact algebraic $(2, 2)$ rank-1 ternary EF21 contraction constant $(2 + \sqrt{2})/8$ over $\mathbb{Q}(\sqrt{2})$, explicit coupled integer and exact orthogonal matrices at $n = 3, 4$ strictly beating uncoupled block-diagonal $I _ k \otimes R(\pi/8)$, universal Euclidean-projection LoftQ Lyapunov descent paired with the exact $\Omega(d \sigma^2 / M^2)$ spiked separation and $4 M^2$ saturation barrier, and kernel-checked permanent 2-cycle (`W_cyc2`) and 3-cycle (`W_cyc3`) witnesses refuting universal fixed-point convergence of absmax-RTN LoftQ — all formalized in pure Lean 4 `Init` (zero Mathlib, zero `native_decide`).*
+*Heuristic self-rating (weighted `3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 91 / 100`): universal all-$(m, n)$ exact rank-1 1-bit sign EF21 contraction law $\alpha = 1/(mn)$, exact algebraic $(2, 2)$ rank-1 ternary EF21 contraction constant $(2 + \sqrt{2})/8$ over $\mathbb{Q}(\sqrt{2})$, explicit coupled integer and exact orthogonal matrices at $n = 3, 4$ strictly beating uncoupled block-diagonal $I _ k \otimes R(\pi/8)$, universal Euclidean-projection LoftQ Lyapunov descent paired with the exact $\Omega(d \sigma^2 / M^2)$ spiked separation and $4 M^2$ saturation barrier, and kernel-checked permanent 2-cycle (`W_cyc2`) and 3-cycle (`W_cyc3`) witnesses showing that fixed-point convergence fails for the modelled `Q16.16` absmax-RTN LoftQ operator `loftqStepQ16` (a hand-written model with a 24-step power-iteration SVD, not the LoftQ implementation) — all formalized in pure Lean 4 `Init` (zero Mathlib, zero `native_decide`).*
 
 ## For Mathematicians
 
@@ -37,7 +37,7 @@ We formalize six exact, self-contained theorems over `Rat`, `Int`, and the exact
    - **Exact $4 M^2$ Saturation Law ($\forall M \ge 1$):** The uniform-bulk variance ratio equals $\frac{1/3}{1/(12 M^2)} = 4 M^2$ ($4$ for ternary $M = 1$, $36$ for INT3 $M = 3$, $196$ for INT4 $M = 7$), and on $[-1, 1]$ at scale $1/M$ every entry has squared rounding error $\le \frac{1}{4 M^2}$, with exact attainment at $x = \frac{1}{2 M}$.
 
 5. **Exact `3 × 3` Symmetric LoftQ Permanent 2-Cycle Witness (`loftq_explicit_3x3_symmetric_2cycle_witness`):**
-   Under the bit-exact `Q16.16` 3×3 symmetric LoftQ operator (`loftqStepQ16`, matching `loftq_3x3_deep.hip` bit-for-bit), the symmetric integer matrix
+   Under the `Q16.16` 3×3 symmetric LoftQ operator `loftqStepQ16` (a hand-written model; a GPU source `loftq_3x3_deep.hip` is mentioned by the authors but is not part of this repository, so any match with it is unverified), the symmetric integer matrix
    ```math
    W_{\mathrm{cyc2}} = \begin{pmatrix} 149 & 91 & 350 \\ 91 & 920 & 978 \\ 350 & 978 & 297 \end{pmatrix}
    ```
@@ -60,7 +60,7 @@ This Lean 4 package proves **six exact, machine-checked laws** about these metho
 
 1. **Exact 1-bit rank-1 compression limit:** For any $m \times n$ matrix, 1-bit rank-1 compression always reduces squared error by at least $1/(mn)$, and no better universal guarantee is possible.
 2. **Exact ternary `2 × 2` limit & coupled rotations:** Allowing zeros (`{-1, 0, 1}`) raises the `2 × 2` worst-case guarantee from $1/4 = 0.25$ to $(2 + \sqrt{2})/8 \approx 0.4268$, achieved by a $22.5^\circ$ rotation $R(\pi/8)$. Surprisingly, in dimensions $3$ and $4$, **coupled orthogonal rotations** strictly beat stacking independent $2 \times 2$ rotations.
-3. **Why LoftQ beats 1-shot quantization — and why absmax-RTN LoftQ can oscillate forever:** When both alternating steps are true Euclidean projections, LoftQ's error strictly decreases every step, and on outlier-spiked matrices it achieves a $4 M^2$ variance reduction (`4×` for ternary, `36×` for INT3, `196×` for INT4) or even exact zero error vs $\Omega(d \sigma^2 / M^2)$ for 1-shot. However, standard absmax-RTN quantization is **not** a Euclidean projection — and we exhibit two explicit $3 \times 3$ integer matrices (`W_cyc2` and `W_cyc3`) that trap absmax-RTN LoftQ in permanent period-2 and period-3 oscillations with $6\%$–$13\%$ error spikes forever.
+3. **Why LoftQ beats 1-shot quantization — and why the modelled absmax-RTN LoftQ operator can oscillate forever:** When both alternating steps are true Euclidean projections, LoftQ's error strictly decreases every step, and on outlier-spiked matrices it achieves a $4 M^2$ variance reduction (`4×` for ternary, `36×` for INT3, `196×` for INT4) or even exact zero error vs $\Omega(d \sigma^2 / M^2)$ for 1-shot. However, absmax-RTN quantization is **not** a Euclidean projection — and, for the modelled operator, we exhibit two explicit $3 \times 3$ integer matrices (`W_cyc2` and `W_cyc3`) that trap the modelled fixed-point absmax-RTN LoftQ operator `loftqStepQ16` in permanent period-2 and period-3 oscillations with $6\%$–$13\%$ error spikes forever.
 
 ---
 
@@ -86,9 +86,13 @@ This Lean 4 package proves **six exact, machine-checked laws** about these metho
 4. **LoftQ Lyapunov Dichotomy & Limit Cycles (`LoftqEnergySaturation.lean`, `LoftqCycles.lean`):**
    Contrasts universal Euclidean-projection energy monotonicity and exact $4 M^2$ saturation against kernel-checked 1-step `rfl` chains for `W_cyc2` (period 2) and `W_cyc3` (period 3), lifted to all $t \in \mathbb{N}$ by induction modulo 2 and 3.
 
+## Scope of the formal statement
+
+Theorems 5 and 6 are about the hand-written operator `loftqStepQ16`: a `Q16.16` fixed-point iteration whose rank-1 'SVD' is a 24-step power iteration with an integer square root and ties-away division. They are exact for that operator and do not show that the LoftQ implementation of Li et al. cycles. Theorem 4's monotonicity part is immediate from the definition `isBestApprox`, and the `4 M^2` 'saturation' ratio `uniformBulkVarianceRatio` is defined as `(1/3)/(1/(12 M^2))`. Theorem 1 is the average-over-signs argument; Theorems 3, 5 and 6 are finite computations.
+
 ## Prior-Art Context
 
-- **LoftQ (Li et al., ICLR 2024):** Introduced alternating quantization + low-rank SVD initialization (`Q_{t+1} = Quant(W - L_t)`, `L_{t+1} = SVD_r(W - Q_{t+1})`) for quantized LoRA fine-tuning. Theorems 4–6 prove the sharp Lyapunov dichotomy: exact Euclidean projection is universally monotone, whereas absmax-RTN enters permanent macroscopic period-2 and period-3 limit cycles starting at $d = 3$.
+- **LoftQ (Li et al., ICLR 2024):** Introduced alternating quantization + low-rank SVD initialization (`Q_{t+1} = Quant(W - L_t)`, `L_{t+1} = SVD_r(W - Q_{t+1})`) for quantized LoRA fine-tuning. Theorems 4–6 prove a Lyapunov dichotomy for the stated model: exact Euclidean projection is monotone (a one-line consequence of the definition of best approximation), whereas the modelled `Q16.16` absmax-RTN operator has permanent period-2 and period-3 limit cycles at $d = 3$ (two explicit integer matrices).
 - **EF21 & Rank-1 Matrix Compression (Richtárik et al., NeurIPS 2021; PowerSGD / 1-bit sign compressors):** Theorems 1–3 give exact universal contraction constants for rank-1 1-bit sign ($\alpha = 1/(mn)$) and `(2, 2)` rank-1 ternary ($\alpha = (2 + \sqrt{2})/8$) compressors, and prove that coupled orthogonal matrices strictly outperform uncoupled block-diagonal $R(\pi/8)$ rotations at $n = 3, 4$.
 
 ## Build & Verification

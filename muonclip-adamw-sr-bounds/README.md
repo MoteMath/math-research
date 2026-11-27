@@ -8,7 +8,7 @@ A standalone, sorry-free, pure-`Init` (zero Mathlib) Lean 4 (`v4.34.1`) Palomar 
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **10 / 10** | **9 / 10** | **9 / 10** | **10 / 10** | **93 / 100** |
 
-*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 93 / 100`): pure-`Init` Lean 4 (zero Mathlib, zero `native_decide`) proofs of the MuonClip pitchfork symmetry-breaking phase transition at $\gamma _ c = 1/4$ where Kimi K2's symmetric $\alpha = 1/2$ split becomes a strict local maximum, exact RTN logit-cap overshoot (`289/256` FP8, `66049/65536` BF16) vs universal RTZ safety, universal $m$-bit IEEE-754 RNE AdamW weight-decay freeze radii, the exact 2-state SR-EMA Markov chain ($\lambda _ 2 = \beta$, $(1 + \beta)/(1 - \beta)$ variance inflation), and the universal cubic sum-of-squares preconditioner Jensen bias law.*
+*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 93 / 100`): pure-`Init` Lean 4 (zero Mathlib, zero `native_decide`) proofs of the MuonClip pitchfork symmetry-breaking phase transition at $\gamma _ c = 1/4$ where Kimi K2's symmetric $\alpha = 1/2$ split becomes a strict local maximum, exact RTN logit-cap overshoot (`289/256` FP8, `66049/65536` BF16) vs universal RTZ safety, universal $m$-bit round-to-nearest-even (modelled) AdamW weight-decay freeze radii, the exact 2-state SR-EMA Markov chain ($\lambda _ 2 = \beta$, $(1 + \beta)/(1 - \beta)$ variance inflation), and the universal cubic sum-of-squares preconditioner Jensen bias law.*
 
 ## Headline Theorems (`MuonclipAdamwSrChallenge`)
 
@@ -63,13 +63,17 @@ All six theorems are proved purely over `Rat` and `Nat` inside Lean 4's `Init` p
 
 Modern large-language-model training relies heavily on low-precision arithmetic (BF16, FP8, and 4-bit exponent-only formats like E4M0) and attention-logit clipping (MuonClip / QK-Clip). This package provides **machine-checked mathematical proofs** (verified by Lean 4's kernel with zero assumptions beyond standard logic) of six practical phenomena:
 
-1. **Why symmetric 50/50 MuonClip fails on severe attention spikes:** Whenever an attention head's maximum logit exceeds $4\times$ the clip cap ($\gamma < 1/4$), splitting the rescaling equally between $W _ Q$ and $W _ K$ ($\alpha = 1/2$) is actually a **worst-case local maximum** of weight distortion. Breaking symmetry saves up to **50%** of squared weight perturbation (and up to **94%** when $\|W _ Q\| _ F \ne \|W _ K\| _ F$).
+1. **Why symmetric 50/50 MuonClip fails on severe attention spikes:** Whenever an attention head's maximum logit exceeds $4\times$ the clip cap ($\gamma < 1/4$), splitting the rescaling equally between $W _ Q$ and $W _ K$ ($\alpha = 1/2$) is actually a **worst-case local maximum** of weight distortion. In the model, breaking symmetry reduces the squared weight perturbation by up to **50%** (and up to **94%** when the Frobenius norms of `W_Q` and `W_K` differ); these are values of the closed forms in the Lean statements (such as `4r/(1+r)^2`), not training results.
 2. **Why MuonClip scale factors must round down (RTZ), never to nearest (RTN):** Rounding the rescaling factors to nearest in FP8-E4M3 can let the clipped attention logit **overshoot** the safety cap $\tau$ by up to **+12.89%** (`289/256`), whereas rounding toward zero guarantees $S' _ {\max} \le \tau$ unconditionally.
-3. **Why low-precision AdamW weight decay silently dies:** Under standard IEEE-754 rounding, decoupled weight decay $\eta \lambda$ completely freezes every weight whenever $\eta \lambda \le 2^{-(m+2)}$ (`1/512` in BF16, `1/32` in FP8-E4M3) — which is **195x–3,125x larger** than typical LLM settings ($\eta = 10^{-4}, \lambda = 0.1$).
+3. **Why low-precision AdamW weight decay freezes in the model:** Under modelled round-to-nearest-even with $m$ mantissa bits (for weights in the normal range), decoupled weight decay $\eta \lambda$ completely freezes every weight whenever $\eta \lambda \le 2^{-(m+2)}$ (`1/512` in BF16, `1/32` in FP8-E4M3) — which is **195x–3,125x larger** than typical LLM settings ($\eta = 10^{-4}, \lambda = 0.1$).
 4. **How stochastic rounding fixes EMA freeze — and its hidden autocorrelation cost:** Stochastic rounding eliminates weight-decay bias completely ($\mathbb{E}[q _ \infty] = v$) with $\beta$-independent stationary variance, but creates lag-$k$ autocorrelation $\beta^k$ that inflates time-averaged variance by $(1 + \beta)/(1 - \beta)$ (`19x` at $\beta _ 1 = 0.9$, `1999x` at $\beta _ 2 = 0.999$).
 5. **Which parameterization of Adam's second moment has the least bias in 4-bit SR:** Storing $1/\sqrt{v _ t}$ directly has **0%** Jensen bias; storing $v _ t$ has up to **+4.55%** upward bias in E4M0; storing $\sqrt{v _ t}$ is **2.75x worse** (**+12.50%** = `9/8`).
 
 ---
+
+## Scope of the formal statement
+
+The rounding statements are about the hand-written `m`-bit round-to-nearest-even model on rationals (weights in the normal range, `w(1 - rho)` rounding), not about IEEE-754 hardware or an optimizer implementation. The percentages and ratios quoted above are values of the closed-form expressions in the Lean statements.
 
 ## Prior-Art Context
 

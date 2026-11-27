@@ -320,7 +320,7 @@ def quinticScheduleIter (spec : FpSpec) (mode : EvalMode) : List (Nat × Nat × 
     strictNat (quinticStep spec mode a b c x) fun y => quinticScheduleIter spec mode rest y
 
 -- ============================================================================
--- Exact Format Bit-Pattern Constants (from Wave 19A GPU + CPU Fraction Oracle)
+-- Exact Format Bit-Pattern Constants (from a GPU + CPU fraction-oracle search)
 -- ============================================================================
 
 /-- BF16 `1.0` (`0x3F80`). -/

@@ -43,10 +43,14 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of an
 2. **Return-Map & Carry-Barrier Engine (`theorem2a`–`theorem2c`):** 2-step return-map reduction, characteristic-2 Frobenius cancellation, any-bit-blind pairing involution, and carry-parity conservation prove the universal $2^{w-1}$ giant cycle on $\mathrm{bit} _ 1 = 0$, while bit-1 invariance blocks all carries on $\mathrm{bit} _ 1 = 1$ and yields exact logarithmic period $2^{\lceil \log _ 2(w-1) \rceil}$ for $F _ 0$.
 3. **Non-Prefix Tap Classification (`theorem3a`, `theorem3b`):** per-tap any-bit-blind pairing proves De Bruijn completeness for arbitrary non-prefix multi-way AND taps, paired with exact 2-way cycle splitting at $w = d + 1$ for every prefix tap $P _ d$.
 
+## Scope of the formal statement
+
+The Lean objects are iterations of explicit hybrid carry-AND feedback maps on `w`-bit words (periods are taken modulo `2^w`). Theorem 4 needs the stated gate hypothesis (`hgate`) and `c % 4 = 1`; the De Bruijn completeness and cycle-splitting statements hold for all widths `w` as stated in each row.
+
 ## Prior-Art Context
 
 - **T-functions & NLFSRs:** Anashin (1994, 2002) and Klimov & Shamir (CHES 2002, FSE 2004) characterize single-cycle triangular maps via ANF degree bounds; Golomb (*Shift Register Sequences*) studies De Bruijn NLFSRs. Theorem 3a sits in that classical lineage (proved via any-bit-blind pairing without polynomials or Möbius inversion) and is paired with the exact cycle-splitting sharpness family Theorem 3b.
-- **Verdict status:** Referee-2 `PASS` (swarm board #164); the referee-6 novelty audit was still pending when this package was cut, so the novelty summary ($\mathbb{F} _ 2$ carry-transducer eigencycle compiler for additive Carry-AND NLFSRs and universal exponential/logarithmic carry-barrier coexistence) is the packager's conservative reading.
+- **Review status:** not independently reviewed. No novelty audit of this package has been completed; the summary of the mechanism above (an $\mathbb{F} _ 2$ carry-transducer eigencycle compiler for additive Carry-AND NLFSRs and a universal exponential/logarithmic carry-barrier coexistence) is the packager's reading. The relevant prior framework is the single-cycle theory of T-functions (Klimov and Shamir; Anashin and Khrennikov), cited above.
 
 ## Build & Verification
 

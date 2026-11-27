@@ -24,19 +24,23 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 | Theorem (in `Challenge.lean`) | Statement |
 |---|---|
-| `evalMod_coherent` | Machine-checked infinite theorem `evalMod_coherent` proved in pure Lean 4 `Init`. |
+| `evalMod_coherent` | Width-coherence of `evalMod` (all widths, all expressions), proved in pure Lean 4 `Init`. |
 | `symDeriv0_sound` | **Engine Theorem 3.1 (Soundness of Symbolic MBA Differential Compiler `symDeriv0`):** |
 | `quadLiftFromJet_sound` | **Engine Theorem 4.2 (Single-Step Exact Quadratic Lifting & Uniqueness `w → 2*w`):** |
 | `thm1_constructive_lifts` | **Main Theorem 1b (Constructive Infinite Bit-by-Bit Lifts of Both 2-Adic Roots):** |
-| `witness2_one_root` | Machine-checked infinite theorem `witness2_one_root` proved in pure Lean 4 `Init`. |
-| `witness3_quad_lift_concrete` | Machine-checked infinite theorem `witness3_quad_lift_concrete` proved in pure Lean 4 `Init`. |
-| `sharpness1_even_mask` | Machine-checked infinite theorem `sharpness1_even_mask` proved in pure Lean 4 `Init`. |
-| `sharpness3_below_mask_threshold` | Machine-checked infinite theorem `sharpness3_below_mask_threshold` proved in pure Lean 4 `Init`. |
+| `witness2_one_root` | For every width `w >= 3`, the root count of `fam2 H_one` is exactly 1 (statement quantifies over all `w >= 3`); proved in pure Lean 4 `Init`. |
+| `witness3_quad_lift_concrete` | Machine-checked finite instance (concrete values of `fam3 3 11 7` at widths 4 and 8), proved in pure Lean 4 `Init`. |
+| `sharpness1_even_mask` | Machine-checked finite instance (the root count of `fam1SharpEvenMask` at the single width `w = 5` (8 roots)), proved in pure Lean 4 `Init`. |
+| `sharpness3_below_mask_threshold` | Machine-checked finite instance (`evalBlockJet 2 (fam3 3 11 7) 0 = none`, one concrete instance), proved in pure Lean 4 `Init`. |
+
+## Scope of the formal statement
+
+The expressions are evaluated with `Nat` arithmetic modulo `2^w` in the Lean definition `evalMod`. Coherence, soundness and the lifting theorems are stated for all widths (`w >= 3` where indicated); `witness3_quad_lift_concrete`, `sharpness1_even_mask` (fixed width 5) and `sharpness3_below_mask_threshold` are concrete finite instances.
 
 ## Prior-Art Context
 
 - - **Classical Literature:** Classical Hensel's Lemma (e.g., for $P(x) \in \mathbb{Z} _ 2[x]$) requires differentiability via formal polynomial derivatives $P'(x)$ and does not apply to expressions mixing bitwise $\land, \lor, \oplus$. Klimov–Shamir (2002) and Anashin–Khrennikov (2009, *Applied Algebraic Dynamics*, de Gruyter) characterized *bijectivity* (measure-preservation) and *transitivity* of 1-Lipschitz T-functions over $\mathbb{Z} _ 2$ via 1-bit coordinate derivatives, and the MBA deobfuscation literature — Zhou et al. (2007), Eyrolles (2017), and Liu et al. (2021, *MBA-Blast: Unveiling and Simplifying Mixed Boolean-Arithmetic Obfuscat
-- Hostile-verified PASS by `referee-4`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

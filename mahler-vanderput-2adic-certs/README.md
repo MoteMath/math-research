@@ -33,10 +33,15 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `exp2c_neg_one_inv` | Non-vacuity witness at `x = -1 ∈ Z2`: `(1 + 2c)^(-1) * (1 + 2c) = 1` in `Z2`! |
 | `nonvacuity_all_compilers` | Explicit kernel-checked non-vacuity witnesses for all three finite certificate engines. |
 
+## Scope of the formal statement
+
+`Z2` is modelled as a coherent tower of `BitVec w` values. Theorems IIa and IIb (`triadic_holder_2_3_sharp`, `shear_carry_1lipschitz_sharp`) hypothesise an extension `F` of the given function to `Z2` with a stated modulus; they do not by themselves show that such an `F` exists. Existence rests on library lemmas (for example `latticeCertLift`) that are not part of `Challenge.lean`, and the non-vacuity theorem in `Challenge.lean` only supplies finite certificates.
+
 ## Prior-Art Context
 
 - - **Classical Foundations (Distinguished Honestly):** - Mahler's continuity theorem (1958), the van der Put basis (1968), ultrametric $p$-adic calculus (Schikhof, *Ultrametric Calculus*, 1984), Anashin's 1-Lipschitz criteria in both bases (Anashin & Khrennikov, *Applied Algebraic Dynamics*, 2009), and Mahler/van der Put basis-conversion theory (Jeong, 2013) are classical theorems of $p$-adic analysis. - 2-regular integer sequences and matrix representations follow Allouche & Shallit (*Automatic Sequences*, 2003); bit-dilation / Z-order curves and lowbit carry tricks trace to Morton (1966), HAKMEM, and Warren (*Hacker's Delight*), and the $q =
-- Hostile-verified PASS by `referee-4`; pure `leanprover/lean4:v4.35.0` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- **Prior-art assessment (not independently reviewed by the authors):** an external audit (`NOVELTY.md`, 2026-11-27) judged the basis theory here to be known in substance: Mahler (1958), van der Put (1968), Schikhof (1984) and Anashin-Khrennikov (2009), as cited above, already give the classical material. The audit located no prior statement of the triadic Hoelder sharpness or the `Theta_2` inverse, but its search was shallow. A GitHub-wide code search found only this repository (the unrelated `przm` Mahler.lean, https://github.com/Lemon4ksan/przm, is a different subject). The contribution is best read as finite-to-infinite engineering in Lean, not new `p`-adic analysis.
+- Built against `leanprover/lean4:v4.35.0` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

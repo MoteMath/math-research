@@ -30,13 +30,17 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `bit_expansion_D2` | **Theorem 3a (Exact Infinite Bit-Expansion Law for D = 2, rate α(2) = 7/6, ∀ k : Nat)** |
 | `integral_convergence_D2` | **Theorem 4a (Exact Rational Integral ∫ ?(2x) dμ_?(x) = 9/13, ∀ k : Nat)** |
 | `exact_closed_form_D2` | **Corollary (Theorem 5 specialized to x ↦ 2x)**: `∀ k : Nat, (1 / 2^k) ∑_{/w/=k} ?(2 · q(w)) ≈q 9/13 + a_k / (52 · 8^k)`. |
-| `row_col_duality_D5` | Machine-checked infinite theorem `row_col_duality_D5` proved in pure Lean 4 `Init`. |
+| `row_col_duality_D5` | Machine-checked finite instance (the fixed 15-state certificate `certD5`), proved in pure Lean 4 `Init`. |
 | `sharpness_hellinger_const_counterexample` | **Sharpness Counterexample 3 (Dyadic Hellinger Threshold `2 * c^2 ≥ 1`)**: Relaxing `c = 91/128` (`2*91^2 = 16562 ≥ 16384`) to `c = 181/256` (`2*181^2 = 65522 < 65536`) falsifies sub-multiplicativity `hWeight(c, 1 + 1) ≤ hWeight(c, 1) * hWeight(c, 1)`! |
+
+## Scope of the formal statement
+
+The Lean object `?` here is the variant on `[0, inf]` defined via Stern-Brocot bits (with `?(1) = 1/2`), not the usual Minkowski question-mark function on `[0, 1]`. Theorem 1 is close to a restatement of the definition of `dyadMid`. The depth-`k` statements for `D = 2` hold for all `k`; `row_col_duality_D5` and the sharpness statement are finite instances. The sharpness statement concerns specific dyadic constants only.
 
 ## Prior-Art Context
 
 - - **Classical Foundations (explicitly credited):** - **Minkowski (1904):** Definition of $?(x)$ mapping continued fractions / Stern-Brocot paths to binary expansions. - **Salem (1943):** Singularity of Minkowski's measure $\mu _ ?$ with respect to Lebesgue measure. - **Raney (1973)** (*On continued fractions and finite automata*, Math. Ann. 206): Construction of finite-state transducers on row-balanced determinant-$D$ matrices implementing Möbius actions on L/R sequences. - **Alkauskas (2008)** (*Integral transforms of the Minkowski question mark function*, PhD thesis / *J. Number Theory*): Analytic study of the moments and Stieltjes/Mellin t
-- Hostile-verified PASS by `referee-4`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

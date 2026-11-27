@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **8 / 10** | **8 / 10** | **7 / 10** | **6 / 10** | **10 / 10** | **76 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): exact unit-clock and inversion-clock laws, Mersenne hitting times, a synchronous-collision criterion, hardware borrow acceleration and unique modular attractor cycles for popcount-driven bitwise dynamics, which are anti-causal and so outside T-function and Hensel techniques, formalized in pure Lean 4 `Init` (zero Mathlib).*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): exact unit-clock and inversion-clock laws, Mersenne hitting times, a synchronous-collision criterion, borrow acceleration and unique modular attractor cycles for popcount-driven bitwise dynamics, which are anti-causal and so outside T-function and Hensel techniques, formalized in pure Lean 4 `Init` (zero Mathlib).*
 
 ## For Mathematicians
 
@@ -49,7 +49,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of ex
 ## Prior-Art Context
 
 - **Closest literature:** the binary inversion statistic and Young-diagram area behind $\Phi$ (the exponent of $q$-binomial coefficients), the Thue-Morse and Hamming-weight literature, and self-referential bit dynamics such as Collatz-like popcount maps. No prior record is known to the packager of the popcount-addressed flows $x \oplus 2^{s _ 2(x)}$ and $x - 2^{s _ 2(x)}$ with an exact unit clock, an exact Mersenne hitting time, the synchronous-collision criterion or the borrow-acceleration identity.
-- **Verdict status:** Referee-2 `PASS` (swarm board #90); the referee-6 novelty audit of this mechanism was still pending when this package was cut, so the novelty claim above is the packager's conservative reading and is not yet independently audited.
+- **Review status:** not independently reviewed. No novelty audit of this mechanism has been completed; the claim above that no prior record is known is the packager's reading and the search behind it was not recorded.
 
 ## Build & Verification
 
