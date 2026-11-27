@@ -22,7 +22,7 @@ All statements are in [`carry-determinants/Challenge.lean`](carry-determinants/C
 
 ## 2. [`carry-blocks-determinants/`](carry-blocks-determinants/)
 
-All statements are in [`carry-blocks-determinants/Challenge.lean`](carry-blocks-determinants/Challenge.lean) against pure-Mathlib definitions in [`carry-blocks-determinants/CarryBlocksDeterminants/Defs.lean`](carry-blocks-determinants/CarryBlocksDeterminants/Defs.lean). See [`carry-blocks-determinants/README.md`](carry-blocks-determinants/README.md) for prior-art context.
+All statements are in [`carry-blocks-determinants/Challenge.lean`](carry-blocks-determinants/Challenge.lean) against pure-Mathlib definitions in [`carry-blocks-determinants/CarryBlocksDeterminants/Defs.lean`](carry-blocks-determinants/CarryBlocksDeterminants/Defs.lean). See [`carry-blocks-determinants/README.md`](carry-blocks-determinants/README.md) for prior-art context (located related work: Bacher–Chapman 2004, Bacher 2007, Sobolewski–Ulas).
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -159,7 +159,7 @@ All five headline statements are fixed in [`grh-ultra-compact-lean/src/Statement
 
 ## 13. [`sparse-e2m1-rotations/`](sparse-e2m1-rotations/)
 
-All statements are in [`sparse-e2m1-rotations/Challenge.lean`](sparse-e2m1-rotations/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`sparse-e2m1-rotations/SparseE2M1Rotations/Defs.lean`](sparse-e2m1-rotations/SparseE2M1Rotations/Defs.lean). See [`sparse-e2m1-rotations/README.md`](sparse-e2m1-rotations/README.md) for the Kronecker algebraic proofs, GPU SNR benchmarks, and prior-art context.
+All statements are in [`sparse-e2m1-rotations/Challenge.lean`](sparse-e2m1-rotations/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`sparse-e2m1-rotations/SparseE2M1Rotations/Defs.lean`](sparse-e2m1-rotations/SparseE2M1Rotations/Defs.lean). See [`sparse-e2m1-rotations/README.md`](sparse-e2m1-rotations/README.md) for the Kronecker algebraic proofs, scope of the formal statement, and prior-art context.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -167,102 +167,102 @@ All statements are in [`sparse-e2m1-rotations/Challenge.lean`](sparse-e2m1-rotat
 | `single24_coherence_lower_bound` | `SparseE2M1Rotations.Theorems` | Universal single-2:4-sparse coherence lower bound $2c \le (4m) M^2$ for every row-2:4-sparse orthogonal $(4m) \times (4m)$ integer matrix. |
 | `walsh_weighing_attains_coherence_bound` | `SparseE2M1Rotations.Theorems` | Exact attainment of the single-2:4 coherence bound for all $k \in \mathbb{N}$ by $W _ {4 \cdot 2^k} = H _ {2^k} \otimes B _ 1$. |
 | `skewConference_e2m1_orthogonal` | `SparseE2M1Rotations.Theorems` | Universal skew-conference orthogonality $(a I + C)^T (a I + C) = (a^2 + n - 1) I$ with doubled-E2M1 entry preservation. |
-| `q32_pow2_e2m1_exact` | `SparseE2M1Rotations.Theorems` | Exact power-of-2 dense E2M1-native $32 \times 32$ rotation $Q _ {32} = H _ 4 \otimes (I _ 8 + 3 C _ 8)$ with $Q _ {32}^T Q _ {32} = 16^2 I _ {32}$. |
-| `q16_skew41_e2m1_exact` | `SparseE2M1Rotations.Theorems` | Exact NVFP4 winner $Q _ {16} = 4 I _ {16} + C _ {16}$ with $Q _ {16}^T Q _ {16} = 31 I _ {16}$ and entries in $\{-1, 1, 4\} \subset 2\cdot\mathrm{E2M1}$. |
+| `q32_pow2_e2m1_exact` | `SparseE2M1Rotations.Theorems` | Exact power-of-2 dense integer $32 \times 32$ rotation $Q _ {32} = H _ 4 \otimes (I _ 8 + 3 C _ 8)$ with $Q _ {32}^T Q _ {32} = 16^2 I _ {32}$. |
+| `q16_skew41_e2m1_exact` | `SparseE2M1Rotations.Theorems` | Exact orthogonal matrix $Q _ {16} = 4 I _ {16} + C _ {16}$ (called the "NVFP4 winner" in campaign notes; no optimality is proved) with $Q _ {16}^T Q _ {16} = 31 I _ {16}$ and entries in $\{-1, 1, 4\} \subset 2\cdot\mathrm{E2M1}$. |
 | `g4k_doubly24_e2m1_orthogonal` | `SparseE2M1Rotations.Theorems` | Universal single doubly-2:4-sparse E2M1-native orthogonal family $G _ {4 \cdot 2^k}(1, 2) = H _ {2^k} \otimes G _ 4(1, 2)$ with $Q^T Q = (5 \cdot 2^k) I$. |
 
 ## 14. [`muon-vertex-polar/`](muon-vertex-polar/)
 
-All statements are in [`muon-vertex-polar/Challenge.lean`](muon-vertex-polar/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`muon-vertex-polar/MuonVertexPolar/Defs.lean`](muon-vertex-polar/MuonVertexPolar/Defs.lean). See [`muon-vertex-polar/README.md`](muon-vertex-polar/README.md) for the Bernstein polynomial certification engine and prior-art context.
+All statements are in [`muon-vertex-polar/Challenge.lean`](muon-vertex-polar/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`muon-vertex-polar/MuonVertexPolar/Defs.lean`](muon-vertex-polar/MuonVertexPolar/Defs.lean). See [`muon-vertex-polar/README.md`](muon-vertex-polar/README.md) for the Bernstein polynomial certification engine, scope of the formal statement and prior-art context.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `shifted_square_equiv_monomial` | `MuonVertexPolar.Algebra` | Exact algebraic vertex-form identity $a x + b x^3 + c x^5 = x(\alpha + c(x^2 - \mu)^2)$ over $\mathbb{Q}$ for $c \ne 0$. |
 | `shifted_square_quadratic_error_at_one` | `MuonVertexPolar.Algebra` | Exact quadratic Gram rounding-error annihilation $\beta(a - 1)^2 = \beta\delta _ 1^2 \le \beta u^2$ vs monomial linear error $(b + 2c)\delta _ 1 + c\delta _ 1^2$. |
 | `noisyShiftedStep_envelope` | `MuonVertexPolar.Algebra` | Exact pointwise degree-5 upper and lower envelopes for the 6-rounding-point `NoisyShiftedStep` model. |
-| `bf16_stationary_shifted_certified` | `MuonVertexPolar.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[942/1000, 1052/1000]$ for drop-in BF16 stationary $(31/32, 199/128, 135/128)$ at $u = 1/256$. |
-| `bf16_dp5_shifted_certified` | `MuonVertexPolar.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[987/1000, 1013/1000]$ ($\delta \le 0.013$) for BF16 shifted-square DP at $u = 1/256$. |
-| `fp8_pure_dp5_shifted_certified` | `MuonVertexPolar.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[31/100, 165/100]$ for pure FP8 E4M3 ($u = 1/16$) shifted-square DP. |
-| `fp8_hybrid_dp5_shifted_certified` | `MuonVertexPolar.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[824/1000, 1163/1000]$ ($\delta \le 0.176$) for hybrid FP8 ($u = 1/32$) shifted-square DP. |
+| `bf16_stationary_shifted_certified` | `MuonVertexPolar.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[942/1000, 1052/1000]$ for the stationary schedule $(31/32, 199/128, 135/128)$ in the scalar six-error model at $u = 1/256$ (the BF16 unit roundoff as a number). |
+| `bf16_dp5_shifted_certified` | `MuonVertexPolar.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[987/1000, 1013/1000]$ ($\delta \le 0.013$) for the shifted-square schedule in the scalar six-error model at $u = 1/256$. |
+| `fp8_pure_dp5_shifted_certified` | `MuonVertexPolar.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[31/100, 165/100]$ for a shifted-square schedule in the scalar six-error model at $u = 1/16$ (labelled pure FP8 E4M3). |
+| `fp8_hybrid_dp5_shifted_certified` | `MuonVertexPolar.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[824/1000, 1163/1000]$ ($\delta \le 0.176$) for a shifted-square schedule in the scalar six-error model at $u = 1/32$ (labelled hybrid FP8). |
 
 ## 15. [`ternary-lop3-circuits/`](ternary-lop3-circuits/)
 
-All statements are in [`ternary-lop3-circuits/Challenge.lean`](ternary-lop3-circuits/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ternary-lop3-circuits/TernaryLop3Circuits/Defs.lean`](ternary-lop3-circuits/TernaryLop3Circuits/Defs.lean). See [`ternary-lop3-circuits/README.md`](ternary-lop3-circuits/README.md) for gate-count lower bounds, RX 7900 XTX throughput benchmarks, and prior-art context.
+All statements are in [`ternary-lop3-circuits/Challenge.lean`](ternary-lop3-circuits/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ternary-lop3-circuits/TernaryLop3Circuits/Defs.lean`](ternary-lop3-circuits/TernaryLop3Circuits/Defs.lean). See [`ternary-lop3-circuits/README.md`](ternary-lop3-circuits/README.md) for the counting lower bounds (no gate model in Lean), scope of the formal statement, and prior-art context.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `unpack_3t5b_sound_and_surjective` | `TernaryLop3Circuits.Theorems` | Disjointness on `Fin 32` and 27/27 surjectivity outside the 4-codeword escape cube for the 6-`LOP3` depth-2 3-trit/5-bit unpacker. |
-| `unpack_3t5b_six_gate_lower_bound` | `TernaryLop3Circuits.Theorems` | Exact pigeonhole lower bound: every surjective disjoint 3-trit/5-bit decoder has $\ge 9$ true and $\ge 18$ false inputs per lane, barring any direct input literal ($18 > 16$). |
+| `unpack_3t5b_six_gate_lower_bound` | `TernaryLop3Circuits.Theorems` | Counting bound (the "six gate" reading is informal; no gate count in Lean): every surjective disjoint 3-trit/5-bit decoder has $\ge 9$ true and $\ge 18$ false inputs per lane, so no lane is a direct input literal ($18 > 16$). |
 | `unpack_5t8b_sound_and_surjective` | `TernaryLop3Circuits.Theorems` | Disjointness on `Fin 256` and 243/243 surjectivity via explicit right-inverse encoder for the 14-`LOP3` depth-4 5-trit/8-bit unpacker. |
-| `unpack_5t8b_four_var_impossibility` | `TernaryLop3Circuits.Theorems` | Exact lower bound: no output bit of any surjective disjoint 5-trit/8-bit decoder can depend on $\le 4$ input bits (weight $\in [81, 94]$ vs $16 \mid w$). |
+| `unpack_5t8b_four_var_impossibility` | `TernaryLop3Circuits.Theorems` | Counting bound: no output bit of any surjective disjoint 5-trit/8-bit decoder can depend on $\le 4$ input bits (weight $\in [81, 94]$ vs $16 \mid w$). |
 | `ternary_int4_exact5_sound` | `TernaryLop3Circuits.Theorems` | Soundness of the 9-`LOP3` ternary $\times$ signed INT4 $[-8, 7]$ offset product ($+ 8$), plus $Y _ 4 = 0$ identically on symmetric $[-7, 7]$. |
 | `ternary_fp4_exact5_sound` | `TernaryLop3Circuits.Theorems` | Soundness of the 4+10-`LOP3` zero-FP-op, zero-offset ternary $\times$ FP4 (E2M1) product over all 16 E2M1 codes. |
 | `csa32_popcnt_conservation` | `TernaryLop3Circuits.Theorems` | Universal 3:2 Carry-Save-Adder `popcnt` conservation for all $a, b, c \in \mathbb{N}$. |
 
 ## 16. [`ef21-ternary-contraction/`](ef21-ternary-contraction/)
 
-All statements are in [`ef21-ternary-contraction/Challenge.lean`](ef21-ternary-contraction/Challenge.lean) against Mathlib definitions in [`ef21-ternary-contraction/EF21Ternary/Defs.lean`](ef21-ternary-contraction/EF21Ternary/Defs.lean). See [`ef21-ternary-contraction/README.md`](ef21-ternary-contraction/README.md) for the Abel-summation proofs, multi-regime MXFP4/NVFP4 phase diagrams, and prior-art context.
+All statements are in [`ef21-ternary-contraction/Challenge.lean`](ef21-ternary-contraction/Challenge.lean) against Mathlib definitions in [`ef21-ternary-contraction/EF21Ternary/Defs.lean`](ef21-ternary-contraction/EF21Ternary/Defs.lean). See [`ef21-ternary-contraction/README.md`](ef21-ternary-contraction/README.md) for the Abel-summation proofs, multi-regime phase diagrams for a model of MXFP4/NVFP4, the scope of the formal statement (one-step contraction constants, not EF21 convergence), and prior-art context.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `ternary_ef21_contraction_exact` | `EF21Ternary.Ternary` | Universal optimal ternary EF21 contraction law $\alpha _ {\mathrm{tern}}(d) = (\sum _ {i=0}^{d-1} (\sqrt{i+1} - \sqrt{i})^2)^{-1}$ and exact tightness at $w _ i = \sqrt{i+1} - \sqrt{i}$ for all $d \ge 1$. |
+| `ternary_ef21_contraction_exact` | `EF21Ternary.Ternary` | Exact optimal one-step ternary contraction constant (the EF21 compressor constant) $\alpha _ {\mathrm{tern}}(d) = (\sum _ {i=0}^{d-1} (\sqrt{i+1} - \sqrt{i})^2)^{-1}$ and exact tightness at $w _ i = \sqrt{i+1} - \sqrt{i}$ for all $d \ge 1$. |
 | `alphaTern_harmonic_sandwich` | `EF21Ternary.Ternary` | Exact harmonic sandwich $4 / (4 + H _ {d-1}) \le \alpha _ {\mathrm{tern}}(d) \le 4 / (3 + H _ d)$ for all $d \ge 1$. |
-| `mxfp4_nvfp4_ef21_contraction_universal` | `EF21Ternary.FP4` | Exact universal multi-regime EF21 contraction laws and tightness/attainment for OCP E2M1 MXFP4 (3 regimes) and NVFP4 (2 regimes) for all $B \ge 1$. |
-| `symmetric_2bit_no_zero_collapse` | `EF21Ternary.TwoBitAndSR` | Exact zero-omission EF21 collapse $\alpha \le 9 / (d + 8)$ and attainment at $\gamma = 3 / (d + 8)$ on $e _ 0$ for symmetric 2-bit $\{\pm\mu, \pm 3\mu\}$ for all $d \ge 1$. |
+| `mxfp4_nvfp4_ef21_contraction_universal` | `EF21Ternary.FP4` | Exact multi-regime one-step contraction constants and tightness/attainment for a model of E2M1 MXFP4 (3 regimes; pre-scaled block with $|y _ i| \le 6$ and some $|y _ {i _ 0}| > 3$, E8M0 scale and saturation not modelled) and NVFP4 (2 regimes; continuous scale with some $|y _ {i _ 0}| = 6$) for all $B \ge 1$; the quantizer rounds ties half up, not as OCP round-to-nearest-even. |
+| `symmetric_2bit_no_zero_collapse` | `EF21Ternary.TwoBitAndSR` | Exact zero-omission one-step contraction collapse $\alpha \le 9 / (d + 8)$ and attainment at $\gamma = 3 / (d + 8)$ on $e _ 0$ for symmetric 2-bit $\{\pm\mu, \pm 3\mu\}$ for all $d \ge 1$. |
 | `mantissa_sr_variance_law` | `EF21Ternary.TwoBitAndSR` | Exact worst-case relative variance $1 / (4 \cdot 2^m (2^m + 1))$ and attainment at $t^* = 2^m / (2 \cdot 2^m + 1)$ for $m$-bit mantissa stochastic rounding for all $m \in \mathbb{N}$. |
 
 ## 17. [`subbyte-e2m1-lop3/`](subbyte-e2m1-lop3/)
 
-All statements are in [`subbyte-e2m1-lop3/Challenge.lean`](subbyte-e2m1-lop3/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`subbyte-e2m1-lop3/SubbyteE2M1Lop3/Defs.lean`](subbyte-e2m1-lop3/SubbyteE2M1Lop3/Defs.lean). See [`subbyte-e2m1-lop3/README.md`](subbyte-e2m1-lop3/README.md) for the circuit constructions, Hamming-weight lower bounds, and prior-art context.
+All statements are in [`subbyte-e2m1-lop3/Challenge.lean`](subbyte-e2m1-lop3/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`subbyte-e2m1-lop3/SubbyteE2M1Lop3/Defs.lean`](subbyte-e2m1-lop3/SubbyteE2M1Lop3/Defs.lean). See [`subbyte-e2m1-lop3/README.md`](subbyte-e2m1-lop3/README.md) for the circuit constructions, Hamming-weight facts (no gate model in Lean), scope of the formal statement, and prior-art context.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `unpack_2t4b_to_e2m1_zero_lop3` | `SubbyteE2M1Lop3.Theorems` | Exact 0-`LOP3` pure bit-wire 2-trit/4-bit $\to$ E2M1 unpacker covering all $9$ ternary pairs. |
 | `unpack_3t5b_to_e2m1_four_lop3` | `SubbyteE2M1Lop3.Theorems` | Exact 4-`LOP3` (`0x73`, `0xC7`, `0x3B`, `0x71`) 3-trit/5-bit $\to$ E2M1 unpacker covering all $27$ ternary triples. |
-| `unpack_3t5b_to_e2m1_three_gate_lower_bound` | `SubbyteE2M1Lop3.Theorems` | General $\ge 3$-`LOP3` lower bound for any surjective 3-trit/5-bit $\to$ E2M1 decoder ($w(f _ i) \in [18, 23]$ vs $8 \mid w(g)$). |
-| `quinary_3w7b_five_var_impossibility` | `SubbyteE2M1Lop3.Theorems` | General $\ge 5$-variable support barrier (`LOP3` depth $\ge 2$) for any surjective 3-quinary/7-bit decoder ($w \in [25k, 25k + 3] \implies 8 \nmid w$). |
+| `unpack_3t5b_to_e2m1_three_gate_lower_bound` | `SubbyteE2M1Lop3.Theorems` | Weight and distinctness facts for any surjective 3-trit/5-bit $\to$ E2M1 decoder ($w(f _ i) \in [18, 23]$ vs $8 \mid w(g)$, pairwise distinct $f _ i$), informally $\ge 3$ `LOP3` (not a gate count; the 4-`LOP3` circuit is not shown optimal). |
+| `quinary_3w7b_five_var_impossibility` | `SubbyteE2M1Lop3.Theorems` | General $\ge 5$-variable support barrier for any surjective 3-quinary/7-bit decoder ($w \in [25k, 25k + 3] \implies 8 \nmid w$); "`LOP3` depth $\ge 2$" is an informal reading. |
 | `asymmetric_2bit_polarity_flip_exact` | `SubbyteE2M1Lop3.Theorems` | Bijective 2-bit asymmetric `{-2, -1, 0, +1}` $\leftrightarrow$ `{-1, 0, +1, +2}` signed-scale duality and universal 2-plane dot-product identity. |
-| `compressor_4to2_lop3_depth_inversion` | `SubbyteE2M1Lop3.Theorems` | 5-input parity of any 4:2 compressor requires `LOP3` depth $\ge 2$, while 3:2 CSA (`0x96`, `0xE8`) is exact in 2 `LOP3` gates at depth $1$. |
+| `compressor_4to2_lop3_depth_inversion` | `SubbyteE2M1Lop3.Theorems` | 5-input parity of any 4:2 compressor is not computable by a single `LOP3` over any 3 of its 5 inputs (informally depth $\ge 2$), while 3:2 CSA (`0x96`, `0xE8`) is exact in 2 `LOP3` gates at depth $1$. |
 
 ## 18. [`soap-vertex-fourth-root/`](soap-vertex-fourth-root/)
 
-All statements are in [`soap-vertex-fourth-root/Challenge.lean`](soap-vertex-fourth-root/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`soap-vertex-fourth-root/SoapVertexFourthRoot/Defs.lean`](soap-vertex-fourth-root/SoapVertexFourthRoot/Defs.lean). See [`soap-vertex-fourth-root/README.md`](soap-vertex-fourth-root/README.md) for the cleared-denominator `Int` interval verification engine and prior-art context.
+All statements are in [`soap-vertex-fourth-root/Challenge.lean`](soap-vertex-fourth-root/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`soap-vertex-fourth-root/SoapVertexFourthRoot/Defs.lean`](soap-vertex-fourth-root/SoapVertexFourthRoot/Defs.lean); the rounding model is a multiplicative $(1 \pm u)$ per-operation model, not IEEE-754. See [`soap-vertex-fourth-root/README.md`](soap-vertex-fourth-root/README.md) for the cleared-denominator `Int` interval verification engine and prior-art context.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `vertex_fourth_root_equiv_monomial` | `SoapVertexFourthRoot.Algebra` | Exact completed-square identity $a + b m + c m^2 = (a - b^2/(4c)) + c(m + b/(2c))^2$ over $\mathbb{Q}$ ($c \ne 0$) and global positivity $\beta \ge 0 \implies \alpha \le \alpha + \beta(m - \mu)^2$. |
 | `taylor2_fourth_root_vertex_exact` | `SoapVertexFourthRoot.Algebra` | Exact Taylor-2 vertex form $9/10 + (5/32)(m - 9/5)^2 \ge 9/10$ and cubic coupled residual $m P(m)^4 - 1 = (m - 1)^3 R(m)$. |
 | `noisyFourthRootStep_envelope` | `SoapVertexFourthRoot.Algebra` | Exact pointwise adversarial upper and lower envelopes for 7-rounding-point `NoisyVertexStep4` and 5-rounding-point `NoisyLinearStep4`. |
-| `bf16_fourth_root_dp5_certified` | `SoapVertexFourthRoot.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[965/1000, 1039/1000]$ for BF16 (`u = 1/256`) vertex DP `inv4_vertex_bf16_e2`. |
-| `bf16_fourth_root_eps1e4_certified` | `SoapVertexFourthRoot.Certificates` | Certified 5-step confinement of $[1/10000, 1]$ into $[935/1000, 1049/1000]$ for BF16 (`u = 1/256`) vertex DP `inv4_vertex_bf16_e4`. |
-| `fp8_hybrid_fourth_root_dp5_certified` | `SoapVertexFourthRoot.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[652/1000, 1329/1000]$ for hybrid FP8 (`u = 1/32`) vertex DP `inv4_vertex_fp8hyb_e2`. |
-| `fp8_pure_fourth_root_linear_dp5_certified` | `SoapVertexFourthRoot.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[257/1000, 1654/1000]$ for pure FP8 E4M3 (`u = 1/16`) linear crossover `inv4_linear_fp8_e2`. |
+| `bf16_fourth_root_dp5_certified` | `SoapVertexFourthRoot.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[965/1000, 1039/1000]$ in the multiplicative-error model with $u = 1/256$ (labelled BF16), vertex schedule `inv4_vertex_bf16_e2`. |
+| `bf16_fourth_root_eps1e4_certified` | `SoapVertexFourthRoot.Certificates` | Certified 5-step confinement of $[1/10000, 1]$ into $[935/1000, 1049/1000]$ in the multiplicative-error model with $u = 1/256$ (labelled BF16), vertex schedule `inv4_vertex_bf16_e4`. |
+| `fp8_hybrid_fourth_root_dp5_certified` | `SoapVertexFourthRoot.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[652/1000, 1329/1000]$ in the multiplicative-error model with $u = 1/32$ (labelled hybrid FP8), vertex schedule `inv4_vertex_fp8hyb_e2`. |
+| `fp8_pure_fourth_root_linear_dp5_certified` | `SoapVertexFourthRoot.Certificates` | Certified 5-step confinement of $[1/100, 1]$ into $[257/1000, 1654/1000]$ in the multiplicative-error model with $u = 1/16$ (labelled FP8 E4M3), linear schedule `inv4_linear_fp8_e2`. |
 
 ## 19. [`universal-vertex-invroot/`](universal-vertex-invroot/)
 
-All statements are in [`universal-vertex-invroot/Challenge.lean`](universal-vertex-invroot/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`universal-vertex-invroot/UniversalVertexInvroot/Defs.lean`](universal-vertex-invroot/UniversalVertexInvroot/Defs.lean). See [`universal-vertex-invroot/README.md`](universal-vertex-invroot/README.md) for the universal all-$p$ proofs, BF16 certificates, and prior-art context.
+All statements are in [`universal-vertex-invroot/Challenge.lean`](universal-vertex-invroot/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`universal-vertex-invroot/UniversalVertexInvroot/Defs.lean`](universal-vertex-invroot/UniversalVertexInvroot/Defs.lean). See [`universal-vertex-invroot/README.md`](universal-vertex-invroot/README.md) for the universal all-$p$ proofs, the scalar relative-error-model certificates, and prior-art context.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `universal_invroot_vertex_identity_and_positivity` | `UniversalVertexInvroot.Algebra` | Universal all-$p$ ($\forall p \ge 1, m \in \mathbb{Q}$) vertex identity $T _ {2,p}(m) = P _ p(m) \ge \frac{2p+1}{2p+2} \ge \frac{3}{4}$, exact monomial expansion, $\kappa _ {\mathrm{mono}}(p) = 1 + 4/p + 2/p^2$, and $\kappa _ {\mathrm{sum}} = 1$. |
 | `universal_invroot_cubic_convergence` | `UniversalVertexInvroot.Algebra` | Universal all-$p$ cubic convergence $m P _ p(m)^p - 1 = (m - 1)^3 R _ p(m - 1)$ with exact leading constant $R _ p(0) = (p+1)(2p+1)/(6p^2)$. |
-| `deg9_shared_square_and_rounding_floor_dominance` | `UniversalVertexInvroot.Algebra` | Exact 4-matmul degree-9 shared-square identity, $5^4 < 9^3$, universal $(1+u)^6 < (1+u)^{10}$, and $> 1.65\times$ degree-9 rounding-floor penalty across BF16 and FP8. |
-| `bf16_inv_sqrt_vertex_certified` | `UniversalVertexInvroot.Certificates` | Certified 6-step BF16 (`u = 1/256`) stationary confinement of $[85/100, 115/100]$ into $[982/1000, 1018/1000]$ for $G^{-1/2}$. |
-| `bf16_inv_cbrt_vertex_certified` | `UniversalVertexInvroot.Certificates` | Certified 6-step BF16 (`u = 1/256`) stationary confinement of $[85/100, 115/100]$ into $[974/1000, 1026/1000]$ for $G^{-1/3}$. |
-| `bf16_inv_eighth_vertex_certified` | `UniversalVertexInvroot.Certificates` | Certified 6-step BF16 (`u = 1/256`) stationary confinement of $[85/100, 115/100]$ into $[932/1000, 1068/1000]$ for $G^{-1/8}$. |
+| `deg9_shared_square_and_rounding_floor_dominance` | `UniversalVertexInvroot.Algebra` | Exact 4-matmul degree-9 shared-square identity, $5^4 < 9^3$, universal $(1+u)^6 < (1+u)^{10}$, and the numeric inequality $1.65\,((1+u)^6 - 1) < (1+u)^{10} - 1$ at $u = 1/256, 1/32, 1/16$ (a comparison of two model expressions with six vs ten roundings, not of real rounding). |
+| `bf16_inv_sqrt_vertex_certified` | `UniversalVertexInvroot.Certificates` | Certified 6-step stationary confinement in the scalar relative-error model with $u = 1/256$ (labelled BF16) of $[85/100, 115/100]$ into $[982/1000, 1018/1000]$ for $G^{-1/2}$. |
+| `bf16_inv_cbrt_vertex_certified` | `UniversalVertexInvroot.Certificates` | Certified 6-step stationary confinement in the scalar relative-error model with $u = 1/256$ (labelled BF16) of $[85/100, 115/100]$ into $[974/1000, 1026/1000]$ for $G^{-1/3}$. |
+| `bf16_inv_eighth_vertex_certified` | `UniversalVertexInvroot.Certificates` | Certified 6-step stationary confinement in the scalar relative-error model with $u = 1/256$ (labelled BF16) of $[85/100, 115/100]$ into $[932/1000, 1068/1000]$ for $G^{-1/8}$. |
 
 ## 20. [`sparse24-e2m1-lop3/`](sparse24-e2m1-lop3/)
 
-All statements are in [`sparse24-e2m1-lop3/Challenge.lean`](sparse24-e2m1-lop3/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`sparse24-e2m1-lop3/Sparse24E2M1Lop3/Defs.lean`](sparse24-e2m1-lop3/Sparse24E2M1Lop3/Defs.lean). See [`sparse24-e2m1-lop3/README.md`](sparse24-e2m1-lop3/README.md) for the GPU-synthesized `LOP3` circuits, lower bounds, and prior-art context.
+All statements are in [`sparse24-e2m1-lop3/Challenge.lean`](sparse24-e2m1-lop3/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`sparse24-e2m1-lop3/Sparse24E2M1Lop3/Defs.lean`](sparse24-e2m1-lop3/Sparse24E2M1Lop3/Defs.lean). See [`sparse24-e2m1-lop3/README.md`](sparse24-e2m1-lop3/README.md) for the `LOP3` circuit tables (no gate model in Lean; no GPU measurement), the weight/wire lower bounds, and prior-art context.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `unpack_5t8b_to_e2m1_ten_lop3_and_lower_bound` | `Sparse24E2M1Lop3.Theorems` | Exact 10-`LOP3` direct-sign `5t8b → 5×E2M1` (`243/243`) + general Hamming-weight barrier $162 \le w(f _ i) \le 175$ vs $16 \mid w(g)$ ($\ge 5$ essential vars, depth $\ge 2$). |
-| `sparse24_3bit_single_lop3_tight` | `Sparse24E2M1Lop3.Theorems` | Tight 1-`LOP3` (`0x17`) `3b → 4b` 2:4 mask bijection + 0-`LOP3` impossibility, and 1-`LOP3` (`0x63`) `3b → unordered {idx0, idx1}`. |
-| `sparse24_3bit_ordered_three_lop3_tight` | `Sparse24E2M1Lop3.Theorems` | Tight 3-`LOP3` (`0x08`, `0x2D`, `0x3E`) `3b → ordered (idx0 < idx1)` bijection + $\le 1$-wire impossibility ($\ge 3$ `LOP3`). |
+| `unpack_5t8b_to_e2m1_ten_lop3_and_lower_bound` | `Sparse24E2M1Lop3.Theorems` | Exact 10-`LOP3` direct-sign `5t8b → 5×E2M1` (`243/243`) + general Hamming-weight barrier $162 \le w(f _ i) \le 175$ vs $16 \mid w(g)$ ($\ge 5$ essential vars; "depth $\ge 2$" is an informal reading). |
+| `sparse24_3bit_single_lop3_tight` | `Sparse24E2M1Lop3.Theorems` | 1-`LOP3` (`0x17`) `3b → 4b` 2:4 mask bijection + impossibility of a decoder made only of wires and constants, and 1-`LOP3` (`0x63`) `3b → unordered {idx0, idx1}`. |
+| `sparse24_3bit_ordered_three_lop3_tight` | `Sparse24E2M1Lop3.Theorems` | 3-`LOP3` (`0x08`, `0x2D`, `0x3E`) `3b → ordered (idx0 < idx1)` bijection + no two output bits of any surjective ordered decoder can both be wires (informally $\ge 3$ `LOP3`; not a gate count). |
 | `sparse24_8bit_triple_twelve_lop3_and_wire_bound` | `Sparse24E2M1Lop3.Theorems` | Exact 12-`LOP3` `8b → 3×4b` 2:4 mask unpacker (`216/216`) + unique $(1, 1, 1)$ fiber-product direct-wire theorem ($6^3 = 2^3 \times 3^3$). |
 | `e2m1_mag_mul_25lop3_exact` | `Sparse24E2M1Lop3.Theorems` | Exact 25-`LOP3` zero-FP `E2M1 × E2M1` magnitude multiplier (`64/64` exact products in `[0, 144]`). |
-| `quinary_2w5b_to_e2m1_four_lop3_and_wire_bound` | `Sparse24E2M1Lop3.Theorems` | Exact 4-`LOP3` depth-2 `2q5b → 2×E2M1` (`25/25`) + 4-wire impossibility theorem ($\ge 3$ `LOP3`). |
+| `quinary_2w5b_to_e2m1_four_lop3_and_wire_bound` | `Sparse24E2M1Lop3.Theorems` | Exact 4-`LOP3` depth-2 `2q5b → 2×E2M1` (`25/25`) + no 4 of the 6 output bits of any surjective decoder can be wires (informally $\ge 3$ `LOP3`; not a gate count). |
 
 ## 21. [`octonion-rope-welch-frames/`](octonion-rope-welch-frames/)
 
@@ -271,9 +271,9 @@ All statements are in [`octonion-rope-welch-frames/Challenge.lean`](octonion-rop
 | Theorem | Module | Statement |
 |---|---|---|
 | `quaternion_pow2_rigidity_obstruction` | `OctonionRopeWelch.Rigidity` | Universal mod-8 4-square descent ($r \ge 3 \implies 0$ primitive solutions) + exact $r _ 4(2^r) = 24$ Hurwitz classification for all $r \ge 1$. |
-| `pythagorean_and_octonion_rope_exact_orthogonal` | `OctonionRopeWelch.RoPE` | Universal exact orthogonality of 2D Pythagorean, 4D Hamilton quaternion, and 8D Cayley–Dickson octonion RoPE + `>> 16` Llama-2 witness ($\sum x _ i^2 = 2^{32}$). |
+| `pythagorean_and_octonion_rope_exact_orthogonal` | `OctonionRopeWelch.RoPE` | Universal exact orthogonality of 2D Pythagorean, 4D Hamilton quaternion, and 8D Cayley–Dickson octonion RoPE + an integer witness vector with $\sum x _ i^2 = 2^{32}$ (named `Llama-2` in the files; no Llama-2 model or RoPE table is computed). |
 | `welch_frame_energy_lower_bound` | `OctonionRopeWelch.Welch` | Universal integer Welch Frobenius lower bound $m(d s^2 + \Phi(S)) \ge (d s)^2$ and $m\,\Phi(S) \ge d s^2 (d - m)$. |
-| `welch_tight_sparse_ternary_frames_exact` | `OctonionRopeWelch.Welch` | Exact certification of 5 GPU-discovered sparse ternary frames (`(8,16) s∈{3,4,5}`, `(12,24) s∈{3,4}`) attaining exact Welch equality (`ratio = 1.00000`, zero muls). |
+| `welch_tight_sparse_ternary_frames_exact` | `OctonionRopeWelch.Welch` | Exact certification of 5 sparse ternary frames found by a computer search (no log included) (`(8,16) s∈{3,4,5}`, `(12,24) s∈{3,4}`) attaining exact Welch equality (a finite check). |
 | `softmax_topk_gap_l1_exact` | `OctonionRopeWelch.Softmax` | Exact tight Softmax Top-$K$ (Gap-$\Delta$) $\ell _ 1$ bound $\|p - q\| _ 1 = \frac{2T}{H+T} \le \frac{2(N-K)}{K E + (N-K)}$ + exact sharpness witness. |
 | `softmax_quantized_logit_l1_exact` | `OctonionRopeWelch.Softmax` | Exact tight quantized-logit ($\pm\epsilon$) Softmax $\ell _ 1$ bound $\|p - p'\| _ 1 \le \frac{2(R-1)}{R+1}$ + exact sharpness witness for all $N \ge 2$. |
 
@@ -286,35 +286,35 @@ All statements are in [`moe-bias-placement-codes/Challenge.lean`](moe-bias-place
 | `aux_loss_free_mean_bias_drift_exact` | `MoeBiasPlacement.BiasDynamics` | Exact aux-loss-free sign-bias drift bound $|\frac{1}{E}\sum \delta _ i| \le \frac{E-2}{E}\gamma$ and exact mean-centered zero-drift invariance. |
 | `dead_zone_fixed_point_threshold_exact` | `MoeBiasPlacement.BiasDynamics` | Sharp dead-zone fixed-point phase transition at $\tau _ {\min} = \max(r, E - r)/E$: zero fixed points for $\tau < \tau _ {\min}$, balanced attainment at $\tau = \tau _ {\min}$. |
 | `fanout_intra_gpu_dispersion_duality` | `MoeBiasPlacement.PlacementCodes` | Universal discrete-convexity duality linking cross-GPU routing fanout and intra-GPU pair dispersion. |
-| `affine_plane_ag2_zero_hotspot_placement` | `MoeBiasPlacement.PlacementCodes` | Explicit resolvable affine-plane BIBD placement codes $AG(2, 4)$ ($E = 16, G = 4$) and $AG(2, 8)$ ($E = 64, G = 8$) with zero pair-collision hotspots. |
+| `affine_plane_ag2_zero_hotspot_placement` | `MoeBiasPlacement.PlacementCodes` | Explicit resolvable affine-plane BIBD placement codes $AG(2, 4)$ ($E = 16, G = 4$) and $AG(2, 8)$ ($E = 64, G = 8$) with zero pair-collision hotspots (the GPU is defined as the first coordinate, so the transversal-line property is immediate; the content is the unique line through two points, checked by `decide`). |
 | `eplb_redundant_expert_pigeonhole_bound` | `MoeBiasPlacement.PlacementCodes` | Universal EPLB redundant-expert pigeonhole capacity lower bound for all expert counts and replication budgets. |
-| `quantized_router_zero_flip_thresholds` | `MoeBiasPlacement.QuantizedRouter` | Exact uniform and floating-point quantized-router zero-flip margin thresholds preserving top-$K$ expert selection. |
+| `quantized_router_zero_flip_thresholds` | `MoeBiasPlacement.QuantizedRouter` | Exact uniform and relative-error quantized-router zero-flip margin thresholds preserving top-$K$ expert selection (pure relative error $u$; not round-to-nearest-even or subnormals). |
 
 ## 23. [`mxfp6-ef21-rotations/`](mxfp6-ef21-rotations/)
 
-All statements are in [`mxfp6-ef21-rotations/Challenge.lean`](mxfp6-ef21-rotations/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxfp6-ef21-rotations/Mxfp6Ef21Rotations/Defs.lean`](mxfp6-ef21-rotations/Mxfp6Ef21Rotations/Defs.lean). See [`mxfp6-ef21-rotations/README.md`](mxfp6-ef21-rotations/README.md) for the universal MXFP6/NVFP6 EF21 phase diagrams, crossovers, and E2M1-native Goethals–Seidel rotations.
+All statements are in [`mxfp6-ef21-rotations/Challenge.lean`](mxfp6-ef21-rotations/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxfp6-ef21-rotations/Mxfp6Ef21Rotations/Defs.lean`](mxfp6-ef21-rotations/Mxfp6Ef21Rotations/Defs.lean). See [`mxfp6-ef21-rotations/README.md`](mxfp6-ef21-rotations/README.md) for the universal EF21 phase diagrams and crossovers for the modelled MXFP6/NVFP6 quantizers (hand-written nearest-grid models, not the OCP encoder), and E2M1-native Goethals–Seidel rotations.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `mxfp6_e3m2_nvfp6_ef21_universal` | `Mxfp6Ef21Rotations.EF21Universal` | Universal all-$B$ ($\forall B \ge 1$) EF21 contraction bounds with exact tightness for `MXFP6-E3M2` and exact attainment for `NVFP6-E3M2`. |
-| `mxfp6_e2m3_nvfp6_ef21_universal` | `Mxfp6Ef21Rotations.EF21Universal` | Universal all-$B$ ($\forall B \ge 1$) EF21 contraction bounds with exact tightness for `MXFP6-E2M3` and exact attainment for `NVFP6-E2M3`. |
-| `mxfp6_e2m3_vs_e3m2_exact_crossover` | `Mxfp6Ef21Rotations.EF21Universal` | Sharp hardware crossover: `E2M3 > E3M2` for $1 \le B \le 43$ vs `E3M2 > E2M3` for $B \ge 44$ (OCP MXFP6), and $2 \le B \le 178$ vs $B \ge 179$ (NVFP6). |
+| `mxfp6_e3m2_nvfp6_ef21_universal` | `Mxfp6Ef21Rotations.EF21Universal` | Universal all-$B$ ($\forall B \ge 1$) EF21 contraction bounds with exact tightness for the modelled `MXFP6-E3M2` and exact attainment for modelled `NVFP6-E3M2`. |
+| `mxfp6_e2m3_nvfp6_ef21_universal` | `Mxfp6Ef21Rotations.EF21Universal` | Universal all-$B$ ($\forall B \ge 1$) EF21 contraction bounds with exact tightness for the modelled `MXFP6-E2M3` and exact attainment for modelled `NVFP6-E2M3`. |
+| `mxfp6_e2m3_vs_e3m2_exact_crossover` | `Mxfp6Ef21Rotations.EF21Universal` | Sharp crossover in the modelled quantizers: `E2M3 > E3M2` for $1 \le B \le 43$ vs `E3M2 > E2M3` for $B \ge 44$ (OCP MXFP6), and $2 \le B \le 178$ vs $B \ge 179$ (NVFP6). |
 | `hadamard_weight_quantization_defect_and_min_dyadic_coherence` | `Mxfp6Ef21Rotations.Rotations` | Exact quantized Hadamard defects $9/8$ ($n = 8$) and $121/128$ ($n = 32$) + sharp minimum dyadic coherence bounds. |
 | `goethals_seidel_native_e2m1_orthonormal_exact` | `Mxfp6Ef21Rotations.Rotations` | Exact `G^T G = 64 I` for `16 × 16` and zero-free `32 × 32` Goethals–Seidel matrices with every entry exact in `E2M1 ∩ E3M2 ∩ E2M3`. |
 | `quaternion_4of8_sparse_orthogonality_universal` | `Mxfp6Ef21Rotations.Rotations` | Universal Hamilton 4-square orthogonality and multi-stage 4:8-sparse orthogonal closure in arbitrary $4m$ dimensions. |
 
 ## 24. [`bitnet-contraction-hierarchy/`](bitnet-contraction-hierarchy/)
 
-All statements are in [`bitnet-contraction-hierarchy/Challenge.lean`](bitnet-contraction-hierarchy/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`bitnet-contraction-hierarchy/BitnetContraction/Defs.lean`](bitnet-contraction-hierarchy/BitnetContraction/Defs.lean). See [`bitnet-contraction-hierarchy/README.md`](bitnet-contraction-hierarchy/README.md) for the three-tier BitNet contraction hierarchy, multi-level $d _ {\mathrm{crit}}$ phase transition, and 2-stage crossover.
+All statements are in [`bitnet-contraction-hierarchy/Challenge.lean`](bitnet-contraction-hierarchy/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`bitnet-contraction-hierarchy/BitnetContraction/Defs.lean`](bitnet-contraction-hierarchy/BitnetContraction/Defs.lean). See [`bitnet-contraction-hierarchy/README.md`](bitnet-contraction-hierarchy/README.md) for the scope of the formal statement (a hand-written rational ternary-quantizer model, not BitNet), the contraction results, the defined quantity $d _ {\mathrm{crit}}$, and the 2-stage comparison on named witnesses.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `ternary_nearest_nonneg_contraction` | `BitnetContraction.TernaryNonneg` | Universal nonnegative ternary contraction $\|x - Q _ \gamma(x)\| _ 2^2 \le \|x\| _ 2^2$ and exact tie-break invariance (`≥` vs `>`) for all $d, \gamma \ge 0, x$. |
 | `bitnet_absmean_contraction_exact` | `BitnetContraction.BitnetHierarchy` | Exact `AbsMean` contraction $(2d - 1)/d^2$ for all $d \ge 1$ with exact attainment on `unitE0 d`. |
 | `bitnet_absmax_and_half_contraction_exact` | `BitnetContraction.BitnetHierarchy` | Exact `AbsMax` ($4/(d + 3)$) and `AbsMax/2` ($12/(d + 15)$) contraction bounds for all $d \ge 1$ with exact attainment. |
-| `bitnet_rms_contraction_exact_algebraic` | `BitnetContraction.BitnetHierarchy` | Universal `RMS` algebraic contraction law $3d + 1 \le (d\alpha + 1)^2$ ($\Theta(1/\sqrt{d})$) with exact rational attainment at $d = 8, 16$. |
-| `multilevel_shifted_sqrt_dcrit_exact` | `BitnetContraction.MultilevelDCrit` | Universal integer sandwich $(4M^2 + 1)^2 < 16M^2(M^2 + 1) < (4M^2 + 2)^2$ and exact critical dimension $d _ {\mathrm{crit}}(M) = 8M^2 + 4$ (`36`, `76`, `396`). |
-| `two_stage_ternary_greedy_vs_disjoint_crossover` | `BitnetContraction.TwoStageCrossover` | Exact $d = 3$ vs $d = 4$ 2-stage ternary crossover where Greedy beats Joint Disjoint at $d = 3$ and reverses at $d = 4$. |
+| `bitnet_rms_contraction_exact_algebraic` | `BitnetContraction.BitnetHierarchy` | Universal `RMS` algebraic contraction lower bound $3d + 1 \le (d\alpha + 1)^2$ (order $1/\sqrt{d}$ is the authors' reading), with exact rational attainment stated only at $d = 8, 16$. |
+| `multilevel_shifted_sqrt_dcrit_exact` | `BitnetContraction.MultilevelDCrit` | Integer sandwich $(4M^2 + 1)^2 < 16M^2(M^2 + 1) < (4M^2 + 2)^2$ and an integer equivalence for the defined quantity $d _ {\mathrm{crit}}(M) = 8M^2 + 4$ (`36`, `76`, `396`); not linked in Lean to any quantizer. |
+| `two_stage_ternary_greedy_vs_disjoint_crossover` | `BitnetContraction.TwoStageCrossover` | $d = 3$ vs $d = 4$ 2-stage ternary comparison on four named witness vectors: Greedy beats Joint Disjoint on the stated $d = 3$ witnesses and the order reverses on the stated $d = 4$ witnesses (not proved to be worst cases). |
 
 ## 25. [`spec-decoding-ot-bounds/`](spec-decoding-ot-bounds/)
 
@@ -322,21 +322,21 @@ All statements are in [`spec-decoding-ot-bounds/Challenge.lean`](spec-decoding-o
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `multidraft_corr_vs_iid_exact_gaps` | `SpecDecodingOt.MultidraftOT` | Universal correlated-vs-i.i.d. multi-draft OT multiplicative gap $K^K / (K^K - (K - 1)^K)$ and additive gap $((K - 1)/K)^K$ for all $K \ge 1, V$ with attainment. |
-| `cyclic_madow_optimality_refutation_exact` | `SpecDecodingOt.MultidraftOT` | Exact $K = 2, V = 4$ counterexamples refuting both default-order ($1/2 < 3/4 < 1$) and oracle descending-$p / q$-sorted ($17/20 < 91/100 < 1$) Cyclic Madow optimality. |
+| `multidraft_corr_vs_iid_exact_gaps` | `SpecDecodingOt.MultidraftOT` | For the functionals `alphaIID`/`alphaMadow2` of `Defs.lean` (not proved equal to the operational schemes): universal correlated-vs-i.i.d. multi-draft OT multiplicative gap $K^K / (K^K - (K - 1)^K)$ and additive gap $((K - 1)/K)^K$ for all $K \ge 1, V$ with attainment. |
+| `cyclic_madow_optimality_refutation_exact` | `SpecDecodingOt.MultidraftOT` | Exact $K = 2, V = 4$ counterexamples (for the defined `alphaMadow2`) refuting both default-order ($1/2 < 3/4 < 1$) and oracle descending-$p / q$-sorted ($17/20 < 91/100 < 1$) Cyclic Madow optimality. |
 | `quantized_draft_loss_k1_exact` | `SpecDecodingOt.QuantizedDraft` | Universal tight single-draft ($K = 1$) quantized-draft acceptance loss $|\alpha _ 1(p, q) - \alpha _ 1(p, q')| \le (R - 1)/(R + 1)$ for all $V \ge 2, R \ge 1$. |
 | `quantized_draft_loss_multidraft_exact` | `SpecDecodingOt.QuantizedDraft` | Universal tight correlated multi-draft ($K \ge 2$) quantized-draft acceptance loss $\alpha _ K^{\mathrm{corr}}(p, q) - \alpha _ K^{\mathrm{corr}}(p, q') \le \frac{(K - 1)(R^2 - 1)}{1 + (K - 1)R^2}$. |
 | `modular_bitvec_reversible_exact_inverse` | `SpecDecodingOt.ReversibleBitVec` | Exact bidirectional invertibility `revPass ∘ fwdPass = id ∧ fwdPass ∘ revPass = id` of modular `BitVec b` reversible Transformers for all $b, L$. |
-| `symplectic_float_reversible_unimodular` | `SpecDecodingOt.ReversibleBitVec` | Exact unimodularity $\det M(\gamma)^n = 1$ and exponential growth $(M(\gamma)^n) _ {0,0} + (M(\gamma)^n) _ {0,1} \ge (1 + \gamma)^n$ for floating-point reversible coupling. |
+| `symplectic_float_reversible_unimodular` | `SpecDecodingOt.ReversibleBitVec` | Exact unimodularity $\det M(\gamma)^n = 1$ and exponential growth $(M(\gamma)^n) _ {0,0} + (M(\gamma)^n) _ {0,1} \ge (1 + \gamma)^n$ for the rational $2 \times 2$ matrix $M(\gamma)$ (a linearised reversible coupling; no floating-point semantics). |
 
 ## 26. [`deltanet-wy-stability/`](deltanet-wy-stability/)
 
-All statements are in [`deltanet-wy-stability/Challenge.lean`](deltanet-wy-stability/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`deltanet-wy-stability/DeltanetWyStability/Defs.lean`](deltanet-wy-stability/DeltanetWyStability/Defs.lean). See [`deltanet-wy-stability/README.md`](deltanet-wy-stability/README.md) for the spectral stability, MXFP4 blowup, WY inverse, Euler binomial explosion, and Block-Schur proofs.
+All statements are in [`deltanet-wy-stability/Challenge.lean`](deltanet-wy-stability/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`deltanet-wy-stability/DeltanetWyStability/Defs.lean`](deltanet-wy-stability/DeltanetWyStability/Defs.lean). See [`deltanet-wy-stability/README.md`](deltanet-wy-stability/README.md) for the spectral stability, modelled MXFP4 blowup, WY inverse, Euler binomial explosion, and Block-Schur proofs.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `deltanet_spectral_stability_iff` | `DeltanetWyStability.SpectralStability` | Universal rational spectral stability `iff` law: `∀ v, ‖T(v)‖² ≤ ‖v‖² ↔ β‖k‖² ≤ (1 + α)/α`. |
-| `mxfp4_mxfp6_fp8_bf16_norm_blowup_and_beta_safe` | `DeltanetWyStability.QuantNormBlowup` | Exact subnormal-inclusive OCP MXFP4 (`700/431`, `β _ {\mathrm{safe}} = 431/350`), max-fit MXFP4 (`380/227`), and universal $m$-bit normal-range squared-norm blowup laws. |
+| `mxfp4_mxfp6_fp8_bf16_norm_blowup_and_beta_safe` | `DeltanetWyStability.QuantNormBlowup` | Exact squared-norm blowup constants for a hand-written rational model of block-scaled MXFP4 with subnormals (`700/431`, `β _ {\mathrm{safe}} = 431/350`) and max-fit MXFP4 (`380/227`), and universal $m$-bit normal-range blowup laws (a model, not the OCP bit-level format). |
 | `wy_inverse_closed_form_and_aligned_contraction` | `DeltanetWyStability.WyInverse` | Universal chunkwise WY inverse $(I + L) T = I$, aligned contraction `|T _ {ij}| ≤ β r`, and exact quantized blowup $2r(2r - 1)^{C-2}$. |
 | `euler_product_binomial_peak_explosion` | `DeltanetWyStability.EulerBinomial` | Exact binomial power law $(L _ C^k) _ {i,j} = \beta^k \binom{i - j - 1}{k - 1}$ certifying Euler-product intermediate peaks $> 10^{27}$ at $C = 64, \beta = 2$. |
 | `block_schur_wy_exact_inverse` | `DeltanetWyStability.BlockSchur` | Universal two-sided exact 2×2 Block-Schur inverse for all $(n + m) \times (n + m)$ block lower-triangular matrices. |
@@ -348,37 +348,37 @@ All statements are in [`muonclip-adamw-sr-bounds/Challenge.lean`](muonclip-adamw
 | Theorem | Module | Statement |
 |---|---|---|
 | `muonclip_pitchfork_symmetry_breaking_exact` | `MuonclipAdamwSr.MuonClip` | Exact $r = 1$ quartic factorization, SOS identity, unique optimality of $x = \sqrt{\gamma}$ for $\gamma \ge 1/4$, and strict local maximality + saving $A(1 - 2\sqrt{\gamma})^2$ for $0 < \gamma < 1/4$. |
-| `muonclip_rtn_overshoot_vs_rtz_safety` | `MuonclipAdamwSr.MuonClip` | Exact RTN scale overshoot $(1 + 2^{-(m+1)})^2$ (`289/256` FP8, `66049/65536` BF16) vs universal RTZ safety $s' _ Q s' _ K S _ {\max} \le \tau$. |
-| `adamw_weight_decay_freeze_radii_exact` | `MuonclipAdamwSr.AdamWFreeze` | Universal $m \ge 1$ RNE weight-decay freeze iff $\rho \le 2^{-(m+2)}$, pow2-only gap, and universal decay iff $\rho \ge 1/(2^{m+1} + 2)$. |
+| `muonclip_rtn_overshoot_vs_rtz_safety` | `MuonclipAdamwSr.MuonClip` | Exact RTN scale overshoot $(1 + 2^{-(m+1)})^2$ (`289/256` for $m = 3$, `66049/65536` for $m = 7$, in the modelled rounding) vs universal RTZ safety $s' _ Q s' _ K S _ {\max} \le \tau$. |
+| `adamw_weight_decay_freeze_radii_exact` | `MuonclipAdamwSr.AdamWFreeze` | Universal $m \ge 1$ weight-decay freeze iff (modelled round-to-nearest-even on rationals, normal range) $\rho \le 2^{-(m+2)}$, pow2-only gap, and universal decay iff $\rho \ge 1/(2^{m+1} + 2)$. |
 | `sr_ema_two_state_markov_exact` | `MuonclipAdamwSr.SrEmaJensen` | Exact 2-state SR-EMA Markov chain: zero bias, $\beta$-independent variance $r(\Delta - r)$, $\lambda _ 2 = \beta$, and time-average variance inflation $(1 + \beta)/(1 - \beta)$. |
-| `preconditioner_jensen_bias_exact_sqrt_vs_v` | `MuonclipAdamwSr.SrEmaJensen` | Exact zero bias for `SR(1/√v)`, exact `9/8` max for `SR(√v)` on E4M0, and universal cubic SOS bound $27 r^2 (r + 1)^2 J _ v^2 \le 4(r^2 + r + 1)^3$ (`> 2.7x` smaller bias on E4M0). |
+| `preconditioner_jensen_bias_exact_sqrt_vs_v` | `MuonclipAdamwSr.SrEmaJensen` | Exact zero bias for `SR(1/√v)`, exact `9/8` max for `SR(√v)` on E4M0, and universal cubic SOS bound $27 r^2 (r + 1)^2 J _ v^2 \le 4(r^2 + r + 1)^3$ (a value of the closed forms, not a measurement). |
 | `asymmetric_muonclip_ratio_limit_exact` | `MuonclipAdamwSr.MuonClip` | Universal small-clipping optimal split $\alpha^* = B / (A + B)$ with saving $((r - 1)/(r + 1))^2$ (`225/289` at $r = 16$) and strong-clipping ratio $(1 + s)^2 / (r + 1)$. |
 
 ## 28. [`fp8-e4m3-lop3-circuits/`](fp8-e4m3-lop3-circuits/)
 
-All statements are in [`fp8-e4m3-lop3-circuits/Challenge.lean`](fp8-e4m3-lop3-circuits/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`fp8-e4m3-lop3-circuits/Fp8E4m3Lop3/Defs.lean`](fp8-e4m3-lop3-circuits/Fp8E4m3Lop3/Defs.lean). See [`fp8-e4m3-lop3-circuits/README.md`](fp8-e4m3-lop3-circuits/README.md) for the exact 0-ULP `LOP3` circuits, fan-in lower bounds, and RX 7900 XTX speedups.
+All statements are in [`fp8-e4m3-lop3-circuits/Challenge.lean`](fp8-e4m3-lop3-circuits/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`fp8-e4m3-lop3-circuits/Fp8E4m3Lop3/Defs.lean`](fp8-e4m3-lop3-circuits/Fp8E4m3Lop3/Defs.lean). See [`fp8-e4m3-lop3-circuits/README.md`](fp8-e4m3-lop3-circuits/README.md) for the `LOP3` circuits (exhaustive agreement on their finite input domains), the fan-in lower bounds, and the scope of each statement; it makes no speed claim.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `fp8_e4m3_rsqrt_15_lop3_exact` | `Fp8E4m3Lop3.BitSlicedCircuits` | Exact 15-`LOP3` depth-8 positive `e4m3RsqrtPosDag` certified directly against the pure-integer RNE Voronoi law on all 126 positive finite codes. |
-| `fp8_e4m3_rsqrt_full_33_lop3_exact` | `Fp8E4m3Lop3.BitSlicedCircuits` | Exact 33-`LOP3` full-domain `e4m3RsqrtFullDag` matching RNE on all 126 positive codes and returning `0x7F` on all 130 non-positive/NaN codes. |
-| `fp8_e4m3_activations_lop3_exact` | `Fp8E4m3Lop3.BitSlicedCircuits` | Exact 0-ULP `LOP3` circuits over all 254 finite FP8-E4M3FN codes for `exp` (67 `LOP3`), `gelu` (82 `LOP3`, tight 1-`LOP3` $y _ 6$), and `silu` (93 `LOP3`, tight 0-`LOP3` $y _ 7$). |
-| `fp8_e4m3_times_e2m1_28_lop3_exact` | `Fp8E4m3Lop3.E4m3E2m1Mul` | Exact 28-`LOP3` zero-FP `FP8-E4M3FN × FP4-E2M1` aligned product verified exhaustively over all `4,096` input pairs. |
-| `fp8_e4m3_lop3_fanin_lower_bound` | `Fp8E4m3Lop3.LowerBounds` | Universal `LOP3` DAG gate-count and depth lower bounds $k \le 2g + 1$ and $k \le 3^d$, instantiated on `rsqrt`, `gelu`, and `silu`. |
-| `fp8_e4m3_exact_dyadic_value_law` | `Fp8E4m3Lop3.Dyadic` | Universal OCP FP8-E4M3FN dyadic characterization (`448` max normal, $2^{-9}$ min subnormal, sign symmetry, strict monotonicity, exact 256-code partition). |
+| `fp8_e4m3_rsqrt_15_lop3_exact` | `Fp8E4m3Lop3.BitSlicedCircuits` | Finite exhaustive check: the 15-`LOP3` depth-8 positive `e4m3RsqrtPosDag` satisfies the pure-integer RNE Voronoi law on all 126 positive finite codes (with output bit 7 = 0). |
+| `fp8_e4m3_rsqrt_full_33_lop3_exact` | `Fp8E4m3Lop3.BitSlicedCircuits` | Finite exhaustive check: the 33-`LOP3` full-domain `e4m3RsqrtFullDag` equals `e4m3RsqrtPosDag` (and satisfies the RNE law) on all 126 positive codes and returns `0x7F` on all 130 non-positive/NaN codes. |
+| `fp8_e4m3_activations_lop3_exact` | `Fp8E4m3Lop3.BitSlicedCircuits` | Finite exhaustive check: over all 254 finite FP8-E4M3FN codes, the `exp` (67 `LOP3`), `gelu` (82 `LOP3`) and `silu` (93 `LOP3`) circuits agree with reference tables embedded in the Lean files and generated outside Lean (agreement with the table, not a derivation of the function); also the single-bit laws $y _ 6$ for `gelu` (1 `LOP3`) and $y _ 7 = x _ 7$ for `silu` (0 `LOP3`), tight by the Theorem 5 bounds. |
+| `fp8_e4m3_times_e2m1_28_lop3_exact` | `Fp8E4m3Lop3.E4m3E2m1Mul` | Finite exhaustive check: the 28-`LOP3` `FP8-E4M3FN × FP4-E2M1` aligned-product circuit satisfies the integer product law over all `4,096` input pairs. |
+| `fp8_e4m3_lop3_fanin_lower_bound` | `Fp8E4m3Lop3.LowerBounds` | Universal `LOP3` DAG gate-count and depth lower bounds $k \le 2g + 1$ and $k \le 3^d$ ($k$ = essential variable count), instantiated on the essential-variable counts of the `rsqrt`, `gelu`, and `silu` circuits. |
+| `fp8_e4m3_exact_dyadic_value_law` | `Fp8E4m3Lop3.Dyadic` | Finite exhaustive check of the package's `e4m3ScaledVal` decoder over all 256 codes: `448` max normal, $2^{-9}$ min subnormal, sign symmetry, strict monotonicity on the positive finite codes, signed zeros, and the code counts $126 + 126 + 2 + 2 = 256$. |
 
 ## 29. [`ternary-lop3-kulisch/`](ternary-lop3-kulisch/)
 
-All statements are in [`ternary-lop3-kulisch/Challenge.lean`](ternary-lop3-kulisch/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ternary-lop3-kulisch/TernaryLop3Kulisch/Defs.lean`](ternary-lop3-kulisch/TernaryLop3Kulisch/Defs.lean). See [`ternary-lop3-kulisch/README.md`](ternary-lop3-kulisch/README.md) for the minimal-`LOP3` counters, SWAR64 packing, and exact FP8 Kulisch theorems.
+All statements are in [`ternary-lop3-kulisch/Challenge.lean`](ternary-lop3-kulisch/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ternary-lop3-kulisch/TernaryLop3Kulisch/Defs.lean`](ternary-lop3-kulisch/TernaryLop3Kulisch/Defs.lean). See [`ternary-lop3-kulisch/README.md`](ternary-lop3-kulisch/README.md) for the `LOP3` counters with their Lean gate-count lower bounds, SWAR64 packing, and the FP8 Kulisch theorems for the package's hand-written decoders.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `ternary_k2_4_lop3_exact_and_lb` | `TernaryLop3Kulisch.Lop3Circuits` | Exact 4-`LOP3` depth-3 $K = 2$ balanced-ternary counter (`9/9` valid states) + tight general-DAG lower bound `dag.length ≥ 4`. |
-| `ternary_k3_7_lop3_exact` | `TernaryLop3Kulisch.Lop3Circuits` | Exact 7-`LOP3` depth-3 $K = 3$ balanced-ternary counter (`27/27` valid states) + general-DAG fan-in lower bound `dag.length ≥ 5`. |
-| `harley_seal_n7_8_lop3_exact_and_lb` | `TernaryLop3Kulisch.Lop3Circuits` | Exact 8-`LOP3` depth-3 $N = 7$ Harley–Seal 7→3 compressor (`128/128` inputs) + general-DAG fan-in lower bound `dag.length ≥ 5`. |
-| `fp8_e4m3_exact_kulisch_49bit_int64_theorem` | `TernaryLop3Kulisch.Kulisch` | Exact OCP FP8-E4M3 Kulisch law: 37-bit product span, exact `int64` accumulation for all $K \le 175{,}304{,}787$ (tight at `175,304,788`), 49 signed bits at $K = 4096$. |
-| `swar64_ternary_int2_dot_zero_overflow` | `TernaryLop3Kulisch.Swar` | Universal SWAR64 lane-isolation and operand-offset unbiasing for ternary (`P = 6, S = 10, L ≤ 255`) and INT2 (`P = 5, S = 12, L ≤ 455`) with tightness counterexamples. |
-| `fp8_e5m2_vs_e4m3_kulisch_width_gap` | `TernaryLop3Kulisch.Kulisch` | Exact 28-bit Kulisch width gap proving a single finite FP8-E5M2 product (`0x7B * 0x7B ≥ 2^{63}`) overflows `int64` at $K = 1$ (65 vs 37 bits). |
+| `ternary_k3_7_lop3_exact` | `TernaryLop3Kulisch.Lop3Circuits` | Exact 7-`LOP3` depth-3 $K = 3$ balanced-ternary counter (`27/27` valid states) + general-DAG fan-in lower bound `dag.length ≥ 5` (the Lean bound is below the 7-gate construction; minimality of 7 is not a Lean theorem). |
+| `harley_seal_n7_8_lop3_exact_and_lb` | `TernaryLop3Kulisch.Lop3Circuits` | Exact 8-`LOP3` depth-3 $N = 7$ Harley–Seal 7→3 compressor (`128/128` inputs) + general-DAG fan-in lower bound `dag.length ≥ 5` (the Lean bound is below the 8-gate construction; minimality of 8 is not a Lean theorem). |
+| `fp8_e4m3_exact_kulisch_49bit_int64_theorem` | `TernaryLop3Kulisch.Kulisch` | Kulisch law for the `Defs.lean` FP8-E4M3 decoder (a hand-written model of OCP E4M3): 37-bit product span, exact `int64` accumulation for all $K \le 175{,}304{,}787$ (tight at `175,304,788`), 49 signed bits at $K = 4096$. |
+| `swar64_ternary_int2_dot_zero_overflow` | `TernaryLop3Kulisch.Swar` | SWAR64 lane-isolation and operand-offset unbiasing in the 64-bit natural-number model of `Swar.lean`, for ternary (`P = 6, S = 10, L ≤ 255`) and INT2 (`P = 5, S = 12, L ≤ 455`), with tightness counterexamples at `S = 9` and `S = 11`. |
+| `fp8_e5m2_vs_e4m3_kulisch_width_gap` | `TernaryLop3Kulisch.Kulisch` | Exact 28-bit Kulisch width gap between the `Defs.lean` FP8-E5M2 and FP8-E4M3 decoders, proving a single finite FP8-E5M2 product (`0x7B * 0x7B ≥ 2^{63}`) overflows `int64` at $K = 1$ (65 vs 37 bits). |
 
 ## 30. [`xor-vdc-fp4-dither/`](xor-vdc-fp4-dither/)
 
@@ -387,62 +387,62 @@ All statements are in [`xor-vdc-fp4-dither/Challenge.lean`](xor-vdc-fp4-dither/C
 | Theorem | Module | Statement |
 |---|---|---|
 | `xor_vdc_sr_unbiased_and_covariance_exact` | `XorVdcFp4Dither.XorVdcCore` | Universal all-$b \le m$ unbiasedness and exact closed-form discrete pairwise covariance of zero-carry XOR-VDC dithering. |
-| `xor_vdc_walsh_spectrum_and_trace_conservation` | `XorVdcFp4Dither.WalshSpectrum` | Universal all-$b$ Walsh–Hadamard diagonalization (`popcount ≥ 2` exact $1/12 < 1/6$), trace conservation $B/6$, `14/16` & `29/32` mode counts, and `61/96` & `359/576` E2M1 ratios. |
-| `e2m1_harmonic_mean_worst_case_sr_variance` | `XorVdcFp4Dither.E2M1AndAntithetic` | Universal $(r - \ell)^2 / (4 \ell r)$ relative SR variance law attained at harmonic mean $2\ell r / (\ell + r)$ across all 6 OCP E2M1 intervals (`1/8, 1/24, 1/48`). |
+| `xor_vdc_walsh_spectrum_and_trace_conservation` | `XorVdcFp4Dither.WalshSpectrum` | Universal all-$b$ Walsh–Hadamard diagonalization (`popcount ≥ 2` exact $1/12 < 1/6$), trace conservation $B/6$, `14/16` & `29/32` mode counts, and the values `61/96` & `359/576` of the function `e2m1XorMseRatio` defined in `Defs.lean` (not derived from the eigenvalues). |
+| `e2m1_harmonic_mean_worst_case_sr_variance` | `XorVdcFp4Dither.E2M1AndAntithetic` | Universal $(r - \ell)^2 / (4 \ell r)$ relative SR variance law attained at harmonic mean $2\ell r / (\ell + r)$ across the 6 positive intervals of the package's hand-written E2M1 grid (`1/8, 1/24, 1/48`). |
 | `antithetic_pair_sr_variance_halving` | `XorVdcFp4Dither.E2M1AndAntithetic` | Universal antithetic pair variance halving ($\le 1/4$ vs $1/2$) and exact `0` variance on complementary/midpoint pairs. |
-| `double_quant_gemm_bias_obstruction_and_hammersley` | `XorVdcFp4Dither.DoubleGemm` | Exact `max |bias| = 1/4` obstruction for `same`, `antithetic`, and `msb_1bit_xor` vs exact `3527/1048576` (`> 74x` lower) for `bitrev_10` Hammersley. |
-| `split_32bit_word_xor_vdc_zero_bias_double_gemm` | `XorVdcFp4Dither.DoubleGemm` | Universal exact zero bias + preserved negative intra-block covariance for 32-bit split-word XOR-VDC double GEMM (`64x` PRNG reduction). |
+| `double_quant_gemm_bias_obstruction_and_hammersley` | `XorVdcFp4Dither.DoubleGemm` | Exact `max |bias| = 1/4` obstruction for `same`, `antithetic`, and `msb_1bit_xor` vs exact `3527/1048576` (times 74 is still below `1/4`) for `bitrev_10` Hammersley. |
+| `split_32bit_word_xor_vdc_zero_bias_double_gemm` | `XorVdcFp4Dither.DoubleGemm` | Universal exact zero bias and the exact intra-block covariance formula for 32-bit split-word XOR-VDC double GEMM (negative adjacent-lane covariance shown for `m = 16, b = 5`). |
 
 ## 31. [`mhc-sinkhorn-fp8-bounds/`](mhc-sinkhorn-fp8-bounds/)
 
-All statements are in [`mhc-sinkhorn-fp8-bounds/Challenge.lean`](mhc-sinkhorn-fp8-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mhc-sinkhorn-fp8-bounds/MhcSinkhornFp8/Defs.lean`](mhc-sinkhorn-fp8-bounds/MhcSinkhornFp8/Defs.lean). See [`mhc-sinkhorn-fp8-bounds/README.md`](mhc-sinkhorn-fp8-bounds/README.md) for the BF16/FP8 Sinkhorn fixed points, $\sqrt{n-1}$ support collapse, and dyadic-orthogonal mixer proofs.
+All statements are in [`mhc-sinkhorn-fp8-bounds/Challenge.lean`](mhc-sinkhorn-fp8-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mhc-sinkhorn-fp8-bounds/MhcSinkhornFp8/Defs.lean`](mhc-sinkhorn-fp8-bounds/MhcSinkhornFp8/Defs.lean). See [`mhc-sinkhorn-fp8-bounds/README.md`](mhc-sinkhorn-fp8-bounds/README.md) for the Sinkhorn fixed points in hand-written nonnegative-only RNE models of BF16 and FP8-E4M3FN, $\sqrt{n-1}$ support collapse, and dyadic-orthogonal mixer proofs.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `sinkhorn_diagonal_scaling_invariance` | `MhcSinkhornFp8.ScalingAndContraction` | Universal exact rational Sinkhorn scaling invariance $R(D _ 1 A D _ 2) = R(A D _ 2)$ and $C(A D _ 2) = C(A)$. |
-| `antidiagonal_swamping_bf16_fp8_fixed_point` | `MhcSinkhornFp8.FloatFixedPoints` | Bit-exact RNE BF16 & FP8-E4M3FN permanent Mode-A fixed points for all $2 \le n \le 16$ with true row sums `259/256..271/256` / `19/16..31/16` and $L$-layer blowup. |
-| `fp8_support_collapse_sqrt_n_minus_1_fixed_point` | `MhcSinkhornFp8.SupportCollapse` | GPU-discovered $n = 4$ exact rational fixed point ($\|H\| _ 2^2 = 2$) + universal $n \ge 3$ family attaining $\|H\| _ 2^2 = n - 1$. |
-| `mode_b_exact_sum_symmetric_overshoot_fixed_point` | `MhcSinkhornFp8.FloatFixedPoints` | Mode-B exact-sum permanent RNE fixed points achieving exact spectral norms `527/512` (FP8) and `131327/131072` (BF16). |
+| `antidiagonal_swamping_bf16_fp8_fixed_point` | `MhcSinkhornFp8.FloatFixedPoints` | In the package's nonnegative-only RNE models of BF16 and FP8-E4M3FN (sequential left-to-right summation), permanent Mode-A fixed points for all $2 \le n \le 16$; exact true last row/column sums `259/256, 263/256, 271/256` (BF16) and `19/16, 23/16, 31/16` (FP8) at $n = 4, 8, 16$; Rayleigh overshoot and $L$-layer blowup. |
+| `fp8_support_collapse_sqrt_n_minus_1_fixed_point` | `MhcSinkhornFp8.SupportCollapse` | $n = 4$ exact rational fixed point (found by a GPU search that is not part of the package) ($\|H\| _ 2^2 = 2$) + universal $n \ge 3$ family attaining $\|H\| _ 2^2 = n - 1$. |
+| `mode_b_exact_sum_symmetric_overshoot_fixed_point` | `MhcSinkhornFp8.FloatFixedPoints` | In the same models, Mode-B exact-sum permanent RNE fixed points achieving exact spectral norms `527/512` (FP8) and `131327/131072` (BF16). |
 | `sinkhorn_interstream_contraction_bound` | `MhcSinkhornFp8.ScalingAndContraction` | Universal doubly-stochastic contraction $\|H v\| _ 2^2 \le (1 - n\varepsilon)^2 \|v\| _ 2^2$ and $L$-layer decay on $V _ \perp$. |
 | `dyadic_orthogonal_zero_division_mixers_exact` | `MhcSinkhornFp8.DyadicMixers` | Universal exact orthogonality and arbitrary-depth energy preservation for $n = 4$ Quaternion/Hadamard and $n = 8$ dyadic Householder mixers. |
 
 ## 32. [`loftq-cycles-rank1-ef21/`](loftq-cycles-rank1-ef21/)
 
-All statements are in [`loftq-cycles-rank1-ef21/Challenge.lean`](loftq-cycles-rank1-ef21/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`loftq-cycles-rank1-ef21/LoftqCyclesRank1/Defs.lean`](loftq-cycles-rank1-ef21/LoftqCyclesRank1/Defs.lean). See [`loftq-cycles-rank1-ef21/README.md`](loftq-cycles-rank1-ef21/README.md) for the rank-1 EF21 laws, coupled orthogonal matrices, and LoftQ 2-cycle/3-cycle proofs.
+All statements are in [`loftq-cycles-rank1-ef21/Challenge.lean`](loftq-cycles-rank1-ef21/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`loftq-cycles-rank1-ef21/LoftqCyclesRank1/Defs.lean`](loftq-cycles-rank1-ef21/LoftqCyclesRank1/Defs.lean). See [`loftq-cycles-rank1-ef21/README.md`](loftq-cycles-rank1-ef21/README.md) for the rank-1 EF21 laws, coupled orthogonal matrices, and the 2-cycle/3-cycle witnesses for the hand-written `loftqStepQ16` operator (a model, not the LoftQ implementation).
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `rank1_onebit_ef21_contraction_exact` | `LoftqCyclesRank1.Rank1OneBit` | Universal all-$(m, n)$ exact $1/(mn)$ rank-1 1-bit sign EF21 contraction over `RatMat m n` + attainment on $e _ 0 e _ 0^T$. |
+| `rank1_onebit_ef21_contraction_exact` | `LoftqCyclesRank1.Rank1OneBit` | Universal all-$(m, n)$ exact $1/(mn)$ rank-1 1-bit sign EF21 contraction over `RatMat m n` + a matrix attaining it. |
 | `rank1_ternary_2x2_contraction_exact` | `LoftqCyclesRank1.Rank1Ternary2x2` | Exact $(2 + \sqrt{2})/8$ rank-1 ternary EF21 contraction at $(2, 2)$ over $\mathbb{Q}(\sqrt{2})$ + attainment. |
-| `coupled_orthogonal_beats_block_2x2_rotations` | `LoftqCyclesRank1.CoupledOrthogonal` | Kernel-checked $3 \times 3$ and exact-orthogonal $4 \times 4$ ($W^T W = 16680999 I _ 4$) matrices strictly beating $I _ k \otimes R(\pi/8)$. |
-| `loftq_alternating_monotone_energy_and_4m2_saturation` | `LoftqCyclesRank1.LoftqEnergySaturation` | Universal Euclidean-projection LoftQ Lyapunov descent, exact $(d - 2)(k - 1)^2$ spiked separation, and exact $4 M^2$ saturation barrier. |
-| `loftq_explicit_3x3_symmetric_2cycle_witness` | `LoftqCyclesRank1.LoftqCycles` | Constructive (`[propext, Quot.sound]`) permanent period-2 LoftQ limit cycle on `W_cyc2` (`> 13%` odd-step jump). |
-| `loftq_explicit_3x3_symmetric_3cycle_witness` | `LoftqCyclesRank1.LoftqCycles` | Constructive (`[propext, Quot.sound]`) permanent period-3 LoftQ limit cycle on `W_cyc3` (`> 6%` jump, 3 distinct states). |
+| `coupled_orthogonal_beats_block_2x2_rotations` | `LoftqCyclesRank1.CoupledOrthogonal` | Kernel-checked bounds over all ternary pairs for a $3 \times 3$ matrix and an exact-orthogonal $4 \times 4$ matrix ($W^T W = 16680999 I _ 4$), both strictly below the block-diagonal $I _ k \otimes R(\pi/8)$ bounds. |
+| `loftq_alternating_monotone_energy_and_4m2_saturation` | `LoftqCyclesRank1.LoftqEnergySaturation` | Euclidean-projection Lyapunov descent (immediate from the definition of best approximation), exact $(d - 2)(k - 1)^2$ spiked separation, and the $4 M^2$ value of the defined ratio `uniformBulkVarianceRatio` with the worst-case grid-error bound $1/(4M^2)$. |
+| `loftq_explicit_3x3_symmetric_2cycle_witness` | `LoftqCyclesRank1.LoftqCycles` | Constructive (`[propext, Quot.sound]`) permanent period-2 limit cycle of the hand-written `Q16.16` operator `loftqStepQ16` on `W_cyc2` (`> 13%` odd-step error jump). |
+| `loftq_explicit_3x3_symmetric_3cycle_witness` | `LoftqCyclesRank1.LoftqCycles` | Constructive (`[propext, Quot.sound]`) permanent period-3 limit cycle of the hand-written `Q16.16` operator `loftqStepQ16` on `W_cyc3` (`> 6%` error jump, 3 distinct states). |
 
 ## 33. [`ring-attention-kulisch-bounds/`](ring-attention-kulisch-bounds/)
 
-All statements are in [`ring-attention-kulisch-bounds/Challenge.lean`](ring-attention-kulisch-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ring-attention-kulisch-bounds/RingAttnKulisch/Defs.lean`](ring-attention-kulisch-bounds/RingAttnKulisch/Defs.lean). See [`ring-attention-kulisch-bounds/README.md`](ring-attention-kulisch-bounds/README.md) for the sink-vanishing, descending-$m _ i$ paradox, and Kulisch invariance proofs.
+All statements are in [`ring-attention-kulisch-bounds/Challenge.lean`](ring-attention-kulisch-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ring-attention-kulisch-bounds/RingAttnKulisch/Defs.lean`](ring-attention-kulisch-bounds/RingAttnKulisch/Defs.lean). See [`ring-attention-kulisch-bounds/README.md`](ring-attention-kulisch-bounds/README.md) for the sink-vanishing, descending-$m _ i$ paradox, and Kulisch invariance statements, all in the package's hand-written `rneGrid` model (not IEEE-754).
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `online_softmax_merge_exact_associativity` | `RingAttnKulisch.Monoid` | Universal exact rational associativity and commutativity of the online-softmax merge monoid. |
-| `attention_sink_l2r_desc_vanishing_law` | `RingAttnKulisch.SinkVanishing` | Exact $p$-bit RNE bulk-vanishing law at $\Delta \ge p$: sequential L2R/DESC drops 100% of all $P - 1$ bulk chunks (`(P - 1)/(2^p + P - 1)` error). |
-| `binary_tree_vs_l2r_sink_survival_separation` | `RingAttnKulisch.SinkVanishing` | Balanced binary-tree reduction pushes bulk survival to $\Delta _ {\mathrm{vanish}}^{\mathrm{TREE}} = p + \log _ 2 P - 1$ (with FP8 subnormal cap $\Delta = 10$). |
-| `descending_mi_phase_transition_paradox` | `RingAttnKulisch.DescParadox` | Constructive separation showing `DESC` beats `L2R` on narrow spans (0 rescales) yet suffers catastrophic swamping worse than `ASC`/`TREE` on sinks. |
-| `fixed_point_kulisch_topology_partition_invariance` | `RingAttnKulisch.KulischInvariance` | Universal permutation/tree/partition invariance of fixed-point Kulisch accumulation + exact width $W _ {\mathrm{inv}}(P, p) = p + 2\lceil\log _ 2 P\rceil + 4$ (`int32` FP8, `int64` FP16). |
-| `fixed_point_sink_cliff_elimination` | `RingAttnKulisch.KulischInvariance` | Exact `F = p + log _ 2 P` fractional bit threshold eliminating the bulk-vanishing cliff across all $P = 2^k$. |
+| `attention_sink_l2r_desc_vanishing_law` | `RingAttnKulisch.SinkVanishing` | In the `rneGrid p` model (RNE on the fixed unit-binade grid $2^{-(p-1)}$; not IEEE-754): for $\Delta \ge p$, sequential L2R/DESC drops all $P - 1$ bulk chunks, with relative error `(P - 1)/(2^p + P - 1)` at $\Delta = p$. |
+| `binary_tree_vs_l2r_sink_survival_separation` | `RingAttnKulisch.SinkVanishing` | In the `rneGrid` model, balanced binary-tree accumulation vanishes only for $\Delta \ge p + k - 1$ ($P = 2^k$), preserves bulk at $\Delta = p + k - 2$, and strictly beats L2R/DESC at $\Delta = p$; the hand-written formula `deltaVanishTree` (a `min` with a subnormal floor) evaluates to $10$ at the FP8-E4M3 labels. |
+| `descending_mi_phase_transition_paradox` | `RingAttnKulisch.DescParadox` | `DESC` needs 0 rescales and beats `L2R`/`ASC` on one exact $p = 4$ narrow-span instance (error `19/512 < 45/512`), yet for all $p \ge 2, k \ge 2$ in the sink regime it is strictly worse than `TREE` and than the other merge order tested. |
+| `fixed_point_kulisch_topology_partition_invariance` | `RingAttnKulisch.KulischInvariance` | Universal permutation/tree/partition invariance of fixed-point Kulisch accumulation + sufficiency of the two's-complement width $W _ {\mathrm{inv}}(P, p) = p + 2\lceil\log _ 2 P\rceil + 4$ (defined as that value; no minimality theorem; `wInvBits` = 24 at $p = 4$ and 31 at $p = 11$ for $P = 256$; full-span `wKulischBits` = 27 and 49 for the FP8-E4M3 and FP16 labels). |
+| `fixed_point_sink_cliff_elimination` | `RingAttnKulisch.KulischInvariance` | Fixed-point accumulation with $F = p + k$ fractional bits ($P = 2^k$) has zero per-chunk loss for $\Delta \le F$, preserves bulk at $\Delta = p + k - 1$ and vanishes at $\Delta = p + k$; with $F = p + k - 2$ all bulk chunks vanish before summation. |
 
 ## 34. [`mxfp8-e2m5-e3m4-frontier/`](mxfp8-e2m5-e3m4-frontier/)
 
-All statements are in [`mxfp8-e2m5-e3m4-frontier/Challenge.lean`](mxfp8-e2m5-e3m4-frontier/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxfp8-e2m5-e3m4-frontier/Mxfp8Frontier/Defs.lean`](mxfp8-e2m5-e3m4-frontier/Mxfp8Frontier/Defs.lean). See [`mxfp8-e2m5-e3m4-frontier/README.md`](mxfp8-e2m5-e3m4-frontier/README.md) for the complete 5-regime `E _ a M _ b` microscaling frontiers and delayed-scaling crossovers.
+All statements are in [`mxfp8-e2m5-e3m4-frontier/Challenge.lean`](mxfp8-e2m5-e3m4-frontier/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxfp8-e2m5-e3m4-frontier/Mxfp8Frontier/Defs.lean`](mxfp8-e2m5-e3m4-frontier/Mxfp8Frontier/Defs.lean). See [`mxfp8-e2m5-e3m4-frontier/README.md`](mxfp8-e2m5-e3m4-frontier/README.md) for the 5-regime comparisons of the package's hard-coded worst-case `alpha` functions for `E _ a M _ b` formats (not a quantizer plus supremum over blocks) and the delayed-scaling crossovers.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `fp8_e1m6_collapse_to_int8_exact` | `Mxfp8Frontier.GridCollapse` | Universal `E1 M _ m ≡ E0 M _ {m+1}` grid collapse specializing to `E1M6_FN ≡ INT8` and the strict 5-format chain. |
-| `mxfp8_e4m3_vs_e5m2_all_b_crossover_exact` | `Mxfp8Frontier.E4M3vsE5M2` | Exact all-$B$ `E4M3_OCP` vs `E5M2_IEEE` crossovers: $B^* = 637{,}534{,}211$ (E8M0) and $B^* = 2{,}630{,}667{,}468$ (DeepSeek-V3 FP32). |
-| `mxfp8_e8m0_complete_five_regime_frontier` | `Mxfp8Frontier.FiveRegimes` | Complete OCP E8M0 frontier: `INT8 [1..4] → E2M5 [5..47] → E3M4 [48..11,379] → E4M3 [11,380..637M] → E5M2`. |
-| `deepseek_fp32_scale_complete_five_regime_frontier` | `Mxfp8Frontier.FiveRegimes` | Complete DeepSeek-V3 FP32-scale frontier: `INT8 [2..12] → E2M5 [13..230]` (`> 6.77x` at `1×128`) `→ E3M4 [231..54,668]` (`> 3.32x` at `128×128`). |
-| `delayed_scaling_spike_clipping_crossover_exact` | `Mxfp8Frontier.DelayedScaling` | Universal delayed-scaling spike crossover $\rho^*(M, m) = \frac{2^{m+1} + 1}{2^{m+1}} \cdot 2^M$, exact `(9/8) * 2^M` for `E4M3` vs `E5M2`. |
+| `fp8_e1m6_collapse_to_int8_exact` | `Mxfp8Frontier.GridCollapse` | Universal `E1 M _ m ≡ E0 M _ {m+1}` grid collapse (close to definitional) specializing to `E1M6_FN ≡ INT8` and the strict 5-format chain of dynamic ranges. |
+| `mxfp8_e4m3_vs_e5m2_all_b_crossover_exact` | `Mxfp8Frontier.E4M3vsE5M2` | All-$B$ crossovers of the hard-coded `alpha` functions of `E4M3_OCP` and `E5M2_IEEE`: $B^* = 637{,}534{,}211$ (E8M0) and $B^* = 2{,}630{,}667{,}468$ (DeepSeek-V3 FP32); each `alpha` is shown to be at most the candidate configurations it is compared with. |
+| `mxfp8_e8m0_complete_five_regime_frontier` | `Mxfp8Frontier.FiveRegimes` | For the modelled `alpha` functions under E8M0 scaling, the format with the smallest worst-case MSE: `INT8 [1..4] → E2M5 [5..47] → E3M4 [48..11,379] → E4M3 [11,380..637M] → E5M2`. |
+| `deepseek_fp32_scale_complete_five_regime_frontier` | `Mxfp8Frontier.FiveRegimes` | For the modelled `alpha` functions under DeepSeek-V3 FP32 scaling (tie at $B = 1$), the format with the smallest worst-case MSE: `INT8 [2..12] → E2M5 [13..230]` (`> 6.77x` at `1×128`) `→ E3M4 [231..54,668]` (`> 3.32x` at `128×128`). |
+| `delayed_scaling_spike_clipping_crossover_exact` | `Mxfp8Frontier.DelayedScaling` | Universal crossover $\rho^*(M, m) = \frac{2^{m+1} + 1}{2^{m+1}} \cdot 2^M$, exact `(9/8) * 2^M` for `E4M3` vs `E5M2`, for the package's defined clipping and wide-format error functions. |
 | `fp8_block_scaling_bias_invariance_exact` | `Mxfp8Frontier.DelayedScaling` | Exact list-level block-scaled exponent-bias invariance vs `4×` per-bit delayed-scaling headroom capacity tax. |
 
 ## 35. [`kronecker-cyclic-frustration/`](kronecker-cyclic-frustration/)
@@ -451,12 +451,12 @@ All statements are in [`kronecker-cyclic-frustration/Challenge.lean`](kronecker-
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `sum_of_two_kronecker_optimal_cond_exact` | `KroneckerCyclicFrustration.SumTwoKronecker` | Universal Sum-of-2-Kronecker lower bound $\kappa^2 \ge \frac{(1 + \alpha _ {\max}\beta _ {\max})(1 + \alpha _ {\min}\beta _ {\min})}{(1 + \alpha _ {\max}\beta _ {\min})(1 + \alpha _ {\min}\beta _ {\max})}$ attained by Corner-Geometric-Mean. |
-| `multihead_two_head_zero_frustration_and_kfac_gap` | `KroneckerCyclicFrustration.MultiHeadFrustration` | Universal 2-head zero-frustration ($\sqrt{M}$) vs K-FAC quadratic penalty $(1 + M)^2 / (4M)$. |
-| `multihead_cyclic_frustration_karp_cycle_bound` | `KroneckerCyclicFrustration.MultiHeadFrustration` | Universal Karp multiplicative cycle-product lower bound $\le \kappa^L$ and sharp $2(H - 1)/H \in \{1, 4/3, 3/2, 7/4\}$ cyclic frustration separation. |
+| `sum_of_two_kronecker_optimal_cond_exact` | `KroneckerCyclicFrustration.SumTwoKronecker` | Scalar-model Sum-of-2-Kronecker lower bound (every pair of positive scalar vectors $(\ell, r)$, i.e. a preconditioner diagonal in the common eigenbasis; not a matrix $\kappa$) $\kappa^2 \ge \frac{(1 + \alpha _ {\max}\beta _ {\max})(1 + \alpha _ {\min}\beta _ {\min})}{(1 + \alpha _ {\max}\beta _ {\min})(1 + \alpha _ {\min}\beta _ {\max})}$ attained by the Corner-Geometric-Mean preconditioner. |
+| `multihead_two_head_zero_frustration_and_kfac_gap` | `KroneckerCyclicFrustration.MultiHeadFrustration` | 2-head zero-frustration ($\sqrt{M}$) vs the scalar trace-averaged K-FAC rule's quadratic penalty $(1 + M)^2 / (4M)$, in the scalar model. |
+| `multihead_cyclic_frustration_karp_cycle_bound` | `KroneckerCyclicFrustration.MultiHeadFrustration` | Karp multiplicative cycle-product lower bound $\le \kappa^L$ in the scalar model and the $2(H - 1)/H \in \{1, 4/3, 3/2, 7/4\}$ cyclic-frustration separation (witness family `cyclicWitness H M`). |
 | `monarch_coherence_factorization_and_lower_bound` | `KroneckerCyclicFrustration.MonarchCoherence` | Universal 2-stage Monarch coherence factorization $\mu^2(L P R) = \mu^2(A)\mu^2(B) \ge (\mathrm{nnz}(A)\mathrm{nnz}(B))^{-1}$. |
-| `octonion_sparse_e2m1_monarch_blocks_exact` | `KroneckerCyclicFrustration.MonarchCoherence` | Exact orthogonality, row sparsity, optimal coherence, and zero-E2M1-error membership for sparse Quaternion ($4 \times 4$) and Octonion ($8 \times 8$) Monarch blocks. |
-| `kfac_cross_scale_suboptimality_witness` | `KroneckerCyclicFrustration.SumTwoKronecker` | Explicit exact rational cross-scale witness proving `> 1,000x` $\kappa^2$ suboptimality of K-FAC vs Corner-Geometric-Mean. |
+| `octonion_sparse_e2m1_monarch_blocks_exact` | `KroneckerCyclicFrustration.MonarchCoherence` | Exact orthogonality, row sparsity, coherence $1/s$ (as defined in `Defs.lean`), and zero-error membership in the model's E2M1 grid for sparse Quaternion ($4 \times 4$) and Octonion ($8 \times 8$) Monarch blocks. |
+| `kfac_cross_scale_suboptimality_witness` | `KroneckerCyclicFrustration.SumTwoKronecker` | Exact rational cross-scale family (scalar K-FAC rule vs Corner-Geometric-Mean) with ratio $> K^2/9$, and the explicit witness at $K = 128$ exceeding `1000x` (`> 1800x`) on this constructed family. |
 
 ## 36. [`mla-kantorovich-rope-bounds/`](mla-kantorovich-rope-bounds/)
 
@@ -464,12 +464,12 @@ All statements are in [`mla-kantorovich-rope-bounds/Challenge.lean`](mla-kantoro
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `kantorovich_bilinear_spectral_leakage_exact` | `MlaKantorovichRope.KantorovichGL` | Universal bilinear Kantorovich leakage bound $(\kappa + \kappa^{-1})^2 / 4$ with exact 2-level attainment and optimal diagonal balancing $D _ j^2 = w _ j / \gamma _ j$. |
-| `absorbed_kv_gl_invariance_exact` | `MlaKantorovichRope.KantorovichGL` | Universal zero-FLOP $\mathrm{GL}(d _ c)$ absorbed-KV attention logit invariance including orthogonal-diagonal $M = U D$. |
-| `decoupled_nope_rope_256_85_crossover_exact` | `MlaKantorovichRope.NopeRopeMemory` | Exact DeepSeek `(3, 8)` (`2048 b/tok`, `-11.1%`) vs `(4, 4)` crossover iff $\alpha _ R / \alpha _ c > 256/85$ plus universal $(d _ c, d _ R, b _ c, b _ R)$ law. |
-| `parseval_tight_frame_multihead_interference_cap` | `MlaKantorovichRope.ParsevalMultihead` | Universal Parseval / row-orthogonal Bessel $H$-head cap ($d _ c^2$ vs $H d _ c^2$) with inductive $2^k$ Walsh–Hadamard witnesses for $H \in \{8, 16, 32, 64\}$. |
-| `pythagorean_1105_multi_angle_rope_exact` | `MlaKantorovichRope.PythagoreanRoPE` | Brahmagupta–Fibonacci $R = 1105 = 5 \cdot 13 \cdot 17$ exact integer RoPE pairs with orthogonality, norm conservation, and relative-position composition. |
-| `subbyte_mla_memory_compression_ratios_exact` | `MlaKantorovichRope.NopeRopeMemory` | Exact `1024/3x` (`341.33x`) compression vs BF16 MHA-128 and `6x` vs BF16 MLA for fused `Tern512 + RoPE64_INT8`. |
+| `kantorovich_bilinear_spectral_leakage_exact` | `MlaKantorovichRope.KantorovichGL` | Kantorovich leakage bound for positive spectra $(\kappa + \kappa^{-1})^2 / 4$ with exact 2-level attainment and optimal diagonal balancing $D _ j^2 = w _ j / \gamma _ j$. |
+| `absorbed_kv_gl_invariance_exact` | `MlaKantorovichRope.KantorovichGL` | Exact $\mathrm{GL}(d _ c)$ absorbed-KV attention logit invariance (exact-arithmetic identity, no extra inference multiply) including orthogonal-diagonal $M = U D$. |
+| `decoupled_nope_rope_256_85_crossover_exact` | `MlaKantorovichRope.NopeRopeMemory` | Bit budgets (`2048 b/tok` for `(3, 8)` vs `2304`, `-11.1%`) and `(3, 8)` vs `(4, 4)` crossover iff $\alpha _ R / \alpha _ c > 256/85$, derived from the distortion model $\alpha _ c 4^{-b _ c} + \alpha _ R 4^{-b _ R}$ (not a measurement on DeepSeek models), plus the closed-form $(d _ c, d _ R, b _ c, b _ R)$ law. |
+| `parseval_tight_frame_multihead_interference_cap` | `MlaKantorovichRope.ParsevalMultihead` | Parseval / row-orthogonal Bessel $H$-head cap ($d _ c^2$ vs $H d _ c^2$) with inductive $2^k$ Walsh–Hadamard witnesses for $H \in \{8, 16, 32, 64\}$. |
+| `pythagorean_1105_multi_angle_rope_exact` | `MlaKantorovichRope.PythagoreanRoPE` | Integer certification of $R = 1105 = 5 \cdot 13 \cdot 17$: the 4 primitive Brahmagupta–Fibonacci rotation pairs with $\gcd = 1$, plus exact orthogonality, norm conservation, and relative-position composition for rational rotations $c^2 + s^2 = R^2$. |
+| `subbyte_mla_memory_compression_ratios_exact` | `MlaKantorovichRope.NopeRopeMemory` | Ratios of per-token byte counts stated in `Defs.lean`: `1024/3` (`341.33`) vs BF16 MHA-128 and `6` vs BF16 MLA for fused `Tern512 + RoPE64_INT8` (arithmetic on the stated sizes, not a measurement). |
 
 ## 37. [`rmsnorm-hybrid-linf-l1/`](rmsnorm-hybrid-linf-l1/)
 
@@ -477,12 +477,12 @@ All statements are in [`rmsnorm-hybrid-linf-l1/Challenge.lean`](rmsnorm-hybrid-l
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `hybrid_linf_l1_exact_upper_and_lower_envelopes` | `RmsnormHybridLinfL1.HybridNorm` | Universal sharp rational upper/lower envelopes for $\alpha\|x\| _ \infty + \frac{\beta}{d}\|x\| _ 1$ relative to $\mathrm{RMS}(x)$ with exact attainment. |
-| `hybrid_linf_l1_minimax_d_quarter_law` | `RmsnormHybridLinfL1.HybridNorm` | Universal minimax identity $(2\kappa^2 - 1)^2 - d \ge 0$, unique square-dim optimum $\kappa^2 = (s + 1)/2$ iff $\beta = s\alpha$, and no-$O(1)$ lower bound. |
-| `dyadic_llama3_d4096_hybrid_norm_exact` | `RmsnormHybridLinfL1.HybridNorm` | Pure-bitshift Llama-3 8B ($d = 4096, \kappa^2 = 65/2$, `> 126x` vs `L1`) and 70B ($d = 8192, \kappa^2 = 97/2$, `> 168x` vs `L1`) witnesses. |
-| `bf16_fp16_fp8_sumsq_swamping_horizon_exact` | `RmsnormHybridLinfL1.SwampingAndNegVar` | Universal $S _ {\mathrm{swamp}}(p) = 2^p$ IEEE-754 RNE swamping threshold + exact minimal outlier witnesses across BF16, FP16, FP8-E4M3, FP8-E5M2, MXFP4. |
-| `bf16_fp16_onepass_layernorm_negative_variance_exact` | `RmsnormHybridLinfL1.SwampingAndNegVar` | Bit-exact 1-pass LayerNorm negative-variance (`NaN`) witnesses for BF16 (`0x4173`), FP16 (`0x5417`), FP8-E4M3 (`0x55`), and FP8-E5M2 (`0x48`). |
-| `twopass_shifted_mean_variance_nonneg_universal` | `RmsnormHybridLinfL1.SwampingAndNegVar` | Universal non-negativity of 2-pass shifted-mean variance in exact `Rat` and every monotonic non-negative rounding arithmetic. |
+| `hybrid_linf_l1_exact_upper_and_lower_envelopes` | `RmsnormHybridLinfL1.HybridNorm` | Sharp rational upper/lower envelopes (all $d \ge 1$) for $\alpha\|x\| _ \infty + \frac{\beta}{d}\|x\| _ 1$ relative to $\mathrm{RMS}(x)$ with exact attainment. |
+| `hybrid_linf_l1_minimax_d_quarter_law` | `RmsnormHybridLinfL1.HybridNorm` | Minimax identity $(2\kappa^2 - 1)^2 - d \ge 0$, unique square-dim optimum $\kappa^2 = (s + 1)/2$ iff $\beta = s\alpha$, and no-$O(1)$ lower bound. |
+| `dyadic_llama3_d4096_hybrid_norm_exact` | `RmsnormHybridLinfL1.HybridNorm` | Pure-bitshift witnesses at $d = 4096$ ($\kappa^2 = 65/2$, `> 126x` vs `L1`) and $d = 8192$ ($\kappa^2 = 97/2$, `> 168x` vs `L1`); only the dimensions come from Llama-3 8B and 70B. |
+| `bf16_fp16_fp8_sumsq_swamping_horizon_exact` | `RmsnormHybridLinfL1.SwampingAndNegVar` | Integer tie-to-even fact `rneDivNat (2^p + 1) 2 * 2 = 2^p` (all $p \ge 2$; no float format) plus finite minimal-outlier swamping thresholds in the package's hand-written model of BF16, FP16, FP8-E4M3, FP8-E5M2, MXFP4 (not linked to IEEE-754 or OCP). |
+| `bf16_fp16_onepass_layernorm_negative_variance_exact` | `RmsnormHybridLinfL1.SwampingAndNegVar` | Finite 1-pass LayerNorm negative-variance (`NaN`) witnesses in the hand-written format model for BF16 (`0x4173`), FP16 (`0x5417`), FP8-E4M3 (`0x55`), and FP8-E5M2 (`0x48`). |
+| `twopass_shifted_mean_variance_nonneg_universal` | `RmsnormHybridLinfL1.SwampingAndNegVar` | Non-negativity of 2-pass shifted-mean variance (a sum of squares) in exact `Rat` and under every monotonic non-negativity-preserving rounding function. |
 
 ## 38. [`paley32-mxfp4-outliers/`](paley32-mxfp4-outliers/)
 
@@ -490,12 +490,12 @@ All statements are in [`paley32-mxfp4-outliers/Challenge.lean`](paley32-mxfp4-ou
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `universal_orthogonal_k_sparse_papr_lower_bound` | `Paley32Mxfp4.UniversalBounds` | Universal real-orthogonal $k$-sparse PAPR lower bound $\ge k/n$ with Hadamard flatness `iff` ($1 \le k < n$). |
-| `paley32_orthogonality_and_zero_k4_collapse` | `Paley32Mxfp4.Paley32` | Exact `P32^T P32 = 32 I`, `1,240` Sylvester-32 `c _ 4 = 8` planes, vs exhaustive Paley-32 `maxC4 ≤ 5` over all `35,960` 4-subsets via `AGL(1, 31)`. |
-| `paley32_vs_sylvester32_k8_l4_reduction` | `Paley32Mxfp4.Paley32` | Universal Paley-32 `c _ 8 ≤ 3` and exact `49/64` fourth-moment cut (`12,544` vs `16,384`) over all `1.346B` signed 8-sparse vectors via transpose duality. |
-| `hall16_five_classes_orthogonality_and_k4_k8_duality` | `Paley32Mxfp4.Hall16Bent` | Complete Hall-16 Classes I–V exact `k = 4` (`140, 76, 44, 28, 28`) vs `k = 8` (`30, 54, 90, 114, 156`) duality separation. |
+| `universal_orthogonal_k_sparse_papr_lower_bound` | `Paley32Mxfp4.UniversalBounds` | Real-orthogonal $k$-sparse PAPR lower bound $\ge k/n$ (all $n$) with Hadamard flatness `iff` ($1 \le k < n$). |
+| `paley32_orthogonality_and_zero_k4_collapse` | `Paley32Mxfp4.Paley32` | Exact `P32^T P32 = 32 I`, `1,240` Sylvester-32 `c _ 4 = 8` planes, vs finite exhaustive Paley-32 `maxC4 ≤ 5` over all `35,960` 4-subsets via `AGL(1, 31)`. |
+| `paley32_vs_sylvester32_k8_l4_reduction` | `Paley32Mxfp4.Paley32` | Finite exhaustive Paley-32 `c _ 8 ≤ 3` and `49/64` fourth-moment cut (`12,544` vs `16,384`) over all `2,692,684,800` signed 8-sparse vectors in $\{-1,0,1\}^{32}$ (`1,346,342,400` up to global sign) via transpose duality. |
+| `hall16_five_classes_orthogonality_and_k4_k8_duality` | `Paley32Mxfp4.Hall16Bent` | Exhaustive Hall-16 Classes I–V exact `k = 4` (`140, 76, 44, 28, 28`) vs `k = 8` (`30, 54, 90, 114, 156`) duality separation. |
 | `bent_diagonal_n16_anti_resonance_exact` | `Paley32Mxfp4.Hall16Bent` | Explicit 4-variable bent diagonal (`0x356`) orthogonality + flattening `80 / 140` Sylvester-16 affine 2-planes to exact PAPR `= 1`. |
-| `mxfp4_e8m0_bulk_crush_threshold_exact` | `Paley32Mxfp4.UniversalBounds` | Universal OCP MXFP4 E8M0 bulk-crush threshold $k^2 M^2 > 576(B - k)$ and Hybrid $k$-Split bit-budget dominance over MXFP6. |
+| `mxfp4_e8m0_bulk_crush_threshold_exact` | `Paley32Mxfp4.UniversalBounds` | Rational-algebra bulk-crush threshold $k^2 M^2 > 576(B - k)$ in the stated MXFP4-style E8M0 parameters (not a model of an actual encoder) and Hybrid $k$-Split bit-budget dominance over MXFP6. |
 
 ## 39. [`mxfp4-nvfp4-opt-clipping/`](mxfp4-nvfp4-opt-clipping/)
 
@@ -503,12 +503,12 @@ All statements are in [`mxfp4-nvfp4-opt-clipping/Challenge.lean`](mxfp4-nvfp4-op
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `mxfp4_e8m0_scale_down_piecewise_linear_crossover` | `Mxfp4OptClipping.Mxfp4E8M0` | Exact piecewise-linear `E8M0` scale-down gain $\Phi(M) \in \{0, 2M - 7, 6M - 27\}$ and universal block `iff`. |
-| `mxfp4_opt_e8m0_all_b_ef21_three_regime_law` | `Mxfp4OptClipping.Mxfp4E8M0` | Universal all-$B$ 3-regime optimal-`E8M0` EF21 law with tight witnesses (`47/431` at $B = 32$, `23/151` at $B = 64$, `1/5` at $B = 145$). |
-| `nvfp4_ceil_vs_nearest_e4m3_all_b_ef21_exact` | `Mxfp4OptClipping.Nvfp4E4M3` | Exact all-$B$ `NVFP4` ceil-vs-nearest `E4M3` EF21 laws (`199/4231` vs `151/4759` at $B = 16$, $u = 5$ transitions at $B = 12, 20$). |
-| `nvfp4_opt_e4m3_b16_and_b1_synergy_exact` | `Mxfp4OptClipping.Nvfp4E4M3` | Optimal `NVFP4` `E4M3` contraction `23/887` at $B = 16$ ($\lambda = 428/887$) and `1/625` at $B = 1$ ($s = 13/8$ synergy). |
-| `mxfp4_opt_e8m0_never_drops_two_exponents` | `Mxfp4OptClipping.Mxfp4E8M0` | Exact inequality $(3 - 6s)(2M - 3 - 6s) \ge 3M - 27/4 > 9/4$ proving optimal `E8M0` never drops two exponents. |
-| `e2m1_neg_zero_repurposing_exact_gain` | `Mxfp4OptClipping.E2M1NegZero` | Exact `-0.0` repurposing laws ($c = 8 \to 47/431$, $c = 1/4 \to 95/1631$ with $B = 33, 49$ transitions, $c = 5 \to 1/49$ at $B = 1$). |
+| `mxfp4_e8m0_scale_down_piecewise_linear_crossover` | `Mxfp4OptClipping.Mxfp4E8M0` | Exact piecewise-linear `E8M0` scale-down gain (hand-written nearest-grid E2M1 model, scale $s \in \{1, 1/2\}$) $\Phi(M) \in \{0, 2M - 7, 6M - 27\}$ and universal block `iff`. |
+| `mxfp4_opt_e8m0_all_b_ef21_three_regime_law` | `Mxfp4OptClipping.Mxfp4E8M0` | All-$B$ 3-regime EF21 law for the best of the two modelled `E8M0` scales, under the stated hypotheses on $M$, with attainment witnesses (`47/431` at $B = 32$, `23/151` at $B = 64$, `1/5` at $B = 145$). |
+| `nvfp4_ceil_vs_nearest_e4m3_all_b_ef21_exact` | `Mxfp4OptClipping.Nvfp4E4M3` | Exact all-$B$ ceil-vs-nearest `E4M3`-scale EF21 laws in the hand-written model of `NVFP4` (`199/4231` vs `151/4759` at $B = 16$, $u = 5$ transitions at $B = 12, 20$). |
+| `nvfp4_opt_e4m3_b16_and_b1_synergy_exact` | `Mxfp4OptClipping.Nvfp4E4M3` | Best modelled `E4M3`-scale contraction `23/887` at $B = 16$ ($\lambda = 428/887$) and `1/625` at $B = 1$ ($s = 13/8$ synergy). |
+| `mxfp4_opt_e8m0_never_drops_two_exponents` | `Mxfp4OptClipping.Mxfp4E8M0` | Exact inequality $(3 - 6s)(2M - 3 - 6s) \ge 3M - 27/4 > 9/4$ proving the best modelled `E8M0` scale never drops two exponents, under the stated hypotheses on $B$ and the bulk range. |
+| `e2m1_neg_zero_repurposing_exact_gain` | `Mxfp4OptClipping.E2M1NegZero` | Exact `-0.0` repurposing laws in the same hand-written model ($c = 8 \to 47/431$, $c = 1/4 \to 95/1631$ with $B = 33, 49$ transitions, $c = 5 \to 1/49$ at $B = 1$). |
 
 ## 40. [`smoothquant-dyadic-minimax/`](smoothquant-dyadic-minimax/)
 
@@ -516,12 +516,12 @@ All statements are in [`smoothquant-dyadic-minimax/Challenge.lean`](smoothquant-
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `smoothquant_asymmetric_amgm_optimal_scale` | `SmoothquantDyadic.AmGmScale` | Exact asymmetric AM-GM optimal SmoothQuant migration scale over $\mathbb{Q}$. |
-| `dyadic_smoothquant_perchannel_l2_5_over_4_sharp` | `SmoothquantDyadic.DyadicMinimax` | Sharp `5/4` ($+25\%$) per-channel dyadic power-of-two rounding penalty in $L _ 2$ with exact attainment. |
-| `dyadic_smoothquant_perchannel_l1_9_over_8_sharp` | `SmoothquantDyadic.DyadicMinimax` | Sharp `9/8` ($+12.5\%$) per-channel dyadic power-of-two rounding penalty in $L _ 1$ with exact attainment. |
+| `smoothquant_asymmetric_amgm_optimal_scale` | `SmoothquantDyadic.AmGmScale` | Exact asymmetric AM-GM optimal scale ($s^4 = B/A$) of the proxy error $E(s) = A s^2 + B s^{-2}$ over $\mathbb{Q}$, with the exact penalty of the classical $\alpha = 0.5$ rule (e.g. `8089/889` for W4A8). |
+| `dyadic_smoothquant_perchannel_l2_5_over_4_sharp` | `SmoothquantDyadic.DyadicMinimax` | Sharp `5/4` ($+25\%$) per-channel power-of-two rounding penalty in the $L _ 2$ proxy with exact attainment. |
+| `dyadic_smoothquant_perchannel_l1_9_over_8_sharp` | `SmoothquantDyadic.DyadicMinimax` | Sharp `9/8` ($+12.5\%$) per-channel power-of-two rounding penalty in the $L _ 1$ proxy with exact attainment. |
 | `dyadic_smoothquant_pertensor_5_2_vs_phase_shift_3_2` | `SmoothquantDyadic.DyadicMinimax` | Exact per-tensor dyadic penalty reduction from `5/2` (naive) to `3/2` (phase-shifted). |
-| `smoothquant_hadamard_noncommutation_separation` | `SmoothquantDyadic.NonCommutation` | Exact order-of-operations separation proving SmoothQuant and Hadamard rotations fail to commute. |
-| `channel_outlier_coupling_paradox_exact` | `SmoothquantDyadic.NonCommutation` | Exact channel-outlier coupling paradox showing simultaneous weight/activation spike tradeoffs. |
+| `smoothquant_hadamard_noncommutation_separation` | `SmoothquantDyadic.NonCommutation` | For one explicit $2 \times 2$ family under the first-order Frobenius proxy `mat2QuantErrProxy`: non-commutation of $\mathrm{diag}(M, 1)$ and $H _ 2$ and an $\Omega(M^2)$ error separation between orderings. |
+| `channel_outlier_coupling_paradox_exact` | `SmoothquantDyadic.NonCommutation` | Exact condition ($M < M _ {\mathrm{crit}}^2$) under which the $\alpha = 0.5$ scale increases the proxy error versus unscaled, with W4A8 witnesses. |
 
 ## 41. [`flashattn-bwd-signflip/`](flashattn-bwd-signflip/)
 
@@ -529,100 +529,100 @@ All statements are in [`flashattn-bwd-signflip/Challenge.lean`](flashattn-bwd-si
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `softmax_jacobian_zero_sum_and_cancellation_free_identity` | `FlashAttnBwdSignflip.SoftmaxJacobian` | Exact Softmax-Jacobian zero-sum conservation and cancellation-free backward identity. |
-| `peaked_softmax_half_spurious_signflip_threshold` | `FlashAttnBwdSignflip.SignflipCliff` | Razor-sharp `50%` spurious sign-flip phase transition at tail mass $\varepsilon \le 2^{-(m+2)}$ (`1/512` BF16, `1/32` FP8-E4M3, `1/16` FP8-E5M2, `1/8` U-E3M1). |
-| `direct_p_dp_midpoint_dc_leakage_exact` | `FlashAttnBwdSignflip.SignflipCliff` | Exact direct $P \cdot dP$ midpoint DC-leakage law $1/(2^{m+1} + 1)$. |
-| `flashattn_do_o_orthogonal_divergence_amplification` | `FlashAttnBwdSignflip.OrthogonalDivergence` | Exact FlashAttention $D _ i = dO \cdot \mathrm{fl}(O)$ orthogonal divergence amplification $u _ {\mathrm{fwd}} \cdot \kappa _ {\mathrm{orth}}$. |
+| `softmax_jacobian_zero_sum_and_cancellation_free_identity` | `FlashAttnBwdSignflip.SoftmaxJacobian` | Exact (over `Rat`) Softmax-Jacobian zero-sum conservation and algebraic equivalence of the standard and cancellation-free backward forms. |
+| `peaked_softmax_half_spurious_signflip_threshold` | `FlashAttnBwdSignflip.SignflipCliff` | Threshold for the hand-written rounding predicate `rneSnapsToOne` ($\mathrm{fl}_m(1 - \varepsilon) = 1 \iff 0 \le \varepsilon \le 2^{-(m+2)}$), with exactly one of $\pm c$ flipping the sign of the standard backward form; at tail mass $\varepsilon \le 2^{-(m+2)}$ (`1/512` BF16, `1/32` FP8-E4M3, `1/16` FP8-E5M2, `1/8` U-E3M1). |
+| `direct_p_dp_midpoint_dc_leakage_exact` | `FlashAttnBwdSignflip.SignflipCliff` | Exact direct $P \cdot dP$ midpoint DC-leakage value $1/(2^{m+1} + 1)$ in the stated rounding model. |
+| `flashattn_do_o_orthogonal_divergence_amplification` | `FlashAttnBwdSignflip.OrthogonalDivergence` | Exact-arithmetic law for the leakage of $D _ i = dO \cdot \mathrm{fl}(O)$, with amplification $u _ {\mathrm{fwd}} \cdot \kappa _ {\mathrm{orth}}$. |
 | `key_centering_dq_invariance_exact` | `FlashAttnBwdSignflip.OrthogonalDivergence` | Exact key-centering invariance $dQ = dS(K - \bar{K})$ and backward bias elimination. |
-| `unsigned_ue3m1_vs_mxfp4_dynamic_range_16x_exact` | `FlashAttnBwdSignflip.UnsignedRange` | Exact `16×` dynamic-range advantage of unsigned `U-E3M1` over signed `MXFP4-E2M1` on nonnegative probabilities. |
+| `unsigned_ue3m1_vs_mxfp4_dynamic_range_16x_exact` | `FlashAttnBwdSignflip.UnsignedRange` | Constant-level fact: the package's hand-written `U-E3M1` record has `16×` the dynamic range of its signed `MXFP4-E2M1` records (the ratio follows from the constants in the records). |
 
 ## 42. [`unsigned-fp4-softmax-v/`](unsigned-fp4-softmax-v/)
 
-All statements are in [`unsigned-fp4-softmax-v/Challenge.lean`](unsigned-fp4-softmax-v/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`unsigned-fp4-softmax-v/UnsignedFp4SoftmaxV/Defs.lean`](unsigned-fp4-softmax-v/UnsignedFp4SoftmaxV/Defs.lean). See [`unsigned-fp4-softmax-v/README.md`](unsigned-fp4-softmax-v/README.md) for the unsigned FP4 regime classification, XOR-VDC zero simplex drift, and `V`-centering proofs.
+All statements are in [`unsigned-fp4-softmax-v/Challenge.lean`](unsigned-fp4-softmax-v/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`unsigned-fp4-softmax-v/UnsignedFp4SoftmaxV/Defs.lean`](unsigned-fp4-softmax-v/UnsignedFp4SoftmaxV/Defs.lean). See [`unsigned-fp4-softmax-v/README.md`](unsigned-fp4-softmax-v/README.md) for the unsigned FP4 regime classification, XOR-VDC zero simplex drift, and `V`-centering proofs. The quantizers are hand-written rational models, not the OCP/IEEE specifications.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `unsigned_fp4_e1m3_collapse_to_uint4` | `UnsignedFp4SoftmaxV.UnsignedFormats` | Exact collapse of unsigned `U-E1M3` onto uniform `UINT4`. |
-| `unsigned_fp4_all_b_ef21_regime_classification` | `UnsignedFp4SoftmaxV.UnsignedFormats` | Complete all-$B$ unsigned FP4 EF21 contraction regime classification. |
-| `softmax_simplex_rtn_drift_exact` | `UnsignedFp4SoftmaxV.SimplexDriftSr` | Exact RTN simplex-sum drift bounds across `U-E3M1`, `U-E2M2` (`< 25%`), and OCP `FP8-E4M3` (`127/2187 < 6%`). |
-| `stratified_xor_vdc_simplex_zero_drift` | `UnsignedFp4SoftmaxV.SimplexDriftSr` | Exact zero simplex-sum drift for pair-antithetic and zero-carry stratified XOR-VDC SR across all dyadic residues. |
-| `attention_v_centering_simplex_drift_annihilation` | `UnsignedFp4SoftmaxV.VCentering` | Exact algebraic identity annihilating first-order simplex-drift bias $\delta _ P \mu _ V \equiv 0$ via `V`-centering. |
-| `raw_v_e2m1_level_collapse_vs_centered_invariance` | `UnsignedFp4SoftmaxV.VCentering` | Raw `V` collapses to `≤ 2` signed `E2M1` levels at $|\mu|/R \ge 4$ (`15, 12, 8, 4, 2, 1`), while centered `V _ c` retains `15/15`. |
+| `unsigned_fp4_e1m3_collapse_to_uint4` | `UnsignedFp4SoftmaxV.UnsignedFormats` | In the model's integer decoder (no exponent bias), `U-E1M3` decodes identically to `UINT4`; this holds by definition of the decoder.
+| `unsigned_fp4_all_b_ef21_regime_classification` | `UnsignedFp4SoftmaxV.UnsignedFormats` | For the EF21-style contraction measure defined in `Defs.lean`: a classification, for every $B \ge 2$, of which unsigned 4-bit format has the smallest value, with ratios against the model's signed `S-E2M1`.
+| `softmax_simplex_rtn_drift_exact` | `UnsignedFp4SoftmaxV.SimplexDriftSr` | RTN simplex-sum drift bounds in the model, with exact $N = 128$ values for `S-E2M1`, `UINT4`, `U-E3M1` (`< 25%`) and the model's `FP8-E4M3` level grid (`127/2187 < 6%`).
+| `stratified_xor_vdc_simplex_zero_drift` | `UnsignedFp4SoftmaxV.SimplexDriftSr` | Zero simplex-sum drift for pair-antithetic (midpoint rows) and zero-carry stratified XOR-VDC SR across all dyadic residues, in the model.
+| `attention_v_centering_simplex_drift_annihilation` | `UnsignedFp4SoftmaxV.VCentering` | Linear identity removing the first-order simplex-drift bias $\delta _ P \mu _ V$ under `V`-centering (a one-line identity using $\sum p _ j = 1$; it restates how the centered scheme is defined).
+| `raw_v_e2m1_level_collapse_vs_centered_invariance` | `UnsignedFp4SoftmaxV.VCentering` | In the model, raw `V` keeps `≤ 2` of the 15 signed `E2M1` levels at $|\mu|/R \ge 4$ (counts `15, 12, 8, 4, 2, 1`), while centered `V _ c` keeps `15/15`.
 
 ## 43. [`mxfp-doublelog-ftz-law/`](mxfp-doublelog-ftz-law/)
 
-All statements are in [`mxfp-doublelog-ftz-law/Challenge.lean`](mxfp-doublelog-ftz-law/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxfp-doublelog-ftz-law/MxfpDoublelogFtz/Defs.lean`](mxfp-doublelog-ftz-law/MxfpDoublelogFtz/Defs.lean). See [`mxfp-doublelog-ftz-law/README.md`](mxfp-doublelog-ftz-law/README.md) for the universal `4^b`-cancellation double-logarithmic exponent law and FTZ hardware bifurcation proofs.
+All statements are in [`mxfp-doublelog-ftz-law/Challenge.lean`](mxfp-doublelog-ftz-law/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxfp-doublelog-ftz-law/MxfpDoublelogFtz/Defs.lean`](mxfp-doublelog-ftz-law/MxfpDoublelogFtz/Defs.lean). See [`mxfp-doublelog-ftz-law/README.md`](mxfp-doublelog-ftz-law/README.md) for the `4^b`-cancellation double-logarithmic exponent-width law and the FTZ bifurcation. `deltaCont` and `deltaE8m0` are hand-entered closed-form formulas, so the theorems concern those formulas.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `mxfp_e1_equals_e0_and_signed_unsigned_duality` | `MxfpDoublelogFtz.GridDuality` | Universal `E1 ≡ E0` collapse and signed–unsigned duality across all bit-widths $b$ and exponent widths $e$. |
-| `mxfp_universal_ef21_closed_form` | `MxfpDoublelogFtz.Ef21Envelopes` | Exact universal all-$(b, e, B)$ MXFP EF21 contraction closed form. |
-| `mxfp_doublelog_crossover_4b_cancellation_law` | `MxfpDoublelogFtz.DoubleLogLaw` | Exact `4^b`-cancellation crossover theorem proving optimal exponent width $e^*(B) \sim \log _ 2 \log _ 2 B$ is independent of $b$. |
-| `mxfp_e8m0_doublelog_shift_law` | `MxfpDoublelogFtz.DoubleLogLaw` | Exact OCP `E8M0` double-logarithmic shift law across all bit-widths. |
-| `mxfp_ftz_four_to_the_b_underflow_penalty` | `MxfpDoublelogFtz.FtzBifurcation` | Universal `4^b` Flush-to-Zero underflow penalty on worst-case block MSE. |
-| `mxfp_ftz_hardware_bifurcation_e4m3_vs_e2mb` | `MxfpDoublelogFtz.FtzBifurcation` | Exact hardware FTZ bifurcation separating `FP8-E4M3` from `E2M _ b` formats. |
+| `mxfp_e1_equals_e0_and_signed_unsigned_duality` | `MxfpDoublelogFtz.GridDuality` | In the model, the `E1` and `E0` grids coincide for every width $w \ge 4$ (close to definitional), and the unsigned width-$w$ grid equals the signed width-$(w + 1)$ grid.
+| `mxfp_universal_ef21_closed_form` | `MxfpDoublelogFtz.Ef21Envelopes` | Comparisons and closed-form values for the hand-entered worst-case formula `deltaCont` (all $a \ge 2$, $b \ge 1$, $B \ge 1$) against `deltaE8m0`; the formula is an input, not derived from a quantizer.
+| `mxfp_doublelog_crossover_4b_cancellation_law` | `MxfpDoublelogFtz.DoubleLogLaw` | Crossover block size `contCrossover` of the modelled formulas lies in $(\tfrac14, 1) \cdot 2^{2^{a+1}}$ and satisfies a $1/(2^b + 1)^2$ cancellation identity, with exact prefactors for $b = 1..5$; the $\log _ 2 \log _ 2 B$ exponent-width law follows for these formulas only.
+| `mxfp_e8m0_doublelog_shift_law` | `MxfpDoublelogFtz.DoubleLogLaw` | `E8M0` analogue for the modelled formulas: crossover between $\tfrac18$ and $\tfrac{3}{16}$ of $2^{2^{a+1}}$ for $a, b \ge 2$, plus explicit crossover block sizes for formats up to width 7.
+| `mxfp_ftz_four_to_the_b_underflow_penalty` | `MxfpDoublelogFtz.FtzBifurcation` | In the model, flushing subnormals multiplies the squared minimum positive level by $4^b$, and the FTZ-to-gradual-underflow ratio is at most $4^b$ and within a factor $1 - \varepsilon$ of it for large $M$.
+| `mxfp_ftz_hardware_bifurcation_e4m3_vs_e2mb` | `MxfpDoublelogFtz.FtzBifurcation` | For the modelled formulas (not a hardware measurement): FTZ and gradual-underflow values for `E4M3` agree for all $B \le 11,417,825$ and differ at $B = 11,417,826$, while for `E2M _ b` ($b = 1..5$) FTZ more than doubles the value at the listed block sizes.
 
 ## 44. [`ssm-decay-collapse-bounds/`](ssm-decay-collapse-bounds/)
 
-All statements are in [`ssm-decay-collapse-bounds/Challenge.lean`](ssm-decay-collapse-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ssm-decay-collapse-bounds/SsmDecayCollapse/Defs.lean`](ssm-decay-collapse-bounds/SsmDecayCollapse/Defs.lean). See [`ssm-decay-collapse-bounds/README.md`](ssm-decay-collapse-bounds/README.md) for the one-ULP-per-step sequential collapse, additive swamping, and zero-multiplier shift-subtract proofs.
+All statements are in [`ssm-decay-collapse-bounds/Challenge.lean`](ssm-decay-collapse-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ssm-decay-collapse-bounds/SsmDecayCollapse/Defs.lean`](ssm-decay-collapse-bounds/SsmDecayCollapse/Defs.lean). See [`ssm-decay-collapse-bounds/README.md`](ssm-decay-collapse-bounds/README.md) for the one-ULP-per-step sequential collapse, additive swamping, and zero-multiplier shift-subtract proofs. The rounding function is the model `ieeeRne` (unbounded exponent range).
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `ieee_decay_stall_midpoint_exact` | `SsmDecayCollapse.IeeeRneDecay` | Universal $p \ge 1$ IEEE-754 RNE decay-stall midpoint $1 - 2^{-(p+2)}$ with exact specializations (`FP8`, `BF16`, `FP16`, `FP32`). |
-| `one_ulp_per_step_sequential_collapse` | `SsmDecayCollapse.IeeeRneDecay` | Universal 1-ULP-per-step sequential collapse $\mathrm{seqPow}(p, m \cdot 2^p) = 2^{-m}$ (BF16 half-life `128` vs `177.10`, $2^{-32}$ at $T = 4096$). |
-| `additive_swamping_exact_divergence` | `SsmDecayCollapse.AdditiveSwamping` | Exact linear additive swamping divergence $T \cdot 2^{-(p+1)}$ (`4` at $T = 1024$, `512` at $T = 131,072$ in BF16). |
-| `dyadic_shift_subtract_tight_bounds` | `SsmDecayCollapse.ShiftSubtract` | Tight asymmetric signed-integer invariant interval $[-2^R B _ {\max}, 2^R B _ {\max} + (2^R - 1)]$ with exact attainment of both endpoints. |
-| `dyadic_shift_subtract_zero_input_stall_asymmetry` | `SsmDecayCollapse.ShiftSubtract` | Under zero input, positive states $[0, 2^r - 1]$ stall permanently while every negative state strictly increases to $0$. |
-| `csd_two_tap_half_life_gap_reduction` | `SsmDecayCollapse.ShiftSubtract` | 2-tap zero-multiplier CSD shift-subtract cuts worst adjacent decay-rate ratio from `2` to `3/2` with `65,536×` range over BF16. |
+| `ieee_decay_stall_midpoint_exact` | `SsmDecayCollapse.IeeeRneDecay` | In the `ieeeRne` model (round-to-nearest-even, $p$ mantissa bits, unbounded exponent range) for all $p \ge 1$: stall midpoint $1 - 2^{-(p+2)}$, with values for the labels `FP8-E5M2`, `FP8-E4M3`, `BF16`, `FP16`, `FP32` ($p = 2, 3, 7, 10, 23$).
+| `one_ulp_per_step_sequential_collapse` | `SsmDecayCollapse.IeeeRneDecay` | In the same model, one ULP lost per step: $\mathrm{seqPow}(p, m \cdot 2^p) = 2^{-m}$ ($p = 7$: half-life `128`, $2^{-32}$ at $T = 4096$; the `177.10` comparison is computed outside Lean).
+| `additive_swamping_exact_divergence` | `SsmDecayCollapse.AdditiveSwamping` | Additive swamping divergence $T \cdot 2^{-(p+1)}$ in the model (`4` at $T = 1024$, `512` at $T = 131,072$ for $p = 7$).
+| `dyadic_shift_subtract_tight_bounds` | `SsmDecayCollapse.ShiftSubtract` | The signed-integer interval $[-2^R B _ {\max}, 2^R B _ {\max} + (2^R - 1)]$ is invariant for the shift-subtract recurrence, with both endpoints attained as fixed points at $r = R$.
+| `dyadic_shift_subtract_zero_input_stall_asymmetry` | `SsmDecayCollapse.ShiftSubtract` | Under zero input, states in $[0, 2^r - 1]$ are fixed points, while every negative state strictly increases and reaches $0$.
+| `csd_two_tap_half_life_gap_reduction` | `SsmDecayCollapse.ShiftSubtract` | A second CSD tap lowers the worst adjacent decay-rate ratio from `2` to `3/2`; the $2^{24}$ versus $2^8$ inverse-decay range (ratio `65,536`) is an identity of the definitions.
 
 ## 45. [`ce-lse-fp8-horizon/`](ce-lse-fp8-horizon/)
 
-All statements are in [`ce-lse-fp8-horizon/Challenge.lean`](ce-lse-fp8-horizon/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ce-lse-fp8-horizon/CeLseHorizon/Defs.lean`](ce-lse-fp8-horizon/CeLseHorizon/Defs.lean). See [`ce-lse-fp8-horizon/README.md`](ce-lse-fp8-horizon/README.md) for the `V = 1024` / `V = 131,072` FP8 conservation cliffs, FP16 loss-scale empty-window theorem, and pairwise `LogSumExp` proofs.
+All statements are in [`ce-lse-fp8-horizon/Challenge.lean`](ce-lse-fp8-horizon/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`ce-lse-fp8-horizon/CeLseHorizon/Defs.lean`](ce-lse-fp8-horizon/CeLseHorizon/Defs.lean). See [`ce-lse-fp8-horizon/README.md`](ce-lse-fp8-horizon/README.md) for the `V = 1024` / `V = 131,072` FP8 conservation cliffs, FP16 loss-scale empty-window theorem, and pairwise `LogSumExp` proofs (model quantizers, see the package README).
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `ce_gradient_zero_sum_conservation_exact` | `CeLseHorizon.CeConservation` | Exact discrete Cross-Entropy gradient zero-sum conservation $\sum (p _ v - \delta _ {v,y}) = 0$. |
-| `fp8_e4m3_dual_horizon_and_rne_overshoot_cliff` | `CeLseHorizon.Fp8Horizons` | Exact OCP `FP8-E4M3` dual horizon (`V > 512` RTZ `-15/16`, `V = 1023` RNE overshoot `+255/256`, `V = 1024` cliff to `-1`). |
-| `fp8_e5m2_128k_vocab_conservation_collapse` | `CeLseHorizon.Fp8Horizons` | Exact IEEE `FP8-E5M2` 128K vocab cliff (`V > 65536` RTZ `-7/8`, `V = 131,071` RNE `+32767/32768`, `V = 131,072` cliff to `-1`). |
-| `fp16_loss_scale_empty_window_collapse_exact` | `CeLseHorizon.Fp16LossScale` | Exact FP16 power-of-two loss-scale empty-window collapse at $2^{30} - 2^{18}$ (normal) and $2^{41} - 2^{29}$ (subnormal). |
-| `lse_naive_swamping_vs_pairwise_tree_exact` | `CeLseHorizon.LsePairwise` | Exact naive `1 + sum` and sequential `2^p t` `LogSumExp` stall vs zero-error pairwise tree `treeSum k t = 2^k t`. |
-| `label_smoothing_fp8_total_erasure_exact` | `CeLseHorizon.Fp8Horizons` | Exact 100% FP8-E4M3 and FP8-E5M2 erasure of label smoothing $\varepsilon / V$ for $\varepsilon \le 1/8, V \ge 131,072$. |
+| `ce_gradient_zero_sum_conservation_exact` | `CeLseHorizon.CeConservation` | Discrete Cross-Entropy gradient zero-sum conservation $\sum (p _ v - \delta _ {v,y}) = 0$, with the uniform-distribution instance.
+| `fp8_e4m3_dual_horizon_and_rne_overshoot_cliff` | `CeLseHorizon.Fp8Horizons` | Dual horizon of the model's `FP8-E4M3` subnormal quantizer on uniform gradients $1/V$ (`V > 512` RTZ `-15/16`, `V = 1023` RNE `+255/256`, `V = 1024` jump to `-1`).
+| `fp8_e5m2_128k_vocab_conservation_collapse` | `CeLseHorizon.Fp8Horizons` | The same for the model's `FP8-E5M2` quantizer (`V > 65536` RTZ `-7/8`, `V = 131,071` RNE `+32767/32768`, `V = 131,072` jump to `-1`).
+| `fp16_loss_scale_empty_window_collapse_exact` | `CeLseHorizon.Fp16LossScale` | In the model, no positive loss scale (so no power of two) avoids both `FP16` overflow and underflow when $G _ {\max}/p _ {\min} \ge 2^{30} - 2^{18}$ (normal) or $2^{41} - 2^{29}$ (subnormal).
+| `lse_naive_swamping_vs_pairwise_tree_exact` | `CeLseHorizon.LsePairwise` | Naive `1 + sum` and sequential `2^p t` `LogSumExp` stall versus the pairwise tree `treeSum k t = 2^k t`. The stall theorem assumes the accumulator rounding model of the package; see the package README for its limit.
+| `label_smoothing_fp8_total_erasure_exact` | `CeLseHorizon.Fp8Horizons` | For $\varepsilon \le 1/8$ and $V \ge 131,072$, $\varepsilon / V$ is flushed to `0` by the model's `FP8-E4M3` and `FP8-E5M2` quantizers under RNE and RTZ.
 
 ## 46. [`allreduce-topology-xorvdc/`](allreduce-topology-xorvdc/)
 
-All statements are in [`allreduce-topology-xorvdc/Challenge.lean`](allreduce-topology-xorvdc/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`allreduce-topology-xorvdc/AllReduceXorVdc/Defs.lean`](allreduce-topology-xorvdc/AllReduceXorVdc/Defs.lean). See [`allreduce-topology-xorvdc/README.md`](allreduce-topology-xorvdc/README.md) for the Binary-Tree wipeout paradox, zero-comm cross-rank XOR-VDC `TP×` variance theorem, and BF16 residual freeze depth proofs.
+All statements are in [`allreduce-topology-xorvdc/Challenge.lean`](allreduce-topology-xorvdc/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`allreduce-topology-xorvdc/AllReduceXorVdc/Defs.lean`](allreduce-topology-xorvdc/AllReduceXorVdc/Defs.lean). See [`allreduce-topology-xorvdc/README.md`](allreduce-topology-xorvdc/README.md) for the Binary-Tree wipeout counts in an abstract swamping model, the zero-communication cross-rank XOR-VDC `TP×` ratio of MSE constants, and BF16-spacing residual freeze depth proofs. The objects are hand-written models, not NCCL or hardware.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `allreduce_subulp_drift_ring_vs_tree_exact` | `AllReduceXorVdc.TopologyDrift` | Exact `(TP - 1)`-fold Ring vs Binary-Tree/Direct sub-ULP drift separation (`63×` at `TP = 64`). |
-| `allreduce_cancel_wipeout_ring_vs_tree_exact` | `AllReduceXorVdc.CancelWipeout` | Exact combinatorial wipeout laws: Ring `2/TP` vs Binary-Tree `TP/(2(TP - 1)) > 1/2` (`> 16×` worse at `TP = 64`) vs Direct `0`. |
-| `cross_rank_xor_vdc_bijection_and_exact_mse` | `AllReduceXorVdc.CrossRankXorVdc` | Top-$K$ bijection on `Fin (2^K)`, zero bias, `< 1` ULP sum error, and exact MSE scaling (`64×` vs Ind-SR, `2048×` vs RNE at `TP = 64`). |
-| `bf16_residual_stream_freeze_depth_exact` | `AllReduceXorVdc.ResidualFreeze` | Exact BF16 residual-stream freeze depth $L _ {\mathrm{freeze}}(p) = 2^{15 - 2p}$ (`32, 128, 512`) and boundary tie-to-even stall. |
-| `kahan_compensated_residual_exact_recovery` | `AllReduceXorVdc.ResidualFreeze` | Exact Kahan conservation $s _ L + c _ L = s _ 0 + \sum x _ i$ and $|c _ L| \le u / 2$ across arbitrary depth $L$. |
-| `fixed_scale_ternary_saturation_barrier` | `AllReduceXorVdc.TopologyDrift` | Identical $\pm S$ saturation across Ring, Tree, and Direct (`1×` ratio) proving dynamic rescaling is mandatory for ternary collectives. |
+| `allreduce_subulp_drift_ring_vs_tree_exact` | `AllReduceXorVdc.TopologyDrift` | In the model's grid rounding, `(TP - 1)`-fold Ring versus Binary-Tree/Direct sub-ULP drift separation (`63×` at `TP = 64`, for one input family).
+| `allreduce_cancel_wipeout_ring_vs_tree_exact` | `AllReduceXorVdc.CancelWipeout` | In the abstract `swampAdd` model: wipeout probabilities Ring `2/TP`, Binary-Tree `TP/(2(TP - 1)) > 1/2` (ratio `> 16×` at `TP = 64`), Direct `0`.
+| `cross_rank_xor_vdc_bijection_and_exact_mse` | `AllReduceXorVdc.CrossRankXorVdc` | Top-$K$ bijection on `Fin (2^K)`, zero bias, `< 1` ULP sum error, and exact discrete MSE; the `64×` (vs Ind-SR) and `2048×` (vs RNE) ratios at `TP = 64` are ratios of MSE constants fixed in `Defs.lean`, not measured error.
+| `bf16_residual_stream_freeze_depth_exact` | `AllReduceXorVdc.ResidualFreeze` | In the model's grid rounding with `BF16` spacing, freeze depth $L _ {\mathrm{freeze}}(p) = 2^{15 - 2p}$ (`32, 128, 512`) and the boundary tie-to-even stall.
+| `kahan_compensated_residual_exact_recovery` | `AllReduceXorVdc.ResidualFreeze` | Kahan conservation $s _ L + c _ L = s _ 0 + \sum x _ i$ and $|c _ L| \le u / 2$ for any depth $L$, in the model's grid rounding.
+| `fixed_scale_ternary_saturation_barrier` | `AllReduceXorVdc.TopologyDrift` | For the model's fixed-scale ternary quantizer: identical $\pm S$ saturation across Ring, Tree and Direct (error ratio `1×`) and error $\ge |x| - S$ when the true sum exceeds $S$.
 
 ## 47. [`fano-sparse24-perm/`](fano-sparse24-perm/)
 
-All statements are in [`fano-sparse24-perm/Challenge.lean`](fano-sparse24-perm/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`fano-sparse24-perm/FanoSparse24Perm/Defs.lean`](fano-sparse24-perm/FanoSparse24Perm/Defs.lean). See [`fano-sparse24-perm/README.md`](fano-sparse24-perm/README.md) for the Fano-plane $PG(2, 2)$ obstruction, sunflower barrier, and `4:8` vs `2:4` MXFP4 anchor-dilution proofs.
+All statements are in [`fano-sparse24-perm/Challenge.lean`](fano-sparse24-perm/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`fano-sparse24-perm/FanoSparse24Perm/Defs.lean`](fano-sparse24-perm/FanoSparse24Perm/Defs.lean). See [`fano-sparse24-perm/README.md`](fano-sparse24-perm/README.md) for the Fano-plane $PG(2, 2)$ obstruction, sunflower barrier, and `4:8` vs `2:4` MXFP4 anchor-dilution proofs. The critical values are for `8` columns; the MXFP4 constants are for a fixed block size in a model.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `structured_topk_ef21_contraction_exact` | `FanoSparse24Perm.Ef21Structured` | Universal structured top-$k$ EF21 contraction $\alpha(k:m) = k/m$ with tight attainment (`1/2` for `2:4, 4:8, 8:16`). |
-| `mxfp4_anchor_dilution_48_beats_24_exact` | `FanoSparse24Perm.Ef21Structured` | Universal rational Dinkelbach certificates proving `4:8 + MXFP4` (`18/37`) beats `2:4 + MXFP4` (`72/151`, gap `54/5587`). |
-| `fano_plane_sparse24_obstruction_exact` | `FanoSparse24Perm.FanoObstruction` | Constructive proof that the 7 lines of $PG(2, 2)$ form the exact minimal weight-3 `2:4`-permutation barrier ($R _ {\mathrm{crit}}(2, 3) = 7$). |
-| `sunflower_sparse24_obstruction_exact` | `FanoSparse24Perm.SunflowerObstruction` | Exact $S _ 8$ Venn-region proof that `≤ 3` weight-4 rows stay feasible while 4 sunflower rows kill all 35 ($R _ {\mathrm{crit}}(2, 4) = 4$). |
-| `order_statistic_k2k_nmse_laws_exact` | `FanoSparse24Perm.OrderStatsNmse` | Exact Uniform $(k + 2)/(4(2k + 1))$ and Rényi-Laplace (`23/288` vs `79211/1411200`, `-29.72%`) `k:2k` NMSE laws. |
+| `structured_topk_ef21_contraction_exact` | `FanoSparse24Perm.Ef21Structured` | Structured top-$k$ contraction $\alpha(k:m) = k/m$ (EF21-style measure of the file) with tight attainment on flat blocks (`1/2` for `2:4, 4:8, 8:16`).
+| `mxfp4_anchor_dilution_48_beats_24_exact` | `FanoSparse24Perm.Ef21Structured` | For $B = 32$ on an already-scaled block in $[0, 3]$ (E8M0 scale not modelled): `4:8 + MXFP4` attains `18/37`, `2:4 + MXFP4` attains `72/151` (gap `54/5587`), with explicit witnesses; plus the dense ternary law $4/(B+3)$.
+| `fano_plane_sparse24_obstruction_exact` | `FanoSparse24Perm.FanoObstruction` | For `8` columns: the 7 lines of $PG(2, 2)$ give $R _ {\mathrm{crit}}(2, 3) = 7$ (`≤ 6` weight-3 rows always admit a `2:4`-feasible bipartition); for general $C$ only the lower bound $\lceil (4C - 1)(4C - 2)/6 \rceil$.
+| `sunflower_sparse24_obstruction_exact` | `FanoSparse24Perm.SunflowerObstruction` | For `8` columns: `≤ 3` weight-4 rows stay feasible while 4 sunflower rows kill all 35 bipartitions ($R _ {\mathrm{crit}}(2, 4) = 4$).
+| `order_statistic_k2k_nmse_laws_exact` | `FanoSparse24Perm.OrderStatsNmse` | Uniform $(k + 2)/(4(2k + 1))$ and Rényi-Laplace (`23/288` vs `79211/1411200`, `-29.72%`) `k:2k` NMSE values.
 
 ## 48. [`mxint-mxfp-swar-bounds/`](mxint-mxfp-swar-bounds/)
 
-All statements are in [`mxint-mxfp-swar-bounds/Challenge.lean`](mxint-mxfp-swar-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxint-mxfp-swar-bounds/MxintMxfpSwar/Defs.lean`](mxint-mxfp-swar-bounds/MxintMxfpSwar/Defs.lean). See [`mxint-mxfp-swar-bounds/README.md`](mxint-mxfp-swar-bounds/README.md) for the `MXINT` vs `MXFP` EF21 crossover, `int16` SWAR packing, and half-integer collapse proofs.
+All statements are in [`mxint-mxfp-swar-bounds/Challenge.lean`](mxint-mxfp-swar-bounds/Challenge.lean) against pure-`Init` (zero Mathlib) definitions in [`mxint-mxfp-swar-bounds/MxintMxfpSwar/Defs.lean`](mxint-mxfp-swar-bounds/MxintMxfpSwar/Defs.lean). See [`mxint-mxfp-swar-bounds/README.md`](mxint-mxfp-swar-bounds/README.md) for the `MXINT` vs `MXFP` EF21 crossover, `int16` SWAR packing, and half-integer collapse proofs. The `MXFP` defect formulas are hand-entered in `Defs.lean`.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `mxint_all_b_ef21_contraction_exact` | `MxintMxfpSwar.Ef21Bounds` | Universal all-$B$ ($B \ge 1, w \ge 2$) exact symmetric `MXINT _ w` EF21 bounds $(B - 1)/(4 M^2 + B - 1)$ (AbsMax) and $B/(M^2 + B - 1)$ (`E8M0`). |
-| `mxint_vs_mxfp_exact_blocksize_crossover` | `MxintMxfpSwar.Ef21Bounds` | Exact integer crossovers $B^*(w)$ where `MXFP _ w` overtakes `MXINT _ w` (`223/57` for `MXINT8` vs `MXFP8-E4M3`, winning at `B = 16, 32`). |
+| `mxint_all_b_ef21_contraction_exact` | `MxintMxfpSwar.Ef21Bounds` | For all $B \ge 1$, $w \ge 2$: symmetric `MXINT _ w` bounds $(B - 1)/(4 M^2 + B - 1)$ (AbsMax) and $B/(M^2 + B - 1)$ (`E8M0`) over the abstract error predicate `IsMxintErr`, with tight attainment.
+| `mxint_vs_mxfp_exact_blocksize_crossover` | `MxintMxfpSwar.Ef21Bounds` | Integer crossovers $B^*(w)$ between the `MXINT` bound and the hand-entered `MXFP` defect formulas (`223/57` for `MXINT8` vs the model's `MXFP8-E4M3`, winning at `B = 16, 32`).
 | `kulisch_mxint_zero_overflow_swar_exact` | `MxintMxfpSwar.KulischSwar` | Exact `B = 32` Kulisch dot bounds: `MXINT4` in `int12` (`±1568`), symmetric `MXINT6` in `int16` (`±30752`, 2-lane SWAR), asymmetric `MXINT6` overflows by `1` (`+32768`). |
-| `half_integer_zero_free_o_one_over_b_collapse` | `MxintMxfpSwar.HalfIntAsym` | Exact $O(1/B)$ half-integer rescaled collapse and `E8M0` divergence thresholds $4^{w-1} - 2^{w-1} + 1 \in \{3, 13, 57, 993, 16257\}$. |
+| `half_integer_zero_free_o_one_over_b_collapse` | `MxintMxfpSwar.HalfIntAsym` | For the modelled half-integer formats: $O(1/B)$ rescaled collapse and `E8M0` divergence thresholds $4^{w-1} - 2^{w-1} + 1 \in \{3, 13, 57, 993, 16257\}$.
 | `mxint4_asym_beats_sym_crossover_b16` | `MxintMxfpSwar.HalfIntAsym` | Exact `B = 15` tie (`1/15`), asymmetric `[-8, 7]` beats `[-7, 7]` for all $B \ge 16$, plus exact `4×` `7 vs 8` `E8M0` scale cliff. |
 | `mxint_exact_integer_associativity` | `MxintMxfpSwar.KulischSwar` | Unconditional `Int` associativity, block-split additivity, and permutation invariance for `intDot`. |
 
@@ -632,12 +632,12 @@ All statements are in [`sampling-gumbel-cdf-bounds/Challenge.lean`](sampling-gum
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `gumbel_max_impossible_token_horizon_exact` | `SamplingHorizons.GumbelHorizon` | Exact finite-$b$-bit Gumbel-Max impossible-token horizon with rational certificates $\Delta _ {\mathrm{impossible}}(24) < 19.45 < 20$ and $\Delta _ {\mathrm{impossible}}(8) < 7.26 < 8$. |
-| `specdec_exact_losslessness_vs_finite_residual_crash` | `SamplingHorizons.SpecDec` | Exact rational SpecDec losslessness vs bit-exact `FP8-E4M3` (`V = 64`) and `BF16` (`V = 2`) zero-residual `NaN` crash witnesses. |
-| `specdec_q32_integer_exact_zero_leak` | `SamplingHorizons.SpecDec` | Exact division-free `Q32` integer speculative decoding (`accept + Z = 2^{32}`, zero over-accepts, zero crashes, exact `0` TV leak). |
-| `descending_cdf_swamping_erasure_law` | `SamplingHorizons.CdfSwamping` | Exact RNE descending-CDF swamping cutoff $2^{-(m+2)}$ (`1/512` BF16, `1/4096` FP16, `2^{-25}` FP32) erasing all remaining tail tokens. |
-| `fenwick_pairwise_tree_zero_swamping_exact` | `SamplingHorizons.CdfSwamping` | Balanced binary-tree / Fenwick pairwise sum over $2^k$ dyadic tail probabilities `2^{-r}` computes exact `2^k * 2^{-r}` with zero rounding error. |
-| `top_p_nucleus_mass_shortfall_lower_bound` | `SamplingHorizons.CdfSwamping` | Exact cumulative mass shortfall & TV distance lower bound `K * t` (Llama-3 `V = 128,256` BF16 witness with TV `9/16 > 1/2`). |
+| `gumbel_max_impossible_token_horizon_exact` | `SamplingHorizons.GumbelHorizon` | Zero win count for tokens beyond the Gumbel-Max horizon $G _ {\max} - G _ {\min}$ for an arbitrary bounded noise map $G$, with numeral inequalities $\Delta _ {\mathrm{impossible}}(24) < 19.45 < 20$ and $\Delta _ {\mathrm{impossible}}(8) < 7.26 < 8$ about `expLower` (the link to $G(u) = -\ln(-\ln u)$ is made in the README, not in Lean). |
+| `specdec_exact_losslessness_vs_finite_residual_crash` | `SamplingHorizons.SpecDec` | Exact rational SpecDec losslessness vs zero-residual `NaN` crash witnesses labelled `FP8-E4M3` (`V = 64`) and `BF16` (`V = 2`), using small hand-coded rounding functions, not the real formats. |
+| `specdec_q32_integer_exact_zero_leak` | `SamplingHorizons.SpecDec` | Division-free `Q32` fixed-point speculative decoding in the stated integer model (`accept + Z = 2^{32}`, zero over-accepts, zero crashes, `0` TV leak). |
+| `descending_cdf_swamping_erasure_law` | `SamplingHorizons.CdfSwamping` | Descending-CDF swamping cutoff $2^{-(m+2)}$ (`1/512` BF16-labelled, `1/4096` FP16, `2^{-25}` FP32), assuming as a hypothesis that the adder satisfies `add S x = S` for small `x`; the remaining tail tokens are then erased. |
+| `fenwick_pairwise_tree_zero_swamping_exact` | `SamplingHorizons.CdfSwamping` | Balanced binary-tree / Fenwick pairwise sum over $2^k$ dyadic tail probabilities `2^{-r}` computes `2^k * 2^{-r}` with zero rounding error under an RNE adder assumed exact on dyadic powers of two. |
+| `top_p_nucleus_mass_shortfall_lower_bound` | `SamplingHorizons.CdfSwamping` | Cumulative mass shortfall and TV distance lower bound `K * t`, under the same `add S x = S` hypothesis; the `V = 128,256` witness (Llama-3 vocabulary size, TV `9/16 > 1/2`) is a rational vector with no `BF16` rounding and no model. |
 
 ## 50. [`alibi-bitsplit-kulisch/`](alibi-bitsplit-kulisch/)
 
@@ -645,12 +645,12 @@ All statements are in [`alibi-bitsplit-kulisch/Challenge.lean`](alibi-bitsplit-k
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `alibi_content_swamping_and_dyadic_slope_exact` | `AlibiBitsplitKulisch.AlibiSwamping` | Universal RNE `ALiBi` content-swamping threshold $B \ge 2^{p+1}|x|$, `BF16`/`FP8`/`FP16` (`d = 65,520`) horizons, and zero mul-error for dyadic slopes. |
+| `alibi_content_swamping_and_dyadic_slope_exact` | `AlibiBitsplitKulisch.AlibiSwamping` | Content-swamping threshold $B \ge 2^{p+1}|x|$ for the hand-written RNE predicate `rneSwampsAtNegB` (a model, not a floating-point library), `BF16`/`FP8`/`FP16` (`d = 65,520`) horizons, and zero mul-error for dyadic slopes. |
 | `bilinear_int_asymmetric_bitsplit_crossovers_exact` | `AlibiBitsplitKulisch.BitsplitMxfp` | Exact finite-level symmetric `INT _ b` bilinear crossovers (`125/22`, `24025/92`, `10143/2350`, `49/5`, `10571/2254`). |
 | `absmax_pinned_superoutlier_bitsplit_reversal` | `AlibiBitsplitKulisch.BitsplitMxfp` | Exact absmax-pinned super-outlier reversal (`W5A3 > W4A4` iff $S^2 > 125/22$, `W4A2 > W3A3` iff $S^2 > 49/5$). |
-| `mxfp_w5a7_beats_w6a6_mantissa_parity_exact` | `AlibiBitsplitKulisch.BitsplitMxfp` | Exact 12-bit mantissa-parity dominance of `W5A7` (`MXFP5-E2M2 × MXFP7-E3M3`) over `W6A6` (`MXFP6-E3M2 × MXFP6-E3M2`) by `8/5`. |
-| `mixed_format_signed_kulisch_width_exact` | `AlibiBitsplitKulisch.KulischExact` | Single-bit tight signed Kulisch widths across `FP4×INT4`, `FP4×INT8`, `INT4×FP8-E4M3` (`27..36b`), and `FP4×FP8-E4M3` (`28..37b`). |
-| `kulisch_int64_exact_associativity_vs_fp32_drift` | `AlibiBitsplitKulisch.KulischExact` | Constructive `int64 _ t` Kulisch permutation invariance vs explicit `K = 32` `INT4 × FP8-E4M3` FP32 non-associativity witness. |
+| `mxfp_w5a7_beats_w6a6_mantissa_parity_exact` | `AlibiBitsplitKulisch.BitsplitMxfp` | `W5A7` (`MXFP5-E2M2 × MXFP7-E3M3`) beats `W6A6` (`MXFP6-E3M2 × MXFP6-E3M2`) by `8/5` at a 12-bit budget in a model where `mxfpRelMSE` $= (1/12)4^{-m}$ depends on mantissa bits only, so this follows from the definition. |
+| `mixed_format_signed_kulisch_width_exact` | `AlibiBitsplitKulisch.KulischExact` | Single-bit tight signed Kulisch accumulator widths in the stated integer model across `FP4×INT4`, `FP4×INT8`, `INT4×FP8-E4M3` (`27..36b`), and `FP4×FP8-E4M3` (`28..37b`). |
+| `kulisch_int64_exact_associativity_vs_fp32_drift` | `AlibiBitsplitKulisch.KulischExact` | `int64 _ t` Kulisch permutation invariance vs an explicit `K = 32` `INT4 × FP8-E4M3` non-associativity witness in a hand-written FP32 sum model. |
 
 ## 51. [`swiglu-kurtosis-diag-opt/`](swiglu-kurtosis-diag-opt/)
 
@@ -658,12 +658,12 @@ All statements are in [`swiglu-kurtosis-diag-opt/Challenge.lean`](swiglu-kurtosi
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `reglu_exact_two_x_kurtosis_multiplication_law` | `SwiGluKurtosis.KurtosisLaws` | Exact `2×` gating-sparsity kurtosis identity $\mathrm{Kurt}(\mathrm{ReLU}(G) \cdot U) = 2\,\mathrm{Kurt}(G)\,\mathrm{Kurt}(U)$ with Gaussian (`18`) and Laplace (`72`) witnesses. |
-| `correlated_bilinear_kurtosis_amplification_exact` | `SwiGluKurtosis.KurtosisLaws` | Exact correlated kurtosis amplification $2\mathbb{E}[G^8]/(\mathbb{E}[G^4])^2$ and Gaussian-mixture curve (`70/3` at $\rho = 1$, `76/3` at $\rho = 1/2$). |
+| `reglu_exact_two_x_kurtosis_multiplication_law` | `SwiGluKurtosis.KurtosisLaws` | Exact `2×` gating-sparsity kurtosis identity $\mathrm{Kurt}(\mathrm{ReLU}(G) \cdot U) = 2\,\mathrm{Kurt}(G)\,\mathrm{Kurt}(U)$ for finite symmetric rational distributions, with witnesses using kurtosis inputs `3` (giving `18`) and `6` (giving `72`). |
+| `correlated_bilinear_kurtosis_amplification_exact` | `SwiGluKurtosis.KurtosisLaws` | Correlated kurtosis amplification $2\mathbb{E}[G^8]/(\mathbb{E}[G^4])^2$ and Gaussian-moment mixture curve (`70/3` at $\rho = 1$, `76/3` at $\rho = 1/2$), for finite symmetric distributions. |
 | `swiglu_zero_flop_diagonal_equivalence_identity` | `SwiGluKurtosis.DiagonalEquiv` | Exact zero-FLOP diagonal invariance $W _ {\mathrm{down}} S^{-1}(\phi(g) \odot (S u)) = W _ {\mathrm{down}}(\phi(g) \odot u)$ leaving nonlinear `W _ {\mathrm{gate}}` untouched. |
-| `swiglu_optimal_diagonal_scale_amgm_law` | `SwiGluKurtosis.DiagonalEquiv` | Exact AM-GM/SOS optimal diagonal scale $\lambda^2 = K\sqrt{\varepsilon _ a / \varepsilon _ w}$ with clamped optimality and `W4A4`/`W8A4`/`W16A4` certificates. |
-| `gated_ffn_asymmetric_bit_allocation_dominance` | `SwiGluKurtosis.BitAllocAndFP4` | Universal 3-term cube AM-GM lower bound and exact integer-bit dominance `iff` laws (`(4, 5, 3) < (4, 4, 4) ↔ S _ u > 4 S _ d`). |
-| `mxfp4_block32_vs_nvfp4_block16_kurtosis_underflow_gap` | `SwiGluKurtosis.BitAllocAndFP4` | `MXFP4` (`B = 32`) flushes all 31 background entries `< M/24` to zero, while `NVFP4` (`B = 16`) preserves 100% of the clean sub-block. |
+| `swiglu_optimal_diagonal_scale_amgm_law` | `SwiGluKurtosis.DiagonalEquiv` | AM-GM/SOS optimal diagonal scale $\lambda^2 = K\sqrt{\varepsilon _ a / \varepsilon _ w}$ for the stated error function $E(\lambda)$, with clamped optimality and `W4A4`/`W8A4`/`W16A4` rational certificates. |
+| `gated_ffn_asymmetric_bit_allocation_dominance` | `SwiGluKurtosis.BitAllocAndFP4` | 3-term cube AM-GM lower bound and integer-bit dominance `iff` laws in the first-order error model $\sum S_i 4^{-b_i}$ (`(4, 5, 3)` beats `(4, 4, 4)` iff `S _ u > 4 S _ d`). |
+| `mxfp4_block32_vs_nvfp4_block16_kurtosis_underflow_gap` | `SwiGluKurtosis.BitAllocAndFP4` | In the `E2M1` zero-flush model of `Defs.lean`, `MXFP4` (`B = 32`) flushes all 31 background entries `< M/24` to zero, while `NVFP4` (`B = 16`) keeps all 16 entries of the clean sub-block nonzero. |
 
 ## 52. [`bitserial-lut-dag-bounds/`](bitserial-lut-dag-bounds/)
 
@@ -672,10 +672,10 @@ All statements are in [`bitserial-lut-dag-bounds/Challenge.lean`](bitserial-lut-
 | Theorem | Module | Statement |
 |---|---|---|
 | `binary_lut_dag_lower_bound_exact` | `BitSerialLutDag.BinaryDag` | Universal 2-input linear DAG lower bound $2^{g-1} + g - 2$ ops and $\lceil\log _ 2 g\rceil$ depth for all $g \ge 2$ (`2, 5, 10, 19` ops). |
-| `tmac_depth2_optimal_12_vs_14_circuit` | `BitSerialLutDag.BinaryDag` | Exact soundness & completeness of `g = 4` `(12 ops, depth 2)` circuit beating T-MAC `(14, 3)` plus `(11, 3)` and lower-bound-tight `(10, 4)` circuits. |
+| `tmac_depth2_optimal_12_vs_14_circuit` | `BitSerialLutDag.BinaryDag` | Validity and symbolic completeness of a `g = 4` `(12 ops, depth 2)` circuit (found by computer search) beating naive T-MAC `(14, 3)`, plus `(11, 3)` and lower-bound-tight `(10, 4)` circuits; Pareto-optimality of `(12, 2)` is not proved. |
 | `ternary_lut_dag_bounds_and_symmetry` | `BitSerialLutDag.TernaryDag` | Exact symmetry-halved ternary LUT size $(3^g - 1)/2$, lower bound $(3^g - 1)/2 - g$, minimal $g = 2, 3, 4$ DAGs, and `(≤2, 4)` sparse DAG. |
 | `popcnt_zero_lut_exact_bitserial_dot_identity` | `BitSerialLutDag.PopcntDot` | Universal bit-exact `POPCNT` dot-product identity for binary/ternary weights against arbitrary $b$-bit signed/unsigned activations. |
-| `lut_vs_popcnt_amortization_crossover_exact` | `BitSerialLutDag.PopcntDot` | Exact rational LUT-vs-`POPCNT` amortization crossover and RDNA 3 no-crossover dominance theorem (`POPCNT` wins for all `M, N, K > 0`). |
+| `lut_vs_popcnt_amortization_crossover_exact` | `BitSerialLutDag.PopcntDot` | Rational LUT-vs-`POPCNT` amortization crossover and a no-crossover dominance theorem (`POPCNT` wins for all `M, N, K > 0`) under assumed model cost constants (`W = 32`, `b = 8`, `c_pop = 2`, `3/4`), not measurements. |
 | `tmac_int16_overflow_threshold_exact` | `BitSerialLutDag.PopcntDot` | Universal `int16` safety bound (`K _ {\max} = 258` symmetric `int8`) and exact full-`int8` wrap-by-1 trap (`+32768 → -32768`) at `K = 256/128/64`. |
 
 ## 53. [`muon-ns-dyadic-cycles/`](muon-ns-dyadic-cycles/)
@@ -684,12 +684,12 @@ All statements are in [`muon-ns-dyadic-cycles/Challenge.lean`](muon-ns-dyadic-cy
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `jordan_bf16_nonunit_sum_and_period2_limit_cycle` | `MuonNsDyadic.JordanCycles` | Proves Jordan's BF16 `(55/16, -153/32, 65/32)` sums to `11/16 ≠ 1`, traps Muon matrix-form in period-2 `{11/16, 71/64}`, with exact `23/64` worst-case `[0.01, 1]` deviation. |
-| `jordan_bf16_parenthesization_bifurcation` | `MuonNsDyadic.JordanCycles` | Exact BF16 RNE parenthesization period-doubling bifurcation across Muon (period 2), Monomial (period 4), and Horner (period 8) on all `861` `[0.01, 1]` values. |
-| `fp8_e4m3fn_optimal_quintic_exact_zero_error` | `MuonNsDyadic.OptimalDyadic` | Certifies GPU-discovered FP8-E4M3FN `(2, -9/8, 1/8)` achieves exact `0` 5-step error across all `28` `[0.05, 1]` values and `0` NaN/overflow on all `56` positive unit FP8 values. |
-| `bf16_optimal_dyadic_quintic_one_ulp_confinement` | `MuonNsDyadic.OptimalDyadic` | Certifies GPU-discovered BF16 `(35/16, -31/16, 3/4)` confines all `564` `[0.05, 1]` BF16 values within 1 ULP (`1/128`, `44×–46×` tighter than Jordan). |
-| `polar_express_bf16_fp8_one_ulp_overshoot_cliff` | `MuonNsDyadic.OvershootPareto` | Exact 1-ULP overshoot cliffs for Polar-Express (`129/128 → +Inf` BF16; `9/8 → NaN` FP8-E4M3FN) and MXFP4 saturation of Jordan `(3, -4, 2)` to `6`. |
-| `universal_stationary_quintic_pareto_law` | `MuonNsDyadic.OvershootPareto` | Universal rational stationary quintic law: $a + b + c = 1 \implies p'(1) = 1 - 2a + 2c$, $|p'(1)| < 1 \iff a - 2 < c < a - 1$. |
+| `jordan_bf16_nonunit_sum_and_period2_limit_cycle` | `MuonNsDyadic.JordanCycles` | Jordan's BF16 `(55/16, -153/32, 65/32)` sums to `11/16 ≠ 1`; in the hand-written scalar BF16 RNE model, Muon matrix-form falls into the period-2 cycle `{11/16, 71/64}`, with `23/64` worst-case `[0.01, 1]` deviation over the `861` listed values. |
+| `jordan_bf16_parenthesization_bifurcation` | `MuonNsDyadic.JordanCycles` | Period-2 (Muon), period-4 (Monomial) and period-8 (Horner) cycles of the Jordan coefficients in the scalar BF16 RNE model, a finite check on all `861` `[0.01, 1]` values. |
+| `fp8_e4m3fn_optimal_quintic_exact_zero_error` | `MuonNsDyadic.OptimalDyadic` | For the GPU-found FP8-E4M3FN `(2, -9/8, 1/8)` (optimality not proved), exact `0` 5-step error across all `28` `[0.05, 1]` values and `0` NaN/overflow on all `56` positive unit FP8 values, in the hand-written FP8 model. |
+| `bf16_optimal_dyadic_quintic_one_ulp_confinement` | `MuonNsDyadic.OptimalDyadic` | For the GPU-found BF16 `(35/16, -31/16, 3/4)` (optimality not proved), all `564` `[0.05, 1]` BF16 values stay within 1 ULP (`1/128`, `44×–46×` smaller than Jordan's error) in the hand-written BF16 model. |
+| `polar_express_bf16_fp8_one_ulp_overshoot_cliff` | `MuonNsDyadic.OvershootPareto` | 1-ULP overshoot cliffs for the Polar-Express schedule in the hand-written models (`129/128 → +Inf` BF16; `9/8 → NaN` FP8-E4M3FN) and MXFP4-E2M1 saturation of Jordan `(3, -4, 2)` to `6`; finite checks on listed values. |
+| `stationary_quintic_slope_vs_fixedpoint_pareto` | `MuonNsDyadic.OvershootPareto` | Universal statement over `Rat` for odd quintics: $a + b + c = 1 \implies p'(1) = 3 - 2a + 2c$, $|p'(1)| < 1 \iff a - 2 < c < a - 1$, with the overshoot-or-repel dichotomy for $a \ge 3$ (scalar model, not matrix Muon). |
 
 ## 54. [`kahan-neumaier-fp8-bounds/`](kahan-neumaier-fp8-bounds/)
 
@@ -697,11 +697,11 @@ All statements are in [`kahan-neumaier-fp8-bounds/Challenge.lean`](kahan-neumaie
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `microbatch_rne_freeze_threshold_exact` | `KahanNeumaierFp8.RneFreeze` | Universal RNE freeze threshold $\rho _ {\mathrm{freeze,min}}(P) = 2^{P+1}$ (`8, 16, 256, 2048`) and max non-freeze ratio $2^{P+2} - 2$ with early-spike erasure vs pairwise tree preservation. |
-| `kahan_late_dipole_spike_total_erasure_vs_neumaier` | `KahanNeumaierFp8.KahanNeumaier` | First half of Dual Separation: late dipole `[1^m, +S, -S]` causes `100%` Kahan erasure vs `100%` exact Neumaier recovery. |
+| `microbatch_rne_freeze_threshold_exact` | `KahanNeumaierFp8.RneFreeze` | RNE freeze threshold $\rho _ {\mathrm{freeze,min}}(P) = 2^{P+1}$ (`8, 16, 256, 2048`) and max non-freeze ratio $2^{P+2} - 2$ for the model RNE function `flRNENat P`, with early-spike erasure vs pairwise tree preservation. |
+| `kahan_late_dipole_spike_total_erasure_vs_neumaier` | `KahanNeumaierFp8.KahanNeumaier` | First half of Dual Separation: late dipole `[1^m, +S, -S]` makes Kahan erase all pre-spike microbatches while Neumaier recovers the exact sum, in the model arithmetic. |
 | `neumaier_self_swamping_ceiling_beats_by_kahan` | `KahanNeumaierFp8.KahanNeumaier` | Second half of Dual Separation: Neumaier self-swamps at exact ceiling $M _ {\mathrm{Neumaier,max}}(P) = 2^{P+2}$ (`16, 32, 512, 4096`), beaten by Kahan's per-step fold-back. |
-| `fp8_e4m3fn_kulisch_int32_9362_exact` | `KahanNeumaierFp8.KulischInt32` | Exact signed Kulisch bit-width law certifying up to $M \le 9{,}362$ arbitrary finite OCP `FP8-E4M3FN` values sum bit-exactly in `int32_t` (tight overflow at `9,363`). |
-| `microbatch_xor_vdc_sr_zero_bias_and_stratification` | `KahanNeumaierFp8.XorVdcSr` | Bit-exact microbatch XOR-VDC SR bijection on $\mathrm{Fin}(2^K)$, exact zero bias, `< 1` ULP deterministic bound, and exact $M\times$ MSE reduction (`1/6` vs `M/6`). |
+| `fp8_e4m3fn_kulisch_int32_9362_exact` | `KahanNeumaierFp8.KulischInt32` | Signed Kulisch bit-width law: sums of up to $M \le 9{,}362$ arbitrary finite `FP8-E4M3FN` values (as modelled) are bit-exact in `int32_t`; `9,363` copies of `448` overflow. |
+| `microbatch_xor_vdc_sr_zero_bias_and_stratification` | `KahanNeumaierFp8.XorVdcSr` | Microbatch XOR-VDC stochastic-rounding map is a bijection on $\mathrm{Fin}(2^K)$, with zero bias, a `< 1` ULP deterministic bound, and an $M\times$ MSE reduction (`1/6` vs `M/6`) in the stated model. |
 | `shared_exponent_int32_block_accum_associativity` | `KahanNeumaierFp8.BlockAccum` | Unconditional associativity, block-split additivity, and permutation invariance of shared-exponent `int32_t`/`int64_t` block accumulation. |
 
 ## 55. [`grpo-k3-kl-horizons/`](grpo-k3-kl-horizons/)
@@ -711,11 +711,11 @@ All statements are in [`grpo-k3-kl-horizons/Challenge.lean`](grpo-k3-kl-horizons
 | Theorem | Module | Statement |
 |---|---|---|
 | `schulman_k3_exact_nonnegativity_and_quadratic_bound` | `GrpoK3Kl.SchulmanK3` | Exact rational Schulman `k3` non-negativity, quadratic Taylor sandwich, global stabilizer $k _ 3^{\mathrm{stab}}(d) \ge d^2/3$, and `[2/2]` Padé non-negativity. |
-| `bf16_k3_negative_kl_and_deadzone_exact` | `GrpoK3Kl.SchulmanK3` | Bit-exact `BF16`/`FP16` RNE negative-KL violations for both Order A (`0x3b01 → -1/256`) and Order B (`0x3b7f → -255/65536`) plus exact dead-zero bands. |
-| `fp8_bf16_logprob_cancellation_clip_collapse` | `GrpoK3Kl.LogProbClipping` | Exact binade-ULP clip-escape proof certifying total `[4/5, 6/5]` PPO/GRPO clip-window collapse at $|\log p| \ge 2$ (`FP8-E4M3`), `32` (`BF16`), `256` (`FP16`). |
+| `bf16_k3_negative_kl_and_deadzone_exact` | `GrpoK3Kl.SchulmanK3` | Negative-KL values for two chosen evaluation orders of `k3` under the model `BF16`/`FP16` RNE function of `Defs.lean` (not the kernel of any framework): Order A (`0x3b01 → -1/256`) and Order B (`0x3b7f → -255/65536`), plus dead-zero bands. |
+| `fp8_bf16_logprob_cancellation_clip_collapse` | `GrpoK3Kl.LogProbClipping` | Binade-ULP clip-escape statement (model rounding) certifying total `[4/5, 6/5]` PPO/GRPO clip-window collapse at $|\log p| \ge 2$ (`FP8-E4M3`), `32` (`BF16`), `256` (`FP16`). |
 | `direct_logit_diff_binade_invariance` | `GrpoK3Kl.LogProbClipping` | Direct logit-difference tail-shift invariance capping error at $2^{-(m+1)} B$ independent of tail binade (`128×–256×` tighter than naive BF16 ULP). |
 | `grpo_binary_reward_extreme_overweighting_exact` | `GrpoK3Kl.GrpoAdvantage` | Exact binary-reward GRPO over-weighting ratios $G - 1$ and $G^2/(4(G - 1))$ (`1024/63 > 16` at `G = 64`) versus `Dr.GRPO` ($|A _ i| \le 1$). |
-| `grpo_bf16_onepass_negvar_and_fp8_mean_stall` | `GrpoK3Kl.GrpoAdvantage` | Bit-exact `BF16` one-pass negative-variance (`-1/8 < 0`) and `FP8-E4M3` $G = 64$ mean-saturation stall (`64/64 = 1 ≠ 4`). |
+| `grpo_bf16_onepass_negvar_and_fp8_mean_stall` | `GrpoK3Kl.GrpoAdvantage` | In the model rounding: `BF16` one-pass negative variance (`-1/8 < 0`) and `FP8-E4M3` $G = 64$ mean-saturation stall (`64/64 = 1 ≠ 4`). |
 
 ## 56. [`deltanet-householder-e8/`](deltanet-householder-e8/)
 
@@ -724,8 +724,8 @@ All statements are in [`deltanet-householder-e8/Challenge.lean`](deltanet-househ
 | Theorem | Module | Statement |
 |---|---|---|
 | `householder_spectral_stability_iff_exact` | `DeltaNetHouseholderE8.HouseholderSpectral` | Universal rational Householder spectral contraction `iff` law $0 \le \beta\|k\| _ 2^2 \le 2$ and strict explosion above `2`. |
-| `quantized_unit_norm_supremum_exact` | `DeltaNetHouseholderE8.QuantizedTwoUlp` | Exact RNE binade-bottom unit-norm squared supremum $S _ {\max}^{(1)}(m) = ((2^{m+1}+2)/(2^{m+1}+1))^2 > 1$ with 8D `FP8-E4M3` witness `287/256`. |
-| `universal_two_ulp_safe_ceiling_theorem` | `DeltaNetHouseholderE8.QuantizedTwoUlp` | Universal theorem for all $m \ge 2$: `1` ULP below `2` always explodes, whereas `2` ULPs below `2` (`7/4` FP8, `127/64` BF16, `1023/512` FP16) is unconditionally contractive. |
+| `quantized_unit_norm_supremum_exact` | `DeltaNetHouseholderE8.QuantizedTwoUlp` | Defines $S _ {\max}^{(1)}(m) = ((2^{m+1}+2)/(2^{m+1}+1))^2 > 1$ and proves $\|\hat u\| _ 2^2 \le S _ {\max}^{(1)}(m)$ conditional on a hypothesis $\lvert\hat u _ i\rvert \le r _ m \lvert u _ i\rvert$ (not derived from IEEE-754 RNE; attainment is not proved: the 8D `FP8-E4M3`-grid witness has squared norm `287/256 < 324/289`). |
+| `universal_two_ulp_safe_ceiling_theorem` | `DeltaNetHouseholderE8.QuantizedTwoUlp` | For all $m \ge 2$: $\beta _ 1(m) S _ {\max}^{(1)}(m) > 2$ and $\beta _ 2(m) S _ {\max}^{(1)}(m) < 2$ with $\beta _ 2 =$ `7/4` (FP8), `127/64` (BF16), `1023/512` (FP16); rational inequalities about the stated bound, not hardware rounding. |
 | `wy_triangular_inverse_norm_growth_exact` | `DeltaNetHouseholderE8.WyTriangular` | Exact aligned-key WY inverse $T _ {i,j} = (-1)^{i-j} \cdot 2$ with exact row $\ell _ 1$-norm $2i + 1$ and $\|T\| _ \infty = 2C - 1$ (`127` at `C = 64`). |
 | `d8_and_e8_weyl_root_zero_ulp_orthogonality` | `DeltaNetHouseholderE8.WeylE8Closure` | Exact zero-remainder division `(2 * dot w x) % 8 = 0` (`>>> 2`), lattice closure, norm preservation, and involutivity for `D _ 8` and all `240` roots of `2 E _ 8`. |
 | `non_weyl_hamming_closure_obstruction` | `DeltaNetHouseholderE8.WeylE8Closure` | Exact integer-closure obstruction for non-Weyl `Hamming[8,4,4]` (`(2 * dot v x) % 4 = 2`, non-integer reflection entry `1/2`). |
@@ -736,11 +736,11 @@ All statements are in [`rope-q32-coprime-freeze/Challenge.lean`](rope-q32-coprim
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `rope_bf16_fp16_consecutive_freeze_run_exact` | `RopeQ32Coprime.FreezeHorizon` | Universal binade ULP freeze-run law (`32, 256, 1024, 8192` BF16 at `4K..1M`) and exact `FP16` `+Inf` overflow cliff at `m = 65,520`. |
-| `rope_high_freq_random_phase_horizon_exact` | `RopeQ32Coprime.FreezeHorizon` | Exact high-frequency random-phase threshold at $m = 2^{p+1} + 1$ (`257` BF16, `2049` FP16) where `ulp ≥ 2 rad > π/2`. |
-| `q32_modular_odd_dyadic_zero_drift_exact` | `RopeQ32Coprime.Q32Modular` | Universal Hensel-lifting theorem: odd-frequency `Q32` modular phase is a bijection on $\mathrm{Fin}(2^{32})$ with exact zero-drift relative-position additivity. |
-| `quantized_rotation_norm_drift_exact` | `RopeQ32Coprime.RotationNormDrift` | Exact worst-case unit-circle norm drift `1/4` (`MXFP4-E2M1`), `21/256` (`FP8-E4M3`), and `0` identically for Dyadic Cayley rotations. |
-| `relative_position_factorization_error_decomposition` | `RopeQ32Coprime.RelativeErrorCayley` | Exact algebraic separation of phase-truncation vs rotation-quantization logit error proving `Q32 + FP8` (`65/512 < 1`) strictly beats frozen BF16/FP16. |
+| `rope_bf16_fp16_consecutive_freeze_run_exact` | `RopeQ32Coprime.FreezeHorizon` | Binade ULP freeze-run law for the integer rounding model `binadeRneNat` (`32, 256, 1024, 8192` BF16 at `4K..1M`; not linked to IEEE-754) and the `FP16` `+Inf` overflow cliff at `m = 65,520`. |
+| `rope_high_freq_random_phase_horizon_exact` | `RopeQ32Coprime.FreezeHorizon` | High-frequency threshold position $m = 2^{p+1} + 1$ (`257` BF16, `2049` FP16) where `binadeUlp ≥ 2 > π/2` (inequalities with `piRat ≤ 22/7`); no random-phase error distribution is formalised, and the `75%` is the numeral `1 - 2 * (1/8)`. |
+| `q32_modular_odd_dyadic_zero_drift_exact` | `RopeQ32Coprime.Q32Modular` | Hensel-lifting statement: odd-frequency `Q32` modular phase is a bijection on $\mathrm{Fin}(2^{32})$ with zero-drift relative-position additivity (an odd number is a unit modulo $2^{32}$). |
+| `quantized_rotation_norm_drift_exact` | `RopeQ32Coprime.RotationNormDrift` | Exact worst-case unit-circle norm drift `1/4` and `21/256` for the hand-written piecewise quantizers `quantMXFP4` and `quantFP8E4M3` of `Defs.lean` (not the OCP formats), and `0` identically for Dyadic Cayley rotations. |
+| `relative_position_factorization_error_decomposition` | `RopeQ32Coprime.RelativeErrorCayley` | Algebraic separation of phase-truncation vs rotation-quantization logit error and the comparison of the numerals `65/512 < 1` (`ε = 1/32`) and `17/32 < 1` (`ε = 1/8`) with the frozen-rotation score errors `1` and `2`; the link of these `ε` to `FP8` / `MXFP4` is not formalised. |
 | `dyadic_cayley_relative_composition_exact` | `RopeQ32Coprime.RelativeErrorCayley` | Exact $\mathrm{SO}(2, \mathbb{Q})$ group orthogonality, composition, and relative-position factorization laws for rational Cayley rotations. |
 
 ## 58. [`mrope-3d-coprime-bounds/`](mrope-3d-coprime-bounds/)
@@ -749,12 +749,12 @@ All statements are in [`mrope-3d-coprime-bounds/Challenge.lean`](mrope-3d-coprim
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `separable_3d_mrope_axis_floor_theorem` | `Mrope3dCoprime.SeparableFloor` | Universal Separable-Axis Floor Theorem proving Qwen2-VL `(16, 24, 24)` exact `3/4` floor and unconditional Dirichlet–Welch bound $3/4 - 1/(4(N - 1))$. |
+| `separable_3d_mrope_axis_floor_theorem` | `Mrope3dCoprime.SeparableFloor` | Separable-axis floor for the Qwen2-VL `(16, 24, 24)` split: the kernel is `≥ 3/4` at every lag where the T-axis sum is nonnegative (hypothesis), and, under the hypothesis that the T-axis sums are Gram inner products of vectors of squared norm 16, a bound $3/4 - 1/(4(N - 1))$ for some pair of positions. |
 | `coupled_3d_mrope_shatters_separable_floor` | `Mrope3dCoprime.SeparableFloor` | Proves Coupled 3D phases shatter the separable floor, with exact 64-pair $\mathbb{Z} _ 4^3$ zero-sidelobe and 27-pair $\{1, 2, 3\}^3$ ($|K| \le 1/3$) witnesses. |
-| `contiguous_mrope_bf16_width_freeze_exact` | `Mrope3dCoprime.Bf16FreezeResolution` | Proves `100%` BF16 cosine freeze across all 24 contiguous Width pairs (`40..63`) and all 63 patch offsets at $b = 10^6$. |
+| `contiguous_mrope_bf16_width_freeze_exact` | `Mrope3dCoprime.Bf16FreezeResolution` | In the modelled `BF16` rounding, every cosine value in the stated interval snaps to `1.0` for all 24 contiguous Width pairs (`40..63`) and all 63 patch offsets at $b = 10^6$. |
 | `interleaved_vs_contiguous_mrope_resolution_gap` | `Mrope3dCoprime.Bf16FreezeResolution` | Exact geometric-series ratio certifying `> 10^7×` leading-pair and `> 10^6×` full-sum local spatial resolution gain for stride-3 / Qwen3-VL interleaved `mRoPE`. |
 | `q32_3d_modular_phase_exact_relative_invariance` | `Mrope3dCoprime.Q32ModularPhase` | Exact 3D `Q32` modular relative-position homomorphism, cross-modal text-diagonal $(m, m, m)$ invariance, and full $2^{32}$ period along odd-frequency axes. |
-| `cross_modal_fp_phase_drift_vs_q32_exact` | `Mrope3dCoprime.Q32ModularPhase` | Proves total cross-modal `BF16` collapse (`ulp = 1024`) and `FP16` `+Inf` overflow at $m = 131{,}072$ versus exact injective `Q32` phase. |
+| `cross_modal_fp_phase_drift_vs_q32_exact` | `Mrope3dCoprime.Q32ModularPhase` | In the model: total cross-modal `BF16` rounding collapse (`ulp = 1024`) and `FP16` `+Inf` overflow at $m = 131{,}072$, versus injective `Q32` phase. |
 
 ## 59. [`vcache-ipr-xorvdc-bounds/`](vcache-ipr-xorvdc-bounds/)
 
@@ -762,12 +762,12 @@ All statements are in [`vcache-ipr-xorvdc-bounds/Challenge.lean`](vcache-ipr-xor
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `ipr_attention_averaging_sr_vs_rne_exact` | `VcacheIprXorvdc.IprPhaseTransition` | Exact simplex IPR attention-averaging MSE decomposition, RNE-vs-SR threshold $N _ {\mathrm{eff}}^* = (\sigma _ {\mathrm{SR}}^2 - \sigma _ {\mathrm{RNE}}^2)/\mu _ {\mathrm{bias}}^2$, and `2.000×` peaked-head RNE advantage. |
-| `cross_format_int2_sr_beats_int4_mxfp4_rne` | `VcacheIprXorvdc.IprPhaseTransition` | Exact cross-format inversion proving `INT2-SR` and `Ternary-SR` strictly beat `INT4-RNE` and `MXFP4-RNE` once $N _ {\mathrm{eff}} > \sigma _ {\mathrm{SR,low}}^2/\mu _ {\mathrm{bias,high}}^2$. |
+| `ipr_attention_averaging_sr_vs_rne_exact` | `VcacheIprXorvdc.IprPhaseTransition` | Simplex IPR attention-averaging MSE decomposition, RNE-vs-SR threshold $N _ {\mathrm{eff}}^* = (\sigma _ {\mathrm{SR}}^2 - \sigma _ {\mathrm{RNE}}^2)/\mu _ {\mathrm{bias}}^2$, and the `2.000×` peaked-head RNE ratio, for MSE expressions that are definitions in `Defs.lean` (not derived from a random-variable model). |
+| `cross_format_int2_sr_beats_int4_mxfp4_rne` | `VcacheIprXorvdc.IprPhaseTransition` | Cross-format inequality in the model whose MSEs are defined in `Defs.lean`: lower-bit SR beats higher-bit RNE once $N _ {\mathrm{eff}} > \sigma _ {\mathrm{SR,low}}^2/\mu _ {\mathrm{bias,high}}^2$; the `INT2-SR` / `Ternary-SR` / `INT4-RNE` / `MXFP4-RNE` ordering at `L = 16384` compares hard-coded rational constants (GPU measurements not included in this repository). |
 | `xor_vdc_stratified_sr_superconvergence_and_iid_halving` | `VcacheIprXorvdc.XorVdcStratified` | Exact `Fin (2^K)` bijection, zero bias, `< 1` ULP $O(1/L^2)$ super-convergence, and consecutive MSB-flip `2×` i.i.d. variance halving for `XOR-VDC` stratified SR. |
 | `rank1_attention_sink_ipr_crossover_exact` | `VcacheIprXorvdc.Rank1SinkWht` | Exact Rank-1 sink $\mathrm{IPR}(\alpha, L) = \alpha^2 + (1 - \alpha)^2/(L - 1)$ proving $\alpha \ge 3/4 \implies N _ {\mathrm{eff}} < 16/9 < 2$, restored to $L - 1$ by high-precision sink protection. |
 | `rank1_split_wht_orthogonality_and_output_inversion` | `VcacheIprXorvdc.Rank1SinkWht` | Universal Sylvester WHT orthogonality $H _ {2^m}^T H _ {2^m} = 2^m I$ with Rank-1 mean-split commutation requiring only one output-side inverse WHT. |
-| `sub4bit_vcache_packing_density_and_exact_int64_bounds` | `VcacheIprXorvdc.PackingInt64Bounds` | Exact `128K` V-cache compression ratios (`1 : 4 : 8 : 64/7 > 9.14×`), 5-trit/byte bijection, and zero-overflow `int64` `P * V` accumulator bounds. |
+| `sub4bit_vcache_packing_density_and_exact_int64_bounds` | `VcacheIprXorvdc.PackingInt64Bounds` | `128K` V-cache compression ratios from hard-coded per-vector byte counts (`1 : 4 : 8 : 64/7 > 9.14×`; the ternary count includes 2 bytes of overhead, INT4/INT2 none), 5-trit/byte bijection, and zero-overflow `int64` `P * V` accumulator bounds. |
 
 ## 60. [`specdec-wiener-temp-bounds/`](specdec-wiener-temp-bounds/)
 
@@ -779,7 +779,7 @@ All statements are in [`specdec-wiener-temp-bounds/Challenge.lean`](specdec-wien
 | `wiener_mmse_strictly_beats_variance_matching_and_uncalibrated` | `SpecDecWienerTemp.WienerMMSE` | Irrational-free algebraic dominance $\mathrm{MSE}(T _ {\mathrm{MMSE}}^*) < \mathrm{MSE}(T _ {\mathrm{var}}) < \mathrm{MSE}(1)$ across all $\sigma _ z^2, \sigma _ q^2 > 0$. |
 | `quantized_draft_tv_acceptance_lower_bound_exact` | `SpecDecWienerTemp.AcceptanceTV` | Exact acceptance–TV identity $\alpha = 1 - \mathrm{TV}$, ratio/multiplicative perturbation bounds, and Rényi-2 collision sensitivity identity $1 - \|p\| _ 2^2$. |
 | `expected_specdec_yield_and_speedup_exact` | `SpecDecWienerTemp.SpecDecYield` | Closed-form geometric yield $(1 - \alpha^{\gamma+1})/(1 - \alpha)$, net speedup, and exact discrete marginal-benefit unimodality in lookahead $\gamma$. |
-| `sub4bit_self_speculative_dominance_over_fp8_bf16` | `SpecDecWienerTemp.Sub4BitDominance` | Universal bandwidth ceilings ($S \le 1$ `BF16`, $S < 2$ `FP8` for all $\alpha, \gamma$) vs certified `INT2` (`2.976×`), `INT3`, and `INT4` self-speculative dominance. |
+| `sub4bit_self_speculative_dominance_over_fp8_bf16` | `SpecDecWienerTemp.Sub4BitDominance` | In the cost model `draftCost c0 b = c0 * b / 16`: universal ceilings ($S \le 1$ `BF16`, $S < 2$ `FP8` for all $\alpha, \gamma$) and the comparison of speedup values for `INT2` (`2.976×`), `INT3` and `INT4` at imported empirical acceptance rates; a model statement, not a hardware or accuracy theorem. |
 | `wiener_temperature_exact_acceptance_rescue_witnesses` | `SpecDecWienerTemp.AcceptanceRescue` | Exact binary and multi-class rational-base softmax ensembles proving strict acceptance rescue at $T _ {\mathrm{MMSE}}^*$ with zero-cost scale absorption. |
 
 ## 61. [`rag-popcnt-matryoshka-bounds/`](rag-popcnt-matryoshka-bounds/)
@@ -789,11 +789,11 @@ All statements are in [`rag-popcnt-matryoshka-bounds/Challenge.lean`](rag-popcnt
 | Theorem | Module | Statement |
 |---|---|---|
 | `popcnt_binary_and_twoplane_exact_dot_identities` | `RagPopcntMatryoshka.PopcntIdentities` | Universal bit-exact `XOR+POPCNT` bipolar, 1.58-bit ternary, and 2-bit 4-level symmetric `POPCNT` dot-product identities with zero multipliers. |
-| `two_stage_oversample_snr_squared_hierarchy` | `RagPopcntMatryoshka.OversampleSnr` | Exact Cantelli concentration and rational $\mathrm{SNR}^2$ hierarchy $\eta _ {\mathrm{1b}}^2 = 4/\pi^2 < 1/2 < 4/5 < \eta _ {\mathrm{1.58b}}^2 < \eta _ {\mathrm{2b}}^2 < 1$ (`> 1.99×` / `> 2.17×`). |
+| `two_stage_oversample_snr_squared_hierarchy` | `RagPopcntMatryoshka.OversampleSnr` | Cantelli concentration and a rational $\mathrm{SNR}^2$ hierarchy $\eta _ {\mathrm{1b}}^2 = 4/\pi^2 < 1/2 < 4/5 < \eta _ {\mathrm{1.58b}}^2 < \eta _ {\mathrm{2b}}^2 < 1$ (`> 1.99×` / `> 2.17×`) comparing hard-coded rational constants (`etaTernarySq = 8096/10000`, `eta2bSq = 883/1000`) without a derivation here; `piRat` is a free rational in `[3.14, 3.15]`. |
 | `matryoshka_vs_full_dim_binary_spectral_crossover_exact` | `RagPopcntMatryoshka.MatryoshkaCrossover` | Exact Euclidean-fidelity crossover `iff` $E(d _ M) < \eta _ q^2$, strict monotonicity under steeper spectra, and equal-byte `192 B/vec` flat-vs-steep bounds. |
 | `hypercube_sign_wht_automatic_spectral_normalization` | `RagPopcntMatryoshka.HypercubeNorm` | Constant hypercube norm $\|\mathrm{sgn}(H x)\| _ 2^2 = D$ and positive-scale invariance explaining hypercube immunity to unnormalized inner-product hijack. |
 | `stage2_int4_rescore_gap_preservation_exact` | `RagPopcntMatryoshka.Int4RescoreGap` | Universal Top-$K$ ranking preservation and pure-integer Stage-2 symmetric `INT4` margin certification ($64\|q\| _ 1 < \text{gap}$). |
-| `rag_memory_and_bandwidth_speedup_roofline_exact` | `RagPopcntMatryoshka.RooflineSpeedup` | Exact `16×`/`8×` VRAM compression (`192/384 MiB` vs `3072 MiB` FP16 at `1M × 1536`) and exact 2-stage byte-transfer ratio $1/16 + MK/(4N)$ (`> 15.9×`). |
+| `rag_memory_and_bandwidth_speedup_roofline_exact` | `RagPopcntMatryoshka.RooflineSpeedup` | Exact `16×`/`8×` VRAM compression (`192/384 MiB` vs `3072 MiB` FP16 at `1M × 1536`) and 2-stage byte-transfer ratio $1/16 + MK/(4N)$ (`> 15.9×`); byte-count arithmetic in a roofline model, not a measured speedup. |
 
 ## 62. [`flashattn-dyadic-slack-bounds/`](flashattn-dyadic-slack-bounds/)
 
@@ -801,10 +801,10 @@ All statements are in [`flashattn-dyadic-slack-bounds/Challenge.lean`](flashattn
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `dyadic_power_of_two_rescale_zero_mantissa_error` | `FlashAttnDyadicSlack.DyadicRescale` | Exact IEEE-754 proof that multiplying normal floats by $2^{-k}$ shifts only the exponent with `0` mantissa error vs eager `1/2`-ULP midpoint drift. |
+| `dyadic_power_of_two_rescale_zero_mantissa_error` | `FlashAttnDyadicSlack.DyadicRescale` | Multiplying normal floats by $2^{-k}$ shifts only the exponent with `0` mantissa error vs eager `1/2`-ULP midpoint drift, for the model rounding functions of `Defs.lean` (a textbook IEEE-754 fact). |
 | `eager_online_softmax_one_ulp_per_step_collapse` | `FlashAttnDyadicSlack.DyadicRescale` | Universal inductive eager 1-ULP-per-step collapse $\mathrm{seqPow}(p, m \cdot 2^p) = 2^{-m}$ strictly underestimating true exponential decay. |
-| `slack_threshold_fp16_fp8_overflow_boundary_exact` | `FlashAttnDyadicSlack.SlackOverflow` | Exact integer slack overflow `iff` boundaries for `FP8-E4M3` ($\tau \le 8$) and `FP16` tile width `64` ($\tau \le 9$), certifying safe windows `[4, 6]` / `[6, 8]`. |
-| `fp16_flat_attention_65520_overflow_cliff_exact` | `FlashAttnDyadicSlack.SlackOverflow` | Bit-exact IEEE-754 `FP16` RNE flat-attention overflow cliff at exact `L = 65,520` (`65,504 + 16`), causing `100%` `+Inf`/`NaN` for all $L \ge 65{,}520$. |
+| `slack_threshold_fp16_fp8_overflow_boundary_exact` | `FlashAttnDyadicSlack.SlackOverflow` | Exact integer slack overflow `iff` boundaries for `FP8-E4M3` ($\tau \le 8$) and `FP16` tile width `64` ($\tau \le 9$), with integer windows `[4, 6]` / `[6, 8]` satisfying the stated inequalities. |
+| `fp16_flat_attention_65520_overflow_cliff_exact` | `FlashAttnDyadicSlack.SlackOverflow` | `FP16` overflow cliff for one rounding of the exact count `L` (exact accumulation assumed; not a sequential `FP16` sum): `L = 65,520` (`65,504 + 16`) rounds to `+Inf`, as does every $L \ge 65{,}520$. |
 | `dyadic_exponent_normalization_cancels_identically` | `FlashAttnDyadicSlack.DyadicNormKulisch` | Zero-mantissa-error `2^{-1}` normalization keeping $0 \le \ell < 2^{14}$ for arbitrary $L$ while cancelling identically in $(2^{-k} O)/(2^{-k} \ell) = O/\ell$. |
 | `flash_tile_int32_kulisch_associativity_and_exactness` | `FlashAttnDyadicSlack.DyadicNormKulisch` | Exact signed `int32` (`Q8.20`) `64`-element `P * V` Kulisch zero-overflow, zero-drift, and `List.Perm` permutation invariance proof. |
 
@@ -814,12 +814,12 @@ All statements are in [`nsa-ballbound-moba-bounds/Challenge.lean`](nsa-ballbound
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `moba_antipodal_and_buried_needle_blindspot_exact` | `NsaBallBoundMoba.MobaBlindspot` | Universal antipodal-pair ($B \ge 2$) and buried-needle ($B \ge 3$) blindspot forcing $q^T S _ b \le 0$ while $\max _ j q^T k _ j = 2\|q\| _ 2^2 > 0$. |
+| `moba_antipodal_and_buried_needle_blindspot_exact` | `NsaBallBoundMoba.MobaBlindspot` | Universal antipodal-pair ($B \ge 2$) and buried-needle ($B \ge 3$) blindspot forcing $q^T S _ b \le 0$ while $\max _ j q^T k _ j = 2\|q\| _ 2^2 > 0$ (hand-constructed blocks: a counterexample to a ranking property, not a measured recall). |
 | `zero_sqrt_ball_bound_exact_soundness_zero_fn` | `NsaBallBoundMoba.BallBoundExact` | Universal pure-integer Cauchy–Schwarz soundness certifying exact `0` false negatives for Zero-Sqrt Ball-Bound with `+1` scalar per block. |
 | `ball_bound_strictly_tighter_than_quest_aabb_and_half_metadata` | `NsaBallBoundMoba.QuestAabbSeparation` | Exact `(d + 1)/(2d)` metadata dominance (`65/128` at $d = 64$) and all-dimension ($d = m^2$) sphere witness where Quest-AABB over-estimates by exact $\sqrt{d}\times$. |
 | `quantization_absorbing_ball_bound_zero_fn_all_precisions` | `NsaBallBoundMoba.BallBoundExact` | Quantization-absorbing Ball-Bound preserving exact `0` false negatives across all summary precisions (`1-bit` through `FP8`). |
 | `nsa_three_branch_convex_gate_antipodal_breakdown` | `NsaBallBoundMoba.NsaGateAndPopcnt` | Exact NSA 3-branch convex-gate lower bound $\ge E _ 0^2$ under distant antipodal needles, collapsing to `0` under Ball-Bound selection. |
-| `popcnt_twoplane_summary_bandwidth_dominance` | `NsaBallBoundMoba.NsaGateAndPopcnt` | Exact `9/3/1`-weighted `2-Bitplane POPCNT` dot-product identity with `4×`/`8×` bit-bandwidth reduction vs `INT8`/`FP16`. |
+| `popcnt_twoplane_summary_bandwidth_dominance` | `NsaBallBoundMoba.NsaGateAndPopcnt` | Exact `9/3/1`-weighted `2-Bitplane POPCNT` dot-product identity with `4×`/`8×` bit-bandwidth reduction vs `INT8`/`FP16` (arithmetic on byte counts). |
 
 ## 64. [`relu2-teal-deadzone-bounds/`](relu2-teal-deadzone-bounds/)
 
@@ -827,12 +827,12 @@ All statements are in [`relu2-teal-deadzone-bounds/Challenge.lean`](relu2-teal-d
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `relu2_exact_kurtosis_seventy_thirds_and_outlier_amplification` | `Relu2TealDeadzone.KurtosisOutliers` | Exact `ReLU` kurtosis `6` and `ReLU^2` kurtosis `70/3`, plus exact $c^4$ outlier-moment amplification (`> 75×` on 1% `4×` outliers). |
+| `relu2_exact_kurtosis_seventy_thirds_and_outlier_amplification` | `Relu2TealDeadzone.KurtosisOutliers` | `ReLU` kurtosis `6` and `ReLU^2` kurtosis `70/3`, plus $c^4$ outlier-moment amplification (`> 75×` on 1% `4×` outliers), for finite lists of rational weights matching the stated moments (weights need not be nonnegative or sum to 1: a moment identity, not a statement about a distribution). |
 | `relu2_quantization_order_uniform_pre_beats_post` | `Relu2TealDeadzone.QuantOrderDichotomy` | Uniform quantizer `POST`-vs-`PRE` deadzone ratio $2N$ (`> 5×` wider for `INT4-u4`) and strict `PRE` dominance for $x < M(1/2 - 1/(4N))$. |
 | `relu2_quantization_order_fp_post_beats_pre_exact_4x` | `Relu2TealDeadzone.QuantOrderDichotomy` | Opposite floating-point dichotomy: exact two-sided squared-error inflation $(2 - \varepsilon)^2 \le \mathrm{ratio} \le (2 + \varepsilon)^2 \to 4\times$ (`+6.02 dB`). |
 | `teal_cats_shifted_deadzone_reclamation_uniform_exact` | `Relu2TealDeadzone.DeadzoneReclamation` | Exact `TEAL`/`CATS` shifted-deadzone uniform MSE reduction $(1 - \tau/M)^{-2}$ at zero extra bits (`4×, 16×, 64×`). |
 | `teal_cats_fp_superquadratic_logarithmic_density_bonus` | `Relu2TealDeadzone.DeadzoneReclamation` | Exact floating-point step contraction $\frac{x - \tau}{x}\cdot\frac{M}{M - \tau} < 1$ proving strictly super-quadratic MSE gain $> (1 - \tau/M)^{-2}$ on $(\tau, M)$. |
-| `prune_before_quantize_mask_flip_and_bitmask_crossover` | `Relu2TealDeadzone.MaskFlipBitmask` | Exact pre-pruning mask-flip boundary $[\tau - \Delta/2, \tau + \Delta/2)$ and `uint64_t` bitmask sparse `W4` crossover $s^* = \mathrm{ov}/(1 + \mathrm{ov}) < 1/5$. |
+| `prune_before_quantize_mask_flip_and_bitmask_crossover` | `Relu2TealDeadzone.MaskFlipBitmask` | Exact pre-pruning mask-flip boundary $[\tau - \Delta/2, \tau + \Delta/2)$ and `uint64_t` bitmask sparse `W4` crossover $s^* = \mathrm{ov}/(1 + \mathrm{ov}) < 1/5$ in a traffic model (not a hardware speedup). |
 
 ## 65. [`ssm-tustin-pade-horizons/`](ssm-tustin-pade-horizons/)
 
@@ -840,9 +840,9 @@ All statements are in [`ssm-tustin-pade-horizons/Challenge.lean`](ssm-tustin-pad
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `tustin_nyquist_snap_to_minus_one_horizon_exact` | `SsmTustinPade.TustinNyquist` | Universal IEEE-754 RNE Tustin Nyquist snap-to-`-1.0` horizon $z _ {\mathrm{osc}}(p) = 2^{p+1} + 8$ (`24, 40, 520, 4104`) and unconditional binades $k \ge p + 2$. |
+| `tustin_nyquist_snap_to_minus_one_horizon_exact` | `SsmTustinPade.TustinNyquist` | Tustin Nyquist snap-to-`-1.0` horizon $z _ {\mathrm{osc}}(p) = 2^{p+1} + 8$ (`24, 40, 520, 4104`) and binades $k \ge p + 2$, in the RNE region model of `Defs.lean` (`rneSnapsToNegOne` is a defined region, not IEEE-754). |
 | `tustin_vs_zoh_infinite_memory_stall_two_x_gap` | `SsmTustinPade.StallBlackout` | Exact `2×` small-$z$ infinite-memory (`+1.0`) stall separation between Tustin/`Padé-(0,2)` ($z \le 2^{-p}$) and `ZOH` ($z \le 2^{-(p+1)}$). |
-| `zoh_b_bar_catastrophic_cancellation_blackout_horizon` | `SsmTustinPade.StallBlackout` | Exact `100%` `ZOH` $\bar{B}$ blackout for $z \le 2^{-(p+1)}$ and exact `(0, 1]` blackout ratio $(B - f - 2)/B$ (`118/127 > 92.91%` BF16). |
+| `zoh_b_bar_catastrophic_cancellation_blackout_horizon` | `SsmTustinPade.StallBlackout` | In the model: `ZOH` $\bar{B}$ blackout for $z \le 2^{-(p+1)}$ (with $\exp(-z) \in [1 - z, 1]$ assumed as a hypothesis) and `(0, 1]` blackout ratio $(B - f - 2)/B$ (`118/127 > 92.91%` BF16). |
 | `pade02_unconditional_positivity_and_contraction_exact` | `SsmTustinPade.Pade02Laws` | Exact $0 < A _ {\mathrm{pade02}}(z) < 1$ for all $z > 0$ (zero unstable/Nyquist poles), $O(z^3)$ Taylor matching, and `FP8-E4M3FN` overflow thresholds. |
 | `pade02_b_bar_zero_blackout_and_fourth_order_accuracy` | `SsmTustinPade.Pade02Laws` | Subtraction-free $0 < B _ {\mathrm{pade02}}(z) \le 1$ (`0%` blackout), exact 4th-order accuracy $\le z^4/360$ on `(0, 1]` (`19×` tighter than Tustin at `z = 1`). |
 | `ssm_trajectory_energy_conservation_and_nyquist_blowup` | `SsmTustinPade.TrajectoryEnergy` | Exact inductive $O(T^2)$ Nyquist/stall energy blowup at $a = \pm 1$ vs uniform boundedness $|h _ T| \le |b|/(1 - a)$ for `Padé-(0,2)`. |
@@ -855,10 +855,10 @@ All statements are in [`vlm-tome-cumulant-bounds/Challenge.lean`](vlm-tome-cumul
 |---|---|---|
 | `unweighted_merge_tv_distortion_and_exact_ceiling` | `VlmTomeCumulant.ProportionalAttention` | Exact unweighted-merge TV distortion $(s - 1) p'(1 - p')/(1 + (s - 1) p')$, exact ceiling $(r - 1)/(r + 1)$ for $r^2 = s$, and enclosures for `s = 2, 8, 32`. |
 | `proportional_attention_zero_dispersion_exact_invariance` | `VlmTomeCumulant.ProportionalAttention` | Exact zero-dispersion probability and Value-output invariance (`0` TV distortion) under proportional attention (`+ln s`). |
-| `within_cluster_dispersion_jensen_underweight_and_cumulant2_bonus` | `VlmTomeCumulant.ProportionalAttention` | Discrete Jensen underweighting on dispersed clusters and identical 2nd-order $O(\sigma^2)$ partition-residual cancellation via the Cumulant-2 Logit Bonus (`+ln s + σ^2/2`). |
+| `within_cluster_dispersion_jensen_underweight_and_cumulant2_bonus` | `VlmTomeCumulant.ProportionalAttention` | Discrete Jensen underweighting on dispersed clusters and identical 2nd-order $O(\sigma^2)$ partition-residual cancellation via the Cumulant-2 Logit Bonus (`+ln s + σ^2/2`), with the exponential modelled by truncated Taylor polynomials. |
 | `bipartite_wht_int4_outlier_rescue_vs_binary_walsh_tie` | `VlmTomeCumulant.WalshHadamardSimHash` | Orthogonal `H _ {2^k}` $1/\sqrt{d}$ outlier flattening rescuing `INT4`/`MXFP4` paired with equidistant $2^{k-1}$ Walsh-code Hamming ties degrading 1-bit SimHash. |
 | `vit_front_loaded_dominates_constant_r_schedule` | `VlmTomeCumulant.ScheduleFlopBounds` | Exact Abel-summation proof that front-loaded ViT schedules strictly dominate ToMe `Constant-r` on both FLOPs and compounding drift. |
-| `late_loaded_merging_flop_infeasibility_ceiling` | `VlmTomeCumulant.ScheduleFlopBounds` | Exact `> 2/3` baseline FLOP lower bound proving infeasibility of any $\ge 3/2$ (`1.5×`) FLOP speedup for final-third late-loaded merging. |
+| `late_loaded_merging_flop_infeasibility_ceiling` | `VlmTomeCumulant.ScheduleFlopBounds` | `> 2/3` baseline FLOP lower bound: in the model FLOPs = sum of squared token counts, so no $\ge 3/2$ (`1.5×`) FLOP reduction is possible for final-third late-loaded merging. |
 
 ## 67. [`embed-zipf-lazystamp-bounds/`](embed-zipf-lazystamp-bounds/)
 
@@ -867,11 +867,11 @@ All statements are in [`embed-zipf-lazystamp-bounds/Challenge.lean`](embed-zipf-
 | Theorem | Module | Statement |
 |---|---|---|
 | `tied_embedding_dense_pushdown_zero_sum_and_asymmetry` | `EmbedZipfLazyStamp.TiedGrad` | Exact tied-embedding column-sum conservation $\sum _ v g _ {\mathrm{out}}[v, j] = 0$ and sparse-input vs dense-output asymmetry ratio $p _ y^{-1} \cdot p _ v$. |
-| `rare_token_rne_weight_flush_and_fp8_subnormal_underflow` | `EmbedZipfLazyStamp.RneFlush` | Universal IEEE-754/OCP RNE half-ULP weight-update flush, `FP8` subnormal blackout (`2^{-10}`, `2^{-17}`), and exact Zipf-rank flush thresholds. |
-| `bf16_sparse_adamw_v_decay_freeze_exact` | `EmbedZipfLazyStamp.Bf16Freeze` | Universal sharp $1 - \beta _ 2 \le 2^{-(p+2)}$ permanent EMA decay-freeze law trapping `BF16` $\beta _ 2 = 0.999$ and $\eta\lambda = 10^{-4}$ across all $K$ steps. |
-| `lazy_stamp_adamw_exact_equivalence_to_dense_updates` | `EmbedZipfLazyStamp.LazyAdamW` | Exact inductive equivalence of $O(1)$ `Lazy-Stamp AdamW` to $\Delta$ dense steps, breaking `BF16` $\beta _ 2 = 0.999$ freeze for `100%` of states at $\Delta = 4$. |
-| `lazy_stamp_bandwidth_and_work_speedup_exact` | `EmbedZipfLazyStamp.BandwidthSpeedup` | Exact $V / U$ memory-traffic and FLOP speedup (`32×` at `131,072 / 4,096`, `≥ 25×` for `U ≤ 5,242`) and savings fraction $1 - U / V$. |
-| `zipf_mixed_precision_embedding_allocation_pareto` | `EmbedZipfLazyStamp.ZipfPareto` | Exact Cauchy–Schwarz/AM-GM optimality of $4^{b _ r - b _ s} = p _ r / p _ s$ with certified `< 2.0 b/param` Zipf allocations beating uniform `4-bit` (`MXFP4`) at half VRAM. |
+| `rare_token_rne_weight_flush_and_fp8_subnormal_underflow` | `EmbedZipfLazyStamp.RneFlush` | RNE half-ULP weight-update flush for the model rounding function `rneGrid`, `FP8` subnormal blackout (`2^{-10}`, `2^{-17}`), and Zipf-rank flush thresholds (a hand-written model, not IEEE-754 hardware). |
+| `bf16_sparse_adamw_v_decay_freeze_exact` | `EmbedZipfLazyStamp.Bf16Freeze` | Decay-freeze law for the model rounding `rneFloatBelow`: for $1 - \beta _ 2 \le 2^{-(p+2)}$ the second-moment EMA leaves every normal `BF16` value of the model unchanged across all $K$ steps (traps $\beta _ 2 = 0.999$, $\eta\lambda = 10^{-4}$); the bound cannot be raised (binade-boundary values decay for $1 - \beta _ 2$ strictly between $2^{-(p+2)}$ and $2^{-(p+1)}$). |
+| `lazy_stamp_adamw_exact_equivalence_to_dense_updates` | `EmbedZipfLazyStamp.LazyAdamW` | Equality over `Rat` of $O(1)$ `Lazy-Stamp AdamW` with $\Delta$ dense steps; in the model it breaks the `BF16` $\beta _ 2 = 0.999$ freeze for every normal value at $\Delta = 4$. |
+| `lazy_stamp_bandwidth_and_work_speedup_exact` | `EmbedZipfLazyStamp.BandwidthSpeedup` | Ratio $V / U$ of the model byte and FLOP counts (defined as `V*d*b` and `U*d*b`, so the ratio holds by definition and is not a measured speedup): `32` at `131,072 / 4,096`, `≥ 25` for `U ≤ 5,242`, and reduction fraction $1 - U / V$. |
+| `zipf_mixed_precision_embedding_allocation_pareto` | `EmbedZipfLazyStamp.ZipfPareto` | Cauchy–Schwarz/AM-GM optimality of $4^{b _ r - b _ s} = p _ r / p _ s$ for the modelled error $c \cdot 4^{-b}$ (the theorem name is historical; it is not Pareto optimality), with `< 2.0 b/param` Zipf tier allocations whose modelled weighted MSE is below bare constants stated for uniform `4-bit` and `MXFP4` (those constants are not derived here). |
 
 ## 68. [`two-adic-carry-firewall-covers/`](two-adic-carry-firewall-covers/)
 
@@ -880,11 +880,11 @@ Pure-Init Lean 4 2-adic compactness engine: finite prefix-tree certificates prov
 | Theorem | Module | Statement |
 |---|---|---|
 | `coverTree_sound` | `TwoAdicCarryFirewallCovers.Theorems` | A checked finite 2-adic prefix tree whose leaves certify balls $B(r, d)$ proves $P(n)$ for all $n \in \mathbb{N}$. |
-| `T4_global_convergence` | `TwoAdicCarryFirewallCovers.Theorems` | The bit-4-cleared Collatz map $T _ 4$ sends every $n$ to $\{0, 1\}$ (4 prefix bits certify 7 steps). |
-| `T5_global_convergence` | `TwoAdicCarryFirewallCovers.Theorems` | The bit-5-cleared Collatz map $T _ 5$ sends every $n$ to $\{0, 1\}$, via a 506-leaf depth-15 tree (64.8x compression). |
+| `T4_global_convergence` | `TwoAdicCarryFirewallCovers.Theorems` | The modified Collatz-type map `TCollatz 4` (odd step `clearBit(3n+1, 4)/2`; not the Collatz map) sends every $n$ to $\{0, 1\}$ (4 prefix bits certify 7 steps). |
+| `T5_global_convergence` | `TwoAdicCarryFirewallCovers.Theorems` | The modified Collatz-type map `TCollatz 5` (not the Collatz map) sends every $n$ to $\{0, 1\}$, via a 506-leaf depth-15 tree (leaf-count ratio $2^{15}/506$, about 64.8). |
 | `X21_global_convergence_to_zero` | `TwoAdicCarryFirewallCovers.Theorems` | The XOR-Collatz map $X _ {2,1}$ sends every $n$ to $0$. |
 | `X33_global_convergence_to_zero` | `TwoAdicCarryFirewallCovers.Theorems` | The XOR-Collatz map $X _ {3,3}$ sends every $n$ to $0$. |
-| `grayQuad2_val_ceiling` | `TwoAdicCarryFirewallCovers.Theorems` | $2^{15} \nmid G(n)^2 + 3n + 60$ for all $n$, where $G(n) = n \oplus (n \gg 1)$ (744.7x compression). |
+| `grayQuad2_val_ceiling` | `TwoAdicCarryFirewallCovers.Theorems` | $2^{15} \nmid G(n)^2 + 3n + 60$ for all $n$, where $G(n) = n \oplus (n \gg 1)$ (88-leaf depth-16 tree; leaf-count ratio $2^{16}/88$, about 744.7). |
 | `grayQuad2_neq_shift15` | `TwoAdicCarryFirewallCovers.Theorems` | $G(n)^2 + 3n + 60 \ne n \ll 15$ for all $n$. |
 | `T8_nontrivial_6cycle_never_drops` | `TwoAdicCarryFirewallCovers.Theorems` | For $T _ 8$ the positive 6-cycle through $975$ never drops below $975$ (sharpness of the $k \le 5$ range). |
 
@@ -920,7 +920,7 @@ Pure-Init Lean 4 potential/flux/Lyapunov certificate compiler: a finite kernel-d
 
 ## 71. [`carried-ca-coboundary-rigidity/`](carried-ca-coboundary-rigidity/)
 
-Pure Lean 4 Init formalization (zero Mathlib, toolchain v4.34.1): one-sided weighted-defect rigidity for strongly connected causal bijective bit transducers and exact conservation laws for carried Rule 30, Fredkin routers, bounded-walk involutions and a period-4 carried hybrid automaton.
+Pure Lean 4 Init formalization (zero Mathlib, toolchain v4.34.1): one-sided weighted-defect rigidity for strongly connected causal bijective bit transducers and exact conservation laws for carried Rule 30 (`T30`, a hand-written sequential transducer, not the synchronous Rule 30 automaton), Fredkin routers, bounded-walk involutions and a period-4 carried hybrid automaton.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -987,7 +987,7 @@ Carry-lookahead prefix monoid: a sharp width threshold collapses all multi-input
 | `collapse_tree_universality` | `CarryPrefixThresholdMonoid.Theorems` | For every prefix tree whose leaf blocks have modulus at least $U - L$ and preserve the window $[L, U]$, evaluating the tree in the finite threshold-step semigroup and applying it to any carry $c \in [L, U]$ equals the exact floor-division carry action. |
 | `collapse_sharpness_obstruction` | `CarryPrefixThresholdMonoid.Theorems` | If $0 < M < U - L$ there is a block of modulus $M$ whose action on $[L, U]$ is represented by no threshold-step element, so the width threshold is sharp. |
 | `aperiodic` | `CarryPrefixThresholdMonoid.Theorems` | Every threshold-step element satisfies $e ^ 3 = e ^ 2$ (the semigroup is aperiodic of index at most $2$). |
-| `enumBounded_length` | `CarryPrefixThresholdMonoid.Theorems` | The bounded threshold-step semigroup on $N \ge 1$ carry states has exactly $N ^ 2 - N + 1$ elements. |
+| `enumBounded_length` | `CarryPrefixThresholdMonoid.Theorems` | For $N \ge 1$ the hand-built enumeration list `enumBounded L N` ($N$ constants followed by $(N-1)^2$ step elements) has length $N ^ 2 - N + 1$. That the list is complete and duplicate-free (so the bounded semigroup has exactly that many elements) is proved in the library (`enumBounded_complete`, `inBounds_eval_injective`) but is not part of `Challenge.lean`. |
 | `tree_exact_carry_absorption` | `CarryPrefixThresholdMonoid.Theorems` | A prefix tree of threshold-step elements evaluates to a constant (absorbs every incoming carry) if and only if its fringe is not a resonant chain. |
 | `three_input_exact_absorption` | `CarryPrefixThresholdMonoid.Theorems` | For every prefix tree of three-operand digit sums $s \le 3$, absorption holds iff the digit string is not bit-resonant, for both the unsigned and the signed-borrow encodings. |
 | `three_input_resonant_triple_count` | `CarryPrefixThresholdMonoid.Theorems` | For every width $w \ge 1$ the resonant digit strings carry total weight $2 \cdot 4 ^ w$ (out of $8 ^ w$ operand triples). |
@@ -1010,7 +1010,7 @@ Dual-rail redundant binary addition: finite potential and relational certificate
 
 ## 77. [`gray-carry-whitening-transducer/`](gray-carry-whitening-transducer/)
 
-Exact fiber counts for the Gray-coded carry word of binary addition at every width, carry-borrow Gray orthogonality, radix-B generalization and a k-operand impossibility.
+Exact fiber counts for the Gray-coded carry word of binary addition at every width, carry-borrow Gray orthogonality, radix-B generalization and a k-operand slice-count inequality.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1020,12 +1020,12 @@ Exact fiber counts for the Gray-coded carry word of binary addition at every wid
 | `gray_joint_carry_borrow_fiber_count` | `GrayCarryWhiteningTransducer.Theorems` | For $u, v < 2 ^ w$ the number of pairs with Gray carry word $u$ and Gray borrow word $v$ (mod $2 ^ w$) is $2 ^ {w - \lvert u \rvert - \lvert v \rvert}$ if $u \mathbin{\&} v = 0$ and $0$ otherwise. |
 | `gray_carry_borrow_orthogonal` | `GrayCarryWhiteningTransducer.Theorems` | If $b + b _ 0 \le a$ then the Gray-coded carry word of $a + b + c _ 0$ and the Gray-coded borrow word of $a - b - b _ 0$ have disjoint bits. |
 | `radix_carry_whitening_law` | `GrayCarryWhiteningTransducer.Theorems` | For every base $B \ge 2$, width $w$ and $z < 2 ^ w$, the carry-difference word has fiber count $\binom{B + 1}{2} ^ {w - \lvert z \rvert} \binom{B}{2} ^ {\lvert z \rvert}$. |
-| `k_operand_whitening_impossibility` | `GrayCarryWhiteningTransducer.Theorems` | For every arity $k \ge 3$ the multi-operand carry slice counts are not all equal, so balanced whitening is impossible. |
+| `k_operand_whitening_impossibility` | `GrayCarryWhiteningTransducer.Theorems` | For every arity $k \ge 3$ the one-bit slice counts `multiCarrySlice1 k 0`, `multiCarrySlice1 k 1`, `multiCarrySlice1 k 2` of the multi-operand carry transducer are not all equal; this blocks the balanced-fiber lifting argument used for $k = 2$, but the statement does not itself compute the fiber counts of $k$-operand addition. |
 | `radix_carry_borrow_orthogonality_binary_unique` | `GrayCarryWhiteningTransducer.Theorems` | For every base $B \ge 3$ there are digits $d _ 1, d _ 2 < B$ producing a carry and a borrow at the same position, so $B = 2$ is the unique radix of carry-borrow orthogonality. |
 
 ## 78. [`rhop-compressor-carry-confluence/`](rhop-compressor-carry-confluence/)
 
-Exact capacity dichotomies for carry-free binary compressor cells at every hop depth, an exact classification of 1-hop carry-free 4:2 compressors, a carry-ledger popcount conservation law for arbitrary compressor networks, and a minimal carry-defect transducer certifying carry-save confluence.
+Exact capacity dichotomies for carry-free binary compressor cells at every hop depth, a 64-cell classification of 1-hop carry-free 4:2 compressors (surjectivity half in the Challenge), a carry-ledger popcount conservation law for arbitrary compressor networks, and a minimal carry-defect transducer certifying carry-save confluence.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1033,7 +1033,7 @@ Exact capacity dichotomies for carry-free binary compressor cells at every hop d
 | `rhop_capacity_dichotomy` | `RhopCompressorCarryConfluence.Defs` | $\mathrm{Nonempty}(\mathrm{RHopCompressor}\; p\; v\; r) \iff p \le 2 v \cdot 2 ^ r + 1$ for all $p \ge 1$ and all $v, r$. |
 | `no_carry_free_6_2` | `RhopCompressorCarryConfluence.Defs` | No 1-hop carry-free 6:2 compressor exists for any horizontal carry bound $M$. |
 | `no_3hop_18_2` | `RhopCompressorCarryConfluence.Defs` | No 3-hop 18:2 compressor exists (while 3-hop 17:2 does). |
-| `cell42_bijection_right` | `RhopCompressorCarryConfluence.Defs` | Every valid 1-hop carry-free 4:2 horizontal-carry function equals $h _ m$ for some mask $m$ in $\mathrm{Fin}\; 64$ (exact 64-cell classification). |
+| `cell42_bijection_right` | `RhopCompressorCarryConfluence.Defs` | Every valid 1-hop carry-free 4:2 horizontal-carry function equals `h42OfMask m` for some mask $m$ in $\mathrm{Fin}\; 64$ (surjectivity half only: that each mask gives a valid function and that distinct masks give distinct functions are `h42OfMask_valid` and `cell42_bijection_left` in `Defs.lean`, not in the Challenge). |
 | `netW_popcount_carry_conservation` | `RhopCompressorCarryConfluence.Defs` | For any mixed compressor network with carry ledger $K$ and width $w \ge 1$: $\mathrm{popListW}(Y, w) + \sum _ {k < w - 1} K(k) + 2 K(w - 1) = \mathrm{popListW}(X, w)$. |
 | `confluence_csa_3state` | `RhopCompressorCarryConfluence.Theorems` | Two networks reaching column height at most 2 are accepted by the 3-state transducer with state equal to the carry-ledger difference in $\{-1, 0, 1\}$ at every prefix. |
 | `transducer_state_minimality` | `RhopCompressorCarryConfluence.Theorems` | For every $h \ge 1$ every state $q$ in $\{-(h-1), \dots, h-1\}$ is reached by some pair of equal-sum height-$h$ word lists, so $2h - 1$ states are necessary. |
@@ -1055,7 +1055,7 @@ Pure-Init Lean 4 exact 2-adic potential, reversibility, carry-bound, half-period
 
 ## 80. [`kummer-carry-valuation-automata/`](kummer-carry-valuation-automata/)
 
-Pure-Init Lean 4 Kummer-type exact valuation laws: shifted-bitwise Kummer collapses, Gray-code binomial sandwiches and sharp k-binomial slopes proved by finite carry-valuation automaton certificates.
+Pure-Init Lean 4 Kummer-type exact valuation laws: shifted-bitwise Kummer collapses, Gray-code binomial sandwiches and k-binomial slope bounds proved by finite carry-valuation automaton certificates.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1065,8 +1065,8 @@ Pure-Init Lean 4 Kummer-type exact valuation laws: shifted-bitwise Kummer collap
 | `shifted_or_kummer_exact` | `KummerCarryValuationAutomata.Theorems` | For all $n$, $v _ 2 \binom{n + (n \mathbin{|} 2n)}{n} = s _ 2(n \mathbin{|} 2n)$. |
 | `gray_binom_even` | `KummerCarryValuationAutomata.Theorems` | For every $n \ge 1$, $2$ divides $\binom{n + G(n)}{n}$ where $G(n) = n \oplus \lfloor n/2 \rfloor$ is the Gray code. |
 | `gray_strictly_below_shifted_xor` | `KummerCarryValuationAutomata.Theorems` | For every $n \ge 1$, $v _ 2 \binom{n + G(n)}{n} + 1 \le v _ 2 \binom{n + (n \oplus 2n)}{n}$. |
-| `binom_11n_sharp_slope` | `KummerCarryValuationAutomata.Theorems` | For every $n \ge 1$, $2 v _ 2 \binom{11 n}{n} + 2 \le 5 s _ 2(n)$. |
-| `binom_55n_sharp_infinite` | `KummerCarryValuationAutomata.Theorems` | On the explicit infinite family $n _ m$ (`fam55`), $4 v _ 2 \binom{55 n _ m}{n _ m} + 8 = 13 s _ 2(n _ m)$ and $s _ 2(n _ m) = 4m + 8$, so the slope $13/4$ and offset $8$ are sharp. |
+| `binom_11n_sharp_slope` | `KummerCarryValuationAutomata.Theorems` | For every $n \ge 1$, $2 v _ 2 \binom{11 n}{n} + 2 \le 5 s _ 2(n)$ (an upper bound; attainment is not part of this statement). |
+| `binom_55n_sharp_infinite` | `KummerCarryValuationAutomata.Theorems` | On the explicit infinite family $n _ m$ (`fam55`), $4 v _ 2 \binom{55 n _ m}{n _ m} + 8 = 13 s _ 2(n _ m)$ and $s _ 2(n _ m) = 4m + 8$, so the bound $4 v _ 2 \binom{55 n}{n} + 8 \le 13 s _ 2(n)$ is attained on this family (the matching upper bound is not part of this Challenge statement). |
 
 ## 81. [`popcount-clock-borrow-accel/`](popcount-clock-borrow-accel/)
 
@@ -1111,7 +1111,7 @@ Carried versus carry-less power valuations, resonance curve and Hensel-bridge li
 | `resonant_bridge_master` | `CarrylessCarriedResonanceCurve.Theorems` | On the resonance curve $v _ 2(a + 1) = 2^e - e$ with $e \ge 2$ and odd $B$, the bridge has a Hensel root below $2^t$ at every precision, an exact divisibility characterization, and an unbounded root. |
 | `resonant_root_invariance_below_threshold` | `CarrylessCarriedResonanceCurve.Theorems` | The Hensel roots of the bridge are the same for every odd $B < 2^{2^e}$ as for $B = 1$. |
 | `resonant_bit_root_shift_law` | `CarrylessCarriedResonanceCurve.Theorems` | The first root bit for odd $B$ equals the first root bit for $B = 1$ XOR bit $2^e$ of $B$. |
-| `resonance_curve_infinitely_inhabited` | `CarrylessCarriedResonanceCurve.Theorems` | For all $e, q$, the number $x = (2q + 1) 2^{2^e - e} - 1$ lies on the resonance curve: $v _ 2(x + 1) = 2^e - e$. |
+| `resonance_curve_infinitely_inhabited` | `CarrylessCarriedResonanceCurve.Theorems` | For all $e, q$, the number $x = (2q + 1) 2^{2^e - e} - 1$ lies on the resonance curve: $v _ 2(x + 1) = 2^e - e$ (an elementary arithmetic identity). |
 
 ## 84. [`stern-walsh-carry-resonance/`](stern-walsh-carry-resonance/)
 
@@ -1232,14 +1232,14 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 ## 92. [`carry-echo-sandpile-duality/`](carry-echo-sandpile-duality/)
 
-Constructive Abelian sandpile and harmonic-group engine: Carry-Echo dual-skew bijection, closed-form Myers identity, exact avalanche divisibility, and Directed-Carry Kummer duality.
+Constructive Abelian sandpile and harmonic-group engine: Carry-Echo dual-skew classification and repunit bijection (right-inverse half in the Challenge), closed-form Myers identity, exact avalanche divisibility, and Directed-Carry Kummer duality.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `carryEcho_skew_conservation` | `CarryEchoSandpileDuality.Theorems` | In the carry-echo sandpile of base $b$ and width $w \ge 1$, every avalanche conserves `skewWeight` up to top-site topplings times the repunit $R _ {b, w + 1}$. |
 | `carryEcho_total_avalanche_law` | `CarryEchoSandpileDuality.Theorems` | For all $b \ge 2$ and $w$, the harmonic potential $\Psi$ drops by exactly $(\sum _ i f _ i)(b ^ {w + 1} - 1)$ during any carry-echo avalanche. |
 | `carryEcho_recurrent_iff_dualSkew` | `CarryEchoSandpileDuality.Theorems` | For all $b \ge 2$ and $w \ge 1$, a carry-echo configuration is recurrent if and only if it satisfies the local dual-skew canonicality predicate `IsDualSkew`. |
-| `carryEcho_recurrent_count_left` | `CarryEchoSandpileDuality.Theorems` | The harmonic encoding and Myers greedy decoding establish an exact bijection between recurrent carry-echo configurations and $\mathrm{Fin}(R _ {b, w + 1})$. |
+| `carryEcho_recurrent_count_left` | `CarryEchoSandpileDuality.Theorems` | Right-inverse half of the repunit bijection: for every $r \in \mathrm{Fin}(R _ {b, w + 1})$, `encode (decode r) = r` for the harmonic encoding and Myers greedy decoding. The converse half (`decode_encode`) is proved in the library but is not in `Challenge.lean`. |
 | `carryEcho_explicitIdentity_eq` | `CarryEchoSandpileDuality.Theorems` | For all $b \ge 2$ and $w \ge 1$, the explicit closed-form configuration `explicitIdentity b w` equals the sandpile group identity. |
 | `carryEcho_identity_laws_ge2` | `CarryEchoSandpileDuality.Theorems` | For all $b \ge 2$ and $w \ge 2$, self-addition of the identity satisfies exact harmonic value, top-site firing $1$, and chip-mass congruence modulo $b$. |
 | `directedCarry_all_stable_recurrent` | `CarryEchoSandpileDuality.Theorems` | In the directed-carry sandpile of base $b \ge 2$ and width $w \ge 1$, every stable configuration is recurrent. |
@@ -1299,7 +1299,7 @@ Pure-kernel local-flux continuity compiler for reversible gate-lattice CAs: 5-le
 | `fluxCert_verify_sound` | `ReversibleGateLatticeFlux.Theorems` | If a finite `FluxCert` passes `c.verify = true`, then the exact discrete charge-flux continuity identity holds on every $M$-bit window $u : \mathrm{BitVec}\; M$. |
 | `fluxCert_open_segment_continuity` | `ReversibleGateLatticeFlux.Theorems` | A passing `FluxCert` lifts to exact Gauss-Noether continuity: the one-step change of charge on any open segment $[a, a + n)$ of any infinite line $\mathbb{Z} \to \mathbb{B}$ equals the boundary flux difference. |
 | `fluxCert_ring_conserved_iter` | `ReversibleGateLatticeFlux.Theorems` | A passing `FluxCert` proves exact conservation of the total ring charge under arbitrarily many steps $t$ on every ring $\mathrm{BitVec}\; (p \cdot n)$ ($n \ge 1$). |
-| `fredkin_cnot_iff_1_2` | `ReversibleGateLatticeFlux.Theorems` | For every 3-variable Boolean mask $h$, $h$ is ideal for cubic Fredkin-CNOT charge conservation if and only if its finite `FluxCert` passes. |
+| `fredkin_cnot_iff_1_2` | `ReversibleGateLatticeFlux.Theorems` | For every 3-variable Boolean mask $h$, `IdealMask h` (the Boolean condition $h(a,c,d) \Rightarrow a \wedge (c \vee d)$) holds if and only if the finite `FluxCert` `certFredCNOT h` (with the fixed charge $q _ {\mathrm{FT}}$ and flux $J _ {\mathrm{FT}}$) passes. This is an equivalence between a Boolean condition on the mask and a finite certificate check; 256 cases in total, 8 of them ideal. |
 | `fredkin_toffoli_conserved_all_widths` | `ReversibleGateLatticeFlux.Theorems` | The Fredkin-Toffoli Margolus lattice conserves the cubic non-Hamming charge $q _ {\mathrm{FT}}$ for all iterations $t$ on every $4 n$-bit ring. |
 | `fredkin_toffoli_reversible_all_widths` | `ReversibleGateLatticeFlux.Theorems` | The Fredkin-Toffoli Margolus step and its explicit inverse form an exact bijection on every $4 n$-bit ring. |
 | `double_fredkin_three_laws_all_widths` | `ReversibleGateLatticeFlux.Theorems` | The Double-Fredkin lattice simultaneously conserves Hamming weight $q _ {\mathrm{HW4}}$, dimer charge $q _ {\mathrm{dimer}}$, rail charge $q _ {\mathrm{rail}}$, and the asymmetric charge at every width $4 n$. |
@@ -1397,16 +1397,16 @@ Pure Lean 4 Init formalization (zero Mathlib, toolchain v4.34.1): four pure-data
 
 ## 103. [`binary-morphism-abelian-balance/`](binary-morphism-abelian-balance/)
 
-Zero-real Int x Int quadratic-ring modular-stratified abelian balance compiler: k = 7 -> 8 phase transition, geometric prefix sharpness, and unstratified Rauzy separation.
+Zero-real Int x Int quadratic-ring modular-stratified abelian balance compiler: balance upper bounds (`phaseBound k` for the family sigma_k, which switches from 2k-3 to 2k-4 at k = 8), geometric prefix families, and one rejected unstratified certificate for mu1.
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `stratCert_sound_balance` | `BinaryMorphismAbelianBalance.Theorems` | Any `StratCert` passing `verifyCert m cert = true` certifies uniform abelian balance $\le C$ across all factor positions $i, j$ and all lengths $n$. |
-| `family_sigmaK_balance` | `BinaryMorphismAbelianBalance.Theorems` | For every $k \ge 1$, the non-unimodular morphism $\sigma _ k$ is uniformly `phaseBound k`-balanced across all factor positions and lengths (exact $k = 7 \to 8$ phase transition). |
-| `family_sigmaK_prefix_sharp` | `BinaryMorphismAbelianBalance.Theorems` | For every $k \ge 2$ and $m \in \mathbb{N}$, explicit infinite geometric prefixes `uMin k m` and `vMax k m` achieve the exact quadratic-ring discrepancy extrema of $\sigma _ k$. |
+| `family_sigmaK_balance` | `BinaryMorphismAbelianBalance.Theorems` | For every $k \ge 1$, the non-unimodular morphism $\sigma _ k$ is uniformly `phaseBound k`-balanced across all factor positions and lengths (upper bound; `phaseBound` switches from `2k-3` to `2k-4` at $k = 8$). |
+| `family_sigmaK_prefix_sharp` | `BinaryMorphismAbelianBalance.Theorems` | For every $k \ge 2$ and $m \in \mathbb{N}$, explicit infinite geometric prefixes `uMin k m` and `vMax k m` reach the stated quadratic-ring discrepancy values of $\sigma _ k$. |
 | `tauA_balance_infinite` | `BinaryMorphismAbelianBalance.Theorems` | The morphism `tauA` is uniformly 2-balanced across all factor positions $i, j$ and lengths $n$. |
-| `tauB_balance_infinite` | `BinaryMorphismAbelianBalance.Theorems` | The morphism `tauB` (sharing the exact incidence matrix of `tauA`) has doubled uniform balance bound $4$ across all factor positions and lengths. |
-| `mu1_unstrat_impossible` | `BinaryMorphismAbelianBalance.Theorems` | No unstratified Rauzy discrepancy interval can certify balance $\le 2$ for `mu1`. |
+| `tauB_balance_infinite` | `BinaryMorphismAbelianBalance.Theorems` | The morphism `tauB` (sharing the incidence matrix of `tauA`) is uniformly $4$-balanced across all factor positions and lengths (upper bound only; the Lean statement does not show that $3$ fails). |
+| `mu1_unstrat_impossible` | `BinaryMorphismAbelianBalance.Theorems` | A stated rational-ring inequality for `mu1`, and the unstratified ($M = 1$) certificate `mu1CertM1_failC2` with $C = 2$ is rejected by `verifyCert` (a statement about that one certificate, not about all unstratified intervals). |
 | `mu1_strat_balance_infinite` | `BinaryMorphismAbelianBalance.Theorems` | Modular length stratification certifies uniform balance $\le 2$ for `mu1` across all factor positions and lengths. |
 | `mu2_strat_balance_infinite` | `BinaryMorphismAbelianBalance.Theorems` | Modular length stratification certifies uniform balance $\le 4$ for `mu2` across all factor positions and lengths. |
 
@@ -1471,17 +1471,17 @@ Minimal LSB trigger-chain compiler for Fenwick {U, D}* words: free-vs-2^w nilpot
 
 ## 108. [`two-way-bit-transducer-inverses/`](two-way-bit-transducer-inverses/)
 
-Pure-data finite tile-witness crossing-sequence compiler for two-way bit-transducers: all-width inversion, period-3 vs 2^w collapse, and parametric Coxeter-6 phase transition.
+Pure-data finite tile-witness crossing-sequence compiler for two-way bit-transducers: all-width inversion, the identities T^3 = id vs T^(2^w) = id, and the parametric T^6 = id family (least periods are not stated).
 
 | Theorem | Module | Statement |
 |---|---|---|
 | `checkCert_sound_bv` | `TwoWayBitTransducerInverses.Theorems` | Any finite tile-witness certificate `cert` passing `checkCert cert = true` proves `sweepsBV cert.sws x = x` on `BitVec w` for every width $w$. |
-| `skipFlip2_period3_bv` | `TwoWayBitTransducerInverses.Theorems` | The bidirectional skip-flip transducer `skipFlip2TwoWay` satisfies $T ^ 3(x) = x$ on `BitVec w` for every width $w$. |
+| `skipFlip2_period3_bv` | `TwoWayBitTransducerInverses.Theorems` | The bidirectional skip-flip transducer `skipFlip2TwoWay` satisfies $T ^ 3(x) = x$ on `BitVec w` for every width $w$ (an identity; the Challenge does not state that 3 is the least period). |
 | `skipFlip2_shifted_period6_bv` | `TwoWayBitTransducerInverses.Theorems` | The shifted bidirectional skip-flip transducer satisfies $T ^ 6(x) = x$ on `BitVec w` for every width $w$. |
-| `skipFlip2_fwd_period_pow2` | `TwoWayBitTransducerInverses.Theorems` | The unidirectional forward sweep of `skipFlip2` has period $2 ^ w$ on `BitVec w`, contrasting the bidirectional period 3. |
+| `skipFlip2_fwd_period_pow2` | `TwoWayBitTransducerInverses.Theorems` | The unidirectional forward sweep of `skipFlip2` satisfies $T ^ {2 ^ w}(x) = x$ on `BitVec w` (a divisibility statement; least period is not stated in the Challenge). |
 | `runTriggerTwoWay_left_inv` | `TwoWayBitTransducerInverses.Theorems` | For every threshold $m$ and width $w$, `runTriggerTwoWay m` admits an explicit two-way left inverse. |
-| `runTrigger_period6_all_m_bv` | `TwoWayBitTransducerInverses.Theorems` | For every threshold $m \ge 2$ and every width $w$, `runTriggerTwoWay m` has exact universal period 6 on `BitVec w`. |
-| `runSkipFlip_period6_all_m_bv` | `TwoWayBitTransducerInverses.Theorems` | For every $m \ge 2$ and every width $w$, the symmetric two-way `runSkipFlip m` transducer has universal period 6 on `BitVec w`. |
+| `runTrigger_period6_all_m_bv` | `TwoWayBitTransducerInverses.Theorems` | For every threshold $m \ge 2$ and every width $w$, `runTriggerTwoWay m` satisfies $T ^ 6(x) = x$ on `BitVec w` (least period 6 is not stated in the Challenge). |
+| `runSkipFlip_period6_all_m_bv` | `TwoWayBitTransducerInverses.Theorems` | For every $m \ge 2$ and every width $w$, the symmetric two-way `runSkipFlip m` transducer satisfies $T ^ 6(x) = x$ on `BitVec w`. |
 | `coupled_parityDelay_exact_inv` | `TwoWayBitTransducerInverses.Theorems` | The coupled parity-delay forward sweep is inverted on every bit list by the Gray-difference backward sweep. |
 
 ## 109. [`valuation-tower-poincare-recurrences/`](valuation-tower-poincare-recurrences/)
@@ -1529,7 +1529,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 ## 112. [`carry-presburger-skolem-compiler/`](carry-presburger-skolem-compiler/)
 
-A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **CPRTE** (Exact Carry-Presburger Residue-Transition Elimination), combining a pure-data finite-certificate reflection engine, an executable 2-pass Skolem transducer, and 20 discharged infinite arithmetic-bitwise theorems.
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **CPRTE** (Exact Carry-Presburger Residue-Transition Elimination), combining a pure-data finite-certificate reflection engine, an executable 2-pass Skolem transducer, and 20 discharged arithmetic-bitwise theorem statements (the universally quantified ones plus finite sharpness items).
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1537,14 +1537,14 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 | `synthesizeY_sound` | `Challenge` | Executable 2-pass Skolem transducer soundness: `synthesizeY cert x` constructs a valid witness $\vec{y}$ satisfying $\Phi _ 0(\vec{x}, \vec{y})$ for every $\vec{x} \in \mathbb{N}^d$. |
 | `cert_sound_univ` | `Challenge` | Universal soundness meta-theorem ($e = 0$): if `checkCert cert = true`, then $\forall \vec{x} \in \mathbb{N}^d,\; \Phi _ 0(\vec{x})$. |
 | `carryCount_eq_popcount_defect` | `Challenge` | Kummer's popcount defect bridge: $\kappa(a, b, \gamma) + s _ 2(a + b + \gamma) = s _ 2(a) + s _ 2(b) + \gamma$ for all $a, b \in \mathbb{N}$ and carry-in $\gamma$. |
-| `ternary_zero_carry_r0` | `Challenge` | For all $x \in \mathbb{N}$, there exists $y \in \mathbb{N}$ with $x \mathbin{\&} y = 0$, $3 \mid (x+y)$, and sharp bound $3y \le 5x + 5$. |
+| `ternary_zero_carry_r0` | `Challenge` | For all $x \in \mathbb{N}$, there exists $y \in \mathbb{N}$ with $x \mathbin{\&} y = 0$, $3 \mid (x+y)$, and bound $3y \le 5x + 5$. |
 | `ternary_carry1_r2` | `Challenge` | At carry budget $K = 1, r = 2$: for all $x \in \mathbb{N}$, there exists $y$ with $\kappa(x, y) \le 1$, $(x+y) \equiv 2 \pmod 3$, and $2y \le x + 4$ ($4\times$ slope collapse). |
 | `ternary_carry2_r0` | `Challenge` | At carry budget $K = 2, r = 0$: for all $x \in \mathbb{N}$, there exists $y$ with $\kappa(x, y) \le 2$, $3 \mid (x+y)$, and $4y \le x + 7$ (parity-inversion phase transition). |
 | `mersenne_collatz_rigidity_15` | `Challenge` | Mersenne-Collatz zero-carry rigidity: for all $x \in \mathbb{N}$, $x \mathbin{\&} (15x+1) = 0 \iff (15x+1) \mathbin{\&} (15x) = 0$. |
 
 ## 113. [`self-delimiting-prefix-transducers/`](self-delimiting-prefix-transducers/)
 
-Exact-integer Kirchhoff-Bellman potential engine for prefix-code automata: k-bonacci Jacobsthal parity duality, order-type omega obstruction, and Elias-lift tower.
+Exact-integer Kirchhoff-Bellman potential engine for prefix-code automata: k-bonacci Jacobsthal parity identity, order-type omega obstruction, and Elias-lift tower.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1553,13 +1553,13 @@ Exact-integer Kirchhoff-Bellman potential engine for prefix-code automata: k-bon
 | `order_type_omega_obstruction` | `SelfDelimitingPrefixTransducers.Theorems` | Any prefix automaton with a `0`-cycle reaching an accepting `1`-branch has an infinite lexicographically descending chain and no order-preserving enumeration by $\mathbb{N}$. |
 | `fibAut_kraft_conservation` | `SelfDelimitingPrefixTransducers.Theorems` | For every $k \ge 1$ and length $N$, the $k$-bonacci prefix automaton satisfies exact dyadic Kraft conservation. |
 | `fibAut_zero_bias` | `SelfDelimitingPrefixTransducers.Theorems` | For every $k \ge 1$ and length $N$, the $k$-bonacci prefix automaton has exact zero signed Hamming bias. |
-| `fibAut_parity_duality_embedding` | `SelfDelimitingPrefixTransducers.Theorems` | The popcount-parity potential of `fibAut (k + 1)` embeds the length-parity potential of `fibAut k` with negated root. |
-| `runAut_bias_symmetric` | `SelfDelimitingPrefixTransducers.Theorems` | For all $a, b \in \mathbb{N}$, the signed Hamming bias numerator and denominator of `runAut a b` are strictly symmetric in $(a, b)$ despite asymmetric Kraft measures. |
-| `eliasLift_orderPreserving` | `SelfDelimitingPrefixTransducers.Theorems` | The compositional Elias lift preserves strict lexicographic order-preservation on every order-preserving prefix code. |
+| `fibAut_parity_duality_embedding` | `SelfDelimitingPrefixTransducers.Theorems` | The popcount-parity potential of `fibAut (k + 1)` embeds the length-parity potential of `fibAut k` with negated root. This is an index-shift identity between two potentials (`fibPopKappa`, `fibLenPKappa`) written down in `Defs.lean` (Jacobsthal numbers with a sign), true by unfolding them. |
+| `runAut_bias_symmetric` | `SelfDelimitingPrefixTransducers.Theorems` | For all $a, b \in \mathbb{N}$, the signed Hamming bias numerator and denominator of `runAut a b` are strictly symmetric in $(a, b)$ despite asymmetric Kraft measures. Both are explicit polynomial expressions defined in `Defs.lean`; the statement is symmetry of those polynomials. |
+| `eliasLift_orderPreserving` | `SelfDelimitingPrefixTransducers.Theorems` | The compositional Elias lift preserves strict lexicographic order-preservation on every order-preserving prefix code. (The $+1/2$ popcount-parity collapse across tower levels is proved in `Theorems.lean`, not in `Challenge.lean`.) |
 
 ## 114. [`silicon-circuit-bisim-compiler/`](silicon-circuit-bisim-compiler/)
 
-A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **`SiliconBisim`**, a four-engine gate-DAG bisimulation compiler certifying infinite-width equivalences for adders, 4-topology parallel-prefix trees, shifters, butterfly/Omega networks, and Batcher sorting networks.
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **`SiliconBisim`**, a four-engine gate-DAG bisimulation compiler certifying infinite-width equivalences for adders, 4-topology parallel-prefix trees, shifters, butterfly/Omega networks, and Batcher sorting networks. The circuits are the package's own recursive definitions over its `GateNet` DSL, not library netlists.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1574,7 +1574,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 ## 115. [`dyadic-ldlt-schur-posdef-engine/`](dyadic-ldlt-schur-posdef-engine/)
 
-Division-free exact dyadic LDL^T positive-definiteness engine with a non-scalar Schur automaton lifting to all dimensions, and sharp thresholds for four van der Corput-type families.
+Division-free exact dyadic LDL^T positive-definiteness engine (positive definiteness over dyadic test vectors) with a non-scalar Schur automaton lifting to all dimensions, and sharp thresholds for four van der Corput-type families.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1615,7 +1615,7 @@ Bitmask Ryser permanent formula and 2-group orbit-collapse congruences modulo 2^
 | `xorCirc_odd_mod_two_pow_add_two` | `TwoGroupRyserPermanentCongruences.Theorems` | For $k \ge 1$ and odd row sum, $\mathrm{perm}$ of the XOR-circulant is congruent modulo $2 ^ {k + 2}$ to $1 + 2 ^ k ((\mathrm{oddCount} - 1) + \mathrm{evenSum})$. |
 | `hypercubeAdj_odd_mod` | `TwoGroupRyserPermanentCongruences.Theorems` | For odd $k$, the permanent of the hypercube adjacency matrix is congruent to $1 + 2 ^ k (k - 1)$ modulo $2 ^ {k + 2}$. |
 | `hypercubeAdj_even_dvd` | `TwoGroupRyserPermanentCongruences.Theorems` | For even $k \ge 4$, $2 ^ {k + 1}$ divides the permanent of the hypercube adjacency matrix. |
-| `hypercubeMatching_even_dvd` | `TwoGroupRyserPermanentCongruences.Theorems` | For odd $m \ge 3$, $2 ^ {m + 1}$ divides the permanent of the bipartite adjacency matrix of the hypercube $Q _ m$. |
+| `hypercubeMatching_even_dvd` | `TwoGroupRyserPermanentCongruences.Theorems` | For odd $m \ge 3$, $2 ^ {m + 1}$ divides the permanent of `hypercubeBiadj m`, the $2 ^ m \times 2 ^ m$ matrix $I + A(Q _ m)$ (the biadjacency matrix of $Q _ {m+1}$). The name says `even` but the hypothesis is `m` odd. |
 
 ## 118. [`walsh-mobius-runs-dihedral-spectra/`](walsh-mobius-runs-dihedral-spectra/)
 
@@ -1634,7 +1634,7 @@ Exact all-dimension determinants and characteristic polynomials of XOR-convoluti
 
 ## 119. [`bit-level-kind-ic3-invariants/`](bit-level-kind-ic3-invariants/)
 
-A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a width-uniform bit-level k-induction and IC3 invariant-certificate engine (checkKIndIC3_sound), lifting finite kernel-decidable proof obligations to all bit-widths w >= 1 and all time steps t for wrap-safe Gray counters, carry-save accumulators, 3-stage carry-defect pipelines, hybrid sparse adders, and 1-ULP averaging filters.
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a width-uniform bit-level k-induction and IC3 invariant-certificate engine (checkKIndIC3_sound), lifting finite kernel-decidable proof obligations to all bit-widths w >= 1 and all time steps t for the package's own hand-written trace functions modelling wrap-safe Gray counters, carry-save accumulators, 3-stage carry-defect pipelines, hybrid sparse adders, and 1-ULP averaging filters.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1738,7 +1738,7 @@ A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of an exac
 
 ## 126. [`two-adic-biscaled-det-valuation/`](two-adic-biscaled-det-valuation/)
 
-A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a biscaled unimodular elimination engine giving the exact 2-adic valuation of determinants, with perturbation stability and a Mobius compiler for popcount-AND matrices, applied to the five-parameter hybrid matrix family to prove exact valuations in the supercritical regime e*popSum(n) - e, critical regimes popSum(n) - 1 and 2*popSum(n) - 2, the n = 1 jump, and an infinite breakdown line.
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a biscaled unimodular elimination engine giving the exact 2-adic valuation of determinants, with perturbation stability and a Mobius compiler for popcount-AND matrices, applied to the package's own five-parameter hybrid matrix family (`hybridMat`) to prove exact valuations in the supercritical regime e*popSum(n) - e, critical regimes popSum(n) - 1 and 2*popSum(n) - 2, the n = 1 jump, and an infinite breakdown line.
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1748,7 +1748,7 @@ A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a bisca
 | `theorem_1A_supercritical` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 4 (Supercritical regime): for parameters 2^r u_a, 1 + 2^e u_q with r >= 2e - 1, v2(det) = e * popSum(n) - e for every n >= 2. |
 | `theorem_1B_critical_I` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 5 (Critical regime I): at e = 1, v2(det) = popSum(n) - 1 for every n >= 2. |
 | `theorem_1C_critical_II` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 6 (Critical regime II): at e = 2 with 4 u_a, v2(det) = 2 * popSum(n) - 2 for every n >= 2. |
-| `theorem_n1_jump` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 7 (n = 1 jump): for the 1 x 1 hybrid matrix, v2(det) = 1 for all a, q. |
+| `theorem_n1_jump` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 7 (n = 1 jump): for the 1 x 1 hybrid matrix, v2(det) = 1 for all a, q (a 1 x 1 computation). |
 | `sharpness_S3_infinite_breakdown_line` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 8 (Infinite breakdown line): for every e >= 3 the subcritical parameter 2^(2e - 2) u_a at n = 4 does not have valuation e * popSum(4) - e. |
 
 ## 127. [`bit-sliced-schur-det-engine/`](bit-sliced-schur-det-engine/)
@@ -1761,9 +1761,9 @@ A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a bisca
 | `det_block_schur_left_unimodular` | `BitSlicedSchurDetEngine.Theorems` | Exact unimodular left Block-Schur complement over ANY commutative ring `R`. |
 | `det_block_schur_right_scaled` | `BitSlicedSchurDetEngine.Theorems` | Exact division-free scaled right Block-Schur complement over ANY commutative ring `R`. |
 | `det_bitSliced_schur_zero_iff` | `BitSlicedSchurDetEngine.Theorems` | **AUTOMATIC INVERTIBILITY DICHOTOMY LIFTER** over any `IntDomain R`. |
-| `det_msbAnd_closed_form` | `BitSlicedSchurDetEngine.Theorems` | Machine-checked infinite theorem `det_msbAnd_closed_form` proved in pure Lean 4 `Init`. |
-| `det_subsetDisjMat_closed_form` | `BitSlicedSchurDetEngine.Theorems` | Machine-checked infinite theorem `det_subsetDisjMat_closed_form` proved in pure Lean 4 `Init`. |
-| `witness_zmod6_zero_divisors` | `BitSlicedSchurDetEngine.Theorems` | Witness 2 (Zero-Divisor Ring `ZMod 5` = Z/6Z Non-Vacuity — Invertible Unit Determinant!): In `Z/6Z`, `γ(1) = 2` and `γ(2) = 3` are BOTH zero divisors (`2 * 3 = 0`), yet our universal `CRing` closed-form theorem certifies `det H_2 = 1 (mod 6)` (a unit!)! |
+| `det_msbAnd_closed_form` | `BitSlicedSchurDetEngine.Theorems` | Over any `CRing R`, for all `k` and `f : Nat -> R`: `det (msbAndMat k f)` is `f 0` for `k = 0`, `f 0 * (f 1 - f 0)` for `k = 1`, and `-(f 0 * prod_{j<k} (f (j+1) - f 0)^(2^(k-1-j)))` for `k >= 2`. |
+| `det_subsetDisjMat_closed_form` | `BitSlicedSchurDetEngine.Theorems` | Over any `CRing R`, for all `k` and `a, c : R`: `det (subsetDisjMat (k+1) a c) = (a^2 - c^2)^(2^k)`. |
+| `witness_zmod6_zero_divisors` | `BitSlicedSchurDetEngine.Theorems` | Machine-checked finite instance in the package's own residue ring `ZMod 5 := Fin 6` (that is, Z/6Z, not a field of 5 elements): `2 * 3 = 0`, and a specific 2x2 `hcbMat` determinant evaluates to `1`. It is a computation, not an application of the universal theorems. |
 | `counterexample_bool_plus_superset_breaks` | `BitSlicedSchurDetEngine.Theorems` | Sharpness Counterexample C (Kernel-Checked!): Adding the superset term `[y ⊆ x]` to `subsetDisjMat` (`a = c = 1`) breaks the `(a^2 - c^2)^(2^(k-1))` law: at `k = 1`, `det = 2 ≠ 0`, while at `k = 2`, `det = 0`! |
 
 ## 128. [`booth-csa-multiplier-invariants/`](booth-csa-multiplier-invariants/)
@@ -1772,14 +1772,14 @@ We construct a **two-engine pure-silicon infinite proof compiler** for arbitrary
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `csa3to2_exact_mod` | `BoothCsaMultiplierInvariants.Theorems` | Machine-checked infinite theorem `csa3to2_exact_mod` proved in pure Lean 4 `Init`. |
+| `csa3to2_exact_mod` | `BoothCsaMultiplierInvariants.Theorems` | For all `W, a, b, c`: `(csaSum W a b c + csaCarry W a b c) mod 2^W = (a + b + c) mod 2^W` (correctness of the 3:2 carry-save compressor modulo `2^W`). |
 | `lift_all_widths` | `BoothCsaMultiplierInvariants.Theorems` | INFINITE-WIDTH LIFTING THEOREM (Mechanism II): Any finite top-`g`-bit guard specification lifts to EXACT unwrapped integer conservation `signedVal W S' + signedVal W C' = V` for ALL bit-widths `W ≥ g` and ALL pairs `(S, C)` whose modular sum lies in the allowed slabs! |
 | `zeroCarryTop_exact` | `BoothCsaMultiplierInvariants.Theorems` | THEOREM 1 (Exact g-Bit Zero-Carry-Top Normalizer, ∀ g ≥ 2, ∀ W ≥ g): For ANY `g ≥ 2`, ANY width `W ≥ g`, and ANY Carry-Save pair `(S, C)` whose modular sum `V` lies in the asymmetric range `[-2^(W-1) + 2^(W-g), 2^(W-1) - 1]`: 1. `signedVal W S' + signedVal W C' = V` EXACTLY IN `Int` (zero wraparound!) 2. `C' < 2^(W - g)` (top `g` bits of `C'` are identically zero, so `C'` is non-negative!). |
 | `unnormalized_csa_rshift_fails` | `BoothCsaMultiplierInvariants.Theorems` | Sharpness Corollary: Naive unnormalized CSA right-shift fails with error `-2^(W-1)` at `V = 0` ∀ W ≥ 3. |
 | `sec_cancellation_exact` | `BoothCsaMultiplierInvariants.Theorems` | THEOREM 6 (Universal 2-State Radix-`2^k` Sign-Extension Cancellation Law, ∀ k ≥ 1, ∀ W, ∀ m ≥ 1): Directly discharged by Mechanism I (`RadixTransducer.lift_sum`) on `secTransducer`: `∑_{j=0}^{m-1} secTerm_k(j > 0, s_j) * 2^(W + k*j) + ∑_{j=0}^{m-1} s_j * 2^(W + k*j) = 2^(W + k*m)`. |
 | `radix4_booth_tree_exact` | `BoothCsaMultiplierInvariants.Theorems` | THEOREM 8 (Complete Pure-Silicon Radix-4 Booth Tree + SEC Theorem, ∀ w ≥ 1, ∀ m ≥ 1): Combines Booth Transducer (Theorem 5) + Silicon PP (Theorem 7) + 2-State SEC (Theorem 6): 1. `boothTreeSum w m x_u y_u = signedVal w x_u * signedVal (2*m) y_u + 2^(w + 1 + 2*m)` EXACTLY IN `Int`! 2. Modulo `2^(w + 2*m)`, `boothTreeSum` equals the exact `(w + 2*m)`-bit signed product! |
 | `booth_acc_endpoints_tight` | `BoothCsaMultiplierInvariants.Theorems` | Sharpness / Tightness: BOTH `+2^(w+k-2)` and `-2^(w+k-2)` are attained by `A_j'`! |
-| `badGuardCert_g2_rejected` | `BoothCsaMultiplierInvariants.Theorems` | Machine-checked infinite theorem `badGuardCert_g2_rejected` proved in pure Lean 4 `Init`. |
+| `badGuardCert_g2_rejected` | `BoothCsaMultiplierInvariants.Theorems` | Machine-checked finite instance: the specific certificate `badGuardCert_g2_cutArc` (a deliberately wrong `g = 2` guard specification) is rejected by `check`. |
 
 ## 129. [`cross-thread-silicon-meta-bridge/`](cross-thread-silicon-meta-bridge/)
 
@@ -1790,11 +1790,11 @@ We construct a **two-engine pure-silicon infinite proof compiler** for arbitrary
 | `sumPow2_eq_sumRange` | `CrossThreadSiliconMetaBridge.Theorems` | Exact equivalence: `sumPow2 w f` equals the standard sequential sum `∑_{x=0}^{2^w - 1} f(x)`. |
 | `xorConv_quadForm_eq_wht` | `CrossThreadSiliconMetaBridge.Theorems` | **Exact Integer XOR-Convolution Spectral Diagonalization**: `2^w * ∑_{x, y < 2^w} v(x) f(x ^^^ y) v(y) = ∑_{xi < 2^w} W_w(f)(xi) * W_w(v)(xi)^2`. |
 | `prefixTree_walsh_bandlimited` | `CrossThreadSiliconMetaBridge.Theorems` | **Bridge III Master Theorem (2-Adic Compactness <-> Walsh Band-Limit Duality)**: Every finite binary prefix-tree cover `t` of depth `d` has ZERO Walsh-Hadamard energy at ALL high frequencies `2^d ≤ xi < 2^w` for EVERY bit-width `w ≥ d`! |
-| `transferRec2_sound` | `CrossThreadSiliconMetaBridge.Theorems` | Machine-checked infinite theorem `transferRec2_sound` proved in pure Lean 4 `Init`. |
-| `rawCarry_c1_indefinite_all_w` | `CrossThreadSiliconMetaBridge.Theorems` | Machine-checked infinite theorem `rawCarry_c1_indefinite_all_w` proved in pure Lean 4 `Init`. |
-| `thueMorse_inc_mod4_all_w` | `CrossThreadSiliconMetaBridge.Theorems` | Machine-checked infinite theorem `thueMorse_inc_mod4_all_w` proved in pure Lean 4 `Init`. |
+| `transferRec2_sound` | `CrossThreadSiliconMetaBridge.Theorems` | Soundness of the order-2 transfer-recurrence certificate: if `checkTransferRec2 E cert = true`, then for every width `w` the sequence `a_w = l E^w r` satisfies `a_(w+2) = c1 a_(w+1) + c0 a_w`. |
+| `rawCarry_c1_indefinite_all_w` | `CrossThreadSiliconMetaBridge.Theorems` | For every `w >= 1`, with `v(x) = ±1` according to the parity of `x`, the quadratic form of the raw carry-fiber XOR-convolution kernel (carry-in 1) at `v` equals `-(8^w)`. |
+| `thueMorse_inc_mod4_all_w` | `CrossThreadSiliconMetaBridge.Theorems` | For every `w >= 2`, 4 divides `sum_{x<2^w} TM_w(x) * TM_w((x+1) mod 2^w)` (Thue-Morse signs at `x` and its cyclic successor). |
 | `demoAdicTree_sharp_at_freq4` | `CrossThreadSiliconMetaBridge.Theorems` | Sharpness for Bridge III: at frequency `xi = 4 = 2^(depth - 1)`, Walsh energy is NON-ZERO (`12 ≠ 0`). |
-| `mutation_reject_modSubspace` | `CrossThreadSiliconMetaBridge.Theorems` | Machine-checked infinite theorem `mutation_reject_modSubspace` proved in pure Lean 4 `Init`. |
+| `mutation_reject_modSubspace` | `CrossThreadSiliconMetaBridge.Theorems` | Machine-checked finite instance: the Boolean checker `checkModSubspace` rejects one mutated certificate (a finite computation). |
 
 ## 130. [`integer-mps-mpo-tensor-verifier/`](integer-mps-mpo-tensor-verifier/)
 
@@ -1819,20 +1819,20 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 |---|---|---|
 | `walsh_perm_conj` | `WalshGrayConjugacySpectra.Theorems` | Contragredient Law: W_k P_A = P_{A^{-T}} W_k (exact over ℤ, ∀ k). |
 | `spectral_period_lift` | `WalshGrayConjugacySpectra.Theorems` | Finite-to-Infinite Periodicity Lift: if Δ(A)^d = id on V_k, then (W_k P_A)^{2d} = 2^{kd} I. |
-| `even_symmetric_projectors` | `WalshGrayConjugacySpectra.Theorems` | Machine-checked infinite theorem `even_symmetric_projectors` proved in pure Lean 4 `Init`. |
+| `even_symmetric_projectors` | `WalshGrayConjugacySpectra.Theorems` | For every $r$ and every linear isomorphism $A$ of width $2r$ with `A.fwd = A.adj`, with $M = W _ {2r} P _ A$ and $s = 2^r$, the matrices $\Pi _ \pm = s I \pm M$ satisfy $\Pi _ + \Pi _ - = 0$, $M \Pi _ \pm = \pm s \Pi _ \pm$ and $\mathrm{tr}\,\Pi _ \pm = s \cdot 2^{2r} \pm \mathrm{tr}\,M$ (infinite in $r$). |
 | `hyperplane_even_trace_lift` | `WalshGrayConjugacySpectra.Theorems` | Pillar 3c: Exact Even-Power Necklace Trace Formula! For any HyperplaneRotCert k n r A (n ≥ 1) and any m ∈ ℕ, letting g = gcd(m, n) and q = n / g: Tr((W_k P_A)^{2m}) = 2^{km + r + (if q % 2 = 0 then g else g - 1)}. |
 | `walsh_gray_mod4_antisym` | `WalshGrayConjugacySpectra.Theorems` | THEOREM A4 (Gray–Walsh Mod-4 Spectral Symmetry & Odd-Trace Vanishing): ∀ r ∈ ℕ, at width k = 4r + 1, the explicit Weyl–Heisenberg operator U = D_{G_k b} T_b (with alternating b) anticommutes with W_k P_{G_k}, forcing Tr((W_k P_{G_k})^{2m+1}) = 0 ∀ m ∈ ℕ and E_λ ≅ E_{-λ}. |
 | `walsh_bitrev_parity_dichotomy_odd` | `WalshGrayConjugacySpectra.Theorems` | THEOREM C1 (Bit-Reversal Spectral Parity Dichotomy): (W_k P_{R_k})^2 = 2^k I ∀ k, with: - Odd width k = 2r + 1: balanced (Tr = 0 via Weyl–Heisenberg anticommutator); - Even width k = 2r (r ≥ 1): asymmetric by 2^r, with exact integer projector traces giving m_+ = 2^{2r-1} + 2^{r-1} and m_- = 2^{2r-1} - 2^{r-1}. |
 | `walsh_gray_rot_period` | `WalshGrayConjugacySpectra.Theorems` | THEOREM D1 (Gray ∘ Butterfly-Rotation 2k-Cycle Periodicity): ∀ k ≥ 2, (W_k P_{G_k C_k})^{2k} = 2^{k^2} I_{2^k}. |
-| `sharp_nonlinear_inc2_not_scaled_perm` | `WalshGrayConjugacySpectra.Theorems` | Machine-checked infinite theorem `sharp_nonlinear_inc2_not_scaled_perm` proved in pure Lean 4 `Init`. |
+| `sharp_nonlinear_inc2_not_scaled_perm` | `WalshGrayConjugacySpectra.Theorems` | Machine-checked finite instance (width 2 only): $(W _ 2 P _ {\mathrm{inc2}})^2$ is not $4$ times any permutation matrix, for the nonlinear increment map `inc2`; this shows the linearity hypothesis of the lifting theorems cannot simply be dropped. |
 
 ## 132. [`bruhat-tits-carry-gauge-automata/`](bruhat-tits-carry-gauge-automata/)
 
-**Mechanism:** **2-Adic Bruhat–Tits Lattice-Gauge Automaton Engine (`LatticeGaugeCert`)** paired with the **First-Principles Carry-Bounded Representation Compiler (`carryCount_eq_evalMat`)** and **Modular Quotient Automaton Engine (`ModQuotientCert`)**.
+**Mechanism:** **2-Adic Bruhat–Tits Lattice-Gauge Automaton Engine (`LatticeGaugeCert`)** paired with the **Carry-Bounded Representation Compiler (`carryCount_eq_evalMat`)** and **Modular Quotient Automaton Engine (`ModQuotientCert`)**.
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `carryCount_eq_evalMat` | `BruhatTitsCarryGaugeAutomata.Theorems` | **First-Principles Combinatorial Equivalence Theorem**: For ANY digit weight table `w` with `w 0 = 1`, ANY carry cap `C`, ANY bit-width `width`, and ANY `n < 2 ^ width`, the direct combinatorial weighted count of carry-bounded representations `carryCount w C width n c` equals the `(C + 1)`-dimensional binary matrix product `evalMat (carryMat w C false) (carryMat w C true) (e0Vec C) n c`. |
+| `carryCount_eq_evalMat` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Combinatorial Equivalence Theorem**: For ANY digit weight table `w` with `w 0 = 1`, ANY carry cap `C`, ANY bit-width `width`, and ANY `n < 2 ^ width`, the direct combinatorial weighted count of carry-bounded representations `carryCount w C width n c` equals the `(C + 1)`-dimensional binary matrix product `evalMat (carryMat w C false) (carryMat w C true) (e0Vec C) n c`. |
 | `sound` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Master Engine Theorem 4 (Exact Modular Quotient Soundness, `∀ n : Nat`)**. |
 | `thm_2x2_5point_rigidity` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Infinite Theorem A4 (2×2 5-Point Finite-to-Infinite 2-Adic Rigidity IFF)**: For ANY integer weights `(1, w1, w2, w3)`, matching `ExactVal2 (f2 w1 w2 w3 n) (phi3 n)` on ALL `n : Nat` is equivalent to matching on just the 5 points `{1, 2, 3, 7, 8}`, and equivalent to the exact mod-8 congruence `w1 % 4 = 3 ∧ w2 % 4 = 3 ∧ w3 % 4 = 1 ∧ (w1 + w2 + w3) % 8 = 7`. |
 | `thm_2x2_k_equiv_3_mod_8` | `BruhatTitsCarryGaugeAutomata.Theorems` | **Infinite Theorem A5 (Binomial Specialization for ALL `k = 8*t + 3`, `k`-way 1-Bit-Carry Addition)**. |
@@ -1854,7 +1854,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 | `walsh_lucas_binom_odd_pow` | `LucasMaskWalshBinomFractals.Theorems` | **Main Theorem 1 (Walsh-Lucas Unique Spike Theorem for Odd Powers):** For ALL `n : Nat`, ALL odd `r : Nat`, and ALL masks `m <=_2 n`: `∑_{k <=_2 n} (-1)^popcount(k &&& m) * C(n, k)^r ≡ 2^(popcount n) * [m = E(n)] (mod 2^(popcount n + 1))`. |
 | `walsh_lucas_binom_even_pow` | `LucasMaskWalshBinomFractals.Theorems` | **Main Theorem 3 (Walsh-Lucas Higher-Modulus Congruence for Even Powers):** For ALL `n : Nat`, ALL positive even `r : Nat` (`r ≠ 0`, `r % 2 = 0`), and ALL `m <=_2 n`: `∑_{k <=_2 n} (-1)^popcount(k &&& m) * C(n, k)^r ≡ 2^(popcount n) * [m = 0] (mod 2^(popcount n + v2(r) + 1))`. |
 | `walsh_lucas_mixed_product` | `LucasMaskWalshBinomFractals.Theorems` | **Main Theorem 4 (Mixed-Product XOR-Spike Theorem):** For ALL `n, n1, n2 : Nat` with `n <=_2 n1` and `n <=_2 n2`, ALL odd `r1, r2`, and ALL `m <=_2 n`, the unique Walsh spike mask of `C(n1, k)^r1 * C(n2, k)^r2` on the Lucas cube of `n` is `(E(n1) ^^^ E(n2)) &&& n`. |
-| `sharpness_squaring_jump_needs_spike_mask` | `LucasMaskWalshBinomFractals.Theorems` | Machine-checked infinite theorem `sharpness_squaring_jump_needs_spike_mask` proved in pure Lean 4 `Init`. |
+| `sharpness_squaring_jump_needs_spike_mask` | `LucasMaskWalshBinomFractals.Theorems` | Machine-checked finite instance (a concrete sharpness witness for `n = 3`: `f_ce`, `mobius = 40`, not divisible by `2^(popcount 3 + 2)`), proved in pure Lean 4 `Init`. |
 
 ## 134. [`mahler-vanderput-2adic-certs/`](mahler-vanderput-2adic-certs/)
 
@@ -1877,14 +1877,14 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `evalMod_coherent` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `evalMod_coherent` proved in pure Lean 4 `Init`. |
+| `evalMod_coherent` | `MbaHenselBlockJetLifting.Theorems` | Width-coherence of `evalMod` (all widths, all expressions), proved in pure Lean 4 `Init`. |
 | `symDeriv0_sound` | `MbaHenselBlockJetLifting.Theorems` | **Engine Theorem 3.1 (Soundness of Symbolic MBA Differential Compiler `symDeriv0`):** |
 | `quadLiftFromJet_sound` | `MbaHenselBlockJetLifting.Theorems` | **Engine Theorem 4.2 (Single-Step Exact Quadratic Lifting & Uniqueness `w → 2*w`):** |
 | `thm1_constructive_lifts` | `MbaHenselBlockJetLifting.Theorems` | **Main Theorem 1b (Constructive Infinite Bit-by-Bit Lifts of Both 2-Adic Roots):** |
-| `witness2_one_root` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `witness2_one_root` proved in pure Lean 4 `Init`. |
-| `witness3_quad_lift_concrete` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `witness3_quad_lift_concrete` proved in pure Lean 4 `Init`. |
-| `sharpness1_even_mask` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `sharpness1_even_mask` proved in pure Lean 4 `Init`. |
-| `sharpness3_below_mask_threshold` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked infinite theorem `sharpness3_below_mask_threshold` proved in pure Lean 4 `Init`. |
+| `witness2_one_root` | `MbaHenselBlockJetLifting.Theorems` | For every width `w >= 3`, the root count of `fam2 H_one` is exactly 1 (statement quantifies over all `w >= 3`); proved in pure Lean 4 `Init`. |
+| `witness3_quad_lift_concrete` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked finite instance (concrete values of `fam3 3 11 7` at widths 4 and 8), proved in pure Lean 4 `Init`. |
+| `sharpness1_even_mask` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked finite instance (the root count of `fam1SharpEvenMask` at the single width `w = 5` (8 roots)), proved in pure Lean 4 `Init`. |
+| `sharpness3_below_mask_threshold` | `MbaHenselBlockJetLifting.Theorems` | Machine-checked finite instance (`evalBlockJet 2 (fam3 3 11 7) 0 = none`, one concrete instance), proved in pure Lean 4 `Init`. |
 
 ## 136. [`zeckendorf-binary-carry-bridge/`](zeckendorf-binary-carry-bridge/)
 
@@ -1897,7 +1897,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 | `not_diff_basis_refutation` | `ZeckendorfBinaryCarryBridge.Theorems` | **CONVERSE / SHARPNESS DIRECTION OF THE DICHOTOMY:** If `c` is valid (`r ≥ 2`, `0 ∈ S`, `maskS < 2^r`) and NOT a difference basis (`c.isDiffBasis = false`), then there is an explicit 2-step derivation `x →_δ w1 →_0 p` at `x = maskS /// (maskS <<< δ)` with `d = 2^δ + 1` that VIOLATES both `r`-spacing AND the binary carry-eigenvalue law! |
 | `rbonacci_uniqueness` | `ZeckendorfBinaryCarryBridge.Theorems` | **CANONICAL `r`-BONACCI UNIQUENESS THEOREM (ALL `r ≥ 2`):** Two canonical `r`-Zeckendorf bitmasks with the same `r`-bonacci value MUST be equal! |
 | `rbonacci_master_invariants` | `ZeckendorfBinaryCarryBridge.Theorems` | **COMPLETE SUITE OF COROLLARIES FOR CANONICAL `r`-BONACCI NORMALIZATION (ALL `r ≥ 2`):** For EVERY `r ≥ 2` and EVERY `x : Nat`, there exists a UNIQUE canonical `(p, d)` with `noROnes r p ∧ evalRecNat (rBonacciWeight r) p = evalRecNat (rBonacciWeight r) x ∧ p = x + d`, and it satisfies ALL SEVEN pure-silicon invariants simultaneously! |
-| `sparse_r6_diff_basis_infinite_law` | `ZeckendorfBinaryCarryBridge.Theorems` | Infinite theorem instantiated automatically from `certDB6A_ok` (`decide`) via the Carry-Bridge Engine: for the sparse difference-basis recurrence `G_{k+6} = G_{k+5} + G_{k+3} + G_{k+1} + G_k` (`m_S = 21`), EVERY rewrite derivation `x →* p` obeys `carryInMask x (21 * d) = 126 * d`, `p ^^^ x = clmul 107 d`, `popcount x = popcount p + 3 * popcount d`, and `popcount (carryInMask x (21 * d)) = 6 * popcount d`! |
+| `sparse_r6_diff_basis_infinite_law` | `ZeckendorfBinaryCarryBridge.Theorems` | Statement for all derivations, instantiated from `certDB6A_ok` (`decide`) via the Carry-Bridge Engine: for the fixed sparse difference-basis recurrence `G_{k+6} = G_{k+5} + G_{k+3} + G_{k+1} + G_k` (`m_S = 21`), EVERY rewrite derivation `x →* p` obeys `carryInMask x (21 * d) = 126 * d`, `p ^^^ x = clmul 107 d`, `popcount x = popcount p + 3 * popcount d`, and `popcount (carryInMask x (21 * d)) = 6 * popcount d`! |
 | `witness_nonvacuity_sparse_r6` | `ZeckendorfBinaryCarryBridge.Theorems` | Non-vacuity witness 3: non-`r`-bonacci sparse difference basis `certDB6A` (`r=6, S={0,1,3,5}, m_S=21`) has a genuine non-trivial 2-step derivation `x = 0b101011101011 = 2795 → 4139 → p = 4160` (`d = 65 = 2^6 + 1`)! |
 | `sharpness_non_confluence_still_obeys_carry_bridge` | `ZeckendorfBinaryCarryBridge.Theorems` | **SHARPNESS 3 (Difference-Basis Carry-Bridge Holds Even Under Non-Confluence!):** For `certDB4A` (`r = 4, S = {0, 1, 3}, m_S = 5`, a genuine difference basis), starting from `x = 47 (0b101111)`, firing `k = 2` reaches `67` while firing `k = 0` reaches `52` (`67 ≠ 52`: non-confluent!), YET BOTH derivations satisfy `carryInMask x (5 * d) = 30 * d`! |
 
@@ -1908,13 +1908,13 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 | Theorem | Module | Statement |
 |---|---|---|
 | `soundness` | `BinaryPartitionWindowAutomata.Theorems` | **Master Automaton Lifting Soundness Theorem (Finite Certificate → ∀ n : Nat).** |
-| `b5_forbids_three_mod4_via_dfa` | `BinaryPartitionWindowAutomata.Theorems` | Machine-checked infinite theorem `b5_forbids_three_mod4_via_dfa` proved in pure Lean 4 `Init`. |
-| `b4_coupled_8n_5_mod4` | `BinaryPartitionWindowAutomata.Theorems` | Machine-checked infinite theorem `b4_coupled_8n_5_mod4` proved in pure Lean 4 `Init`. |
-| `mutation_rejects_bad_q0` | `BinaryPartitionWindowAutomata.Theorems` | Hostile mutation tests: corrupting `q0`, `d1`, or `D` makes `isValid = false` (non-vacuous checker). |
+| `b5_forbids_three_mod4_via_dfa` | `BinaryPartitionWindowAutomata.Theorems` | For every `n`, the 5-restricted binary partition number `b_5(n)` (`br 5 n`) is never congruent to `3` modulo `4`. |
+| `b4_coupled_8n_5_mod4` | `BinaryPartitionWindowAutomata.Theorems` | For every `n`, `b_4(8n + 5) = 3 * b_4(8n) (mod 4)`. |
+| `mutation_rejects_bad_q0` | `BinaryPartitionWindowAutomata.Theorems` | Mutation tests: corrupting `q0`, `d1`, or `D` makes `isValid = false` (non-vacuous checker). |
 | `br_universal_mod4_carry_law` | `BinaryPartitionWindowAutomata.Theorems` | **Theorem B (Universal Carry-Valuation Law for All Odd `r = 2^t * u - 1`):** For every `t ≥ 1`, every odd `u`, and every `j : Nat`, `b_{2^t * u - 1}(2 * u * j) mod 4 = Φ_t(j mod 2^t)` — strictly periodic of period `2^t`, independent of the odd factor `u`, and governed by the parity of `v_2(j mod 2^t)`. |
-| `sharpness_r3_even_v2` | `BinaryPartitionWindowAutomata.Theorems` | Boundary sharpness counterexamples in `r` (even `v_2(r+1)` hits `3 mod 4`). |
-| `sharpness_b5_fails_mod8` | `BinaryPartitionWindowAutomata.Theorems` | Modulus sharpness counterexamples (congruences hold mod 4, FAIL mod 8!). |
-| `sharpness_gap023_offset17_fails` | `BinaryPartitionWindowAutomata.Theorems` | Machine-checked infinite theorem `sharpness_gap023_offset17_fails` proved in pure Lean 4 `Init`. |
+| `sharpness_r3_even_v2` | `BinaryPartitionWindowAutomata.Theorems` | Machine-checked finite instance: `b_3(4) mod 4 = 3` (the boundary case `r = 3`, where `v_2(r+1)` is even, does hit `3 mod 4`). |
+| `sharpness_b5_fails_mod8` | `BinaryPartitionWindowAutomata.Theorems` | Machine-checked finite instance: `b_5(6) = 5`, so `b_5(6) mod 8 != 1` although `b_5(6) = 1 (mod 4)`. |
+| `sharpness_gap023_offset17_fails` | `BinaryPartitionWindowAutomata.Theorems` | Machine-checked finite instance: for the digit set `{0, 2, 3}`, `B(17) mod 4 != 3 * B(0) mod 4`, i.e. the offset-17 analogue of the coupled law fails. |
 
 ## 138. [`bitpack-raw-proof-meta-compiler/`](bitpack-raw-proof-meta-compiler/)
 
@@ -1923,7 +1923,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 | Theorem | Module | Statement |
 |---|---|---|
 | `checkCert_sound` | `BitpackRawProofMetaCompiler.Theorems` | General Soundness Meta-Theorem for `checkCert`. |
-| `soundness_verifyRawCert` | `BitpackRawProofMetaCompiler.Theorems` | Machine-checked infinite theorem `soundness_verifyRawCert` proved in pure Lean 4 `Init`. |
+| `soundness_verifyRawCert` | `BitpackRawProofMetaCompiler.Theorems` | If `verifyRawCert raw = true` for a `ByteArray` `raw`, then `raw` decodes to a certificate whose goal holds. |
 | `gray_3x_uncertainty` | `BitpackRawProofMetaCompiler.Theorems` | Theorem 1 (13-byte cert, Schema 0): Exact Gray-Code / 3x Convex-Hull Uncertainty Principle. |
 | `pop_5x_9x_lower` | `BitpackRawProofMetaCompiler.Theorems` | Theorem 3 (26-byte cert, Schema 0): Non-Subadditive (5, 9) Sharp 2/3 Lower Bound. |
 | `pop_3x_or_11x_sharp` | `BitpackRawProofMetaCompiler.Theorems` | Theorem 5 (23-byte cert, Schema 0): Bitwise-OR Separation Law (3, 11) Sharp 2/3 Lower Bound. |
@@ -1937,11 +1937,11 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `matAnn_sound` | `CayleyHamiltonPerronAnnihilator.Theorems` | Machine-checked infinite theorem `matAnn_sound` proved in pure Lean 4 `Init`. |
-| `scaledVal_exact_valuation` | `CayleyHamiltonPerronAnnihilator.Theorems` | Machine-checked infinite theorem `scaledVal_exact_valuation` proved in pure Lean 4 `Init`. |
+| `matAnn_sound` | `CayleyHamiltonPerronAnnihilator.Theorems` | Soundness: if `checkMatAnn` accepts a certificate (matrix `M`, vectors `u`, `v`, coefficient list `c`), then for every `n` the sequence `obs M u v` satisfies the linear recurrence `obs(n + len c) = sum_j c_j * obs(n + j)`. |
+| `scaledVal_exact_valuation` | `CayleyHamiltonPerronAnnihilator.Theorems` | If `checkScaledVal` accepts a certificate (with the stated divisibility and non-vanishing side conditions), then for every `n`, `q^(n + preShift)` divides `obs(n + n0)` and `q^(n + preShift + 1)` does not. |
 | `carrySumK_eq_obs` | `CayleyHamiltonPerronAnnihilator.Theorems` | Exact semantic bridge for ALL `k ≥ 1` and ALL `n : Nat`. |
 | `thm_Z5_and_K7_pos` | `CayleyHamiltonPerronAnnihilator.Theorems` | **THEOREM 2a (Strict Positivity of `Z_5` and `K_7`):** For ALL `n : Nat`, both `Z_corr 5 n > 0` and `K_corr 7 n > 0`. |
-| `thm_C3_odd_part_mod4` | `CayleyHamiltonPerronAnnihilator.Theorems` | Machine-checked infinite theorem `thm_C3_odd_part_mod4` proved in pure Lean 4 `Init`. |
+| `thm_C3_odd_part_mod4` | `CayleyHamiltonPerronAnnihilator.Theorems` | For every `n >= 3`, `carrySumK 3 n = 2^(n+1) * t` for an integer `t` with `t mod 4 = 1` if `n` is even and `t mod 4 = 3` if `n` is odd. |
 | `thm_C5_pos_for_all_ge_8` | `CayleyHamiltonPerronAnnihilator.Theorems` | **THEOREM 5b (Eventual Strict Positivity of `C_5` Beyond Descartes' Rule of Signs):** |
 | `sharpness_K23_fails` | `CayleyHamiltonPerronAnnihilator.Theorems` | **Sharpness Witness 1 (Carried-vs-Carryless Positivity Fails at `c = 23`!):** |
 | `sharpness_K7_Z5_shift` | `CayleyHamiltonPerronAnnihilator.Theorems` | **Sharpness Witness 5 (`+3` shift in `K_7(n+3) = 2*Z_5(n)` is sharp):** |
@@ -1955,10 +1955,10 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `hermitian_row0_telescope_symm` | `CirculantCarryBitSplittingCones.Theorems` | **REUSABLE MECHANISM I (General Involutive Row-0 Telescoping & Palindromy Theorem):** If `H` is `rev`-Hermitian over `Z[Z/mZ]`, `v 0 = e_0`, and row 0 of `H` satisfies `H 0 j = delta_{0,j} e_0 + rev(v j)`, then: 1. `(H^(k+1) v)_0 = (H^k v)_0 + quadForm(v, H^k)` for all `k : Nat`, 2. `rev((H^k v)_0) = (H^k v)_0` for all `k : Nat`. |
 | `mersenne_mod3_recurrence` | `CirculantCarryBitSplittingCones.Theorems` | **THEOREM 1b (Exact 3-Term Recurrence & Exponential Positivity for Mod-3 Mersenne):** For ALL `k : Nat`: 1. `D_3(k + 3) = 4 * D_3(k + 2) + 4 * D_3(k + 1) - D_3(k)`, 2. `D_3(k) ≥ 4^k > 0`, hence class `0 (mod 3)` strictly dominates BOTH `1` and `2 (mod 3)` on every dyadic block `[0, 2^(3k))`. |
 | `mersenne_mod6_dominance_breaks_at_2_pow_72` | `CirculantCarryBitSplittingCones.Theorems` | **THEOREM 1c (Kernel-Checked Sharp Phase Transition at m = 6, N = 2^72):** Although `c_0(2^(6k)) > c_r(2^(6k))` for all `1 ≤ k ≤ 11` (up to `2^66 ≈ 7.38 × 10^19`), at `k = 12` (`N = 2^72 = 4,722,366,482,869,645,213,696`), Mod-6 Mersenne 0-dominance SHARPLY BREAKS with exact deficit `-4,543,260,596,431,345`. |
-| `mersenne_palindromy_naive_involutions_fail` | `CirculantCarryBitSplittingCones.Theorems` | Machine-checked infinite theorem `mersenne_palindromy_naive_involutions_fail` proved in pure Lean 4 `Init`. |
+| `mersenne_palindromy_naive_involutions_fail` | `CirculantCarryBitSplittingCones.Theorems` | Machine-checked finite instance: four concrete popcount facts: $s _ 2(7 \cdot 11) \equiv 1$, $s _ 2(7 \cdot 53) \equiv 0$, $s _ 2(7 \cdot 13) \equiv 2$, $s _ 2(7 \cdot 50) \equiv 0 \pmod 3$. |
 | `or_mul5_strict_evil_dominance` | `CirculantCarryBitSplittingCones.Theorems` | **THEOREM 2 (Nonlinear Bitwise-OR Evil Dominance for `n /// 5*n`, ALL `N ≥ 1`):** For EVERY `N ≥ 1`, strictly more `n < N` have `s_2(n /// 5*n)` even than odd. |
 | `mul3_newman_benchmark` | `CirculantCarryBitSplittingCones.Theorems` | **THEOREM 4 (Classical Newman 1969 Benchmark Recovered in 9 Rows):** Demonstrates engine reuse across both linear (`3*n`) and nonlinear (`n /// 3*n`, `n /// 5*n`) binary carry transducers. |
-| `hostile_mutation_U0_rejected` | `CirculantCarryBitSplittingCones.Theorems` | Machine-checked infinite theorem `hostile_mutation_U0_rejected` proved in pure Lean 4 `Init`. |
+| `hostile_mutation_U0_rejected` | `CirculantCarryBitSplittingCones.Theorems` | Machine-checked finite instance: a mutated certificate (`U0`) is rejected by the Boolean checker. |
 | `engineII_three_way_sharpness` | `CirculantCarryBitSplittingCones.Theorems` | **3-WAY SHARPNESS COUNTEREXAMPLES FOR ENGINE II:** Replacing `///` by `^^^`, replacing `///` by `&&&`, or replacing `c ∈ {3, 5}` by `c = 7` all break strict evil dominance immediately at `N = 3` (`evil = 1 < 2 = odious`). |
 
 ## 141. [`dyadic-ball-contraction-compiler/`](dyadic-ball-contraction-compiler/)
@@ -1967,14 +1967,14 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `checkParamTree_sound` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `checkParamTree_sound` proved in pure Lean 4 `Init`. |
+| `checkParamTree_sound` | `DyadicBallContractionCompiler.Theorems` | Soundness meta-theorem: if the Boolean checker `checkParamTree` accepts a certificate tree, then for every parameter `p` in the parameter ball the map is self-mapped and Lipschitz with the stated constant `q` on the ball `B0`. |
 | `contraction_fixed_point_unique` | `DyadicBallContractionCompiler.Theorems` | Meta-Theorem 5: Uniqueness of Fixed Points in B0. |
-| `bring_quintic_residual_decay` | `DyadicBallContractionCompiler.Theorems` | Exact algebraic residual identity for Bring Newton step: /x^5 + (1 + p)x - 1/ = (1 + p + 5 x^4) * /F_p(x) - x/ ≤ 7 * /F_p(x) - x/ on [0, 1/2] × [1/2, 1]! |
-| `bring_direct_oscillatory_contraction` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `bring_direct_oscillatory_contraction` proved in pure Lean 4 `Init`. |
-| `certHalley_valid` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `certHalley_valid` proved in pure Lean 4 `Init`. |
-| `certBringAlt_valid` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `certBringAlt_valid` proved in pure Lean 4 `Init`. |
-| `mutation_reject_halley_no_subdivision` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `mutation_reject_halley_no_subdivision` proved in pure Lean 4 `Init`. |
-| `mutation_reject_bring_alt_expanding_region` | `DyadicBallContractionCompiler.Theorems` | Machine-checked infinite theorem `mutation_reject_bring_alt_expanding_region` proved in pure Lean 4 `Init`. |
+| `bring_quintic_residual_decay` | `DyadicBallContractionCompiler.Theorems` | For every parameter `p` in `certBring.p0` ($[0, 1/2]$), start `x0` in `certBring.b0` ($[1/2, 1]$) and first Newton iterate `x1`, every iterate `xn` satisfies $|x_n^5 + (1+p)x_n - 1| \le 7 \cdot (7/8)^n \cdot |x_1 - x_0|$. |
+| `bring_direct_oscillatory_contraction` | `DyadicBallContractionCompiler.Theorems` | For `x0`, `y0` in the box `certBringAlt.b0`, all iterates of `exprBringDirect` (at parameter 0) stay in the box and $|x_n - y_n| \le (63/64)^n |x_0 - y_0|$. |
+| `certHalley_valid` | `DyadicBallContractionCompiler.Theorems` | Machine-checked finite instance: the Boolean check `checkParamContraction certHalley` returns `true` (a finite computation). |
+| `certBringAlt_valid` | `DyadicBallContractionCompiler.Theorems` | Machine-checked finite instance: the Boolean check `checkParamContraction certBringAlt` returns `true` (a finite computation). |
+| `mutation_reject_halley_no_subdivision` | `DyadicBallContractionCompiler.Theorems` | Machine-checked finite instance: the checker rejects `certHalley` with its subdivision tree replaced by a single leaf. |
+| `mutation_reject_bring_alt_expanding_region` | `DyadicBallContractionCompiler.Theorems` | Machine-checked finite instance: the checker rejects `certBringAlt` with its box replaced by the expanding region `⟨17, 5, 1⟩`. |
 
 ## 142. [`dyadic-jsr-polytope-monoid-checker/`](dyadic-jsr-polytope-monoid-checker/)
 
@@ -1986,10 +1986,10 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `convex_hull_infinite_alphabet_sound` | `DyadicJsrPolytopeMonoidChecker.Theorems` | **MAIN SOUNDNESS META-THEOREM 2 (Infinite-Alphabet Dyadic Convex-Hull Contraction):** One finite polytope certificate checked by `decide` on `m` vertex matrices AUTOMATICALLY certifies uniform exponential contraction for ALL arbitrary-length, time-varying products drawn from the ENTIRE INFINITE dyadic convex hull `conv_{Z[1/2]}(M_0, ..., M_{m-1})`! |
 | `periodic_eigen_sound` | `DyadicJsrPolytopeMonoidChecker.Theorems` | **MAIN SOUNDNESS META-THEOREM 4 (Exact Periodic Eigen-Witness JSR Lower Bound):** If `checkPeriodicEigenCert cert = true`, then for EVERY `k : Nat`, the `k`-fold repeated word `w_0^k` (length `/w_0/ * k`) attains exact `ℓ_∞` operator norm at least `(/eig/ / 2^(s * /w_0/))^k`! |
 | `thm1_convex_hull_contraction` | `DyadicJsrPolytopeMonoidChecker.Theorems` | **THEOREM 1C (Infinite-Alphabet Dyadic Convex-Hull Contraction):** Every arbitrary-length sequence of time-varying dyadic convex combinations of `M0, M1` contracts at the exact same rate `4 * (15/16)^n`. |
-| `thm1_sharpness_unbounded` | `DyadicJsrPolytopeMonoidChecker.Theorems` | Machine-checked infinite theorem `thm1_sharpness_unbounded` proved in pure Lean 4 `Init`. |
+| `thm1_sharpness_unbounded` | `DyadicJsrPolytopeMonoidChecker.Theorems` | For every bound `B` there is a repetition count `k` and a row `p` for which the product of the repeated certificate word of a specific family `thm1_sharp_A` exceeds `B` (unboundedness for that family). |
 | `thm3_signed_cone_subradius` | `DyadicJsrPolytopeMonoidChecker.Theorems` | **THEOREM 3A (Strict Positivity & Exponential Subradius `≥ 5/4` for Signed-Entry Matrices):** |
-| `thm4_unconstrained_lower` | `DyadicJsrPolytopeMonoidChecker.Theorems` | Machine-checked infinite theorem `thm4_unconstrained_lower` proved in pure Lean 4 `Init`. |
-| `mut8_bad_naf_dfa_rejected` | `DyadicJsrPolytopeMonoidChecker.Theorems` | Machine-checked infinite theorem `mut8_bad_naf_dfa_rejected` proved in pure Lean 4 `Init`. |
+| `thm4_unconstrained_lower` | `DyadicJsrPolytopeMonoidChecker.Theorems` | For every `k`, the `k`-fold repeated word of a specific family `thm4_A` has a row absolute sum at least `(5/4)^k` (an elementary lower bound coming from a `5/4` diagonal entry). |
+| `mut8_bad_naf_dfa_rejected` | `DyadicJsrPolytopeMonoidChecker.Theorems` | Machine-checked finite instance: the checker rejects one mutated certificate (`bad_cert4_unconstrained_dfa`). |
 
 ## 143. [`reversible-circuit-coset-compiler/`](reversible-circuit-coset-compiler/)
 
@@ -1998,13 +1998,13 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | Theorem | Module | Statement |
 |---|---|---|
 | `sound_checkWindowEq` | `ReversibleCircuitCosetCompiler.Theorems` | Layer 1A Soundness Meta-Theorem: lifts finite width-w0 equivalence to ALL w ≥ w0! |
-| `sound_coset_order` | `ReversibleCircuitCosetCompiler.Theorems` | Layer 2B Meta-Theorem 3 (Universal Order & Modulo-d Power Reduction ∀ n : Nat, ∀ w ≥ w0!): If `repeatWord d word` returns to coset 0, then W^d = id AND W^n = W^(n % d) for EVERY exponent n : Nat and EVERY bit-width w ≥ w0! |
+| `sound_coset_order` | `ReversibleCircuitCosetCompiler.Theorems` | Layer 2B soundness (universal order bound): if the coset certificate checks and `repeatWord d word` returns to coset 0, then W^d = id for every bit-width w ≥ w0. Only W^d = id is stated in `Challenge.lean`; the power-reduction W^n = W^(n % d) is not stated there. |
 | `thm_d6_C_power_mod` | `ReversibleCircuitCosetCompiler.Theorems` | Theorem I.5 (Universal D6 Power-Mod-6 Reduction ∀ n : Nat, ∀ w ≥ 1): C^n = C^(n % 6). |
 | `thm_b3_AST_power_mod` | `ReversibleCircuitCosetCompiler.Theorems` | Theorem II.3 (Universal Modulo-6 Power Reduction ∀ n : Nat, ∀ w ≥ 3): (bCnot(0,1) · bSwap(0,1) · bToff(0,1,2))^n = (bCnot(0,1) · bSwap(0,1) · bToff(0,1,2))^(n % 6). |
 | `thm_ptoff_dihedral_family` | `ReversibleCircuitCosetCompiler.Theorems` | Theorem III.2 (Infinite Family of Hybrid Toffoli-Add Involutions ∀ n : Nat, ∀ w : Nat): (P_toff(0,1,3;2)^n · rNot(3))^2 = Id for ALL exponents n and ALL bit-widths w! |
-| `thm_t3_sharp_collapse_w2` | `ReversibleCircuitCosetCompiler.Theorems` | Sharpness III.c (Width Threshold of T3): T3 = Id for w ≤ 2, while T3 ≠ Id for ALL w ≥ 3! |
-| `mut_window_out_of_bounds` | `ReversibleCircuitCosetCompiler.Theorems` | Machine-checked infinite theorem `mut_window_out_of_bounds` proved in pure Lean 4 `Init`. |
-| `mut_order_lower_inflated` | `ReversibleCircuitCosetCompiler.Theorems` | Machine-checked infinite theorem `mut_order_lower_inflated` proved in pure Lean 4 `Init`. |
+| `thm_t3_sharp_collapse_w2` | `ReversibleCircuitCosetCompiler.Theorems` | Sharpness III.c (width threshold of T3), collapse half only: T3 = Id at width w = 2. The T3 ≠ Id for w ≥ 3 half is `thm_t3_nontrivial_ge3` in `Theorems.lean`, not in `Challenge.lean`. |
+| `mut_window_out_of_bounds` | `ReversibleCircuitCosetCompiler.Theorems` | Machine-checked finite instance (a single `decide` fact): `checkWindowEq 1 2 [gT] [gT] = false`, a mutation check that the window check rejects an out-of-bounds window. |
+| `mut_order_lower_inflated` | `ReversibleCircuitCosetCompiler.Theorems` | Machine-checked finite instance (a single `decide` fact): `checkOrderLowerAt 2 2 12 circC = false`, a mutation check that an inflated order lower bound is rejected. |
 
 ## 144. [`strided-bitset-2adic-ultrametric/`](strided-bitset-2adic-ultrametric/)
 
@@ -2031,10 +2031,10 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `majority_carry_holonomy` | `BitSlicedCarryHolonomy2adic.Theorems` | **Core Engine Theorem B1 (`majority_carry_holonomy`)**: For ANY `TPerm Φ`, ANY `c`, and ANY doubled cycle `2L` at level `k+1` (with `L` even): `holonomy (Φ · + c) (k+1) x0 (2*L)` equals the XOR of the twist derivative `β` and the carry-overflow parity over the half-cycle `y_i = iter T i x0 % 2^k`! |
 | `tower_to_min_period` | `BitSlicedCarryHolonomy2adic.Theorems` | **Core Engine Theorem C3 (Exact Minimal Periodicity Mod `2^(k0 + m)`)**: Under the certified doubling tower plus base minimality (`∀ 0 < r < L0, iter f r 0 % 2^k0 ≠ 0`), for EVERY `m : Nat`, `L0 * 2 ^ m` is the **EXACT minimal period** of `iter f · 0` modulo `2 ^ (k0 + m)`! |
 | `grayCarry_ge2_odd_period` | `BitSlicedCarryHolonomy2adic.Theorems` | **Theorem 1A (Gray-Carry Ergodicity for `s ≥ 2`, odd `c`)**: For ALL `s ≥ 2`, ALL odd `c`, and ALL `k : Nat`, the orbit modulo `2^k` has exact minimal period `2^k`, and for ALL `n ≥ 1`, `v2 (iter (grayCarryStep s c) n 0) = v2 n`! |
-| `quadAnd_v2` | `BitSlicedCarryHolonomy2adic.Theorems` | Machine-checked infinite theorem `quadAnd_v2` proved in pure Lean 4 `Init`. |
+| `quadAnd_v2` | `BitSlicedCarryHolonomy2adic.Theorems` | For `1 <= s < t`, `t >= 3`, `c != 0`, `n != 0`: `v2 (iter (quadAndStep s t c) n 0) = v2 c + v2 n`, where `quadAndStep` is the quadratic AND-carry recurrence `b_{n+1} = Psi_{s,t}(b_n) + c`. |
 | `affineXor_even_v2` | `BitSlicedCarryHolonomy2adic.Theorems` | **Theorem 3B (Affine-XOR Exact Valuation Law for ALL even `A ≥ 2`, ALL `c ≥ 1`, ALL `n ≥ 1`)**: `v2 (iter (affineXorStep A c) n 0) = if n % 2 = 1 then v2 c else v2 n + v2 c + v2 A - 1`! |
 | `sharpness_affineXor_A0_period2` | `BitSlicedCarryHolonomy2adic.Theorems` | **Sharpness 2 (`A = 0` in Affine-XOR, i.e. `a_{n+1} = a_n ^^^ c`)**: `A = 0` has zero holonomy at every level: exact period 2 forever (`d_{2m} = 0`, `d_{2m+1} = c`)! |
-| `sharpness_carryless_gray_period_collapse` | `BitSlicedCarryHolonomy2adic.Theorems` | Machine-checked infinite theorem `sharpness_carryless_gray_period_collapse` proved in pure Lean 4 `Init`. |
+| `sharpness_carryless_gray_period_collapse` | `BitSlicedCarryHolonomy2adic.Theorems` | Machine-checked finite instance: for `carrylessGrayStep 1`, `iter _ 4 0 = 8`, so `v2 = 3` while `v2 1 + v2 4 = 2`: the carried valuation law fails for the carry-less step. |
 
 ## 146. [`bitwise-expander-walsh-gaps/`](bitwise-expander-walsh-gaps/)
 
@@ -2046,10 +2046,10 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `dirichletForm_eq_wht` | `BitwiseExpanderWalshGaps.Theorems` | Exact Integer Laplacian-Rayleigh Spectral Decomposition. |
 | `expander_mixing_lemma_int` | `BitwiseExpanderWalshGaps.Theorems` | Master Lifting Theorem 4 (Exact Integer Expander Mixing Lemma — zero reals, zero sqrt). |
 | `mod3_exact_spectral_gap` | `BitwiseExpanderWalshGaps.Theorems` | **THEOREM A (Exact Tight Integer Spectral Gap of `G_mod3` ∀ k ≥ 1):** 1. Universal Rayleigh spectral gap: `∀ f, ∑ f = 0 → mod3Gap k * ‖f‖² ≤ ⟨f, L f⟩` 2. Centered variance Poincaré: `∀ f, mod3Gap k * Var(f) ≤ 2^k * ⟨f, L f⟩` 3. Exact tightness witness: `χ_{allOnes k}` is non-zero, zero-sum, and attains exact equality! |
-| `fib_expander_mixing_lemma` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked infinite theorem `fib_expander_mixing_lemma` proved in pure Lean 4 `Init`. |
-| `witness_fib_k4` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked infinite theorem `witness_fib_k4` proved in pure Lean 4 `Init`. |
-| `sharpness_mod2_always_disconnected` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked infinite theorem `sharpness_mod2_always_disconnected` proved in pure Lean 4 `Init`. |
-| `witness_mod3_eml_k5` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked infinite theorem `witness_mod3_eml_k5` proved in pure Lean 4 `Init`. |
+| `fib_expander_mixing_lemma` | `BitwiseExpanderWalshGaps.Theorems` | For every `k >= 3`, the integer expander-mixing inequality `disc^2 <= mu^2 * s(2^k - s) * t(2^k - t)` holds for the Fibbinary graph (`x ~ y` iff `x XOR y` is nonzero with no two adjacent 1-bits), with `mu = Lucas(k-1) - 1`. |
+| `witness_fib_k4` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked finite instance (`k = 4`): the Fibbinary graph has degree `7`, eigenvalue `3` at `fibWitnessMax 4`, eigenvalue `-3` at `fibWitnessMin 4`, and Dirichlet form `64` on `chi (fibWitnessMax 4)`. |
+| `sharpness_mod2_always_disconnected` | `BitwiseExpanderWalshGaps.Theorems` | For every `k >= 1`, the character `chi_1` is zero-sum, has squared norm `2^k` and Dirichlet form `0` under `mod2Pred`, so the mod-2 graph is disconnected (spectral gap `0`). |
+| `witness_mod3_eml_k5` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked finite instance (`k = 5`): for `S = {x < 11}` and `T = {x odd}` (so `s = 11`, `t = 16`), the integer expander-mixing inequality holds for the mod-3 graph with `mu = 8`. |
 
 ## 147. [`carry-automaton-krylov-l4-energy/`](carry-automaton-krylov-l4-energy/)
 
@@ -2062,9 +2062,9 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `innerQRZ_dualStep` | `CarryAutomatonKrylovL4Energy.Theorems` | **Exact Adjointness Theorem (`innerQRZ_dualStep`):** `⟨dualStep A W, S⟩ = ⟨W, primalStep A S⟩` for EVERY `BinAuto d`, `W`, and `S`. |
 | `paperfolding_direct_rec` | `CarryAutomatonKrylovL4Energy.Theorems` | Direct recurrence verification: `g(2n) = (-1)^n` and `g(2n+1) = g(n)` for all `n : Nat`. |
 | `baumSweet_classical_rec` | `CarryAutomatonKrylovL4Energy.Theorems` | Direct verification that `baumSweetAuto.eval 0` satisfies the classical Baum-Sweet recurrence: `b(0)=1`, `b(2n+1)=b(n)`, `b(4n)=b(n)`, `b(4n+2)=0` for ALL `n : Nat`. |
-| `mask6Cert_valid` | `CarryAutomatonKrylovL4Energy.Theorems` | Machine-checked infinite theorem `mask6Cert_valid` proved in pure Lean 4 `Init`. |
+| `mask6Cert_valid` | `CarryAutomatonKrylovL4Energy.Theorems` | Machine-checked finite instance: the witnessed dual certificate `mask6Cert` for `mask6Auto` passes the Boolean check `checkWitnessedDualCert` (a finite computation). |
 | `mask6_totE4_rec` | `CarryAutomatonKrylovL4Energy.Theorems` | **THEOREM 4a (Exact Sparse Degree-5 Recurrence for `totE4 mask6Auto`, ∀ `k : Nat`):** `T(k + 5) = 2 * T(k + 4) + 16 * T(k + 2) + 256 * T(k)`. |
-| `rudinShapiro_E4_closed_form` | `CarryAutomatonKrylovL4Energy.Theorems` | Machine-checked infinite theorem `rudinShapiro_E4_closed_form` proved in pure Lean 4 `Init`. |
+| `rudinShapiro_E4_closed_form` | `CarryAutomatonKrylovL4Energy.Theorems` | For every `k >= 1`, `3 * E4State rudinShapiroAuto 0 k = 4^(k+1) - (-2)^k`. |
 
 ## 148. [`silicon-tfunction-bent-duality/`](silicon-tfunction-bent-duality/)
 
@@ -2089,12 +2089,12 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 |---|---|---|
 | `soundness_strict_pd` | `DyadicBilinearSchurPositivity.Theorems` | Mode 1 UNIVERSAL INFINITE SOUNDNESS THEOREM: If the finite Z[1/2] certificate passes `checkStrictPD`, then for EVERY `k : Nat` and EVERY nonzero `x : Fin (2^k) → ZHalf`, the target quadratic form is strictly positive! |
 | `v2Nat_xor_eq_absDiff` | `DyadicBilinearSchurPositivity.Theorems` | Pure-silicon 2-adic identity: `v_2(/i - j/) = ctz(i ^^^ j)` for ALL `i, j : Nat`! |
-| `thm_monnaArch_strict_pd` | `DyadicBilinearSchurPositivity.Theorems` | THEOREM 2 (Sharp Discrete Archimedean-Monna Distance Form Strict Positivity): For ALL `k : Nat` and ALL nonzero `x : Fin (2^k) → ZHalf`: `(1/2) * μ_k(x)^2 - A_k(x) > 0`. |
+| `thm_monnaArch_strict_pd` | `DyadicBilinearSchurPositivity.Theorems` | THEOREM 2 (Discrete Archimedean-Monna distance form, strict positivity): For ALL `k : Nat` and ALL nonzero `x : Fin (2^k) → ZHalf`: `(1/2) * μ_k(x)^2 - A_k(x) > 0`. |
 | `monnaArch_direct_induction_fails` | `DyadicBilinearSchurPositivity.Theorems` | Direct-induction obstruction: naive `W = [[1/2, 0], [0, 0]]` produces an INDEFINITE `Δ` (principal 2×2 minor on indices `{0, 3}` has determinant `-1/64 < 0`)! |
 | `adelic_kernels_noncommuting` | `DyadicBilinearSchurPositivity.Theorems` | Non-commutativity witness at `k = 2` (4×4 matrices): `[R_2^{(1)}, A_2] ≠ 0`! |
-| `thm_adelic_sharp_dipole_k1` | `DyadicBilinearSchurPositivity.Theorems` | Machine-checked infinite theorem `thm_adelic_sharp_dipole_k1` proved in pure Lean 4 `Init`. |
-| `asym_nondiag_asymmetric_diag` | `DyadicBilinearSchurPositivity.Theorems` | Machine-checked infinite theorem `asym_nondiag_asymmetric_diag` proved in pure Lean 4 `Init`. |
-| `thm_asym_nondiag_sharp_W00` | `DyadicBilinearSchurPositivity.Theorems` | Machine-checked infinite theorem `thm_asym_nondiag_sharp_W00` proved in pure Lean 4 `Init`. |
+| `thm_adelic_sharp_dipole_k1` | `DyadicBilinearSchurPositivity.Theorems` | Machine-checked finite instance: at `k = 1`, for the vector `(1, 0)`, the expression `3 μ² - 4 (μ - 2ν)² - 3 R - 2 A` (with `μ`, `ν`, the 2-adic Riesz form `R` and the Monna form `A`) is negative. |
+| `asym_nondiag_asymmetric_diag` | `DyadicBilinearSchurPositivity.Theorems` | Machine-checked finite instance: `sysAsym.F WAsymIndef 2` takes different values on the basis vectors with indices `0` and `3`. |
+| `thm_asym_nondiag_sharp_W00` | `DyadicBilinearSchurPositivity.Theorems` | Machine-checked finite instance: `sysAsym.F (mat2 0 2 2 (-2)) 1 (vec2 4 1) < 0`. |
 
 ## 150. [`group-ring-polylog-bit-inverses/`](group-ring-polylog-bit-inverses/)
 
@@ -2106,10 +2106,10 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `higman_rigidity` | `GroupRingPolylogBitInverses.Theorems` | **Obstruction Theorem 1 (Pure-Silicon Higman Rigidity):** In `Z[F_2^k]` for ALL `k ≥ 0`, every exact `Z`-unit (`f * g = δ_0`) satisfies `∑_x f(x)^2 = 1`, i.e., `f = ± δ_a` (no non-trivial `Z`-units exist). |
 | `binary01_no_self_inverse` | `GroupRingPolylogBitInverses.Theorems` | **Obstruction Theorem 5 (Pure `{0, 1}` Self-Inversion Impossibility):** No non-negative binary element `f : BVec k → {0, 1}` with `/supp(f)/ ≥ 2` can satisfy `f * f = c • δ_0` for ANY integer `c`. |
 | `treeElem_wht` | `GroupRingPolylogBitInverses.Theorems` | **Theorem A.1 (Dual Multiplexer Tree WHT Law):** Every single Walsh coefficient of `treeElem d` is `2^d * spectralSign d ω ∈ {-2^d, +2^d}`. |
-| `treeElem_polylog_identity` | `GroupRingPolylogBitInverses.Theorems` | Machine-checked infinite theorem `treeElem_polylog_identity` proved in pure Lean 4 `Init`. |
-| `asymTree_non_self_inverse` | `GroupRingPolylogBitInverses.Theorems` | Machine-checked infinite theorem `asymTree_non_self_inverse` proved in pure Lean 4 `Init`. |
-| `k3_no_spanning_ternary_dyadic` | `GroupRingPolylogBitInverses.Theorems` | **Sharpness 2 (`k = 3` Dyadic Inversion Impossibility — Exact Gap at `k = 3`):** NO full-affine-spanning ternary element on `F_2^3` is dyadically invertible (`f * g = 2^m • δ_0`). Combined with Theorem C (`∀ k ≥ 2, k ≠ 3`) and `baseA3` (`k = 3, D = 3`), this proves the `k ≠ 3` exclusion in Theorem C is 100% sharp. |
-| `unshiftedLift_breaks_ternary` | `GroupRingPolylogBitInverses.Theorems` | Machine-checked infinite theorem `unshiftedLift_breaks_ternary` proved in pure Lean 4 `Init`. |
+| `treeElem_polylog_identity` | `GroupRingPolylogBitInverses.Theorems` | For every `d`, `4 * suppCount (treeElem d) = (treeWidth d + 2)^2`. |
+| `asymTree_non_self_inverse` | `GroupRingPolylogBitInverses.Theorems` | For every `d`, `asymTreeP d != asymTreeQ d` and there is `x` with `asymTreeP d x != - asymTreeQ d x`. |
+| `k3_no_spanning_ternary_dyadic` | `GroupRingPolylogBitInverses.Theorems` | **Sharpness 2 (`k = 3` Dyadic Inversion Impossibility — Exact Gap at `k = 3`):** NO full-affine-spanning ternary element on `F_2^3` is dyadically invertible (`f * g = 2^m • δ_0`). Combined with Theorem C (`∀ k ≥ 2, k ≠ 3`) and `baseA3` (`k = 3, D = 3`), this shows that the `k = 3` exception cannot be removed from Theorem C for ternary elements with full affine span. |
+| `unshiftedLift_breaks_ternary` | `GroupRingPolylogBitInverses.Theorems` | Machine-checked finite instance: `unshiftedLift (treeElem 1) (treeElem 1)` is not ternary (proved in pure Lean 4 `Init`). |
 
 ## 151. [`minkowski-raney-singularity-engine/`](minkowski-raney-singularity-engine/)
 
@@ -2117,13 +2117,13 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `minkowskiQ_sbMat_mediant` | `MinkowskiRaneySingularityEngine.Theorems` | **Theorem 1 (Stern-Brocot / Minkowski Bijection)**: For every bitstring `w`, `?(med(sbMat w)) ≈q dyadMid w = (2 · bitsToNat w + 1) / 2^(/w/+1)`. |
+| `minkowskiQ_sbMat_mediant` | `MinkowskiRaneySingularityEngine.Theorems` | **Theorem 1 (Stern-Brocot mediant and the question-mark variant of this package; close to a restatement of the definition of `dyadMid`)**: For every bitstring `w`, `?(med(sbMat w)) ≈q dyadMid w = (2 · bitsToNat w + 1) / 2^(/w/+1)`. |
 | `hellinger_tv_singularity` | `MinkowskiRaneySingularityEngine.Theorems` | **Meta-Theorem B1 (Infinite Exponential Total-Variation / Hellinger Overlap Decay ∀ k : Nat)** |
 | `singularity_D2` | `MinkowskiRaneySingularityEngine.Theorems` | **Theorem 2a (Constructive Mutual Singularity μ_? ⊥ 2_* μ_? ∀ k : Nat)**: For every depth `k`, the total-variation overlap between `μ_?` and `2_* μ_?` decays as `≤ (65/57) · (63/64)^k`. |
 | `bit_expansion_D2` | `MinkowskiRaneySingularityEngine.Theorems` | **Theorem 3a (Exact Infinite Bit-Expansion Law for D = 2, rate α(2) = 7/6, ∀ k : Nat)** |
 | `integral_convergence_D2` | `MinkowskiRaneySingularityEngine.Theorems` | **Theorem 4a (Exact Rational Integral ∫ ?(2x) dμ_?(x) = 9/13, ∀ k : Nat)** |
 | `exact_closed_form_D2` | `MinkowskiRaneySingularityEngine.Theorems` | **Corollary (Theorem 5 specialized to x ↦ 2x)**: `∀ k : Nat, (1 / 2^k) ∑_{/w/=k} ?(2 · q(w)) ≈q 9/13 + a_k / (52 · 8^k)`. |
-| `row_col_duality_D5` | `MinkowskiRaneySingularityEngine.Theorems` | Machine-checked infinite theorem `row_col_duality_D5` proved in pure Lean 4 `Init`. |
+| `row_col_duality_D5` | `MinkowskiRaneySingularityEngine.Theorems` | Machine-checked finite instance (the fixed 15-state certificate `certD5`), proved in pure Lean 4 `Init`. |
 | `sharpness_hellinger_const_counterexample` | `MinkowskiRaneySingularityEngine.Theorems` | **Sharpness Counterexample 3 (Dyadic Hellinger Threshold `2 * c^2 ≥ 1`)**: Relaxing `c = 91/128` (`2*91^2 = 16562 ≥ 16384`) to `c = 181/256` (`2*181^2 = 65522 < 65536`) falsifies sub-multiplicativity `hWeight(c, 1 + 1) ≤ hWeight(c, 1) * hWeight(c, 1)`! |
 
 ## 152. [`shell-walsh-nested-join-spectra/`](shell-walsh-nested-join-spectra/)
@@ -2137,8 +2137,8 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `shellLaplacian_kirchhoff` | `ShellWalshNestedJoinSpectra.Theorems` | **REUSABLE ENGINE COROLLARY 2 (Exact Kirchhoff Spanning-Tree Cofactor of ALL 2-Adic Shell-Walsh Graphs)**: For ALL `k : Nat`, ALL `c : Nat -> Int`, ALL `phi : Nat -> Nat -> Int` (with `m = 2^k - 1` so `m + 1 = 2^k`): `2^k * det (minor00 (shellLaplacian k c phi)) = ∏_{j=1}^{2^k - 1} shellEig k c phi j`. |
 | `carryXorLaplacian_kirchhoff` | `ShellWalshNestedJoinSpectra.Theorems` | **UNIVERSAL 2-VARIABLE CARRY-XOR KIRCHHOFF SPANNING-TREE THEOREM**: For EVERY `k : Nat` and EVERY arbitrary 2-variable weight function `h : Nat -> Nat -> Int`: `2^k * det (minor00 (carryXorLaplacian k h)) = ∏_{j=1}^{2^k - 1} shellEig k (carryXorC h) (carryXorPhi h) j`. |
 | `dyadic_spanning_trees` | `ShellWalshNestedJoinSpectra.Theorems` | **THEOREM A2 (Exact Kirchhoff Spanning-Tree Weight Formula for `w(x,y) = 2^{v2(x+y)}`, ∀ k ≥ 1)**: `det (minor00 (dyadicLaplacian k)) = ∏_{j=1}^{k-1} ((j + 2) * (2k + 2 - j) * (2^{k-1})^2)^{2^{j-1}}`. |
-| `evenSum_kirchhoff` | `ShellWalshNestedJoinSpectra.Theorems` | Machine-checked infinite theorem `evenSum_kirchhoff` proved in pure Lean 4 `Init`. |
-| `sharpness_c3_charpoly` | `ShellWalshNestedJoinSpectra.Theorems` | Machine-checked infinite theorem `sharpness_c3_charpoly` proved in pure Lean 4 `Init`. |
+| `evenSum_kirchhoff` | `ShellWalshNestedJoinSpectra.Theorems` | For every $k$, the spanning-tree identity of `carryXorLaplacian_kirchhoff` for the specific weight `evenSumH` (a one-line specialization of that theorem, valid for all $k$). |
+| `sharpness_c3_charpoly` | `ShellWalshNestedJoinSpectra.Theorems` | Machine-checked finite instance: for all integers $x$, the characteristic polynomial of the fixed $4 \times 4$ matrix `shifted3Laplacian` is $x(x-2)(x^2-4x+2)$. |
 | `witness_nonvacuous_engine` | `ShellWalshNestedJoinSpectra.Theorems` | Non-vacuity witness 4: constructive `Nonempty` witness inhabiting all hypotheses of `orthogonal_eigenbasis_kirchhoff`. |
 
 ## 153. [`conway-nimber-artin-schreier-tower/`](conway-nimber-artin-schreier-tower/)
@@ -2163,13 +2163,13 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | Theorem | Module | Statement |
 |---|---|---|
 | `timedBTA_sound` | `TreeQuadtreeAutomatonCompiler.Theorems` | General Soundness Meta-Theorem for Height-Timed Bottom-Up Binary Tree Automata. |
-| `factoredQTA_sound` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `factoredQTA_sound` proved in pure Lean 4 `Init`. |
-| `percEval_eq_QNet` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `percEval_eq_QNet` proved in pure Lean 4 `Init`. |
-| `percolation_duality_D33` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `percolation_duality_D33` proved in pure Lean 4 `Init`. |
-| `d33_exact_completeness_height2` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `d33_exact_completeness_height2` proved in pure Lean 4 `Init`. |
-| `hilbert_D4_mod15_annihilation` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `hilbert_D4_mod15_annihilation` proved in pure Lean 4 `Init`. |
-| `nonvacuity_barrier_witnesses` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `nonvacuity_barrier_witnesses` proved in pure Lean 4 `Init`. |
-| `sharpness_and_nonvacuity_family3` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `sharpness_and_nonvacuity_family3` proved in pure Lean 4 `Init`. |
+| `factoredQTA_sound` | `TreeQuadtreeAutomatonCompiler.Theorems` | For every factored quadtree automaton with an accepted certificate, every quadtree of every height `k` evaluates to a good state (infinite in `k`). |
+| `percEval_eq_QNet` | `TreeQuadtreeAutomatonCompiler.Theorems` | For every height `k` and every Boolean quadtree, the percolation evaluator's connectivity relation on the four boundary ports equals the quadtree-network relation `QNet` (infinite in `k`). |
+| `percolation_duality_D33` | `TreeQuadtreeAutomatonCompiler.Theorems` | For every height `k` and every Boolean quadtree `q`, the pair (evaluation of `q`, evaluation of its complement) lies in the upset generated by the certificate `certG8` and satisfies `superConnGood` (infinite in `k`). |
+| `d33_exact_completeness_height2` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked finite instance (height 2 only): every planar pair in the certificate upset is realised by one of 33 explicit witness quadtrees. |
+| `hilbert_D4_mod15_annihilation` | `TreeQuadtreeAutomatonCompiler.Theorems` | For every height `k >= 1` and every Boolean quadtree `q`, `hilbertD4Sum q % 15 = 0` (infinite in `k`). |
+| `nonvacuity_barrier_witnesses` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked finite instance: two explicit height-2 quadtrees (`qtree4OfBits` of 0 and of 32905) with at least 3 components whose complement evaluates to the top element `TOP4`. |
+| `sharpness_and_nonvacuity_family3` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked finite instances: three explicit binary trees of height at most 1 on which the carry-lookahead summary `claGP` and the residues mod 7 of `valX + valY` take the stated values. |
 
 ## 155. [`fenwick-portal-parity-schur/`](fenwick-portal-parity-schur/)
 
@@ -2177,14 +2177,14 @@ We introduce **two composable, division-free pure-silicon infinite proof mechani
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `portalTuple_perturb` | `FenwickPortalParitySchur.Theorems` | Machine-checked infinite theorem `portalTuple_perturb` proved in pure Lean 4 `Init`. |
+| `portalTuple_perturb` | `FenwickPortalParitySchur.Theorems` | Over any commutative ring `R`, for every `(n+2) x (n+2)` matrix `M`, `portalTuple (perturb M p q1 q2 r) = stepPerturb (portalTuple M) p q1 q2 r`. |
 | `bordered_schur_inv` | `FenwickPortalParitySchur.Theorems` | Bordered Dyadic/Scaled Inverse Lemma (Theorem B2): If `A` is a symmetric bordered matrix `[[0, u^T], [u, B]]` of size `n + 1`, `B * Binv = I_n`, `w = Binv * u`, and `u^T * w = σ`, then `J = [[-1, w^T], [w, σ * Binv - w * w^T]]` satisfies `A * J = σ * I_{n+1}`! |
 | `fenwickUQ_unimodular` | `FenwickPortalParitySchur.Theorems` | Theorem 1b (Unimodularity): Deleting portal `0` yields `det(A(G_k(c)) \ {0}) = 1` for ALL `k ≥ 2`! |
 | `fenwickUQLap_charpoly_fps` | `FenwickPortalParitySchur.Theorems` | Theorem 2d (Exact Laplacian Polynomial-Ring `Z[X]` Instantiation via `FPS`): |
 | `fenwickUQLap_spanning_tree_square` | `FenwickPortalParitySchur.Theorems` | Theorem 4b (Spanning-Tree Perfect-Square Law): By Kirchhoff's Matrix-Tree Theorem, the spanning-tree count `τ(G_{k+1}) = det(L(G_{k+1}) \ {0})` is ALWAYS a perfect square `(tauSeq k + dSeq k)^2` for ALL `k ≥ 1`! |
 | `inOrderHeap_charpoly_factorization` | `FenwickPortalParitySchur.Theorems` | Theorem 6b (Binary Heap `H_k` Characteristic Polynomial Factorization over ANY `CRing R`, `∀ k ≥ 1`): |
 | `witness_dyadic_inv_k2` | `FenwickPortalParitySchur.Theorems` | Witness 6: Exact 1/4-dyadic inverse `A(G_2) * J_2 = 4 * I_5` and `A(G_3) * J_3 = 4 * I_9`. |
-| `sharpness_asymmetric_weights_k2` | `FenwickPortalParitySchur.Theorems` | Sharpness 3 (Equal query/update base weights are sharp): giving query edges `(i, i - lowbit i)` weight `1` and update edges `(i, i + lowbit i)` weight `2` gives `det = -24 ≠ -4` already at `k = 2` (`5 × 5`)! |
+| `sharpness_asymmetric_weights_k2` | `FenwickPortalParitySchur.Theorems` | Counterexample 3 (query/update weights `1`/`2` instead of equal weights): giving query edges `(i, i - lowbit i)` weight `1` and update edges `(i, i + lowbit i)` weight `2` gives `det = -24 ≠ -4` already at `k = 2` (`5 × 5`)! |
 
 ## 156. [`kronecker-woodbury-schur-riccati/`](kronecker-woodbury-schur-riccati/)
 
@@ -2208,13 +2208,13 @@ We introduce **two composable, division-free pure-silicon infinite proof mechani
 | Theorem | Module | Statement |
 |---|---|---|
 | `glue_alpha_sound` | `BinaryGraySuperpositionTransfer.Theorems` | **GENERIC SOUNDNESS THEOREM 1 (`BitTransfer3.Alpha`)**: For ANY 3-terminal gluing specification `spec` and ANY two `TermGraph n` instances `L, R`, the exact tropical independence-number vector of `glue spec L R` equals `stepAlpha spec`. |
-| `gb_pm_recurrence` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `gb_pm_recurrence` proved in pure Lean 4 `Init`. |
-| `gb_doublyCyclic_pm` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `gb_doublyCyclic_pm` proved in pure Lean 4 `Init`. |
-| `gbGraph_exactChrom` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `gbGraph_exactChrom` proved in pure Lean 4 `Init`. |
-| `gb_doublyCyclic_exactChrom` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `gb_doublyCyclic_exactChrom` proved in pure Lean 4 `Init`. |
-| `gb_chrom_root_two_sharp_k2` | `BinaryGraySuperpositionTransfer.Theorems` | Sharp threshold boundary witnesses for Theorem 5: at `k = 2` multiplicity is `1` (lead `+2`), and at `k = 3` multiplicity is `3` (lead `+4`), showing `k ≥ 4` is exact! |
-| `sb_pm_const_one` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `sb_pm_const_one` proved in pure Lean 4 `Init`. |
-| `non_vacuity_witness` | `BinaryGraySuperpositionTransfer.Theorems` | Non-Vacuity Concrete Witness: `GB_2`, `GB_3`, `GB_4` simultaneously realize all 5 theorems! |
+| `gb_pm_recurrence` | `BinaryGraySuperpositionTransfer.Theorems` | For all `k >= 3`, the number of perfect matchings of `GB_{k+1}` equals `PM(GB_k)^2 + PM(GB_{k-1})^2`. |
+| `gb_doublyCyclic_pm` | `BinaryGraySuperpositionTransfer.Theorems` | For all `k >= 2`, the doubly-cyclic closure of `GB_k` (`gbDoublyCyclic`, `GB_k` plus the two closing edges defined in `Defs.lean`) has exactly `2 * pmSeq k + 1` perfect matchings, where `pmSeq` is the sequence `a(1) = a(2) = 1`, `a(k+1) = a(k)^2 + a(k-1)^2`. |
+| `gbGraph_exactChrom` | `BinaryGraySuperpositionTransfer.Theorems` | For all `k >= 2` and `q`, the number of proper `q`-colourings of `GB_k` equals the integer polynomial `gbChromPoly k` evaluated at `q`. |
+| `gb_doublyCyclic_exactChrom` | `BinaryGraySuperpositionTransfer.Theorems` | The same colouring-count identity for the doubly-cyclic closure of `GB_k`, for all `k >= 2` and `q`. |
+| `gb_chrom_root_two_sharp_k2` | `BinaryGraySuperpositionTransfer.Theorems` | Finite instance: `gbChromPoly 2 = 2(q-2) + (q-2)^2 r(q)` for some integer polynomial `r` (vanishing order 1 at `q = 2`, leading coefficient `2`). The `k = 3` case and any claim about `k >= 4` are not part of this statement. |
+| `sb_pm_const_one` | `BinaryGraySuperpositionTransfer.Theorems` | For every depth `d`, the ablated family `SB` (the Gray bridge dropped from the gluing, `recGraph sbSpec d`) has exactly one perfect matching. |
+| `non_vacuity_witness` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked finite instance (a concrete computation, not one of the universal statements): `PM(GB_4) = 5`, `PM(doubly-cyclic GB_4) = 11`, `alpha(GB_4) = 7`, `alpha(doubly-cyclic GB_4) = 6`, and the colouring counts of `GB_3` at `q = 2, 3` are `0` and `60`. |
 
 ## 158. [`dyadic-skew-congruence-pfaffian/`](dyadic-skew-congruence-pfaffian/)
 
@@ -2222,8 +2222,8 @@ We introduce **two composable, division-free pure-silicon infinite proof mechani
 
 | Theorem | Module | Statement |
 |---|---|---|
-| `pfaffian_blockUpperId` | `DyadicSkewCongruencePfaffian.Theorems` | Machine-checked infinite theorem `pfaffian_blockUpperId` proved in pure Lean 4 `Init`. |
-| `pfaffian_blockSchur_bot` | `DyadicSkewCongruencePfaffian.Theorems` | Machine-checked infinite theorem `pfaffian_blockSchur_bot` proved in pure Lean 4 `Init`. |
+| `pfaffian_blockUpperId` | `DyadicSkewCongruencePfaffian.Theorems` | For a skew-symmetric integer matrix `A` of size `2r`, `p + q = 2r` and any integer `p x q` block `X`, the Pfaffian of the congruence of `A` by the block-upper unitriangular matrix `blockUpperId X` equals `pfaffian r A`. |
+| `pfaffian_blockSchur_bot` | `DyadicSkewCongruencePfaffian.Theorems` | For a skew-symmetric block matrix with diagonal blocks `A00`, `A11`, off-diagonal block `A01`, an integer `d` and a certificate `Y` with `d * A01 + Y^T * A11 = 0`: `d^(2m) * Pf(block matrix) = Pf(d^2 * A00 - d * Y^T * A01^T) * Pf(A11)`. |
 | `pfaffian_skewConference_compl` | `DyadicSkewCongruencePfaffian.Theorems` | Reusable Mechanism 3: Skew-Conference Complementary-Minor Reflection Theorem. For ANY `2(m+n) × 2(m+n)` skew-symmetric integer matrix `A` satisfying `A^2 = -μ I`, let `B` be its leading `2m × 2m` principal submatrix and `D` its trailing `2n × 2n` complementary principal submatrix. Then: `Pf(D)^2 * Pf(A) = μ^n * Pf(D) * Pf(B)` (and if `Pf(D) ≠ 0`, `Pf(D) * Pf(A) = μ^n * Pf(B)`). |
 | `pfaffian_carry_dyadic` | `DyadicSkewCongruencePfaffian.Theorems` | **Corollary A2 (Exact Dyadic Collapse at `a = 1, b = -1`):** `Pf(C_k - S_{2^k}) = (-1)^{2^{k-1}} * 2^{2^k - 1}` for all `k ≥ 1`. |
 | `pfaffian_grayWalsh_pow2` | `DyadicSkewCongruencePfaffian.Theorems` | **Corollary B3 (Unweighted Gray-Walsh Signed Mersenne-Power Pfaffian Law):** |
