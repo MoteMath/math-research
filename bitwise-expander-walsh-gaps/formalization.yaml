@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Pure-Silicon Walsh–Automaton Spectral-Gap Engine (specmat-15)
+  description: >-
+    **Mechanism Name:** **Exact Integer Walsh–Automaton Spectral-Gap Engine (`WalshAutomatonEngine`)** **Core Silicon Principle:** A $2^k$-vertex explicit bitwise-edge Cayley graph $G _ k(P)$ on $\mathrm{BitVec}\ k$ (edges $x \sim y \iff P(x \oplus y) = \mathrm{true}$, with $P(0) = \mathrm{false}$) has an exponentially large $2^k \times 2^k$ Laplacian $L _ k$. Classical spectral gr
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bitwise-expander-walsh-gaps
+  license: Apache-2.0

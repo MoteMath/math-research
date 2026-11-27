@@ -1,0 +1,12 @@
+name = "carry-automaton-krylov-l4-energy"
+version = "0.1.0"
+defaultTargets = ["CarryAutomatonKrylovL4Energy", "Solution"]
+
+[[lean_lib]]
+name = "CarryAutomatonKrylovL4Energy"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

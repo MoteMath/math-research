@@ -1,0 +1,12 @@
+name = "bit-sliced-carry-holonomy-2adic"
+version = "0.1.0"
+defaultTargets = ["BitSlicedCarryHolonomy2adic", "Solution"]
+
+[[lean_lib]]
+name = "BitSlicedCarryHolonomy2adic"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

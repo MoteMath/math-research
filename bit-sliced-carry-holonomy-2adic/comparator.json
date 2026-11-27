@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitSlicedCarryHolonomy2adicChallenge.iter_testBit_eq_holonomy",
+    "BitSlicedCarryHolonomy2adicChallenge.majority_carry_holonomy",
+    "BitSlicedCarryHolonomy2adicChallenge.tower_to_min_period",
+    "BitSlicedCarryHolonomy2adicChallenge.grayCarry_ge2_odd_period",
+    "BitSlicedCarryHolonomy2adicChallenge.quadAnd_v2",
+    "BitSlicedCarryHolonomy2adicChallenge.affineXor_even_v2",
+    "BitSlicedCarryHolonomy2adicChallenge.sharpness_affineXor_A0_period2",
+    "BitSlicedCarryHolonomy2adicChallenge.sharpness_carryless_gray_period_collapse"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -2020,3 +2020,63 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `pow2_strided_r_invariance` | `StridedBitset2adicUltrametric.Theorems` | **COROLLARY 2A (Exact `r`-Invariance / Stability Law):** For ALL strides `m ≥ 1`, ALL powers `r1, r2 ≥ m`, and ALL `a : Nat`, `v2 (r_{2^r1 S_m}(2^r1 * a)) = v2 (r_{2^r2 S_m}(2^r2 * a))`. |
 | `witness_three_way_tie_survives` | `StridedBitset2adicUltrametric.Theorems` | Non-vacuity witness 3: Theorem 2 genuinely hits 3-way ties (tie multiplicity 3, odd -> no cancellation)! At `m = 2, r = 3 (K = 8), n = 12 (q = 3, rem = 0)`, the three recurrence terms are `C(8,0)*r(3) = 56`, `C(8,4)*r(2) = 70*28 = 1960`, `C(8,8)*r(1) = 8`, ALL with `v2 = 3`, summing to `2024` which still has `v2 = 3`! |
 | `sharpness_above_window_cancellation` | `StridedBitset2adicUltrametric.Theorems` | **Sharpness Counterexample 3 (Even `k > 2^(m+1) - 2`, non-power-of-two):** At `m = 2, k = 10` (even, `10 > 6`, not a power of 2), at `n = 4`: terms `C(10,0)*r(1) = 10` and `C(10,4)*r(0) = 210` both have `v2 = 1`, causing a 2-way tie with 2-adic cancellation (`stridedRepCount 2 10 4 = 220`, `v2 220 = 2 > 1`)! |
+
+## 145. [`bit-sliced-carry-holonomy-2adic/`](bit-sliced-carry-holonomy-2adic/)
+
+**Mechanism:** **Bit-Sliced Carry-Holonomy 2-Adic Lifting Engine (`CarryHolonomyEngine`)** Classical 2-adic Hensel lifting and Lifting-the-Exponent (LTE) rely on differentiability or constant Jacobian congruences modulo $4$. Carry-twisted recurrences mixing arithmetic addition (`+`, `*`) with bitwise operations (`^`, `&`, `<<`) at every bit scale violate constant-derivative hyp
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `iter_testBit_eq_holonomy` | `BitSlicedCarryHolonomy2adic.Theorems` | **Core Engine Theorem A (`holonomy_lift_step`)**: For any `TPerm f`, any level `k`, and any `L`, the bit `k` of `iter f L x0` is exactly `x0.testBit k ^^ holonomy f k x0 L`! |
+| `majority_carry_holonomy` | `BitSlicedCarryHolonomy2adic.Theorems` | **Core Engine Theorem B1 (`majority_carry_holonomy`)**: For ANY `TPerm Φ`, ANY `c`, and ANY doubled cycle `2L` at level `k+1` (with `L` even): `holonomy (Φ · + c) (k+1) x0 (2*L)` equals the XOR of the twist derivative `β` and the carry-overflow parity over the half-cycle `y_i = iter T i x0 % 2^k`! |
+| `tower_to_min_period` | `BitSlicedCarryHolonomy2adic.Theorems` | **Core Engine Theorem C3 (Exact Minimal Periodicity Mod `2^(k0 + m)`)**: Under the certified doubling tower plus base minimality (`∀ 0 < r < L0, iter f r 0 % 2^k0 ≠ 0`), for EVERY `m : Nat`, `L0 * 2 ^ m` is the **EXACT minimal period** of `iter f · 0` modulo `2 ^ (k0 + m)`! |
+| `grayCarry_ge2_odd_period` | `BitSlicedCarryHolonomy2adic.Theorems` | **Theorem 1A (Gray-Carry Ergodicity for `s ≥ 2`, odd `c`)**: For ALL `s ≥ 2`, ALL odd `c`, and ALL `k : Nat`, the orbit modulo `2^k` has exact minimal period `2^k`, and for ALL `n ≥ 1`, `v2 (iter (grayCarryStep s c) n 0) = v2 n`! |
+| `quadAnd_v2` | `BitSlicedCarryHolonomy2adic.Theorems` | Machine-checked infinite theorem `quadAnd_v2` proved in pure Lean 4 `Init`. |
+| `affineXor_even_v2` | `BitSlicedCarryHolonomy2adic.Theorems` | **Theorem 3B (Affine-XOR Exact Valuation Law for ALL even `A ≥ 2`, ALL `c ≥ 1`, ALL `n ≥ 1`)**: `v2 (iter (affineXorStep A c) n 0) = if n % 2 = 1 then v2 c else v2 n + v2 c + v2 A - 1`! |
+| `sharpness_affineXor_A0_period2` | `BitSlicedCarryHolonomy2adic.Theorems` | **Sharpness 2 (`A = 0` in Affine-XOR, i.e. `a_{n+1} = a_n ^^^ c`)**: `A = 0` has zero holonomy at every level: exact period 2 forever (`d_{2m} = 0`, `d_{2m+1} = c`)! |
+| `sharpness_carryless_gray_period_collapse` | `BitSlicedCarryHolonomy2adic.Theorems` | Machine-checked infinite theorem `sharpness_carryless_gray_period_collapse` proved in pure Lean 4 `Init`. |
+
+## 146. [`bitwise-expander-walsh-gaps/`](bitwise-expander-walsh-gaps/)
+
+**Mechanism Name:** **Exact Integer Walsh–Automaton Spectral-Gap Engine (`WalshAutomatonEngine`)** **Core Silicon Principle:** A $2^k$-vertex explicit bitwise-edge Cayley graph $G _ k(P)$ on $\mathrm{BitVec}\ k$ (edges $x \sim y \iff P(x \oplus y) = \mathrm{true}$, with $P(0) = \mathrm{false}$) has an exponentially large $2^k \times 2^k$ Laplacian $L _ k$. Classical spectral gr
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `wht_plancherel` | `BitwiseExpanderWalshGaps.Theorems` | Exact Integer Plancherel Identity over `BitVec k` (zero division, zero floats). |
+| `dirichletForm_eq_wht` | `BitwiseExpanderWalshGaps.Theorems` | Exact Integer Laplacian-Rayleigh Spectral Decomposition. |
+| `expander_mixing_lemma_int` | `BitwiseExpanderWalshGaps.Theorems` | Master Lifting Theorem 4 (Exact Integer Expander Mixing Lemma — zero reals, zero sqrt). |
+| `mod3_exact_spectral_gap` | `BitwiseExpanderWalshGaps.Theorems` | **THEOREM A (Exact Tight Integer Spectral Gap of `G_mod3` ∀ k ≥ 1):** 1. Universal Rayleigh spectral gap: `∀ f, ∑ f = 0 → mod3Gap k * ‖f‖² ≤ ⟨f, L f⟩` 2. Centered variance Poincaré: `∀ f, mod3Gap k * Var(f) ≤ 2^k * ⟨f, L f⟩` 3. Exact tightness witness: `χ_{allOnes k}` is non-zero, zero-sum, and attains exact equality! |
+| `fib_expander_mixing_lemma` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked infinite theorem `fib_expander_mixing_lemma` proved in pure Lean 4 `Init`. |
+| `witness_fib_k4` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked infinite theorem `witness_fib_k4` proved in pure Lean 4 `Init`. |
+| `sharpness_mod2_always_disconnected` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked infinite theorem `sharpness_mod2_always_disconnected` proved in pure Lean 4 `Init`. |
+| `witness_mod3_eml_k5` | `BitwiseExpanderWalshGaps.Theorems` | Machine-checked infinite theorem `witness_mod3_eml_k5` proved in pure Lean 4 `Init`. |
+
+## 147. [`carry-automaton-krylov-l4-energy/`](carry-automaton-krylov-l4-energy/)
+
+**Name:** *Carry-Coupled Binary Automaton Correlation & Dual-Krylov $L^4$-Energy Proof Engine* (`BinAuto` $\to$ `apCorr` $\to$ `LeftAnnihilator` + `DualKrylovEnergy`).
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `apCorr_even` | `CarryAutomatonKrylovL4Energy.Theorems` | **THEOREM 1a (Universal Even-Shift Subdivision Law):** Exact bit-pair lifting at even shift `s = 2t` for every `BinAuto d`. |
+| `bijTail_infinite_flat_spectrum` | `CarryAutomatonKrylovL4Energy.Theorems` | **THEOREM 1 (Universal Infinite Flat-Spectrum & Pythagorean Theorem for ALL `m` and ALL `ψ`):** For EVERY width `m : Nat`, EVERY nonlinear feedback function `ψ : Fin (2^m) → Bool`, and EVERY block length `k : Nat`: 1. Exact zero total autocorrelation for ALL shifts `s ≥ 1`: `∑_q apCorr q q k s = 0`. 2. Exact pure-integer polynomial flatness for ALL `X : Int`: `∑_q P_{q, k}(X) * P^{rev}_{q, k}(X) = 2^(k + m + 1) * X^(2^k - 1)`. 3. Exact partial-sum Pythagorean law (`X = 1`): `∑_q (∑_{n < 2^k} f_q(n))^2 = 2^(k + m + 1)`. |
+| `innerQRZ_dualStep` | `CarryAutomatonKrylovL4Energy.Theorems` | **Exact Adjointness Theorem (`innerQRZ_dualStep`):** `⟨dualStep A W, S⟩ = ⟨W, primalStep A S⟩` for EVERY `BinAuto d`, `W`, and `S`. |
+| `paperfolding_direct_rec` | `CarryAutomatonKrylovL4Energy.Theorems` | Direct recurrence verification: `g(2n) = (-1)^n` and `g(2n+1) = g(n)` for all `n : Nat`. |
+| `baumSweet_classical_rec` | `CarryAutomatonKrylovL4Energy.Theorems` | Direct verification that `baumSweetAuto.eval 0` satisfies the classical Baum-Sweet recurrence: `b(0)=1`, `b(2n+1)=b(n)`, `b(4n)=b(n)`, `b(4n+2)=0` for ALL `n : Nat`. |
+| `mask6Cert_valid` | `CarryAutomatonKrylovL4Energy.Theorems` | Machine-checked infinite theorem `mask6Cert_valid` proved in pure Lean 4 `Init`. |
+| `mask6_totE4_rec` | `CarryAutomatonKrylovL4Energy.Theorems` | **THEOREM 4a (Exact Sparse Degree-5 Recurrence for `totE4 mask6Auto`, ∀ `k : Nat`):** `T(k + 5) = 2 * T(k + 4) + 16 * T(k + 2) + 256 * T(k)`. |
+| `rudinShapiro_E4_closed_form` | `CarryAutomatonKrylovL4Energy.Theorems` | Machine-checked infinite theorem `rudinShapiro_E4_closed_form` proved in pure Lean 4 `Init`. |
+
+## 148. [`silicon-tfunction-bent-duality/`](silicon-tfunction-bent-duality/)
+
+**Mechanism Name:** **Silicon Walsh–Hadamard & T-Function Bent Proof Engine (`SiliconBent`)** — combining: 1. **Bit-Sliced Butterfly FWHT & Exact Silicon Wiener–Khinchin Kernel**, 2. **Causal Silicon T-Function Combinator Algebra & Constructive Bit-by-Bit Hensel Inverter (`tInv`)**, 3. **4-Subblock Kronecker–Dual Bent Lifting Engine & Zero-Sum T-Quad Compiler**, 4. **Unconditio
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `walsh_walsh` | `SiliconTfunctionBentDuality.Theorems` | Hadamard Involution Theorem: `W_n (W_n f) x = 2^n * f x` for all `x < 2^n`. |
+| `mm_isBent` | `SiliconTfunctionBentDuality.Theorems` | Parametric Maiorana-McFarland Bent Engine: ANY `TBijection π` and ANY `g` yields an exact bent function on `2*k` bits with flat Walsh spectrum `±2^k`, exact dual via `tInv π k`, and vanishing autocorrelation for all `k ≥ 0`. |
+| `zeroSum_tQuad_isBent` | `SiliconTfunctionBentDuality.Theorems` | Zero-Sum T-Function Quad Compiler: Given ANY two causal maps `φ1, φ2`, the 4 causal T-functions `ψ0(a)=a`, `ψ1(a)=a ^^^ 2φ1(a)`, `ψ2(a)=a ^^^ 2φ2(a)`, `ψ3(a)=a ^^^ 2(φ1(a) ^^^ φ2(a))` satisfy `ψ0 ^^^ ψ1 ^^^ ψ2 ^^^ ψ3 = 0`, so their dual-inverted MM functions lift via `quadCombine` to an infinite bent family on `2*(k+1)` bits with exact flat Walsh spectrum and vanishing autocorrelation for ALL `k ≥ 1`. |
+| `mul3_infinite_bent_and_nonMM` | `SiliconTfunctionBentDuality.Theorems` | **Infinite Theorem 1 (`piMul3` — Carried Multiplication by 3):** For ALL `k ≥ 1`, `f_k(x, y) = <x, (3*y) mod 2^k> ⊕ [x = 0]` has exact flat Walsh spectrum `±2^k`, exact closed-form dual, and vanishing autocorrelation; and for ALL `k ≥ 4`, `f_k ∉ M#`! |
+| `mul7_infinite_bent_and_nonMM` | `SiliconTfunctionBentDuality.Theorems` | **Infinite Theorem 4 (`piMul7` — Carried Multiplication by 7):** For ALL `k ≥ 4`, `f_k(x, y) = <x, (7*y) mod 2^k> ⊕ [x = 0]` is bent with exact flat Walsh spectrum `±2^k`, vanishing autocorrelation, and strictly outside `M#`. |
+| `counterexample_non_bijective_mul2` | `SiliconTfunctionBentDuality.Theorems` | Counterexample 1: Breaking `BitFlip` (`π(y) = 2*y`, even multiplier) destroys Walsh flatness and vanishing autocorrelation immediately at `k = 1` (`W = 4 ≠ ±2`, `Δ(1) = 4 ≠ 0`). |
+| `counterexample_non_causal_shift` | `SiliconTfunctionBentDuality.Theorems` | Counterexample 3: Breaking `Causal` (`φ(y) = y / 2`, right-shift) causes `π(y) = y ^^^ (2 * (y / 2))` to collide mod 4 at `y = 0` and `y = 2` (not a bijection!). |
+| `nonvacuity_carletT_nonzero_pi0` | `SiliconTfunctionBentDuality.Theorems` | Non-vacuity witness for Carlet-T with `π(0) ≠ 0` (`π(y) = 3*y + 1`, `r = 2 ≤ k`). |

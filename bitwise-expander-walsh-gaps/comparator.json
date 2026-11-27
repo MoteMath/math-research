@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitwiseExpanderWalshGapsChallenge.wht_plancherel",
+    "BitwiseExpanderWalshGapsChallenge.dirichletForm_eq_wht",
+    "BitwiseExpanderWalshGapsChallenge.expander_mixing_lemma_int",
+    "BitwiseExpanderWalshGapsChallenge.mod3_exact_spectral_gap",
+    "BitwiseExpanderWalshGapsChallenge.fib_expander_mixing_lemma",
+    "BitwiseExpanderWalshGapsChallenge.witness_fib_k4",
+    "BitwiseExpanderWalshGapsChallenge.sharpness_mod2_always_disconnected",
+    "BitwiseExpanderWalshGapsChallenge.witness_mod3_eml_k5"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

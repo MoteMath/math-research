@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SiliconTfunctionBentDualityChallenge.walsh_walsh",
+    "SiliconTfunctionBentDualityChallenge.mm_isBent",
+    "SiliconTfunctionBentDualityChallenge.zeroSum_tQuad_isBent",
+    "SiliconTfunctionBentDualityChallenge.mul3_infinite_bent_and_nonMM",
+    "SiliconTfunctionBentDualityChallenge.mul7_infinite_bent_and_nonMM",
+    "SiliconTfunctionBentDualityChallenge.counterexample_non_bijective_mul2",
+    "SiliconTfunctionBentDualityChallenge.counterexample_non_causal_shift",
+    "SiliconTfunctionBentDualityChallenge.nonvacuity_carletT_nonzero_pi0"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,12 @@
+name = "bitwise-expander-walsh-gaps"
+version = "0.1.0"
+defaultTargets = ["BitwiseExpanderWalshGaps", "Solution"]
+
+[[lean_lib]]
+name = "BitwiseExpanderWalshGaps"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

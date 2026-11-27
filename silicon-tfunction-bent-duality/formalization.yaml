@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Silicon Walsh–Hadamard & T-Function Bent Proof Engine (specmat-14)
+  description: >-
+    **Mechanism Name:** **Silicon Walsh–Hadamard & T-Function Bent Proof Engine (`SiliconBent`)** — combining: 1. **Bit-Sliced Butterfly FWHT & Exact Silicon Wiener–Khinchin Kernel**, 2. **Causal Silicon T-Function Combinator Algebra & Constructive Bit-by-Bit Hensel Inverter (`tInv`)**, 3. **4-Subblock Kronecker–Dual Bent Lifting Engine & Zero-Sum T-Quad Compiler**, 4. **Unconditio
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: silicon-tfunction-bent-duality
+  license: Apache-2.0

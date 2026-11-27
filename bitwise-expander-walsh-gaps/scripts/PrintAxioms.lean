@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BitwiseExpanderWalshGapsChallenge.wht_plancherel
+#print axioms BitwiseExpanderWalshGapsChallenge.dirichletForm_eq_wht
+#print axioms BitwiseExpanderWalshGapsChallenge.expander_mixing_lemma_int
+#print axioms BitwiseExpanderWalshGapsChallenge.mod3_exact_spectral_gap
+#print axioms BitwiseExpanderWalshGapsChallenge.fib_expander_mixing_lemma
+#print axioms BitwiseExpanderWalshGapsChallenge.witness_fib_k4
+#print axioms BitwiseExpanderWalshGapsChallenge.sharpness_mod2_always_disconnected
+#print axioms BitwiseExpanderWalshGapsChallenge.witness_mod3_eml_k5

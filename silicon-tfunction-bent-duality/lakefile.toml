@@ -1,0 +1,12 @@
+name = "silicon-tfunction-bent-duality"
+version = "0.1.0"
+defaultTargets = ["SiliconTfunctionBentDuality", "Solution"]
+
+[[lean_lib]]
+name = "SiliconTfunctionBentDuality"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carry-Coupled Binary Automaton Correlation & Dual-Krylov L^4-Energy Proof Engine
+  description: >-
+    **Name:** *Carry-Coupled Binary Automaton Correlation & Dual-Krylov $L^4$-Energy Proof Engine* (`BinAuto` $\to$ `apCorr` $\to$ `LeftAnnihilator` + `DualKrylovEnergy`).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: carry-automaton-krylov-l4-energy
+  license: Apache-2.0

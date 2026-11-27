@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms CarryAutomatonKrylovL4EnergyChallenge.apCorr_even
+#print axioms CarryAutomatonKrylovL4EnergyChallenge.bijTail_infinite_flat_spectrum
+#print axioms CarryAutomatonKrylovL4EnergyChallenge.innerQRZ_dualStep
+#print axioms CarryAutomatonKrylovL4EnergyChallenge.paperfolding_direct_rec
+#print axioms CarryAutomatonKrylovL4EnergyChallenge.baumSweet_classical_rec
+#print axioms CarryAutomatonKrylovL4EnergyChallenge.mask6Cert_valid
+#print axioms CarryAutomatonKrylovL4EnergyChallenge.mask6_totE4_rec
+#print axioms CarryAutomatonKrylovL4EnergyChallenge.rudinShapiro_E4_closed_form

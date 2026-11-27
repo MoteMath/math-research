@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarryAutomatonKrylovL4EnergyChallenge.apCorr_even",
+    "CarryAutomatonKrylovL4EnergyChallenge.bijTail_infinite_flat_spectrum",
+    "CarryAutomatonKrylovL4EnergyChallenge.innerQRZ_dualStep",
+    "CarryAutomatonKrylovL4EnergyChallenge.paperfolding_direct_rec",
+    "CarryAutomatonKrylovL4EnergyChallenge.baumSweet_classical_rec",
+    "CarryAutomatonKrylovL4EnergyChallenge.mask6Cert_valid",
+    "CarryAutomatonKrylovL4EnergyChallenge.mask6_totE4_rec",
+    "CarryAutomatonKrylovL4EnergyChallenge.rudinShapiro_E4_closed_form"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

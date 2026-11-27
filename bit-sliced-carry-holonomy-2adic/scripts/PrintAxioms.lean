@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BitSlicedCarryHolonomy2adicChallenge.iter_testBit_eq_holonomy
+#print axioms BitSlicedCarryHolonomy2adicChallenge.majority_carry_holonomy
+#print axioms BitSlicedCarryHolonomy2adicChallenge.tower_to_min_period
+#print axioms BitSlicedCarryHolonomy2adicChallenge.grayCarry_ge2_odd_period
+#print axioms BitSlicedCarryHolonomy2adicChallenge.quadAnd_v2
+#print axioms BitSlicedCarryHolonomy2adicChallenge.affineXor_even_v2
+#print axioms BitSlicedCarryHolonomy2adicChallenge.sharpness_affineXor_A0_period2
+#print axioms BitSlicedCarryHolonomy2adicChallenge.sharpness_carryless_gray_period_collapse
