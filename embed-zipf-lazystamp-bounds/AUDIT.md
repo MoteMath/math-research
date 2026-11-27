@@ -71,6 +71,6 @@ All six headline theorems depend exclusively on Lean 4's standard axioms (`prope
 ## Package Validation (`validate_pkgs.py`)
 
 ```text
-$ python c:\Users\devin\Desktop\math\ai-math-continuous-20261126\validate_pkgs.py embed-zipf-lazystamp-bounds
+$ python validate_pkgs.py embed-zipf-lazystamp-bounds
 PASS embed-zipf-lazystamp-bounds
 ```

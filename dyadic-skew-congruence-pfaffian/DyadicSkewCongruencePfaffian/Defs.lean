@@ -1,5 +1,5 @@
 /-!
-# Dyadic Skew-Congruence & Schur-Elimination Pfaffian Engine (`specmat-3`)
+# Dyadic Skew-Congruence & Schur-Elimination Pfaffian Engine (`dyadic-skew-congruence-pfaffian`)
 
 A standalone Lean 4.34.1 (zero Mathlib) pure-silicon infinite proof mechanism for
 exact signed Pfaffians of bit-indexed skew-symmetric integer matrices.

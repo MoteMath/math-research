@@ -51,6 +51,6 @@ Build completed successfully (4 jobs).
  Classical.choice,
  Quot.sound]
 
-> python c:\Users\devin\Desktop\math\ai-math-continuous-20261126\validate_pkgs.py ssm-tustin-pade-horizons
+> python validate_pkgs.py ssm-tustin-pade-horizons
 PASS ssm-tustin-pade-horizons
 ```

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Exact Pure-Silicon Exploration, Certificate Synthesis, Verification & Counterexample Suite
-for the Dyadic Skew-Congruence & Schur-Elimination Pfaffian Engine (`specmat-3`).
+for the Dyadic Skew-Congruence & Schur-Elimination Pfaffian Engine (`dyadic-skew-congruence-pfaffian`).
 
 Zero floating-point arithmetic is used anywhere: all matrix entries, congruences,
 eliminations, determinants, and Pfaffians are computed in exact Python `int` / `fractions.Fraction`.
