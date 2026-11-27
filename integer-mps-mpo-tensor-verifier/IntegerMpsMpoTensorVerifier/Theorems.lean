@@ -9,7 +9,7 @@ import IntegerMpsMpoTensorVerifier.Defs
 
 # Verified Lean 4 Exact Integer MPS/MPO Tensor-Network Contraction Engine
 
-Self-contained standalone Lean 4.36.0 proof-reflection and certificate-compiler engine
+Self-contained standalone Lean 4.34.1 proof-reflection and certificate-compiler engine
 (zero Mathlib, zero `sorry`, zero custom axioms).
 
 ## Architecture

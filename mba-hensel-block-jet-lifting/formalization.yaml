@@ -4,7 +4,7 @@ version: v0.4
 project:
   name: Exact Hensel Lifting Engine for Mixed Bitwise-Arithmetic Diophantine Equations (adic-2)
   description: >-
-    **Mechanism:** **The MBA-Hensel & Affine Block-Jet Lifting Engine** (standalone Lean 4.36.0, zero Mathlib, zero floating-point arithmetic, zero `sorry`, zero `native_decide`). Mixed Bitwise-Arithmetic (MBA) expressions over the 10-operator silicon algebra define exact projective systems $\mathrm{evalMod}\ w\ e : \mathbb{N} \to \mathbb{Z}/2^w\mathbb{Z}$ that are universally **2-
+    **Mechanism:** **The MBA-Hensel & Affine Block-Jet Lifting Engine** (standalone Lean 4.34.1, zero Mathlib, zero floating-point arithmetic, zero `sorry`, zero `native_decide`). Mixed Bitwise-Arithmetic (MBA) expressions over the 10-operator silicon algebra define exact projective systems $\mathrm{evalMod}\ w\ e : \mathbb{N} \to \mathbb{Z}/2^w\mathbb{Z}$ that are universally **2-
   repository: https://github.com/MoteMath/math-research
   subdirectory: mba-hensel-block-jet-lifting
   license: Apache-2.0

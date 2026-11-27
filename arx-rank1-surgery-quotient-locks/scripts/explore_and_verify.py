@@ -4,7 +4,7 @@ for `dynsil-3`: ARX Infinite-Width Period-Lock, Rank-1 Carry-Defect Surgery,
 and Speck Carry-Barrier Invariant-Subspace Engine.
 
 STRICTLY PURE INTEGER ARITHMETIC (zero floating-point operations anywhere).
-Independently replays and stress-tests every theorem proved in `Proof.lean`.
+Independently replays and stress-tests every theorem proved in the Lean sources.
 """
 
 import math

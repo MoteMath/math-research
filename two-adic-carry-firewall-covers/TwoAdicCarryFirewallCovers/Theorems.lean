@@ -3,7 +3,7 @@ import TwoAdicCarryFirewallCovers.Defs
 /-!
 # Verified Lean 4 2-Adic Compactness & Carry-Firewall Binary-Prefix-Tree Cover Engine
 
-Standalone Lean 4.36.0 (zero Mathlib, zero `sorry`, zero custom axioms, pure kernel `decide`).
+Standalone Lean 4.34.1 (zero Mathlib, zero `sorry`, zero custom axioms, pure kernel `decide`).
 
 ## Architecture
 1. **Layer 1 (`CoverTree`)**: Universal 2-adic compactness meta-theorem lifting any

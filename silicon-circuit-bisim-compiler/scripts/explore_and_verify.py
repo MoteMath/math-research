@@ -27,7 +27,7 @@ from typing import Callable, List, Tuple, Dict, Set
 import itertools
 
 # ============================================================================
-# 0. GateNet DSL (matches Proof.lean bit-for-bit)
+# 0. GateNet DSL (matches the Lean sources bit-for-bit)
 # ============================================================================
 
 @dataclass(frozen=True)

@@ -5,7 +5,7 @@ ZERO floating-point arithmetic anywhere in this file: all arithmetic uses Python
 
 Verifies:
   1. Independent exact-integer certificate checker for `SwitchedPolytopeCert`,
-     `SwitchedConeCert`, and `PeriodicEigenCert` (mirroring `Proof.lean`).
+     `SwitchedConeCert`, and `PeriodicEigenCert` (mirroring the Lean sources).
   2. Exact certificate verification + exhaustive instance replay for all 4 flagship theorems:
      - Theorem 1: Non-ellipsoidal 2D binary monoid (`JSR in [3/4, 15/16]`, algebraic
        quadratic obstruction, sharpness explosion at `3 -> 5`, exhaustive check up to |w|=12).
@@ -56,7 +56,7 @@ def int_word_prod(A_list, word):
     return P
 
 # ============================================================================
-# Independent Exact Certificate Checkers (Mirroring Proof.lean)
+# Independent Exact Certificate Checkers (Mirroring the Lean sources)
 # ============================================================================
 
 def check_switched_polytope_cert(cert):
@@ -165,7 +165,7 @@ def check_periodic_eigen_cert(cert):
     return Pv == [cert["eig"] * x for x in v]
 
 # ============================================================================
-# Certificate Definitions (Bit-Identical to Proof.lean)
+# Certificate Definitions (Bit-Identical to the Lean sources)
 # ============================================================================
 
 FREE_STEP = lambda q, b: 0

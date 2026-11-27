@@ -1,5 +1,5 @@
 /-!
-# Recursive Bit-Sliced Schur-Complement Determinant Engine (Standalone Lean 4.36.0)
+# Recursive Bit-Sliced Schur-Complement Determinant Engine (Standalone Lean 4.34.1)
 
 Zero Mathlib, zero external dependencies, zero `sorry`, zero custom axioms.
 

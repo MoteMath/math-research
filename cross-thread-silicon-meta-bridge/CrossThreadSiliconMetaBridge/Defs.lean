@@ -1,7 +1,7 @@
 /-!
 # SiliconMetaBridge (`referee-8`): Unified 5-Thread Cross-Thread Infinite Proof Mechanism
 
-Standalone Lean 4.36.0 (ZERO imports, ZERO Mathlib, ZERO `sorry`, ZERO `native_decide`,
+Standalone Lean 4.34.1 (ZERO imports, ZERO Mathlib, ZERO `sorry`, ZERO `native_decide`,
 ZERO custom axioms, ZERO floating-point arithmetic).
 
 ## Cross-Thread Architecture Unifying All 5 Discovery Threads

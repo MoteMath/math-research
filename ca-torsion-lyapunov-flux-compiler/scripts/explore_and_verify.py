@@ -4,7 +4,7 @@ explore_and_verify.py — Pure-Silicon Exact-Integer Synthesizer & Independent V
 ZERO floating-point arithmetic anywhere (uses ONLY Python exact `int` and `fractions.Fraction`).
 
 Performs four independent tasks for the Verified Lean 4 Cellular-Automaton Local-Potential /
-Lyapunov Flux Compiler (`Proof.lean`):
+Lyapunov Flux Compiler (the Lean sources):
   1. Exact Certificate Synthesis:
      - Synthesizes exact integer flux tables `psi` for conservation laws (`0xac8c`, `0x04ce`,
        `0xf0e0`) via exact rational (`Fraction`) Gaussian elimination over Q.
@@ -36,7 +36,7 @@ import sys
 
 
 # ============================================================================
-# 1. Exact Pure-Silicon Bitring Primitives (Exact Mirror of Proof.lean)
+# 1. Exact Pure-Silicon Bitring Primitives (Exact Mirror of the Lean sources)
 # ============================================================================
 
 def ring_bit(w: int, x: int, i: int) -> int:
@@ -141,7 +141,7 @@ def is_affine_f2(k: int, rule: int) -> bool:
 
 
 # ============================================================================
-# 2. Pure-Data Certificate Checkers (Exact Integer Mirror of Proof.lean)
+# 2. Pure-Data Certificate Checkers (Exact Integer Mirror of the Lean sources)
 # ============================================================================
 
 def local_delta(cert: dict, u: int) -> int:
@@ -298,7 +298,7 @@ def prove_no_zero_flux_strict_lyap_exact(k: int, rule: int, p: int, align: int, 
 
 
 # ============================================================================
-# 4. Certified Suite Definitions (Exact Match with Proof.lean)
+# 4. Certified Suite Definitions (Exact Match with the Lean sources)
 # ============================================================================
 
 CERT_PAT101_0XAC8C = {

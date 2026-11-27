@@ -122,7 +122,7 @@ class CVA:
         return True
 
 # =============================================================================
-# 3. Exact CVA Constructions Matching Proof.lean Encodings 1-to-1
+# 3. Exact CVA Constructions Matching the Lean sources Encodings 1-to-1
 # =============================================================================
 
 # --- Family I: Shifted-Bitwise Kummer Collapse CVAs (4 states: (prev, c) in {0,1}x{0,1}) ---

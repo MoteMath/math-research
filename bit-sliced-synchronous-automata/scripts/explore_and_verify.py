@@ -55,7 +55,7 @@ def to_lean(v) -> str:
     raise ValueError(f"Cannot serialize to Lean: {v!r}")
 
 # ==============================================================================
-# 2. Exact Bit-Vector Expression & Proposition AST (mirrors Proof.lean)
+# 2. Exact Bit-Vector Expression & Proposition AST (mirrors the Lean sources)
 # ==============================================================================
 
 class BVExpr:
@@ -186,7 +186,7 @@ def eval_prop_exact(w: int, env: list[int], p: BVProp) -> bool:
     raise TypeError(p)
 
 # ==============================================================================
-# 4. Pipelined Automaton Compiler (bit-for-bit identical state layout to Proof.lean)
+# 4. Pipelined Automaton Compiler (bit-for-bit identical state layout to the Lean sources)
 # ==============================================================================
 
 def expr_latency(e: BVExpr) -> int:

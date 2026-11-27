@@ -8,7 +8,7 @@ import CarrylessCollatz2adicGluing.Defs
 # Theorems (`CarrylessCollatz2adicGluing`)
 
 dynsil-9: 2-Adic Piecewise-Affine & Carryless-Collatz Conjugacy Engine
-  Standalone Lean 4.36.0 (zero Mathlib, zero sorry, zero custom axioms).
+  Standalone Lean 4.34.1 (zero Mathlib, zero sorry, zero custom axioms).
 
   Contents:
     Section 1. Pure-Silicon Bitwise & Carryless (`clmul`) Arithmetic Primitives

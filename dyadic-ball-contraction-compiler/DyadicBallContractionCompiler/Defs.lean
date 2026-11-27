@@ -1,7 +1,7 @@
 /-
   Verified Lean 4 Dyadic Ball-Arithmetic & Contraction Enclosure Compiler
   =======================================================================
-  Pure-silicon binary proof compiler (standalone Lean 4.36.0, zero Mathlib,
+  Pure-silicon binary proof compiler (standalone Lean 4.34.1, zero Mathlib,
   zero floating-point, zero sorry, zero custom axioms, pure kernel `decide`).
 -/
 

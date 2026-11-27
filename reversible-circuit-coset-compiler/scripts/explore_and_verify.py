@@ -11,7 +11,7 @@ from typing import Dict, List, Tuple, Optional
 import sys
 
 # ============================================================================
-# 1. Exact Width-Indexed Reversible Silicon Machine (matches Proof.lean)
+# 1. Exact Width-Indexed Reversible Silicon Machine (matches the Lean sources)
 # ============================================================================
 
 def mask(w: int) -> int:
@@ -100,7 +100,7 @@ def inv_circuit(circ: List[tuple]) -> List[tuple]:
     return [inv_gate(g) for g in reversed(circ)]
 
 # ============================================================================
-# 2. Exact 2's-Complement Ripple-Carry Mealy Transducer (matches Proof.lean Sec 3)
+# 2. Exact 2's-Complement Ripple-Carry Mealy Transducer (matches the Lean sources Sec 3)
 # ============================================================================
 
 def has_carry(g: tuple) -> bool:
@@ -196,7 +196,7 @@ def synthesize_bisim(r: int, c1: List[tuple], c2: List[tuple]) -> Optional[List[
     return sorted(visited)
 
 # ============================================================================
-# 3. Exact Rewriting Engine & Bidirectional BFS Synthesizer (matches Proof.lean Sec 4)
+# 3. Exact Rewriting Engine & Bidirectional BFS Synthesizer (matches the Lean sources Sec 4)
 # ============================================================================
 
 def reg_touched(g: tuple) -> set:

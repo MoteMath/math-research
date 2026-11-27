@@ -6,7 +6,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 # Carry-Save Adder (CSA) Tree Confluence, Carry-Defect Transducer Quotient,
 # Carry-Free Compressor Capacity Dichotomy & Depth-Invariant Carry-Parity Laws
 
-Standalone Lean 4.36.0 formalization (zero Mathlib, zero external dependencies).
+Standalone Lean 4.34.1 formalization (zero Mathlib, zero external dependencies).
 
 ## Architecture (Reusable Pure-Silicon Infinite Proof Mechanism)
 1. **Bit-Slice & Multiset-Column Primitives**: Exact binary slice operators

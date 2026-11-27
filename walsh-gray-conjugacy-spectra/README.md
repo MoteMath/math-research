@@ -6,15 +6,15 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **8 / 10** | **9 / 10** | **9 / 10** | **8 / 10** | **10 / 10** | **86 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): **Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/specmat-16/Proof.lean)). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eige*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): **Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral`). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eige*
 
 ## For Mathematicians
 
-**Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/specmat-16/Proof.lean)). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eigenspace multiplicities, or power traces of a $2^k \times 2^k$ bit-indexed integer operator $W _ k P _ A \in M _ {2^k}(\mathbb{Z})$ (where $W _ k[x, y] = (-1)^{\langle x, y \rangle}$ is the unnormalized Walsh–Hadamard matrix and $P _ A$ is the permutation matrix of an invertible $\mathbb{F} _ 2$-linear bit-circuit $A \in \mathrm{GL} _ k(\mathbb{F} _ 2)$) faces exponential $2^k \times 2^k$ dimension blowup. Our reusable engine collapses this $2^k$-dimensional integer spectral problem to **$k$-bit pure-silicon circuit certificates** via three composable lifting pillar
+**Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral`). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eigenspace multiplicities, or power traces of a $2^k \times 2^k$ bit-indexed integer operator $W _ k P _ A \in M _ {2^k}(\mathbb{Z})$ (where $W _ k[x, y] = (-1)^{\langle x, y \rangle}$ is the unnormalized Walsh–Hadamard matrix and $P _ A$ is the permutation matrix of an invertible $\mathbb{F} _ 2$-linear bit-circuit $A \in \mathrm{GL} _ k(\mathbb{F} _ 2)$) faces exponential $2^k \times 2^k$ dimension blowup. Our reusable engine collapses this $2^k$-dimensional integer spectral problem to **$k$-bit pure-silicon circuit certificates** via three composable lifting pillar
 
 ## For Non-Mathematicians
 
-**Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/specmat-16/Proof.lean)). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eige
+**Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral`). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eige
 
 ---
 

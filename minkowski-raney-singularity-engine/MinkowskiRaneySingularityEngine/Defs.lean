@@ -1,7 +1,7 @@
 /-
-  Proof.lean — Raney-Minkowski Finite-State Bit-Transducer Infinite Proof Engine (adic-14)
+  Raney-Minkowski Finite-State Bit-Transducer Infinite Proof Engine (adic-14)
 
-  Standalone Lean 4.36.0 (zero Mathlib, zero sorry, zero custom axioms, zero floats).
+  Standalone Lean 4.34.1 (zero Mathlib, zero sorry, zero custom axioms, zero floats).
   Implements:
     1. Exact pure-silicon signed rational arithmetic (RatQ) & 2x2 natural matrices (Mat2)
     2. Exact binary Stern-Brocot / Minkowski question-mark function (sbBits, minkowskiQ)

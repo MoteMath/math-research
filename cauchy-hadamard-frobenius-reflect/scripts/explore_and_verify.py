@@ -3,7 +3,7 @@ explore_and_verify.py — Pure-Silicon Cauchy-Hadamard-Frobenius Reflection Comp
 Independent Exact BitVec Verifier, Sharpness Counterexample Finder, and Certificate Mutation Suite.
 
 Exact integer arithmetic only (zero floating-point values anywhere).
-Mirrors the standalone Lean 4.36.0 reflection engine in Proof.lean.
+Mirrors the standalone Lean 4.34.1 reflection engine in the Lean sources.
 """
 from __future__ import annotations
 from dataclasses import dataclass

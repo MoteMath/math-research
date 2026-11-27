@@ -4,7 +4,7 @@ Stern-Diatomic & Calkin-Wilf Binary-Tree Invariant Engine
 Exact Pure-Silicon Discovery, Certificate Compilation, Verification & Falsification Script
 
 Zero floating-point arithmetic anywhere: uses only exact Python `int`.
-Verifies all three infinite proof engines formalized in `Proof.lean`:
+Verifies all three infinite proof engines formalized in the Lean sources:
   1. Engine I  — Hadamard Monomialization Lifter (Exact Walsh-Hadamard Spectrum for Stern & a-Stern)
   2. Engine II — Carry-Transducer Z^8 Spectral-Orbit Lifter (Mod-3 Carry-Shift Resonance & Oscillation Annihilation)
   3. Engine III — Sym^2 Spectral-Collapse & Left-Kernel Conservation Lifter (Quadratic (-5)-Power & Zero-Sum Laws)
@@ -235,7 +235,7 @@ def verify_engine2(s: list[int]) -> None:
     print(f"  [SHARP] Threshold 2^k >= c tested immediately below (k = bitlen(c) - 1): "
           f"breaks on {sharp_failures}/{below_total} shifts!")
 
-    # Specific counterexamples certified in Proof.lean
+    # Specific counterexamples certified in the Lean sources
     f3_1 = sum(tm_sign(x + 3) * s[2 + x] for x in range(2))
     f4_1 = sum(tm_sign(x + 4) * s[2 + x] for x in range(2))
     assert f3_1 == -1 and eval_orbit(certs[3], 1)[0] == 3

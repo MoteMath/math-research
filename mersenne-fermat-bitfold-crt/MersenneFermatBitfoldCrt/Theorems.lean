@@ -14,7 +14,7 @@ namespace BitFoldEngine
 
 
 -- ============================================================================
--- Section 0: Small Arithmetic Helpers (Core Lean 4.36.0 only)
+-- Section 0: Small Arithmetic Helpers (Core Lean 4.34.1 only)
 -- ============================================================================
 
 theorem two_pow_pos (n : Nat) : (0 : Int) < (2 : Int) ^ n := by

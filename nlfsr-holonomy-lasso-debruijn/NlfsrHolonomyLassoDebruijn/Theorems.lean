@@ -5,7 +5,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 import NlfsrHolonomyLassoDebruijn.Defs
 
 /-
-  Proof.lean — Standalone Lean 4.34.1 Verification of Task 12 (dynsil-12):
+  Standalone Lean 4.34.1 Verification of Task 12 (dynsil-12):
   Hybrid Carry-AND NLFSR De Bruijn & Period-Doubling Engine.
 
   Zero external dependencies (no Mathlib, no Lake).

@@ -10,7 +10,7 @@ import ValuationTowerPoincareRecurrences.Defs
 # 2-Adic Valuation-Tower Poincaré Reduction (VTPR)
 ## A Pure-Silicon Infinite Proof Mechanism for Multi-Dimensional Bitwise Periodic Recurrences
 
-Standalone Lean 4.36.0 formalization (zero Mathlib, zero `sorry`, standard axioms only).
+Standalone Lean 4.34.1 formalization (zero Mathlib, zero `sorry`, standard axioms only).
 -/
 
 

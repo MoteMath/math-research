@@ -453,7 +453,7 @@ def main():
     print(f"  [PASS] Structural: asymmetric diagonal + non-diagonally-dominant for all k=2..5.")
     print(f"  [PASS] Sharpness: dropping W_00 from 1 to 0 -> F_1(4, 1) = {v_w00} < 0.")
 
-    # 5. Hostile Mutation Tests (mirroring Proof.lean)
+    # 5. Hostile Mutation Tests (mirroring the Lean sources)
     print("\n--- Hostile Mutation Tests (all 7 corrupted certs must return False) ---")
     mutations = [
         ("collinear H (det=0)", check_strict_pd_cert(

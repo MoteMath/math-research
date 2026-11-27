@@ -7,7 +7,7 @@ import GrayCarryMonodromyFreezing.Defs
 /-!
 # Theorems (`GrayCarryMonodromyFreezing`)
 
-Dual Gray-Carry Infinite Lifting Mechanisms in Standalone Lean 4.36.0
+Dual Gray-Carry Infinite Lifting Mechanisms in Standalone Lean 4.34.1
   =====================================================================
   Worker: dynsil-5 (Thread 2: Bitwise Dynamics, T-Functions & Reversible Silicon Orbit Mechanisms)
 

@@ -86,7 +86,7 @@ def repunit(B: int, w: int) -> int:
 
 def build_carry_borrow_jet(B: int, twist_fn):
     """Compile the 4-state radix-B carry-borrow CorrMachine into its 16x16 integer jetMat.
-    Block layout matches Proof.lean:
+    Block layout matches the Lean sources:
       0 = Mfg (e1*e2), 1 = Mf (e1), 2 = Mg (e2), 3 = M0 (1).
     """
     M0 = [[0] * 4 for _ in range(4)]

@@ -1,9 +1,9 @@
 /-
-  Proof.lean — Pure-Silicon 2-Adic Dual-Basis Certificate Engine
+  Pure-Silicon 2-Adic Dual-Basis Certificate Engine
   (Rooted Van der Put Basis + Discrete Mahler Forward-Difference Basis
    + Finite 2-Adic Matrix Lattice Contraction & Sharpness Compilers)
 
-  Standalone Lean 4.36.0 (ZERO imports, ZERO Mathlib, ZERO sorry, ZERO custom axioms).
+  Standalone Lean 4.35.0 (ZERO imports, ZERO Mathlib, ZERO sorry, ZERO custom axioms).
 -/
 
 namespace Z2CertEngine

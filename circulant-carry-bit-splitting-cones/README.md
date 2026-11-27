@@ -6,15 +6,15 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **8 / 10** | **8 / 10** | **8 / 10** | **8 / 10** | **10 / 10** | **82 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.36.0 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.34.1 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating*
 
 ## For Mathematicians
 
-This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.36.0 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating-point values).
+This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.34.1 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating-point values).
 
 ## For Non-Mathematicians
 
-This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.36.0 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating
+This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.34.1 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating
 
 ---
 

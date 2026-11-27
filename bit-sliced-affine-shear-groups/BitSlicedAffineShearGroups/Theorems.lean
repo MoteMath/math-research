@@ -9,7 +9,7 @@ import BitSlicedAffineShearGroups.Defs
 
 # Bit-Sliced Affine Shear-Group & Commutator Engine (`BSAS-CE`)
 
-Pure-silicon standalone Lean 4.36.0 formalization of a reusable finite-to-infinite
+Pure-silicon standalone Lean 4.34.1 formalization of a reusable finite-to-infinite
 group-theoretic and commutator proof engine for reversible bit-shear circuits
 (XOR-shears, add-shears, masked/shifted shears, cross-lane bit-swap layers, and
 block-causal intra-lane bit-swap layers) on `(BitVec w) × (BitVec w)`.

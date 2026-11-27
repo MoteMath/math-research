@@ -1,6 +1,6 @@
 /-
   specmat-11: Kronecker-Plus-Low-Rank Carry-Perturbation Schur-Tower Engine
-  Standalone Lean 4.36.0 (zero Mathlib, zero sorry, standard axioms only).
+  Standalone Lean 4.34.1 (zero Mathlib, zero sorry, standard axioms only).
 
   Part 1: Commutative Ring (CRing), Exact Rational Field (Q), Finite Sums,
           Matrix/Block/Kronecker Algebra, First-Principles Laplace Determinant,

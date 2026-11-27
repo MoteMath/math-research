@@ -41,7 +41,7 @@ def borrow_count(n: int, s: int) -> int:
 
 
 # ---------------------------------------------------------------------------
-# 2. BitGuard DSL & BitGame Semantics (exact 1-to-1 mirror of Proof.lean)
+# 2. BitGuard DSL & BitGame Semantics (exact 1-to-1 mirror of the Lean sources)
 # ---------------------------------------------------------------------------
 
 @dataclass(frozen=True)
@@ -188,7 +188,7 @@ def compute_grundy(G: list[BitRule], limit: int) -> list[int]:
 
 
 # ---------------------------------------------------------------------------
-# 3. Finite Certificate & Checker (exact mirror of Proof.lean)
+# 3. Finite Certificate & Checker (exact mirror of the Lean sources)
 # ---------------------------------------------------------------------------
 
 @dataclass

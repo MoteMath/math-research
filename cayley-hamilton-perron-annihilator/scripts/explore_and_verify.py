@@ -106,7 +106,7 @@ def v2(n: int) -> int:
 
 
 # ==============================================================================
-# 2. Exact Integer Matrix & Vector Arithmetic (Mirroring Proof.lean CHKAE)
+# 2. Exact Integer Matrix & Vector Arithmetic (Mirroring the Lean sources CHKAE)
 # ==============================================================================
 
 def vec_dot(u, v):

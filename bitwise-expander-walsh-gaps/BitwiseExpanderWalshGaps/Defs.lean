@@ -1,7 +1,7 @@
 /-!
 # Pure-Silicon Walsh–Automaton Spectral-Gap Engine (`specmat-15`)
 
-Standalone Lean 4.36.0 formalization (zero Mathlib, zero floats, zero reals,
+Standalone Lean 4.34.1 formalization (zero Mathlib, zero floats, zero reals,
 zero `sorry`, zero custom axioms) of a reusable pure-silicon infinite proof
 mechanism proving tight exact integer spectral gaps, exact two-sided spectral
 radii, and the exact integer Expander Mixing Lemma for infinite families of

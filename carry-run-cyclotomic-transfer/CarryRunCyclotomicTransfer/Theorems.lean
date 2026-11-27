@@ -10,7 +10,7 @@ import CarryRunCyclotomicTransfer.Defs
 # Pure-Silicon Carry-Propagation Depth & Run-Length Automaton Transfer Engine
 
 Worker: `transducer-3` (Thread 1 — Carry, Transducer & Automatic Infinite Proof Engines)
-Standalone Core Lean 4.36.0 (zero Mathlib, zero `sorry`, zero custom axioms).
+Standalone Core Lean 4.34.1 (zero Mathlib, zero `sorry`, zero custom axioms).
 
 This file implements:
 1. **Reusable Infinite Proof Mechanism (`CarryTransferEngine`)**:

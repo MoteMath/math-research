@@ -158,7 +158,7 @@ def verify_theorem_2_quad_and() -> None:
                         pre, per = minimal_period_mod(f, k)
                         assert pre == 0 and per == (1 << k)
                         assert holonomy(f, k, 0, 1 << k) is True
-    # Unbounded integer spot check matching Proof.lean witness
+    # Unbounded integer spot check matching the Lean sources witness
     assert v2(iter_map(quad_and_step(1, 3, 5), 16, 0)) == 4
     print(f"    [PASS] Theorem 2 (t >= 3): {checked_2} exact valuation checks + ergodic periods & holonomies")
 
@@ -188,7 +188,7 @@ def verify_theorem_3_affine_xor() -> None:
                     pre, per = minimal_period_mod(f, k)
                     assert pre == 0 and per == L
                     assert holonomy(f, k, 0, L) is True
-    # Unbounded integer spot check matching Proof.lean witness
+    # Unbounded integer spot check matching the Lean sources witness
     assert v2(iter_map(affine_xor_step(8, 3), 4, 0)) == 4
     print(f"    [PASS] Theorem 3 (even A >= 2): {checked_3} exact valuation checks + holonomy conservation")
 

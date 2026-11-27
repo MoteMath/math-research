@@ -1,7 +1,7 @@
 /-!
 # Strided-Bitset Decomposition & 2-Adic Odd-Parity Ultrametric Engine
 
-Pure-silicon standalone Lean 4.36.0 formalization (zero Mathlib, zero sorry, standard axioms only).
+Pure-silicon standalone Lean 4.34.1 formalization (zero Mathlib, zero sorry, standard axioms only).
 -/
 
 namespace StridedBitsetEngine

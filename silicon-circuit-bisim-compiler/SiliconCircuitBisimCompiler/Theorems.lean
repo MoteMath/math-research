@@ -9,7 +9,7 @@ import SiliconCircuitBisimCompiler.Defs
 
 # SiliconBisim: Verified Lean 4 Bit-Slice & Recursive Circuit-Generator Bisimulation Compiler
 
-Standalone Lean 4.36.0 (zero Mathlib, zero external imports).
+Standalone Lean 4.34.1 (zero Mathlib, zero external imports).
 
 A reusable, kernel-verified pure-silicon proof-reflection and certificate-compiler engine
 where finite binary certificates (checked by `decide`) + proved general soundness meta-theorems

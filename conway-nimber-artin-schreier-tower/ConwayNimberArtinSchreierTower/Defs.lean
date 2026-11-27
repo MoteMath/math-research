@@ -2,7 +2,7 @@
   Pure-Silicon Conway Nimber Fermat-Tower Engine &
   Universal Artin-Schreier Contraction / Block-Periodicity Mechanism
   ===================================================================
-  Standalone Lean 4.36.0 (fully self-contained, zero external dependencies).
+  Standalone Lean 4.34.1 (fully self-contained, zero external dependencies).
 -/
 
 namespace ConwaySilicon

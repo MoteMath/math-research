@@ -6,7 +6,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 /-!
 # Verified Lean 4 Sprague-Grundy Bitwise-Game Periodicity & Winning-Bitmask Compiler
 
-Standalone Lean 4.36.0 (zero Mathlib, zero `sorry`, zero custom axioms).
+Standalone Lean 4.34.1 (zero Mathlib, zero `sorry`, zero custom axioms).
 
 This file constructs and verifies a complete three-regime pure-silicon theory and
 reflection compiler for bitwise/carry subtraction games:

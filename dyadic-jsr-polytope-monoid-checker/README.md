@@ -6,15 +6,15 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **9 / 10** | **9 / 10** | **9 / 10** | **10 / 10** | **91 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): **Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/certcomp-4/Proof.lean)). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): **Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine`). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s*
 
 ## For Mathematicians
 
-**Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/certcomp-4/Proof.lean)). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s} A _ b \in \mathrm{Mat} _ {d \times d}(\mathbb{Z}[1/2])$ ($b \in \{0, \dots, m - 1\}$), determining boundedness, exponential decay, or strict positivity across **all** infinite-horizon binary matrix products $M _ {b _ n} \cdots M _ {b _ 1}$ (the Joint Spectral Radius problem) is undecidable in general. Our compiler replaces real analysis and floating-point heuristics with **three pure-data integer/dyadic certificate checkers** verified inside the Lean 4.36.0 kernel by `decide` (zero `native_decide`, zero `Prop` fields in any certificate, zero `Float`): 1. **DFA-S
+**Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine`). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s} A _ b \in \mathrm{Mat} _ {d \times d}(\mathbb{Z}[1/2])$ ($b \in \{0, \dots, m - 1\}$), determining boundedness, exponential decay, or strict positivity across **all** infinite-horizon binary matrix products $M _ {b _ n} \cdots M _ {b _ 1}$ (the Joint Spectral Radius problem) is undecidable in general. Our compiler replaces real analysis and floating-point heuristics with **three pure-data integer/dyadic certificate checkers** verified inside the Lean 4.34.1 kernel by `decide` (zero `native_decide`, zero `Prop` fields in any certificate, zero `Float`): 1. **DFA-S
 
 ## For Non-Mathematicians
 
-**Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/certcomp-4/Proof.lean)). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s
+**Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine`). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s
 
 ---
 

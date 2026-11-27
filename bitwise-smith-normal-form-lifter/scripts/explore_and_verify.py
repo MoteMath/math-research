@@ -5,7 +5,7 @@ Exact Pure-Silicon Verification & Sharpness Counterexample Suite for:
 Strictly pure Python arbitrary-precision `int` arithmetic (standard library only, exact integers).
 Independently verifies:
   1. Exact Smith Normal Form diagonals + explicit unimodular certificates U * M * V = diag(d)
-     for all four infinite theorem families proved in Proof.lean.
+     for all four infinite theorem families proved in the Lean sources.
   2. Exact bit-slice block elimination identities (LSB coupled-state, MSB divisibility
      Block-Schur, upper-bidiagonal Delta, additive rank-1, Kronecker) up to k = 6 (64 x 64).
   3. Explicit sharpness counterexamples showing where every hypothesis is strictly necessary.

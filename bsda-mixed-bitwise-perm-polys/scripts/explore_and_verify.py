@@ -4,7 +4,7 @@ Exact pure-silicon exploration & independent verification replay for Task 17 (dy
 Mixed Bitwise-Arithmetic Permutation-Polynomial Engine Mod 2^w.
 
 Zero floating point anywhere. Exact arbitrary-precision Python integers & bitmasks only.
-Mirrors every Lean 4 theorem and BSDA instantiation in `Proof.lean`.
+Mirrors every Lean 4 theorem and BSDA instantiation in the Lean sources.
 """
 
 from __future__ import annotations
@@ -361,7 +361,7 @@ def main():
     x3 = Mul(x2, x)
     x5 = Mul(x3, x2)
 
-    print("=== 1. BSDA ENGINE INSTANTIATIONS (EXACT MATCH WITH Proof.lean SECTION 7) ===")
+    print("=== 1. BSDA ENGINE INSTANTIATIONS (EXACT MATCH WITH the Lean sources SECTION 7) ===")
     lean_cases = [
         ("exRivest: x + 2x^2 + 2x^3",
          Add(Add(x, Mul(Const(2), x2)), Mul(Const(2), x3)), True, 2),

@@ -1,7 +1,7 @@
 /-!
 # BitTransfer3: Pure-Silicon Bit-Boundary Transfer-Tensor & State-Invariant Compiler
 
-Standalone Lean 4.36.0 formalization (zero Mathlib, zero sorry, zero custom axioms).
+Standalone Lean 4.34.1 formalization (zero Mathlib, zero sorry, zero custom axioms).
 
 This file implements:
 1. An exact integer polynomial ring (`Poly := List Int`) with Horner linear cancellation

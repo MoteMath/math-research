@@ -4,7 +4,7 @@ version: v0.4
 project:
   name: adic-16  Involutive Circulant Carry-Transfer & 2-Window Bit-Splitting Polyhedral Cone Engine for Mod-m and Bitwise Popcount Classes
   description: >-
-    This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.36.0 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating
+    This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.34.1 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating
   repository: https://github.com/MoteMath/math-research
   subdirectory: circulant-carry-bit-splitting-cones
   license: Apache-2.0

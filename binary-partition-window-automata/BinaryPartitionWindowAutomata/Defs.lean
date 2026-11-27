@@ -1,7 +1,7 @@
 /-!
 # Pure-Silicon Binary Partition & Restricted-Power-of-Two Congruence Automaton Engine
 
-Standalone Lean 4.36.0 formalization (zero Mathlib, zero `sorry`, zero custom axioms).
+Standalone Lean 4.34.1 formalization (zero Mathlib, zero `sorry`, zero custom axioms).
 
 ## Structure
 1. **Pure-Silicon Bit-Shift Recurrence (`binPart`, `br`, `v2`):**

@@ -1,6 +1,6 @@
 /-
   CHKAE: Verified Cayley-Hamilton, Krylov & Perron-Cone Annihilator Engine
-  Pure-Silicon Infinite Proof Mechanism (Standalone Lean 4.36.0, Zero Mathlib)
+  Pure-Silicon Infinite Proof Mechanism (Standalone Lean 4.34.1, Zero Mathlib)
 
   Author: certcomp-15 (Thread 5: Self-Verifying Binary Proof Compilers & Reflection Engines)
 -/

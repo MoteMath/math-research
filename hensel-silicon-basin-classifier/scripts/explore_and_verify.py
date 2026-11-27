@@ -238,7 +238,7 @@ def hensel_lift_py(e: BPoly, m: int, L: int, c: int, w: int, r: int) -> int:
 
 
 # ---------------------------------------------------------------------------
-# 3. Concrete Maps Matching Proof.lean + Exhaustive Independent Replay
+# 3. Concrete Maps Matching the Lean sources + Exhaustive Independent Replay
 # ---------------------------------------------------------------------------
 
 MAP_ASYM = OR(AND(VAR, CONST(4)), MUL(VAR, VAR))

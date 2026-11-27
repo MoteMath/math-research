@@ -1,7 +1,7 @@
 /-!
 # 2-Adic Bruhat–Tits Lattice-Gauge Automaton Engine for Carry-Bounded Base-2 Representations
 
-Standalone core Lean 4.36.0 formalization (ZERO Mathlib, ZERO `sorry`, ZERO custom axioms).
+Standalone core Lean 4.34.1 formalization (ZERO Mathlib, ZERO `sorry`, ZERO custom axioms).
 
 ## Structure of this File
 1. **Binary Linear Algebra, Binary Induction, and Exact 2-Adic Valuation (`ExactVal2`)**

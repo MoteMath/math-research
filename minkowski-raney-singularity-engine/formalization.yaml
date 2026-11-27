@@ -4,7 +4,7 @@ version: v0.4
 project:
   name: Raney-Minkowski Finite-State Bit-Transducer Infinite Proof Engine (adic-14)
   description: >-
-    **Mechanism:** **Certified Raney-Minkowski Finite-State Bit-Transducer Lifting Engine** (`RaneyCert n` + `HellingerCert`, `StationaryCert`, `IntegralCert` in [`Proof.lean`](Proof.lean)). **Pure-Silicon Principle (Finite Binary Object $\to \infty$ Bridge):** Every positive rational $p/q \in \mathbb{Q} _ {>0}$ is represented canonically as a finite bitstring $w \in \{0, 1\}^*$ vi
+    **Mechanism:** **Certified Raney-Minkowski Finite-State Bit-Transducer Lifting Engine** (`RaneyCert n` + `HellingerCert`, `StationaryCert`, `IntegralCert` in the Lean sources). **Pure-Silicon Principle (Finite Binary Object $\to \infty$ Bridge):** Every positive rational $p/q \in \mathbb{Q} _ {>0}$ is represented canonically as a finite bitstring $w \in \{0, 1\}^*$ vi
   repository: https://github.com/MoteMath/math-research
   subdirectory: minkowski-raney-singularity-engine
   license: Apache-2.0

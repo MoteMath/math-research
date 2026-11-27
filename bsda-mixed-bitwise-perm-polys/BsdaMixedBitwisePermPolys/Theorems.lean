@@ -8,7 +8,7 @@ import BsdaMixedBitwisePermPolys.Defs
 # Theorems (`BsdaMixedBitwisePermPolys`)
 
 Task 17 (dynsil-17): Mixed Bitwise-Arithmetic Permutation-Polynomial Engine Mod 2^w
-  Standalone Lean 4.36.0 — Zero Mathlib, Zero Lake, Zero `sorry`, Standard Axioms Only.
+  Standalone Lean 4.34.1 — Zero Mathlib, Zero Lake, Zero `sorry`, Standard Axioms Only.
 -/
 
 

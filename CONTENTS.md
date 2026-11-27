@@ -1813,7 +1813,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 ## 131. [`walsh-gray-conjugacy-spectra/`](walsh-gray-conjugacy-spectra/)
 
-**Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/specmat-16/Proof.lean)). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eige
+**Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral`). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eige
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1858,7 +1858,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 ## 134. [`mahler-vanderput-2adic-certs/`](mahler-vanderput-2adic-certs/)
 
-**Mechanism:** **2-Adic Dual-Basis Certificate Engine (Rooted Van der Put Basis + Discrete Mahler Forward-Difference Basis + Finite 2-Adic Lattice Contraction, Sharpness, and Kernel-Invariant Compilers)** **Silicon Principle (Finite $\to$ Infinite Bridge):** In standalone Lean 4.36.0 (zero Mathlib, zero floats), we model the ring of 2-adic integers $\mathbb{Z} _ 2$ natively as
+**Mechanism:** **2-Adic Dual-Basis Certificate Engine (Rooted Van der Put Basis + Discrete Mahler Forward-Difference Basis + Finite 2-Adic Lattice Contraction, Sharpness, and Kernel-Invariant Compilers)** **Silicon Principle (Finite $\to$ Infinite Bridge):** In standalone Lean 4 (zero Mathlib, zero floats), we model the ring of 2-adic integers $\mathbb{Z} _ 2$ natively as
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1873,7 +1873,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 ## 135. [`mba-hensel-block-jet-lifting/`](mba-hensel-block-jet-lifting/)
 
-**Mechanism:** **The MBA-Hensel & Affine Block-Jet Lifting Engine** (standalone Lean 4.36.0, zero Mathlib, zero floating-point arithmetic, zero `sorry`, zero `native_decide`). Mixed Bitwise-Arithmetic (MBA) expressions over the 10-operator silicon algebra define exact projective systems $\mathrm{evalMod}\ w\ e : \mathbb{N} \to \mathbb{Z}/2^w\mathbb{Z}$ that are universally **2-
+**Mechanism:** **The MBA-Hensel & Affine Block-Jet Lifting Engine** (standalone Lean 4, zero Mathlib, zero floating-point arithmetic, zero `sorry`, zero `native_decide`). Mixed Bitwise-Arithmetic (MBA) expressions over the 10-operator silicon algebra define exact projective systems $\mathrm{evalMod}\ w\ e : \mathbb{N} \to \mathbb{Z}/2^w\mathbb{Z}$ that are universally **2-
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1918,7 +1918,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 ## 138. [`bitpack-raw-proof-meta-compiler/`](bitpack-raw-proof-meta-compiler/)
 
-**Mechanism:** **BitPackMC v1** — a standalone, kernel-verified **Compact Raw-Bit Proof-Carrying Certificate Meta-Compiler** in Lean 4.36.0. **Pure-Silicon Principle (Finite Raw Bytes $\to$ Infinite $\forall x, y \in \mathbb{N}$ Theorems):** Rather than encoding reflection proofs as bulky algebraic ASTs or trusting external solvers, BitPackMC compiles *both* the target universa
+**Mechanism:** **BitPackMC v1** — a standalone, kernel-verified **Compact Raw-Bit Proof-Carrying Certificate Meta-Compiler** in Lean 4. **Pure-Silicon Principle (Finite Raw Bytes $\to$ Infinite $\forall x, y \in \mathbb{N}$ Theorems):** Rather than encoding reflection proofs as bulky algebraic ASTs or trusting external solvers, BitPackMC compiles *both* the target universa
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1948,7 +1948,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 ## 140. [`circulant-carry-bit-splitting-cones/`](circulant-carry-bit-splitting-cones/)
 
-This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4.36.0 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating
+This work introduces and machine-checks **two reusable finite-to-infinite pure-silicon proof mechanisms** for binary popcount-residue classes $C _ {m, r} = \{ n \in \mathbb{N} : s _ 2(n) \equiv r \pmod m \}$, unifying exact group-ring carry algebra and polyhedral Farkas cone certification in standalone Lean 4 (zero Mathlib, zero `sorry`, zero `native_decide`, zero floating
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -1978,7 +1978,7 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 
 ## 142. [`dyadic-jsr-polytope-monoid-checker/`](dyadic-jsr-polytope-monoid-checker/)
 
-**Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/certcomp-4/Proof.lean)). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s
+**Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine`). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s
 
 | Theorem | Module | Statement |
 |---|---|---|
@@ -2113,7 +2113,7 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 
 ## 151. [`minkowski-raney-singularity-engine/`](minkowski-raney-singularity-engine/)
 
-**Mechanism:** **Certified Raney-Minkowski Finite-State Bit-Transducer Lifting Engine** (`RaneyCert n` + `HellingerCert`, `StationaryCert`, `IntegralCert` in [`Proof.lean`](Proof.lean)). **Pure-Silicon Principle (Finite Binary Object $\to \infty$ Bridge):** Every positive rational $p/q \in \mathbb{Q} _ {>0}$ is represented canonically as a finite bitstring $w \in \{0, 1\}^*$ vi
+**Mechanism:** **Certified Raney-Minkowski Finite-State Bit-Transducer Lifting Engine** (`RaneyCert n` + `HellingerCert`, `StationaryCert`, `IntegralCert` in the Lean sources). **Pure-Silicon Principle (Finite Binary Object $\to \infty$ Bridge):** Every positive rational $p/q \in \mathbb{Q} _ {>0}$ is represented canonically as a finite bitstring $w \in \{0, 1\}^*$ vi
 
 | Theorem | Module | Statement |
 |---|---|---|

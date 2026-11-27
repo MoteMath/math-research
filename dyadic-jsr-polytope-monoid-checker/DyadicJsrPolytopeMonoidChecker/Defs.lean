@@ -1,7 +1,7 @@
 /-!
 # Verified Lean 4 Dyadic Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler (`certcomp-4`)
 
-Standalone core Lean 4.36.0 (zero Mathlib, zero `sorry`, zero `native_decide`, zero `Float`).
+Standalone core Lean 4.34.1 (zero Mathlib, zero `sorry`, zero `native_decide`, zero `Float`).
 
 ## Architecture
 1. **Exact Dyadic Rationals `Dyadic` (`Z[1/2]`):**

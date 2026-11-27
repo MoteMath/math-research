@@ -7,7 +7,7 @@ and Verification Replay Suite for:
 
 Strictly pure integer arithmetic (Python `int` only, ZERO floating-point operations).
 Independently reproduces every finite certificate (including the exact 32-bit
-bisimulation bitmask `domAbsCert = 2223046689` verified in `Proof.lean`),
+bisimulation bitmask `domAbsCert = 2223046689` verified in the Lean sources),
 all exhaustive & high-bitwidth checks up to n = 64 operands (m = 6), and
 every sharpness / mutation counterexample.
 """
@@ -68,7 +68,7 @@ def popcount(n: int) -> int:
 
 # =============================================================================
 # 2. Independent Transducer Compiler & Guarded Bisimulation Certificate Engine
-#    (Mirrors `Proof.lean` Sections 3-5 identically to synthesize `R : int`.)
+#    (Mirrors the Lean sources Sections 3-5 identically to synthesize `R : int`.)
 # =============================================================================
 
 class Transducer:

@@ -1,7 +1,7 @@
 /-
   BitPackMC v1: Verified Lean 4 Compact Raw-Bit Proof-Carrying Certificate Meta-Compiler
   ======================================================================================
-  Standalone Lean 4.36.0 (zero Mathlib, zero Lake, zero sorry, zero native_decide).
+  Standalone Lean 4.34.1 (zero Mathlib, zero Lake, zero sorry, zero native_decide).
 
   Architecture:
     1. Pure-silicon `popcount` and bitwise arithmetic primitives over unbounded `Nat`.

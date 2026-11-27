@@ -1,7 +1,7 @@
 /-
   Pure-Silicon Binary Math:
   The Walsh–Defect, Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine
-  (Standalone Core Lean 4.36.0 — Self-Contained Pure Integer/Boolean Arithmetic)
+  (Standalone Core Lean 4.34.1 — Self-Contained Pure Integer/Boolean Arithmetic)
 
   Campaign: silicon-infinite-mechanisms-20261126 / specmat-16
 -/

@@ -13,7 +13,7 @@ Carry-less polynomial powers over F_2[x] against integer powers, Hensel lift of 
   Task 12 (adic-12):
   Carryless (F_2[x]) vs. Carried (Z) 2-Adic Polynomial-Bridge Hensel-Isometry Engine
 
-  Standalone core Lean 4.36.0 formalization (zero Mathlib, zero sorry, zero custom axioms).
+  Standalone core Lean 4.34.1 formalization (zero Mathlib, zero sorry, zero custom axioms).
   Proves:
     1. Reusable Finite-to-Infinite Mechanism (`HenselBridge`):
        Any function F : Nat -> Int satisfying an exact 2-adic scaled-isometry law at scale L

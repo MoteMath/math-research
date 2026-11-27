@@ -273,7 +273,7 @@ class BitReader:
         return self.avail < 8 and self.bits == 0
 
 # ============================================================
-# 3. Independent Reference Verifier (matches Lean Proof.lean 1-to-1)
+# 3. Independent Reference Verifier (matches Lean the Lean sources 1-to-1)
 # ============================================================
 
 def verify_raw_cert(data: bytes) -> tuple[bool, dict | None]:

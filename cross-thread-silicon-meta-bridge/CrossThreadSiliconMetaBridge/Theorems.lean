@@ -494,7 +494,7 @@ theorem two_mul_add_mod2_eq (q : Nat) (b : Bool) :
     ((2 * q + b.toNat) % 2 == 1) = b := by
   cases b <;> simp
 
-/-- Exact LSB decomposition of `n % 2^(w + 1)` in core Lean 4.36.0. -/
+/-- Exact LSB decomposition of `n % 2^(w + 1)` in core Lean 4.34.1. -/
 theorem nat_mod_two_pow_succ (n w : Nat) :
     n % 2 ^ (w + 1) = n % 2 + 2 * ((n / 2) % 2 ^ w) := by
   have h1 : n = 2 * (n / 2) + n % 2 := (Nat.div_add_mod n 2).symm

@@ -1,6 +1,6 @@
 /-
   Zeckendorf-to-Binary Carry-Bridge Transducer Engine
-  Standalone Lean 4.36.0 formalization (zero Mathlib, zero sorry, zero custom axioms).
+  Standalone Lean 4.34.1 formalization (zero Mathlib, zero sorry, zero custom axioms).
 
   Author: adic-7 (Thread 4: 2-Adic, Nimber, Carry-Arithmetic & Number-Theoretic Infinite Mechanisms)
 -/

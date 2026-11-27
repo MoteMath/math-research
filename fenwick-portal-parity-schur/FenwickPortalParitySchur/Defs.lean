@@ -1,6 +1,6 @@
 /-!
 # Pure Silicon 2-Portal Minor-Transfer & Even/Odd Bit-Parity Schur-Inversion Engine
-Standalone Lean 4.36.0 (zero Mathlib, zero sorry, standard axioms only).
+Standalone Lean 4.34.1 (zero Mathlib, zero sorry, standard axioms only).
 -/
 
 namespace SpecMat7

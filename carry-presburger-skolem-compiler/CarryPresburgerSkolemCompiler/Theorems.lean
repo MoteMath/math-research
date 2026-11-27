@@ -8,7 +8,7 @@ import CarryPresburgerSkolemCompiler.Defs
 # Theorems (`CarryPresburgerSkolemCompiler`)
 
 Exact Carry-Presburger Residue-Transition Elimination Engine (CPRTE)
-  Standalone Lean 4.36.0 (Zero Mathlib, Zero Sorry, Standard Axioms Only)
+  Standalone Lean 4.34.1 (Zero Mathlib, Zero Sorry, Standard Axioms Only)
 
   A kernel-verified pure-silicon reflection compiler for quantified Nat formulas
   mixing:

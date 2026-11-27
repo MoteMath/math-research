@@ -8,7 +8,7 @@ Independently implements:
      variable-variable `&`/`|` Idempotence Linearization) + exact Newton-Hensel inverse `mod_inv_pow2`.
   4. Independent exhaustive root-tree verification, constructive bit-by-bit lifts up to w = 256,
      constructive quadratic doubling lifts up to w = 4096 bits, and all sharpness counterexamples
-     for Theorems 1, 2, 3, and 4 of `Proof.lean`.
+     for Theorems 1, 2, 3, and 4 of the Lean sources.
 """
 
 from dataclasses import dataclass
@@ -161,7 +161,7 @@ def sym_deriv0(w0: int, s: int, r: int, e: MBAExpr) -> Optional[bool]:
 
 
 def lift_core(e: MBAExpr, v: int, w0: int, y0: int, steps: int) -> int:
-    """Exact bit-by-bit silicon Hensel lifter matching `liftCore` in Proof.lean."""
+    """Exact bit-by-bit silicon Hensel lifter matching `liftCore` in the Lean sources."""
     y = y0
     for k in range(steps):
         w = w0 + k

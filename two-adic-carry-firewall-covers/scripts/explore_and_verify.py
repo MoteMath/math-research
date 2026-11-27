@@ -472,7 +472,7 @@ def verify_all() -> None:
     assert not check_cover(make_valid_val(gray_quad(3, 60), 1), gq_trees[(1, 10)])
     print("  Mutation 6 (F1 valuation cert applied to F2): REJECTED (false)")
 
-    # ---- Write Preorder Encodings Summary for Proof.lean ----
+    # ---- Write Preorder Encodings Summary for the Lean sources ----
     print("\n[6] Certificate Preorder Token Counts (for Lean 4 embedding)")
     for k in [1, 2, 3, 4, 5]:
         toks = to_lean_bitstring_rle(t_trees[k])

@@ -1,7 +1,7 @@
 /-
   adic-16: Evil/Odious & Mod-m Bit-Weight Class Additive/Bitwise Engine
   ======================================================================
-  Standalone Lean 4.36.0 formalization (pure core Lean, kernel-verified).
+  Standalone Lean 4.34.1 formalization (pure core Lean, kernel-verified).
 
   Contains TWO reusable pure-silicon infinite proof mechanisms and their
   flagship infinite theorems, sharpness counterexamples, non-vacuity witnesses,

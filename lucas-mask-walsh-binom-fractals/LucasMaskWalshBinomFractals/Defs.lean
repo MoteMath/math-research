@@ -1,7 +1,7 @@
 /-!
 # Bitwise-Weighted Binomial & Lucas-Mask Fractal Engine (adic-9)
 
-A standalone, zero-Mathlib, pure-silicon Lean 4.36.0 formalization of a reusable
+A standalone, zero-Mathlib, pure-silicon Lean 4.34.1 formalization of a reusable
 three-stage infinite proof engine for bitwise-filtered binomial sums over the
 Lucas submask cube `{k : Nat | k &&& n = k}`:
 

@@ -8,7 +8,7 @@ import FeistelAff2MonodromyLocks.Defs
 # Theorems (`FeistelAff2MonodromyLocks`)
 
 Bit-Slice Aff(F_2^2)-Monodromy Tower Engine for Bitwise-Arithmetic Feistel Networks
-  Standalone Lean 4.36.0 (zero Mathlib, zero sorry, zero custom axioms)
+  Standalone Lean 4.34.1 (zero Mathlib, zero sorry, zero custom axioms)
 -/
 
 

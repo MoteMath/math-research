@@ -1,7 +1,7 @@
 /-!
 # Silicon Walsh-Hadamard & T-Function Bent Proof Engine (`specmat-14`)
 
-Pure-silicon standalone Lean 4.36.0 formalization (zero Mathlib, zero floats, zero `sorry`):
+Pure-silicon standalone Lean 4.34.1 formalization (zero Mathlib, zero floats, zero `sorry`):
 1. Bit-sliced radix-2 butterfly FWHT, Hadamard involution, exact XOR-correlation,
    and the Silicon Wiener-Khinchin equivalence (Flat Walsh ±2^k ↔ Vanishing Autocorrelation).
 2. Causal Silicon T-Function combinator algebra & constructive bit-by-bit Hensel inverter `tInv`,

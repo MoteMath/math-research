@@ -1,7 +1,7 @@
 /-!
 # Exact `Z[F_2^k]` Group-Ring Inversion, Parseval Duality, and the Shared-Bit Idempotent Lifting Engine
 
-Standalone Lean 4.36.0 formalization (zero Mathlib, zero `sorry`, zero custom axioms).
+Standalone Lean 4.34.1 formalization (zero Mathlib, zero `sorry`, zero custom axioms).
 
 ## Structure
 - **Part I**: Exact binary-vector group ring `Z[F_2^k]`, XOR-circulant matrices,

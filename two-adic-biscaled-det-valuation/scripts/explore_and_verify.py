@@ -2,7 +2,7 @@
 Pure-Silicon 2-Adic Bi-Scaled Elimination & Finite-Corner Mod-2 Certification Engine
 Independent exact-integer (zero-float) synthesis, verification, and sharpness suite.
 
-Companion script to `Proof.lean` and `MECHANISM.md` (specmat-12).
+Companion script to the Lean sources and `MECHANISM.md` (specmat-12).
 """
 
 import sys

@@ -11,7 +11,7 @@ import MortonCarryMonodromyRenorm.Defs
 # Morton / Radix-B Digit-Permutation + Carry-Arithmetic Dynamics
 
 Worker: `dynsil-4` (Thread 2: Bitwise Dynamics, T-Functions & Reversible Silicon Orbit Mechanisms)
-Standalone Lean 4.36.0 — ZERO Mathlib, ZERO external dependencies, ZERO `sorry`, ZERO custom axioms.
+Standalone Lean 4.34.1 — ZERO Mathlib, ZERO external dependencies, ZERO `sorry`, ZERO custom axioms.
 -/
 
 

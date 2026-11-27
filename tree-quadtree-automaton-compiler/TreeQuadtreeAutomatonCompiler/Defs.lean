@@ -1,7 +1,7 @@
 /-!
 # certcomp-6: Verified Lean 4 Bottom-Up Tree-Automaton & Quadtree Proof Compiler
 
-A reusable, standalone Lean 4.36.0 pure-silicon proof-reflection and certificate-compiler engine
+A reusable, standalone Lean 4.35.0 pure-silicon proof-reflection and certificate-compiler engine
 lifting finite binary certificates (checked in the kernel via `decide`, with no compiler-trusting
 tactics, ZERO `Prop` fields inside certificates, ZERO Mathlib) to universally quantified infinite theorems
 (`∀ k : Nat`) over height-`k` binary trees (`BTree α k`) and `2^k × 2^k` bit-quadtrees (`QTree α k`).

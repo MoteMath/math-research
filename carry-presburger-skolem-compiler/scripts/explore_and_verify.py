@@ -3,8 +3,8 @@
 explore_and_verify.py — Exact Carry-Presburger Residue-Transition Compiler & Verifier
 
 Pure-silicon exact-integer certificate synthesizer, independent oracle verifier,
-sharpness/counterexample generator, hostile mutation tester, and Lean 4.36.0
-certificate emitter for CPRTE (`Proof.lean`).
+sharpness/counterexample generator, hostile mutation tester, and Lean 4.34.1
+certificate emitter for CPRTE (the Lean sources).
 
 Zero floating-point arithmetic is used anywhere in synthesis, verification, or certificates.
 """
@@ -16,7 +16,7 @@ from typing import Dict, List, Optional, Sequence, Tuple, Union
 import sys
 
 # ============================================================================
-# 1. Exact Pure-Silicon Primitives (Bit-Identical to Proof.lean)
+# 1. Exact Pure-Silicon Primitives (Bit-Identical to the Lean sources)
 # ============================================================================
 
 MASK_AND_ZERO = 0x0FFF  # !(b1 && b2)
@@ -71,7 +71,7 @@ def dot_int(cs: Sequence[int], vs: Sequence[int]) -> int:
 
 
 # ============================================================================
-# 2. Carry-Presburger AST (Exact Mirror of Proof.lean)
+# 2. Carry-Presburger AST (Exact Mirror of the Lean sources)
 # ============================================================================
 
 @dataclass(frozen=True)

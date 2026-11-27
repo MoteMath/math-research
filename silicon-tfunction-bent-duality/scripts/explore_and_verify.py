@@ -15,7 +15,7 @@ Verifies:
      confirming:
        - Carry-Dictionary Phase Transition at k=4 (n=8): piClmul3 (in M#) vs piMul3, piKS, piARX, piMul7 (outside M#).
        - Dimension sharpness at k=3 (n=6): piMul3 has explicit 3-dim vanishing subspace {(s & 1, s & 6)}.
-  7. Four hypothesis-breaking sharpness counterexamples matching Proof.lean exactly.
+  7. Four hypothesis-breaking sharpness counterexamples matching the Lean sources exactly.
 """
 
 
@@ -72,7 +72,7 @@ def anf_degree(tt: list[int]) -> int:
 
 
 def t_inv(pi, k: int, y: int) -> int:
-    """Constructive bit-by-bit Silicon Hensel inverter matching Proof.lean `tInv`."""
+    """Constructive bit-by-bit Silicon Hensel inverter matching the Lean sources `tInv`."""
     r = 0
     for i in range(k):
         b = ((y >> i) ^ (pi(r) >> i)) & 1

@@ -1,7 +1,7 @@
 /-!
 # Carry-Coupled Binary Automaton Correlation & Dual-Krylov L^4-Energy Proof Engine
 
-Standalone Lean 4.36.0 formalization (zero Mathlib, zero `sorry`, zero `native_decide`,
+Standalone Lean 4.34.1 formalization (zero Mathlib, zero `sorry`, zero `native_decide`,
 zero floating-point).
 
 ## Contents
@@ -47,7 +47,7 @@ zero floating-point).
 namespace PureSiliconAuto
 
 -- ============================================================================
--- Section 0: Core Summation & Arithmetic Helpers (Pure Core Lean 4.36.0)
+-- Section 0: Core Summation & Arithmetic Helpers (Pure Core Lean 4.34.1)
 -- ============================================================================
 
 /-- Sum of `f 0 + f 1 + ... + f (n - 1)`. -/

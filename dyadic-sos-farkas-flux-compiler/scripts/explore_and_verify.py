@@ -22,7 +22,7 @@ import sympy as sp
 
 # ===========================================================================
 # Part 1: Exact Z[1/2] Sparse Polynomial & Dyadic Gram Data Model
-#         (mirrors Proof.lean 1-to-1)
+#         (mirrors the Lean sources 1-to-1)
 # ===========================================================================
 def mono_mul(m1, m2):
     """Multiply two sorted monomials: tuple of (var_idx, exp)."""

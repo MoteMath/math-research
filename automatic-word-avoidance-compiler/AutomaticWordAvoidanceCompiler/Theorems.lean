@@ -7,7 +7,7 @@ import AutomaticWordAvoidanceCompiler.Defs
 /-!
 # Theorems (`AutomaticWordAvoidanceCompiler`)
 
-# Pure-Silicon Automatic-Word Pattern-Avoidance Certificate Engine (Lean 4.36.0)
+# Pure-Silicon Automatic-Word Pattern-Avoidance Certificate Engine (Lean 4.34.1)
 
 Standalone, zero-Mathlib, kernel-verified reflection compiler and proof engine.
 Every certificate structure is 100% PURE DATA (`Nat`, `Bool`, `List`, `BTree`)

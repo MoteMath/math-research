@@ -1,7 +1,7 @@
 /-!
-# Bit-Sliced Carry-Holonomy 2-Adic Lifting Engine (`Proof.lean`)
+# Bit-Sliced Carry-Holonomy 2-Adic Lifting Engine
 
-Pure-silicon standalone Lean 4.36.0 formalization (zero Mathlib, zero external imports).
+Pure-silicon standalone Lean 4.34.1 formalization (zero Mathlib, zero external imports).
 
 ## Architecture
 1. **Pure-Silicon 2-Adic Primitives**:

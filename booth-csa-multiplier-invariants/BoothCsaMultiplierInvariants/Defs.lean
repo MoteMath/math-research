@@ -2,7 +2,7 @@
   Pure-Silicon Binary Math: Reusable Infinite Proof Mechanisms for
   Booth & Carry-Save Multiplier Invariants (∀ k ≥ 1, ∀ w ≥ 1, ∀ m ≥ 1)
 
-  Standalone Lean 4.36.0 (zero Mathlib, zero lake, zero sorry, zero native_decide).
+  Standalone Lean 4.34.1 (zero Mathlib, zero lake, zero sorry, zero native_decide).
 
   Mechanisms formalized:
     1. `RadixTransducer` & `FiniteRadixCert`:

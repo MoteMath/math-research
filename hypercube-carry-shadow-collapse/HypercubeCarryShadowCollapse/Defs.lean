@@ -6,7 +6,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
   Pure Silicon Binary Math — Binary Carry-Defect Bisimulation Compiler
   & Universal 2^m-Operand Hypercube Carry-Shadow Collapse Theorem
 
-  Standalone Lean 4.36.0 (zero Mathlib, zero Lake, zero sorry, zero custom axioms).
+  Standalone Lean 4.34.1 (zero Mathlib, zero Lake, zero sorry, zero custom axioms).
 -/
 
 namespace HypercubeCarryShadowCollapse

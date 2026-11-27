@@ -1,7 +1,7 @@
 /-
   Exact Dyadic-Rational (Z[1/2]) Infinite Positive-Definite Form Engine
   Worker: adic-10 (Thread 4: 2-Adic, Nimber, Carry-Arithmetic & Number-Theoretic Infinite Mechanisms)
-  Standalone Lean 4.36.0 — zero Mathlib, zero Float, zero sorry, zero custom axioms.
+  Standalone Lean 4.34.1 — zero Mathlib, zero Float, zero sorry, zero custom axioms.
 -/
 
 namespace DyadicPDEngine

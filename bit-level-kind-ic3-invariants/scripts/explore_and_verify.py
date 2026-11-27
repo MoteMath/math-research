@@ -3,7 +3,7 @@
 Exact Pure-Silicon Bit-Level k-Induction & IC3/PDR Certificate Synthesizer,
 Independent Exact-Integer Verifier, CTI Finder, and Sharpness / Mutation Test Suite.
 
-Matches the standalone Lean 4.36.0 compiler in Proof.lean bit-for-bit.
+Matches the standalone Lean 4.34.1 compiler in the Lean sources bit-for-bit.
 Strictly CPU-only, exact integer arithmetic (zero floating-point values anywhere).
 """
 
@@ -13,7 +13,7 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 import time
 
 # ============================================================================
-# 1. Width-Uniform Bit-Vector AST (exact mirror of BVExpr / BVPred in Proof.lean)
+# 1. Width-Uniform Bit-Vector AST (exact mirror of BVExpr / BVPred in the Lean sources)
 # ============================================================================
 
 @dataclass(frozen=True)
@@ -61,7 +61,7 @@ class BVSystem:
     next: Tuple[BVExpr, ...]  # length r
 
 def fold_and(preds: Sequence[BVPred]) -> BVPred:
-    """Matches Proof.lean's right-nested foldAnd."""
+    """Matches the Lean sources's right-nested foldAnd."""
     if not preds:
         return P_true()
     if len(preds) == 1:
@@ -106,7 +106,7 @@ def eval_pred_bv(w: int, regs: Sequence[int], inps: Sequence[int], p: BVPred) ->
     raise ValueError(f"Unknown pred op: {op}")
 
 # ============================================================================
-# 3. Bit-Slice Compiler (bit-for-bit identical to Proof.lean Sections 4 & 6)
+# 3. Bit-Slice Compiler (bit-for-bit identical to the Lean sources Sections 4 & 6)
 # ============================================================================
 
 def expr_bits(e: BVExpr) -> int:
@@ -364,7 +364,7 @@ def pred_alive_hyp(p: BVPred, code: int) -> bool:
         return pred_alive_hyp(p.args[0], code & ((1 << k1) - 1)) and pred_alive_hyp(p.args[1], code >> k1)
     return True
 
-# ---- Recursive Obligation Compiler (matches Proof.lean Section 6 bit-for-bit!) ----
+# ---- Recursive Obligation Compiler (matches the Lean sources Section 6 bit-for-bit!) ----
 
 def next_bits(sys: BVSystem) -> int:
     return sum(expr_bits(e) for e in sys.next)
@@ -535,7 +535,7 @@ def synthesize_oblig(sys: BVSystem, steps: int, hyps: Sequence[BVPred], conc: BV
 
 def check_oblig_cert(sys: BVSystem, steps: int, hyps: Sequence[BVPred], conc: BVPred,
                      cert_codes: Sequence[int]) -> bool:
-    """Independent Python replay of Proof.lean's checkOblig."""
+    """Independent Python replay of the Lean sources's checkOblig."""
     cset = set(cert_codes)
     n_r = 1 << sys.r
     n_u = 1 << (steps * sys.m)
@@ -604,7 +604,7 @@ def synthesize_kind_ic3(sys: BVSystem, prop: BVPred, k: int, ic3_clauses: Sequen
     return res
 
 def to_lean_natset(sorted_codes: Sequence[int]) -> str:
-    """Emit a balanced binary search tree `NatSet` literal for Proof.lean."""
+    """Emit a balanced binary search tree `NatSet` literal for the Lean sources."""
     if not sorted_codes:
         return ".empty"
     mid = len(sorted_codes) // 2

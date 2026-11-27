@@ -1,7 +1,7 @@
 /-!
 # Exact Hensel Lifting Engine for Mixed Bitwise-Arithmetic (MBA) Diophantine Equations
 
-Standalone Lean 4.36.0 formalization (zero Mathlib, zero sorry, standard axioms only).
+Standalone Lean 4.34.1 formalization (zero Mathlib, zero sorry, standard axioms only).
 
 Architecture:
 1. `MBAExpr` AST (`+`, `-`, `*`, `^`, `&`, `|`, `~`, `<<`) and exact width-coherent semantics `evalMod`.

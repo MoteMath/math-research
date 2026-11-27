@@ -1,7 +1,7 @@
 /-
   certcomp-14: Verified Lean 4 Reversible-Circuit Commutation & Group-Word Compiler
   =================================================================================
-  Standalone Lean 4.36.0 (no Mathlib, no Lake).
+  Standalone Lean 4.34.1 (no Mathlib, no Lake).
 
   Architecture:
     Section 1 : Width-indexed reversible silicon machine (`State r w`, `Gate r`, exact `BitVec w`

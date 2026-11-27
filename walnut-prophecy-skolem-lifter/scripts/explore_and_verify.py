@@ -56,7 +56,7 @@ def thue_morse_3n(n: int) -> int:
 
 
 # =============================================================================
-# 2. Exact Multi-Track LSB-First DFA Engine (Matching Proof.lean Semantics)
+# 2. Exact Multi-Track LSB-First DFA Engine (Matching the Lean sources Semantics)
 # =============================================================================
 
 class DFA:
@@ -303,7 +303,7 @@ class DFA:
 
 
 # =============================================================================
-# 3. Primitive DFAs (Exact Match to Proof.lean Sections 4, 6, 7)
+# 3. Primitive DFAs (Exact Match to the Lean sources Sections 4, 6, 7)
 # =============================================================================
 
 def dfa_le() -> DFA:
@@ -324,7 +324,7 @@ def dfa_add() -> DFA:
     return DFA(3, 3, 0, trans, [True, False, False])
 
 def dfa_add_one() -> DFA:
-    """Tracks (y, x): x + 1 = y. Matches Proof.lean `dfaAddOne` exactly."""
+    """Tracks (y, x): x + 1 = y. Matches the Lean sources `dfaAddOne` exactly."""
     trans = [[2] * 4 for _ in range(3)]
     for q in (0, 1):
         c = 1 if q == 0 else 0
@@ -339,7 +339,7 @@ def dfa_add_one() -> DFA:
     return DFA(2, 3, 0, trans, [False, True, False])
 
 def dfa_p_ge_pow2_rev(e: int) -> DFA:
-    """Matches Proof.lean `dfaPGePow2Rev e` exactly."""
+    """Matches the Lean sources `dfaPGePow2Rev e` exactly."""
     n_st = e + 2
     trans = []
     for s in range(n_st):
@@ -358,7 +358,7 @@ def dfa_p_ge_pow2_rev(e: int) -> DFA:
     return DFA(2, n_st, 0, trans, acc)
 
 def dfa_gray_add() -> DFA:
-    """Matches Proof.lean `dfaGrayAdd` exactly (9 states)."""
+    """Matches the Lean sources `dfaGrayAdd` exactly (9 states)."""
     trans = []
     acc = []
     for q in range(9):
@@ -1079,7 +1079,7 @@ def run_independent_replay(bundle: dict):
 
 
 def emit_lean_certificates_file(bundle: dict, out_path: str):
-    """Emit Sections 8-11 of Proof.lean (pure-data certificates + theorems + sharpness + mutations)."""
+    """Emit Sections 8-11 of the Lean sources (pure-data certificates + theorems + sharpness + mutations)."""
     chunks = []
     chunks.append("\n/-! ## Section 8: Pure-Data Certificates for the Gray-Sum Parity Word -/\n")
 

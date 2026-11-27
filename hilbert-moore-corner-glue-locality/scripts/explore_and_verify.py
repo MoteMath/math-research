@@ -17,7 +17,7 @@ from math import comb, lcm
 
 
 # ---------------------------------------------------------------------------
-# 0. Pure-Integer Primitives (matching Proof.lean definitions exactly)
+# 0. Pure-Integer Primitives (matching the Lean sources definitions exactly)
 # ---------------------------------------------------------------------------
 def fib(n: int) -> int:
     a, b = 0, 1

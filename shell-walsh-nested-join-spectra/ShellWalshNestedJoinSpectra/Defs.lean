@@ -3,7 +3,7 @@
   Bitwise Graph Laplacian & Kirchhoff Spanning-Tree Infinite Proof Engine
 
   Worker: specmat-4 (Thread 3: Bit-Indexed Linear Algebra & Spectral Infinite Mechanisms)
-  Standalone Lean 4.36.0 (zero Mathlib, zero sorry, standard axioms only).
+  Standalone Lean 4.34.1 (zero Mathlib, zero sorry, standard axioms only).
 -/
 
 namespace ShellWalshEngine
