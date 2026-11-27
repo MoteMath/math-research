@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "DyadicSkewCongruencePfaffianChallenge.pfaffian_blockUpperId",
+    "DyadicSkewCongruencePfaffianChallenge.pfaffian_blockSchur_bot",
+    "DyadicSkewCongruencePfaffianChallenge.pfaffian_skewConference_compl",
+    "DyadicSkewCongruencePfaffianChallenge.pfaffian_carry_dyadic",
+    "DyadicSkewCongruencePfaffianChallenge.pfaffian_grayWalsh_pow2",
+    "DyadicSkewCongruencePfaffianChallenge.pfaffian_skewWalsh",
+    "DyadicSkewCongruencePfaffianChallenge.sharpness_raw_carry_no_complement",
+    "DyadicSkewCongruencePfaffianChallenge.sharpness_shifted_skewWalsh"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

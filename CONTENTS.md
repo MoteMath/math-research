@@ -2215,3 +2215,18 @@ We introduce **two composable, division-free pure-silicon infinite proof mechani
 | `gb_chrom_root_two_sharp_k2` | `BinaryGraySuperpositionTransfer.Theorems` | Sharp threshold boundary witnesses for Theorem 5: at `k = 2` multiplicity is `1` (lead `+2`), and at `k = 3` multiplicity is `3` (lead `+4`), showing `k ≥ 4` is exact! |
 | `sb_pm_const_one` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `sb_pm_const_one` proved in pure Lean 4 `Init`. |
 | `non_vacuity_witness` | `BinaryGraySuperpositionTransfer.Theorems` | Non-Vacuity Concrete Witness: `GB_2`, `GB_3`, `GB_4` simultaneously realize all 5 theorems! |
+
+## 158. [`dyadic-skew-congruence-pfaffian/`](dyadic-skew-congruence-pfaffian/)
+
+**Mechanism Name:** **Dyadic Skew-Congruence & Integral Block-Schur Pfaffian Engine** (with **Pure-Pfaffian Self-Congruence & Skew-Conference Complementary-Minor Reflection**). **Core Pure-Silicon Principle:** Most formal proofs about skew-symmetric $2m \times 2m$ matrices bypass the combinatorial Pfaffian and instead prove a determinant identity ($\det A = \mathrm{Pf}(A)^2$),
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `pfaffian_blockUpperId` | `DyadicSkewCongruencePfaffian.Theorems` | Machine-checked infinite theorem `pfaffian_blockUpperId` proved in pure Lean 4 `Init`. |
+| `pfaffian_blockSchur_bot` | `DyadicSkewCongruencePfaffian.Theorems` | Machine-checked infinite theorem `pfaffian_blockSchur_bot` proved in pure Lean 4 `Init`. |
+| `pfaffian_skewConference_compl` | `DyadicSkewCongruencePfaffian.Theorems` | Reusable Mechanism 3: Skew-Conference Complementary-Minor Reflection Theorem. For ANY `2(m+n) × 2(m+n)` skew-symmetric integer matrix `A` satisfying `A^2 = -μ I`, let `B` be its leading `2m × 2m` principal submatrix and `D` its trailing `2n × 2n` complementary principal submatrix. Then: `Pf(D)^2 * Pf(A) = μ^n * Pf(D) * Pf(B)` (and if `Pf(D) ≠ 0`, `Pf(D) * Pf(A) = μ^n * Pf(B)`). |
+| `pfaffian_carry_dyadic` | `DyadicSkewCongruencePfaffian.Theorems` | **Corollary A2 (Exact Dyadic Collapse at `a = 1, b = -1`):** `Pf(C_k - S_{2^k}) = (-1)^{2^{k-1}} * 2^{2^k - 1}` for all `k ≥ 1`. |
+| `pfaffian_grayWalsh_pow2` | `DyadicSkewCongruencePfaffian.Theorems` | **Corollary B3 (Unweighted Gray-Walsh Signed Mersenne-Power Pfaffian Law):** |
+| `pfaffian_skewWalsh` | `DyadicSkewCongruencePfaffian.Theorems` | **Theorem D (Skew-Walsh Exact Unimodularity Law):** Removing the 1-bit Gray shift from `grayWalshMat` causes an exact phase transition from exponential Mersenne powers `(2^k - 1)^{2^{k-2}}` to universal unimodularity `Pf(W_{2^k}) = +1`! |
+| `sharpness_raw_carry_no_complement` | `DyadicSkewCongruencePfaffian.Theorems` | Counterexample 1: Removing bit-complement from `carryAsymMat` (`sgn(y-x) * carries(x, y)`) collapses `Pf` at `k = 2` to `0` (vs `Pf(C_2) = 3`). |
+| `sharpness_shifted_skewWalsh` | `DyadicSkewCongruencePfaffian.Theorems` | Counterexample 3: Shifting Skew-Walsh by `s = 2` breaks unimodularity at `k = 2` (`Pf = 3 ≠ 1`), whereas `s = 0` and `s = 1` both give `1`. |
