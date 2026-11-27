@@ -6,11 +6,11 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **9 / 10** | **8 / 10** | **7 / 10** | **9 / 10** | **84 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): unrecorded unimodular Pfaffian collapse across three consecutive shifts via half-swap involution Schur annihilation, proved over arbitrary commutative rings including characteristic $2$.*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): unimodular Pfaffian collapse (no prior record found by the authors) across three consecutive shifts via half-swap involution Schur annihilation, proved over arbitrary commutative rings including characteristic $2$.*
 
 ## For Mathematicians
 
-Let $A _ n^{(s)}$ be the $n \times n$ skew-symmetric Thue–Morse Hankel-sign matrix with entries $(A _ n^{(s)}) _ {i,j} = \mathrm{sgn}(j - i)\,(-1)^{s _ 2(i + j + s)}$, where $s _ 2$ is the binary digit sum. Whereas the classical symmetric Thue–Morse Hankel determinants $\det((-1)^{s _ 2(i+j)})$ grow as nontrivial powers of $2$ (Allouche–Peyrière–Wen–Wen 1998; OEIS A186026), we prove that over every commutative ring $R$ (including characteristic $2$), $\det(A _ {2m}^{(s)}) = 1$ identically for all $m \in \mathbb{N}$ and all three shifts $s \in \{0, 1, 2\}$ (sharply failing at $s = 3$, where $\det(A _ 4^{(3)}) = 9$), while $\det(A _ {2m+1}^{(s)}) = 0$ for all $s, m$. For $s \in \{0, 1\}$, the half-swap involution $J$ satisfies $J A _ {2^p} J = -A _ {2^p}$ and $J B = -B$, forcing the off-diagonal Schur term $B^T A _ {2^p}^{-1} B$ to vanish identically; for $s = 2$, an explicit inductively constructed null vector $w \in \ker(A _ {2m+1}^{(0)})$ bridges $\det(A _ {2m}^{(2)})$ to $\det(A _ {2m}^{(0)})$ via two unimodular congruences on $A _ {2m+1}^{(0)} + e _ 0 e _ 0^T$.
+Let $A _ n^{(s)}$ be the $n \times n$ skew-symmetric Thue–Morse Hankel-sign matrix with entries $(A _ n^{(s)}) _ {i,j} = \mathrm{sgn}(j - i)\,(-1)^{s _ 2(i + j + s)}$, where $s _ 2$ is the binary digit sum. Whereas the classical symmetric Thue–Morse Hankel determinants $\det((-1)^{s _ 2(i+j)})$ grow as nontrivial powers of $2$ (Allouche–Peyrière–Wen–Wen 1998; OEIS A186026), we prove that over every commutative ring $R$ (including characteristic $2$), $\det(A _ {2m}^{(s)}) = 1$ identically for all $m \in \mathbb{N}$ and all three shifts $s \in \{0, 1, 2\}$ (failing at $s = 3$, where $\det(A _ 4^{(3)}) = 9$ by direct computation; the $s = 3$ value is not formalized in Lean), while $\det(A _ {2m+1}^{(s)}) = 0$ for all $s, m$. For $s \in \{0, 1\}$, the half-swap involution $J$ satisfies $J A _ {2^p} J = -A _ {2^p}$ and $J B = -B$, forcing the off-diagonal Schur term $B^T A _ {2^p}^{-1} B$ to vanish identically; for $s = 2$, an explicit inductively constructed null vector $w \in \ker(A _ {2m+1}^{(0)})$ bridges $\det(A _ {2m}^{(2)})$ to $\det(A _ {2m}^{(0)})$ via two unimodular congruences on $A _ {2m+1}^{(0)} + e _ 0 e _ 0^T$.
 
 ## For Non-Mathematicians
 
@@ -35,7 +35,7 @@ where $s _ 2(k)$ is the binary popcount (number of $1$-bits of $k$), are **ident
 | `det_skewThueMorse_shift2_even` | For every commutative ring $R$ and every $m \in \mathbb{N}$, $\det(A _ {2m}^{(2)}) = 1$. |
 | `det_skewThueMorse_odd` | For every commutative ring $R$ and all $s, m \in \mathbb{N}$, $\det(A _ {2m+1}^{(s)}) = 0$. |
 
-Note that $s = 3$ is the exact sharpness boundary: $\det(A _ 4^{(3)}) = 9 = 3^2 \ne 1$, and in general $\det(A _ {2m}^{(s)})$ for $s \ge 3$ is a nontrivial odd square (Pfaffian square), not identically $1$.
+Note on $s = 3$ (a computation, not part of the Lean statements): $\det(A _ 4^{(3)}) = 9 = 3^2 \ne 1$. Exact evaluation for $3 \le s \le 9$ and $m \le 9$ gives odd squares ($1, 9, 81, 289, 529, \dots$) that are not identically $1$ in $m$ (for example $9$ at $s = 3$, $m = 2$, and $81$ at $s = 5$, $m = 4$); a value of $1$ still occurs at some $m$, so "nontrivial" holds only for suitable $m$. No statement about $s \ge 3$ is proved in Lean.
 
 ## Proof Architecture
 
@@ -62,7 +62,7 @@ Note that $s = 3$ is the exact sharpness boundary: $\det(A _ 4^{(3)}) = 9 = 3^2 
 
 ## Prior-Art Context
 
-The **symmetric** Thue–Morse Hankel matrices $H _ n(i, j) = (-1)^{s _ 2(i + j)}$ (and their $0/1$ counterparts) have a famous literature starting with Allouche, Peyrière, Wen, and Wen (1998), *Hankel determinants of the Thue–Morse sequence*, Ann. Inst. Fourier **48** (1998), 1–27, where the Hankel determinants modulo $2$ are always nonzero and over $\mathbb{Z}$ follow a rich fractal recurrence (OEIS A186026, with values $\pm 1, \pm 2, \pm 4, \dots$). By contrast, introducing the skew-symmetric factor $\mathrm{sgn}(j - i)$ produces a **Pfaffian** family whose determinant collapses identically to $1$ for every even $n = 2m$ across shifts $s \in \{0, 1, 2\}$ (and jumps to nontrivial odd squares starting at $s = 3$). A literature and OEIS search found no prior publication of this skew-symmetric Thue–Morse unimodularity phenomenon or the half-swap Schur annihilation mechanism.
+The **symmetric** Thue–Morse Hankel matrices $H _ n(i, j) = (-1)^{s _ 2(i + j)}$ (and their $0/1$ counterparts) have a famous literature starting with Allouche, Peyrière, Wen, and Wen (1998), *Hankel determinants of the Thue–Morse sequence*, Ann. Inst. Fourier **48** (1998), 1–27, where the Hankel determinants modulo $2$ are always nonzero and over $\mathbb{Z}$ follow a rich fractal recurrence (OEIS A186026, with values $\pm 1, \pm 2, \pm 4, \dots$). By contrast, introducing the skew-symmetric factor $\mathrm{sgn}(j - i)$ produces a **Pfaffian** family whose determinant collapses identically to $1$ for every even $n = 2m$ across shifts $s \in \{0, 1, 2\}$ (and, by direct computation, takes odd-square values such as $9$ starting at $s = 3$). No prior publication of this skew-symmetric Thue–Morse unimodularity phenomenon or the half-swap Schur annihilation mechanism was found by the authors; the search was not recorded.
 
 ## Build & Verification
 

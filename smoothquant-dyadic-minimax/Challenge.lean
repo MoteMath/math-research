@@ -7,7 +7,9 @@ import SmoothquantDyadic.Defs
 /-!
 # Trusted Challenge Statements (`smoothquant-dyadic-minimax`)
 
-Universal and exact pure-`Init` (zero Mathlib, zero `native_decide`) Lean 4 statements for:
+Universal and exact pure-`Init` (zero Mathlib, zero `native_decide`) Lean 4 statements, all about the
+hand-written proxy error functions of `Defs.lean` (for example `E(s) = A s^2 + B / s^2` and
+`mat2QuantErrProxy`), not about SmoothQuant, QuaRot or quantized models themselves, for:
 1. Asymmetric-Bitwidth SmoothQuant AM-GM optimal scale, classical `SQ(0.5)` suboptimality
    (`8089/889` W4A8, `8069/381` W3A8, `8065/127` W2A8), and critical clamping threshold
    `M_crit = q_X / q_W`.
@@ -125,7 +127,7 @@ theorem dyadic_smoothquant_pertensor_5_2_vs_phase_shift_3_2 :
         (pow2IntRat (2 * e1) / lamSq) (pow2IntRat (2 * e2 - 1) / lamSq)) := by
   sorry
 
-/-- Theorem 5 (`SmoothQuant -> Hadamard` Non-Commutation & Parametric `Ω(M^2)` Separation):
+/-- Theorem 5 (`SmoothQuant -> Hadamard` Non-Commutation & Parametric `Ω(M^2)` Separation, for one explicit `2 × 2` family under the first-order Frobenius proxy `mat2QuantErrProxy`):
     Exhibits an explicit parametric family `(W(M), X(M))` (`M ≥ 1`) where `diag(M, 1)` and `H_2`
     do not commute, all three factorizations preserve `W X` identically, `SQ -> Hadamard`
     achieves `O(1)` error `8 (1/q_W^2 + 1/q_X^2)`, while both `Pure Hadamard` and EVERY

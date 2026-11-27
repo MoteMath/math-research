@@ -119,7 +119,12 @@ theorem expected_specdec_yield_and_speedup_exact :
       ∀ k : Nat, specSpeedup α (γ0 + k) c ≤ specSpeedup α γ0 c) := by
   sorry
 
-/-- Theorem 5 (`sub4bit_self_speculative_dominance_over_fp8_bf16`). -/
+/-- Theorem 5 (`sub4bit_self_speculative_dominance_over_fp8_bf16`).
+    Inside the cost model `draftCost c0 b = c0 * b / 16` and the speedup formula `specSpeedup`:
+    universal ceilings for `BF16` (`≤ 1`) and `FP8` (`< 2`), and the numerical comparison of the
+    speedup values at the acceptance rates `89214/100000` (with `γ = 8`, `INT2`) and the other
+    listed rates. These acceptance rates are imported empirical constants, not derived here, and
+    "cost = bits / 16" is a model, so this is not a hardware or accuracy theorem. -/
 theorem sub4bit_self_speculative_dominance_over_fp8_bf16 :
     (∀ (α : Rat) (γ : Nat), (0 : Rat) ≤ α → α ≤ 1 →
       specSpeedup α γ (draftCost 1 16) ≤ 1 ∧

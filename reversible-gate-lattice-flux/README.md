@@ -12,7 +12,7 @@
 
 A local discrete continuity equation $q(\text{next}(u)) - q(u _ {\mathrm{out}}) = J(u _ {\mathrm{right}}) - J(u _ {\mathrm{left}})$ on an $M$-bit window is packaged as a zero-`Prop` pure-data record `FluxCert p r s M shiftOut`. Checking `c.verify = true` by kernel reduction over all $2 ^ M$ windows compiles generically via `FluxCert.open_segment_continuity` and `FluxCert.ring_conserved_iter` into exact Gauss-Noether charge-flux continuity on every open segment $[a, a + n)$ of every infinite bit-line $\mathbb{Z} \to \mathbb{B}$ and exact all-iteration conservation on every periodic ring $\mathrm{BitVec}\; (p \cdot n)$ ($n \ge 1$), closed under $\mathbb{Z}$-linear combinations (`linComb_verify`).
 
-We instantiate the engine across two reversible brickwork topologies (`Margolus4` and `SubCNOT`): a complete **256-gate 4-way `iff` classification** (`fredkin_cnot_iff_1_2` and `fredkin_cnot_classification_*`) proving that a 3-variable mask $h$ conserves the cubic non-Hamming charge $q _ {\mathrm{FT}}$ if and only if it is ideal (and caught completely by just 3 width-8 test vectors), exact all-width conservation and reversibility of the **Fredkin-Toffoli** lattice, a 3D **Double-Fredkin** charge algebra (Hamming weight, dimer, rail, and asymmetric charges), a cubic-flux Dual-Fredkin law, and non-Rule-54 **chiral SubCNOT** domain-wall conservation.
+We instantiate the engine across two reversible brickwork topologies (`Margolus4` and `SubCNOT`): a complete **256-gate 4-way `iff` classification** (`fredkin_cnot_iff_1_2` and `fredkin_cnot_classification_*`) proving that a 3-variable mask $h$ is ideal (the Boolean condition $h(a,c,d) \Rightarrow a \wedge (c \vee d)$, `IdealMask`) if and only if the finite `FluxCert` `certFredCNOT h` (fixed charge $q _ {\mathrm{FT}}$ and flux $J _ {\mathrm{FT}}$) passes (the 3-test-vector width-8 completeness is in `Theorems.lean`, not in `Challenge.lean`), exact all-width conservation and reversibility of the **Fredkin-Toffoli** lattice, a 3D **Double-Fredkin** charge algebra (Hamming weight, dimer, rail, and asymmetric charges), a cubic-flux Dual-Fredkin law, and non-Rule-54 **chiral SubCNOT** domain-wall conservation.
 
 ## For Non-Mathematicians
 
@@ -29,7 +29,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `fluxCert_verify_sound` | If a finite `FluxCert` passes `c.verify = true`, then the exact discrete charge-flux continuity identity holds on every $M$-bit window $u : \mathrm{BitVec}\; M$. |
 | `fluxCert_open_segment_continuity` | A passing `FluxCert` lifts to exact Gauss-Noether continuity: the one-step change of charge on any open segment $[a, a + n)$ of any infinite line $\mathbb{Z} \to \mathbb{B}$ equals the boundary flux difference. |
 | `fluxCert_ring_conserved_iter` | A passing `FluxCert` proves exact conservation of the total ring charge under arbitrarily many steps $t$ on every ring $\mathrm{BitVec}\; (p \cdot n)$ ($n \ge 1$). |
-| `fredkin_cnot_iff_1_2` | For every 3-variable Boolean mask $h$, $h$ is ideal for cubic Fredkin-CNOT charge conservation if and only if its finite `FluxCert` passes. |
+| `fredkin_cnot_iff_1_2` | For every 3-variable Boolean mask $h$, `IdealMask h` (the Boolean condition $h(a,c,d) \Rightarrow a \wedge (c \vee d)$) holds if and only if the finite `FluxCert` `certFredCNOT h` (with the fixed charge $q _ {\mathrm{FT}}$ and flux $J _ {\mathrm{FT}}$) passes. This is an equivalence between a Boolean condition on the mask and a finite certificate check; 256 cases in total, 8 of them ideal. |
 | `fredkin_toffoli_conserved_all_widths` | The Fredkin-Toffoli Margolus lattice conserves the cubic non-Hamming charge $q _ {\mathrm{FT}}$ for all iterations $t$ on every $4 n$-bit ring. |
 | `fredkin_toffoli_reversible_all_widths` | The Fredkin-Toffoli Margolus step and its explicit inverse form an exact bijection on every $4 n$-bit ring. |
 | `double_fredkin_three_laws_all_widths` | The Double-Fredkin lattice simultaneously conserves Hamming weight $q _ {\mathrm{HW4}}$, dimer charge $q _ {\mathrm{dimer}}$, rail charge $q _ {\mathrm{rail}}$, and the asymmetric charge at every width $4 n$. |
@@ -45,7 +45,11 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical reversible CA & conservation-law lineage:** Fredkin & Toffoli (*Conservative Logic*, IJTP 1982), Margolus (*Physics-like models of computation*, Physica D 1984), Hattori & Takesue (*Additive conserved quantities in discrete-time lattice dynamical systems*, Physica D 1991), Takesue (1995), Boccara & Fukś (1998), Rule 54 (explicitly separated from our SubCNOT laws), and Gombor & Pozsgay (2021) on superintegrable brickwork cellular automata.
-- **Referee audit (referee-2, referee-6 S-Tier 9.0/8.5/9.5; recorded in `REGISTRY.md`):** the zero-`Prop` 5-level `FluxCert` continuity compiler across `Margolus4` and `SubCNOT`, the 256-gate 4-way `iff` and 3-vector width-8 completeness for the cubic non-Hamming charge $q _ {\mathrm{FT}}$, the 3D Double-Fredkin charge algebra, cubic-flux Dual-Fredkin, and non-Rule-54 chiral SubCNOT laws are new.
+- **Claimed contribution (not independently reviewed):** the zero-`Prop` 5-level `FluxCert` continuity compiler across `Margolus4` and `SubCNOT`, the 256-gate 4-way `iff` and 3-vector width-8 completeness for the cubic non-Hamming charge $q _ {\mathrm{FT}}$, the 3D Double-Fredkin charge algebra, cubic-flux Dual-Fredkin, and non-Rule-54 chiral SubCNOT laws. No prior record was found by the authors; the search was not recorded.
+
+## Scope of the formal statement
+
+The lattices are the hand-written Margolus and SubCNOT brickwork steps in `Defs.lean` acting on `BitVec`; the charges, fluxes and the `IdealMask` condition are defined there. The theorems are about these definitions. The Fredkin-Toffoli, Double-Fredkin and SubCNOT conservation laws are universal in the ring width; the `iff` is a finite 256-case classification.
 
 ## Build & Verification
 

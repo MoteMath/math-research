@@ -66,7 +66,11 @@ theorem rope_bf16_fp16_consecutive_freeze_run_exact :
     Exact high-frequency (`θ_0 = 1` rad/token) random-phase threshold at
     `m = 2^(p+1) + 1` (`257` in `BF16`, `2049` in `FP16`, `16777217` in `FP32`),
     where `ulp(m) ≥ 2` rad (`> π/2 = 90°`) and half-ULP `≥ 1` rad (`> π/4 = 45°`),
-    destroying single-quadrant resolution (`75%` uniform random error outside `±1/8` turn). -/
+    destroying single-quadrant resolution (`75%` uniform random error outside `±1/8` turn).
+    What the Lean statement contains: integer exactness below `2^(p+1)` (`binadeRneNat`), the
+    positions `highFreqRandomPhasePos`, `binadeUlp p k ≥ 2` for `k ≥ p + 1`, the inequalities
+    `piRat / 4 < 1` and `piRat / 2 < 2` for `piRat ≤ 22/7`, and the numeral `1 - 2 * (1/8) = 3/4`.
+    No random-phase error distribution is formalised; the `75%` is that numeral. -/
 theorem rope_high_freq_random_phase_horizon_exact :
     (∀ p k m : Nat, k ≤ p → binadeRneNat p k m = m) ∧
     (highFreqRandomPhasePos 7 = 257 ∧
@@ -86,7 +90,8 @@ theorem rope_high_freq_random_phase_horizon_exact :
     For any odd integer frequency `ω` (`ω % 2 = 1`), the `Q32` modular phase
     `φ(m) = (m * ω) mod 2^32` is a bijection on `Fin (2^32)` with exact full period `2^32`,
     zero consecutive token collisions for all `m : Nat`, and exact relative-position
-    additivity with zero irrational drift for all `m ≤ n` (plus universal `b`-bit Hensel lift). -/
+    additivity with zero irrational drift for all `m ≤ n` (plus universal `b`-bit Hensel lift).
+    Mathematically this is the fact that an odd number is a unit modulo `2^32` (and modulo `2^b`). -/
 theorem q32_modular_odd_dyadic_zero_drift_exact :
     (∀ (omega : Nat), omega % 2 = 1 →
       Function.Injective (q32PhaseFin omega) ∧
@@ -103,7 +108,8 @@ theorem q32_modular_odd_dyadic_zero_drift_exact :
   sorry
 
 /-- Theorem 4 (`quantized_rotation_norm_drift_exact`):
-    Exact worst-case unit-circle norm drift `max |c^2 + s^2 - 1|` for quantized rotations:
+    Exact worst-case unit-circle norm drift `max |c^2 + s^2 - 1|` for the hand-written piecewise
+    quantizers `quantMXFP4` and `quantFP8E4M3` of `Defs.lean` (not the OCP formats themselves):
     exact `1/4` for `MXFP4-E2M1` (attained at `(15/17, 8/17) ↦ (1, 1/2)`),
     exact `21/256` for `FP8-E4M3` (attained at `(1323/1565, 836/1565) ↦ (7/8, 9/16)`),
     and identically `0` for rational Dyadic Cayley rotations for all `t : Rat`
@@ -131,9 +137,10 @@ theorem quantized_rotation_norm_drift_exact :
 /-- Theorem 5 (`relative_position_factorization_error_decomposition`):
     Exact algebraic separation of phase-truncation non-commutativity from rotation-matrix
     quantization error in `q^T R_p(m)^T R_p(n) k - q^T R(n - m) k`, its multi-head `Fin h`
-    sum lift, the context-length-independent `Q32` bound `(4ε + 2ε^2) ‖q‖_1 ‖k‖_1`, and
-    strict dominance of `Q32 + FP8` (`65/512 < 1`) and `Q32 + MXFP4` (`17/32 < 1`) over
-    frozen-phase `BF16`/`FP16` (`1` at quarter-turn, `2` at half-turn). -/
+    sum lift, the context-length-independent `Q32` bound `(4ε + 2ε^2) ‖q‖_1 ‖k‖_1`, and the
+    comparison of the numerals `65/512 < 1` (`ε = 1/32`) and `17/32 < 1` (`ε = 1/8`) with the
+    score errors `1` (quarter-turn) and `2` (half-turn) of a unit-norm frozen rotation for
+    `q = k = (1, 0)`. The link of these `ε` values to `FP8` / `MXFP4` is not formalised. -/
 theorem relative_position_factorization_error_decomposition :
     (∀ (q k : Rat × Rat) (Rm Rn : Rot2),
       rotScore q k Rm Rn = relScore q k (Rm.transpose.mul Rn)) ∧

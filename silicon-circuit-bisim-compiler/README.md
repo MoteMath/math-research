@@ -15,7 +15,7 @@ We build **`SiliconBisim`**, a four-engine, kernel-verified circuit-generator bi
 1. **Engine 1 (`slice_bisim_sound`, `block2_bisim_sound`):** Arbitrary-state-width linear bisimulation and 2-bit speculative block synchronization, certifying ripple-carry $\equiv$ dual-rail complementary-carry and ripple-carry $\equiv$ 2-bit carry-select adders for all widths.
 2. **Engine 2 (`prefix_all_topologies_sound`, `four_way_prefix_adder_equiv`, `parallel_gray_decoder_equiv`):** Reachable-subset associativity + monoid-action homomorphism certifies **Serial, Sklansky, Brent–Kung, and Kogge–Stone** topologies simultaneously — including don't-care-optimized glitched cells that fail global associativity on $\mathrm{BitVec}\; 2$ yet are sound on the reachable 3-state XOR-propagate subsemigroup.
 3. **Engine 3 (`three_way_shifter_equiv`):** Gate-level 8-case mux reflection certifies recursive tree rotators $\equiv$ logarithmic barrel rotators $\equiv$ unary iterated rotators across differing gate netlists (SOP, NAND-only, XOR-AND) and arbitrary non-power-of-two widths.
-4. **Engine 4 (`reed_muller_anf_butterfly_all_k`, `gf4_butterfly_inverse_all_k`, `bitonic_andOr_eq_oddEven_nand_all_k`):** 4-wire interchange lifting, 2-wire inverse cancellation, unconditional Pease/Omega constant-geometry equivalence, and Batcher Bitonic $\equiv$ Batcher Odd-Even $\equiv$ Threshold Sort paired with a kernel-verified Knuth 0–1 Principle.
+4. **Engine 4 (`reed_muller_anf_butterfly_all_k`, `gf4_butterfly_inverse_all_k`, `bitonic_andOr_eq_oddEven_nand_all_k`):** 4-wire interchange lifting, 2-wire inverse cancellation, unconditional Pease/Omega constant-geometry equivalence, and Batcher Bitonic $\equiv$ Batcher Odd-Even $\equiv$ Threshold Sort. (A kernel-checked Knuth 0–1 Principle, `zero_one_principle`, is in `Theorems.lean`; it is not part of `Challenge.lean`, whose statements are `Bool`-only.)
 
 ## For Non-Mathematicians
 
@@ -46,12 +46,16 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 
 3. **Shifter & Butterfly/Omega Algebraic Lifters (`three_way_shifter_equiv`, `omega_eq_fwdButterfly_sound`):** Lifts 8-case mux checks, 64-case 4-wire interchange checks, and 8-case 2-wire inverse checks to width-$2^k$ recursive trees and constant-geometry Omega networks.
 
-4. **Batcher Sorting Networks & Knuth 0–1 Principle (`bitonic_andOr_eq_oddEven_nand_all_k`, `zero_one_principle`):** Certifies cross-netlist Bitonic vs Odd-Even equivalence for all $k \in \mathbb{N}$ alongside a standalone kernel-verified Knuth 0–1 Principle and 18 rejected hostile mutations.
+4. **Batcher Sorting Networks & Knuth 0–1 Principle (`bitonic_andOr_eq_oddEven_nand_all_k`, `zero_one_principle`):** Certifies cross-netlist Bitonic vs Odd-Even equivalence for all $k \in \mathbb{N}$ alongside a Knuth 0–1 Principle and 18 rejected hostile mutations (both in `Theorems.lean`, not in `Challenge.lean`).
 
 ## Prior-Art Context
 
 - **Classical hardware architectures:** Sklansky (1960), Pease (1968), Batcher (1968), Kogge–Stone (1973), Knuth (1973), and Brent–Kung (1982) introduced the parallel-prefix, Omega, and sorting network topologies.
-- **Novel contribution:** A unified, pure-Init Lean 4 certificate-compiler architecture over an explicit gate-DAG DSL supporting reachable-subset restricted associativity (certifying non-globally-associative glitched cells), an exhaustive 256-cell butterfly interchange taxonomy (separating 2-wire inversion from 4-wire interchange), and four recursive hardware topology engines discharged by kernel `decide`.
+- **Claimed contribution (not independently reviewed; no prior record was found by the authors and the search was not recorded):** A unified, pure-Init Lean 4 certificate-compiler architecture over an explicit gate-DAG DSL supporting reachable-subset restricted associativity (certifying non-globally-associative glitched cells), an exhaustive 256-cell butterfly interchange taxonomy (separating 2-wire inversion from 4-wire interchange), and four recursive hardware topology engines discharged by kernel `decide`.
+
+## Scope of the formal statement
+
+The circuits (Sklansky, Brent–Kung, Kogge–Stone, serial, Batcher bitonic and odd-even networks, the shifters and butterflies) are the author's own recursive definitions over the `GateNet` DSL in `Defs.lean`, not netlists from a hardware library; the equivalence theorems are about those definitions, universally in the width $2^k$.
 
 ## Build & Verification
 

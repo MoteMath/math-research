@@ -7,7 +7,10 @@ import SpecDecodingOt.Defs
 /-!
 # Trusted Challenge Statements (`spec-decoding-ot-bounds`)
 
-Universal and exact pure-`Init` Lean 4 statements for Wave 4C (`w4-spec-ot-coupling`):
+Universal and exact pure-`Init` Lean 4 statements. Note: "i.i.d. OT" (`alphaIID`, a minimum over
+subsets of the Strassen functional `strassenObj`) and "Cyclic Madow" (`alphaMadow2`, a minimum over
+masks of a folded-interval functional) are the definitions in `Defs.lean`; their equality with
+the operational i.i.d. and Cyclic Madow drafting schemes is not proved here.
 1. `multidraft_corr_vs_iid_exact_gaps`: exact multi-draft speculative decoding correlated-vs-i.i.d.
    optimal transport additive gap `((K - 1) / K)^K` and multiplicative gap `K^K / (K^K - (K - 1)^K)`
    for ALL `K ≥ 1`, ALL `V`, ALL probability distributions `p, q`, and ALL subsets `S`, plus exact
@@ -115,7 +118,7 @@ theorem modular_bitvec_reversible_exact_inverse (b L : Nat)
     revPass L F G (fwdPass L F G s) = s ∧ fwdPass L F G (revPass L F G s) = s := by
   sorry
 
-/-- Theorem 6 (Symplectic Unimodularity & Hyperbolic Exponential Drift of Floating-Point Reversible Blocks):
+/-- Theorem 6 (Symplectic Unimodularity & Hyperbolic Exponential Drift of the rational `2 × 2` matrix `M(γ)`, the linearised coupling of a reversible block; no floating-point semantics are formalised):
     For ALL `γ : Rat` and ALL `n : Nat`, `M(γ) = [[1 + γ^2, γ], [γ, 1]]` has exact determinant `1`,
     every power `M(γ)^n` has determinant `1`, trace `2 + γ^2 > 2` for `γ ≠ 0`, `(M(γ)^n)_{0,0} ≥ 1 + n * γ^2`,
     and exponential `ℓ_∞` row-sum growth `(M(γ)^n)_{0,0} + (M(γ)^n)_{0,1} ≥ (1 + γ)^n` for `0 ≤ γ`. -/

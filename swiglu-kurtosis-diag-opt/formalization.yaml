@@ -11,8 +11,8 @@ project:
     exact zero-FLOP diagonal channel-scaling invariance W_down S^{-1} (phi(g) * (S u)) = W_down (phi(g) * u),
     exact AM-GM/SOS optimal diagonal scaling MSE law with W4A4/W8A4/W16A4 rational certificates,
     exact asymmetric gate-up-down bit-allocation dominance ((4,5,3) and (5,4,3) vs (4,4,4),
-    plus negative-biased Llama-3/Qwen-3 sensitivity ordering), and the exact MXFP4 (B=32, M/24
-    underflow floor) vs NVFP4 (B=16, 100% clean sub-block preservation) outlier underflow gap.
+    plus the (5,3,4) vs (3,5,4) comparison), and the exact MXFP4 (B=32, M/24
+    underflow floor) vs NVFP4 (B=16, all 16 entries of the clean sub-block stay nonzero in the model) outlier underflow gap.
   repository: https://github.com/MoteMath/math-research
   subdirectory: swiglu-kurtosis-diag-opt
   license: Apache-2.0

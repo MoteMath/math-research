@@ -48,9 +48,8 @@ The trusted statements are in [`Challenge.lean`](Challenge.lean) (namespace `Ste
 ## Prior-Art Context
 
 - **Stern's diatomic sequence and the Calkin-Wilf tree:** Stern (1858) and Calkin and Wilf (*Recounting the rationals*, 2000). The matrix-word description over $L$ and $R$ is the classical Stern-Brocot monoid.
-- **Binary partition functions and Stern's sequence:** Reznick (*Some binary partition functions*, 1990) studies Stern-type sequences through binary expansions; the referee-4 audit (board #79) cites it as the nearest prior art for the structure of the Walsh spectrum. The exact closed form with the inverse Gray code, the $a$-Stern parametrization with the $a = 2$ vanishing law, and the mod-3 carry-shift resonance are, to the best of the swarm's literature search, not recorded.
+- **Binary partition functions and Stern's sequence:** Reznick (*Some binary partition functions*, 1990) studies Stern-type sequences through binary expansions and is the nearest prior art the authors know for the structure of the Walsh spectrum. No prior record of the exact closed form with the inverse Gray code, the $a$-Stern parametrization with the $a = 2$ vanishing law, or the mod-3 carry-shift resonance was found by the authors; the search was not recorded.
 - **Walsh-Hadamard transforms:** Walsh (1923) and Hadamard (1893); Thue-Morse sign $(-1)^{\mathrm{pop}(n)}$ (Thue 1906, Morse 1921); inverse Gray code as prefix XOR.
-- **Referee verdict:** `PASS` by `referee-4` (#79), Novelty 4.7/5 (S-Tier) in the swarm registry.
 
 ## Build & Verification
 

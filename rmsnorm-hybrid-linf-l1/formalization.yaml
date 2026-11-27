@@ -7,10 +7,11 @@ project:
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the exact
     upper and lower rational envelopes for the L_inf + L1 hybrid norm H_{alpha,beta}(x) relative
     to RMS(x), the universal d^{1/4} minimax optimality law kappa*(d) = sqrt((sqrt(d)+1)/2) with
-    no-O(1)-distortion lower bound, exact pure-bitshift dyadic instantiations for Llama-3 8B
-    (d=4096, kappa^2=65/2) and 70B (d=8192, kappa^2=97/2), exact IEEE-754 RNE sum(x_i^2) swamping
-    horizons S_swamp(p)=2^p across BF16/FP16/FP8-E4M3/FP8-E5M2/MXFP4-E2M1, bit-exact 1-pass
-    LayerNorm negative-variance witnesses in BF16 (c=243/16), FP16 (c=1047/16), FP8-E4M3 (c=13),
+    no-O(1)-distortion lower bound, pure-bitshift dyadic instantiations at d=4096
+    (kappa^2=65/2) and d=8192 (kappa^2=97/2) (the Llama-3 8B and 70B widths), the integer
+    tie-to-even fact behind S_swamp(p)=2^p and finite swamping thresholds in a hand-written
+    model of BF16/FP16/FP8-E4M3/FP8-E5M2/MXFP4-E2M1, finite 1-pass
+    LayerNorm negative-variance witnesses in that model in BF16 (c=243/16), FP16 (c=1047/16), FP8-E4M3 (c=13),
     and FP8-E5M2 (c=8), and unconditional non-negativity of 2-pass shifted-mean variance in exact
     rational and every monotonic non-negative rounding arithmetic.
   repository: https://github.com/MoteMath/math-research

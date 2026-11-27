@@ -9,7 +9,9 @@ import RingAttnKulisch.Defs
 
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. Exact online-softmax monoid associativity and commutativity over positive rational weights.
-2. Exact `p`-bit IEEE-754 RNE attention-sink vanishing law for sequential `L2R`/`DESC` merges
+2. Attention-sink vanishing law for sequential `L2R`/`DESC` merges under the model `rneGrid p`
+   (round to nearest even on the fixed grid `2^-(p-1)`, i.e. the unit binade only; no exponent
+   range, no subnormals; this is not full IEEE-754)
    (`Δ_vanish^{L2R/DESC} = p`, 100% bulk loss, exact relative error `(P - 1) / (2^p + P - 1)`).
 3. Balanced binary tree vs sequential `L2R`/`DESC` attention-sink survival separation
    (`Δ_vanish^TREE = min(p + log_2 P - 1, -(e_min - M) + 1)`, exponential `P / 2` margin gain,
@@ -19,7 +21,8 @@ Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
    `TREE` and `ASC` in Regime II).
 5. Bit-for-bit permutation, binary-tree-topology, and Context-Parallel partition invariance of
    exponent-aligned fixed-point/Kulisch accumulation with exact non-overflow width
-   `W_inv(P, p) = p + 2 ceil(log_2 P) + 4` and exact `int32`/`int64` Kulisch containment.
+   `W_inv(P, p) = p + 2 ceil(log_2 P) + 4` (`wInvBits` is defined as this value; the Lean content is
+   sufficiency of that width, with no minimality theorem) and the `int32`/`int64` widths computed by `wKulischBits`.
 6. Fixed-point sink-cliff elimination at `F = p + log_2 P` certifying zero bulk loss at
    `Δ = p + log_2 P - 1`, exact RNE ceiling `Δ = p + log_2 P`, and the cliff at `F = p + log_2 P - 2`.
 -/
@@ -46,7 +49,8 @@ theorem online_softmax_merge_exact_associativity :
         (totalNum s₁ + totalNum s₂) / (totalDenom s₁ + totalDenom s₂)) := by
   sorry
 
-/-- Theorem 2 (Exact `p`-Bit IEEE-754 RNE Attention-Sink Vanishing Law for `L2R`/`DESC`):
+/-- Theorem 2 (Attention-Sink Vanishing Law for `L2R`/`DESC` under the model `rneGrid p`, RNE on the
+    fixed grid `2^-(p-1)` with no exponent range; not full IEEE-754):
     For every `p ≥ 2` and `Δ ≥ p`, every sequential merge step `rneGrid p (1 + 2^{-Δ}) = 1`
     drops 100% of all `P - 1` bulk chunks (`l2rSinkAccum p Δ n = 1`), yielding exact relative
     error `(P - 1) / (2^p + P - 1)` at `Δ = p` (`255/271` FP8-E4M3, `255/511` BF16,
@@ -70,8 +74,9 @@ theorem attention_sink_l2r_desc_vanishing_law :
 /-- Theorem 3 (Balanced Binary Tree vs Sequential `L2R`/`DESC` Sink Survival Separation):
     For `P = 2^k` chunks (`p ≥ 2`, `k ≥ 1`), balanced binary tree reduction vanishes at
     `Δ ≥ p + k - 1`, strictly preserves bulk at `Δ = p + k - 2`, strictly beats `L2R`/`DESC`
-    at `Δ = p` for all `k ≥ 2`, and satisfies the exact subnormal-capped formula
-    `Δ_vanish^TREE(256, fmt) ∈ {10 (FP8-E4M3 subnormal cap), 15 (BF16), 18 (FP16), 31 (FP32)}`. -/
+    at `Δ = p` for all `k ≥ 2`; and the hand-written formula `deltaVanishTree` (a `min` of the
+    ideal threshold and a subnormal floor) evaluates to
+    `{10 (FP8-E4M3 subnormal cap), 15 (BF16), 18 (FP16), 31 (FP32)}` at `P = 256`. -/
 theorem binary_tree_vs_l2r_sink_survival_separation :
     (∀ (p k Δ : Nat), 2 ≤ p → 1 ≤ k → p + k - 1 ≤ Δ →
       treeSinkAccum p Δ k = 1) ∧
@@ -113,9 +118,10 @@ theorem descending_mi_phase_transition_paradox :
 
 /-- Theorem 5 (Fixed-Point / Kulisch Topology, Permutation & Partition Invariance + Width Bounds):
     Proves 100% bit-for-bit invariance of `fixptSum` under all binary reduction trees, all
-    Context-Parallel chunk partitions, all permutations (including reversals and cyclic shifts),
-    exact signed two's-complement non-overflow at width `W_inv(k, p) = p + 2k + 4`, and exact
-    `int32` / `int64` Kulisch container widths at `P = 256`. -/
+    Context-Parallel chunk partitions, all permutations (including reversals and cyclic shifts)
+    (these are properties of integer addition), signed two's-complement non-overflow at width
+    `wInvBits k p = p + 2k + 4` (sufficiency; no minimality statement), and the values of
+    `wInvBits` / `wKulischBits` at the listed formats with `P = 256`. -/
 theorem fixed_point_kulisch_topology_partition_invariance :
     (∀ t : BinTree Int, t.evalInt = fixptSum t.toList) ∧
     (∀ chunks : List (List Int), fixptSum (chunks.map fixptSum) = fixptSum chunks.flatten) ∧

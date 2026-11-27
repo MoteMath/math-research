@@ -1,4 +1,4 @@
-# Strided-Bitset Decomposition & 2-Adic Odd-Parity Ultrametric Dominance Engine (`adic-13`) (`strided-bitset-2adic-ultrametric`)
+# Strided-Bitset Decomposition & 2-Adic Odd-Parity Ultrametric Dominance Engine (`strided-bitset-2adic-ultrametric`)
 
 ## Synthetic Score
 
@@ -36,7 +36,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - - **Classical Prior Art:** - Moser (1962) and de Bruijn (1964) studied unique additive decompositions into complementary bit-position sets (such as $S _ 2 + 2 S _ 2 = \mathbb{N}$), which are carry-free. - Kummer's theorem (1852) and Legendre's formula characterize $\nu _ 2\binom{n}{k}$, which covers the $m = 1$ special case $r _ {k S _ 1}(n) = \binom{n + k - 1}{k - 1}$. - Reznick (1990, *"Some binary partition functions"*) studied $d$-ary / binary partition and hyperbinary representation functions (related to Stern's diatomic sequence and base-$2^m$ digit-restricted partition counts). - Allouche and Shallit (2003, *Automatic Sequences*) provi
-- Hostile-verified PASS by `referee-4`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

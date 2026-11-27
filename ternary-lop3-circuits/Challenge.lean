@@ -7,9 +7,13 @@ import TernaryLop3Circuits.Defs
 /-!
 # Trusted Challenge Statements (`ternary-lop3-circuits`)
 
-Statements of the seven headline theorems for minimal-`LOP3` packed ternary bit-plane circuits:
+Statements of the seven headline theorems for packed ternary bit-plane circuits built from `LOP3`
+tables. Note: there is no gate model in Lean. The circuits are explicit tables evaluated
+exhaustively; the "lower bounds" are counting facts about output lanes (no lane is an input
+literal, no lane depends on at most 4 input bits). Reading them as "at least 6 gates" assumes
+that each non-wire output lane costs one gate; that step is informal:
 1. Soundness and escape-cube surjectivity of the 6-`LOP3` depth-2 3-trit / 5-bit decoder.
-2. Exact 6-gate information-theoretic lower bound for any surjective disjoint 3-trit / 5-bit decoder.
+2. Counting lower bound (no output lane is an input literal; informally 6 gates) for any surjective disjoint 3-trit / 5-bit decoder.
 3. Soundness and 243/243 surjectivity of the 14-`LOP3` depth-4 5-trit / 8-bit escape-cube decoder.
 4. Pigeonhole 4-variable support impossibility for any surjective disjoint 5-trit / 8-bit decoder.
 5. Exactness of the 9-`LOP3` ternary × signed INT4 `[-8, 7]` (and 8-`LOP3` symmetric `[-7, 7]`) circuit.
@@ -36,7 +40,7 @@ theorem unpack_3t5b_sound_and_surjective :
         tritVal tr2 = fin3ToTrit t2) := by
   sorry
 
-/-- Theorem 2 (Exact 6-gate information-theoretic lower bound for 3-trit / 5-bit decoders):
+/-- Theorem 2 (Counting lower bound for 3-trit / 5-bit decoders; informally 6 gates, the Lean statement is the lane-weight bound below):
 for ANY disjoint decoder `D : Fin 32 → (Bool × Bool)^3` hitting all 27 ternary triples,
 every one of the 6 output lanes `p0, n0, p1, n1, p2, n2` is `true` on at least 9 inputs and
 `false` on at least 18 inputs, so no output lane can equal any input bit `x_j` or its negation `!x_j`. -/

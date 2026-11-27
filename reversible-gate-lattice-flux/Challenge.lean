@@ -52,7 +52,7 @@ theorem fluxCert_ring_conserved_iter {p r s M shiftOut : Nat}
   sorry
 
 open GateLatticeEngine in
-/-- Theorem 4 (256-gate ideal-mask iff): a 3-variable mask h is ideal for cubic Fredkin-CNOT charge conservation iff its finite FluxCert passes. -/
+/-- Theorem 4 (256-gate ideal-mask iff): for every 3-variable Boolean mask h, `IdealMask h` (the Boolean condition `h a c d = true → a && (c || d) = true`) holds iff the finite `FluxCert` `certFredCNOT h`, which uses the fixed charge `q_FT` and flux `J_FT`, passes `verify`. Conservation of `q_FT` itself is not what the iff states; it follows from a passing certificate via Theorems 1-3. -/
 theorem fredkin_cnot_iff_1_2 (h : Bool → Bool → Bool → Bool) :
     IdealMask h ↔ (certFredCNOT h).verify = true := by
   sorry

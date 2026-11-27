@@ -6,14 +6,14 @@ project:
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the exact
     associativity and commutativity of the online-softmax monoid over positive rationals,
-    the exact p-bit IEEE-754 RNE attention-sink vanishing threshold Delta = p for sequential
+    the attention-sink vanishing threshold Delta = p, in a model with RNE on the fixed grid 2^-(p-1) (not full IEEE-754), for sequential
     L2R/DESC ring merges (100% bulk loss and exact relative error (P-1)/(2^p+P-1)), the
     balanced binary tree survival separation Delta_vanish^TREE = min(p + log_2 P - 1, -(e_min - M) + 1)
     with the FP8-E4M3 subnormal cap at Delta = 10, the two-regime Descending-m_i phase-transition
     paradox (zero accumulator rescales in Regime I vs catastrophic bulk swamping in Regime II),
     bit-for-bit permutation, tree-topology, and Context-Parallel partition invariance of
-    exponent-aligned fixed-point/Kulisch accumulation with exact non-overflow width
-    W_inv(P, p) = p + 2 ceil(log_2 P) + 4 and full Kulisch containment (int32 FP8 27b, int64 FP16 49b),
+    exponent-aligned fixed-point/Kulisch accumulation with the sufficient (not proved minimal) non-overflow width
+    W_inv(P, p) = p + 2 ceil(log_2 P) + 4 and the Kulisch widths (int32 FP8 27b, int64 FP16 49b),
     and the fixed-point sink-cliff elimination threshold F = p + log_2 P.
   repository: https://github.com/MoteMath/math-research
   subdirectory: ring-attention-kulisch-bounds

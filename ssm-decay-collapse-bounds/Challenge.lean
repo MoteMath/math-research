@@ -7,8 +7,10 @@ import SsmDecayCollapse.Defs
 /-!
 # Trusted Challenge Statements (`ssm-decay-collapse-bounds`)
 
-Universal and exact pure-`Init` Lean 4 statements for:
-1. Exact IEEE-754 RNE decay-stall midpoint quantization law for all mantissa widths `p ≥ 1`,
+Universal and exact pure-`Init` Lean 4 statements. The rounding model `ieeeRne` is round-to-nearest-even
+on a grid with `p` mantissa bits and an unbounded exponent range (no subnormals, no overflow), so
+"IEEE-754" below refers to that model. The statements are for:
+1. Exact RNE decay-stall midpoint quantization law for all mantissa widths `p ≥ 1`,
    specialized to FP8-E5M2 (`p = 2`), FP8-E4M3 (`p = 3`), BF16 (`p = 7`), FP16 (`p = 10`),
    and FP32 (`p = 23`).
 2. Universal one-ULP-per-step sequential decay collapse law `seqPow p (m * 2^p) = 2^(-m)`

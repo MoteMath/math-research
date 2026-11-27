@@ -12,12 +12,14 @@ Universal and exact pure-`Init` (zero Mathlib, zero `native_decide`) Lean 4 stat
    hybrid norm `H_{α,β}(x) = α ‖x‖_∞ + (β / d) ‖x‖_1` relative to `RMS(x)`.
 2. Universal minimax optimality theorem (`κ^*(d) = √((√d + 1) / 2) = Θ(d^(1/4))`), exact
    square-dimension unique optimum (`β = s α` for `d = s^2`), and no-`O(1)`-distortion lower bound.
-3. Exact pure-bitshift dyadic instantiations for Llama-3 8B (`d = 4096`, `κ^2 = 65/2`),
-   Llama-3 70B (`d = 8192`, `κ^2 = 97/2`), and the power-of-4 dyadic scaling table.
-4. Universal IEEE-754 RNE `sum(x_i^2)` swamping horizon `S_swamp(p) = 2^p` and bit-exact minimal
-   outlier thresholds across BF16 (`16`), FP16 (`181/4`), FP8-E4M3 (`4`), FP8-E5M2 (`3`), and
-   MXFP4-E2M1 (`2`).
-5. Bit-exact 1-pass LayerNorm negative-variance (`NaN`) and zero-collapse witnesses across BF16
+3. Pure-bitshift dyadic instantiations at `d = 4096` (`κ^2 = 65/2`; the Llama-3 8B hidden width),
+   `d = 8192` (`κ^2 = 97/2`; the Llama-3 70B hidden width), and the power-of-4 dyadic scaling
+   table. Only the dimensions come from Llama-3; no model is involved.
+4. The integer tie-to-even fact `rneDivNat (2^p + 1) 2 * 2 = 2^p` for all `p ≥ 2` (it does not
+   mention a float format), and finite `sum(x_i^2)` swamping thresholds for the hand-written
+   decode/round model of BF16 (`16`), FP16 (`181/4`), FP8-E4M3 (`4`), FP8-E5M2 (`3`), and
+   MXFP4-E2M1 (`2`). The formats are defined in `Defs.lean`, not linked to the IEEE-754 text.
+5. Finite 1-pass LayerNorm negative-variance (`NaN`) and zero-collapse witnesses in that model: BF16
    (`243/16 → Var = -1`), FP16 (`1047/16 → Var = -4`), FP8-E4M3 (`13 → Var = -16`), and
    FP8-E5M2 (`8 → Var = -8`).
 6. Universal unconditional non-negativity of 2-pass shifted-mean variance in exact rational
@@ -68,7 +70,7 @@ theorem hybrid_linf_l1_minimax_d_quarter_law :
     (∀ C : Rat, 1 ≤ C → ∃ d : Nat, 1 ≤ d ∧ ∀ α β : Rat, 0 < α → 0 < β → C < hybridKappaSq d α β) := by
   sorry
 
-/-- Theorem 3 (Exact Pure-Bitshift Dyadic Hybrid Norm for Llama-3 8B `d = 4096` and 70B `d = 8192`):
+/-- Theorem 3 (Pure-Bitshift Dyadic Hybrid Norm at `d = 4096` (the Llama-3 8B width) and `d = 8192` (the 70B width); only the dimensions come from Llama-3):
     Proves that `2^(-6) ‖x‖_∞ + 2^(-12) ‖x‖_1` attains exact `κ^2 = 65/2` (`> 126x` tighter than
     pure `L1`'s `4096`) with universal envelopes `1/16 * MS(x) ≤ H(x)^2 ≤ 65/32 * MS(x)` at `d = 4096`,
     proves the `d = 8192` dyadic witness (`κ^2 = 97/2`, `> 168x` tighter than `8192`), and certifies
@@ -99,10 +101,11 @@ theorem dyadic_llama3_d4096_hybrid_norm_exact :
      hybridKappaSq 16384 (invPow2Rat 7) 1 = 129 / 2) := by
   sorry
 
-/-- Theorem 4 (Exact IEEE-754 RNE `sum(x_i^2)` Swamping Horizon `S_swamp(p) = 2^p`):
-    Proves universal tie-to-even swamping `fl_p(2^p + 1) = 2^p` for all precisions `p ≥ 2`, and
-    certifies the exact minimal outlier thresholds `M_swamp` (dropping ALL `n` unit bulk squares,
-    while `M_swamp - 1 ulp` does not swamp) across BF16 (`0x4180` = `16`), FP16 (`0x51a8` = `181/4`),
+/-- Theorem 4 (`sum(x_i^2)` swamping horizon `S_swamp(p) = 2^p` in the hand-written format model of `Defs.lean`):
+    Proves the integer tie-to-even fact `rneDivNat (2^p + 1) 2 * 2 = 2^p` for all `p ≥ 2` (this
+    universal part does not mention a float format), and certifies finite instances: the
+    outlier thresholds `M_swamp` (dropping ALL `n` unit bulk squares,
+    while `M_swamp - 1 ulp` does not swamp) for the model of BF16 (`0x4180` = `16`), FP16 (`0x51a8` = `181/4`),
     FP8-E4M3 (`0x48` = `4`), FP8-E5M2 (`0x42` = `3`), and MXFP4-E2M1 (`0x4` = `2`). -/
 theorem bf16_fp16_fp8_sumsq_swamping_horizon_exact :
     (∀ p : Nat, 2 ≤ p → rneDivNat (2 ^ p + 1) 2 * 2 = 2 ^ p) ∧
@@ -138,8 +141,8 @@ theorem bf16_fp16_fp8_sumsq_swamping_horizon_exact :
        fmtMXFP4.flMul 0x3 0x3) := by
   sorry
 
-/-- Theorem 5 (Bit-Exact 1-Pass LayerNorm Negative-Variance Witnesses):
-    Verifies bit-exact IEEE-754 RNE 1-pass variance collapse and strictly negative variance
+/-- Theorem 5 (1-Pass LayerNorm Negative-Variance Witnesses in the hand-written format model of `Defs.lean`):
+    Verifies finite instances of 1-pass variance collapse and strictly negative variance
     (`Var < 0 => NaN`) on symmetric unit-std pairs in BF16 (`0x4173` = `243/16`, `m2 = 232`,
     `mu2 = 233`, `Var = -1`), FP16 (`0x5417` = `1047/16`, `m2 = 4280`, `mu2 = 4284`, `Var = -4`),
     FP8-E4M3 (`0x55` = `13`, `Var = -16`), and FP8-E5M2 (`0x48` = `8`, `Var = -8`). -/

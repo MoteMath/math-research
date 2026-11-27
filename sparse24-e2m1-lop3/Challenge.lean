@@ -7,8 +7,11 @@ import Sparse24E2M1Lop3.Defs
 /-!
 # Trusted Challenge Statements (`sparse24-e2m1-lop3`)
 
-Statements of the six headline theorems for Wave 1C (`w1-lop3-subbyte-synth`) GPU-synthesized
-`LOP3` circuits and exact lower-bound theorems:
+Statements of the six headline theorems for GPU-synthesized `LOP3` circuits and exact
+lower-bound theorems. Note: there is no gate model in Lean. The `LOP3` circuits are given as
+explicit tables of 8-bit immediates evaluated exhaustively, and the "lower bounds" are facts
+about Hamming weights, essential variables and which output bits can be wires; the translation
+"output bit that is not a wire costs at least one `LOP3`" and "depth" are informal consequences:
 1. `unpack_5t8b_to_e2m1_ten_lop3_and_lower_bound`: 10-`LOP3` direct-sign 5t8b → 5×E2M1 unpacker
    (243/243 exact) and general ≥ 5-essential-variable (`LOP3` depth ≥ 2) lower bound.
 2. `sparse24_3bit_single_lop3_tight`: Tight 1-`LOP3` 3b → 4b 2:4 mask (bijection + 0-`LOP3`
@@ -29,8 +32,8 @@ open Sparse24E2M1Lop3
 /-- Theorem 1 (Frontier 1): Exact 10-`LOP3` direct-sign `5t8b → 5 × E2M1` unpacker (`243/243`
     exact, `-60.0%` VRAM vs FP4) and general lower bound proving every nonzero indicator `f_i`
     of ANY surjective `5t8b → 5 × E2M1` decoder has `162 ≤ weight f_i ≤ 175`, while every
-    `≤ 4`-variable Boolean function on `BitVec 8` has `weight g % 16 = 0` (`≥ 5` essential
-    variables and `LOP3` depth `≥ 2` on every output). -/
+    `≤ 4`-variable Boolean function on `BitVec 8` has `weight g % 16 = 0` (so every output
+    depends on `≥ 5` variables; the informal reading "`LOP3` depth `≥ 2`" is not formalised). -/
 theorem unpack_5t8b_to_e2m1_ten_lop3_and_lower_bound :
     (∀ w0 w1 w2 w3 w4 : Int,
       IsTrit w0 → IsTrit w1 → IsTrit w2 → IsTrit w3 → IsTrit w4 →
@@ -68,7 +71,8 @@ theorem sparse24_3bit_single_lop3_tight :
     `unpackOrdered24_3b` (`i0_0 = c2`, `0x08`, `0x2D`, `0x3E`) is an exact bijection onto all 6
     ordered pairs `a < b` in `Fin 4`, and for ANY surjective ordered `3b → (idx0 < idx1)`
     decoder, no two distinct output bits can both be raw/inverted wires or constants (at most 1
-    direct wire, forcing `≥ 3 LOP3`). -/
+    direct wire; informally `≥ 3 LOP3`, if each non-wire output costs one gate; no gate count is
+    defined in Lean). -/
 theorem sparse24_3bit_ordered_three_lop3_tight :
     (∀ a b : Fin 4, a < b →
       unpackOrdered24_3b (encodeOrdered24_3b a b) = (a, b) ∧
@@ -102,7 +106,7 @@ theorem e2m1_mag_mul_25lop3_exact :
 /-- Theorem 6 (Frontier 4): Exact 4-`LOP3` depth-2 `2q5b → 2 × E2M1` unpacker covering all 25
     quinary pairs in `{-2, -1, 0, +1, +2}^2`, plus the general 4-wire impossibility theorem
     proving no 4 of the 6 E2M1 output bits can be direct/inverted wires on `BitVec 5`
-    (forcing `≥ 3 LOP3`). -/
+    (informally `≥ 3 LOP3`; no gate count is defined in Lean). -/
 theorem quinary_2w5b_to_e2m1_four_lop3_and_wire_bound :
     (∀ w0 w1 : Int, IsQuinary w0 → IsQuinary w1 →
       let (n0, n1) := unpack2q5b (encode2q5b w0 w1)

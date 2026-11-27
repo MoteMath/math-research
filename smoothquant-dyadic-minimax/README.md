@@ -1,6 +1,6 @@
 # Asymmetric-Bitwidth SmoothQuant, Dyadic Power-of-2 Minimax Bounds, and SmoothQuant-Hadamard Non-Commutation Laws
 
-A standalone, sorry-free, pure-`Init` (zero Mathlib) Lean 4 (`v4.34.1`) Palomar Comparator formalization proving six exact algebraic laws governing asymmetric-bitwidth SmoothQuant (`W4A8` / `W3A8` / `W2A8`), zero-FLOP dyadic power-of-2 scaling (`5/4`, `9/8`, `5/2` vs global phase-shifted `3/2`), `SmoothQuant -> Hadamard` non-commutation separation, and the channel-outlier coupling paradox.
+A standalone, sorry-free, pure-`Init` (zero Mathlib) Lean 4 (`v4.34.1`) Palomar Comparator formalization proving six exact algebraic laws about hand-written proxy error functions for asymmetric-bitwidth SmoothQuant (`W4A8` / `W3A8` / `W2A8`), zero-FLOP dyadic power-of-2 scaling (`5/4`, `9/8`, `5/2` vs global phase-shifted `3/2`), `SmoothQuant -> Hadamard` non-commutation separation, and the channel-outlier coupling paradox.
 
 ## Synthetic Score
 
@@ -67,14 +67,18 @@ All six theorems are proved purely over `Rat`, `Int`, and `Nat` inside Lean 4's 
 
 ## For Non-Mathematicians
 
-Modern LLM quantization (W4A8, W3A8, W2A8, SmoothQuant, QuaRot / SpinQuant) combines diagonal channel rescaling with orthogonal Hadamard rotations to fit massive models into 4-bit or 3-bit memory. This package provides **machine-checked mathematical proofs** (verified by Lean 4's kernel with zero assumptions beyond standard logic) of four practical engineering laws:
+Modern LLM quantization (W4A8, W3A8, W2A8, SmoothQuant, QuaRot / SpinQuant) combines diagonal channel rescaling with orthogonal Hadamard rotations to fit massive models into 4-bit or 3-bit memory. This package provides **machine-checked mathematical proofs** (verified by Lean 4's kernel with zero assumptions beyond standard logic) of four laws, each about a hand-written proxy error function (see "Scope of the formal statement") rather than about the quantization methods or models themselves:
 
-1. **Why default SmoothQuant ($\alpha = 0.5$) breaks on W4A8 / W3A8 / W2A8:** Classical SmoothQuant splits quantization difficulty 50/50 between weights and activations. When weights have far fewer bits than activations (4-bit weights vs 8-bit activations), migrating activation outliers into coarse 4-bit weights backfires — incurring up to **`9.1x` penalty in W4A8**, **`21.2x` in W3A8**, and **`63.5x` in W2A8**. In fact, for W4A8 with activation outlier ratio $M < (127/7)^2 \approx 329$, default `SQ(0.5)` is **strictly worse than doing nothing at all** (over `7.8x` worse at $M = 32$).
+1. **Why default SmoothQuant ($\alpha = 0.5$) breaks on W4A8 / W3A8 / W2A8:** Classical SmoothQuant splits quantization difficulty 50/50 between weights and activations. When weights have far fewer bits than activations (4-bit weights vs 8-bit activations), migrating activation outliers into coarse 4-bit weights backfires — in the proxy error $E(s) = A s^2 + B s^{-2}$ the penalty ratio is up to **`9.1x` for W4A8**, **`21.2x` for W3A8**, and **`63.5x` for W2A8**. In the same proxy, for W4A8 with activation outlier ratio $M < (127/7)^2 \approx 329$, default `SQ(0.5)` is **strictly worse than doing nothing at all** (over `7.8x` worse at $M = 32$).
 2. **Why power-of-2 (bit-shift) SmoothQuant is nearly lossless:** Replacing floating-point SmoothQuant scales with pure powers of 2 ($2^{e _ j}$, zero multiplications at inference) increases per-channel $L _ 2^2$ error by at most **25%** (`5/4`) and $L _ 1$ error by at most **6.1%** (squared: `9/8`).
 3. **A free trick for per-tensor power-of-2 quantization:** Naive per-tensor power-of-2 rounding can inflate error by up to **2.5x** (`5/2`), but multiplying all channels by one shared global phase factor $\lambda \in [1, 2)$ before rounding — which folds into the tensor scale at zero runtime cost — cuts the $d = 2$ worst-case penalty from **`5/2` down to `3/2`** (and no shift can beat `3/2`).
-4. **Always run SmoothQuant BEFORE Hadamard, never after:** Diagonal scaling and Hadamard rotation do not commute. Applying SmoothQuant first cancels channel outliers cleanly before Hadamard spreads remaining peaks; applying Hadamard first permanently smears channel outliers across all coordinates so no subsequent SmoothQuant scaling can recover them, losing by an arbitrarily large $\Omega(M^2)$ factor.
+4. **Always run SmoothQuant BEFORE Hadamard, never after:** Diagonal scaling and Hadamard rotation do not commute. Applying SmoothQuant first cancels channel outliers cleanly before Hadamard spreads remaining peaks; applying Hadamard first permanently smears channel outliers across all coordinates so no subsequent SmoothQuant scaling can recover them, losing by an $\Omega(M^2)$ factor in one explicit $2 \times 2$ family under a first-order Frobenius error proxy.
 
 ---
+
+## Scope of the formal statement
+
+Every theorem is about the hand-written proxy error functions defined in `Defs.lean`: $E(s) = A s^2 + B s^{-2}$, the interior/bulk channel errors, and `mat2QuantErrProxy`, a first-order Frobenius proxy on $2 \times 2$ matrices. "SmoothQuant", "W4A8" and "Hadamard" label parameters of these proxies. The ratios `9.099x`, `21.178x`, `63.504x` are ratios of proxy values. The $\Omega(M^2)$ separation is for one explicit $2 \times 2$ family.
 
 ## Prior-Art Context
 

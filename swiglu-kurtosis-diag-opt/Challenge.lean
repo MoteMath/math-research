@@ -128,8 +128,8 @@ theorem swiglu_optimal_diagonal_scale_amgm_law :
     Proves the universal 3-term AM-GM lower bound `27 Sg Su Sd * 4^{-B} ≤ MSE^3` and
     exact integer-bit dominance iff laws for any `b ≥ 1` (including `b = 4`, `B_tot = 12`):
     `(4, 5, 3)` beats `(4, 4, 4)` iff `Su > 4 * Sd`, `(5, 4, 3)` beats `(4, 4, 4)` iff
-    `Sg > 4 * Sd`, and `(5, 3, 4)` beats `(3, 5, 4)` iff `Sg > Su` (capturing the
-    negative-biased Llama-3/Qwen-3 regime where `S_gate ≈ 3 * S_up`). -/
+    `Sg > 4 * Sd`, and `(5, 3, 4)` beats `(3, 5, 4)` iff `Sg > Su`
+    (the remark that real FFNs have `S_gate ≈ 3 * S_up` is a motivation, not part of the statement). -/
 theorem gated_ffn_asymmetric_bit_allocation_dominance :
     (∀ (Sg Su Sd : Rat) (bg bu bd : Nat), (0 : Rat) ≤ Sg → (0 : Rat) ≤ Su → (0 : Rat) ≤ Sd →
       27 * Sg * Su * Sd * invPow2Rat (2 * (bg + bu + bd)) ≤

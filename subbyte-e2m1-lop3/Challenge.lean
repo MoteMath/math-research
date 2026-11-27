@@ -7,7 +7,11 @@ import SubbyteE2M1Lop3.Defs
 /-!
 # Trusted Challenge Statements (`subbyte-e2m1-lop3`)
 
-Statements of the six headline theorems for Cluster 10 sub-byte `LOP3` circuits:
+Statements of the six headline theorems for sub-byte `LOP3` circuits. Note: there is no gate
+model in Lean. The circuits are explicit tables of 8-bit immediates evaluated exhaustively, and
+the lower bounds are facts about Hamming weights, essential variables and pairwise distinctness
+of output functions; "`≥ 3` gates" and "depth `≥ 2`" are informal readings of them, and the
+4-gate circuit is not shown optimal (the proved lower bound is 3):
 1. `unpack_2t4b_to_e2m1_zero_lop3`: Exact 0-`LOP3` 2-trit / 4-bit → E2M1 unpacker (9/9 pairs).
 2. `unpack_3t5b_to_e2m1_four_lop3`: Exact 4-`LOP3` 3-trit / 5-bit → E2M1 unpacker (27/27 triples).
 3. `unpack_3t5b_to_e2m1_three_gate_lower_bound`: General ≥3-`LOP3` lower bound for any surjective 3-trit / 5-bit → E2M1 decoder.
@@ -44,7 +48,8 @@ theorem unpack_3t5b_to_e2m1_four_lop3 (w0 w1 w2 : Int)
       weight in `[18, 23]`,
     - every Boolean function on `BitVec 5` depending on `≤ 2` input bits has `weight g % 8 = 0`,
     - therefore no `f_i` depends on `≤ 2` input bits (each requires `≥ 3` essential variables),
-      and `f_0, f_1, f_2` are pairwise distinct, forcing `≥ 3` distinct `LOP3` gates. -/
+      and `f_0, f_1, f_2` are pairwise distinct (informally `≥ 3` distinct `LOP3` gates; the
+      statement proved is about weights and distinctness, not a gate count). -/
 theorem unpack_3t5b_to_e2m1_three_gate_lower_bound
     (dec : BitVec 5 → BitVec 4 × BitVec 4 × BitVec 4)
     (hsurj : ∀ w0 w1 w2 : Int, IsTrit w0 → IsTrit w1 → IsTrit w2 →

@@ -5,8 +5,8 @@ project:
   name: Minimal-LOP3 Ternary Bit-Plane Unpacking, INT4/FP4 Dot Products, and CSA Conservation
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of co-designed minimal-LOP3
-    bit-plane circuits for packed 1.58-bit ternary (BitNet) weights: optimal 6-LOP3 3-trit/5-bit
-    unpacking with an exact 6-gate lower bound, 14-LOP3 escape-cube 5-trit/8-bit unpacking with a
+    bit-plane circuits for packed 1.58-bit ternary (BitNet) weights: 6-LOP3 3-trit/5-bit
+    unpacking with a counting lower bound (no output lane is an input literal; no gate model), 14-LOP3 escape-cube 5-trit/8-bit unpacking with a
     pigeonhole 4-variable impossibility theorem, exact 9-LOP3 ternary x INT4 and 4+10-LOP3 ternary x
     FP4 (E2M1) bit-plane products, and universal 3:2 Carry-Save-Adder popcnt conservation over Nat.
   repository: https://github.com/MoteMath/math-research

@@ -5,15 +5,15 @@ project:
   name: Exact Gumbel-Max Horizon, Speculative Decoding Residual Crash, and Descending Inverse-CDF Swamping Laws
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
-    rational, integer, and IEEE-754 RNE laws for LLM sampling kernels:
+    rational and integer statements about hand-written models of LLM sampling steps:
     the finite b-bit uniform RNG Gumbel-Max impossible-token horizon (certifying Delta < 19.45 < 20
     for FP32 b=24 and Delta < 7.26 < 8 for b=8), exact Speculative Decoding losslessness vs
-    finite-precision zero-residual NaN crash (with bit-exact FP8-E4M3 and BF16 witnesses),
+    finite-precision zero-residual NaN crash (with FP8-E4M3- and BF16-labelled witnesses using hand-coded rounding functions),
     exact Q_B / Q32 integer fixed-point speculative decoding with exact conservation and zero TV leak,
-    the exact IEEE-754 RNE descending Inverse-CDF swamping cutoff 2^{-(m+2)} (1/512 BF16,
+    the descending Inverse-CDF swamping cutoff 2^{-(m+2)} under an adder hypothesis (1/512 BF16,
     1/4096 FP16, 2^{-25} FP32), exact zero-swamping pairwise Fenwick binary-tree summation,
     and the Top-p nucleus cumulative mass shortfall and TV distance lower bound (exceeding 1/2
-    on Llama-3 V=128,256 in BF16).
+    for a rational witness with V=128,256, the Llama-3 vocabulary size).
   repository: https://github.com/MoteMath/math-research
   subdirectory: sampling-gumbel-cdf-bounds
   license: Apache-2.0

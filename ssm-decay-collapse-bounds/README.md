@@ -6,11 +6,11 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **10 / 10** | **10 / 10** | **9 / 10** | **10 / 10** | **95 / 100** |
 
-*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 3*9 + 2*10 + 2*10 + 2*9 + 10 = 95 / 100`): universal IEEE-754 RNE decay-stall midpoint law across all mantissa widths $p \ge 1$ (`FP8-E5M2`, `FP8-E4M3`, `BF16`, `FP16`, `FP32`), exact universal one-ULP-per-step sequential decay collapse law $\mathrm{seqPow}(p, m \cdot 2^p) = 2^{-m}$ (effective half-life $2^p$ tokens — $128$ in BF16 vs $177.10$ exact, a $2 \ln 2$ acceleration), exact linear additive swamping divergence $T \cdot 2^{-(p+1)}$, exact tight asymmetric signed-integer invariant bounds $[-2^R B _ {\max}, 2^R B _ {\max} + (2^R - 1)]$ and zero-input stall asymmetry for zero-multiplier shift-subtract recurrences, and exact $2 \to 3/2$ adjacent decay-rate gap reduction via 2-tap CSD shift-subtract — formalized in pure Lean 4 `Init` (zero Mathlib).*
+*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 3*9 + 2*10 + 2*10 + 2*9 + 10 = 95 / 100`): universal RNE decay-stall midpoint law across all mantissa widths $p \ge 1$ (model with unbounded exponent range; labelled `FP8-E5M2`, `FP8-E4M3`, `BF16`, `FP16`, `FP32`), exact universal one-ULP-per-step sequential decay collapse law $\mathrm{seqPow}(p, m \cdot 2^p) = 2^{-m}$ (effective half-life $2^p$ tokens — $128$ in BF16 vs $177.10$ for the exact decay, a factor $\approx 1.384$), exact linear additive swamping divergence $T \cdot 2^{-(p+1)}$, exact tight asymmetric signed-integer invariant bounds $[-2^R B _ {\max}, 2^R B _ {\max} + (2^R - 1)]$ and zero-input stall asymmetry for zero-multiplier shift-subtract recurrences, and exact $2 \to 3/2$ adjacent decay-rate gap reduction via 2-tap CSD shift-subtract — formalized in pure Lean 4 `Init` (zero Mathlib).*
 
 ## For Mathematicians
 
-We formalize six universal exact laws over $\mathbb{Q}$ (`Rat`) and $\mathbb{Z}$ (`Int`) governing low-precision IEEE-754 Round-to-Nearest-Even (RNE) state-space model (SSM / Mamba-2 SSD) recurrences and zero-multiplier dyadic shift-subtract alternatives:
+We formalize six universal exact laws over $\mathbb{Q}$ (`Rat`) and $\mathbb{Z}$ (`Int`) governing a Round-to-Nearest-Even (RNE) model with unbounded exponent range (no subnormals, no overflow) of low-precision state-space model (SSM / Mamba-2 SSD) recurrences and zero-multiplier dyadic shift-subtract alternatives:
 
 1. **Exact IEEE-754 RNE Decay-Stall & Midpoint Quantization Law (`ieee_decay_stall_midpoint_exact`):**
    For every IEEE-754 binary format with $p \ge 1$ explicit mantissa bits (unit roundoff $u = 2^{-(p+1)}$), the normal grid value $a _ {\max}(p) = 1 - 2^{-(p+1)}$ is the largest normal floating-point number strictly below $1$, and the exact midpoint $a _ {\mathrm{stall}}(p) = 1 - 2^{-(p+2)}$ rounds to $1$ under RNE (since $1$ has even significand and $a _ {\max}(p)$ has odd significand $2^{p+1} - 1$):
@@ -33,7 +33,7 @@ We formalize six universal exact laws over $\mathbb{Q}$ (`Rat`) and $\mathbb{Z}$
    ```math
    \mathrm{seqPow}(p, m \cdot 2^p) = 2^{-m} \qquad \forall p \ge 1,\; \forall m \in \mathbb{N}.
    ```
-   Hence the effective sequential half-life is **exactly $2^p$ tokens** (e.g. $128$ tokens in BF16 vs $177.10$ exact, an exact $2 \ln 2 \approx 1.3863\times$ faster collapse), and at $T = 4096$ in BF16 sequential decay collapses to $2^{-32} \approx 2.33 \times 10^{-10}$ (vs $(255/256)^{4096} \approx 1.09 \times 10^{-7}$, a $468\times$ error).
+   Hence the effective sequential half-life is **exactly $2^p$ tokens** (e.g. $128$ tokens in BF16 vs $177.10$ exact, i.e. $177.10 / 128 \approx 1.3836\times$ faster collapse; the factor tends to $2 \ln 2 \approx 1.3863$ as $p$ grows but is not equal to it), and at $T = 4096$ in BF16 sequential decay collapses to $2^{-32} \approx 2.33 \times 10^{-10}$ (vs $(255/256)^{4096} \approx 1.09 \times 10^{-7}$, a $468\times$ error).
 
 3. **Exact Linear Additive Swamping Divergence (`additive_swamping_exact_divergence`):**
    Starting from $h _ 0 = 1$ with $a _ t = 1$ and $b _ t = 2^{-(p+1)}$ (exact half-ULP of $1$), RNE tie-to-even rounds $\mathrm{fl} _ p(1 + 2^{-(p+1)}) = 1$ because $2^p$ is even for all $p \ge 1$. Thus sequential accumulation stalls permanently at $1$, while exact / Blelloch binary-tree accumulation yields $1 + T \cdot 2^{-(p+1)}$:
@@ -63,10 +63,10 @@ We formalize six universal exact laws over $\mathbb{Q}$ (`Rat`) and $\mathbb{Z}$
 
 Modern long-context AI models like **Mamba-2** keep a running memory state $h _ t = a _ t h _ {t-1} + b _ t$ across thousands of tokens, where the decay number $a _ t \in (0, 1)$ controls how slowly the model forgets. Because training and inference run in low-precision formats like **BF16** or **FP8**, subtle rounding effects can silently break long-range memory.
 
-This repository proves, with 100% machine-checked certainty in Lean 4, three exact failure modes of low-precision floating-point SSMs and how zero-multiplier integer shift-subtract fixes them:
+This repository proves in Lean 4 three exact failure modes of a rounding model of low-precision floating-point SSMs (round-to-nearest-even, unbounded exponent range) and properties of zero-multiplier integer shift-subtract recurrences:
 1. **The Memory-Horizon Cliff:** In BF16, the closest decay below $1.0$ is $255/256$. Any target decay closer to $1$ than $511/512$ rounds directly to $1.0$ (never forgetting at all), creating an abrupt cliff from a 177-token half-life straight to infinity.
 2. **Accelerated Sequential Forgetting (One ULP Per Step):** When you multiply step-by-step by $255/256$ in BF16, rounding removes **exactly 1 bit-step (1 ULP)** on every single token. As a result, the memory drops by half every **128 tokens** instead of the mathematically intended 177 tokens — and after 4,096 tokens, it shrinks to $2^{-32}$, which is **468× smaller** than the true value!
-3. **100% Signal Loss from Additive Swamping:** Adding a small steady signal $b _ t = 1/256$ to a memory state of $1.0$ in BF16 rounds back to $1.0$ on every single step (losing 100% of the signal over 131,072 tokens), whereas a parallel binary-tree scan accumulates the exact answer $513$.
+3. **Total Signal Loss from Additive Swamping (in the model):** Adding a small steady signal $b _ t = 1/256$ to a memory state of $1.0$ in BF16 rounds back to $1.0$ on every single step (losing 100% of the signal over 131,072 tokens), whereas a parallel binary-tree scan accumulates the exact answer $513$.
 4. **Zero-Multiplier Integer Shift-Subtract:** Replacing floating-point multiplication with integer bit-shift subtraction $h _ {t+1} = h _ t - (h _ t \gg r) + b _ t$ requires **zero multipliers**, expands the memory horizon by **65,536×** over BF16 using just 5 bits for $r$, obeys exact provable overflow bounds, and with a second shift tap cuts the spacing between memory timescales from $2\times$ down to $1.5\times$. We also prove an important hardware gotcha: signed right-shift causes positive states to stall in $[0, 2^r - 1]$ while negative states always decay cleanly to $0$.
 
 ---
@@ -84,10 +84,14 @@ This repository proves, with 100% machine-checked certainty in Lean 4, three exa
 
 ## Prior-Art Context
 
-- **Mamba-2 & Structured State Space Duality (SSD):** Gu & Dao (ICML 2024, *Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality*) unified selective SSMs with chunkwise matrix-multiplication algorithms (SSD). Our Theorems 1–3 provide the first machine-checked bit-exact analysis of how IEEE-754 RNE rounding alters decay horizons and creates catastrophic sequential vs parallel-scan non-associativity in low-precision SSMs.
+- **Mamba-2 & Structured State Space Duality (SSD):** Gu & Dao (ICML 2024, *Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality*) unified selective SSMs with chunkwise matrix-multiplication algorithms (SSD). Our Theorems 1–3 provide a machine-checked exact analysis, in the RNE model of `Defs.lean`, of how rounding alters decay horizons and creates sequential vs parallel-scan non-associativity. No earlier machine-checked analysis was found by the authors; the search was not recorded.
 - **Parallel Prefix Scans:** Blelloch (1990, *Prefix Sums and Their Applications*) introduced work-efficient binary-tree prefix scans for associative recurrences. Theorem 3 formalizes the exact linear divergence $T \cdot 2^{-(p+1)}$ separating sequential RNE evaluation from binary-tree evaluation under half-ULP swamping.
 - **IEEE-754 Binary Floating-Point & RNE Arithmetic:** IEEE Std 754-2019 specifies binary normal grids and Round-to-Nearest-Even tie-breaking. Theorems 1–3 formalize an exact unbounded-exponent IEEE-754 RNE model directly over `Rat` in pure Lean 4 `Init`, certifying the universal one-ULP-per-step collapse law and exact format instantiations for FP8, BF16, FP16, and FP32.
 - **Zero-Multiplier Shift-Subtract & CSD Filters:** Canonical Signed Digit (CSD) / shift-and-add digital filters avoid hardware multipliers in DSP and edge accelerators. Theorems 4–6 establish the exact signed-arithmetic-shift overflow bounds, zero-input stall asymmetry, and $2 \to 3/2$ timescale-resolution improvement for dyadic SSMs.
+
+## Scope of the formal statement
+
+The floating-point side is the rounding function `ieeeRne` in `Defs.lean`: round-to-nearest-even with $p$ mantissa bits and an unbounded exponent range (no subnormals, no overflow, no `NaN`). `FP8-E5M2`, `FP8-E4M3`, `BF16`, `FP16`, `FP32` are labels for $p = 2, 3, 7, 10, 23$. The quoted half-life $177.10$ and the figure $468\times$ are computed from the exact decay $(255/256)^t$ and are not Lean statements.
 
 ## Build & Verification
 

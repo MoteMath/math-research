@@ -6,7 +6,7 @@ project:
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of sub-byte GPU LOP3
     circuit laws: 0-LOP3 2-trit/4-bit and 4-LOP3 3-trit/5-bit direct ternary-to-OCP-E2M1 unpackers
-    with a general >= 3-gate lower bound, a >= 5-variable support impossibility barrier for all
+    with a general lower bound on weights and distinctness (informally >= 3 gates; no gate model in Lean; the 4-gate circuit is not shown optimal), a >= 5-variable support impossibility barrier for all
     surjective 3-quinary/7-bit decoders, a bijective 2-bit asymmetric {-2,-1,0,+1} codebook with free
     signed-scale polarity flip and universal 2-plane dot-product identity, and the LOP3 depth inversion
     between 4:2 and 3:2 carry-save compressors.

@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **9 / 10** | **8 / 10** | **9 / 10** | **10 / 10** | **89 / 100** |
 
-*Heuristic self-rating (weighted `3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 89 / 100`): exact vertex-form reparameterization of quadratic matrix inverse-fourth-root polynomials eliminating final-sum cancellation for Shampoo/SOAP preconditioners, paired with the exact FP8 fourth-power linear crossover (`I031` + `I032`), and a pure-`Init` Lean 4 (`v4.34.1`, zero Mathlib, zero `native_decide`) cleared-denominator `Int` interval certificate engine proving continuous worst-case 5-step confinement across BF16 ($\varepsilon = 10^{-2}$ and $\varepsilon = 10^{-4}$), hybrid FP8, and pure FP8 E4M3.*
+*Heuristic self-rating (weighted `3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 89 / 100`): exact vertex-form reparameterization of quadratic matrix inverse-fourth-root polynomials whose final sum has non-negative terms (the cancellation claim is motivation, not a theorem) for Shampoo/SOAP preconditioners, paired with the exact FP8 fourth-power linear crossover (`I031` + `I032`), and a pure-`Init` Lean 4 (`v4.34.1`, zero Mathlib, zero `native_decide`) cleared-denominator `Int` interval certificate engine proving worst-case 5-step confinement under a multiplicative $(1 \pm u)$ per-operation noise model across BF16 ($\varepsilon = 10^{-2}$ and $\varepsilon = 10^{-4}$), hybrid FP8, and pure FP8 E4M3.*
 
 ## For Mathematicians
 
@@ -50,8 +50,8 @@ We formalize three structural theorems and four continuous worst-case 5-step tra
 
 4. **Continuous 5-Step Worst-Case Confinement Certificates (Theorems 4–7):**
    Using a pure-`Init` cleared-denominator `Int` uniform-partition checker (`checkVertexStep` / `checkLinearStep`), we certify **every** adversarial 5-step trajectory over $\mathbb{Q}$:
-   - **BF16 Vertex DP, $\varepsilon = 10^{-2}$ (`bf16_fourth_root_dp5_certified`):** `inv4_vertex_bf16_e2` at $u = 1/256$ confines $m _ 5 \in [965/1000, 1039/1000]$ ($\delta _ M \le 0.039$, **$6.18\times$** tighter than 6-step Guo–Higham).
-   - **BF16 Vertex DP, $\varepsilon = 10^{-4}$ (`bf16_fourth_root_eps1e4_certified`):** `inv4_vertex_bf16_e4` at $u = 1/256$ confines $m _ 5 \in [935/1000, 1049/1000]$ ($\delta _ M \le 0.065$, **$15.1\times$** tighter than 6-step Guo–Higham).
+   - **BF16 Vertex DP, $\varepsilon = 10^{-2}$ (`bf16_fourth_root_dp5_certified`):** `inv4_vertex_bf16_e2` at $u = 1/256$ confines $m _ 5 \in [965/1000, 1039/1000]$ ($\delta _ M \le 0.039$; the quoted **$6.18\times$** comparison with 6-step Guo–Higham is not a Lean statement here).
+   - **BF16 Vertex DP, $\varepsilon = 10^{-4}$ (`bf16_fourth_root_eps1e4_certified`):** `inv4_vertex_bf16_e4` at $u = 1/256$ confines $m _ 5 \in [935/1000, 1049/1000]$ ($\delta _ M \le 0.065$; the quoted **$15.1\times$** comparison with 6-step Guo–Higham is not a Lean statement here).
    - **Hybrid FP8 Vertex DP, $\varepsilon = 10^{-2}$ (`fp8_hybrid_fourth_root_dp5_certified`):** `inv4_vertex_fp8hyb_e2` at $u = 1/32$ confines $m _ 5 \in [652/1000, 1329/1000]$.
    - **Pure FP8 E4M3 Linear Crossover DP, $\varepsilon = 10^{-2}$ (`fp8_pure_fourth_root_linear_dp5_certified`):** `inv4_linear_fp8_e2` at $u = 1/16$ confines $m _ 5 \in [257/1000, 1654/1000]$, certifying the `I032` FP8 fourth-power precision crossover where tuned linear steps beat quadratic vertex steps at $u = 1/16$ due to lower per-step rounding-depth amplification under $P^4$.
 
@@ -59,7 +59,7 @@ We formalize three structural theorems and four continuous worst-case 5-step tra
 
 Advanced neural-network optimizers like Shampoo and SOAP accelerate training by computing the inverse fourth root $G^{-1/4}$ of covariance matrices at every step. On modern AI accelerators running in 16-bit BF16 or 8-bit FP8 arithmetic, standard polynomial recipes either converge too slowly (Guo–Higham) or subtract large positive and negative numbers whose tiny rounding errors blow up when raised to the fourth power.
 
-Rewriting the quadratic update in "completed-square" (vertex) form $\alpha + \beta (m - \mu)^2$ removes the dangerous final subtraction completely: the result is always a sum of positive numbers. At 16-bit BF16 precision, our 5-step vertex schedules are **$6.18\times$ to $15.1\times$** more accurate than classical Guo–Higham. At extreme 8-bit pure FP8 precision ($u = 1/16$), raising a polynomial to the fourth power amplifies every extra rounding step so strongly that a tuned linear schedule actually overtakes the quadratic schedule. This package provides a machine-checked Lean 4 proof certifying all four schedules against an adversary who picks the worst possible rounding error at every single arithmetic operation across all 5 steps.
+Rewriting the quadratic update in "completed-square" (vertex) form $\alpha + \beta (m - \mu)^2$ removes the final subtraction: the result is a sum of non-negative numbers (this is motivation; no theorem here states that cancellation is eliminated). In the noise model, our certified 5-step BF16 vertex schedules have final-error bounds that the authors quote as **$6.18\times$ to $15.1\times$** tighter than 6-step Guo–Higham (the comparison is not a Lean statement). At extreme 8-bit pure FP8 precision ($u = 1/16$), raising a polynomial to the fourth power amplifies every extra rounding step so strongly that a tuned linear schedule actually overtakes the quadratic schedule. This package provides a machine-checked Lean 4 proof certifying all four schedules against an adversary who picks a relative error of size at most $u$ at every arithmetic operation across all 5 steps (a multiplicative noise model, not IEEE-754 rounding of specific values).
 
 ---
 
@@ -74,6 +74,10 @@ Rewriting the quadratic update in "completed-square" (vertex) form $\alpha + \be
 | `bf16_fourth_root_eps1e4_certified` | 5-step BF16 (`u = 1/256`) vertex schedule `inv4_vertex_bf16_e4` confines every trajectory from $[1/10000, 1]$ into $[935/1000, 1049/1000]$. |
 | `fp8_hybrid_fourth_root_dp5_certified` | 5-step hybrid FP8 (`u = 1/32`) vertex schedule `inv4_vertex_fp8hyb_e2` confines every trajectory from $[1/100, 1]$ into $[652/1000, 1329/1000]$. |
 | `fp8_pure_fourth_root_linear_dp5_certified` | 5-step pure FP8 E4M3 (`u = 1/16`) linear schedule `inv4_linear_fp8_e2` confines every trajectory from $[1/100, 1]$ into $[257/1000, 1654/1000]$. |
+
+## Scope of the formal statement
+
+The rounding model is an adversarial multiplicative relative error $|\delta_i| \le u$ at each listed operation (7 rounding points for the vertex step, 5 for the linear step), with $u = 1/256$ labelled BF16, $1/32$ hybrid FP8 and $1/16$ FP8 E4M3. It is not IEEE-754 and not a hardware model. Theorems 4-7 are fixed 5-step schedules and fixed intervals, certified by interval arithmetic over $\mathbb{Q}$. The eigenvalue-interval reduction from matrices to the scalar iteration is not formalized.
 
 ## Prior-Art Context
 

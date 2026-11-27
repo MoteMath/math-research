@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Strided-Bitset Decomposition & 2-Adic Odd-Parity Ultrametric Dominance Engine (adic-13)
+  name: Strided-Bitset Decomposition & 2-Adic Odd-Parity Ultrametric Dominance Engine
   description: >-
     **Mechanism:** **Bitmask-Slice Carry-Convolution Bridge + 2-Adic Odd-Parity Ultrametric Dominance Engine** (with a kernel-`decide`-executable **Finite-Certificate Unit-Carry Compiler**). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** For any period (stride) $m \ge 1$ and periodic bitmask $M \in \mathbb{N}$, define the $m$-periodic binary-support set generalizing the
   repository: https://github.com/MoteMath/math-research

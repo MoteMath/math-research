@@ -30,7 +30,7 @@ theorem no_carry_free_6_2 (M : Nat) : ¬ Nonempty (CarryFreeCell 6 1 M) := by
 theorem no_3hop_18_2 : ¬ Nonempty (RHopCompressor 18 1 3) := by
   sorry
 
-/-- Headline theorem `cell42_bijection_right`. -/
+/-- Headline theorem `cell42_bijection_right` (surjectivity half only): every valid 1-hop carry-free 4:2 horizontal carry function `h` (`IsValid42H h`) equals `h42OfMask m` for some `m : Fin 64`. That each `h42OfMask m` is valid and that distinct masks give distinct functions are `h42OfMask_valid` and `cell42_bijection_left` in `Defs.lean`, not statements of this file. -/
 theorem cell42_bijection_right (h : (Fin 4 → Bool) → Nat) (hh : IsValid42H h) :
     ∃ m : Fin 64, ∀ x, h42OfMask m x = h x := by
   sorry

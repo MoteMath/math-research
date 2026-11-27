@@ -7,7 +7,10 @@ import SsmTustinPade.Defs
 /-!
 # Trusted Challenge Statements (`ssm-tustin-pade-horizons`)
 
-Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
+Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements. Note: the "snap" regions are
+definitions in `Defs.lean` (for example `rneSnapsToNegOne p y := -1 ≤ y ≤ -1 + 2^-(p+1)`), so the
+"IEEE-754 RNE laws" below are algebra on those regions; `fl(exp(-z))` is not computed but enters as a
+hypothesis `1 - z ≤ ez ≤ 1`. The statements are for:
 1. Tustin Nyquist snap-to-`-1.0` horizon (`z_osc(p) = 2^(p+1) + 8`: `24, 40, 520, 4104`
    for `FP8-E5M2, FP8-E4M3, BF16, FP16`) in two-step IEEE-754 RNE `fl(fl(2 - z) / fl(2 + z))`
    plus exact single-rounding RNE threshold `4 / (z + 2) ≤ 2^(-(p+1)) ↔ 2^(p+3) - 2 ≤ z`.

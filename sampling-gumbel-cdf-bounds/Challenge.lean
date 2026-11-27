@@ -9,7 +9,7 @@ import SamplingHorizons.Defs
 
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. Gumbel-Max finite-`b`-bit uniform RNG impossible-token horizon (`Δ < 19.45 < 20` for FP32 `b=24`, `Δ < 7.26 < 8` for `b=8`).
-2. Speculative Decoding exact losslessness vs finite-precision zero-residual crash (`Z_fl = 0` -> `0/0 = NaN`) with bit-exact `FP8-E4M3` and `BF16` witnesses.
+2. Speculative Decoding exact losslessness vs finite-precision zero-residual crash (`Z_fl = 0` -> `0/0 = NaN`) with `FP8-E4M3`- and `BF16`-labelled witnesses (hand-coded rounding functions).
 3. Exact `Q_B` / `Q32` integer fixed-point speculative decoding conservation, zero over-accepts, zero `Z = 0` NaN crashes, and exact `0` TV leak.
 4. Descending Inverse-CDF IEEE-754 RNE swamping cutoff (`2^{-(m+2)}`: `1/512` BF16, `1/4096` FP16, `2^{-25}` FP32) erasing all `V - k0` remaining tail tokens.
 5. Balanced binary-tree / Fenwick pairwise summation exact zero-rounding-error law for all `k ∈ ℕ`.
@@ -23,7 +23,11 @@ open SamplingHorizons
 /-- Theorem 1 (`gumbel_max_impossible_token_horizon_exact`):
     Exact finite-`b`-bit uniform RNG Gumbel-Max impossible-token horizon over all `2^(2b)`
     RNG pairs, tightness below the horizon, and exact rational Taylor certificates proving
-    `Δ_impossible(24) < 19.45 < 20` (FP32 `b = 24`) and `Δ_impossible(8) < 7.26 < 8` (`b = 8`). -/
+    `Δ_impossible(24) < 19.45 < 20` (FP32 `b = 24`) and `Δ_impossible(8) < 7.26 < 8` (`b = 8`).
+    Note: the Gumbel noise map `G` in the statement is an arbitrary function. The numerals
+    (`pow2Rat 24 * 24 * (1733/2500) < ratPow (13591/5000) 19 * expLower 3 (9/20)`, `1945/100 < 20`, ...)
+    are inequalities between rationals involving the truncated exponential `expLower`; the link to
+    `G(u) = -ln(-ln u)` is made in the README prose, not in Lean. -/
 theorem gumbel_max_impossible_token_horizon_exact :
     (∀ (b : Nat), 1 ≤ b → ∀ (G : Rat → Rat) (gMin gMax z1 z2 : Rat),
       (∀ u : Rat, invPow2Rat b ≤ u → u ≤ 1 - invPow2Rat b → gMin ≤ G u ∧ G u ≤ gMax) →
@@ -45,8 +49,9 @@ theorem gumbel_max_impossible_token_horizon_exact :
 /-- Theorem 2 (`specdec_exact_losslessness_vs_finite_residual_crash`):
     Exact Speculative Decoding losslessness `specDecOut p q v = p v` and `tvDist = 0` over `Rat`
     when `Z > 0`, universal finite-precision zero-residual crash (`Z_fl = 0` -> `0/0 = NaN`) &
-    exact TV leak, plus explicit bit-exact `FP8-E4M3` (`V = 64`) and `BF16` (`V = 2`) RNE
-    witnesses where `Z_exact > 0` yet `Z_fl = 0`. -/
+    exact TV leak, plus explicit `FP8-E4M3`-labelled (`V = 64`) and `BF16`-labelled (`V = 2`)
+    witnesses where `Z_exact > 0` yet `Z_fl = 0`. The rounding functions `flE4M3` and `flBF16`
+    are small hand-coded functions written in this statement, not an implementation of the formats. -/
 theorem specdec_exact_losslessness_vs_finite_residual_crash :
     (∀ (n : Nat) (p q : Fin n → Rat), finSum p = 1 → 0 < specDecZ p q →
       specDecAcceptProb p q + specDecZ p q = 1 ∧
@@ -145,7 +150,9 @@ theorem fenwick_pairwise_tree_zero_swamping_exact :
 /-- Theorem 6 (`top_p_nucleus_mass_shortfall_lower_bound`):
     Exact cumulative mass shortfall `K * t` and TV distance lower bound `tvDist p pEff ≥ K * t`
     when `K` tail tokens of mass `t ≤ 2^{-(m+2)}` are swamped behind prefix `S ∈ [1/2, 1 - K * t]`,
-    plus the Llama-3 `V = 128,256` `BF16` witness exceeding `1/2` (`9/16 > 1/2`). -/
+    plus a witness with `V = 128,256` (the Llama-3 vocabulary size), `S = 7/16`, `K = 128172` and
+    `t < swampCutoffQuarter 7` exceeding `1/2` (`9/16 > 1/2`). The witness is a statement about
+    rationals; it contains no `BF16` rounding and no Llama-3 model. -/
 theorem top_p_nucleus_mass_shortfall_lower_bound :
     (∀ (m nHead K : Nat) (add : Rat → Rat → Rat) (S t : Rat)
       (p pEff : Fin (nHead + K) → Rat),

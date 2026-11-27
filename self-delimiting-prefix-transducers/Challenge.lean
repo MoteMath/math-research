@@ -56,14 +56,14 @@ theorem fibAut_zero_bias (k : Nat) (hk : 0 < k) (N : Nat) (q : Fin k) :
   sorry
 
 open PrefixCodeEngine in
-/-- Theorem 6 (Jacobsthal popcount-vs-length parity duality): the popcount-parity potential of fibAut (k + 1) embeds the length-parity potential of fibAut k with negated root. -/
+/-- Theorem 6 (Jacobsthal popcount-vs-length parity duality): the popcount-parity potential of fibAut (k + 1) embeds the length-parity potential of fibAut k with negated root. (This is an index-shift identity between the two potentials `fibPopKappa` and `fibLenPKappa` written down in `Defs.lean`; it follows by unfolding them plus sign arithmetic.) -/
 theorem fibAut_parity_duality_embedding (k : Nat) (hk : 0 < k) :
     fibPopKappa (k + 1) ⟨0, Nat.succ_pos k⟩ = -fibLenPKappa k ⟨0, hk⟩ ∧
     ∀ (q : Fin k), fibPopKappa (k + 1) ⟨q.val + 1, Nat.succ_lt_succ q.isLt⟩ = fibLenPKappa k q := by
   sorry
 
 open PrefixCodeEngine in
-/-- Theorem 7 (Asymmetric-Kraft symmetric-bias law): for all a, b, the Hamming bias numerator and denominator of runAut a b are strictly symmetric in (a, b). -/
+/-- Theorem 7 (Asymmetric-Kraft symmetric-bias law): for all a, b, the Hamming bias numerator and denominator of runAut a b are strictly symmetric in (a, b). (Both are explicit polynomial expressions in `Defs.lean`; the statement is symmetry of those polynomials.) -/
 theorem runAut_bias_symmetric (a b : Nat) :
     runBiasNum a b = runBiasNum b a ∧ runD a b = runD b a := by
   sorry

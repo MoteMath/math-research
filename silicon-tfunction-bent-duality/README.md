@@ -1,4 +1,4 @@
-# Silicon Walsh–Hadamard & T-Function Bent Proof Engine (`specmat-14`) (`silicon-tfunction-bent-duality`)
+# Silicon Walsh–Hadamard & T-Function Bent Proof Engine (`silicon-tfunction-bent-duality`)
 
 ## Synthetic Score
 
@@ -35,8 +35,12 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 ## Prior-Art Context
 
-- - **Classical prior art (honestly credited):** Maiorana–McFarland bent functions, Carlet's classes $\mathcal{D}$ / $\mathcal{D} _ 0$ (1994), Preneel / Canteaut–Charpin 4-bent concatenation (`d0 d1 d2 d3 = -1`), Dillon's second-order derivative characterization of $\mathcal{M}^\#$, and Klimov–Shamir T-functions (2002) are classical results in Boolean function theory and symmetric cryptography. - **What is genuinely new & silicon-native here:** 1. **Unified pure-silicon causal T-function + Hensel inverter + unconditional Carlet–T compiler** in standalone Lean 4, proving that causality alone suffices for all prefix cuts $0 \le r \le k$ even when
-- Hostile-verified PASS by `referee-3`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- - **Classical prior art (honestly credited):** Maiorana–McFarland bent functions, Carlet's classes $\mathcal{D}$ / $\mathcal{D} _ 0$ (1994), Preneel / Canteaut–Charpin 4-bent concatenation (`d0 d1 d2 d3 = -1`), Dillon's second-order derivative characterization of $\mathcal{M}^\#$, and Klimov–Shamir T-functions (2002) are classical results in Boolean function theory and symmetric cryptography. - **Claimed contribution (not independently reviewed; no literature search is recorded):** 1. **Unified pure-silicon causal T-function + Hensel inverter + unconditional Carlet–T compiler** in standalone Lean 4, proving that causality alone suffices for all prefix cuts $0 \le r \le k$ even when
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
+
+## Scope of the formal statement
+
+Maiorana–McFarland bentness (`mm_isBent`) is a classical result; the Lean content is its proof for the hand-written `walsh`, `mmSign` and `TBijection` definitions in `Defs.lean`. The non-$\mathcal{M}^\#$ statements are for the two specific permutations $y \mapsto 3y$ and $y \mapsto 7y$ (mod $2^k$) and hold for $k \ge 4$ only.
 
 ## Build & Verification
 

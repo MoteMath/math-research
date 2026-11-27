@@ -10,7 +10,7 @@ theorem sound_checkWindowEq (r w0 : Nat) (C1 C2 : Circuit r)
     ∀ (w : Nat), w0 ≤ w → ∀ (s : State r w), evalCircuit C1 s = evalCircuit C2 s := by
   sorry
 
-/-- Layer 2B Meta-Theorem 3 (Universal Order & Modulo-d Power Reduction ∀ n : Nat, ∀ w ≥ w0!): If `repeatWord d word` returns to coset 0, then W^d = id AND W^n = W^(n % d) for EVERY exponent n : Nat and EVERY bit-width w ≥ w0! -/
+/-- Layer 2B soundness (universal order bound, for every bit-width w ≥ w0): if the coset certificate checks and `repeatWord d word` returns to coset 0, then W^d = id on every `State r w` with w ≥ w0, where W is the circuit `evalWord gens word`. (The statement is only W^d = id; the consequence W^n = W^(n % d) is not stated here.) -/
 theorem sound_coset_order {r w0 : Nat} (lib : RelLib r) (hLib : LibSound lib w0)
     (gens : Array (Circuit r)) (cc : CosetCert r)
     (hCert : checkCosetCert lib gens cc = true)
@@ -39,7 +39,7 @@ theorem thm_ptoff_dihedral_family :
       evalCircuit (repeatCircuit 2 (repeatCircuit n circPtoff ++ [.rNot 3])) s = s := by
   sorry
 
-/-- Sharpness III.c (Width Threshold of T3): T3 = Id for w ≤ 2, while T3 ≠ Id for ALL w ≥ 3! -/
+/-- Sharpness III.c (width threshold of T3), collapse half only: at width w = 2, `circT3 0 1 3 2` is the identity on every `State 4 2`. (The other half, T3 ≠ Id for w ≥ 3, is `thm_t3_nontrivial_ge3` in `Theorems.lean` and is not part of this file.) -/
 theorem thm_t3_sharp_collapse_w2 :
     ∀ (s : State 4 2), evalCircuit (circT3 0 1 3 2) s = s := by
   sorry

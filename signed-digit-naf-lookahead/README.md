@@ -36,8 +36,8 @@ Computers can write a number using the digits $-1$, $0$ and $+1$ instead of only
 ## Prior Art
 
 - Reitwiesner (1960) proved existence, uniqueness and minimality of the non-adjacent form (NAF). Avizienis (1961) and Chow-Robertson (1978) introduced constant-depth redundant signed-digit addition using one position of lookback. Heuberger-Prodinger (2001) and Grabner-Heuberger (2006) studied minimal-weight signed-digit expansions through automata and syntactic conditions.
-- What is formalized here beyond that baseline: the pure-data certificate compiler with exact additive defect conservation, the two exact cubic counting recurrences, the odd-lookahead adder with weight subadditivity and the universal zero-lookahead impossibility theorem. A literature search did not find these statements. This is a heuristic claim, not a proof of novelty.
-- The registry referee (`referee-1`, PASS) recorded the classical NAF results as known background and the lookahead phase transition as the new part.
+- What is formalized here beyond that baseline: the pure-data certificate compiler with exact additive defect conservation, the two exact cubic counting recurrences, the odd-lookahead adder with weight subadditivity and the universal zero-lookahead impossibility theorem. No prior record of these statements was found by the authors; the search was not recorded. This is a heuristic claim, not a proof of novelty.
+- The NAF existence, uniqueness and minimality results are classical background (Reitwiesner); the lookahead phase transition is the part the authors consider new, and it has not been independently reviewed.
 
 ## Build & Verification
 
