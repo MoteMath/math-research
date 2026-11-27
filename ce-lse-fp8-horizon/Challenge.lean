@@ -138,23 +138,25 @@ theorem fp16_loss_scale_empty_window_collapse_exact :
     For binary floating-point with `p` significand bits (`BF16: p = 8`, `FP16: p = 11`,
     `FP8-E5M2: p = 3`):
     - Naive `1 + sum` completely swamps every `0 ≤ t ≤ 2^{-p}` across all `n` terms (`naiveAccum = 1`).
-    - Sequential split-accumulation stalls permanently at `2^p * t` for all `n ≥ 2^p`, losing all
-      remaining `n - 2^p` terms.
+    - Sequential split-accumulation, for terms `t` that are a power of two (`t = 2^j`, `j : Int`),
+      stalls permanently at `2^p * t` for all `n ≥ 2^p`, losing all remaining `n - 2^p` terms.
+      The power-of-two hypothesis is needed: in real round-to-nearest-even with `p = 3` and `t = 3`
+      the running sum stalls at `32`, whereas the model `seqSplitAccum` gives `24`.
     - Pairwise Binary Tree Split-Accumulation on `2^k` equal terms `t` doubles exactly with ZERO
       rounding error (`treeSum k t = 2^k * t` for all `k : Nat`), strictly beating sequential
-      accumulation by `2^{k - p}` whenever `p < k`. -/
+      accumulation (for power-of-two `t`) by `2^{k - p}` whenever `p < k`. -/
 theorem lse_naive_swamping_vs_pairwise_tree_exact :
     (invPow2Rat 8 = 1 / 256 ∧ invPow2Rat 11 = 1 / 2048 ∧ invPow2Rat 3 = 1 / 8) ∧
     (∀ (p n : Nat) (t : Rat), (0 : Rat) ≤ t → t ≤ invPow2Rat p →
       rneAddSwamps p 1 t ∧ naiveAccum p t n = 1) ∧
-    (∀ (p n : Nat) (t : Rat), (0 : Rat) < t →
+    (∀ (p n : Nat) (t : Rat), (0 : Rat) < t → (∃ j : Int, t = pow2IntRat j) →
       rneAddSwamps p (pow2Rat p * t) t ∧
       (n ≤ 2 ^ p → seqSplitAccum p t n = (n : Rat) * t) ∧
       (2 ^ p ≤ n →
         seqSplitAccum p t n = pow2Rat p * t ∧
         (n : Rat) * t - seqSplitAccum p t n = ((n - 2 ^ p : Nat) : Rat) * t)) ∧
     (∀ (k : Nat) (t : Rat), treeSum k t = pow2Rat k * t) ∧
-    (∀ (p k : Nat) (t : Rat), p < k → (0 : Rat) < t →
+    (∀ (p k : Nat) (t : Rat), p < k → (0 : Rat) < t → (∃ j : Int, t = pow2IntRat j) →
       seqSplitAccum p t (2 ^ k) < treeSum k t ∧
       treeSum k t / seqSplitAccum p t (2 ^ k) = pow2Rat (k - p)) := by
   sorry

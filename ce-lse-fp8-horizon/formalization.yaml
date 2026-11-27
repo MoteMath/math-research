@@ -5,13 +5,13 @@ project:
   name: Exact Quantized Cross-Entropy & LogSumExp Backward-Pass Loss-Scaling and Gradient-Underflow Laws
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
-    rational and IEEE-754/OCP FP8/FP16/BF16 laws for Cross-Entropy and LogSumExp training:
+    rational laws, stated for hand-written models of the OCP FP8 and IEEE FP16/BF16 rounding rules (not the formats themselves), for Cross-Entropy and LogSumExp training:
     exact Cross-Entropy gradient zero-sum conservation, OCP FP8-E4M3 dual RTZ/RNE horizons
     (V > 512 RTZ flush, V in [513, 1023] RNE overshoot peaking at +255/256, V = 1024 cliff to -1),
     IEEE FP8-E5M2 128K-vocab conservation collapse (V > 65536 RTZ flush, V in [65537, 131071]
     RNE overshoot peaking at +32767/32768, V = 131072 = 2^17 cliff to -1), FP16 power-of-two
     loss-scale empty-window collapse (normal threshold 2^30 - 2^18, subnormal threshold 2^41 - 2^29),
-    LogSumExp naive swamping and sequential split-accumulator stall vs exact zero-error pairwise
+    LogSumExp naive swamping and sequential split-accumulator stall (power-of-two terms) vs exact zero-error pairwise
     binary tree split-accumulation, and total FP8 erasure of label smoothing at V >= 128K.
   repository: https://github.com/MoteMath/math-research
   subdirectory: ce-lse-fp8-horizon

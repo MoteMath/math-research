@@ -98,14 +98,14 @@ theorem lse_naive_swamping_vs_pairwise_tree_exact :
     (invPow2Rat 8 = 1 / 256 ∧ invPow2Rat 11 = 1 / 2048 ∧ invPow2Rat 3 = 1 / 8) ∧
     (∀ (p n : Nat) (t : Rat), (0 : Rat) ≤ t → t ≤ invPow2Rat p →
       rneAddSwamps p 1 t ∧ naiveAccum p t n = 1) ∧
-    (∀ (p n : Nat) (t : Rat), (0 : Rat) < t →
+    (∀ (p n : Nat) (t : Rat), (0 : Rat) < t → (∃ j : Int, t = pow2IntRat j) →
       rneAddSwamps p (pow2Rat p * t) t ∧
       (n ≤ 2 ^ p → seqSplitAccum p t n = (n : Rat) * t) ∧
       (2 ^ p ≤ n →
         seqSplitAccum p t n = pow2Rat p * t ∧
         (n : Rat) * t - seqSplitAccum p t n = ((n - 2 ^ p : Nat) : Rat) * t)) ∧
     (∀ (k : Nat) (t : Rat), treeSum k t = pow2Rat k * t) ∧
-    (∀ (p k : Nat) (t : Rat), p < k → (0 : Rat) < t →
+    (∀ (p k : Nat) (t : Rat), p < k → (0 : Rat) < t → (∃ j : Int, t = pow2IntRat j) →
       seqSplitAccum p t (2 ^ k) < treeSum k t ∧
       treeSum k t / seqSplitAccum p t (2 ^ k) = pow2Rat (k - p)) :=
   CeLseHorizon.lse_naive_swamping_vs_pairwise_tree_exact

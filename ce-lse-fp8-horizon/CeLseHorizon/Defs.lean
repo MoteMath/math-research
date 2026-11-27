@@ -131,8 +131,10 @@ def fp16SubnormalSafe (S gMax pMin : Rat) : Prop :=
 
 /-- Exact IEEE-754 RNE swamping condition for adding a nonnegative term `t` to a binade-even
     accumulator `acc > 0` in binary floating-point with `p` significand bits (`BF16: p = 8`,
-    `FP16: p = 11`, `FP8-E5M2: p = 3`): since `ulp(acc) = acc * 2^{-(p-1)}` and `acc` has even
-    significand, every `0 ≤ t ≤ acc * 2^{-p}` rounds `fl_p(acc + t) = acc`. -/
+    `FP16: p = 11`, `FP8-E5M2: p = 3`): when `acc` is a power of two, `ulp(acc) = acc * 2^{-(p-1)}`
+    and `acc` has even significand, so every `0 ≤ t ≤ acc * 2^{-p}` rounds `fl_p(acc + t) = acc`.
+    For an accumulator that is not a power of two this predicate is only a model, not exact RNE
+    (its ulp is larger than `acc * 2^{-(p-1)}`, so the real swamping threshold is higher). -/
 def rneAddSwamps (p : Nat) (acc t : Rat) : Prop :=
   (0 : Rat) < acc ∧ (0 : Rat) ≤ t ∧ t ≤ acc * invPow2Rat p
 
@@ -145,7 +147,9 @@ def naiveAccum (p : Nat) (t : Rat) : Nat → Rat
     if t ≤ a * invPow2Rat p then a else a + t
 
 /-- Sequential split-accumulation (`T_seq`) starting from `0` adding `n` equal positive terms `t`
-    in `p`-bit significand RNE arithmetic: stalls permanently once `t ≤ a * 2^{-p}` (`a = 2^p * t`). -/
+    in the `rneAddSwamps` model of `p`-bit significand RNE arithmetic: stalls permanently once
+    `t ≤ a * 2^{-p}` (`a = 2^p * t`). This agrees with exact round-to-nearest-even only when `t` is
+    a power of two (for `p = 3`, `t = 3` real RNE stalls at `32`, the model at `24`). -/
 def seqSplitAccum (p : Nat) (t : Rat) : Nat → Rat
   | 0 => 0
   | n + 1 =>

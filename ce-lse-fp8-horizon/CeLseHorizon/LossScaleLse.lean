@@ -193,14 +193,14 @@ theorem lse_naive_swamping_vs_pairwise_tree_exact :
     (invPow2Rat 8 = 1 / 256 ∧ invPow2Rat 11 = 1 / 2048 ∧ invPow2Rat 3 = 1 / 8) ∧
     (∀ (p n : Nat) (t : Rat), (0 : Rat) ≤ t → t ≤ invPow2Rat p →
       rneAddSwamps p 1 t ∧ naiveAccum p t n = 1) ∧
-    (∀ (p n : Nat) (t : Rat), (0 : Rat) < t →
+    (∀ (p n : Nat) (t : Rat), (0 : Rat) < t → (∃ j : Int, t = pow2IntRat j) →
       rneAddSwamps p (pow2Rat p * t) t ∧
       (n ≤ 2 ^ p → seqSplitAccum p t n = (n : Rat) * t) ∧
       (2 ^ p ≤ n →
         seqSplitAccum p t n = pow2Rat p * t ∧
         (n : Rat) * t - seqSplitAccum p t n = ((n - 2 ^ p : Nat) : Rat) * t)) ∧
     (∀ (k : Nat) (t : Rat), treeSum k t = pow2Rat k * t) ∧
-    (∀ (p k : Nat) (t : Rat), p < k → (0 : Rat) < t →
+    (∀ (p k : Nat) (t : Rat), p < k → (0 : Rat) < t → (∃ j : Int, t = pow2IntRat j) →
       seqSplitAccum p t (2 ^ k) < treeSum k t ∧
       treeSum k t / seqSplitAccum p t (2 ^ k) = pow2Rat (k - p)) := by
   refine ⟨?_, ?_, ?_, ?_, ?_⟩
@@ -212,7 +212,7 @@ theorem lse_naive_swamping_vs_pairwise_tree_exact :
     grind
   · intro p n t ht0 htle
     refine ⟨⟨by decide, ht0, by rw [Rat.one_mul]; exact htle⟩, naiveAccum_swamped p htle n⟩
-  · intro p n t ht
+  · intro p n t ht _
     refine ⟨?_, seqSplitAccum_before_stall p ht n, ?_⟩
     · refine ⟨rat_mul_pos (pow2Rat_pos p) ht, Rat.le_of_lt ht, ?_⟩
       have heq : pow2Rat p * t * invPow2Rat p = t := by
@@ -231,7 +231,7 @@ theorem lse_naive_swamping_vs_pairwise_tree_exact :
       rw [hcast]
       grind
   · exact treeSum_exact
-  · intro p k t hpk ht
+  · intro p k t hpk ht _
     have hpowle : 2 ^ p ≤ 2 ^ k := Nat.pow_le_pow_right (by decide) (Nat.le_of_lt hpk)
     have hpowlt : 2 ^ p < 2 ^ k := Nat.pow_lt_pow_right (by decide) hpk
     rw [seqSplitAccum_stalled p ht (2 ^ k) hpowle, treeSum_exact k t]

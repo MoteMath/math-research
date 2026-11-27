@@ -27,12 +27,16 @@ warning: Challenge.lean:31:8: declaration uses `sorry`
 warning: Challenge.lean:54:8: declaration uses `sorry`
 warning: Challenge.lean:88:8: declaration uses `sorry`
 warning: Challenge.lean:120:8: declaration uses `sorry`
-warning: Challenge.lean:146:8: declaration uses `sorry`
-warning: Challenge.lean:167:8: declaration uses `sorry`
+warning: Challenge.lean:148:8: declaration uses `sorry`
+warning: Challenge.lean:169:8: declaration uses `sorry`
 Build completed successfully (4 jobs).
 ```
 
 Zero errors, zero warnings outside the six intentional `sorry` placeholders in `Challenge.lean`, and zero `sorry`/`axiom`/`admit`/`native_decide`/`lemma` in any code declaration across `CeLseHorizon/`, `CeLseHorizon.lean`, or `Solution.lean`.
+
+## Change after external review (2026-11-27)
+
+An external review showed that the rounding model `rneAddSwamps` / `seqSplitAccum` matches exact round-to-nearest-even only when the added term `t` is a power of two (for `p = 3` and `t = 3`, exact RNE stalls at `32` while the model stalls at `24`). Theorem 5 (`lse_naive_swamping_vs_pairwise_tree_exact`) was therefore weakened in `Challenge.lean`, `Solution.lean` and `LossScaleLse.lean`: its sequential-accumulation clauses (third and fifth conjuncts) now carry the extra hypothesis `∃ j : Int, t = pow2IntRat j`. The statement of the other conjuncts and of the other five theorems is unchanged. Rebuilt with `lake build`, `lake build Solution`, `lake build Challenge` and `lake env lean scripts/PrintAxioms.lean` on 2026-11-27; the axiom output below is from that build.
 
 ## Kernel-Verified Arithmetic Audit Note
 
