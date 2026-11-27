@@ -1172,3 +1172,60 @@ Pure Lean 4 `Init` formalization (zero Mathlib, toolchain `v4.34.1`): finite-sta
 | `SignedDigitNafLookaheadChallenge.olAdd_sound_and_subadditive` | `SignedDigitNafLookahead.Theorems` | For all signed-digit streams $A, B$, the $O(1)$-depth odd-lookahead parallel adder satisfies $\mathrm{sdVal}(A \boxplus B) = \mathrm{sdVal}(A) + \mathrm{sdVal}(B)$ and $\mathrm{sdWt}(A \boxplus B) \le \mathrm{sdWt}(A) + \mathrm{sdWt}(B)$. |
 | `SignedDigitNafLookaheadChallenge.causal_adder_not_subadditive` | `SignedDigitNafLookahead.Theorems` | For every finite causal lookback radius $r \in \mathbb{N}$ and every valid causal carry-free parallel adder $A$, there exists $1 \le k \le r + 1$ with $\mathrm{causalOutWt}(A.C, 1^k) > k$. |
 | `SignedDigitNafLookaheadChallenge.chowRobertson_periodic_blowup` | `SignedDigitNafLookahead.Theorems` | For every $m \in \mathbb{N}$, classical Chow-Robertson addition ($r = 1$) satisfies $\mathrm{causalOutWt}(\mathrm{crCarry}, (1, 1, 0)^m) = 3m$ while $\mathrm{sdWt}((1, 1, 0)^m) = 2m$. |
+
+## 88. [`carry-run-cyclotomic-transfer/`](carry-run-cyclotomic-transfer/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of `CarryTransferEngine`, proving universal $(L+1) \times (L+1)$ ripple/carry-run matrix annihilators, cyclotomic period-$(L+2)$ carry-run Thue–Morse collapses, monomial period-$(L+1)$ ripple-depth collapses, and the bivariate carry-absorption odd/even dichotomy.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `evenRadix_carryRun_outputParity_collapse` | `Challenge` | For all even radices $B = 2m$ ($m \ge 1$), $L \ge 1$, and $w \in \mathbb{N}$, the carry-run $\le L$ output-parity sum collapses with exact period $L+2$ to $+m^w$, $-m^w$, or $0$. |
+| `binary_carryRun_fullPopcount_collapse` | `Challenge` | For all $L \ge 1$ and $w \in \mathbb{N}$, the full-sum binary Thue–Morse sum $(-1)^{\mathrm{popcount}(w+1, x+y)}$ over $\mathrm{carryRun}(x,y) \le L$ has exact period $L+2$ with values $1, -2, 0, \dots, 0, 1$. |
+| `evenRadix_rippleDepth_inputParity_collapse` | `Challenge` | For all $m \ge 1$, $L \ge 1$, and $w \in \mathbb{N}$, the ripple-depth $\le L$ input-parity sum vanishes when $(L+1) \nmid w$ and equals $((-1)^{L+1} 2^L m^{L+1})^{w/(L+1)}$ when $(L+1) \mid w$. |
+| `binary_rippleDepth_plain_recurrence` | `Challenge` | For all $L \ge 1$ and $w \in \mathbb{N}$, the unweighted binary ripple-depth count satisfies $R _ L(w+L+1) = 4 R _ L(w+L) - 2^L R _ L(w)$. |
+| `binary_carryRun_absorption_recurrence` | `Challenge` | For all $t \in \mathbb{Z}$, $L \ge 1$, and $w \in \mathbb{N}$, the absorption-weighted carry-run sum satisfies $A _ L(t, w+L+2) = (1-t) A _ L(t, w+L) + t A _ L(t, w)$. |
+| `binary_zeroAbsorption_dichotomy` | `Challenge` | At $t = 0$ (zero carry absorptions), for all $L \ge 1$ and $w \ge L$, $A _ L(0, w) = 0$ if $L$ is odd and $A _ L(0, w) = (-1)^w$ if $L$ is even. |
+| `rippleOp_annihilator` | `Challenge` | Universal 3-parameter $(L+1)$-dimensional ripple-carry matrix annihilator $M^{L+1} - (k+p+g) M^L + g p^L I = 0$ for all $L \ge 1$ and $k, p, g \in \mathbb{Z}$. |
+| `runOp_annihilator` | `Challenge` | Universal 4-parameter $(L+1)$-dimensional carry-run matrix annihilator $M^{L+2} - (a+r) M^{L+1} + (ar-bc) M^L + b c r^L I = 0$ for all $L \ge 1$ and $a, b, c, r \in \mathbb{Z}$. |
+
+## 89. [`carryless-collatz-2adic-gluing/`](carryless-collatz-2adic-gluing/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of the `ShiftFaithful` 2-adic conjugacy and $O(k)$ Hensel-inversion engine, exact `iff` $2^r$-branch ultrametric gluing certifiers, the Carry-vs-Carryless Self-Coding Phase Transition, and carryless Collatz cycle uniqueness.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `Syracuse_conjugacy` | `Challenge` | For any two even-halving `ShiftFaithful` maps $T _ 1, T _ 2$, $\Phi _ {T _ 1 \to T _ 2} = R _ {T _ 2} \circ Q _ {T _ 1}$ conjugates $T _ 1$ to $T _ 2$ with bit-exact Syracuse $v _ 2$-valuation preservation. |
+| `checkAffTable_iff_shiftFaithful` | `Challenge` | For all $r \ge 1$ and any $2^r$-branch carried table $\tau$, the finite Boolean checker `checkAffTable r tab = true` holds if and only if `evalAffTable r tab` is `ShiftFaithful` on all of $\mathbb{N}$. |
+| `carried_carryless_3x1_syracuse_conjugate` | `Challenge` | Carried Collatz ($3x+1$) and carryless Collatz ($\mathrm{clmul}(3,x) \oplus 1$) are constructively 2-adically conjugate with exact Syracuse $v _ 2$-valuation preservation. |
+| `carryless_selfCoding_exact` | `Challenge` | For every odd $p > 1$ and $v = v _ 2(p-1)$, carryless $T _ {p,1}^\oplus$ has exact self-coding count $2^{\min(k, v)}$ for all $k \in \mathbb{N}$ and unique 2-adic fixed point $0$. |
+| `carried_mod4_eq1_collapse` | `Challenge` | Single-carry collapse: for every $a \equiv 1 \pmod 4$ and all $k \ge 1$, carried $T _ {a,1}^+$ has exactly $2$ self-coding $k$-bit residues and unique 2-adic fixed point $0$. |
+| `carryless_3x1_unique_nonzero_cycle` | `Challenge` | For every $L \ge 1$ and $x > 0$, if $(T _ {3,1}^\oplus)^L(x) = x$ in $\mathbb{N}$, then $x = 1$. |
+| `periodic_orbit_classification` | `Challenge` | For any `ShiftFaithful` map $T$ and period $p \ge 1$, the Hensel sequence `perOrbit T p w` gives an exact constructive bijection between $[0, 2^p)$ and projective 2-adic $p$-periodic orbits of $T$. |
+
+## 90. [`gray-carry-monodromy-freezing/`](gray-carry-monodromy-freezing/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **BDFTR** (Bidirectional Delay-Feedback Transducer Reduction) and **CPMF** (Carry-Parity Monodromy Freezing) for right-shift and left-shift Gray-code + modular-increment hybrid dynamics.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `bdftr_exact_count` | `Challenge` | Generic BDFTR bijection: for any Mealy bit-transducer $M$, $k \ge 1$, and $w \ge k$, solutions of $x \gg k = \Phi _ w(x)$ in $[0, 2^w)$ biject exactly with $k$-bit DFSR seeds flushing to $0^k$ at step $w$. |
+| `grayRight_nat_stabilization` | `Challenge` | For all $k \ge 1$, $c, m < 2^L$, and every seed $r < 2^k$, there is an explicit $z < 2^{L+2k+1}$ solving the untruncated equation $(z \oplus (z \gg k)) + c = z \oplus m$ in $\mathbb{N}$. |
+| `grayRight_sub_complete_annihilation` | `Challenge` | Sign-asymmetry carry-trap annihilation: for all $k \ge 1$ and $w \ge 2k+1$, there are $0$ solutions $x < 2^w$ to $x \oplus (x \gg k) = (x + (2^{2k+1} - 2^k)) \bmod 2^w$. |
+| `cpmf_full_partition_lift` | `Challenge` | Generic CPMF compiler: a decidable base-width-$w _ 0$ certificate (`checkBaseCert`) lifts to an exact global cycle partition of $[0, 2^w)$ for all $w \ge w _ 0$ and all $c \equiv c _ 0 \pmod{2^{w _ 0}}$. |
+| `lgray1_mod32_9_exact_five_cycles` | `Challenge` | For all $c \equiv 9 \pmod{32}$ and all $w \ge 5$, $L _ {1,c,w}$ partitions $[0, 2^w)$ into exactly 5 disjoint cycles of periods $2^{w-1}$ and four of $2^{w-3}$. |
+| `lgray1_mod64_19_exact_seven_cycles` | `Challenge` | For all $c \equiv 19 \pmod{64}$ and all $w \ge 6$, $L _ {1,c,w}$ partitions $[0, 2^w)$ into exactly 7 disjoint cycles of periods three of $2^{w-2}$ and four of $2^{w-4}$. |
+| `lgray_ge2_odd_single_cycle` | `Challenge` | For all $k \ge 2$, odd $c$, and $w \ge 1$, $L _ {k,c,w}$ is a single full cycle of exact minimal period $2^w$. |
+
+## 91. [`morton-carry-monodromy-renorm/`](morton-carry-monodromy-renorm/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **Carry-Monodromy Renormalization (CMR)** for radix-$B$ digit-permutation carry dynamics, proving the all-dimension $(d+1)^n$ Morton Flag-Helix theorem, complete 2D swap cycle spectrum, non-nilpotent 4D full-periodicity, and the Delayed-Fracture Trap.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `cmr_full_period_compiler` | `Challenge` | If every state of a finite `RenormAutomaton B S` has carry-cycle length $B$, then `step B (A.perm s) n` is a single Hamiltonian cycle of length $B^n$ for all $n \in \mathbb{N}$. |
+| `mortonRot_exact_period_all_d_n` | `Challenge` | For every dimension $d \ge 1$ and precision $n \in \mathbb{N}$, $d$-D Morton cyclic coordinate rotation $+1$ has exact minimal period $(d+1)^n$ at $0$. |
+| `mortonRot_orbit_iff_flagHelix` | `Challenge` | For all $d \ge 1$, $n \in \mathbb{N}$, and $z < (2^d)^n$, $z$ lies on the giant orbit of $0$ iff `isFlagHelix d hd n z = true`. |
+| `morton2D_exact_period_all_z` | `Challenge` | For every $n \in \mathbb{N}$ and every $z < 4^n$, `period2D n z` is the exact minimal period of $z$ under 2D Morton swap $+1$. |
+| `morton2D_period_dichotomy` | `Challenge` | For every $n \in \mathbb{N}$ and every $z < 4^n$, the minimal period of $z$ under 2D Morton swap $+1$ is strictly $3^k$ ($k \le n$) or $2 \cdot 3^k$ ($k+2 \le n$). |
+| `delayed_fracture_exact_period` | `Challenge` | For every $n \in \mathbb{N}$, the 3-bit Delayed-Fracture map `step 8 piDelay n` has exact minimal period `piDelayAutomaton.orbitProd 0 n` at $0$. |
+| `delayed_fracture_closed_form` | `Challenge` | For every $n \in \mathbb{N}$, the Delayed-Fracture period obeys $\mathrm{orbitProd}(0, n) \cdot 2^{\lfloor n/3 \rfloor} = 8^n$ (full-period at $n=1,2$, fracturing at $n=3$). |

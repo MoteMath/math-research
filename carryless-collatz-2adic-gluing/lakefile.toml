@@ -1,0 +1,12 @@
+name = "carryless-collatz-2adic-gluing"
+version = "0.1.0"
+defaultTargets = ["CarrylessCollatz2adicGluing", "Solution"]
+
+[[lean_lib]]
+name = "CarrylessCollatz2adicGluing"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarrylessCollatz2adicGluingChallenge.Syracuse_conjugacy",
+    "CarrylessCollatz2adicGluingChallenge.checkAffTable_iff_shiftFaithful",
+    "CarrylessCollatz2adicGluingChallenge.carried_carryless_3x1_syracuse_conjugate",
+    "CarrylessCollatz2adicGluingChallenge.carryless_selfCoding_exact",
+    "CarrylessCollatz2adicGluingChallenge.carried_mod4_eq1_collapse",
+    "CarrylessCollatz2adicGluingChallenge.carryless_3x1_unique_nonzero_cycle",
+    "CarrylessCollatz2adicGluingChallenge.periodic_orbit_classification"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MortonCarryMonodromyRenormChallenge.cmr_full_period_compiler",
+    "MortonCarryMonodromyRenormChallenge.mortonRot_exact_period_all_d_n",
+    "MortonCarryMonodromyRenormChallenge.mortonRot_orbit_iff_flagHelix",
+    "MortonCarryMonodromyRenormChallenge.morton2D_exact_period_all_z",
+    "MortonCarryMonodromyRenormChallenge.morton2D_period_dichotomy",
+    "MortonCarryMonodromyRenormChallenge.delayed_fracture_exact_period",
+    "MortonCarryMonodromyRenormChallenge.delayed_fracture_closed_form"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

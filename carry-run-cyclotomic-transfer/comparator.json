@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarryRunCyclotomicTransferChallenge.evenRadix_carryRun_outputParity_collapse",
+    "CarryRunCyclotomicTransferChallenge.binary_carryRun_fullPopcount_collapse",
+    "CarryRunCyclotomicTransferChallenge.evenRadix_rippleDepth_inputParity_collapse",
+    "CarryRunCyclotomicTransferChallenge.binary_rippleDepth_plain_recurrence",
+    "CarryRunCyclotomicTransferChallenge.binary_carryRun_absorption_recurrence",
+    "CarryRunCyclotomicTransferChallenge.binary_zeroAbsorption_dichotomy",
+    "CarryRunCyclotomicTransferChallenge.rippleOp_annihilator",
+    "CarryRunCyclotomicTransferChallenge.runOp_annihilator"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

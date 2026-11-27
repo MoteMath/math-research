@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Gray Carry-Monodromy Freezing - exact Gray-carry cycle counts and frozen cycles
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the infinite
+    pure-silicon mechanism "Gray Carry-Monodromy Freezing - exact Gray-carry cycle counts and frozen cycles", with headline theorems stated in Challenge.lean and
+    discharged in Solution.lean.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: gray-carry-monodromy-freezing
+  license: Apache-2.0

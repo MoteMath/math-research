@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "GrayCarryMonodromyFreezingChallenge.bdftr_exact_count",
+    "GrayCarryMonodromyFreezingChallenge.grayRight_nat_stabilization",
+    "GrayCarryMonodromyFreezingChallenge.grayRight_sub_complete_annihilation",
+    "GrayCarryMonodromyFreezingChallenge.cpmf_full_partition_lift",
+    "GrayCarryMonodromyFreezingChallenge.lgray1_mod32_9_exact_five_cycles",
+    "GrayCarryMonodromyFreezingChallenge.lgray1_mod64_19_exact_seven_cycles",
+    "GrayCarryMonodromyFreezingChallenge.lgray_ge2_odd_single_cycle"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

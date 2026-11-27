@@ -1,0 +1,12 @@
+name = "gray-carry-monodromy-freezing"
+version = "0.1.0"
+defaultTargets = ["GrayCarryMonodromyFreezing", "Solution"]
+
+[[lean_lib]]
+name = "GrayCarryMonodromyFreezing"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
