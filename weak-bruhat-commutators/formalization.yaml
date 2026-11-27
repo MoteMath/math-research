@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Weak-Bruhat Commutators: Iterated bubble, West stack, and pop-stack sorting
+  name: "Weak-Bruhat Commutators: Iterated bubble, West stack, and pop-stack sorting"
   description: >-
     A zero-Mathlib Lean 4 formalization of the Bubble-Refined Order (simultaneous Right Weak
     Bruhat value-inversion-set and descent-bottom inclusion) for iterated bubble sort B^k,

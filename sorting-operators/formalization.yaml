@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Sorting Operators: Cross-operator inequalities for West stack-sorting and bubble sort
+  name: "Sorting Operators: Cross-operator inequalities for West stack-sorting and bubble sort"
   description: >-
     A zero-Mathlib Lean 4 formalization of universal cross-operator inequalities and structural
     identities relating West's stack-sorting operator and single-pass bubble sort: inversion and

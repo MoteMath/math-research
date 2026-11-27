@@ -30,7 +30,7 @@ bash ../.github/scripts/comparator-check.sh
 - `lake build` (100% zero-project-cache clean build from scratch after `lake exe cache get`): **passed** with exit code `0` across all `9,537` build jobs (`488` library modules across `Lib`, `New`, `Statements`, `Main`); zero `sorry` outside `Challenge.lean`.
 - Custom axioms (`axiom ...`) outside comments: **0**.
 - Independent Rust kernel check (`con-ron --compare --verified` comparing the `lean4export v3.1.0` dump of `Main` against `Challenge.lean`): **passed** (`accepted 52169 declarations, 5 axioms justified by the solution; 204185 declarations accepted` — all 5 headline theorems justified).
-- `leanprover/comparator` with `lean4export` (`v4.35.0`), `nanoda`, and `landrun` (`comparator.json`, `enable_nanoda = true`): sandboxed `lake build Main` (`9,535/9,535` jobs) and `lean4export` **passed**; `nanoda` kernel replay is running and independently verified by repository CI (`.github/workflows/lean-projects.yml`).
+- `leanprover/comparator` with `lean4export` (`v4.35.0`), `nanoda`, and `landrun` (`comparator.json`, `enable_nanoda = true`): sandboxed `lake build Main` (`9,535/9,535` jobs) and `lean4export` **passed**; the `nanoda` kernel replay had not completed when this audit was written. The only CI run recorded for this project (2026-11-26) was cancelled, so no external-kernel replay of this project is on record; the workflow `.github/workflows/lean-projects.yml` can be run for it with `workflow_dispatch`.
 
 ### `#print axioms` output (`scripts/PrintAxioms.lean`), verbatim
 

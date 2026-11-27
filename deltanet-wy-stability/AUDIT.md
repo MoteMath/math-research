@@ -52,7 +52,7 @@ All five headline theorems depend exclusively on Lean 4's standard axioms (`prop
 
 ## For Mathematicians
 
-Every proof in `DeltanetWyStability/` is 100% pure-`Init` algebraic reasoning over `Rat` and `Nat` (zero external dependencies):
+Every proof in `DeltanetWyStability/` is pure-`Init` algebraic reasoning over `Rat` and `Nat` (zero external dependencies):
 - `SpectralStability.lean`: Exact rank-1 quadratic decomposition and pure-`Init` Cauchy–Schwarz over `Fin d → Rat` establish `deltanet_spectral_stability_iff` universally for all $d, \alpha, \beta, k$.
 - `QuantNormBlowup.lean`: Piecewise quadratic-minus-linear domination on each of the 8 `E2M1` quantization bins (`64/431` non-anchor vs `-1984/431 = -31 * 64/431` anchor for OCP v1.0; `33/227` vs `-1023/227 = -31 * 33/227` for max-fit) proves both universal 32-D bounds in closed form, paired with exact witnesses and the universal $m$-bit normal-range monotonicity theorem.
 - `WyInverse.lean`: Telescoping finite sums (`sumFin_telescope`) prove `(I + L) T = I` universally for arbitrary chunk sizes $C$, dimensions $d$, and keys, followed by aligned Householder chain induction (`hhChain_aligned`) yielding both uniform contraction ($\beta r \le 2$) and exact exponential blowup ($\beta = 2, \alpha = 1, r > 1$).
@@ -61,7 +61,7 @@ Every proof in `DeltanetWyStability/` is 100% pure-`Init` algebraic reasoning ov
 
 ## For Non-Mathematicians
 
-This audit confirms that every mathematical claim in the Wave 3B Gated DeltaNet / Mamba-2 report — the exact safe step-size ceilings for 4-bit/8-bit/16-bit keys, the exact chunkwise WY inverse formula, the 465-quadrillion / $> 10^{27}$ intermediate explosion of Euler-product inversion, and the exactness of recursive 2×2 Block-Schur inversion — has been independently verified from first principles by Lean 4's trusted kernel with zero external libraries and zero unproven assumptions.
+This audit records that the Lean statements listed above build against the pure-`Init` library using only the three standard axioms. The figures quoted in the original campaign report (the safe step-size ceilings, the 465-quadrillion / $> 10^{27}$ intermediate figures, the recursive 2×2 block-Schur formula) are what those Lean statements say; they are statements about the package's own rational models of low-precision arithmetic, not about the real number formats (see the package `README.md`).
 
 ## Prior-Art Context
 

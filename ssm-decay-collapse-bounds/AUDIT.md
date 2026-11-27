@@ -60,7 +60,7 @@ All six headline theorems depend exclusively on Lean 4's standard axioms (`prope
 
 ## For Mathematicians
 
-Every proof in `SsmDecayCollapse/` is 100% pure-`Init` algebraic reasoning over `Rat`, `Int`, and `Nat` (zero external dependencies):
+Every proof in `SsmDecayCollapse/` is pure-`Init` algebraic reasoning over `Rat`, `Int`, and `Nat` (zero external dependencies):
 - `RatZpow.lean`: Establishes exact integer powers of two `zpow2`, exact binade characterization `binadeOf_spec` / `binadeOf_eq_of_bounds` via `Nat.log2`, exact RNE integer rounding `rneInt_eq_of_bounds` / `rneInt_midpoint`, and normal floating-point grid preservation `ieeeRne_floatVal`.
 - `DecayStall.lean`: Proves `ieee_decay_stall_midpoint_exact` universally for all $p \ge 1$ by showing $a _ {\max}(p) = \mathrm{floatVal}(p, -1, 2^p - 1)$ is maximal below $1$, scaling $a _ {\mathrm{stall}}(p) \cdot 2^{p+1} = (2^{p+1} - 1) + 1/2$ with odd floor to trigger RNE tie-to-even up to $1$, and evaluating all five IEEE-754 formats (`p ∈ {2, 3, 7, 10, 23}`).
 - `OneUlpCollapse.lean`: Proves the exact 1-ULP step laws `floatVal_mul_aMax_pos` (strictly inside $(2^p + m - 1, 2^p + m - 1/2)$) and `floatVal_mul_aMax_zero` (exact binade drop), then inducts across $2^p$ steps per binade to prove `seqPow p (m * 2^p) = zpow2 (-m)` for all $p \ge 1, m \in \mathbb{N}$.
@@ -70,7 +70,7 @@ Every proof in `SsmDecayCollapse/` is 100% pure-`Init` algebraic reasoning over 
 
 ## For Non-Mathematicians
 
-This audit confirms that every mathematical law discovered in the Wave 9C Mamba-2 / SSD low-precision campaign — the exact BF16/FP8/FP16/FP32 memory-horizon stall cliffs, the universal 1-ULP-per-step sequential decay collapse ($128$-token effective BF16 half-life and $2^{-32}$ collapse at $T = 4096$), exact linear additive swamping divergence, exact overflow bounds and signed stall asymmetry for zero-multiplier shift-subtract SSMs, and the $2 \to 3/2$ timescale-gap improvement from 2-tap CSD — has been independently verified from first principles by Lean 4's trusted kernel with zero external libraries and zero unproven assumptions.
+This audit records that the Lean statements listed above build against the pure-`Init` library using only the three standard axioms. They are statements about the package's own rational model of round-to-nearest-even arithmetic (see the package `README.md` for how the model differs from the real formats); the audit does not check that model against hardware.
 
 ## Prior-Art Context
 

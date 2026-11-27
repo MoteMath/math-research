@@ -28,7 +28,7 @@
 1. **Zero `sorry` / `admit` / `axiom` / `native_decide` / `lemma` outside `Challenge.lean`:** Verified by full-tree grep across `BitnetContraction/`, `BitnetContraction.lean`, and `Solution.lean`.
 2. **Exact Challenge–Solution Signature Match:** Every theorem name and type in `Solution.lean` matches `Challenge.lean` verbatim under `namespace BitnetContractionChallenge`.
 3. **Zero Floating-Point in Proofs or Definitions:** All quantities are exact `Nat`, `Int`, or `Rat`. The irrational `RMS` law $\alpha \ge (\sqrt{3d+1}-1)/d$ and critical dimension threshold $d > 4M^2 + 2 + 4M\sqrt{M^2+1}$ are formalized in exact algebraic squared form over `Rat` and `Nat`.
-4. **Empirical GPU Cross-Check (Search Only, Never Trust Base):** Backed by Wave 4B RX 7900 XTX exact 128-bit integer search (245 launches, 38.61B evaluations, 174.3 s, 12,288 CPU spot-replays, 0 mismatches), with all mathematical claims proved independently from Lean 4 `Init` axioms.
+4. **GPU search (not part of the verified statement):** an earlier revision cited a GPU search; no script or raw output for it is in this repository, so it is not evidence for any theorem. All mathematical claims are proved from Lean 4 `Init`.
 5. **No Scratch Files:** Repository contains only the clean Palomar package files listed in `README.md`.
 
 ---

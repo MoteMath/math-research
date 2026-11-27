@@ -62,7 +62,7 @@ All six headline theorems are proved directly over Lean 4's `Init` (`BitVec`, `N
 
 ## For Non-Mathematicians
 
-Every single `FP8-E4M3FN` and `FP8 × FP4` circuit from Wave 3A — the 15-gate `rsqrt` (`2.95x` faster than RX 7900 XTX hardware SFU), the 33-gate full `rsqrt`, the 67-gate `exp`, the 82-gate `gelu`, the 93-gate `silu`, the 28-gate zero-FPU `E4M3 × E2M1` multiplier, and the universal `LOP3` lower bounds — has been verified line by line by the Lean 4 proof kernel with zero gaps (`sorry`), zero trust shortcuts (`native_decide`), and zero external dependencies.
+Every `FP8-E4M3FN` and `FP8 × FP4` circuit in this package — the 15-gate `rsqrt`, the 33-gate full `rsqrt`, the 67-gate `exp`, the 82-gate `gelu`, the 93-gate `silu`, the 28-gate zero-FPU `E4M3 × E2M1` multiplier, and the universal `LOP3` lower bounds — is checked by the Lean 4 kernel (by exhaustive evaluation over all inputs) with zero gaps (`sorry`), zero trust shortcuts (`native_decide`), and zero external dependencies.
 
 ## Prior-Art Context
 

@@ -58,14 +58,14 @@ Two of the six headline theorems (`sparse24_8bit_triple_twelve_lop3_and_wire_bou
 ## For Mathematicians
 
 All six headline theorems are proved directly over Lean 4's `Init` (`BitVec`, `UInt8`, `Fin`, `Int`, `List`) with no external libraries:
-- All five GPU-synthesized `LOP3` circuits (`unpack5t8b` 243/243, `unpackMask24_3b` / `unpackUnordered24_3b` / `unpackOrdered24_3b` 6/6, `unpackTripleMask24_8b` 216/216, `e2m1MagMul25` 64/64, `unpack2q5b` 25/25) reduce in the Lean 4 kernel via `decide` (zero `native_decide`), with every single wire index and `imm8` opcode transcribed verbatim from Wave 1C `results.json`.
+- All five `LOP3` circuits (found by a GPU search that is not part of the verified statement) (`unpack5t8b` 243/243, `unpackMask24_3b` / `unpackUnordered24_3b` / `unpackOrdered24_3b` 6/6, `unpackTripleMask24_8b` 216/216, `e2m1MagMul25` 64/64, `unpack2q5b` 25/25) reduce in the Lean 4 kernel via `decide` (zero `native_decide`), with the wire indices and `imm8` opcodes stored in the Lean source.
 - The general `5t8b` lower bound uses a 4-bit-flip involution lemma (`weight_mod_sixteen_of_four_flip_inv`) and `Nodup` list-filter pigeonhole (`le_weight_of_exists`), proving $16 \mid w(g)$ for any $\le 4$-variable function on $\mathrm{BitVec}\;8$ vs $w(f _ i) \in [162, 175]$.
 - The `3b` mask/ordered lower bounds and `2q5b` 4-wire impossibility theorem are proved for *arbitrary* surjective decoders via exact wire-fiber weights (`weight_wire3_eq_four`, `weight_two_wires3_eq_two`, `weight_two_wires5_eq_eight`) and finite pigeonhole.
 - In Theorem 4, Lean 4's kernel verification also caught the `Nat` truncated-subtraction edge case at $(3, 3, 3)$ (where $8 - 9 = 0$ in `Nat`), explicitly enforcing the physical 8-bit wire budget $d _ 0 + d _ 1 + d _ 2 \le 8$ so the uniqueness of $(1, 1, 1)$ is 100% sound.
 
 ## For Non-Mathematicians
 
-Every single GPU-synthesized circuit and mathematical impossibility bound from Wave 1C — the 10-gate `5t8b` FP4 unpacker, the 1-gate and 3-gate 2:4-sparse decoders, the 12-gate triple-mask unpacker, the 25-gate zero-FPU FP4 multiplier, and the 4-gate quinary unpacker — has been verified line by line by the Lean 4 proof kernel in under 24 seconds total, with zero gaps (`sorry`), zero trust shortcuts (`native_decide`), and zero external dependencies.
+The circuits listed above are checked by the Lean 4 kernel by exhaustive evaluation, with zero gaps (`sorry`), zero trust shortcuts (`native_decide`) and zero external dependencies. The lower bounds in the Challenge are statements about Hamming weights and variable dependencies of the decoder functions; Lean has no gate model here, so they are not proved gate-count lower bounds for `LOP3` circuits.
 
 ## Prior-Art Context
 
