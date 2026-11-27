@@ -4,15 +4,29 @@ Machine-checked Lean 4 formalizations of exact determinant factorizations, binar
 
 Each subdirectory is a self-contained Lake project with its own toolchain pin, `README.md` (with a **Synthetic Score**, **For Mathematicians** summary, and **For Non-Mathematicians** overview), `AUDIT.md`, and build instructions. Projects follow the [Palomar](https://palomar-registry.org/) submission layout (`Challenge.lean`, `Solution.lean`, `comparator.json`, `formalization.yaml`).
 
-## Synthetic Score Matrix
+## What "verified" means here (and what it does not)
 
-Each project carries a heuristic self-rating out of `100` across five `1–10` dimensions (not a substitute for peer review):
+**What is checked.** For each project, the Lean file `Solution.lean` proves the theorem statements written in `Challenge.lean`, over the definitions in the project's own library. The proofs are checked by the Lean 4 kernel and, in the repository's CI, again by an external kernel (the `leanprover/comparator` workflow with `nanoda`), with only the three standard axioms (`propext`, `Classical.choice`, `Quot.sound`) allowed and no `sorry` in the library or in `Solution.lean`.
+
+**What is not checked.**
+
+- **The definitions are not checked against the real-world objects named in the prose.** `Challenge.lean` imports the project's own `Defs` module, and every `comparator.json` has an empty `definition_names` list, so the comparator confirms only that `Solution.lean` proves the same statements over the same definitions. Whether those definitions model what the README says (an IEEE-754 or OCP number format, a quantizer, a training algorithm, a hardware circuit, a Kronecker preconditioner, ...) is trusted, not verified. Many of the number-format and machine-learning projects prove theorems about a small hand-written rational model, not about the real format or system; each such README says what the model is and where it differs. Read the `Defs.lean` of a project before relying on a statement, and treat a theorem's name or a README sentence as a description by its authors, not as part of the proof.
+- **Novelty marks are the authors' own ratings.** Prior-art searches were mostly not recorded (what was searched, where, when, and by whom), and an independent audit of a sample of projects found several to be known in substance (for example the laws behind `grpo-k3-kl-horizons`, `vlm-tome-cumulant-bounds` and `flashattn-dyadic-slack-bounds`). "No prior record found" in a README means the authors did not find one, not that none exists.
+- **The scores below are self-assigned and unaudited.** They are not derived from the theorems, were not reviewed by anyone outside the project, and should not be read as a ranking of mathematical value.
+- **No CI run has covered every project at one commit.** The CI workflow verifies changed projects; every project has a green verification at some commit, but no single run verified all of them at the current tree, and a few projects (for example `grh-ultra-compact-lean`) have no completed external-kernel run at all.
+- **Statements can be weaker than their names.** Some theorem names, docstrings and README rows were written before the statements were fixed; where a name or docstring says more than the Lean statement proves (for example "optimal" where only a bound is stated, or "exact" where only one inequality is), the Lean statement is what is verified.
+- **Finite checks and benchmarks are not proofs.** Python replays in `scripts/` and any GPU or speed figure in a README are evidence about small instances or about a measurement, not part of the verified statement.
+- **Imported material.** `grh-ultra-compact-lean` is a compacted copy of someone else's Lean development (see its `ATTRIBUTION.md`), not an original result of this repository.
+
+## Synthetic Score Matrix (self-assigned, unaudited)
+
+Each project carries a heuristic self-rating out of `100` across five `1–10` dimensions. The ratings were assigned by the authors, were not independently audited, and are not a substitute for peer review; see the section above for what they do not mean:
 
 ```math
 \mathrm{Score} = 3\cdot\mathrm{Nov} + 2\cdot\mathrm{Sur} + 2\cdot\mathrm{Gen} + 2\cdot\mathrm{Use} + 1\cdot\mathrm{Ver}.
 ```
 
-- **Nov (30%):** Novelty — distance from published literature and OEIS.
+- **Nov (30%):** Novelty — the authors' estimate of distance from published literature and OEIS (searches were mostly not recorded).
 - **Sur (20%):** Surprise & Depth — non-obviousness of the collapse or proof mechanism.
 - **Gen (20%):** Generality — arbitrary rings/radices, all sizes/widths, exact `iff` laws.
 - **Use (20%):** Usefulness — bridge value to bit-level arithmetic, graphs, or combinatorics.
@@ -1037,7 +1051,7 @@ This forces a striking **non-monotone dimension-parity period law**: $Q(d) = \ma
 
 ## How the results were produced
 
-These results were explored computationally using binary arithmetic, formalized universally in Lean 4 without `sorry` or custom axioms, checked with `lake build` and `#print axioms`, and paired with Palomar `Challenge.lean` / `Solution.lean` comparator configurations.
+The statements were found by computational exploration of binary arithmetic (exact integer scripts and, in some projects, GPU enumeration), then written down and proved in Lean 4 with extensive AI assistance; no independent human review of individual statements or proofs is recorded in this repository. Each project is checked with `lake build` and `#print axioms` and paired with a Palomar `Challenge.lean` / `Solution.lean` comparator configuration; see the section above for what that does and does not establish.
 
 These projects are shared as verified research artifacts. Each project's `README.md` documents the closest known prior art we are aware of. We defer to the mathematics community on matters of credit, precedence, and concurrent work—if any statement duplicates or is subsumed by an earlier result in the literature, please open an issue so we can add the citation or prune it.
 
