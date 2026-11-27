@@ -2155,3 +2155,18 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `dyadicProd_fourth_shell_period4` | `ConwayNimberArtinSchreierTower.Theorems` | For ALL blocks `n` and ALL `m` with `m + 3 < 2^n`, the fourth-shell coset nim-product `⨂_{a < 2^m} (2^(m+3) ⊕ a)` cycles with **exact period 4** through `[8, 8, 10, 11]`. |
 | `sharpness_period_fails_at_k1_r2` | `ConwayNimberArtinSchreierTower.Theorems` | **Sharpness 1a:** Period `2^k` in Theorem G1/G2 FAILS at the exact boundary `r = 2^k` for `k = 1` (`r = 2`: `f_2(0) = 4 ≠ 5 = f_2(2)`). |
 | `sharpness_popcount_boundary_nonzero` | `ConwayNimberArtinSchreierTower.Theorems` | **Sharpness 5:** Popcount Annihilation (`popcount d < m → S(m, d) = 0`, Theorem E2) FAILS at the exact boundary `popcount d = m` (`d = 2^m - 1`) for EVERY `k, m ≤ 2^k`! |
+
+## 154. [`tree-quadtree-automaton-compiler/`](tree-quadtree-automaton-compiler/)
+
+**Name:** *Timed / Factored / Monotone-Upset Quadtree Automaton Compiler* (BU-FTA over `BTree α k` and `QTree α k`). **Principle.** A finite binary certificate (a bitmask of reachable states per phase, or a list of upset generators) is checked inside the Lean kernel by `decide`. A once-proved soundness meta-theorem turns "certificate accepted" into a statement for all `k : Nat`
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `timedBTA_sound` | `TreeQuadtreeAutomatonCompiler.Theorems` | General Soundness Meta-Theorem for Height-Timed Bottom-Up Binary Tree Automata. |
+| `factoredQTA_sound` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `factoredQTA_sound` proved in pure Lean 4 `Init`. |
+| `percEval_eq_QNet` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `percEval_eq_QNet` proved in pure Lean 4 `Init`. |
+| `percolation_duality_D33` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `percolation_duality_D33` proved in pure Lean 4 `Init`. |
+| `d33_exact_completeness_height2` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `d33_exact_completeness_height2` proved in pure Lean 4 `Init`. |
+| `hilbert_D4_mod15_annihilation` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `hilbert_D4_mod15_annihilation` proved in pure Lean 4 `Init`. |
+| `nonvacuity_barrier_witnesses` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `nonvacuity_barrier_witnesses` proved in pure Lean 4 `Init`. |
+| `sharpness_and_nonvacuity_family3` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `sharpness_and_nonvacuity_family3` proved in pure Lean 4 `Init`. |

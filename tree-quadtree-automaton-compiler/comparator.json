@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "TreeQuadtreeAutomatonCompilerChallenge.timedBTA_sound",
+    "TreeQuadtreeAutomatonCompilerChallenge.factoredQTA_sound",
+    "TreeQuadtreeAutomatonCompilerChallenge.percEval_eq_QNet",
+    "TreeQuadtreeAutomatonCompilerChallenge.percolation_duality_D33",
+    "TreeQuadtreeAutomatonCompilerChallenge.d33_exact_completeness_height2",
+    "TreeQuadtreeAutomatonCompilerChallenge.hilbert_D4_mod15_annihilation",
+    "TreeQuadtreeAutomatonCompilerChallenge.nonvacuity_barrier_witnesses",
+    "TreeQuadtreeAutomatonCompilerChallenge.sharpness_and_nonvacuity_family3"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

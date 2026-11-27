@@ -1,0 +1,2 @@
+import TreeQuadtreeAutomatonCompiler.Defs
+import TreeQuadtreeAutomatonCompiler.Theorems
