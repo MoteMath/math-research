@@ -1,0 +1,12 @@
+name = "conway-nimber-artin-schreier-tower"
+version = "0.1.0"
+defaultTargets = ["ConwayNimberArtinSchreierTower", "Solution"]
+
+[[lean_lib]]
+name = "ConwayNimberArtinSchreierTower"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

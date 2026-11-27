@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Fermat-Tower Artin–Schreier Contraction & Block-Periodicity Engine (adic-3)
+  description: >-
+    **Mechanism Name:** **Fermat-Tower Artin–Schreier Contraction & Block-Periodicity Compiler** (`ConwaySilicon.Nim`) **Core Silicon Principle (Finite $\to$ Infinite Bridge):** Conway's infinite nimber field $(\mathbb{N}, \oplus, \otimes) \cong \overline{\mathbb{F} _ 2} = \bigcup _ {k \ge 0} \mathbb{F} _ {2^{2^k}}$ is formalized directly as an inductive tower of depth-$k$ perfect
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: conway-nimber-artin-schreier-tower
+  license: Apache-2.0

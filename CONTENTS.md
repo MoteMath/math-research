@@ -2140,3 +2140,18 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `evenSum_kirchhoff` | `ShellWalshNestedJoinSpectra.Theorems` | Machine-checked infinite theorem `evenSum_kirchhoff` proved in pure Lean 4 `Init`. |
 | `sharpness_c3_charpoly` | `ShellWalshNestedJoinSpectra.Theorems` | Machine-checked infinite theorem `sharpness_c3_charpoly` proved in pure Lean 4 `Init`. |
 | `witness_nonvacuous_engine` | `ShellWalshNestedJoinSpectra.Theorems` | Non-vacuity witness 4: constructive `Nonempty` witness inhabiting all hypotheses of `orthogonal_eigenbasis_kirchhoff`. |
+
+## 153. [`conway-nimber-artin-schreier-tower/`](conway-nimber-artin-schreier-tower/)
+
+**Mechanism Name:** **Fermat-Tower Artin–Schreier Contraction & Block-Periodicity Compiler** (`ConwaySilicon.Nim`) **Core Silicon Principle (Finite $\to$ Infinite Bridge):** Conway's infinite nimber field $(\mathbb{N}, \oplus, \otimes) \cong \overline{\mathbb{F} _ 2} = \bigcup _ {k \ge 0} \mathbb{F} _ {2^{2^k}}$ is formalized directly as an inductive tower of depth-$k$ perfect
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `mul_inv` | `ConwayNimberArtinSchreierTower.Theorems` | Simultaneous proof of field invertibility `x ≠ 0 → x ⊗ inv x = 1` for all `k`. |
+| `wp_bitLen_contraction` | `ConwayNimberArtinSchreierTower.Theorems` | **Theorem B (Exact Artin-Schreier Bit-Length Contraction):** For every Fermat block `k` and every nonzero nimber `x ∈ Nim k`, applying `℘_k(x) = x^2 ⊕ x` drops `bitLen` by **exactly 1**. |
+| `cosetHarmonic_eq_inv_wpIter` | `ConwayNimberArtinSchreierTower.Theorems` | **Theorem D2 (Universal Coset Nim-Harmonic Law):** For ALL `k`, ALL `m ≤ 2^k`, and ALL `X ∈ Nim k` with `X.toNat ≥ 2^m`: `⨁_{a < 2^m} (X ⊕ a)^{-1} = (℘^m(X))^{-1}`. |
+| `powerSum_binary_collapse` | `ConwayNimberArtinSchreierTower.Theorems` | **Theorem E4 (Binary Power-Sum Collapse):** For ALL `k`, ALL `m ≤ 2^k` (even when `m` is NOT a power of 2, so `[0, 2^m)` is NOT a field!), and ALL exponents `d : Nat`: `⨁_{x < 2^m} x^d ∈ {0, 1}`. |
+| `finite_table_evaluates_all_m` | `ConwayNimberArtinSchreierTower.Theorems` | **Theorem G4 (Finite-to-Infinite Evaluation Compiler):** For ANY `k, m, r, n` with `r < 2^k` and `m + r < 2^n`, the exponentially large `2^m`-term dyadic-coset nim-product `⨂_{a < 2^m} (2^(m + r) ⊕ a)` is **identically equal** to a single finite-table lookup at `m % 2^k` inside the fixed finite block `Nim (k + 1)`! |
+| `dyadicProd_fourth_shell_period4` | `ConwayNimberArtinSchreierTower.Theorems` | For ALL blocks `n` and ALL `m` with `m + 3 < 2^n`, the fourth-shell coset nim-product `⨂_{a < 2^m} (2^(m+3) ⊕ a)` cycles with **exact period 4** through `[8, 8, 10, 11]`. |
+| `sharpness_period_fails_at_k1_r2` | `ConwayNimberArtinSchreierTower.Theorems` | **Sharpness 1a:** Period `2^k` in Theorem G1/G2 FAILS at the exact boundary `r = 2^k` for `k = 1` (`r = 2`: `f_2(0) = 4 ≠ 5 = f_2(2)`). |
+| `sharpness_popcount_boundary_nonzero` | `ConwayNimberArtinSchreierTower.Theorems` | **Sharpness 5:** Popcount Annihilation (`popcount d < m → S(m, d) = 0`, Theorem E2) FAILS at the exact boundary `popcount d = m` (`d = 2^m - 1`) for EVERY `k, m ≤ 2^k`! |

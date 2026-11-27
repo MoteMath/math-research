@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ConwayNimberArtinSchreierTowerChallenge.mul_inv",
+    "ConwayNimberArtinSchreierTowerChallenge.wp_bitLen_contraction",
+    "ConwayNimberArtinSchreierTowerChallenge.cosetHarmonic_eq_inv_wpIter",
+    "ConwayNimberArtinSchreierTowerChallenge.powerSum_binary_collapse",
+    "ConwayNimberArtinSchreierTowerChallenge.finite_table_evaluates_all_m",
+    "ConwayNimberArtinSchreierTowerChallenge.dyadicProd_fourth_shell_period4",
+    "ConwayNimberArtinSchreierTowerChallenge.sharpness_period_fails_at_k1_r2",
+    "ConwayNimberArtinSchreierTowerChallenge.sharpness_popcount_boundary_nonzero"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
