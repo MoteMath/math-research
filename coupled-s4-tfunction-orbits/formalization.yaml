@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Coupled S4 T-Function Orbits - non-abelian S4 fiber-monodromy orbit lifting, D4 cocycle decoupling, no-shear obstruction, and twisted ternary odometer partitions
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a coupled 2-variable reversible T-function orbit-lifting engine based on S4 = AGL(2, F_2) fiber monodromy. Includes exact period lifting, D4 4-cycle characterization, universal D4 parity full-period theorem, the universal no-shear obstruction, an infinite-dimensional functional full-period family, exact twisted ternary odometer cycle partitions of size 3^popcount(x), and a hybrid two-cycle partition.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: coupled-s4-tfunction-orbits
+  license: Apache-2.0

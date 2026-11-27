@@ -1,0 +1,12 @@
+name = "carry-echo-sandpile-duality"
+version = "0.1.0"
+defaultTargets = ["CarryEchoSandpileDuality", "Solution"]
+
+[[lean_lib]]
+name = "CarryEchoSandpileDuality"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

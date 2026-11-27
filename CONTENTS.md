@@ -1229,3 +1229,93 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 | `morton2D_period_dichotomy` | `Challenge` | For every $n \in \mathbb{N}$ and every $z < 4^n$, the minimal period of $z$ under 2D Morton swap $+1$ is strictly $3^k$ ($k \le n$) or $2 \cdot 3^k$ ($k+2 \le n$). |
 | `delayed_fracture_exact_period` | `Challenge` | For every $n \in \mathbb{N}$, the 3-bit Delayed-Fracture map `step 8 piDelay n` has exact minimal period `piDelayAutomaton.orbitProd 0 n` at $0$. |
 | `delayed_fracture_closed_form` | `Challenge` | For every $n \in \mathbb{N}$, the Delayed-Fracture period obeys $\mathrm{orbitProd}(0, n) \cdot 2^{\lfloor n/3 \rfloor} = 8^n$ (full-period at $n=1,2$, fracturing at $n=3$). |
+
+## 92. [`carry-echo-sandpile-duality/`](carry-echo-sandpile-duality/)
+
+Constructive Abelian sandpile and harmonic-group engine: Carry-Echo dual-skew bijection, closed-form Myers identity, exact avalanche divisibility, and Directed-Carry Kummer duality.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `carryEcho_skew_conservation` | `CarryEchoSandpileDuality.Theorems` | In the carry-echo sandpile of base $b$ and width $w \ge 1$, every avalanche conserves `skewWeight` up to top-site topplings times the repunit $R _ {b, w + 1}$. |
+| `carryEcho_total_avalanche_law` | `CarryEchoSandpileDuality.Theorems` | For all $b \ge 2$ and $w$, the harmonic potential $\Psi$ drops by exactly $(\sum _ i f _ i)(b ^ {w + 1} - 1)$ during any carry-echo avalanche. |
+| `carryEcho_recurrent_iff_dualSkew` | `CarryEchoSandpileDuality.Theorems` | For all $b \ge 2$ and $w \ge 1$, a carry-echo configuration is recurrent if and only if it satisfies the local dual-skew canonicality predicate `IsDualSkew`. |
+| `carryEcho_recurrent_count_left` | `CarryEchoSandpileDuality.Theorems` | The harmonic encoding and Myers greedy decoding establish an exact bijection between recurrent carry-echo configurations and $\mathrm{Fin}(R _ {b, w + 1})$. |
+| `carryEcho_explicitIdentity_eq` | `CarryEchoSandpileDuality.Theorems` | For all $b \ge 2$ and $w \ge 1$, the explicit closed-form configuration `explicitIdentity b w` equals the sandpile group identity. |
+| `carryEcho_identity_laws_ge2` | `CarryEchoSandpileDuality.Theorems` | For all $b \ge 2$ and $w \ge 2$, self-addition of the identity satisfies exact harmonic value, top-site firing $1$, and chip-mass congruence modulo $b$. |
+| `directedCarry_all_stable_recurrent` | `CarryEchoSandpileDuality.Theorems` | In the directed-carry sandpile of base $b \ge 2$ and width $w \ge 1$, every stable configuration is recurrent. |
+| `directedCarry_kummer_conservation` | `CarryEchoSandpileDuality.Theorems` | In the directed-carry sandpile, chip mass drops by $(b - 1) \sum _ i f _ i + f _ {w - 1}$, matching Kummer's carry conservation law. |
+
+## 93. [`coupled-s4-tfunction-orbits/`](coupled-s4-tfunction-orbits/)
+
+Non-abelian S4 fiber-monodromy orbit lifting for 2-variable T-functions: D4 cocycle decoupling, no-shear obstruction, and exact twisted ternary odometer partitions.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `orbit_lift_exact_period` | `CoupledS4TfunctionOrbits.Theorems` | If base state $s$ has exact period $L$ at width $w$ and its fiber monodromy has exact period $d$ on $p$, then the lifted state $(p, s)$ has exact period $d \cdot L$ at width $w + 1$. |
+| `d4Elem_is_4cycle_iff` | `CoupledS4TfunctionOrbits.Theorems` | An element of the dihedral fiber group $D _ 4$ acts as a single 4-cycle on $\mathbb{B} \times \mathbb{B}$ if and only if both its shear bit $\lambda$ and translation parity bit $\beta$ are `true`. |
+| `full_period_of_D4_parity` | `CoupledS4TfunctionOrbits.Theorems` | Any $D _ 4$-fibered coupled T-function whose global shear and translation XOR-parities are `true` at every width achieves full period $4 ^ w$ on every state. |
+| `no_shear_never_full_period` | `CoupledS4TfunctionOrbits.Theorems` | No coupled T-function whose fibers are pure translations can achieve full period $4 ^ w$ at any width $w \ge 1$. |
+| `family1_full_period` | `CoupledS4TfunctionOrbits.Theorems` | For arbitrary causal perturbations $P, Q, R$, `family1 P Q R` achieves exact full period $4 ^ w$ on every state at every bit-width $w$. |
+| `ternPoly_exact_cycle_partition` | `CoupledS4TfunctionOrbits.Theorems` | For any list of positive shifts, `ternPoly` partitions all $4 ^ w$ states into exact cycles of length $3 ^ {\mathrm{popcount}(x)}$. |
+| `ternTwistY_exact_partition` | `CoupledS4TfunctionOrbits.Theorems` | The twisted ternary odometer preserves the exact $3 ^ {\mathrm{popcount}(x)}$ cycle partition at every width $w$, even while destroying the $x \mathbin{|} y$ invariant. |
+| `hybridTwoCycle_exact_two_cycles` | `CoupledS4TfunctionOrbits.Theorems` | At every width $w = w' + 1$, `hybridTwoCycle` partitions all $4 ^ w$ states into exactly two cycles of lengths $4 ^ {w'}$ and $3 \cdot 4 ^ {w'}$. |
+
+## 94. [`hensel-silicon-basin-classifier/`](hensel-silicon-basin-classifier/)
+
+3-valued bit-derivative compiler and cycle-localized 2-adic Hensel lifter: universal fixed-point depth <= w, non-power-of-two basins, and exact 2w - 2 cycle transient depth.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `bPoly_absDeriv_sound` | `HenselSiliconBasinClassifier.Theorems` | The 3-valued static bit-derivative of any `BPoly` (mixing $+, *, \mathrm{clmul}, \&, |, \oplus, \sim$) soundly tracks bit-$k$ sensitivity across every width $w > k \ge m$. |
+| `tfunc_fixedPoint_depth_le_width` | `HenselSiliconBasinClassifier.Theorems` | For *any* T-function $F$ on $\mathrm{BitVec}\; w$, every state that reaches a fixed point reaches it in at most $w$ steps (no contraction hypothesis required). |
+| `henselLift_periodic` | `HenselSiliconBasinClassifier.Theorems` | Any locally contracting $L$-cycle at base width $m$ lifts via `henselLift` to an exact $L$-cycle at every width $w \ge m$. |
+| `henselLift_basin_convergence` | `HenselSiliconBasinClassifier.Theorems` | Every $w$-bit state whose $m$-bit truncation reaches a contracting $L$-cycle converges to the lifted $L$-cycle in explicit Hensel rounds. |
+| `fixedPointCount_lift` | `HenselSiliconBasinClassifier.Theorems` | When every base fixed point at width $m$ is locally contracting, the total number of fixed points is constant across all widths $w \ge m$. |
+| `mapAsym_basin_4_nonPowerOfTwo` | `HenselSiliconBasinClassifier.Theorems` | The bitwise-quadratic map `mapAsym` has an attracting basin of exact non-power-of-two cardinality $3 \cdot 2 ^ {w - 3}$ at every width $w \ge 3$. |
+| `mapSeven_fixedPointCount` | `HenselSiliconBasinClassifier.Theorems` | The bitwise-quadratic map `mapSeven` has exactly $7$ fixed points at every width $w \ge 3$. |
+| `mapHalfCycle_depth_exact_sharp` | `HenselSiliconBasinClassifier.Theorems` | `mapHalfCycle` achieves exact transient depth $2 w - 2$ into its 2-cycle at every width $w \ge 2$, strictly exceeding the universal fixed-point depth bound $w$. |
+
+## 95. [`hypercube-carry-shadow-collapse/`](hypercube-carry-shadow-collapse/)
+
+Guarded carry-Mealy bisimulation compiler, universal base-B carry-defect coboundary lifting, exact carry-mask eigenvalue sandwich and 4-operand absorption laws, and universal 2^m-operand hypercube Silicon-Hadamard collapse with BitVec w modular nilpotency.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `checkGuardedBisimWitness_sound` | `HypercubeCarryShadowCollapse.Defs` | Soundness of the finite reachable-state bitmask checker for guarded carry-Mealy transducer bisimulation over all unbounded $\mathrm{Fin}\; k \to \mathbb{N}$ inputs. |
+| `phi_carry_chain_collapse` | `HypercubeCarryShadowCollapse.Defs` | 1-step carry-chain annihilation: $C(x + y, x \oplus y) = 2((x + y) \land (x \oplus y))$ for all $x, y \in \mathbb{N}$. |
+| `carryMask_eigen_sandwich_iff` | `HypercubeCarryShadowCollapse.Defs` | Exact carry-mask eigenvalue characterization: $C(A, v) = 2v \iff (A \land 2v) \subseteq v \subseteq (A \lor 2v)$ for all $A, v \in \mathbb{N}$. |
+| `carryMask_dominated_absorption` | `HypercubeCarryShadowCollapse.Defs` | 4-operand dominated carry absorption: $b, c \subseteq a$ and $d \subseteq b, c$ implies $C(C(a, b), C(c, d)) = 2 \cdot C(a, d)$. |
+| `baseB_carry_defect` | `HypercubeCarryShadowCollapse.Defs` | Universal base-$B$ carry-defect law: $\mathrm{eval} _ B(x) + \mathrm{eval} _ B(y) - \mathrm{eval} _ B(x + y) = (2 - B) \cdot \mathrm{eval} _ B(\lfloor C(x, y) / 2 \rfloor)$ for all $B \in \mathbb{Z}$ and $x, y \in \mathbb{N}$. |
+| `Q_closed_form_on_dom` | `HypercubeCarryShadowCollapse.Defs` | Exact closed form of $Q _ m$ on any dominated $m$-hypercube $y$: $(Q _ m(y)) _ {\mathbf{0}} = 2^m y _ {\mathbf{0}}$ and $(Q _ m(y)) _ I = 2^{m-1} C(y _ {\mathbf{0}}, y _ I)$ for $I \ne \mathbf{0}$. |
+| `Q_collapse_universal` | `HypercubeCarryShadowCollapse.Defs` | Universal $2^m$-operand collapse: $Q _ m^{k+1}(x) = 2^m \cdot Q _ m^k(x)$ for every $m \ge 1$, every $x \in \mathbb{N}^{2^m}$, and every $k \ge 2$. |
+| `Q_bitvec_nilpotent` | `HypercubeCarryShadowCollapse.Theorems` | Universal `BitVec w` modular nilpotency: $(Q _ m^{\mathrm{BV}})^{k+2}(x) = \mathbf{0}$ for all $m \ge 1$, $w \le m k$, and $x \in (\mathrm{BitVec}\; w)^{2^m}$. |
+
+## 96. [`reversible-gate-lattice-flux/`](reversible-gate-lattice-flux/)
+
+Pure-kernel local-flux continuity compiler for reversible gate-lattice CAs: 5-level infinite lifting, 256-gate cubic-charge classification, and all-width Fredkin/Toffoli/SubCNOT conservation.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `fluxCert_verify_sound` | `ReversibleGateLatticeFlux.Theorems` | If a finite `FluxCert` passes `c.verify = true`, then the exact discrete charge-flux continuity identity holds on every $M$-bit window $u : \mathrm{BitVec}\; M$. |
+| `fluxCert_open_segment_continuity` | `ReversibleGateLatticeFlux.Theorems` | A passing `FluxCert` lifts to exact Gauss-Noether continuity: the one-step change of charge on any open segment $[a, a + n)$ of any infinite line $\mathbb{Z} \to \mathbb{B}$ equals the boundary flux difference. |
+| `fluxCert_ring_conserved_iter` | `ReversibleGateLatticeFlux.Theorems` | A passing `FluxCert` proves exact conservation of the total ring charge under arbitrarily many steps $t$ on every ring $\mathrm{BitVec}\; (p \cdot n)$ ($n \ge 1$). |
+| `fredkin_cnot_iff_1_2` | `ReversibleGateLatticeFlux.Theorems` | For every 3-variable Boolean mask $h$, $h$ is ideal for cubic Fredkin-CNOT charge conservation if and only if its finite `FluxCert` passes. |
+| `fredkin_toffoli_conserved_all_widths` | `ReversibleGateLatticeFlux.Theorems` | The Fredkin-Toffoli Margolus lattice conserves the cubic non-Hamming charge $q _ {\mathrm{FT}}$ for all iterations $t$ on every $4 n$-bit ring. |
+| `fredkin_toffoli_reversible_all_widths` | `ReversibleGateLatticeFlux.Theorems` | The Fredkin-Toffoli Margolus step and its explicit inverse form an exact bijection on every $4 n$-bit ring. |
+| `double_fredkin_three_laws_all_widths` | `ReversibleGateLatticeFlux.Theorems` | The Double-Fredkin lattice simultaneously conserves Hamming weight $q _ {\mathrm{HW4}}$, dimer charge $q _ {\mathrm{dimer}}$, rail charge $q _ {\mathrm{rail}}$, and the asymmetric charge at every width $4 n$. |
+| `subcnot_chiral_domain_wall_conserved_all_widths` | `ReversibleGateLatticeFlux.Theorems` | The chiral SubCNOT lattice conserves the domain-wall charge $q _ {\mathrm{DW}}$ for all iterations $t$ on every $2 n$-bit ring. |
+
+## 97. [`two-regular-gray-defect-cones/`](two-regular-gray-defect-cones/)
+
+Pure Lean 4 `Init` formalization (zero Mathlib, toolchain `v4.34.1`): 2-regular linear-representation algebra compiler, finite exact-integer matrix certificate engines (`IdentityCert`, `IntertwineCert`, `ModCert`, `ConePosCert`), and five infinite theorems on Gray-Binary bitwise defect prefix sums.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `TwoRegularGrayDefectConesChallenge.checkConePosCert_sound` | `TwoRegularGrayDefectCones.Theorems` | If a pure-data polyhedral invariant-cone certificate satisfies `checkConePosCert R D = true`, then $\mathrm{evalRep}(R, n) \ge 0$ for every $n \ge 1$. |
+| `TwoRegularGrayDefectConesChallenge.gray_defect_nonneg_all_q` | `TwoRegularGrayDefectCones.Theorems` | For every $q \ge 0$ and every $n \in \mathbb{N}$, the cumulative base-$q$ Gray-Binary defect satisfies $S _ q(q, n) \ge 0$. |
+| `TwoRegularGrayDefectConesChallenge.W_G_sharp_two_fifths_bound` | `TwoRegularGrayDefectCones.Theorems` | For every $n \ge 1$, the cumulative Gray switching-weight excess satisfies $5\,W _ G(n) \le 2n - 2 + (n \bmod 2)$. |
+| `TwoRegularGrayDefectConesChallenge.extremal_W_G_odd` | `TwoRegularGrayDefectCones.Theorems` | For every $k \in \mathbb{N}$, the infinite extremal family $a _ k$ (`extremalA k`) attains exact equality $5\,W _ G(a _ k) = 2 a _ k - 1$. |
+| `TwoRegularGrayDefectConesChallenge.W_G_thue_morse_parity` | `TwoRegularGrayDefectCones.Theorems` | For every $n \in \mathbb{N}$, $2 \mid (W _ G(n) - (n \bmod 2)(1 - (\mathrm{popcount}(n) \bmod 2)))$ (aperiodic odd-filtered Thue-Morse parity). |
+| `TwoRegularGrayDefectConesChallenge.E_G_mod4_law` | `TwoRegularGrayDefectCones.Theorems` | For every $n \in \mathbb{N}$, $4 \mid (E _ G(n) - (n \bmod 2)(\lfloor n / 2 \rfloor \bmod 4))$ (exact period-8 law). |
+| `TwoRegularGrayDefectConesChallenge.E_G_dyadic_parabolic_sandwich` | `TwoRegularGrayDefectCones.Theorems` | For every $n \in \mathbb{N}$, the cumulative Gray value excess satisfies $Q _ {\mathrm{dyadic}}(n) \le 2\,E _ G(n) \le 2\,Q _ {\mathrm{dyadic}}(n)$. |
+| `TwoRegularGrayDefectConesChallenge.S_q_second_diff_identity` | `TwoRegularGrayDefectCones.Theorems` | For every $q \in \mathbb{Z}$ and every $n \in \mathbb{N}$, $S _ q(q, 2n) + S _ q(q, 2n + 2) - 2\,S _ q(q, 2n + 1) = -2\,(n \bmod 2)$, independent of $q$. |

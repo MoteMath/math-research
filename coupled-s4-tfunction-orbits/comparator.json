@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CoupledS4TfunctionOrbitsChallenge.orbit_lift_exact_period",
+    "CoupledS4TfunctionOrbitsChallenge.d4Elem_is_4cycle_iff",
+    "CoupledS4TfunctionOrbitsChallenge.full_period_of_D4_parity",
+    "CoupledS4TfunctionOrbitsChallenge.no_shear_never_full_period",
+    "CoupledS4TfunctionOrbitsChallenge.family1_full_period",
+    "CoupledS4TfunctionOrbitsChallenge.ternPoly_exact_cycle_partition",
+    "CoupledS4TfunctionOrbitsChallenge.ternTwistY_exact_partition",
+    "CoupledS4TfunctionOrbitsChallenge.hybridTwoCycle_exact_two_cycles"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

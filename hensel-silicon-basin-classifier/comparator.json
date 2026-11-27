@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "HenselSiliconBasinClassifierChallenge.bPoly_absDeriv_sound",
+    "HenselSiliconBasinClassifierChallenge.tfunc_fixedPoint_depth_le_width",
+    "HenselSiliconBasinClassifierChallenge.henselLift_periodic",
+    "HenselSiliconBasinClassifierChallenge.henselLift_basin_convergence",
+    "HenselSiliconBasinClassifierChallenge.fixedPointCount_lift",
+    "HenselSiliconBasinClassifierChallenge.mapAsym_basin_4_nonPowerOfTwo",
+    "HenselSiliconBasinClassifierChallenge.mapSeven_fixedPointCount",
+    "HenselSiliconBasinClassifierChallenge.mapHalfCycle_depth_exact_sharp"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

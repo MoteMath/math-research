@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carry Echo Sandpile Duality - constructive AbelianToppleSys burning engine, dual skew-base-b bijection, and explicit Myers identity laws for carry-echo and directed-carry sandpiles
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a constructive Abelian toppling and harmonic-group certificate engine. Instantiated on two parametric silicon sandpile families across all bases b >= 2 and widths w >= 1: the Carry-Echo sandpile (exact skew-weight conservation, total avalanche divisibility by b^(w+1) - 1, dual-skew recurrence bijection of cardinality (b^(w+1) - 1)/(b - 1), and explicit closed-form Myers greedy identity with universal avalanche laws) and the Directed-Carry sandpile (all stable states recurrent and exact Kummer conservation).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: carry-echo-sandpile-duality
+  license: Apache-2.0

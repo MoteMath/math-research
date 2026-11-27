@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Hypercube Carry-Shadow Collapse - Guarded Carry-Mealy Bisimulation Compiler and Universal 2^m-Operand Silicon-Hadamard Collapse
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a compositional guarded carry-Mealy bisimulation compiler, universal base-B carry-defect coboundary lifting, exact carry-mask eigenvalue sandwich and 4-operand dominated absorption laws, and the universal 2^m-operand hypercube Silicon-Hadamard collapse (Q_m^{k+1}(x) = 2^m * Q_m^k(x) for all m >= 1 and k >= 2) with exact BitVec w modular nilpotency.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: hypercube-carry-shadow-collapse
+  license: Apache-2.0

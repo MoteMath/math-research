@@ -1,0 +1,12 @@
+name = "coupled-s4-tfunction-orbits"
+version = "0.1.0"
+defaultTargets = ["CoupledS4TfunctionOrbits", "Solution"]
+
+[[lean_lib]]
+name = "CoupledS4TfunctionOrbits"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

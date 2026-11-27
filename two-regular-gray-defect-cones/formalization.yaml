@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: 2-Regular Linear-Representation Algebra and Gray-Binary Defect Cones - finite matrix certificates for infinite inequalities, modular laws and parabolic envelopes
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a 2-regular sequence
+    linear-representation algebra compiler (ring operations, decimation, carry-block shift, prefix sum)
+    and four finite exact-integer matrix certificate engines (IdentityCert, IntertwineCert, ModCert,
+    ConeCert/ConePosCert with kernel-decidable Bool checkers), discharging five infinite theorems on
+    the 1-parameter base-q Gray-Binary bitwise defect including the sharp 2/5 switching-weight bound,
+    infinite extremal attainment, aperiodic Thue-Morse parity, period-8 mod-4 law, exact dyadic
+    parabolic sandwich and a q-independent second-difference law.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: two-regular-gray-defect-cones
+  license: Apache-2.0

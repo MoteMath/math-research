@@ -1,0 +1,12 @@
+name = "hensel-silicon-basin-classifier"
+version = "0.1.0"
+defaultTargets = ["HenselSiliconBasinClassifier", "Solution"]
+
+[[lean_lib]]
+name = "HenselSiliconBasinClassifier"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

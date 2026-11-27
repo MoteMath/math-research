@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "TwoRegularGrayDefectConesChallenge.checkConePosCert_sound",
+    "TwoRegularGrayDefectConesChallenge.gray_defect_nonneg_all_q",
+    "TwoRegularGrayDefectConesChallenge.W_G_sharp_two_fifths_bound",
+    "TwoRegularGrayDefectConesChallenge.extremal_W_G_odd",
+    "TwoRegularGrayDefectConesChallenge.W_G_thue_morse_parity",
+    "TwoRegularGrayDefectConesChallenge.E_G_mod4_law",
+    "TwoRegularGrayDefectConesChallenge.E_G_dyadic_parabolic_sandwich",
+    "TwoRegularGrayDefectConesChallenge.S_q_second_diff_identity"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

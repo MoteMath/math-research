@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Hensel Silicon Basin Classifier - 3-valued bit-derivative compiler and cycle-localized 2-adic Hensel fixed-point and basin lifting across all bit-widths
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a 3-valued bit-derivative abstract-interpretation compiler and cycle-localized 2-adic Hensel contraction lifter for bitwise-arithmetic T-functions (unifying carried multiplication, carry-less clmul, and bitwise operations). Proves the contraction-free universal fixed-point depth bound <= w, periodic orbit and basin lifting across all widths, exact non-power-of-two basin size 3 * 2^(w - 3), a 7-fixed-point bitwise-quadratic map, and exact 2w - 2 cycle transient depth.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: hensel-silicon-basin-classifier
+  license: Apache-2.0

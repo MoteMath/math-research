@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Reversible Gate Lattice Flux - pure-kernel FluxCert continuity compiler and all-width conservation laws for Fredkin, Toffoli, and SubCNOT reversible cellular automata
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a pure-data local-flux continuity certificate compiler for reversible gate-lattice cellular automata. Lifts finite BitVec window checks to open-segment Gauss-Noether continuity on infinite lines and arbitrary-width periodic rings, classifies all 256 Fredkin-CNOT masks for cubic non-Hamming charge conservation, and proves all-width conservation and reversibility for Fredkin-Toffoli, Double-Fredkin (3 independent charges), and chiral SubCNOT lattices.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: reversible-gate-lattice-flux
+  license: Apache-2.0

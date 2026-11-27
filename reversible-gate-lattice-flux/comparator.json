@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ReversibleGateLatticeFluxChallenge.fluxCert_verify_sound",
+    "ReversibleGateLatticeFluxChallenge.fluxCert_open_segment_continuity",
+    "ReversibleGateLatticeFluxChallenge.fluxCert_ring_conserved_iter",
+    "ReversibleGateLatticeFluxChallenge.fredkin_cnot_iff_1_2",
+    "ReversibleGateLatticeFluxChallenge.fredkin_toffoli_conserved_all_widths",
+    "ReversibleGateLatticeFluxChallenge.fredkin_toffoli_reversible_all_widths",
+    "ReversibleGateLatticeFluxChallenge.double_fredkin_three_laws_all_widths",
+    "ReversibleGateLatticeFluxChallenge.subcnot_chiral_domain_wall_conserved_all_widths"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

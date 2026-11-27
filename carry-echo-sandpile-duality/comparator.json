@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarryEchoSandpileDualityChallenge.carryEcho_skew_conservation",
+    "CarryEchoSandpileDualityChallenge.carryEcho_total_avalanche_law",
+    "CarryEchoSandpileDualityChallenge.carryEcho_recurrent_iff_dualSkew",
+    "CarryEchoSandpileDualityChallenge.carryEcho_recurrent_count_left",
+    "CarryEchoSandpileDualityChallenge.carryEcho_explicitIdentity_eq",
+    "CarryEchoSandpileDualityChallenge.carryEcho_identity_laws_ge2",
+    "CarryEchoSandpileDualityChallenge.directedCarry_all_stable_recurrent",
+    "CarryEchoSandpileDualityChallenge.directedCarry_kummer_conservation"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

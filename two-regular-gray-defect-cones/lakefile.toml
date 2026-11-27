@@ -1,0 +1,12 @@
+name = "two-regular-gray-defect-cones"
+version = "0.1.0"
+defaultTargets = ["TwoRegularGrayDefectCones", "Solution"]
+
+[[lean_lib]]
+name = "TwoRegularGrayDefectCones"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,12 @@
+name = "hypercube-carry-shadow-collapse"
+version = "0.1.0"
+defaultTargets = ["HypercubeCarryShadowCollapse", "Solution"]
+
+[[lean_lib]]
+name = "HypercubeCarryShadowCollapse"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

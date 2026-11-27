@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms TwoRegularGrayDefectConesChallenge.checkConePosCert_sound
+#print axioms TwoRegularGrayDefectConesChallenge.gray_defect_nonneg_all_q
+#print axioms TwoRegularGrayDefectConesChallenge.W_G_sharp_two_fifths_bound
+#print axioms TwoRegularGrayDefectConesChallenge.extremal_W_G_odd
+#print axioms TwoRegularGrayDefectConesChallenge.W_G_thue_morse_parity
+#print axioms TwoRegularGrayDefectConesChallenge.E_G_mod4_law
+#print axioms TwoRegularGrayDefectConesChallenge.E_G_dyadic_parabolic_sandwich
+#print axioms TwoRegularGrayDefectConesChallenge.S_q_second_diff_identity

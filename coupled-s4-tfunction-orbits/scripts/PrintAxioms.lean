@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms CoupledS4TfunctionOrbitsChallenge.orbit_lift_exact_period
+#print axioms CoupledS4TfunctionOrbitsChallenge.d4Elem_is_4cycle_iff
+#print axioms CoupledS4TfunctionOrbitsChallenge.full_period_of_D4_parity
+#print axioms CoupledS4TfunctionOrbitsChallenge.no_shear_never_full_period
+#print axioms CoupledS4TfunctionOrbitsChallenge.family1_full_period
+#print axioms CoupledS4TfunctionOrbitsChallenge.ternPoly_exact_cycle_partition
+#print axioms CoupledS4TfunctionOrbitsChallenge.ternTwistY_exact_partition
+#print axioms CoupledS4TfunctionOrbitsChallenge.hybridTwoCycle_exact_two_cycles

@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "HypercubeCarryShadowCollapseChallenge.checkGuardedBisimWitness_sound",
+    "HypercubeCarryShadowCollapseChallenge.phi_carry_chain_collapse",
+    "HypercubeCarryShadowCollapseChallenge.carryMask_eigen_sandwich_iff",
+    "HypercubeCarryShadowCollapseChallenge.carryMask_dominated_absorption",
+    "HypercubeCarryShadowCollapseChallenge.baseB_carry_defect",
+    "HypercubeCarryShadowCollapseChallenge.Q_closed_form_on_dom",
+    "HypercubeCarryShadowCollapseChallenge.Q_collapse_universal",
+    "HypercubeCarryShadowCollapseChallenge.Q_bitvec_nilpotent"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
