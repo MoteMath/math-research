@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms MersenneFermatBitfoldCrtChallenge.mersenne_exact_threshold
+#print axioms MersenneFermatBitfoldCrtChallenge.fermat_exact_envelope
+#print axioms MersenneFermatBitfoldCrtChallenge.total_carry_conservation
+#print axioms MersenneFermatBitfoldCrtChallenge.tower_factorization
+#print axioms MersenneFermatBitfoldCrtChallenge.idemM_popcount
+#print axioms MersenneFermatBitfoldCrtChallenge.idem_partition_of_unity
+#print axioms MersenneFermatBitfoldCrtChallenge.dyadic_butterfly_exact
+#print axioms MersenneFermatBitfoldCrtChallenge.mersenne_exact_min_depth_dichotomy

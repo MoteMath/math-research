@@ -1142,3 +1142,33 @@ Exact 2-adic Newton, polynomial and circuit optimality laws (pure `Init`).
 | `recip_minimal_step_dumas` | `TwoAdicNewtonPolyOptimality.Theorems` | The order-$d$ reciprocal iteration seeded by the Dumas seed inverts every odd $a$ modulo $2^N$ after $k$ steps if and only if $N \le 5 d^k$. |
 | `invSqrtS3_popcount_supergain` | `TwoAdicNewtonPolyOptimality.Theorems` | The cubic inverse-square-root step has exact error valuation $(3^k (2 m _ 0 - 3) + 3) / 2$, which exceeds the quadratic one by $(3^k - 1)/2$. |
 | `invSqrtS4_eq_S2_double_valuation` | `TwoAdicNewtonPolyOptimality.Theorems` | The quartic inverse-square-root step after $k$ steps has the same exact valuation $4^k (m _ 0 - 2) + 2$ as the quadratic step after $2k$ steps. |
+
+## 86. [`mersenne-fermat-bitfold-crt/`](mersenne-fermat-bitfold-crt/)
+
+Mersenne and Fermat bit-folding thresholds, carry conservation and Rademacher CRT idempotents (pure `Init`).
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `mersenne_exact_threshold` | `MersenneFermatBitfoldCrt.Theorems` | For $k, r \ge 1$ and $n < 2^{rk} + 2^k - 1$, $r$ Mersenne folds give a value below $2^k$ equal to the canonical residue of $n$ modulo $2^k - 1$. |
+| `fermat_exact_envelope` | `MersenneFermatBitfoldCrt.Theorems` | For $-2^{rk} \le x \le 2^{rk} + 2^k - 1$, $r$ signed Fermat folds land in $[-1, 2^k]$. |
+| `total_carry_conservation` | `MersenneFermatBitfoldCrt.Theorems` | Any positive-stride Mersenne folding schedule that absorbs $n$ returns the canonical residue and removes exactly $\mathrm{pop}(n) - \mathrm{pop}(\mathrm{canon}(n))$ carries. |
+| `tower_factorization` | `MersenneFermatBitfoldCrt.Theorems` | For all $d, k$: $(2^k - 1) \cdot \prod _ {j < d} (2^{2^j k} + 1) = 2^{2^d k} - 1$. |
+| `idemM_popcount` | `MersenneFermatBitfoldCrt.Theorems` | The Mersenne Rademacher idempotent has exactly $2^d$ one bits for every $d$ and $k \ge 1$. |
+| `idem_partition_of_unity` | `MersenneFermatBitfoldCrt.Theorems` | The Mersenne idempotent plus all Fermat idempotents sum to $1$ modulo $2^{2^d k} - 1$. |
+| `dyadic_butterfly_exact` | `MersenneFermatBitfoldCrt.Theorems` | The dyadic bit-folding butterfly tree of $x$ reconstructs $x$ modulo $2^{2^d k} - 1$ exactly, for every $d$, $k \ge 1$ and integer $x$. |
+| `mersenne_exact_min_depth_dichotomy` | `MersenneFermatBitfoldCrt.Theorems` | For $2 \le d$, $2 \le k$, $d \le 2^k$: a positive-stride schedule of length $d + 2$ absorbs every $n < 2^{2^d k}$, while every schedule of length at most $d + 1$ fails for some such $n$. |
+
+## 87. [`signed-digit-naf-lookahead/`](signed-digit-naf-lookahead/)
+
+Pure Lean 4 `Init` formalization (zero Mathlib, toolchain `v4.34.1`): finite-state signed-digit carry-absorption certificate compiler, 5-state NAF defect conservation and cubic counting recurrences, constant-depth weight-subadditive odd-lookahead parallel addition, and universal zero-lookahead impossibility.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `SignedDigitNafLookaheadChallenge.nat_naf_conservation` | `SignedDigitNafLookahead.Theorems` | For every $n \in \mathbb{N}$, `nafRecode (natToSD n)` is the canonical NAF of $n$ and $\mathrm{popcount}(n) = \mathrm{sdWt}(\mathrm{nafRecode}(\mathrm{natToSD}(n))) + \mathrm{nafTotalDefect}(\mathrm{natToSD}(n))$. |
+| `SignedDigitNafLookaheadChallenge.nafRecode_minimal_iff` | `SignedDigitNafLookahead.Theorems` | For every signed-digit stream $D$, $\mathrm{sdWt}(\mathrm{nafRecode}(D)) = \mathrm{sdWt}(D) \iff \mathrm{nafTotalDefect}(D) = 0$. |
+| `SignedDigitNafLookaheadChallenge.naf_global_minimal` | `SignedDigitNafLookahead.Theorems` | For any signed-digit streams $A, D$ with $\mathrm{sdVal}(A) = \mathrm{sdVal}(D)$, $\mathrm{sdWt}(\mathrm{nafRecode}(A)) \le \mathrm{sdWt}(D)$. |
+| `SignedDigitNafLookaheadChallenge.countZeroDefectBin_recurrence` | `SignedDigitNafLookahead.Theorems` | For every $w \in \mathbb{N}$, the count $Z(w)$ of $w$-bit binary words with zero NAF defect satisfies $Z(w + 3) + Z(w) = Z(w + 2) + 2\,Z(w + 1)$. |
+| `SignedDigitNafLookaheadChallenge.countZeroDefectSD_recurrence` | `SignedDigitNafLookahead.Theorems` | For every $w \in \mathbb{N}$, the count $M(w)$ of minimal-weight signed-digit words of length $w$ satisfies $M(w + 3) + M(w) = M(w + 2) + 3\,M(w + 1)$. |
+| `SignedDigitNafLookaheadChallenge.olAdd_sound_and_subadditive` | `SignedDigitNafLookahead.Theorems` | For all signed-digit streams $A, B$, the $O(1)$-depth odd-lookahead parallel adder satisfies $\mathrm{sdVal}(A \boxplus B) = \mathrm{sdVal}(A) + \mathrm{sdVal}(B)$ and $\mathrm{sdWt}(A \boxplus B) \le \mathrm{sdWt}(A) + \mathrm{sdWt}(B)$. |
+| `SignedDigitNafLookaheadChallenge.causal_adder_not_subadditive` | `SignedDigitNafLookahead.Theorems` | For every finite causal lookback radius $r \in \mathbb{N}$ and every valid causal carry-free parallel adder $A$, there exists $1 \le k \le r + 1$ with $\mathrm{causalOutWt}(A.C, 1^k) > k$. |
+| `SignedDigitNafLookaheadChallenge.chowRobertson_periodic_blowup` | `SignedDigitNafLookahead.Theorems` | For every $m \in \mathbb{N}$, classical Chow-Robertson addition ($r = 1$) satisfies $\mathrm{causalOutWt}(\mathrm{crCarry}, (1, 1, 0)^m) = 3m$ while $\mathrm{sdWt}((1, 1, 0)^m) = 2m$. |

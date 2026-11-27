@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SignedDigitNafLookaheadChallenge.nat_naf_conservation",
+    "SignedDigitNafLookaheadChallenge.nafRecode_minimal_iff",
+    "SignedDigitNafLookaheadChallenge.naf_global_minimal",
+    "SignedDigitNafLookaheadChallenge.countZeroDefectBin_recurrence",
+    "SignedDigitNafLookaheadChallenge.countZeroDefectSD_recurrence",
+    "SignedDigitNafLookaheadChallenge.olAdd_sound_and_subadditive",
+    "SignedDigitNafLookaheadChallenge.causal_adder_not_subadditive",
+    "SignedDigitNafLookaheadChallenge.chowRobertson_periodic_blowup"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

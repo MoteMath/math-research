@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Signed-Digit NAF Carry-Absorption and Odd-Lookahead Parallel Addition - exact defect conservation, cubic counting recurrences and a universal zero-lookahead impossibility theorem
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a pure-data finite-state
+    signed-digit carry-absorption certificate compiler, instantiated on the 5-state SD to NAF recoder
+    (exact weight-defect conservation, global minimality, exact cubic zero-defect counting recurrences)
+    and on a constant-depth odd-lookahead carry-free parallel adder (exact and weight-subadditive), together
+    with a universal impossibility theorem for causal carry-free adders of every finite lookback radius and
+    the explicit 3/2 weight blowup of classical Chow-Robertson addition.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: signed-digit-naf-lookahead
+  license: Apache-2.0

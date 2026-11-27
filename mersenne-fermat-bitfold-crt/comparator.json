@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MersenneFermatBitfoldCrtChallenge.mersenne_exact_threshold",
+    "MersenneFermatBitfoldCrtChallenge.fermat_exact_envelope",
+    "MersenneFermatBitfoldCrtChallenge.total_carry_conservation",
+    "MersenneFermatBitfoldCrtChallenge.tower_factorization",
+    "MersenneFermatBitfoldCrtChallenge.idemM_popcount",
+    "MersenneFermatBitfoldCrtChallenge.idem_partition_of_unity",
+    "MersenneFermatBitfoldCrtChallenge.dyadic_butterfly_exact",
+    "MersenneFermatBitfoldCrtChallenge.mersenne_exact_min_depth_dichotomy"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

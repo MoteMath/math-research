@@ -1,0 +1,12 @@
+name = "mersenne-fermat-bitfold-crt"
+version = "0.1.0"
+defaultTargets = ["MersenneFermatBitfoldCrt", "Solution"]
+
+[[lean_lib]]
+name = "MersenneFermatBitfoldCrt"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

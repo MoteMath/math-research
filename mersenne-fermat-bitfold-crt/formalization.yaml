@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Mersenne Fermat Bitfold CRT - exact bit-folding thresholds, carry conservation and Rademacher CRT idempotents
+  description: >-
+    A sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of recursive bit-folding reduction modulo 2^k plus or minus 1: finite-to-infinite folding-program compilers, sharp Mersenne and signed-Fermat carry-absorption thresholds, a schedule-invariant carry conservation law, and explicit Rademacher square-wave CRT idempotents for the tower 2^(2^d k) - 1.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: mersenne-fermat-bitfold-crt
+  license: Apache-2.0

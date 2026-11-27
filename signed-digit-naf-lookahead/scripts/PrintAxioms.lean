@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms SignedDigitNafLookaheadChallenge.nat_naf_conservation
+#print axioms SignedDigitNafLookaheadChallenge.nafRecode_minimal_iff
+#print axioms SignedDigitNafLookaheadChallenge.naf_global_minimal
+#print axioms SignedDigitNafLookaheadChallenge.countZeroDefectBin_recurrence
+#print axioms SignedDigitNafLookaheadChallenge.countZeroDefectSD_recurrence
+#print axioms SignedDigitNafLookaheadChallenge.olAdd_sound_and_subadditive
+#print axioms SignedDigitNafLookaheadChallenge.causal_adder_not_subadditive
+#print axioms SignedDigitNafLookaheadChallenge.chowRobertson_periodic_blowup
