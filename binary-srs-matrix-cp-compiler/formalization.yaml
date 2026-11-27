@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Binary SRS Matrix/Critical-Pair Compiler — certified termination and confluence for binary string rewriting, Euler–Fermat confluence dichotomy, and infinite Mersenne/Fermat residue normalizers
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a layered matrix-weight
+    plus critical-pair trace-replay reflection engine for binary string rewriting systems (master
+    soundness theorem cert_sound, constructive Newman lemma, Church-Rosser word-problem normalizer),
+    the exact confluence dichotomy Confluent(S(b, r, s, k, d)) iff k <= b^s and d | b^r - b^s for the
+    5-parameter amplification family, and infinite families of local binary normalizers computing the
+    residue modulo 2^m - 1 and 2^m + 1 on bit-strings of arbitrary width.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: binary-srs-matrix-cp-compiler
+  license: Apache-2.0

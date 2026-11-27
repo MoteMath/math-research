@@ -1,0 +1,12 @@
+name = "binary-srs-matrix-cp-compiler"
+version = "0.1.0"
+defaultTargets = ["BinarySrsMatrixCpCompiler", "Solution"]
+
+[[lean_lib]]
+name = "BinarySrsMatrixCpCompiler"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

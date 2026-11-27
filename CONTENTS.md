@@ -932,3 +932,33 @@ Pure Lean 4 Init formalization (zero Mathlib, toolchain v4.34.1): one-sided weig
 | `CarriedCaCoboundaryRigidityChallenge.fredkinRouter_iter_popcount_exact` | `CarriedCaCoboundaryRigidity.Theorems` | For every delay d and every iterate count t, the zero-flushed carried Fredkin router conserves popcount exactly. |
 | `CarriedCaCoboundaryRigidityChallenge.walkInv_involutive` | `CarriedCaCoboundaryRigidity.Theorems` | For every capacity K, the bounded-walk transducer walkInv K is an involution on all finite bit words. |
 | `CarriedCaCoboundaryRigidityChallenge.rule54_105_period4` | `CarriedCaCoboundaryRigidity.Theorems` | The nonlinear carried hybrid automaton T54_105 satisfies $T ^ 4 = \mathrm{id}$ on all finite bit words. |
+
+## 72. [`binary-srs-matrix-cp-compiler/`](binary-srs-matrix-cp-compiler/)
+
+Pure-Init Lean 4 matrix-weight plus critical-pair certificate compiler for binary string rewriting: a finite kernel-decidable check proves termination, confluence and normal-form uniqueness on all bit-strings, with an exact confluence dichotomy and infinite residue-normalizer families.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `cert_sound` | `BinarySrsMatrixCpCompiler.Theorems` | If the finite checker accepts a `ConfluenceCert` for a binary SRS $R$, then $R$ is terminating, confluent and has unique normal forms on all bit-strings. |
+| `convertible_iff_normalize_eq` | `BinarySrsMatrixCpCompiler.Theorems` | For a certified $R$ and all bit-strings $u, v$: $\mathrm{Convertible}(R, u, v) \iff \mathrm{normalize}(R, u) = \mathrm{normalize}(R, v)$. |
+| `confluent_of_term_invariant` | `BinarySrsMatrixCpCompiler.Theorems` | A terminating SRS preserving an invariant that is injective on normal forms is confluent, has unique normal forms, and $\mathrm{Convertible}(u, v) \iff \mathrm{inv}(u) = \mathrm{inv}(v)$. |
+| `ampSys_terminating` | `BinarySrsMatrixCpCompiler.Theorems` | For $b \ge 2$, $s < r$, $k, d \ge 1$, the system $\{10 \to 0^b 1,\; 0^{k+d} \to 0^k,\; 1^r \to 1^s\}$ is terminating. |
+| `ampSys_confluent_iff` | `BinarySrsMatrixCpCompiler.Theorems` | For the same parameters the system is confluent if and only if $k \le b^s$ and $d \mid b^r - b^s$. |
+| `mod3_convertible_iff` | `BinarySrsMatrixCpCompiler.Theorems` | Two bit-strings are convertible under the 4-rule system `mod3SRS` iff they have equal length and $\mathrm{binVal}(u) \equiv \mathrm{binVal}(v) \pmod 3$. |
+| `mersenneSRS_master` | `BinarySrsMatrixCpCompiler.Theorems` | For every $m \ge 2$, the $(2^m - 1)$-rule system is terminating, confluent, has unique normal forms, and is convertible exactly when lengths agree and $\mathrm{binVal}(u) \equiv \mathrm{binVal}(v) \pmod{2^m - 1}$. |
+| `fermatModSRS_master` | `BinarySrsMatrixCpCompiler.Theorems` | For every $m \ge 1$, the $(2^m + 1)$-rule system is terminating, confluent, has unique normal forms, and is convertible exactly when lengths agree and $\mathrm{binVal}(u) \equiv \mathrm{binVal}(v) \pmod{2^m + 1}$. |
+
+## 73. [`modular-carry-residue-duality/`](modular-carry-residue-duality/)
+
+Pure-Init Lean 4 dual MSB-Euclid / LSB-2-adic carry-transducer engine with residue-blind reciprocal popcount laws for Mersenne, Fermat and negacyclic moduli ($\forall k, d, t$).
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `ModularCarryResidueDualityChallenge.master_dual_carry_residue_law` | `ModularCarryResidueDuality.Theorems` | For every odd $m$, $L$ and $n < 2 ^ L$: $m \cdot \mathcal{I} _ m(n, L) = 2 ((n \bmod m) + c _ L) - O _ m(n \bmod m, L)$. |
+| `ModularCarryResidueDualityChallenge.synchronized_trace_divisibility_iff` | `ModularCarryResidueDuality.Theorems` | $m \mid n \iff c _ L = 0 \iff (\forall i \le L,\ r _ i = c _ i) \iff Q _ L(n) = \lfloor n / m \rfloor$ for every odd $m$. |
+| `ModularCarryResidueDualityChallenge.carry_complementarity_law` | `ModularCarryResidueDuality.Theorems` | For $m \nmid n$: $\kappa _ {\mathrm{add}}(\lfloor n / m \rfloor, Q _ L(n \bmod m)) + W _ m(n, L) = L - 1 - v _ 2(n \bmod m)$. |
+| `ModularCarryResidueDualityChallenge.mersenne_dual_invariant_law` | `ModularCarryResidueDuality.Theorems` | For $m = 2 ^ k - 1$, $k \ge 2$, $t \ge 1$: $\mathcal{I} _ m(n, t k) = 0$ if $m \mid n$, else $2 - t \cdot s _ 2(n \bmod m)$. |
+| `ModularCarryResidueDualityChallenge.mersenne_divisibility_threshold_iff` | `ModularCarryResidueDuality.Theorems` | For $t \ge 3$: $(2 ^ k - 1) \mid n \iff s _ 2(Q _ {t k}(n)) - s _ 2(\lfloor n / (2 ^ k - 1) \rfloor) = W _ {2 ^ k - 1}(n, t k)$. |
+| `ModularCarryResidueDualityChallenge.mersenne_reciprocal_popcount_law` | `ModularCarryResidueDuality.Theorems` | $s _ 2(Q _ {t k}(r)) = t (k - s _ 2(r)) + 1 - v _ 2(r)$ for $0 < r < 2 ^ k - 1$. |
+| `ModularCarryResidueDualityChallenge.negacyclic_reciprocal_popcount_law` | `ModularCarryResidueDuality.Theorems` | For odd $m \ge 3$ with $m \mid 2 ^ d + 1$: $s _ 2(Q _ {2 t d}(r)) = t d + 1 - v _ 2(r)$ for $0 < r < m$, independent of $s _ 2(r)$. |
+| `ModularCarryResidueDualityChallenge.fermat_reciprocal_popcount_law` | `ModularCarryResidueDuality.Theorems` | $s _ 2(Q _ {2 t k}(r)) = t k + 1 - v _ 2(r)$ for $m = 2 ^ k + 1$ and $0 < r < m$. |

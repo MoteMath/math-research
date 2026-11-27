@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BinarySrsMatrixCpCompilerChallenge.cert_sound",
+    "BinarySrsMatrixCpCompilerChallenge.convertible_iff_normalize_eq",
+    "BinarySrsMatrixCpCompilerChallenge.confluent_of_term_invariant",
+    "BinarySrsMatrixCpCompilerChallenge.ampSys_terminating",
+    "BinarySrsMatrixCpCompilerChallenge.ampSys_confluent_iff",
+    "BinarySrsMatrixCpCompilerChallenge.mod3_convertible_iff",
+    "BinarySrsMatrixCpCompilerChallenge.mersenneSRS_master",
+    "BinarySrsMatrixCpCompilerChallenge.fermatModSRS_master"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

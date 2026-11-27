@@ -1,0 +1,12 @@
+name = "modular-carry-residue-duality"
+version = "0.1.0"
+defaultTargets = ["ModularCarryResidueDuality", "Solution"]
+
+[[lean_lib]]
+name = "ModularCarryResidueDuality"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

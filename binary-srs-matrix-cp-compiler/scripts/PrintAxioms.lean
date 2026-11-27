@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BinarySrsMatrixCpCompilerChallenge.cert_sound
+#print axioms BinarySrsMatrixCpCompilerChallenge.convertible_iff_normalize_eq
+#print axioms BinarySrsMatrixCpCompilerChallenge.confluent_of_term_invariant
+#print axioms BinarySrsMatrixCpCompilerChallenge.ampSys_terminating
+#print axioms BinarySrsMatrixCpCompilerChallenge.ampSys_confluent_iff
+#print axioms BinarySrsMatrixCpCompilerChallenge.mod3_convertible_iff
+#print axioms BinarySrsMatrixCpCompilerChallenge.mersenneSRS_master
+#print axioms BinarySrsMatrixCpCompilerChallenge.fermatModSRS_master

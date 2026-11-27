@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ModularCarryResidueDualityChallenge.master_dual_carry_residue_law",
+    "ModularCarryResidueDualityChallenge.synchronized_trace_divisibility_iff",
+    "ModularCarryResidueDualityChallenge.carry_complementarity_law",
+    "ModularCarryResidueDualityChallenge.mersenne_dual_invariant_law",
+    "ModularCarryResidueDualityChallenge.mersenne_divisibility_threshold_iff",
+    "ModularCarryResidueDualityChallenge.mersenne_reciprocal_popcount_law",
+    "ModularCarryResidueDualityChallenge.negacyclic_reciprocal_popcount_law",
+    "ModularCarryResidueDualityChallenge.fermat_reciprocal_popcount_law"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

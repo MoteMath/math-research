@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Modular Carry-Residue Duality - MSB-Euclid / LSB-2-adic coboundary coupling with residue-blind reciprocal popcount laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a bidirectional dual
+    transducer engine: for every odd modulus m, an MSB-first Euclidean remainder automaton and an LSB-first
+    2-adic division carry transducer run on the same input and their one-bit coboundary certificates couple
+    so that the input popcount cancels identically (master dual conservation law, synchronized-trace
+    divisibility, carry complementarity). Specializations for all Mersenne moduli 2^k - 1, all Fermat moduli
+    2^k + 1 and all odd m dividing 2^d + 1 give residue-blind 2-adic reciprocal popcount laws with an exact
+    exception set and kernel-checked sharpness.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: modular-carry-residue-duality
+  license: Apache-2.0
