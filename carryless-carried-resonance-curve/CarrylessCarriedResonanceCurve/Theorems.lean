@@ -7,7 +7,7 @@ import CarrylessCarriedResonanceCurve.Defs
 /-!
 # Proofs (`carryless-carried-resonance-curve`)
 
-Carry-less polynomial powers over F_2[x] against integer powers, Hensel lift of scaled isometries, four-regime valuation law and resonance curve.
+Carry-less polynomial powers over F_2[x] against integer powers, Hensel lift of scaled isometries, valuation laws in three closed-form regimes, and the resonance curve (gap case).
 -/
 
 /-

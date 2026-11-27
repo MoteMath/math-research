@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Verified Lean 4 Dyadic Ball-Arithmetic & Contraction Enclosure Compiler (certcomp-13)
+  name: Verified Lean 4 Dyadic Ball-Arithmetic & Contraction Enclosure Compiler
   description: >-
     **Name:** *Adaptive 2D Dyadic Ball-Arithmetic, Algebraic Secant-Slope & Binary-Tree Telescoping Contraction Compiler* (`DyadicCompiler`). **Core Silicon Principle (Finite Binary Certificate $\to$ Infinite $\forall n \in \mathbb{N}$ & $\forall p \in P _ 0$ Theorems):** 1. **Exact Dyadic Balls $(m, e, r)$ with Verified Outward Binary Rounding:** Every interval is stored as a triple
   repository: https://github.com/MoteMath/math-research

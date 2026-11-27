@@ -32,7 +32,7 @@ theorem periodic_eigen_sound {d m : Nat} (cert : PeriodicEigenCert d m)
                                   (repeatWord cert.word k)) p) := by
   sorry
 
-/-- **THEOREM 1C (Infinite-Alphabet Dyadic Convex-Hull Contraction):** Every arbitrary-length sequence of time-varying dyadic convex combinations of `M0, M1` contracts at the exact same rate `4 * (15/16)^n`. -/
+/-- **THEOREM 1C (Infinite-Alphabet Dyadic Convex-Hull Contraction):** Every arbitrary-length sequence of time-varying dyadic convex combinations of `M0, M1` has every row absolute sum at most `4 * (15/16)^n` (n = number of steps; an upper bound only). -/
 theorem thm1_convex_hull_contraction (ws : List (DyadicConvexStep 2))
     (hvals : ∀ st ∈ ws, st.valid) (p : Fin 2) :
     Dyad.le (dyadicRowAbsSum (convexDyadicProd 2 thm1_A ws) p)

@@ -20,7 +20,7 @@ theorem contraction_fixed_point_unique (cert : ParamContractionCert)
     xs.equiv ys := by
   sorry
 
-/-- Exact algebraic residual identity for Bring Newton step: /x^5 + (1 + p)x - 1/ = (1 + p + 5 x^4) * /F_p(x) - x/ ≤ 7 * /F_p(x) - x/ on [0, 1/2] × [1/2, 1]! -/
+/-- For every parameter `p` in `certBring.p0` and start `x0` in `certBring.b0` (with `x1` the first Newton iterate), every iterate `xn` satisfies `|xn^5 + (1 + p) xn - 1| ≤ 7 * (7/8)^n * |x1 - x0|`. -/
 theorem bring_quintic_residual_decay (p : ExactQ) (hp : certBring.p0.contains p)
     (x0 x1 : ExactQ) (hx0 : certBring.b0.contains x0) (hx1 : evalQ exprBringNewton p x0 = some x1) :
     ∀ n : Nat, ∀ xn,

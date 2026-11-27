@@ -9,8 +9,8 @@ import DeltaNetHouseholderE8.Defs
 
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. Exact rational Householder spectral-contraction `iff` law (`0 ≤ β ‖k‖_2^2 ≤ 2`).
-2. IEEE-754 RNE quantized unit-norm squared supremum `S_max^(1)(m) > 1` and `287/256` `FP8-E4M3` witness.
-3. Universal 2-ULP Safe Ceiling Theorem (`u = 1` always unsafe, `u = 2` always safe for all `m ≥ 2`).
+2. Quantized unit-norm squared bound `S_max^(1)(m) > 1` under a hypothesised per-coordinate ratio (not a formalisation of IEEE-754 RNE) and the `287/256` `FP8-E4M3`-grid witness.
+3. 2-ULP ceiling inequalities for all `m ≥ 2`: `β_1(m) * S_max^(1)(m) > 2` and `β_2(m) * S_max^(1)(m) < 2` (rational inequalities about the stated bound).
 4. Exact aligned-key WY triangular inverse `T_{i,j} = (-1)^{i-j} * 2` and `‖T‖_∞ = 2C - 1` (`127` at `C = 64`).
 5. `D_8` and 240-root `2 * E_8` Weyl root exact zero-remainder (`% 8 = 0`) integer reflections.
 6. Non-Weyl `Hamming[8,4,4]` integer-closure obstruction (`(2 * dot v x) % 4 = 2 ≠ 0`, `1/2 ∉ ℤ`).
@@ -43,11 +43,15 @@ theorem householder_spectral_stability_iff_exact :
   sorry
 
 /-- Theorem 2 (`quantized_unit_norm_supremum_exact`):
-    Proves the exact IEEE-754 RNE binade-bottom quantized unit-norm squared supremum
-    `S_max^(1)(m) = ((2^{m+1} + 2) / (2^{m+1} + 1))^2 > 1` for all `m ≥ 1`,
-    the universal upper bound `‖uHat‖_2^2 ≤ S_max^(1)(m)` for all coordinatewise
-    RNE-quantized unit vectors, exact values for `BF16` (`m = 7`), `FP16` (`m = 10`),
-    and `FP8-E4M3` (`m = 3`), and the exact `287 / 256` `FP8-E4M3` witness. -/
+    Defines `S_max^(1)(m) = ((2^{m+1} + 2) / (2^{m+1} + 1))^2` (`sMax1`) and proves its
+    closed forms and `S_max^(1)(m) > 1` for all `m ≥ 1`. The universal bound is
+    conditional: for a unit vector `u`, every `uHat` whose coordinates satisfy the
+    HYPOTHESIS `|uHat_i| ≤ r_m * |u_i|`, with `r_m = rneBinadeBottomRatio m`, has
+    `‖uHat‖_2^2 ≤ S_max^(1)(m)`. Nothing in the statement derives this hypothesis from
+    IEEE-754 round-to-nearest-even, and the bound is not shown to be attained (the
+    `FP8-E4M3`-grid witness has norm^2 `287/256 < 324/289 = S_max^(1)(3)`). Also proves the
+    exact values for `m = 7`, `10`, `3`, and for `fp8WitnessVec`: norm^2 `287/256`,
+    `β_1(3) * ‖w‖^2 > 2` and `β_2(3) * ‖w‖^2 < 2`. -/
 theorem quantized_unit_norm_supremum_exact :
     (∀ m : Nat, rneBinadeBottomRatio m = (pow2Rat (m + 1) + 2) / (pow2Rat (m + 1) + 1)) ∧
     (∀ m : Nat, sMax1 m = rneBinadeBottomRatio m * rneBinadeBottomRatio m) ∧
@@ -69,12 +73,12 @@ theorem quantized_unit_norm_supremum_exact :
   sorry
 
 /-- Theorem 3 (`universal_two_ulp_safe_ceiling_theorem`):
-    Proves the Universal 2-ULP Safe Ceiling Theorem for ALL `m ≥ 2`:
-    1 ULP below `2` (`β_1(m) = 2 - 2^{-m}`) is ALWAYS UNSAFE (`β_1(m) * S_max^(1)(m) > 2`,
-    with strict Householder spectral explosion), whereas 2 ULPs below `2`
-    (`β_2(m) = 2 - 2^{1-m}`: `127/64` BF16, `1023/512` FP16, `7/4` FP8-E4M3) is
-    ALWAYS SAFE (`β_2(m) * S_max^(1)(m) < 2`) and guarantees universal Householder
-    spectral contraction on every quantized unit vector. -/
+    For all `m ≥ 2`: `β_1(m) * S_max^(1)(m) > 2` with `β_1(m) = 2 - 2^{-m}`, and
+    `β_2(m) * S_max^(1)(m) < 2` with `β_2(m) = 2 - 2^{1-m}` (`127/64` for `m = 7`,
+    `1023/512` for `m = 10`, `7/4` for `m = 3`). Consequently, for every `k` with
+    `‖k‖_2^2 ≤ S_max^(1)(m)` the update with `β_2(m)` is non-expansive, and the single
+    coordinate `k = r_m` with `β_1(m)` strictly expands. "Safe" and "unsafe" refer to the
+    stated bound `S_max^(1)(m)` (see Theorem 2), not to hardware rounding. -/
 theorem universal_two_ulp_safe_ceiling_theorem :
     (∀ m : Nat, 2 ≤ m → (2 : Rat) < betaOneUlp m * sMax1 m) ∧
     (∀ m : Nat, 2 ≤ m →

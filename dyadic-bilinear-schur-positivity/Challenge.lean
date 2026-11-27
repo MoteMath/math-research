@@ -16,7 +16,7 @@ theorem soundness_strict_pd {m : Nat} (sys : BQS m) (Wtarget : Fin m → Fin m �
 theorem v2Nat_xor_eq_absDiff (i j : Nat) : v2Nat (i ^^^ j) = v2Nat (absDiff i j) := by
   sorry
 
-/-- THEOREM 2 (Sharp Discrete Archimedean-Monna Distance Form Strict Positivity): For ALL `k : Nat` and ALL nonzero `x : Fin (2^k) → ZHalf`: `(1/2) * μ_k(x)^2 - A_k(x) > 0`. -/
+/-- THEOREM 2 (Discrete Archimedean-Monna distance form, strict positivity): For ALL `k : Nat` and ALL nonzero `x : Fin (2^k) → ZHalf`: `(1/2) * μ_k(x)^2 - A_k(x) > 0`. -/
 theorem thm_monnaArch_strict_pd (k : Nat) (x : Fin (2 ^ k) → ZHalf) (hx : ∃ i, x i ≠ 0) :
     0 < dyad 1 1 * (muForm k x * muForm k x) - monnaArchForm k x := by
   sorry

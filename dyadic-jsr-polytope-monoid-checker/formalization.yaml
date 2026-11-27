@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Exact mathbb{Z}[1/2] Switched-Polytope & Invariant-Cone Matrix-Monoid Proof Compiler (certcomp-4)
+  name: Exact mathbb{Z}[1/2] Switched-Polytope & Invariant-Cone Matrix-Monoid Proof Compiler
   description: >-
     **Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Dual-Lifting Matrix-Monoid Contraction, JSR & Invariant-Cone Proof Compiler** (`DyadicMonoidEngine`). **Pure-Silicon Principle (Finite $\to$ Infinite Bridge):** Given a finite family of exact dyadic matrices $M _ b = 2^{-s
   repository: https://github.com/MoteMath/math-research

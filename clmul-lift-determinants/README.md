@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **10 / 10** | **9 / 10** | **7 / 10** | **9 / 10** | **88 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): high novelty and surprise for an unrecorded $\{2^k - 1, 2^k, 2^k + 1\}$ vanishing locus and exact bit-reversed Hadamard Schur collapse over arbitrary commutative rings.*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): high novelty and surprise for a $\{2^k - 1, 2^k, 2^k + 1\}$ vanishing locus (no prior record was found by the authors; the search was not recorded) and exact bit-reversed Hadamard Schur collapse over arbitrary commutative rings.*
 
 ## For Mathematicians
 
@@ -66,7 +66,7 @@ For any $k \ge 0$ and $1 \le m \le 2^k$, decompose $M _ {2^k + m}(t) = \begin{pm
 
 ## Prior-Art Context
 
-Carry-less multiplication over $\mathbb{F} _ 2[x]$ (`PCLMULQDQ` / `PMULL`) is a standard hardware instruction in cryptography and coding theory, and Sylvester Hadamard matrices $H _ k$ (along with bit-reversal permutations) are classical objects in harmonic analysis and signal processing. However, lifting carry-less products of odd integers back to $\mathbb{Z}[t]$ and taking leading principal determinants yields an unexpected sparse non-vanishing locus $n \in \{2^k - 1, 2^k, 2^k + 1\}$ with pure-monomial determinants governed by the bit-reversed Hadamard Schur complement. A literature and OEIS search found no prior publication of this determinant family, its $\{2^k - 1, 2^k, 2^k + 1\}$ vanishing dichotomy, or the polynomial elimination matrix $X _ {k, m}(t)$.
+Carry-less multiplication over $\mathbb{F} _ 2[x]$ (`PCLMULQDQ` / `PMULL`) is a standard hardware instruction in cryptography and coding theory, and Sylvester Hadamard matrices $H _ k$ (along with bit-reversal permutations) are classical objects in harmonic analysis and signal processing. However, lifting carry-less products of odd integers back to $\mathbb{Z}[t]$ and taking leading principal determinants yields an unexpected sparse non-vanishing locus $n \in \{2^k - 1, 2^k, 2^k + 1\}$ with pure-monomial determinants governed by the bit-reversed Hadamard Schur complement. No prior record of this determinant family, its $\{2^k - 1, 2^k, 2^k + 1\}$ vanishing dichotomy, or the polynomial elimination matrix $X _ {k, m}(t)$ was found by the authors; the search was not recorded.
 
 ## Build & Verification
 

@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **9 / 10** | **9 / 10** | **8 / 10** | **10 / 10** | **89 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): a universal, state-space-free conservation-versus-bijectivity no-go theorem for strongly connected causal bijective bit transducers, an exact alternating-weight conservation law for the chaotic carried Rule 30 / Rule 120 pair, and three infinite parametric families (Fredkin routers, bounded-walk involutions, a period-4 hybrid), all checked in pure Lean 4 `Init` (zero Mathlib).*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): a universal, state-space-free conservation-versus-bijectivity no-go theorem for strongly connected causal bijective bit transducers, an exact alternating-weight conservation law for the carried Rule 30 / Rule 120 transducer `T30`, and three infinite parametric families (Fredkin routers, bounded-walk involutions, a period-4 hybrid), all checked in pure Lean 4 `Init` (zero Mathlib).*
 
 ## For Mathematicians
 
@@ -30,7 +30,11 @@ Every finite certificate (bisimulation, coboundary potential, 81-state compositi
 
 Picture a long row of light switches that is updated step by step by a simple digital circuit. Each switch looks at its left neighbour, itself and a small "carry" signal handed down the row, like carrying a digit when you add numbers by hand. Because the carry can ripple along the whole row, nobody could check by finger-counting that some quantity (say, the number of switches that are on) stays under control.
 
-This package proves that for these rippling circuits, if the circuit never loses information and any state can reach any other, then it cannot keep a one-sided lid on a weighted count of lit switches unless it does nothing at all. It then shows what *can* be conserved: a famously chaotic rule (Rule 30) secretly conserves an alternating count of lit switches and the remainder after division by 3, exactly, forever, for any row length. Families of circuits for every delay and every capacity are checked, plus a nonlinear circuit that returns to its starting row after exactly four steps. The proofs are accepted by Lean's kernel with no unfinished steps.
+This package proves that for these rippling circuits, if the circuit never loses information and any state can reach any other, then it cannot keep a one-sided lid on a weighted count of lit switches unless it does nothing at all. It then shows what *can* be conserved: a particular carried circuit built from the Rule 30 output and the Rule 120 carry (not Wolfram's ordinary synchronous Rule 30 automaton) conserves an alternating count of lit switches and the remainder after division by 3, exactly, for any row length. Families of circuits for every delay and every capacity are checked, plus a nonlinear circuit that returns to its starting row after exactly four steps. The proofs are accepted by Lean's kernel with no unfinished steps.
+
+## Scope of the formal statement
+
+`T30` is a hand-written sequential carried transducer (output bit from Rule 30, carry bit from Rule 120). It is not Wolfram's synchronous Rule 30 cellular automaton, and the conservation statements are about this transducer only.
 
 ## Contents
 
@@ -50,7 +54,7 @@ The file layout is `CarriedCaCoboundaryRigidity/Defs.lean` (definitions), `Carri
 ## Prior Art and Credit
 
 - **Local-window CA conservation laws:** Hattori and Takesue (1991), Boccara and Fuks (1998) and Moreira (2003) classify additive invariants of sliding-block automata of finite radius. Carried-hybrid automata have unbounded range, and the coboundary potential must depend on the hidden carry register, so those spatial flux tests do not represent it.
-- **Synchronous automaton groups:** Grigorchuk, Sidki and Nekrashevych study causal bijective Mealy automata acting on the binary rooted tree. The characterization of causal bijectivity (`out q false ≠ out q true`) is classical and is used here as a foundation, not claimed as new. The one-sided weighted-defect rigidity law, the Rule 30 / Rule 120 conservation, the Fredkin and walk families and the certified period-4 lift are the new contributions; the referee gave this package an S-tier novelty rating (9.0 / 9.0 / 9.5).
+- **Synchronous automaton groups:** Grigorchuk, Sidki and Nekrashevych study causal bijective Mealy automata acting on the binary rooted tree. The characterization of causal bijectivity (`out q false ≠ out q true`) is classical and is used here as a foundation, not claimed as new. The one-sided weighted-defect rigidity law, the Rule 30 / Rule 120 conservation, the Fredkin and walk families and the certified period-4 lift are the contributions claimed here. No prior-art search was recorded, and the package has not been independently reviewed.
 - **Anti-duplication:** no overlap with the other packages in this repository (`binary-lyness-periods`, `carry-determinants`, `zero-carry-spanning-trees` and others).
 
 ## Build and Verification

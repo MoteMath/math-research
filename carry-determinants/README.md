@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **7 / 10** | **8 / 10** | **10 / 10** | **8 / 10** | **9 / 10** | **82 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): maximal generality (mixed radix, multivariate, division-free over arbitrary commutative rings) and a new Cantor extremal-digit `iff` criterion, discounted honestly for base-$2$ overlap with Bacher–Chapman (2004), APWW (1998), and Sobolewski–Ulas (2026).*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): maximal generality (mixed radix, multivariate, division-free over arbitrary commutative rings) and a Cantor extremal-digit `iff` criterion (no prior statement located; no systematic search recorded), discounted honestly for base-$2$ overlap with Bacher–Chapman (2004), APWW (1998), and Sobolewski–Ulas (2026).*
 
 ## For Mathematicians
 

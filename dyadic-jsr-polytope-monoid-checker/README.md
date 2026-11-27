@@ -1,4 +1,4 @@
-# Exact $\mathbb{Z}[1/2]$ Switched-Polytope & Invariant-Cone Matrix-Monoid Proof Compiler (`certcomp-4`) (`dyadic-jsr-polytope-monoid-checker`)
+# Exact $\mathbb{Z}[1/2]$ Switched-Polytope & Invariant-Cone Matrix-Monoid Proof Compiler (`dyadic-jsr-polytope-monoid-checker`)
 
 ## Synthetic Score
 
@@ -27,16 +27,20 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `switched_polytope_sound` | **MAIN SOUNDNESS META-THEOREM 1 (DFA-Switched Exact Dyadic Operator-Norm Contraction):** If `checkSwitchedPolytopeCert cert = true`, then for EVERY word `w` of arbitrary length accepted by the DFA (`runDFA cert.step q0 w = some qn`) and EVERY row `p : Fin d`, the exact `Z[1/2]` row `ℓ_1` norm of `dyadicWordProd M w` satisfies: `‖(dyadicWordProd M w)_p‖_1 ≤_{Z[1/2]} C_const * (lamNum / 2^lamShift)^/w/`. |
 | `convex_hull_infinite_alphabet_sound` | **MAIN SOUNDNESS META-THEOREM 2 (Infinite-Alphabet Dyadic Convex-Hull Contraction):** One finite polytope certificate checked by `decide` on `m` vertex matrices AUTOMATICALLY certifies uniform exponential contraction for ALL arbitrary-length, time-varying products drawn from the ENTIRE INFINITE dyadic convex hull `conv_{Z[1/2]}(M_0, ..., M_{m-1})`! |
 | `periodic_eigen_sound` | **MAIN SOUNDNESS META-THEOREM 4 (Exact Periodic Eigen-Witness JSR Lower Bound):** If `checkPeriodicEigenCert cert = true`, then for EVERY `k : Nat`, the `k`-fold repeated word `w_0^k` (length `/w_0/ * k`) attains exact `ℓ_∞` operator norm at least `(/eig/ / 2^(s * /w_0/))^k`! |
-| `thm1_convex_hull_contraction` | **THEOREM 1C (Infinite-Alphabet Dyadic Convex-Hull Contraction):** Every arbitrary-length sequence of time-varying dyadic convex combinations of `M0, M1` contracts at the exact same rate `4 * (15/16)^n`. |
-| `thm1_sharpness_unbounded` | Machine-checked infinite theorem `thm1_sharpness_unbounded` proved in pure Lean 4 `Init`. |
+| `thm1_convex_hull_contraction` | **THEOREM 1C (Infinite-Alphabet Dyadic Convex-Hull Contraction):** For every sequence of `n` time-varying dyadic convex combinations of `M0, M1`, every row absolute sum of the product is at most `4 * (15/16)^n` (an upper bound; the statement does not show the rate is attained). |
+| `thm1_sharpness_unbounded` | For every bound `B` there is a repetition count `k` and a row `p` for which the product of the repeated certificate word of a specific family `thm1_sharp_A` exceeds `B` (unboundedness for that family). |
 | `thm3_signed_cone_subradius` | **THEOREM 3A (Strict Positivity & Exponential Subradius `≥ 5/4` for Signed-Entry Matrices):** |
-| `thm4_unconstrained_lower` | Machine-checked infinite theorem `thm4_unconstrained_lower` proved in pure Lean 4 `Init`. |
-| `mut8_bad_naf_dfa_rejected` | Machine-checked infinite theorem `mut8_bad_naf_dfa_rejected` proved in pure Lean 4 `Init`. |
+| `thm4_unconstrained_lower` | For every `k`, the `k`-fold repeated word of a specific family `thm4_A` has a row absolute sum at least `(5/4)^k` (an elementary lower bound coming from a `5/4` diagonal entry). |
+| `mut8_bad_naf_dfa_rejected` | Machine-checked finite instance: the checker rejects one mutated certificate (`bad_cert4_unconstrained_dfa`). |
+
+## Scope of the formal statement
+
+The soundness meta-theorems (1, 2 and 4) are universal in the word length and the certificate. `thm1`, `thm3` and `thm4` concern specific 2×2 or 3×3 families of dyadic matrices, and `mut8_bad_naf_dfa_rejected` is a finite computation.
 
 ## Prior-Art Context
 
-- - **Classical Literature:** Polyhedral Lyapunov norms and invariant-polytope algorithms for the Joint Spectral Radius originate with Barabanov (1988), Protasov (1996), Jungers (2009), Guglielmi–Protasov (2013), and path-dependent multinorms with Protasov–Jungers–Blondel (2010); $C^1$ regularity of Dubuc–Deslauriers 4-point subdivision was analyzed via JSR and polytopic norms by Rioul (1992), Hechler–Mössner–Reif (2009), and Charina–Conti–Guglielmi–Protasov (2014/2016). - **What Is Genuinely Novel Here:** 1. **Zero-Float, Standalone Kernel-Verified Compiler in Core Lean 4:** Rather than floating-point LP/SDP heuristics or external numerical JS
-- Hostile-verified PASS by `referee-5`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- - **Classical Literature:** Polyhedral Lyapunov norms and invariant-polytope algorithms for the Joint Spectral Radius originate with Barabanov (1988), Protasov (1996), Jungers (2009), Guglielmi–Protasov (2013), and path-dependent multinorms with Protasov–Jungers–Blondel (2010); $C^1$ regularity of Dubuc–Deslauriers 4-point subdivision was analyzed via JSR and polytopic norms by Rioul (1992), Hechler–Mössner–Reif (2009), and Charina–Conti–Guglielmi–Protasov (2014/2016). - **Contribution claimed here (not independently reviewed; no prior-art search was recorded):** 1. **Zero-Float, Standalone Kernel-Verified Compiler in Core Lean 4:** Rather than floating-point LP/SDP heuristics or external numerical JSR solvers, the checkers use exact integer and dyadic arithmetic inside the Lean kernel. (The remainder of this list is cut off in the original text.)
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

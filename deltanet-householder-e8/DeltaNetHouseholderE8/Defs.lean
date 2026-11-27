@@ -8,7 +8,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 
 Pure-`Init` (zero Mathlib) definitions for:
 1. Rational finite sums, inner products, Euclidean squared norm, and Householder rank-1 updates.
-2. IEEE-754 RNE binade-bottom quantized unit-norm supremum `S_max^(1)(m)` and `1`-ULP / `2`-ULP ceilings.
+2. Binade-bottom round-up ratio `r_m`, the resulting squared-norm bound `S_max^(1)(m)` and the `1`-ULP / `2`-ULP ceilings (rational model; IEEE-754 rounding itself is not formalised).
 3. Aligned-key WY triangular matrix `I + 2 * strictLower(1 1^T)` and its exact inverse `T`.
 4. Pure-integer 8D `D_8` and scaled `2 * E_8` root lattices, reflections, and the non-Weyl
    `Hamming[8,4,4]` weight-4 witness.
@@ -54,19 +54,19 @@ def invPow2Rat (k : Nat) : Rat :=
 def householderApply {d : Nat} (β : Rat) (k v : Fin d → Rat) : Fin d → Rat :=
   fun i => v i - β * dotProd k v * k i
 
-/-- Exact IEEE-754 RNE worst-case binade-bottom relative round-up ratio
+/-- Binade-bottom relative round-up ratio (the value of a tie-to-even round-up at the bottom of a binade; used as a hypothesised per-coordinate bound, not derived from IEEE-754)
     `(1 + 2^{-m}) / (1 + 2^{-(m+1)}) = (2^{m+1} + 2) / (2^{m+1} + 1)`. -/
 def rneBinadeBottomRatio (m : Nat) : Rat :=
   (1 + invPow2Rat m) / (1 + invPow2Rat (m + 1))
 
-/-- Exact IEEE-754 RNE quantized unit-norm squared supremum
-    `S_max^(1)(m) = ((2^{m+1} + 2) / (2^{m+1} + 1))^2`. -/
+/-- Squared-norm bound `S_max^(1)(m) = ((2^{m+1} + 2) / (2^{m+1} + 1))^2`
+    (the square of `rneBinadeBottomRatio`; a bound under that hypothesis, not proved attained). -/
 def sMax1 (m : Nat) : Rat :=
   let r := (pow2Rat (m + 1) + 2) / (pow2Rat (m + 1) + 1)
   r * r
 
-/-- Explicit 8-dimensional `FP8-E4M3` (`m = 3`) quantized vector achieving exact
-    squared norm `287 / 256` (`1.12109375`), matching the RX 7900 XTX certification. -/
+/-- Explicit 8-dimensional vector on the `FP8-E4M3` grid (`m = 3`) with exact
+    squared norm `287 / 256` (`1.12109375`). -/
 def fp8WitnessVec : Fin 8 → Rat
   | ⟨0, _⟩ => 9 / 16
   | ⟨1, _⟩ => 9 / 16

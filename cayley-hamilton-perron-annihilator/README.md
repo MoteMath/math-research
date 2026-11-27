@@ -20,6 +20,10 @@
 
 A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`, no custom axioms) formalization. Full proofs live in `CayleyHamiltonPerronAnnihilator/Theorems.lean`, definitions in `CayleyHamiltonPerronAnnihilator/Defs.lean`; `Challenge.lean` states the headline theorems with `sorry` and `Solution.lean` proves the identical statements by delegation.
 
+## Scope of the formal statement
+
+Six statements are universal in $n$; `sharpness_K23_fails` and `sharpness_K7_Z5_shift` are finite sharpness instances (a single parameter value) rather than infinite theorems.
+
 ## Main Theorems
 
 | Theorem (in `Challenge.lean`) | Statement |
@@ -35,8 +39,9 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 ## Prior-Art Context
 
-- - **Classical Literature Distinction:** - Newman (1969) and Coquet (1983) studied $\sum _ {x < N} (-1)^{\mathrm{popcount}(3x)} > 0$ (the unweighted Thue–Morse sum along multiples of $3$), and Drmota–Skałba (1995) studied $\Gamma _ p(n) = \sum _ {x < 2^n} (-1)^{\mathrm{popcount}(px)}$ for prime $p$. By contrast, our **carried-vs-carryless parity correlation** $K _ c(n)$ compares $\mathbb{Z}$-multiplication $c \cdot x$ against $\mathbb{F} _ 2[x]$-multiplication $\mathrm{clmul}(c, x)$, which equals $\Gamma _ c(n)$ when $\mathrm{popcount}(c)$ is even and the signed correlation $\Delta _ c(n)$ when $\mathrm{popcount}(c)$ is odd — revealing both positi
-- Hostile-verified PASS by thread referee; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- - **Classical Literature Distinction:** - Newman (1969) and Coquet (1983) studied $\sum _ {x < N} (-1)^{\mathrm{popcount}(3x)} > 0$ (the unweighted Thue–Morse sum along multiples of $3$), and Drmota and Skałba (*Rarified sums of the Thue-Morse sequence*, Trans. AMS 352 (2000)) studied $\Gamma _ p(n) = \sum _ {x < 2^n} (-1)^{\mathrm{popcount}(px)}$ for prime $p$. By contrast, our **carried-vs-carryless parity correlation** $K _ c(n)$ compares $\mathbb{Z}$-multiplication $c \cdot x$ against $\mathbb{F} _ 2[x]$-multiplication $\mathrm{clmul}(c, x)$, which equals $\Gamma _ c(n)$ when $\mathrm{popcount}(c)$ is even and the signed correlation $\Delta _ c(n)$ when $\mathrm{popcount}(c)$ is odd — compare `thm_Z5_and_K7_pos` and `sharpness_K23_fails` below.
+- **Located related work (added after an external novelty audit):** `matAnn_sound` is the Cayley–Hamilton / linear-recurrence argument and is textbook. The sequence $Z _ 5(n) = 1, 2, 3, 3, 4, 7, 9, 10, 15, 23, 28, 35, 53, 74, \dots$ (recomputed exactly: $n = 0, \dots, 13$) is a shifted copy of [OEIS A329301](https://oeis.org/A329301) (Gerasimov, 2019; defined there by a recurrence, no combinatorial meaning stated). The audit found no OEIS match for the sequences $C _ 3(n)$ and $K _ 7(n)$ (bounded search, not exhaustive).
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

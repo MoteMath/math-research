@@ -9,16 +9,16 @@ import DeltaNetHouseholderE8.HouseholderSpectral
 
 Proves:
 - Theorem 2 (`quantized_unit_norm_supremum_exact`):
-  Exact IEEE-754 RNE binade-bottom quantized unit-norm squared supremum
-  `S_max^(1)(m) = ((2^{m+1} + 2) / (2^{m+1} + 1))^2 > 1` for all `m ≥ 1`,
+  Squared-norm bound `S_max^(1)(m) = ((2^{m+1} + 2) / (2^{m+1} + 1))^2 > 1` for all `m ≥ 1`
+  (valid for vectors whose coordinates satisfy the hypothesised ratio `r_m`; not shown attained),
   exact evaluations for `BF16` (`m = 7`), `FP16` (`m = 10`), `FP8-E4M3` (`m = 3`),
   and the exact `287 / 256` `FP8-E4M3` witness vector.
 - Theorem 3 (`universal_two_ulp_safe_ceiling_theorem`):
   For ALL `m ≥ 2`:
-  - `1` ULP below `2` (`β_1(m) = 2 - 2^{-m}`) is ALWAYS UNSAFE (`β_1(m) * S_max^(1)(m) > 2`).
-  - `2` ULPs below `2` (`β_2(m) = 2 - 2^{1-m}`) is ALWAYS SAFE (`β_2(m) * S_max^(1)(m) < 2`),
+  - `1` ULP below `2` (`β_1(m) = 2 - 2^{-m}`) satisfies `β_1(m) * S_max^(1)(m) > 2`.
+  - `2` ULPs below `2` (`β_2(m) = 2 - 2^{1-m}`) satisfies `β_2(m) * S_max^(1)(m) < 2`,
     yielding exact dyadic ceilings `127/64` (`BF16`), `1023/512` (`FP16`), `7/4` (`FP8-E4M3`),
-    and unconditional Householder spectral contraction on all quantized unit vectors.
+    and Householder spectral contraction for every `k` with `‖k‖² ≤ S_max^(1)(m)`.
 -/
 
 namespace DeltaNetHouseholderE8

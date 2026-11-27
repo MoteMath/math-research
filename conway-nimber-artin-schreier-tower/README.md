@@ -36,7 +36,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - - **Classical / Known Prior Art (explicitly credited as foundations, NOT claimed as novel):** - Conway (1976, *On Numbers and Games*, Ch. 6) and Lenstra (1977/1978, *On the algebraic closure of two* & *Nim Multiplication*, IHES / Séminaire de Théorie des Nombres de Bordeaux 1977–1978): $(\mathbb{N}, \oplus, \otimes)$ is $\overline{\mathbb{F} _ 2}$ via the Artin–Schreier tower $F _ k^2 + F _ k = H _ k$, with $[0, 2^{2^k}) \cong \mathbb{F} _ {2^{2^k}}$. - Moore (1896, *A two-fold generalization of Fermat's theorem*) and Ore (1933, *On a special class of polynomials*): linearized ($q$-)polynomials, Moore determinants, and subspace polynomials $\
-- Hostile-verified PASS by `referee-4`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

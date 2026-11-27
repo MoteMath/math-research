@@ -46,7 +46,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical background:** zero-carry addition ($x + y = x \oplus y \iff x \mathbin{\&} y = 0$), Fibbinary numbers (OEIS A003714, the $c = 3$ zero-defect baseline), carry Markov chains for integer addition (Holte 1997, Diaconis-Fulman 2009), and finite-state automatic sequences (Allouche-Shallit).
-- **Referee audit (referee-6, 9.5/10 flagship S-Tier; recorded in `TOP_MECHANISMS.md`):** only the $c = 3$ Fibbinary zero-defect baseline is classical; the weight-spectrum submonoid classification, the residual Moore transducer with pure-data Bellman trie compiler, $\mathcal{W}(2 ^ m - 1) = \mathbb{N} \setminus \{1\}$, the minimal-$\mu$ multiplier $175$ and the $211$ stealth counterexample are new.
+- **Contributions claimed here (not independently reviewed; no prior-art search was recorded):** only the $c = 3$ Fibbinary zero-defect baseline is treated as classical; the weight-spectrum submonoid classification, the residual Moore transducer with pure-data Bellman trie compiler, $\mathcal{W}(2 ^ m - 1) = \mathbb{N} \setminus \{1\}$, the minimal-$\mu$ multiplier $175$ and the $211$ stealth counterexample are the results of this package.
 
 ## Build & Verification
 

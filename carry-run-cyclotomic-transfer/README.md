@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **9 / 10** | **9 / 10** | **8 / 10** | **10 / 10** | **89 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): unrecorded silicon duality between carry-run output-parity cyclotomic period-(L+2) collapse and ripple-depth input-parity monomial period-(L+1) collapse, universal determinant-free (L+1)x(L+1) matrix annihilators, and the bivariate carry-absorption odd/even dichotomy, formalized in pure Lean 4 Init (zero Mathlib).*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): a duality (no prior record located by the authors; no search recorded) between carry-run output-parity cyclotomic period-(L+2) collapse and ripple-depth input-parity monomial period-(L+1) collapse, universal determinant-free (L+1)x(L+1) matrix annihilators, and the bivariate carry-absorption odd/even dichotomy, formalized in pure Lean 4 Init (zero Mathlib).*
 
 ## For Mathematicians
 
@@ -51,7 +51,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of `C
 
 - **Unweighted ripple-carry chains:** Burks–Goldstine–von Neumann (1946), Knuth (*TAOCP* Vol. 4A), and Pippenger (2002) analyze unweighted longest ripple-carry chains and the recurrence $R _ L(w+L+1) = 4 R _ L(w+L) - 2^L R _ L(w)$, recovered here as a specialization (`binary_rippleDepth_plain_recurrence`) of our universal 3-parameter operator annihilator.
 - **Carry Markov chains & Thue–Morse sums:** Holte (1997) and Diaconis–Fulman (2009) study single-step carry Markov chains for $m$-operand addition (not bounded carry-chain length transfer matrices or signed Thue–Morse collapses), while Gelfond, Dumont–Thomas, and Spiegelhofer study unrestricted Thue–Morse sums.
-- **Novel contribution:** The carry-run/output-parity cyclotomic period-$(L+2)$ collapse, the ripple-depth/input-parity monomial period-$(L+1)$ collapse, their swap-breaking sharpness, and the bivariate absorption odd/even $L$ dichotomy are new; audited as S-Tier flagship with zero overlap against existing packages.
+- **Contribution claimed here (not independently reviewed; no prior-art search was recorded):** the carry-run/output-parity cyclotomic period-$(L+2)$ collapse, the ripple-depth/input-parity monomial period-$(L+1)$ collapse, their swap-breaking sharpness, and the bivariate absorption odd/even $L$ dichotomy.
 
 ## Build & Verification
 

@@ -32,7 +32,7 @@ theorem aperiodic (e : ThreshElem) : e.comp (e.comp e) = e.comp e :=
   SiliconCarryMonoid.ThreshElem.aperiodic e
 
 open SiliconCarryMonoid SiliconCarryMonoid.ThreshElem in
-/-- Theorem 4 (Exact cardinality): the bounded threshold-step semigroup on N carry states has exactly N^2 - N + 1 elements. -/
+/-- Theorem 4 (length of the enumeration list): the hand-built list `enumBounded L N` (N constants followed by (N-1)^2 step elements) has length N^2 - N + 1. This is a statement about the list length only; that the list is duplicate-free and complete for the bounded semigroup is proved in the library, not in this statement. -/
 theorem enumBounded_length (L : Int) (N : Nat) (hN : 1 ≤ N) :
     (enumBounded L N).length = N * N - N + 1 :=
   SiliconCarryMonoid.ThreshElem.enumBounded_length L N hN

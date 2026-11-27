@@ -46,7 +46,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical background:** Avizienis (1961) signed-digit carry-free addition, Chow-Robertson (1978) and Frougny (1992) on redundant binary automata, and Parhami's redundant number system surveys; max-plus/tropical matrix semigroups (Baccelli et al.).
-- **Referee audit (referee-1, referee-6; recorded in `REGISTRY.md` and `TOP_MECHANISMS.md`):** the reusable certificate lifters, the tropical rank-$1$ horizon calculus with exact `TailPulse` tightness, the horizon-halving equivalence compiler and the encoding-independent radix-$r$ horizon-$1$ obstruction are new; zero overlap with the other packages of this repository.
+- **Contributions claimed here (not independently reviewed; no prior-art search was recorded):** the reusable certificate lifters, the tropical rank-$1$ horizon calculus with exact `TailPulse` tightness, the horizon-halving equivalence compiler and the encoding-independent radix-$r$ horizon-$1$ obstruction.
 
 ## Build & Verification
 

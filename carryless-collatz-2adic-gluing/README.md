@@ -49,7 +49,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of th
 ## Prior-Art Context
 
 - **Classical 2-adic Collatz & polynomial Collatz lineage:** Layer A sits in the Terras (1976), Lagarias (1985), Bernstein (1994), and Anashin–Khrennikov (2009) 2-adic conjugacy lineage, while Hicks–Mullen–Yucas–Zavislak (2008) prove full termination of polynomial $x+1$ Collatz over $\mathbb{F} _ 2[x]$ (our `carryless_3x1_unique_nonzero_cycle` gives a self-contained pure-Init proof of cycle uniqueness via bit-degree balance, distinct from full termination).
-- **Novel contribution:** The exact `iff` $2^r$-branch ultrametric gluing certifiers (`checkAffTable_iff_shiftFaithful`, `checkClTable_iff_shiftFaithful`), the universal $(p, q)$ binary degree-balance law, and the Carry-vs-Carryless Self-Coding Phase Transition ($2^v$ vs $2$ vs $6$ vs $\ge k+1$) are original; audited as Tier A+.
+- **Contribution claimed here (not independently reviewed; no prior-art search was recorded):** the exact `iff` $2^r$-branch ultrametric gluing certifiers (`checkAffTable_iff_shiftFaithful`, `checkClTable_iff_shiftFaithful`), the universal $(p, q)$ binary degree-balance law, and the Carry-vs-Carryless Self-Coding Phase Transition ($2^v$ vs $2$ vs $6$ vs $\ge k+1$).
 
 ## Build & Verification
 

@@ -31,7 +31,7 @@ theorem carryEcho_recurrent_iff_dualSkew (b w : Nat) (hb : 2 ≤ b) (hw : 0 < w)
   SiliconSandpile.carryEcho_recurrent_iff_dualSkew b w hb hw c
 
 open SiliconSandpile in
-/-- Theorem 4 (Exact repunit bijection): the harmonic encoding and Myers greedy decoding form a bijection between recurrent configurations and Fin ((b^(w+1) - 1)/(b - 1)). -/
+/-- Theorem 4 (right-inverse half of the repunit bijection): for every `r : Fin (repunit b (w + 1))`, encoding the Myers greedy decoding of `r` gives back `r`. The converse half (`decode (encode c) = c` on recurrent configurations) is proved in the library but is not part of this statement. -/
 theorem carryEcho_recurrent_count_left (b w : Nat) (hb : 2 ≤ b) (hw : 0 < w)
     (r : Fin (repunit b (w + 1))) :
     (carryEchoGroupCert b w hb hw).encode ((carryEchoGroupCert b w hb hw).decode r) = r :=

@@ -1,4 +1,4 @@
-# SiliconMetaBridge (`referee-8`): Unified 5-Thread Cross-Thread Infinite Proof Mechanism (`cross-thread-silicon-meta-bridge`)
+# SiliconMetaBridge: Unified 5-Thread Cross-Thread Infinite Proof Mechanism (`cross-thread-silicon-meta-bridge`)
 
 ## Synthetic Score
 
@@ -20,6 +20,10 @@
 
 A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`, no custom axioms) formalization. Full proofs live in `CrossThreadSiliconMetaBridge/Theorems.lean`, definitions in `CrossThreadSiliconMetaBridge/Defs.lean`; `Challenge.lean` states the headline theorems with `sorry` and `Solution.lean` proves the identical statements by delegation.
 
+## Scope of the formal statement
+
+The six universal statements are standard identities (Walsh–Hadamard diagonalization of XOR convolutions, band-limits of prefix trees, transfer-matrix soundness) stated for hand-written bit-slice definitions; `demoAdicTree_sharp_at_freq4` and `mutation_reject_modSubspace` are finite instances.
+
 ## Main Theorems
 
 | Theorem (in `Challenge.lean`) | Statement |
@@ -31,12 +35,12 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `rawCarry_c1_indefinite_all_w` | Machine-checked infinite theorem `rawCarry_c1_indefinite_all_w` proved in pure Lean 4 `Init`. |
 | `thueMorse_inc_mod4_all_w` | Machine-checked infinite theorem `thueMorse_inc_mod4_all_w` proved in pure Lean 4 `Init`. |
 | `demoAdicTree_sharp_at_freq4` | Sharpness for Bridge III: at frequency `xi = 4 = 2^(depth - 1)`, Walsh energy is NON-ZERO (`12 ≠ 0`). |
-| `mutation_reject_modSubspace` | Machine-checked infinite theorem `mutation_reject_modSubspace` proved in pure Lean 4 `Init`. |
+| `mutation_reject_modSubspace` | Machine-checked finite instance: the Boolean checker `checkModSubspace` rejects one mutated certificate (a finite computation). |
 
 ## Prior-Art Context
 
-- - **Classical / Swarm Foundations (credited honestly):** - Matrix Product States/Operators (Perez-Garcia et al. 2007), 2-regular sequences (Allouche–Shallit 1992), Walsh–Hadamard Parseval/convolution diagonalization, and T-function theory (Klimov–Shamir 2002; Anashin 1994) are classical background. - Within the live swarm, `SiliconMetaBridge` explicitly unifies and cross-bridges ideas from `transducer-10` (Gray carry-defect whitening), `transducer-7` (2-regular linear reps), `dynsil-1/5/17` (T-functions), `specmat-10/13/15` (exact PD, Parseval, Walsh–automaton transfers), `certcomp-7` (`CoverTree`), and `certcomp-11/15` (integer MPS/MPO & Cay
-- Verified by `referee-8` and independently replayed by `referee-10` (95/100 S-Tier); pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- - **Classical foundations:** - Matrix Product States/Operators (Perez-Garcia et al. 2007), 2-regular sequences (Allouche–Shallit 1992), Walsh–Hadamard Parseval/convolution diagonalization, and T-function theory (Klimov–Shamir 2002; Anashin 1994) are classical background. - `SiliconMetaBridge` combines ideas from other packages of this repository (Gray carry-defect whitening, 2-regular linear representations, T-functions, exact positive-definite certificates, Walsh–automaton transfers, prefix-tree covers, integer MPS/MPO). It has not been independently reviewed. (The remainder of this list is cut off in the original text.)
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

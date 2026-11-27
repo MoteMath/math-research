@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: SiliconMetaBridge (referee-8)  Unified 5-Thread Cross-Thread Infinite Proof Mechanism
+  name: SiliconMetaBridge  Unified 5-Thread Cross-Thread Infinite Proof Mechanism
   description: >-
     **Mechanism Name:** **SiliconMetaBridge — Weighted Bit-Slice Tensor (`BitMPS` / `BitMPO`) & Bond-Dimension-Preserving Walsh–Hadamard Involution Reflection Meta-Engine**
   repository: https://github.com/MoteMath/math-research

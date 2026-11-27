@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **10 / 10** | **9 / 10** | **9 / 10** | **10 / 10** | **93 / 100** |
 
-*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 93 / 100`): universal rational spectral stability characterization for Gated DeltaNet rank-1 updates, exact subnormal-inclusive OCP MXFP4 (`700/431`, max-fit `380/227`) and universal $m$-bit normal-range quantized-key squared-norm blowup laws with exact safe step-size ceilings, universal closed-form chunkwise WY inverse identity $(I + L) T = I$ with aligned contraction vs quantized exponential explosion, exact binomial power law for aligned strictly-lower-triangular matrices proving catastrophic Euler-product intermediate peaks ($> 10^{27}$ at $C = 64, \beta = 2$), and universal 2×2 Block-Schur inverse exactness — formalized in pure Lean 4 `Init` (zero Mathlib).*
+*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 93 / 100`): universal rational spectral stability characterization for Gated DeltaNet rank-1 updates, exact subnormal-inclusive OCP MXFP4 (`700/431`, max-fit `380/227`) and universal $m$-bit normal-range quantized-key squared-norm blowup laws with exact safe step-size ceilings, universal closed-form chunkwise WY inverse identity $(I + L) T = I$ with aligned contraction vs quantized exponential explosion, exact binomial power law for aligned strictly-lower-triangular matrices giving Euler-product intermediate peaks ($> 10^{27}$ at $C = 64, \beta = 2$), and universal 2×2 Block-Schur inverse exactness — formalized in pure Lean 4 `Init` (zero Mathlib).*
 
 ## For Mathematicians
 
@@ -36,7 +36,7 @@ We formalize five universal algebraic and extremal laws over $\mathbb{Q}$ (`Rat`
    proved universally by telescoping $(I + L) T = I$. For aligned keys ($k _ m = k$, $r = \|k\| _ 2^2$, constant $\beta, \alpha$), $T _ {i, j} = -\beta r \alpha^{i - j} (1 - \beta r)^{i - j - 1}$ ($i > j$). Consequently:
    - Whenever $0 < \alpha \le 1$, $\beta \ge 0$, and $\beta r \le 2$, every off-diagonal entry satisfies $|T _ {i, j}| \le \beta r$ and every row $\ell _ 1$ norm satisfies $\sum _ j |T _ {i, j}| \le 1 + (C - 1) \beta r \le 2 C - 1$ (**zero exponential explosion**).
    - Whenever $\beta = 2$, $\alpha = 1$, and quantized key blowup gives $r > 1$, the bottom-left corner explodes exponentially: $|T _ {C - 1, 0}| = 2 r (2 r - 1)^{C - 2}$.
-4. **Exact Binomial Power Law & Euler-Product Peak Explosion (`euler_product_binomial_peak_explosion`):** For the aligned strictly lower-triangular matrix $(L _ C) _ {i, j} = \beta$ ($i > j$, else $0$), hockey-stick induction proves for all $k \ge 1$ and $j + k \le i$ that
+4. **Exact Binomial Power Law & Euler-Product Intermediate Peaks (`euler_product_binomial_peak_explosion`):** For the aligned strictly lower-triangular matrix $(L _ C) _ {i, j} = \beta$ ($i > j$, else $0$), hockey-stick induction proves for all $k \ge 1$ and $j + k \le i$ that
    ```math
    (L_C^k)_{i, j} = \beta^k \binom{i - j - 1}{k - 1}.
    ```
@@ -51,12 +51,16 @@ We formalize five universal algebraic and extremal laws over $\mathbb{Q}$ (`Rat`
 
 Modern long-context AI models such as **Gated DeltaNet**, **Qwen3-Next**, **Kimi Linear**, and **Mamba-2** replace standard quadratic attention with a fast recurrent memory update $S _ t = \alpha (S _ {t-1} (I - \beta k _ t k _ t^T)) + v _ t k _ t^T$. To run fast on GPUs, these models quantize the key vectors $k _ t$ into 4-bit or 8-bit floating point (`MXFP4`, `FP8`, `BF16`) and process chunks of $C = 16$ to $64$ tokens in parallel by inverting a lower-triangular matrix $(I + L)^{-1}$.
 
-This repository proves, with 100% machine-checked certainty in Lean 4, why naive low-precision implementations silently explode — and exactly how to fix them:
-1. **Why 4-bit keys blow up memory:** Even when a key vector is normalized to length $1$, rounding its 32 coordinates to 4-bit OCP `MXFP4` can inflate its squared length by up to **`700/431` (1.624×)** — much worse than the naive `1.44×` estimate — because 31 tiny subnormal coordinates can all round upward simultaneously. At step size $\beta = 2$, that inflation turns a safe reflection into an exponential blowup across every token. Clamping $\beta \le 431/350 \approx 1.2314$ (or `289/162` for FP8, `66049/33282` for BF16) mathematically guarantees stability forever.
-2. **Why Euler-product matrix inversion fails catastrophically:** A popular trick for inverting $(I + L)^{-1}$ on GPUs multiplies $(I - L)(I + L^2)(I + L^4)\cdots$. We prove that for a chunk of 64 tokens, the intermediate matrix $L^{32}$ hits entries of **`465 quadrillion`** (at $\beta = 1$) and **`over 10^27`** (at $\beta = 2$) even though the final answer has entries $\le 2$ — causing massive rounding catastrophe and instant FP8 NaNs.
-3. **Why recursive 2×2 Block-Schur inversion fixes it:** Splitting the matrix recursively in half and computing $-D^{-1} C A^{-1}$ via exact 2×2 Block-Schur inversion produces the exact inverse in $\log _ 2 C$ Tensor-Core GEMMs without ever forming powers of $L$, completely eliminating the binomial explosion.
+This package proves, in Lean 4, exact statements about hand-written rational models of low-precision quantization (not about hardware or any trained network). They describe how such models behave when keys are rounded upward and when a triangular inverse is formed by an Euler product:
+1. **Why 4-bit keys blow up memory:** Even when a key vector is normalized to length $1$, rounding its 32 coordinates to 4-bit OCP `MXFP4` can inflate its squared length by up to **`700/431` (1.624×)** — much worse than the naive `1.44×` estimate — because 31 tiny subnormal coordinates can all round upward simultaneously. At step size $\beta = 2$, that inflation turns a safe reflection into an exponential blowup across every token. Clamping $\beta \le 431/350 \approx 1.2314$ (or `289/162` for FP8, `66049/33282` for BF16) satisfies the contraction condition for every key within the stated squared-norm bound.
+2. **Why Euler-product matrix inversion fails catastrophically:** A popular trick for inverting $(I + L)^{-1}$ on GPUs multiplies $(I - L)(I + L^2)(I + L^4)\cdots$. We prove that for a chunk of 64 tokens, the intermediate matrix $L^{32}$ hits entries of **`465 quadrillion`** (at $\beta = 1$) and **`over 10^27`** (at $\beta = 2$) even though the final answer has entries $\le 2$. These are exact integer facts about the matrix powers; no statement about rounding errors, FP8 overflow or NaNs is proved.
+3. **Why recursive 2×2 Block-Schur inversion fixes it:** Splitting the matrix recursively in half and computing $-D^{-1} C A^{-1}$ via exact 2×2 Block-Schur inversion produces the exact inverse in $\log _ 2 C$ Tensor-Core GEMMs without ever forming powers of $L$ (the Lean statement is the exact inverse identity; no numerical-stability claim is proved).
 
 ---
+
+## Scope of the formal statement
+
+The `MXFP4` / `MXFP6` / `FP8` / `BF16` content is a hand-written rational model: a quantizer on the listed value sets and a normal-range rounding-ratio formula, not the bit-level semantics of the OCP formats or of any hardware. The chunkwise WY and Block-Schur statements are exact identities over `Rat` matrices.
 
 ## Main Theorems
 
@@ -70,8 +74,8 @@ This repository proves, with 100% machine-checked certainty in Lean 4, why naive
 
 ## Prior-Art Context
 
-- **Gated DeltaNet, DeltaNet & Mamba-2:** Yang et al. (ICLR 2025, *Gated Delta Networks*) and Dao & Gu (ICML 2024, *Transformers are SSMs: Mamba-2*) introduced chunkwise parallel WY representations (building on Bischof & Van Loan, 1987) for linear-time Householder state updates. Our Theorems 1–3 provide the first machine-checked exact characterization of quantized-key spectral stability and chunkwise WY inverse sensitivity under OCP microscaling formats.
-- **OCP Microscaling (`MXFP4`/`MXFP6`/`MXFP8`) & Subnormal Amplification:** The Open Compute Project Microscaling Formats specification (v1.0, 2023) defines $B = 32$ block-scaled `E2M1`, `E3M2`, `E2M3`, and `E4M3` formats. Theorem 2 establishes the exact subnormal-inclusive global squared-norm blowup maxima (`700/431` for OCP v1.0 and `380/227` for max-fit `E2M1`), showing why normal-only rounding analysis underestimates worst-case key norm amplification by $+18.4\%$ (from `1.44` to `1.624`).
+- **Gated DeltaNet, DeltaNet & Mamba-2:** Yang et al. (ICLR 2025, *Gated Delta Networks*) and Dao & Gu (ICML 2024, *Transformers are SSMs: Mamba-2*) introduced chunkwise parallel WY representations (building on Bischof & Van Loan, 1987) for linear-time Householder state updates. Our Theorems 1–3 give a machine-checked exact characterization of quantized-key spectral stability and chunkwise WY inverse sensitivity for the hand-written rational models stated here (no priority claim; no prior-art search was recorded).
+- **OCP Microscaling (`MXFP4`/`MXFP6`/`MXFP8`) & Subnormal Amplification:** The Open Compute Project Microscaling Formats specification (v1.0, 2023) defines $B = 32$ block-scaled `E2M1`, `E3M2`, `E2M3`, and `E4M3` formats. Theorem 2 establishes the exact subnormal-inclusive global squared-norm blowup maxima (`700/431` for OCP v1.0 and `380/227` for max-fit `E2M1`), showing that, in this model, normal-only rounding analysis underestimates the worst-case squared-norm amplification (from `1.44` to `1.624`, i.e. by about $12.8\%$ relative, an absolute increase of `0.184`).
 - **Triangular Inversion on Parallel Hardware:** Euler-product / Neumann-series inversion of unit lower-triangular matrices is widely used in parallel kernels, whereas recursive Block-Schur inversion (Higham, *Accuracy and Stability of Numerical Algorithms*) avoids matrix powering. Theorems 4–5 formalize the exact binomial mechanism behind Euler-product catastrophic cancellation and the universal two-sided exactness of recursive 2×2 Block-Schur inversion.
 
 ## Build & Verification

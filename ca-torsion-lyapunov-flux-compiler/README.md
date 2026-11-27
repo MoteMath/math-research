@@ -33,6 +33,10 @@ Picture a ring of $w$ light bulbs, each on or off, that all update at once by lo
 
 A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of a kernel-checked potential/flux/Lyapunov certificate compiler for one-dimensional binary cellular automata on periodic rings of every length.
 
+## Scope of the formal statement
+
+Each theorem concerns one fixed rule table (for example `0xac8c` or ECA rule $108$), for every ring length; none is a statement about all rules. The certificate check itself is a finite computation on $2^M$ windows.
+
 ## Main Theorems
 
 | Theorem (in `Challenge.lean`) | Statement |
@@ -58,9 +62,9 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of a 
 ## Prior-Art Context
 
 - **Additive conservation laws:** Hattori and Takesue (*Physica D* 49, 1991) classify additive conserved quantities of one-dimensional cellular automata; Boccara and Fuks (1998, 2002) treat number-conserving rules.
-- **Group-valued conservation (closest prior art):** Pivato (*Nonlinearity* 15, 2002, "Conservation laws in cellular automata") characterizes conserved quantities valued in arbitrary abelian groups, including $\mathbb{Z}/d\mathbb{Z}$, via local flux cocycles. The `checkModConservation` mode mechanizes the finite torsion case of that criterion; the referee notes explicitly require citing Pivato for the $\mathbb{Z}/d\mathbb{Z}$ flux cocycles.
+- **Group-valued conservation (closest prior art):** Pivato (*Nonlinearity* 15, 2002, "Conservation laws in cellular automata") characterizes conserved quantities valued in arbitrary abelian groups, including $\mathbb{Z}/d\mathbb{Z}$, via local flux cocycles. The `checkModConservation` mode mechanizes the finite torsion case of that criterion.
 - **Lyapunov functionals:** Goles and Martínez (1990) study Lyapunov functionals for threshold automata networks; ECA rules $108$ and $152$ are classical Wolfram class II rules (Wolfram 1984; Kůrka 2003) used here as benchmark instances.
-- **What is new here:** one unified, zero-Mathlib, kernel-checked pure-data compiler covering Gauss continuity, integer and torsion conservation, flux-mediated strict dissipation with convergence bounds that are valid also for rings shorter than the verification window, and a verified two-step rule compiler; plus concrete nonlinear $k = 4$ rules with torsion laws that have no integer lift. Referee-5 `PASS` (Tier A+ novelty); an independent referee probe re-implemented the automaton from the stated definitions and checked $196615$ cases exhaustively over all rings of length up to $13$ with $0$ mismatches.
+- **What this package adds (not independently reviewed):** one unified, zero-Mathlib, kernel-checked pure-data compiler covering Gauss continuity, integer and torsion conservation, flux-mediated strict dissipation with convergence bounds that are valid also for rings shorter than the verification window, and a verified two-step rule compiler; plus concrete nonlinear $k = 4$ rules with torsion laws that have no integer lift. This package has not been independently reviewed; `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

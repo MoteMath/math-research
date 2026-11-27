@@ -22,6 +22,10 @@ When a column in a base-$b$ counter overflows, it spills chips to its neighbours
 
 A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`, no custom axioms) formalization. Full proofs live in `CarryEchoSandpileDuality/Theorems.lean`, definitions in `CarryEchoSandpileDuality/Defs.lean`; `Challenge.lean` states the headline theorems with `sorry` and `Solution.lean` proves the identical statements by delegation.
 
+## Scope of the formal statement
+
+Of the encode/decode bijection between recurrent carry-echo configurations and `Fin (R_{b,w+1})`, `Challenge.lean` states only the right-inverse half `encode (decode r) = r` (`carryEcho_recurrent_count_left`); the other half (`decode_encode`, and the matching `_right` statement) is proved in the library but is not in the trusted statement file. `IsRecurrent` is the standard definition (stable and reachable from the maximal stable configuration).
+
 ## Main Theorems
 
 | Theorem (in `Challenge.lean`) | Statement |
@@ -29,7 +33,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `carryEcho_skew_conservation` | In the carry-echo sandpile of base $b$ and width $w \ge 1$, every avalanche conserves `skewWeight` up to top-site topplings times the repunit $R _ {b, w + 1}$. |
 | `carryEcho_total_avalanche_law` | For all $b \ge 2$ and $w$, the harmonic potential $\Psi$ drops by exactly $(\sum _ i f _ i)(b ^ {w + 1} - 1)$ during any carry-echo avalanche. |
 | `carryEcho_recurrent_iff_dualSkew` | For all $b \ge 2$ and $w \ge 1$, a carry-echo configuration is recurrent if and only if it satisfies the local dual-skew canonicality predicate `IsDualSkew`. |
-| `carryEcho_recurrent_count_left` | The harmonic encoding and Myers greedy decoding establish an exact bijection between recurrent carry-echo configurations and $\mathrm{Fin}(R _ {b, w + 1})$. |
+| `carryEcho_recurrent_count_left` | Right-inverse half of the repunit bijection: for every $r \in \mathrm{Fin}(R _ {b, w + 1})$, `encode (decode r) = r` for the harmonic encoding and Myers greedy decoding. The converse half (`decode_encode`) is proved in the library but is not in `Challenge.lean`. |
 | `carryEcho_explicitIdentity_eq` | For all $b \ge 2$ and $w \ge 1$, the explicit closed-form configuration `explicitIdentity b w` equals the sandpile group identity. |
 | `carryEcho_identity_laws_ge2` | For all $b \ge 2$ and $w \ge 2$, self-addition of the identity satisfies exact harmonic value, top-site firing $1$, and chip-mass congruence modulo $b$. |
 | `directedCarry_all_stable_recurrent` | In the directed-carry sandpile of base $b \ge 2$ and width $w \ge 1$, every stable configuration is recurrent. |
@@ -45,7 +49,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical sandpile & chip-firing lineage:** Dhar's Abelian sandpile burning algorithm (1990), **Björner, Lovász & Shor** (*Chip-firing games on graphs*, EJC 1991) for confluence and odometer uniqueness, and **Lee, Liang & Tzeng** (1991) together with **Speer** (*Asymmetric Abelian Sandpile Models*, J. Stat. Phys. 1993, §4–5) for the 1D $(1\text{ up}, b\text{ down})$ asymmetric sandpile's recurrent count $(b ^ {w + 1} - 1)/(b - 1)$ and forbidden-subconfiguration characterization.
-- **Referee audit (referee-2, referee-6 Tier A+ 9.0/8.0/9.5; recorded in `REGISTRY.md`):** the purely constructive (`[propext, Quot.sound]`, zero `Classical.choice`, zero matrix-tree theorem) odometer-cancellation burning engine reused across both families, the explicit Myers greedy-encoder closed-form identity $e _ {b, w}$, the universal self-addition avalanche laws, and the exact constant-drop divisibility $(b ^ {w + 1} - 1) \mid \Delta \Psi$ are new.
+- **Contributions claimed here (not independently reviewed; no prior-art search was recorded):** the purely constructive (`[propext, Quot.sound]`, zero `Classical.choice`, zero matrix-tree theorem) odometer-cancellation burning engine reused across both families, the explicit Myers greedy-encoder closed-form identity $e _ {b, w}$, the universal self-addition avalanche laws, and the exact constant-drop divisibility $(b ^ {w + 1} - 1) \mid \Delta \Psi$.
 
 ## Build & Verification
 

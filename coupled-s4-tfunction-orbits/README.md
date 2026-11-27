@@ -44,8 +44,8 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 ## Prior-Art Context
 
-- **Classical T-function & 2-adic dynamics lineage:** single-cycle multi-word T-functions and the Family I carry-mask trigger $m(x, y) = ((x \mathbin{\&} y) + 1) \oplus (x \mathbin{\&} y)$ trace directly to **Klimov & Shamir** (*New Cryptographic Primitives Based on Multiword T-Functions*, FSE 2004; *New Applications of T-Functions in Block Ciphers and Hash Functions*, FSE 2005 / CT-RSA 2005, Parameter-0 construction) and **Anashin & Khrennikov** (*Applied Algebraic Dynamics*, De Gruyter 2009).
-- **Referee audit (referee-2, referee-6 S-Tier 9.5/8.5/9.5; recorded in `REGISTRY.md`):** the unified non-abelian $S _ 4 = \mathrm{AGL}(2, \mathbb{F} _ 2)$ fiber-monodromy lifting engine, $D _ 4$ cocycle decoupling to infinite-dimensional functional universality ($\forall P, Q, R$), the universal no-shear obstruction, the $x \mathbin{|} y$-destroying twisted ternary odometer (with $w = 5$ decoy `ternSharpX_breaks_at_w5`), and the hybrid two-cycle family are new.
+- **Classical T-function & 2-adic dynamics lineage:** single-cycle multi-word T-functions and the Family I carry-mask trigger $m(x, y) = ((x \mathbin{\&} y) + 1) \oplus (x \mathbin{\&} y)$ trace directly to **Klimov & Shamir** (*New Cryptographic Primitives Based on Multiword T-Functions*, FSE 2004, [pdf](https://www.iacr.org/archive/fse2004/30170001/30170001.pdf); *New Applications of T-Functions in Block Ciphers and Hash Functions*, FSE 2005 / CT-RSA 2005, Parameter-0 construction) and **Anashin & Khrennikov** (*Applied Algebraic Dynamics*, De Gruyter 2009).
+- **Contributions claimed here (not independently reviewed; no prior-art search was recorded):** the unified non-abelian $S _ 4 = \mathrm{AGL}(2, \mathbb{F} _ 2)$ fiber-monodromy lifting engine, $D _ 4$ cocycle decoupling to infinite-dimensional functional universality ($\forall P, Q, R$), the universal no-shear obstruction, the $x \mathbin{|} y$-destroying twisted ternary odometer (with $w = 5$ decoy `ternSharpX_breaks_at_w5`), and the hybrid two-cycle family.
 
 ## Build & Verification
 

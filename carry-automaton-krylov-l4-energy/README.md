@@ -20,6 +20,10 @@
 
 A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`, no custom axioms) formalization. Full proofs live in `CarryAutomatonKrylovL4Energy/Theorems.lean`, definitions in `CarryAutomatonKrylovL4Energy/Defs.lean`; `Challenge.lean` states the headline theorems with `sorry` and `Solution.lean` proves the identical statements by delegation.
 
+## Scope of the formal statement
+
+The statements are about the hand-written binary automata and polynomial families defined in `Defs.lean` (for example `mask6Auto`); `mask6Cert_valid` is a finite certificate check, and the other headline statements are universally quantified over their stated parameters.
+
 ## Main Theorems
 
 | Theorem (in `Challenge.lean`) | Statement |
@@ -29,14 +33,14 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `innerQRZ_dualStep` | **Exact Adjointness Theorem (`innerQRZ_dualStep`):** `⟨dualStep A W, S⟩ = ⟨W, primalStep A S⟩` for EVERY `BinAuto d`, `W`, and `S`. |
 | `paperfolding_direct_rec` | Direct recurrence verification: `g(2n) = (-1)^n` and `g(2n+1) = g(n)` for all `n : Nat`. |
 | `baumSweet_classical_rec` | Direct verification that `baumSweetAuto.eval 0` satisfies the classical Baum-Sweet recurrence: `b(0)=1`, `b(2n+1)=b(n)`, `b(4n)=b(n)`, `b(4n+2)=0` for ALL `n : Nat`. |
-| `mask6Cert_valid` | Machine-checked infinite theorem `mask6Cert_valid` proved in pure Lean 4 `Init`. |
+| `mask6Cert_valid` | Machine-checked finite instance: the witnessed dual certificate `mask6Cert` for `mask6Auto` passes the Boolean check `checkWitnessedDualCert` (a finite computation). |
 | `mask6_totE4_rec` | **THEOREM 4a (Exact Sparse Degree-5 Recurrence for `totE4 mask6Auto`, ∀ `k : Nat`):** `T(k + 5) = 2 * T(k + 4) + 16 * T(k + 2) + 256 * T(k)`. |
 | `rudinShapiro_E4_closed_form` | Machine-checked infinite theorem `rudinShapiro_E4_closed_form` proved in pure Lean 4 `Init`. |
 
 ## Prior-Art Context
 
 - - **Classical Prior Art (Explicitly Distinguished):** - *Rudin-Shapiro (Shapiro 1951, Rudin 1959, Littlewood 1968, Brillhart–Morton 1978, Høholdt–Jensen 1988):* corresponds to the single base case $m = 0, \psi \equiv 0$ of our Theorem 1 and our 10-line benchmark corollary `rudinShapiro_E4_closed_form`. - *Golay Complementary Sets & Generalized Boolean Functions (Golay 1961, Davis–Jedwab 1999, Paterson 2000):* construct fixed-length-$2^k$ complementary sets from quadratic/graph Boolean functions on $k$ variables. By contrast, our Theorem 1 constructs a **universal 2-parameter family of infinite 2-automatic sliding-window parity sequences** (`b
-- Hostile-verified PASS by `referee-4`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

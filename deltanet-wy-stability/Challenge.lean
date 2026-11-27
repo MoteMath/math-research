@@ -35,8 +35,8 @@ theorem deltanet_spectral_stability_iff (d : Nat) (α β : Rat)
   sorry
 
 /-- Theorem 2 (Exact Quantized-Key Squared-Norm Blowup & Safe Step-Size Ceilings):
-    Exact subnormal-inclusive block-scaled (`B = 32`) bounds, extremal witnesses, and
-    safe `β` ceilings for OCP MXFP4 `E2M1` (`700/431`, `β_safe = 431/350`) and max-fit
+    Exact bounds, extremal witnesses, and safe `β` ceilings for a hand-written rational
+    model of block-scaled (`B = 32`) OCP MXFP4 `E2M1` quantization (`700/431`, `β_safe = 431/350`) and max-fit
     MXFP4 (`380/227`, `β_safe = 227/190`), together with the universal `m`-bit normal-range
     formula `((2^(m+1) + 2)/(2^(m+1) + 1))^2` specialized to `m ∈ {1, 2, 3, 7}`
     (MXFP4, MXFP6/FP8-E5M2, FP8-E4M3/MXFP6-E2M3, and BF16). -/

@@ -15,7 +15,7 @@ namespace CombInequalitiesChallenge
 
 open CombMining
 
-/-- Sharp factor-3 quantitative bound for two-stack sorting on `321`-avoiding permutations. -/
+/-- Factor-3 bound `3 * inv(S^2 p) <= pat231 p` for two-stack sorting on `321`-avoiding permutations (a bound only; optimality of the factor 3 is not part of this statement). -/
 theorem avoids321_three_stack2Inv_le_pat231 {n : Nat} (p : PermFin n) (h321 : p.Avoids321) :
     3 * p.stack2Inv ≤ p.pat231 := by
   sorry

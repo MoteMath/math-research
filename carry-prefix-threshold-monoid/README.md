@@ -10,7 +10,7 @@
 
 ## For Mathematicians
 
-Multi-operand, signed-borrow, mixed-radix and modulo-$m$ carry transitions are Euclidean floor-division maps $c \mapsto \lfloor (c + S) / M \rfloor$. Their composition lives in the unbounded semidirect product $(\mathbb{N} _ {> 0}, \times) \ltimes (\mathbb{Z}, +)$, whose shift $S$ grows linearly with the word width. We prove that on every carry window $[L, U]$ and every block with $M \ge U - L$ the map **collapses faithfully** into the finite semigroup $\mathcal{T} _ {[L, U]}$ of threshold steps $c \mapsto q + [c \ge t]$ and constants, and that `collapse` is an exact semigroup homomorphism on window-preserving blocks. The semigroup is aperiodic ($e ^ 3 = e ^ 2$) and has exactly $N ^ 2 - N + 1$ elements for $N = U - L + 1$ carry states ($N = 2$ recovers the classical generate/propagate monoid with $3$ elements, $N = 3$ gives $7$).
+Multi-operand, signed-borrow, mixed-radix and modulo-$m$ carry transitions are Euclidean floor-division maps $c \mapsto \lfloor (c + S) / M \rfloor$. Their composition lives in the unbounded semidirect product $(\mathbb{N} _ {> 0}, \times) \ltimes (\mathbb{Z}, +)$, whose shift $S$ grows linearly with the word width. We prove that on every carry window $[L, U]$ and every block with $M \ge U - L$ the map **collapses faithfully** into the finite semigroup $\mathcal{T} _ {[L, U]}$ of threshold steps $c \mapsto q + [c \ge t]$ and constants, and that `collapse` is an exact semigroup homomorphism on window-preserving blocks. The semigroup is aperiodic ($e ^ 3 = e ^ 2$) and has exactly $N ^ 2 - N + 1$ elements for $N = U - L + 1$ carry states (the cardinality is proved in the library; the `Challenge.lean` statement `enumBounded_length` is the length of the enumeration list) ($N = 2$ recovers the classical generate/propagate monoid with $3$ elements, $N = 3$ gives $7$).
 
 Everything lifts to **all** prefix-tree topologies (ripple, Sklansky, Kogge-Stone, Brent-Kung, arbitrary unbalanced trees) and all widths through one generic associative `PrefixTree` chassis: two trees with the same fringe evaluate equally in any semigroup. Below the critical modulus the collapse is provably impossible. Global carry absorption reduces to a local adjacent condition (a two-state subshift of finite type): a tree absorbs the carry iff its fringe is not a resonant chain, giving exact counts for three-operand sums ($2 \cdot 4 ^ w$ resonant weighted triples out of $8 ^ w$), and modulo an odd $m > 1$ no binary block ever absorbs.
 
@@ -22,6 +22,10 @@ A multi-input adder has to pass a "carry" from digit to digit, and with many inp
 
 A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`, no custom axioms) formalization. Full proofs live in `CarryPrefixThresholdMonoid/Theorems.lean`, definitions in `CarryPrefixThresholdMonoid/Defs.lean`; `Challenge.lean` states the headline theorems with `sorry` and `Solution.lean` proves the identical statements by delegation.
 
+## Scope of the formal statement
+
+`enumBounded_length` in `Challenge.lean` is the length of a hand-built enumeration list (`N` constants followed by `(N-1)^2` steps, so `N^2 - N + 1` by arithmetic). Completeness and duplicate-freeness of that list, which is what makes it the cardinality of the semigroup, are proved in the library (`enumBounded_complete`, `inBounds_eval_injective`), not in the trusted statement file.
+
 ## Main Theorems
 
 | Theorem (in `Challenge.lean`) | Statement |
@@ -29,7 +33,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `collapse_tree_universality` | For every prefix tree whose leaf blocks have modulus at least $U - L$ and preserve the window $[L, U]$, evaluating the tree in the finite threshold-step semigroup and applying it to any carry $c \in [L, U]$ equals the exact floor-division carry action. |
 | `collapse_sharpness_obstruction` | If $0 < M < U - L$ there is a block of modulus $M$ whose action on $[L, U]$ is represented by no threshold-step element, so the width threshold is sharp. |
 | `aperiodic` | Every threshold-step element satisfies $e ^ 3 = e ^ 2$ (the semigroup is aperiodic of index at most $2$). |
-| `enumBounded_length` | The bounded threshold-step semigroup on $N \ge 1$ carry states has exactly $N ^ 2 - N + 1$ elements. |
+| `enumBounded_length` | For $N \ge 1$ the hand-built enumeration list `enumBounded L N` ($N$ constants followed by $(N-1)^2$ step elements) has length $N ^ 2 - N + 1$. That this list is complete and duplicate-free (so the bounded semigroup has exactly that many elements) is proved in the library (`enumBounded_complete`, `inBounds_eval_injective`) but is not part of `Challenge.lean`. |
 | `tree_exact_carry_absorption` | A prefix tree of threshold-step elements evaluates to a constant (absorbs every incoming carry) if and only if its fringe is not a resonant chain. |
 | `three_input_exact_absorption` | For every prefix tree of three-operand digit sums $s \le 3$, absorption holds iff the digit string is not bit-resonant, for both the unsigned and the signed-borrow encodings. |
 | `three_input_resonant_triple_count` | For every width $w \ge 1$ the resonant digit strings carry total weight $2 \cdot 4 ^ w$ (out of $8 ^ w$ operand triples). |
@@ -45,9 +49,9 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 ## Prior-Art Context
 
-- **Classical carry-lookahead and parallel prefix:** the two-input generate/propagate monoid and its flip-flop semigroup $U _ 2$ (Brent-Kung 1982, Ladner-Fischer 1980, Kogge-Stone 1973) and modulo $2 ^ n \pm 1$ adders (Zimmermann 1999) are credited as the $N = 2$ background. As the referee notes recommend, the $U _ 2$ flip-flop monoid and the CFL83 reference are credited as the closest classical antecedents.
+- **Classical carry-lookahead and parallel prefix:** the two-input generate/propagate monoid and its flip-flop semigroup $U _ 2$ (Brent-Kung 1982, Ladner-Fischer 1980, Kogge-Stone 1973) and modulo $2 ^ n \pm 1$ adders (Zimmermann 1999) are credited as the $N = 2$ background. The $U _ 2$ flip-flop monoid and the CFL83 reference are credited as the closest classical antecedents.
 - **Crandall primes:** the feedback dichotomies concern end-around carry for moduli of the form $2 ^ n \pm \delta$ in the sense of Crandall's special-form moduli.
-- **Referee audit (referee-1, referee-6, referee-10; recorded in `REGISTRY.md` and `TOP_MECHANISMS.md`):** the generalization of the $U _ 2$ / CFL83-style monoid to unbounded multi-input carries with an exact collapse-width threshold, resonance-lock subshift counts and Crandall/Fermat dichotomies is new; zero overlap with the other packages of this repository.
+- **Contributions claimed here (not independently reviewed; no prior-art search was recorded):** the generalization of the $U _ 2$ / CFL83-style monoid to unbounded multi-input carries with an exact collapse-width threshold, resonance-lock subshift counts and Crandall/Fermat dichotomies.
 
 ## Build & Verification
 
