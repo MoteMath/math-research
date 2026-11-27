@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BinaryGraySuperpositionTransferChallenge.glue_alpha_sound",
+    "BinaryGraySuperpositionTransferChallenge.gb_pm_recurrence",
+    "BinaryGraySuperpositionTransferChallenge.gb_doublyCyclic_pm",
+    "BinaryGraySuperpositionTransferChallenge.gbGraph_exactChrom",
+    "BinaryGraySuperpositionTransferChallenge.gb_doublyCyclic_exactChrom",
+    "BinaryGraySuperpositionTransferChallenge.gb_chrom_root_two_sharp_k2",
+    "BinaryGraySuperpositionTransferChallenge.sb_pm_const_one",
+    "BinaryGraySuperpositionTransferChallenge.non_vacuity_witness"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

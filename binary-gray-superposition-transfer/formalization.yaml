@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: BitTransfer3  Bit-Boundary Transfer-Tensor & State-Invariant Compiler
+  description: >-
+    `BitTransfer3`: Bit-Boundary Transfer-Tensor & State-Invariant Compiler
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: binary-gray-superposition-transfer
+  license: Apache-2.0

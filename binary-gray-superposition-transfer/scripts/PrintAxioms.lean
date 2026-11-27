@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BinaryGraySuperpositionTransferChallenge.glue_alpha_sound
+#print axioms BinaryGraySuperpositionTransferChallenge.gb_pm_recurrence
+#print axioms BinaryGraySuperpositionTransferChallenge.gb_doublyCyclic_pm
+#print axioms BinaryGraySuperpositionTransferChallenge.gbGraph_exactChrom
+#print axioms BinaryGraySuperpositionTransferChallenge.gb_doublyCyclic_exactChrom
+#print axioms BinaryGraySuperpositionTransferChallenge.gb_chrom_root_two_sharp_k2
+#print axioms BinaryGraySuperpositionTransferChallenge.sb_pm_const_one
+#print axioms BinaryGraySuperpositionTransferChallenge.non_vacuity_witness

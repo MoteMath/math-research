@@ -2200,3 +2200,18 @@ We introduce **two composable, division-free pure-silicon infinite proof mechani
 | `theorem3_bitEqWalsh_inv_and_zerosum` | `KroneckerWoodburySchurRiccati.Theorems` | Theorem 3 (Zero Absorption): exact Woodbury inverse and zero-sum inverse capacitance law for `bitEqWalshMat k` for all `k`. |
 | `theorem4_programmable_depth_N_singularity` | `KroneckerWoodburySchurRiccati.Theorems` | Theorem 4 (Programmable Depth-N Singularity): `prefixWalshMat N (-1) k` is invertible for all `k < N` and identically singular at exact depth `k = N`. |
 | `nonvacuity_witness_all_theorems` | `KroneckerWoodburySchurRiccati.Theorems` | Nine-conjunct concrete non-vacuity and sharpness witness across all four Riccati regimes. |
+
+## 157. [`binary-gray-superposition-transfer/`](binary-gray-superposition-transfer/)
+
+`BitTransfer3`: Bit-Boundary Transfer-Tensor & State-Invariant Compiler
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `glue_alpha_sound` | `BinaryGraySuperpositionTransfer.Theorems` | **GENERIC SOUNDNESS THEOREM 1 (`BitTransfer3.Alpha`)**: For ANY 3-terminal gluing specification `spec` and ANY two `TermGraph n` instances `L, R`, the exact tropical independence-number vector of `glue spec L R` equals `stepAlpha spec`. |
+| `gb_pm_recurrence` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `gb_pm_recurrence` proved in pure Lean 4 `Init`. |
+| `gb_doublyCyclic_pm` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `gb_doublyCyclic_pm` proved in pure Lean 4 `Init`. |
+| `gbGraph_exactChrom` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `gbGraph_exactChrom` proved in pure Lean 4 `Init`. |
+| `gb_doublyCyclic_exactChrom` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `gb_doublyCyclic_exactChrom` proved in pure Lean 4 `Init`. |
+| `gb_chrom_root_two_sharp_k2` | `BinaryGraySuperpositionTransfer.Theorems` | Sharp threshold boundary witnesses for Theorem 5: at `k = 2` multiplicity is `1` (lead `+2`), and at `k = 3` multiplicity is `3` (lead `+4`), showing `k ≥ 4` is exact! |
+| `sb_pm_const_one` | `BinaryGraySuperpositionTransfer.Theorems` | Machine-checked infinite theorem `sb_pm_const_one` proved in pure Lean 4 `Init`. |
+| `non_vacuity_witness` | `BinaryGraySuperpositionTransfer.Theorems` | Non-Vacuity Concrete Witness: `GB_2`, `GB_3`, `GB_4` simultaneously realize all 5 theorems! |
