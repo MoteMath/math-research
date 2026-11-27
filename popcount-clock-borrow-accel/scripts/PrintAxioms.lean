@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms PopcountClockBorrowAccelChallenge.T_xor_unit_clock
+#print axioms PopcountClockBorrowAccelChallenge.T_xor_hits_mersenne_exact
+#print axioms PopcountClockBorrowAccelChallenge.T_xor_sync_collision_iff
+#print axioms PopcountClockBorrowAccelChallenge.T_sub_borrow_acceleration
+#print axioms PopcountClockBorrowAccelChallenge.T_sub_hits_mersenne_exact
+#print axioms PopcountClockBorrowAccelChallenge.F_xor_wrap_unique_2w_cycle
+#print axioms PopcountClockBorrowAccelChallenge.F_sub_wrap_unique_cycle
+#print axioms PopcountClockBorrowAccelChallenge.complement_carry_borrow_conjugacy

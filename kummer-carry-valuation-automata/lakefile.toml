@@ -1,0 +1,12 @@
+name = "kummer-carry-valuation-automata"
+version = "0.1.0"
+defaultTargets = ["KummerCarryValuationAutomata", "Solution"]
+
+[[lean_lib]]
+name = "KummerCarryValuationAutomata"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

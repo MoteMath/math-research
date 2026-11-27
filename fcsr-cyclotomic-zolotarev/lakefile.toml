@@ -1,0 +1,12 @@
+name = "fcsr-cyclotomic-zolotarev"
+version = "0.1.0"
+defaultTargets = ["FcsrCyclotomicZolotarev", "Solution"]
+
+[[lean_lib]]
+name = "FcsrCyclotomicZolotarev"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

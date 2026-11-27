@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "TfunctionCurvatureHolonomyChallenge.singleCycle_succ_iff",
+    "TfunctionCurvatureHolonomyChallenge.holonomy_succ_iff_curvatureSum_zero",
+    "TfunctionCurvatureHolonomyChallenge.lift_singleCycle_from_w4",
+    "TfunctionCurvatureHolonomyChallenge.singleCycle_xor_carryMask_iff",
+    "TfunctionCurvatureHolonomyChallenge.hybridH_singleCycle_iff_bits",
+    "TfunctionCurvatureHolonomyChallenge.runT_singleCycle_iff",
+    "TfunctionCurvatureHolonomyChallenge.runT_sharp_threshold",
+    "TfunctionCurvatureHolonomyChallenge.no_universal_finite_threshold"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

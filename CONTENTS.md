@@ -1037,3 +1037,63 @@ Exact capacity dichotomies for carry-free binary compressor cells at every hop d
 | `netW_popcount_carry_conservation` | `RhopCompressorCarryConfluence.Defs` | For any mixed compressor network with carry ledger $K$ and width $w \ge 1$: $\mathrm{popListW}(Y, w) + \sum _ {k < w - 1} K(k) + 2 K(w - 1) = \mathrm{popListW}(X, w)$. |
 | `confluence_csa_3state` | `RhopCompressorCarryConfluence.Theorems` | Two networks reaching column height at most 2 are accepted by the 3-state transducer with state equal to the carry-ledger difference in $\{-1, 0, 1\}$ at every prefix. |
 | `transducer_state_minimality` | `RhopCompressorCarryConfluence.Theorems` | For every $h \ge 1$ every state $q$ in $\{-(h-1), \dots, h-1\}$ is reached by some pair of equal-sum height-$h$ word lists, so $2h - 1$ states are necessary. |
+
+## 79. [`fcsr-cyclotomic-zolotarev/`](fcsr-cyclotomic-zolotarev/)
+
+Pure-Init Lean 4 exact 2-adic potential, reversibility, carry-bound, half-period, d-section cyclotomic and Zolotarev even-period laws for Feedback-with-Carry Shift Registers of every odd connection integer.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `word_representation_exact` | `FcsrCyclotomicZolotarev.Theorems` | For every FCSR specification and state $s$ and every $n$, $q \cdot W _ n(s) + 2^n P _ q(\mathrm{step}^n s) = P _ q(s)$: an exact $2$-adic rational representation with no limits. |
+| `step_bijection_on_core` | `FcsrCyclotomicZolotarev.Theorems` | On the periodic core of any FCSR, the clock tick has an exact two-sided inverse: $\mathrm{invStep}(\mathrm{step}\, s) = s$ and $\mathrm{step}(\mathrm{invStep}\, s) = s$. |
+| `carry_bounds_on_core` | `FcsrCyclotomicZolotarev.Theorems` | On the periodic core the carry satisfies $0 \le m \le \mathrm{wt}(c) - 1$ (Goresky-Klapper bounds, proved constructively). |
+| `universal_carry_bit_conservation` | `FcsrCyclotomicZolotarev.Theorems` | Over every periodic orbit of length $T$, $\sum _ {t < T} m _ t = (\mathrm{wt}(c) - 1) \sum _ {t < T} a _ t$. |
+| `halfPeriod_certificate` | `FcsrCyclotomicZolotarev.Theorems` | If $s$ is in the core and $q \mid (2^h + 1) P _ q(s)$, then $\mathrm{step}^h s$ is the complement of $s$, $\mathrm{step}^{2h} s = s$, bits and carries are anti-periodic with shift $h$, and over $2h$ ticks $\sum a _ t = h$ and $\sum m _ t = h (\mathrm{wt}(c) - 1)$. |
+| `dSection_cyclotomic_engine` | `FcsrCyclotomicZolotarev.Theorems` | If $q$ divides the $d$-section repunit $\sum _ {j < d} 2^{jk}$, then for every core state the section quantum $c(t)$ lies in $[1, d - 1]$, is $k$-periodic, $S(t) = -q \cdot c(t)$, and the section bit and carry sums obey the stated conservation laws. |
+| `even_period_of_mod8_3_or_5` | `FcsrCyclotomicZolotarev.Theorems` | For every odd $q \ge 3$ with $q \equiv 3$ or $5 \pmod 8$, if $2^T \equiv 1 \pmod q$ then $T$ is even (prime or composite $q$). |
+| `family_pow2_add_3` | `FcsrCyclotomicZolotarev.Theorems` | For $q = 2^k + 3$ and all $k \ge 3$: tap weight $2$, single-bit carries on the core, exact $k$-block coupling with $W _ k(s) + P(\mathrm{step}^k s) \in \{-3, -2, -1\}$, and every period of the state encoding $-1$ is even. |
+
+## 80. [`kummer-carry-valuation-automata/`](kummer-carry-valuation-automata/)
+
+Pure-Init Lean 4 Kummer-type exact valuation laws: shifted-bitwise Kummer collapses, Gray-code binomial sandwiches and sharp k-binomial slopes proved by finite carry-valuation automaton certificates.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `v2_binom_add_popcount` | `KummerCarryValuationAutomata.Theorems` | Kummer: for all $a, b$, $v _ 2 \binom{a + b}{a} + s _ 2(a + b) = s _ 2(a) + s _ 2(b)$. |
+| `v2_trinom_add_popcount` | `KummerCarryValuationAutomata.Theorems` | Trinomial Kummer: for all $a, b, c$, $v _ 2$ of the trinomial coefficient $\frac{(a + b + c)!}{a!\, b!\, c!}$ plus $s _ 2(a + b + c)$ equals $s _ 2(a) + s _ 2(b) + s _ 2(c)$. |
+| `shifted_xor_kummer_exact` | `KummerCarryValuationAutomata.Theorems` | For all $n$, $2 v _ 2 \binom{n + (n \oplus 2n)}{n} = 2 s _ 2(n) + s _ 2(n \oplus 2n)$. |
+| `shifted_or_kummer_exact` | `KummerCarryValuationAutomata.Theorems` | For all $n$, $v _ 2 \binom{n + (n \mathbin{|} 2n)}{n} = s _ 2(n \mathbin{|} 2n)$. |
+| `gray_binom_even` | `KummerCarryValuationAutomata.Theorems` | For every $n \ge 1$, $2$ divides $\binom{n + G(n)}{n}$ where $G(n) = n \oplus \lfloor n/2 \rfloor$ is the Gray code. |
+| `gray_strictly_below_shifted_xor` | `KummerCarryValuationAutomata.Theorems` | For every $n \ge 1$, $v _ 2 \binom{n + G(n)}{n} + 1 \le v _ 2 \binom{n + (n \oplus 2n)}{n}$. |
+| `binom_11n_sharp_slope` | `KummerCarryValuationAutomata.Theorems` | For every $n \ge 1$, $2 v _ 2 \binom{11 n}{n} + 2 \le 5 s _ 2(n)$. |
+| `binom_55n_sharp_infinite` | `KummerCarryValuationAutomata.Theorems` | On the explicit infinite family $n _ m$ (`fam55`), $4 v _ 2 \binom{55 n _ m}{n _ m} + 8 = 13 s _ 2(n _ m)$ and $s _ 2(n _ m) = 4m + 8$, so the slope $13/4$ and offset $8$ are sharp. |
+
+## 81. [`popcount-clock-borrow-accel/`](popcount-clock-borrow-accel/)
+
+Pure-Init Lean 4 exact unit-clock, Mersenne hitting-time, synchronous-collision, borrow-acceleration and unique-attractor-cycle laws for popcount-driven bitwise dynamics.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `T_xor_unit_clock` | `PopcountClockBorrowAccel.Theorems` | For all $t, x$, the quadratic bit-moment decreases by exactly one per step: $V(T _ \oplus^t(x)) = V(x) - t$. |
+| `T_xor_hits_mersenne_exact` | `PopcountClockBorrowAccel.Theorems` | If $x < 2^m$ and $V(x) + m = N$, then $T _ \oplus^N(x) = 2^m - 1$. |
+| `T_xor_sync_collision_iff` | `PopcountClockBorrowAccel.Theorems` | Two numbers $x, y$ collide synchronously under $T _ \oplus$ for some $t$ if and only if $V(x) = V(y)$. |
+| `T_sub_borrow_acceleration` | `PopcountClockBorrowAccel.Theorems` | If $\Phi(x) > 0$ then $2^{s _ 2(x)} \le x$, the borrow step $T _ -(x)$ equals $T _ \oplus^{1 + \mathrm{ctz}(x \gg s _ 2(x))}(x)$, and $\Phi(T _ -(x)) = \Phi(x) - 1$. |
+| `T_sub_hits_mersenne_exact` | `PopcountClockBorrowAccel.Theorems` | For every $x$, after exactly $\Phi(x)$ borrow steps the orbit is a Mersenne word $2^k - 1$. |
+| `F_xor_wrap_unique_2w_cycle` | `PopcountClockBorrowAccel.Theorems` | For every $w \ge 1$, the wrapped carry-free flow sends every $x < 2^w$ to $2^w - 1$, which lies on a cycle of exact length $2w$. |
+| `F_sub_wrap_unique_cycle` | `PopcountClockBorrowAccel.Theorems` | For every $w \ge 1$, the wrapped borrow-coupled flow sends every $x < 2^w$ to $2^w - 1$, which lies on a cycle of exact length $w + 1$. |
+| `complement_carry_borrow_conjugacy` | `PopcountClockBorrowAccel.Theorems` | For $w \ge 1$ and $x < 2^w$, complementing the borrow-coupled flow on the complement of $x$ gives exactly the carry-synchronized addition dual flow at $x$. |
+
+## 82. [`tfunction-curvature-holonomy/`](tfunction-curvature-holonomy/)
+
+Pure-Init Lean 4 exact single-cycle lifting laws for 1-Lipschitz 2-adic T-functions: bit-slice doubling criterion, curvature-holonomy transport, a width-4 lifting engine, universal carry-mask XOR symmetry, complete hybrid and run-family classifications, and the no-universal-finite-threshold theorem.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `singleCycle_succ_iff` | `TfunctionCurvatureHolonomy.Theorems` | For a $1$-Lipschitz T-function $f$ that is single-cycle mod $2^w$, $f$ is single-cycle mod $2^{w+1}$ if and only if it has unit bit-slice derivative and odd bit-slice holonomy at $w$. |
+| `holonomy_succ_iff_curvatureSum_zero` | `TfunctionCurvatureHolonomy.Theorems` | If $f$ is $1$-Lipschitz and single-cycle mod $2^{w+1}$, then its holonomy at $w + 1$ is odd if and only if its curvature sum $K _ w(f)$ vanishes mod $2^{w+2}$. |
+| `lift_singleCycle_from_w4` | `TfunctionCurvatureHolonomy.Theorems` | A width-$4$ single-cycle check, unit slice derivatives at all widths $w + 1$ with $w \ge 3$, and $K _ w(f) \equiv 0 \pmod{2^{w+2}}$ for all $w \ge 3$ force $f$ to be single-cycle mod $2^w$ for every $w \ge 1$. |
+| `singleCycle_xor_carryMask_iff` | `TfunctionCurvatureHolonomy.Theorems` | For every $1$-Lipschitz $g$ and every $k$, XORing $g$ with the carry-propagation mask $2k \cdot (x \oplus (x + 1))$ preserves single-cycle behaviour at every width $w \ge 1$. |
+| `hybridH_singleCycle_iff_bits` | `TfunctionCurvatureHolonomy.Theorems` | The hybrid map $H _ {a,b,C,k}$ is single-cycle at every width if and only if $C _ 0 = 1$, $a _ 1 = 1 \to C _ 1 = 1$, $a _ 0 = 0 \to C _ 2 = 1$ and $b _ 0 = 1 \to C _ 3 = 1$, independently of $k$. |
+| `runT_singleCycle_iff` | `TfunctionCurvatureHolonomy.Theorems` | For every $d \ge 2$ and $C$, $R _ {d,C}(x) = x + ((2 \cdot \mathrm{run} _ d(x)) \mathbin{|} C)$ is single-cycle at every width if and only if $C _ 0 = 1$ and $C _ d = 1$. |
+| `runT_sharp_threshold` | `TfunctionCurvatureHolonomy.Theorems` | For every $d \ge 2$, $R _ {d,1}$ is single-cycle at every width $1 \le w \le d$ but not at width $d + 1$. |
+| `no_universal_finite_threshold` | `TfunctionCurvatureHolonomy.Theorems` | For every $W \ge 1$ there is a $1$-Lipschitz T-function that is single-cycle at all widths $1 \le w \le W$ but not at width $W + 1$. |

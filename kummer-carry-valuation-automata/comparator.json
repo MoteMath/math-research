@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "KummerCarryValuationAutomataChallenge.v2_binom_add_popcount",
+    "KummerCarryValuationAutomataChallenge.v2_trinom_add_popcount",
+    "KummerCarryValuationAutomataChallenge.shifted_xor_kummer_exact",
+    "KummerCarryValuationAutomataChallenge.shifted_or_kummer_exact",
+    "KummerCarryValuationAutomataChallenge.gray_binom_even",
+    "KummerCarryValuationAutomataChallenge.gray_strictly_below_shifted_xor",
+    "KummerCarryValuationAutomataChallenge.binom_11n_sharp_slope",
+    "KummerCarryValuationAutomataChallenge.binom_55n_sharp_infinite"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

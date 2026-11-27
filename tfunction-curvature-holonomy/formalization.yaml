@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: T-Function Curvature-Holonomy Lifting - exact single-cycle lifting laws, sharp width thresholds and no universal finite threshold for 1-Lipschitz 2-adic T-functions
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the curvature-holonomy transport law for single-cycle 1-Lipschitz T-functions on Z_2, a finite-to-infinite lifting engine from width 4, the universal carry-mask XOR symmetry, a complete 4-bit characterization of a 4-parameter hybrid ARX family, and the complete infinite classification of the arbitrary-order d-run family with its sharp failure width d + 1 and the no-universal-finite-threshold theorem.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: tfunction-curvature-holonomy
+  license: Apache-2.0

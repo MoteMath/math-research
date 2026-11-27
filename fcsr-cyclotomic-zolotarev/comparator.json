@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FcsrCyclotomicZolotarevChallenge.word_representation_exact",
+    "FcsrCyclotomicZolotarevChallenge.step_bijection_on_core",
+    "FcsrCyclotomicZolotarevChallenge.carry_bounds_on_core",
+    "FcsrCyclotomicZolotarevChallenge.universal_carry_bit_conservation",
+    "FcsrCyclotomicZolotarevChallenge.halfPeriod_certificate",
+    "FcsrCyclotomicZolotarevChallenge.dSection_cyclotomic_engine",
+    "FcsrCyclotomicZolotarevChallenge.even_period_of_mod8_3_or_5",
+    "FcsrCyclotomicZolotarevChallenge.family_pow2_add_3"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

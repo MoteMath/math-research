@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms FcsrCyclotomicZolotarevChallenge.word_representation_exact
+#print axioms FcsrCyclotomicZolotarevChallenge.step_bijection_on_core
+#print axioms FcsrCyclotomicZolotarevChallenge.carry_bounds_on_core
+#print axioms FcsrCyclotomicZolotarevChallenge.universal_carry_bit_conservation
+#print axioms FcsrCyclotomicZolotarevChallenge.halfPeriod_certificate
+#print axioms FcsrCyclotomicZolotarevChallenge.dSection_cyclotomic_engine
+#print axioms FcsrCyclotomicZolotarevChallenge.even_period_of_mod8_3_or_5
+#print axioms FcsrCyclotomicZolotarevChallenge.family_pow2_add_3

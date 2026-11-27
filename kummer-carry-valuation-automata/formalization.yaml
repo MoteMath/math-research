@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Kummer Carry-Valuation Automata - exact shifted-bitwise Kummer laws, Gray-code binomial sandwiches and sharp k-binomial slopes via finite carry-valuation automata
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of Legendre and Kummer theorems built from scratch, a reusable finite-state carry-valuation automaton engine with coboundary, tropical bound and pumping certificates, exact shifted XOR/OR/AND Kummer collapse laws, Gray-code binomial evenness and strict sandwich laws, and sharp non-integer slope laws for v2 of binom(k n, n) at k = 11, 25, 55.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: kummer-carry-valuation-automata
+  license: Apache-2.0

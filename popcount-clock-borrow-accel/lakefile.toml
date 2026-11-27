@@ -1,0 +1,12 @@
+name = "popcount-clock-borrow-accel"
+version = "0.1.0"
+defaultTargets = ["PopcountClockBorrowAccel", "Solution"]
+
+[[lean_lib]]
+name = "PopcountClockBorrowAccel"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

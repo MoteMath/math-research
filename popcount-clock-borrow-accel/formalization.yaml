@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Popcount Clock and Borrow Acceleration - exact unit clocks, Mersenne hitting times, collision criteria and unique attractor cycles for popcount-driven bitwise dynamics
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of exact hitting times, synchronous-collision iff criteria, hardware borrow acceleration and unique global attractor cycles of length 2w and w + 1 for the popcount-driven bitwise dynamics x + popcount(x) and its XOR and borrow duals, together with the complement carry-borrow conjugacy.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: popcount-clock-borrow-accel
+  license: Apache-2.0

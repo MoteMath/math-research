@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: FCSR Cyclotomic and Zolotarev Laws - exact 2-adic potential, reversibility on the periodic core, half-period complementation, d-section conservation and the even-period law
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the exact 2-adic potential of Feedback-with-Carry Shift Registers, the word-representation identity, bijectivity on the periodic core, Goresky-Klapper carry bounds, universal carry-bit conservation, half-period complementation certificates, the d-section cyclotomic conservation engine, and a Zolotarev-style even-period law for all q = 3, 5 mod 8.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: fcsr-cyclotomic-zolotarev
+  license: Apache-2.0

@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PopcountClockBorrowAccelChallenge.T_xor_unit_clock",
+    "PopcountClockBorrowAccelChallenge.T_xor_hits_mersenne_exact",
+    "PopcountClockBorrowAccelChallenge.T_xor_sync_collision_iff",
+    "PopcountClockBorrowAccelChallenge.T_sub_borrow_acceleration",
+    "PopcountClockBorrowAccelChallenge.T_sub_hits_mersenne_exact",
+    "PopcountClockBorrowAccelChallenge.F_xor_wrap_unique_2w_cycle",
+    "PopcountClockBorrowAccelChallenge.F_sub_wrap_unique_cycle",
+    "PopcountClockBorrowAccelChallenge.complement_carry_borrow_conjugacy"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
