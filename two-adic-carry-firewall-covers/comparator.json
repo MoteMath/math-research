@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "TwoAdicCarryFirewallCoversChallenge.coverTree_sound",
+    "TwoAdicCarryFirewallCoversChallenge.T4_global_convergence",
+    "TwoAdicCarryFirewallCoversChallenge.T5_global_convergence",
+    "TwoAdicCarryFirewallCoversChallenge.X21_global_convergence_to_zero",
+    "TwoAdicCarryFirewallCoversChallenge.X33_global_convergence_to_zero",
+    "TwoAdicCarryFirewallCoversChallenge.grayQuad2_val_ceiling",
+    "TwoAdicCarryFirewallCoversChallenge.grayQuad2_neq_shift15",
+    "TwoAdicCarryFirewallCoversChallenge.T8_nontrivial_6cycle_never_drops"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

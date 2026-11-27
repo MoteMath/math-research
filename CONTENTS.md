@@ -872,3 +872,18 @@ All statements are in [`embed-zipf-lazystamp-bounds/Challenge.lean`](embed-zipf-
 | `lazy_stamp_adamw_exact_equivalence_to_dense_updates` | `EmbedZipfLazyStamp.LazyAdamW` | Exact inductive equivalence of $O(1)$ `Lazy-Stamp AdamW` to $\Delta$ dense steps, breaking `BF16` $\beta _ 2 = 0.999$ freeze for `100%` of states at $\Delta = 4$. |
 | `lazy_stamp_bandwidth_and_work_speedup_exact` | `EmbedZipfLazyStamp.BandwidthSpeedup` | Exact $V / U$ memory-traffic and FLOP speedup (`32×` at `131,072 / 4,096`, `≥ 25×` for `U ≤ 5,242`) and savings fraction $1 - U / V$. |
 | `zipf_mixed_precision_embedding_allocation_pareto` | `EmbedZipfLazyStamp.ZipfPareto` | Exact Cauchy–Schwarz/AM-GM optimality of $4^{b _ r - b _ s} = p _ r / p _ s$ with certified `< 2.0 b/param` Zipf allocations beating uniform `4-bit` (`MXFP4`) at half VRAM. |
+
+## 68. [`two-adic-carry-firewall-covers/`](two-adic-carry-firewall-covers/)
+
+Pure-Init Lean 4 2-adic compactness engine: finite prefix-tree certificates prove universal bitwise-arithmetic and Collatz-type theorems over all natural numbers.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `coverTree_sound` | `TwoAdicCarryFirewallCovers.Theorems` | A checked finite 2-adic prefix tree whose leaves certify balls $B(r, d)$ proves $P(n)$ for all $n \in \mathbb{N}$. |
+| `T4_global_convergence` | `TwoAdicCarryFirewallCovers.Theorems` | The bit-4-cleared Collatz map $T _ 4$ sends every $n$ to $\{0, 1\}$ (4 prefix bits certify 7 steps). |
+| `T5_global_convergence` | `TwoAdicCarryFirewallCovers.Theorems` | The bit-5-cleared Collatz map $T _ 5$ sends every $n$ to $\{0, 1\}$, via a 506-leaf depth-15 tree (64.8x compression). |
+| `X21_global_convergence_to_zero` | `TwoAdicCarryFirewallCovers.Theorems` | The XOR-Collatz map $X _ {2,1}$ sends every $n$ to $0$. |
+| `X33_global_convergence_to_zero` | `TwoAdicCarryFirewallCovers.Theorems` | The XOR-Collatz map $X _ {3,3}$ sends every $n$ to $0$. |
+| `grayQuad2_val_ceiling` | `TwoAdicCarryFirewallCovers.Theorems` | $2^{15} \nmid G(n)^2 + 3n + 60$ for all $n$, where $G(n) = n \oplus (n \gg 1)$ (744.7x compression). |
+| `grayQuad2_neq_shift15` | `TwoAdicCarryFirewallCovers.Theorems` | $G(n)^2 + 3n + 60 \ne n \ll 15$ for all $n$. |
+| `T8_nontrivial_6cycle_never_drops` | `TwoAdicCarryFirewallCovers.Theorems` | For $T _ 8$ the positive 6-cycle through $975$ never drops below $975$ (sharpness of the $k \le 5$ range). |

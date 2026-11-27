@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Two-Adic Carry-Firewall Covers - finite 2-adic prefix-tree certificates for infinite bitwise-arithmetic theorems
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a 2-adic compactness engine:
+    finite binary prefix trees (CoverTree) with a reflected bitwise Expr compiler and single-wire carry-firewall
+    precision preservation, discharging universal convergence theorems for bit-k-cleared Collatz maps, XOR-Collatz maps
+    and Gray-quadratic valuation ceilings over all natural numbers.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: two-adic-carry-firewall-covers
+  license: Apache-2.0

@@ -1,0 +1,12 @@
+name = "two-adic-carry-firewall-covers"
+version = "0.1.0"
+defaultTargets = ["TwoAdicCarryFirewallCovers", "Solution"]
+
+[[lean_lib]]
+name = "TwoAdicCarryFirewallCovers"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

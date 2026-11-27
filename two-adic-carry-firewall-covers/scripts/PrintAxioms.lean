@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms TwoAdicCarryFirewallCoversChallenge.coverTree_sound
+#print axioms TwoAdicCarryFirewallCoversChallenge.T4_global_convergence
+#print axioms TwoAdicCarryFirewallCoversChallenge.T5_global_convergence
+#print axioms TwoAdicCarryFirewallCoversChallenge.X21_global_convergence_to_zero
+#print axioms TwoAdicCarryFirewallCoversChallenge.X33_global_convergence_to_zero
+#print axioms TwoAdicCarryFirewallCoversChallenge.grayQuad2_val_ceiling
+#print axioms TwoAdicCarryFirewallCoversChallenge.grayQuad2_neq_shift15
+#print axioms TwoAdicCarryFirewallCoversChallenge.T8_nontrivial_6cycle_never_drops
