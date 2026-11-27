@@ -4,8 +4,8 @@ version: v0.4
 project:
   name: OCP FP8-E4M3FN SFU-Free & E4M3xE2M1 Zero-FP LOP3 Circuits
   description: >-
-    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of Wave 3A
-    (w3-fp8-e4m3-sfu-free) GPU-synthesized exact 0-ULP LOP3 circuits and information-theoretic
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of
+    GPU-synthesized LOP3 circuits that agree with their reference tables (0-ULP) and information-theoretic
     fan-in lower bounds on OCP FP8-E4M3FN and FP4-E2M1: a 15-LOP3 positive rsqrt circuit with
     exact algebraic RNE certification, a 33-LOP3 full-domain rsqrt circuit, exact 0-ULP LOP3
     DAGs for exp (67 LOP3), gelu (82 LOP3, tight 1-LOP3 y6), and silu (93 LOP3, tight 0-LOP3 y7),

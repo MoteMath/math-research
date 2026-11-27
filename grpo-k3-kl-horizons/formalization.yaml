@@ -4,8 +4,8 @@ version: v0.4
 project:
   name: Exact GRPO / RLHF Schulman k3 KL Non-Negativity Failure, FP8/BF16 Clip-Window Collapse, Binary-Reward Over-Weighting, and One-Pass Negative-Variance Laws
   description: >-
-    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
-    rational and IEEE-754 RNE laws for low-precision RLHF / GRPO (DeepSeek-R1) / PPO training:
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six
+    rational laws and RNE statements about hand-written models of low-precision RLHF / GRPO / PPO computations:
     exact Schulman k3 KL non-negativity and quadratic Taylor/Pade bounds, bit-exact BF16/FP16
     negative-KL and dead-zero violations for both Order A ((exp(d)-d)-1, witness 0x3b01 -> -1/256)
     and Order B ((exp(d)-1)-d, negative across the entire small-positive half-space), the FP8-E4M3

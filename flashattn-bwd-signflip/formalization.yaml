@@ -4,15 +4,16 @@ version: v0.4
 project:
   name: Exact FlashAttention Backward-Pass Spurious Sign-Flip, Orthogonal DC-Leakage, Key-Centering, and Unsigned 4-Bit Dynamic-Range Laws
   description: >-
-    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
-    rational and IEEE-754 RNE laws for low-precision FlashAttention-2/3 backward passes:
-    exact Softmax-Jacobian zero-sum conservation and cancellation-free identity, the razor-sharp
-    50.00% spurious sign-flip phase transition at tail mass eps <= 2^{-(m+2)} (1/512 BF16,
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six
+    algebraic laws and RNE threshold statements about hand-written rational models of low-precision
+    FlashAttention-2/3 backward passes:
+    Softmax-Jacobian zero-sum conservation and cancellation-free identity, the
+    spurious sign-flip threshold (exactly one of +c, -c flips the sign) at tail mass eps <= 2^{-(m+2)} (1/512 BF16,
     1/32 FP8-E4M3, 1/16 FP8-E5M2, 1/8 U-E3M1), the direct P . dP midpoint DC-leakage law
     1/(2^{m+1}+1), FlashAttention D_i = dO . fl(O) orthogonal divergence amplification
-    u_fwd * kappa_orth (>1000x worse than P . dP), exact key-centering dQ = dS(K - K_bar)
-    invariance and bias elimination, and the exact 16x dynamic-range advantage of unsigned
-    4-bit U-E3M1 over signed MXFP4-E2M1 on nonnegative attention probabilities.
+    u_fwd * kappa_orth (a constructed family exceeds 1000x the P . dP leakage), exact key-centering dQ = dS(K - K_bar)
+    invariance and bias elimination, and the 16x ratio of the dynamic ranges of two hand-written
+    format records (unsigned 4-bit U-E3M1 against unscaled signed MXFP4-E2M1).
   repository: https://github.com/MoteMath/math-research
   subdirectory: flashattn-bwd-signflip
   license: Apache-2.0

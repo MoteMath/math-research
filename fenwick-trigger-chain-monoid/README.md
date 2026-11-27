@@ -45,7 +45,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical Fenwick trees & automata:** Fenwick (*A new data structure for cumulative frequency tables*, Software: Practice and Experience, 1994) introduced $x \pm (x \mathbin{\&} -x)$ for prefix sums; Myhill-Nerode minimality for finite-state transducers is classical.
-- **Referee audit (referee-1 PASS #186; recorded in `REGISTRY.md`):** the 4-rule Fenwick Trigger-Chain Compiler with exact linear Myhill-Nerode minimality, the free-vs-$2 ^ w$-nilpotent monoid dichotomy, universal $D$/$U$ ancestor-spine collapse, and exact two's-complement word-conjugation and depth dualities are new; zero Section 4 overlap.
+- **Contents (not independently reviewed; no prior-art search is recorded):** the 4-rule Fenwick Trigger-Chain Compiler with exact linear Myhill-Nerode minimality, the free-vs-$2 ^ w$-nilpotent monoid dichotomy, universal $D$/$U$ ancestor-spine collapse, and exact two's-complement word-conjugation and depth dualities.
 
 ## Build & Verification
 

@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Dyadic Skew-Congruence & Integral Block-Schur Pfaffian Engine (specmat-3)
+  name: Dyadic Skew-Congruence & Integral Block-Schur Pfaffian Engine
   description: >-
     **Mechanism Name:** **Dyadic Skew-Congruence & Integral Block-Schur Pfaffian Engine** (with **Pure-Pfaffian Self-Congruence & Skew-Conference Complementary-Minor Reflection**). **Core Pure-Silicon Principle:** Most formal proofs about skew-symmetric $2m \times 2m$ matrices bypass the combinatorial Pfaffian and instead prove a determinant identity ($\det A = \mathrm{Pf}(A)^2$),
   repository: https://github.com/MoteMath/math-research

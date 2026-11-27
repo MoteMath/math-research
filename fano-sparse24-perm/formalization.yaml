@@ -6,12 +6,12 @@ project:
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving five exact
     algebraic and combinatorial laws governing N:M structured sparsity and sub-byte quantization:
-    (1) universal structured Top-k EF21 contraction alpha(k:m) = k/m, (2) joint k:m + MXFP4 (B=32)
+    (1) universal structured Top-k EF21 contraction alpha(k:m) = k/m, (2) joint k:m + MXFP4 (B=32, already-scaled block in [0,3], model)
     worst-case EF21 contraction proving 4:8 + MXFP4 (18/37) strictly beats 2:4 + MXFP4 (72/151)
     via anchor-group dilution plus the exact dense ternary law 4/(B+3), (3) the universal first-moment
     lower bound R_crit(C, 3) >= ceil((4C-1)(4C-2)/6) and exact Fano plane PG(2,2) obstruction
-    R_crit(2, 3) = 7 (7 x 5 = 35 pairwise-disjoint bipartition kills), (4) the exact 3-column
-    sunflower obstruction R_crit(2, 4) = 4, and (5) exact rational Uniform and Laplace k:2k
+    R_crit(2, 3) = 7 on 8 columns (7 x 5 = 35 pairwise-disjoint bipartition kills), (4) the 3-column
+    sunflower obstruction R_crit(2, 4) = 4 on 8 columns, and (5) exact rational Uniform and Laplace k:2k
     order-statistic NMSE gain laws.
   repository: https://github.com/MoteMath/math-research
   subdirectory: fano-sparse24-perm

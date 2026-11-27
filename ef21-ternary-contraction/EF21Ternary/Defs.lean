@@ -43,19 +43,19 @@ noncomputable def e2m1QuantNonneg (y : ℝ) : ℝ :=
   else if y < 5 then 4
   else 6
 
-/-- Exact symmetric nearest-neighbor OCP E2M1 quantizer onto
-`{0, ±1/2, ±1, ±3/2, ±2, ±3, ±4, ±6}`. -/
+/-- Symmetric nearest-neighbor quantizer onto the E2M1 value set
+`{0, ±1/2, ±1, ±3/2, ±2, ±3, ±4, ±6}`; ties round half up (not the OCP round-to-nearest-even). -/
 noncomputable def e2m1Quant (y : ℝ) : ℝ :=
   if 0 ≤ y then e2m1QuantNonneg y else -e2m1QuantNonneg (-y)
 
-/-- Exact universal EF21 contraction factor for MXFP4 (OCP E2M1 with E8M0 power-of-2 block scaling,
-block size `B ≥ 1`): three exact phase regimes (`1 ≤ B ≤ 8`, `9 ≤ B ≤ 12`, `B ≥ 13`),
+/-- Exact contraction factor for a model of MXFP4 (E2M1 values, pre-scaled block assumed to satisfy
+`|y i| ≤ 6`, `3 < |y i0|`; the E8M0 scale is not modelled; block size `B ≥ 1`): three exact phase regimes (`1 ≤ B ≤ 8`, `9 ≤ B ≤ 12`, `B ≥ 13`),
 matching `48/53` at `B = 16` and `144/175` at `B = 32`. -/
 noncomputable def alphaMXFP4 (B : ℕ) : ℝ :=
   min (384 / ((B : ℝ) + 399)) (min (192 / ((B : ℝ) + 195)) (144 / ((B : ℝ) + 143)))
 
-/-- Exact universal EF21 contraction factor for NVFP4 (OCP E2M1 with continuous/FP8 block scaling,
-block size `B ≥ 1`): two exact phase regimes (`1 ≤ B ≤ 23`, `B ≥ 24`),
+/-- Exact contraction factor for a model of NVFP4 (E2M1 values, continuous block scale with
+`|y i0| = 6`, not an FP8 scale; block size `B ≥ 1`): two exact phase regimes (`1 ≤ B ≤ 23`, `B ≥ 24`),
 matching `132/137` at `B = 16` and `576/607` at `B = 32`. -/
 noncomputable def alphaNVFP4 (B : ℕ) : ℝ :=
   min ((24 * (B : ℝ) + 12) / (25 * (B : ℝ) + 11)) (576 / ((B : ℝ) + 575))

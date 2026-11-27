@@ -8,10 +8,10 @@ import KahanNeumaierFp8.Defs
 # Trusted Challenge Statements (`kahan-neumaier-fp8-bounds`)
 
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
-1. Exact IEEE-754 RNE freeze threshold `ρ_{freeze,min}(P) = 2^{P+1}` and max non-freeze
+1. RNE freeze threshold (model `flRNENat P`: integer streams, unbounded exponent, no subnormals) `ρ_{freeze,min}(P) = 2^{P+1}` and max non-freeze
    bound `2^{P+2} - 2`, early-spike sequential erasure vs pairwise binary-tree preservation.
 2. Dual Kahan-vs-Neumaier Separation (Part I): late dipole spike `[1, ..., 1, +S, -S]`
-   100% erasure in Kahan vs 100% exact recovery in Neumaier.
+   complete erasure in Kahan vs exact recovery in Neumaier.
 3. Dual Kahan-vs-Neumaier Separation (Part II): Neumaier self-swamping ceiling
    `M_{Neumaier,max}(P) = 2^{P+2}` beaten by Kahan's per-step fold-back.
 4. Exact signed Kulisch bit-width law and OCP `FP8-E4M3FN` Kulisch-in-INT32 exactness
@@ -28,9 +28,9 @@ namespace KahanNeumaierFp8Challenge
 open KahanNeumaierFp8
 
 /-- Theorem 1 (`microbatch_rne_freeze_threshold_exact`):
-    Exact worst-case IEEE-754 RNE freeze threshold `2^{P+1}` (`8` E5M2, `16` E4M3, `256` BF16,
+    Worst-case freeze threshold `2^{P+1}` of the model RNE function `flRNENat P` (`8` E5M2, `16` E4M3, `256` BF16,
     `2048` FP16) and max non-freeze bound `2^{P+2} - 2` (`14, 30, 510, 4094`), proving early-spike
-    sequential RNE suffers 100% signal erasure while pairwise binary-tree RNE preserves the signals. -/
+    sequential RNE loses every trailing unit signal while pairwise binary-tree RNE preserves the signals. -/
 theorem microbatch_rne_freeze_threshold_exact :
     (rhoFreezeMin 2 = 8 ∧ rhoFreezeMin 3 = 16 ∧
      rhoFreezeMin 7 = 256 ∧ rhoFreezeMin 10 = 2048) ∧
@@ -55,7 +55,7 @@ theorem microbatch_rne_freeze_threshold_exact :
 /-- Theorem 2 (`kahan_late_dipole_spike_total_erasure_vs_neumaier`):
     First half of the Dual Kahan-vs-Neumaier Separation Theorem: on a late dipole spike
     stream `[1, ..., 1, +S, -S, 1, ..., 1]`, Kahan permanently erases all `mPre` pre-spike
-    microbatches (returning `0` at `mPost = 0`), while Neumaier achieves 100% exact recovery. -/
+    microbatches (returning `0` at `mPost = 0`), while Neumaier recovers the exact sum. -/
 theorem kahan_late_dipole_spike_total_erasure_vs_neumaier :
     (∀ (P mPre mPost e : Nat),
       1 ≤ P → 1 ≤ mPre → mPre + mPost ≤ 2 ^ (P + 1) → 2 ^ (P + 2) * mPre ≤ 2 ^ e →
@@ -94,7 +94,7 @@ theorem neumaier_self_swamping_ceiling_beats_by_kahan :
 /-- Theorem 4 (`fp8_e4m3fn_kulisch_int32_9362_exact`):
     Exact signed Kulisch width law `W_min(M, P, ΔE) = 1 + ⌈log2 M⌉ + (P + 1) + ΔE`, and
     proof that every sum of up to `M ≤ 9,362` arbitrary finite OCP `FP8-E4M3FN` values is
-    100% bit-exact, unconditionally associative, permutation-invariant, and zero-overflow
+    bit-exact, unconditionally associative, permutation-invariant, and zero-overflow
     in a single `int32_t` register with zero rescaling (while `9,363` copies of `448` overflow). -/
 theorem fp8_e4m3fn_kulisch_int32_9362_exact :
     (∀ (M P deltaE : Nat) (xs : List Int),

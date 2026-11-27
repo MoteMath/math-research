@@ -8,7 +8,8 @@ import KroneckerCyclicFrustration.Defs
 # Trusted Challenge Statements (`kronecker-cyclic-frustration`)
 
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
-1. Exact Sum-of-2-Kronecker Spectral Distortion Law and Corner-Geometric-Mean Preconditioner attainment.
+1. Sum-of-2-Kronecker Spectral Distortion Law and Corner-Geometric-Mean Preconditioner attainment, in a
+   scalar eigenvalue model (the objects are the scalars `(1 + α_i β_j) / (ℓ_i r_j)`; there are no matrices).
 2. Exact 2-Head Zero-Frustration Theorem (`κ*_⊗ = √M`) vs K-FAC quadratic `Θ(M)` penalty (`(1+M)^2 / (4M)`).
 3. Universal `H`-Head Multi-Head Cyclic Frustration multiplicative Karp cycle-product invariance & bound,
    plus exact `2(H - 1) / H` exponent separation (`4/3` for `H = 3`, `3/2` for `H = 4`, `7/4` for `H = 8`).
@@ -25,8 +26,8 @@ namespace KroneckerCyclicFrustrationChallenge
 open KroneckerCyclicFrustration
 
 /-- Theorem 1 (Exact Sum-of-2-Kronecker Spectral Distortion Law):
-    Proves the universal lower bound `κ^2 ≥ cornerOptKappaSq` for EVERY Kronecker preconditioner
-    `(ℓ, r)` on `A_1 ⊗ B_1 + A_2 ⊗ B_2`, the four exact polynomial identities, and exact attainment
+    Proves the lower bound `κ^2 ≥ cornerOptKappaSq` for every pair of positive scalar vectors
+    `(ℓ, r)` (a preconditioner diagonal in the common eigenbasis of `A_1 ⊗ B_1 + A_2 ⊗ B_2`), the four exact polynomial identities, and exact attainment
     by the closed-form Corner-Geometric-Mean Preconditioner across `[α_min, α_max] × [β_min, β_max]`. -/
 theorem sum_of_two_kronecker_optimal_cond_exact :
     (∀ {n m : Nat} (α : Fin n → Rat) (β : Fin m → Rat),

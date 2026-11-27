@@ -9,11 +9,11 @@ import FlashAttnBwdSignflip.Defs
 
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. Softmax-Jacobian zero-sum conservation and exact cancellation-free identity.
-2. Peaked-Softmax `50.00%` spurious sign-flip phase transition at `ε ≤ 2^{-(m+2)}`.
+2. Peaked-Softmax spurious sign-flip threshold at `ε ≤ 2^{-(m+2)}` (exactly one of `±c` flips the sign).
 3. Direct `P · dP` midpoint DC-leakage law `Z_direct^* = 1 / (2^{m+1} + 1)`.
 4. FlashAttention `D_i = dO · fl(O)` orthogonal divergence amplification (`u_fwd · κ_orth`).
 5. Key-centering `dQ = dS (K - 1 K_bar^T)` zero-bias invariance and spurious-bias elimination.
-6. Unsigned 4-bit `U-E3M1` vs signed `MXFP4-E2M1` exact `16×` dynamic-range advantage.
+6. Ratio `16` between the dynamic ranges of the hand-written records of unsigned 4-bit `U-E3M1` and signed `MXFP4-E2M1`.
 -/
 
 namespace FlashAttnBwdSignflipChallenge
@@ -40,10 +40,12 @@ theorem softmax_jacobian_zero_sum_and_cancellation_free_identity :
   sorry
 
 /-- Theorem 2 (`peaked_softmax_half_spurious_signflip_threshold`):
-    Universal exact IEEE-754 RNE theorem proving `fl_m(1 - ε) = 1 ↔ 0 ≤ ε ≤ 2^{-(m+2)}`
+    Theorem about the hand-written predicate `rneSnapsToOne` (defined on `[1 - 2^{-(m+1)}, 1]`)
+    proving `fl_m(1 - ε) = 1 ↔ 0 ≤ ε ≤ 2^{-(m+2)}`
     (`1/8` U-E3M1, `1/16` FP8-E5M2, `1/32` FP8-E4M3, `1/512` BF16, `1/4096` FP16),
-    strict sign flip of `softmaxGradStd` for all same-sign `|c| > |δ|` with exact `50.00%`
-    `±c` sign symmetry, 100% invariance and zero sign flips for `softmaxGradCF`, and
+    strict sign flip of `softmaxGradStd` for all same-sign `|c| > |δ|` (exactly one of `+c`, `-c`
+    flips it; a symmetry statement, not a measure over inputs), invariance and zero sign flips for
+    `softmaxGradCF`, and
     the universal `m`-bit 2-token witness at `ε = 2^{-(m+2)}, dP = (1, 1/2)`. -/
 theorem peaked_softmax_half_spurious_signflip_threshold :
     (∀ (m : Nat) (ε : Rat), rneSnapsToOne m (1 - ε) ↔ ((0 : Rat) ≤ ε ∧ ε ≤ epsSnap m)) ∧
@@ -188,9 +190,11 @@ theorem key_centering_dq_invariance_exact :
   sorry
 
 /-- Theorem 6 (`unsigned_ue3m1_vs_mxfp4_dynamic_range_16x_exact`):
-    Exact bit-level theorem proving unsigned 4-bit `U-E3M1` achieves an exact `16×` wider
-    dynamic range (`192` vs `12` full, `96` vs `6` normal) and `16×` lower subnormal floor
-    (`1/128` vs `1/8`) than signed `MXFP4-E2M1` at identical 4-bit width and 1-bit mantissa,
+    Constant-level theorem: the hand-written record `fmtUE3M1` has `16×` the dynamic range
+    (`192` vs `12` full, `96` vs `6` normal) of the unscaled record `fmtMXFP4` and a `16×` lower
+    subnormal floor (`1/128` vs `1/8`, the latter taken from the block-scaled record `fmtMXFP4Prob`)
+    than the signed `MXFP4-E2M1` records, at identical 4-bit width and 1-bit mantissa; the ratios
+    follow from the constants chosen in the records,
     together with companion 8-bit `FP8-E5M2` vs `FP8-E4M3` ratios (`16384×` full, `32768×` normal,
     `2×` roundoff) and the universal sign-bit-to-exponent reallocation identity. -/
 theorem unsigned_ue3m1_vs_mxfp4_dynamic_range_16x_exact :

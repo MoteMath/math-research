@@ -13,9 +13,10 @@ Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 2. Universal inductive IEEE-754 RNE one-ULP-per-step collapse under eager rescaling near
    the 1-ULP boundary (`seqPow(p, m * 2^p) = 2^-m`, strictly below true exponential decay).
 3. Exact `FP8-E4M3` (`max = 448`, `τ ≤ 8`) and `FP16` (`max = 65504`, `B_c = 64`, `τ ≤ 9`)
-   lazy-slack overflow boundaries certifying the Pareto-safe windows `τ* ∈ [4, 6]` (`FP16`)
-   and `[6, 8]` (`BF16 + FP8`).
-4. Bit-exact IEEE-754 `FP16` flat-attention overflow cliff at `L = 65520 = 65504 + 16`
+   lazy-slack overflow boundaries with the integer windows `τ* ∈ [4, 6]` (`FP16`)
+   and `[6, 8]` (`BF16 + FP8`) satisfying the stated inequalities.
+4. `FP16` flat-attention overflow cliff at `L = 65520 = 65504 + 16` for one rounding of the exact count `L`
+   (exact accumulation assumed; not a sequential `FP16` sum)
    (`Inf / Inf = NaN` or `finite / Inf = 0` collapse at `65520`, `65536`, `131072`).
 5. Unconditional boundedness (`l < 2^14 < 65504`) and exact ratio cancellation of dyadic
    exponent normalization (`scale = 2^-1` when `l ≥ 2^14`) for arbitrary sequence length `L`.
@@ -101,8 +102,9 @@ theorem slack_threshold_fp16_fp8_overflow_boundary_exact :
   sorry
 
 /-- Theorem 4 (`fp16_flat_attention_65520_overflow_cliff_exact`):
-    Bit-exact IEEE-754 `FP16` RNE theorem proving `FP16_MAX = 65504`, `ulp = 32`, and exact
-    overflow midpoint `65520 = 65504 + 16`: flat uniform attention (`exp(0) = 1` per token,
+    Theorem about one `FP16` RNE rounding of the exact integer `L` (exact accumulation assumed;
+    a sequential `FP16` sum is not modelled) proving `FP16_MAX = 65504`, `ulp = 32`, and overflow
+    midpoint `65520 = 65504 + 16`: flat uniform attention (`exp(0) = 1` per token,
     even after subtracting `m = max(s)`) stays finite at `L = 65504` and `L = 65519`,
     overflows `l` to `+Inf` at exact `L = 65520` (and for all `L ≥ 65520`, including `65536`
     and `131072`), triggering `Inf / Inf = NaN` or `finite / Inf = 0` silent collapse. -/

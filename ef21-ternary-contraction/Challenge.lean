@@ -12,8 +12,8 @@ Cluster 09 (`I082`, `I086`, `I087`):
 1. `ternary_ef21_contraction_exact`: exact universal EF21 contraction factor `α_tern(d)` and
    tightness at `w_i = √(i+1) - √i` for all `d ≥ 1`.
 2. `alphaTern_harmonic_sandwich`: exact harmonic sandwich `4 / (4 + H_{d-1}) ≤ α_tern(d) ≤ 4 / (3 + H_d)`.
-3. `mxfp4_nvfp4_ef21_contraction_universal`: exact universal multi-regime EF21 contraction laws
-   and tightness/attainment for MXFP4 and NVFP4 across all block sizes `B ≥ 1`.
+3. `mxfp4_nvfp4_ef21_contraction_universal`: exact multi-regime one-step contraction constants
+   and tightness/attainment for a model of MXFP4 and NVFP4 across all block sizes `B ≥ 1`.
 4. `symmetric_2bit_no_zero_collapse`: exact zero-omission EF21 collapse `α ≤ 9 / (d + 8)` on
    the 1-sparse unit vector for symmetric 2-bit `{±μ, ±3μ}` across all `d ≥ 1`.
 5. `mantissa_sr_variance_law`: exact worst-case relative variance `1 / (4 · 2^m · (2^m + 1))`
@@ -44,8 +44,11 @@ theorem alphaTern_harmonic_sandwich (d : ℕ) (hd : 0 < d) :
       alphaTern d ≤ 4 / (3 + harmonicR d) := by
   sorry
 
-/-- Theorem 3 (`I082`): Exact universal EF21 contraction laws and tightness/attainment for
-OCP E2M1 MXFP4 and NVFP4 across all block sizes `B ≥ 1`. -/
+/-- Theorem 3 (`I082`): Exact one-step contraction constants and tightness/attainment for a model of
+E2M1 MXFP4 and NVFP4 across all block sizes `B ≥ 1`. The MXFP4 clause assumes an already-scaled block with
+`|y i| ≤ 6` and `3 < |y i0|` for some `i0` (the E8M0 scale and saturation are not modelled); the NVFP4
+clause assumes `|y i0| = 6` for some `i0` (continuous scale); `e2m1Quant` rounds ties half up, not
+round-to-nearest-even as in the OCP specification. -/
 theorem mxfp4_nvfp4_ef21_contraction_universal (B : ℕ) (hB : 0 < B) :
     ((∀ y : Fin B → ℝ, (∀ i, |y i| ≤ 6) → (∃ i0, 3 < |y i0|) →
         ∑ i : Fin B, (y i - e2m1Quant (y i)) ^ 2 ≤

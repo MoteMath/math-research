@@ -1,6 +1,8 @@
 # Exact Sum-of-2-Kronecker Spectral Distortion Law, Multi-Head Cyclic Frustration (Karp Cycle Bound), & Zero-Error `E2M1` Octonion Monarch Coherence
 
-A complete, standalone, sorry-free, pure-`Init` (**zero Mathlib**) Lean 4 (`v4.34.1`) Palomar Comparator formalization package proving exact spectral distortion laws for Kronecker-factored preconditioners (Shampoo / K-FAC), multi-head Transformer cyclic frustration via Karp's multiplicative cycle-product bound, and exact zero-weight-error OCP `E2M1` Quaternion/Octonion Monarch orthogonal transforms.
+A complete, standalone, sorry-free, pure-`Init` (**zero Mathlib**) Lean 4 (`v4.34.1`) Palomar Comparator formalization package proving distortion laws for a scalar eigenvalue model of Kronecker-factored preconditioning (the setting of Shampoo / K-FAC), a multi-head cyclic-frustration statement in the same scalar model via Karp's multiplicative cycle-product bound, and exact zero-weight-error `E2M1` grid membership for Quaternion/Octonion Monarch orthogonal integer blocks.
+
+**Scope of the formal statement.** The Lean file contains no matrices for the preconditioning part. A "Kronecker preconditioner" is a pair of positive scalar vectors $(\ell, r)$, and the objects bounded are the scalars $(1 + \alpha _ i \beta _ j)/(\ell _ i r _ j)$ over finite eigenvalue grids $\alpha _ i, \beta _ j$. This corresponds to commuting, simultaneously diagonalisable factors $A _ 1, A _ 2, B _ 1, B _ 2$ and a preconditioner diagonal in the same eigenbasis. It does not say anything about preconditioners that are not diagonal in that basis, and it does not formalize $\kappa$ of a matrix. "K-FAC" in the statements is a specific scalar rule (the trace-averaged one defined in `Defs.lean`), and the cross-scale "`> 1800x`" figure is the value at $K = 128$ of a constructed family. The Monarch/Quaternion/Octonion part is about explicit integer matrices and is not affected by this caveat.
 
 ## Synthetic Score
 
@@ -13,7 +15,7 @@ A complete, standalone, sorry-free, pure-`Init` (**zero Mathlib**) Lean 4 (`v4.3
 ## Headline Theorems (`KroneckerCyclicFrustrationChallenge`)
 
 1. **`sum_of_two_kronecker_optimal_cond_exact`** ([SumTwoKronecker.lean](KroneckerCyclicFrustration/SumTwoKronecker.lean)):
-   - Proves universally for any $n, m \in \mathbb{N}$ and any positive generalized eigenvalues $\alpha _ i > 0$ ($\alpha _ {\min} \le \alpha _ i \le \alpha _ {\max}$), $\beta _ j > 0$ ($\beta _ {\min} \le \beta _ j \le \beta _ {\max}$) that EVERY Kronecker preconditioner $(L \otimes R)$ satisfies
+   - Proves universally for any $n, m \in \mathbb{N}$ and any positive generalized eigenvalues $\alpha _ i > 0$ ($\alpha _ {\min} \le \alpha _ i \le \alpha _ {\max}$), $\beta _ j > 0$ ($\beta _ {\min} \le \beta _ j \le \beta _ {\max}$) that EVERY pair of positive scalar vectors $(\ell, r)$ (standing for a preconditioner $L \otimes R$ diagonal in the common eigenbasis) satisfies
 ```math
 \kappa\!\left((L \otimes R)^{-1/2}(A_1 \otimes B_1 + A_2 \otimes B_2)(L \otimes R)^{-1/2}\right)^2 \ge \frac{(1 + \alpha_{\max}\beta_{\max})(1 + \alpha_{\min}\beta_{\min})}{(1 + \alpha_{\max}\beta_{\min})(1 + \alpha_{\min}\beta_{\max})}.
 ```
@@ -33,7 +35,13 @@ A complete, standalone, sorry-free, pure-`Init` (**zero Mathlib**) Lean 4 (`v4.3
    - Proves universal $4 \times 4$ Quaternion orthogonality $Q(a,b,c,d)^\top Q(a,b,c,d) = (a^2 + b^2 + c^2 + d^2) I _ 4$ and universal $8 \times 8$ Fano-plane Octonion orthogonality $O(c _ 0, \dots, c _ 7)^\top O(c _ 0, \dots, c _ 7) = (\sum _ i c _ i^2) I _ 8$ over `Int`.
    - Certifies exact orthogonality $M^\top M = s I$, zero-error OCP `E2M1` grid membership (`{0, ±1, ±2, ±3, ±4, ±6, ±8, ±12}`), uniform row sparsity $s$, and optimal coherence $1/s$ for all sparse Quaternion blocks ($s \in \{1..4\}$) and all sparse Octonion blocks ($s \in \{1..8\}$), including `Q4_1110`, `O8_4nnz` (50% fewer MACs than `H8 x H8`), and `O8_7nnz` (`O8_7nnz x O8_4nnz` uses 31.25% fewer MACs).
 6. **`kfac_cross_scale_suboptimality_witness`** ([SumTwoKronecker.lean](KroneckerCyclicFrustration/SumTwoKronecker.lean)):
-   - Proves that on the cross-scale family $\alpha = (1/K, K)$, $\beta = (1/K, K)$ ($K > 0$), K-FAC's squared condition number exceeds Corner-Geometric-Mean by the exact factor $K^2(K^2 + 3)^2 / (3 K^2 + 1)^2 > K^2 / 9$ (hence unbounded as $K \to \infty$), with an explicit exact rational witness at $K = 128$ exceeding `1000x` (`> 1800x`).
+   - Proves that on the cross-scale family $\alpha = (1/K, K)$, $\beta = (1/K, K)$ ($K > 0$), K-FAC's squared condition number exceeds Corner-Geometric-Mean by the exact factor $K^2(K^2 + 3)^2 / (3 K^2 + 1)^2 > K^2 / 9$ (hence unbounded as $K \to \infty$), with an explicit exact rational witness at $K = 128$ exceeding `1000x` (`> 1800x`) on this constructed family.
+
+## Prior-Art Context
+
+- The Lean content for the first two headline theorems is arithmetic on scalar eigenvalue grids; the matrix-level questions it is motivated by (nearest-Kronecker-product preconditioners, for example [arXiv:2307.07884](https://arxiv.org/abs/2307.07884)) are not formalized here.
+- The Karp minimum cycle-mean bound is classical (Karp 1978); Theorem 3 applies its multiplicative form to the scalar model.
+- No prior record of the exact two-term condition law was located by the reviewer who audited this package; the authors did not record a search of their own.
 
 ## Build & Verification
 

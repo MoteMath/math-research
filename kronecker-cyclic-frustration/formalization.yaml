@@ -4,9 +4,9 @@ version: v0.4
 project:
   name: Exact Sum-of-2-Kronecker Spectral Distortion Law, Multi-Head Cyclic Frustration (Karp Cycle Bound), and Zero-Error E2M1 Octonion Monarch Coherence
   description: >-
-    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the exact
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the
     Sum-of-2-Kronecker Spectral Distortion Law and Corner-Geometric-Mean Preconditioner
-    attainment, the 2-head zero-frustration theorem vs K-FAC quadratic O(M) penalty, the
+    attainment in a scalar eigenvalue model (no matrices), the 2-head zero-frustration theorem vs K-FAC quadratic O(M) penalty, the
     universal H-head Multi-Head Cyclic Frustration multiplicative Karp cycle-product bound and
     exact 2(H-1)/H exponent separation (4/3 for H=3, 3/2 for H=4, 7/4 for H=8), exact 2-stage
     Monarch coherence factorization and support lower bound, universal Quaternion (4x4) and

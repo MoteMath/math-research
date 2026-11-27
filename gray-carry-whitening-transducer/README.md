@@ -22,6 +22,8 @@ When you add two binary numbers, carries pop up in some columns and not others, 
 
 A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`, no custom axioms) formalization. Full proofs live in `GrayCarryWhiteningTransducer/Theorems.lean`, definitions in `GrayCarryWhiteningTransducer/Defs.lean`; `Challenge.lean` states the headline theorems with `sorry` and `Solution.lean` proves the identical statements by delegation.
 
+**Scope of the formal statement.** `k_operand_whitening_impossibility` is only the inequality of slice counts for the one transducer `multiCarrySlice1` defined in `Defs.lean`; it is not a proof that no multi-operand carry word is balanced, so the words "impossibility for three or more operands" in the summary above mean only this inequality.
+
 ## Main Theorems
 
 | Theorem (in `Challenge.lean`) | Statement |
@@ -32,7 +34,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `gray_joint_carry_borrow_fiber_count` | For $u, v < 2 ^ w$ the number of pairs with Gray carry word $u$ and Gray borrow word $v$ (mod $2 ^ w$) is $2 ^ {w - \lvert u \rvert - \lvert v \rvert}$ if $u \mathbin{\&} v = 0$ and $0$ otherwise. |
 | `gray_carry_borrow_orthogonal` | If $b + b _ 0 \le a$ then the Gray-coded carry word of $a + b + c _ 0$ and the Gray-coded borrow word of $a - b - b _ 0$ have disjoint bits. |
 | `radix_carry_whitening_law` | For every base $B \ge 2$, width $w$ and $z < 2 ^ w$, the carry-difference word has fiber count $\binom{B + 1}{2} ^ {w - \lvert z \rvert} \binom{B}{2} ^ {\lvert z \rvert}$. |
-| `k_operand_whitening_impossibility` | For every arity $k \ge 3$ the multi-operand carry slice counts are not all equal, so balanced whitening is impossible. |
+| `k_operand_whitening_impossibility` | For every arity $k \ge 3$ the one-bit slice counts `multiCarrySlice1 k 0`, `multiCarrySlice1 k 1`, `multiCarrySlice1 k 2` of the multi-operand carry transducer are not all equal; this blocks the balanced-fiber lifting argument used for $k = 2$, but the statement does not itself compute the fiber counts of $k$-operand addition. |
 | `radix_carry_borrow_orthogonality_binary_unique` | For every base $B \ge 3$ there are digits $d _ 1, d _ 2 < B$ producing a carry and a borrow at the same position, so $B = 2$ is the unique radix of carry-borrow orthogonality. |
 
 ## Proof Architecture
@@ -46,7 +48,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical background:** the reflected Gray code and its unit-step property (Gray 1953; Knuth, TAOCP Vol. 4A, 7.2.1.1). The four-state serial Gray-code adder already appears in **Lucal (1959)** and **Doran (2007, *The Gray Code*)**; `grayAddWith_eq_transducer4` is a Lean quotient-bisimulation mechanization of that adder generalized to carry-in, not a new state reduction. The single zero-carry count $3 ^ w$ is folklore (the $z = 0$ case).
-- **Referee audit (referee-1, referee-6; recorded in `REGISTRY.md` and `TOP_MECHANISMS.md`):** the balanced-fiber and bijection lifting engine, carry-borrow Gray orthogonality with the bijection $\Phi$, the joint fiber law, the hypercube whitening law $3 ^ {w - |z|}$, its radix-$B$ generalization and the $k \ge 3$ impossibility are new; zero overlap with `carry-blocks-determinants` or other packages.
+- **Contents (not independently reviewed; no prior-art search is recorded):** the balanced-fiber and bijection lifting engine, carry-borrow Gray orthogonality with the bijection $\Phi$, the joint fiber law, the hypercube whitening law $3 ^ {w - |z|}$, its radix-$B$ generalization and the $k \ge 3$ impossibility.
 
 ## Build & Verification
 

@@ -1,4 +1,4 @@
-# Dyadic Skew-Congruence & Integral Block-Schur Pfaffian Engine (`specmat-3`) (`dyadic-skew-congruence-pfaffian`)
+# Dyadic Skew-Congruence & Integral Block-Schur Pfaffian Engine (`dyadic-skew-congruence-pfaffian`)
 
 ## Synthetic Score
 
@@ -35,8 +35,8 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 ## Prior-Art Context
 
-- **Classical & Adjacent Prior Art (Explicitly Credited):** 1. **Cayley (1849) & Classical Pfaffian Identities:** The fundamental identity $\mathrm{Pf}(P^T A P) = \det(P) \, \mathrm{Pf}(A)$, $\det(A) = \mathrm{Pf}(A)^2$, and Jacobi's complementary-minor identity for orthogonal/skew-orthogonal matrices (see also Ishikawa & Wakayama, *Linear and Multilinear Algebra* 39 (1995), 285–292, and D. E. Knuth, "Overlapping Pfaffians", *Electron. J. Combin.* 3(2) (1996), #R5) are classical in paper linear algebra. Our contribution in Section 4 is a **standalone, determinant-free, fraction-free integral mechanization** over $\mathbb{Z}$ in Lean 4.34.1 prov
-- Hostile-verified PASS by `referee-3`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- **Classical & Adjacent Prior Art (Explicitly Credited):** 1. **Cayley (1849) & Classical Pfaffian Identities:** The fundamental identity $\mathrm{Pf}(P^T A P) = \det(P) \, \mathrm{Pf}(A)$, $\det(A) = \mathrm{Pf}(A)^2$, and Jacobi's complementary-minor identity for orthogonal/skew-orthogonal matrices (see also Ishikawa & Wakayama, *Linear and Multilinear Algebra* 39 (1995), 285–292, and D. E. Knuth, "Overlapping Pfaffians", *Electron. J. Combin.* 3(2) (1996), #R5) are classical in paper linear algebra. The package itself is a standalone, determinant-free, fraction-free integral mechanization over $\mathbb{Z}$ in Lean 4.34.1 (not independently reviewed; no prior-art search is recorded).
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

@@ -20,7 +20,7 @@ Consequences for **all** $n \in \mathbb{N}$: $2 v _ 2 \binom{n + (n \oplus 2n)}{
 
 ## For Non-Mathematicians
 
-When you add two binary numbers, carries ripple from digit to digit. A classical fact (Kummer's theorem) says the number of carries in that addition tells you exactly how many times 2 divides a certain huge counting number (a binomial coefficient, the number of ways to choose a team). This package turns that fact into a small machine: a finite table of states reads the digits of a number one at a time, keeping a running tally of carries. Instead of arguing separately for every number, it checks a short table once, by computer, and the proof assistant derives a statement about every number, however many digits. It uses the machine to prove several new exact counting laws, for example how often 2 divides the number of ways to choose n items out of n + (n XOR 2n), and best-possible ceilings (slopes such as 5/2, 8/3 and 13/4) for choosing n items out of 11n, 25n and 55n.
+When you add two binary numbers, carries ripple from digit to digit. A classical fact (Kummer's theorem) says the number of carries in that addition tells you exactly how many times 2 divides a certain huge counting number (a binomial coefficient, the number of ways to choose a team). This package turns that fact into a small machine: a finite table of states reads the digits of a number one at a time, keeping a running tally of carries. Instead of arguing separately for every number, it checks a short table once, by computer, and the proof assistant derives a statement about every number, however many digits. It uses the machine to prove several exact counting laws, for example how often 2 divides the number of ways to choose n items out of n + (n XOR 2n), and ceilings (slopes such as 5/2, 8/3 and 13/4) for choosing n items out of 11n, 25n and 55n; the Challenge statements prove the 5/2 upper bound for 11n and show that the 13/4 bound is attained on an explicit family for 55n.
 
 ---
 
@@ -36,8 +36,8 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of Le
 | `shifted_or_kummer_exact` | For all $n$, $v _ 2 \binom{n + (n \mathbin{|} 2n)}{n} = s _ 2(n \mathbin{|} 2n)$. |
 | `gray_binom_even` | For every $n \ge 1$, $2$ divides $\binom{n + G(n)}{n}$ where $G(n) = n \oplus \lfloor n/2 \rfloor$ is the Gray code. |
 | `gray_strictly_below_shifted_xor` | For every $n \ge 1$, $v _ 2 \binom{n + G(n)}{n} + 1 \le v _ 2 \binom{n + (n \oplus 2n)}{n}$. |
-| `binom_11n_sharp_slope` | For every $n \ge 1$, $2 v _ 2 \binom{11 n}{n} + 2 \le 5 s _ 2(n)$. |
-| `binom_55n_sharp_infinite` | On the explicit infinite family $n _ m$ (`fam55`), $4 v _ 2 \binom{55 n _ m}{n _ m} + 8 = 13 s _ 2(n _ m)$ and $s _ 2(n _ m) = 4m + 8$, so the slope $13/4$ and offset $8$ are sharp. |
+| `binom_11n_sharp_slope` | For every $n \ge 1$, $2 v _ 2 \binom{11 n}{n} + 2 \le 5 s _ 2(n)$ (an upper bound; attainment is not part of this statement). |
+| `binom_55n_sharp_infinite` | On the explicit infinite family $n _ m$ (`fam55`), $4 v _ 2 \binom{55 n _ m}{n _ m} + 8 = 13 s _ 2(n _ m)$ and $s _ 2(n _ m) = 4m + 8$, so the bound $4 v _ 2 \binom{55 n}{n} + 8 \le 13 s _ 2(n)$ is attained on this family (the matching upper bound is not part of this Challenge statement). |
 
 ## Proof Architecture
 
@@ -48,9 +48,9 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of Le
 
 ## Prior-Art Context
 
-- **Classical foundations:** Legendre (1808) and Kummer (1852); carry-counting automata and digit-sum transducers in the style of Karp (1978) and Heuberger and Prodinger, as noted by the referee, are the closest prior art for the automaton viewpoint and should be cited alongside this package.
-- **What is new (referee-4 / referee-7 reading):** novelty audited at 4.2 / 5 (Tier A+ / S-Tier candidate); the zero-slack pumping lemma `CVA.pumping_exact` that certifies sharpness of both slope and offset, the Gray-code binomial laws, and the sharp $k$-binomial slopes at $k = 11, 25, 55$ were judged fresh. The shifted-bitwise Kummer collapse laws are instances of Kummer's theorem on bitwise-shifted arguments and are presented as consequences of the engine.
-- **Verdict status:** Referee-4 `PASS` (swarm board #47); novelty note recorded in `REGISTRY.md`.
+- **Classical foundations:** Legendre (1808) and Kummer (1852); `v2_binom_add_popcount` is Kummer's theorem for $p = 2$ (also available in Mathlib). Carry-counting automata and digit-sum transducers in the style of Karp (1978) and Heuberger and Prodinger are the closest prior art for the automaton viewpoint and should be cited alongside this package.
+- **Contents (not independently reviewed; no prior-art search is recorded):** the zero-slack pumping lemma `CVA.pumping_exact` that certifies equality on an explicit infinite family (so both slope and offset are attained there), the Gray-code binomial laws, and the slope bounds for $v _ 2 \binom{kn}{n}$ at $k = 11, 25, 55$. The shifted-bitwise Kummer collapse laws are instances of Kummer's theorem on bitwise-shifted arguments and are presented as consequences of the engine.
+- **Status:** not independently reviewed.
 
 ## Build & Verification
 

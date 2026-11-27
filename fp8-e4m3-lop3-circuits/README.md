@@ -6,7 +6,9 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **9 / 10** | **8 / 10** | **9 / 10** | **10 / 10** | **89 / 100** |
 
-*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 89 / 100`): pure Lean 4 `Init` (zero Mathlib) formalization of the Wave 3A (`w3-fp8-e4m3-sfu-free`) GPU-synthesized exact 0-ULP `LOP3` bit-sliced circuits and universal fan-in lower bounds on OCP `FP8-E4M3FN` and `FP4-E2M1`: a 15-`LOP3` positive `rsqrt` circuit (`2.95x` faster than RX 7900 XTX hardware SFU) certified directly against the exact pure-integer RNE Voronoi optimality law for $1/\sqrt{x}$, a 33-`LOP3` full-domain `rsqrt` circuit, exact 0-ULP circuits for `exp` (67 `LOP3`), `gelu` (82 `LOP3`, tight 1-`LOP3` $y _ 6$), and `silu` (93 `LOP3`, tight 0-`LOP3` $y _ 7$), a 28-`LOP3` zero-FP `FP8-E4M3FN × FP4-E2M1` exact aligned product verified over all $4{,}096$ input pairs, universal `LOP3` DAG gate-count and depth lower bounds ($k \le 2g + 1$ and $k \le 3^d$), and the exact OCP `FP8-E4M3FN` dyadic value law.*
+*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 89 / 100`): pure Lean 4 `Init` (zero Mathlib) formalization of GPU-synthesized `LOP3` bit-sliced circuits that agree with the reference tables on every code of their domains and universal fan-in lower bounds on OCP `FP8-E4M3FN` and `FP4-E2M1`: a 15-`LOP3` positive `rsqrt` circuit certified directly against the exact pure-integer RNE Voronoi optimality law for $1/\sqrt{x}$, a 33-`LOP3` full-domain `rsqrt` circuit, exact 0-ULP circuits for `exp` (67 `LOP3`), `gelu` (82 `LOP3`, tight 1-`LOP3` $y _ 6$), and `silu` (93 `LOP3`, tight 0-`LOP3` $y _ 7$), a 28-`LOP3` zero-FP `FP8-E4M3FN × FP4-E2M1` exact aligned product verified over all $4{,}096$ input pairs, universal `LOP3` DAG gate-count and depth lower bounds ($k \le 2g + 1$ and $k \le 3^d$), and the exact OCP `FP8-E4M3FN` dyadic value law.*
+
+**Scope of the formal statement.** Theorems 1-4 and 6 are finite, exhaustive checks over 8-bit or 12-bit input domains (126, 254, 256 or 4,096 inputs); only Theorem 5 (the fan-in and depth lower bounds) quantifies over all circuits. The `rsqrt` circuits are judged against an independent pure-integer Voronoi test; the `exp`, `gelu` and `silu` circuits are judged against reference tables that are embedded in the Lean files and were generated outside Lean (the README text below mentions 60-digit `mpmath`), so for those three the statement is agreement with that table, not a derivation of the function.
 
 ## For Mathematicians
 
@@ -39,19 +41,20 @@ Let $\mathrm{e4m3ScaledVal} : \mathrm{BitVec}\;8 \to \mathbb{Z}$ denote the exac
 
 ## For Non-Mathematicians
 
-Modern AI accelerators run low-precision 8-bit (`FP8-E4M3FN`) and 4-bit (`FP4-E2M1`) math, but computing nonlinear functions like `rsqrt`, `exp`, `gelu`, and `silu` normally requires converting to 32-bit floating point (`FP32`), waiting on bottlenecked Special Function Units (SFUs), and converting back. By packing 32 FP8 numbers into bit-sliced 32-bit integer registers and using 3-input GPU logic instructions (`LOP3`), every single one of these functions runs with **zero floating-point units, zero lookup tables, and 0-ULP exact accuracy** — beating hardware SFUs by up to **2.95x** on an AMD RX 7900 XTX. This repository machine-checks all six mathematical and circuit laws in Lean 4's kernel with zero external libraries.
+Modern AI accelerators run low-precision 8-bit (`FP8-E4M3FN`) and 4-bit (`FP4-E2M1`) math, but computing nonlinear functions like `rsqrt`, `exp`, `gelu`, and `silu` normally requires converting to 32-bit floating point (`FP32`), waiting on bottlenecked Special Function Units (SFUs), and converting back. By packing 32 FP8 numbers into bit-sliced 32-bit integer registers and using 3-input GPU logic instructions (`LOP3`), each of these functions is computed by a circuit with **no floating-point operations and no lookup tables**, and agrees with the reference table on every code of its domain (0-ULP). This repository machine-checks six statements about these circuits in Lean 4's kernel with zero external libraries; it makes no speed claim.
 
-## RX 7900 XTX Hardware Speedup Table (Wave 3A)
+## Circuit sizes
 
-| Function | Care Domain | Final 0-ULP `LOP3` | Depth | `LOP3` / elem (32-wide) | Bit-Sliced RX 7900 XTX | FP32-SFU Baseline | Speedup | Lean 4 Kernel Status |
-| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | :--- |
-| **`e4m3_rsqrt_pos`** | `126` (`0x01..0x7E`) | **15** | 8 | **0.469** | **706.07 GElem/s** | 239.37 GElem/s | **2.95x** | Proved (exact RNE algebra) |
-| **`e4m3_rsqrt_full`** | `256` (all codes) | **33** | 14 | **1.031** | **289.85 GElem/s** | 206.17 GElem/s | **1.41x** | Proved (exact RNE + NaN) |
-| **`e4m3_exp`** | `254` (finite) | **67** | 9 | **2.094** | **288.48 GElem/s** | 232.33 GElem/s | **1.24x** | Proved (0-ULP exhaustive) |
-| **`e4m3_gelu`** | `254` (exact `erf`) | **82** | 15 | **2.563** | **273.36 GElem/s** | 220.62 GElem/s | **1.24x** | Proved (0-ULP + tight $y _ 6$) |
-| **`e4m3_silu`** | `254` (finite) | **93** | 16 | **2.906** | **250.18 GElem/s** | 227.73 GElem/s | **1.10x** | Proved (0-ULP + tight $y _ 7$) |
-| **`E4M3 × E2M1` aligned** | `4,096` pairs | **28** | 8 | **0.875** | — | — | — | Proved (exact integer law) |
+| Function | Care Domain | `LOP3` | Depth | `LOP3` / elem (32-wide) | Lean 4 Kernel Status |
+| :--- | ---: | ---: | ---: | ---: | :--- |
+| `e4m3_rsqrt_pos` | `126` (`0x01..0x7E`) | 15 | 8 | 0.469 | Proved (exact integer RNE Voronoi law) |
+| `e4m3_rsqrt_full` | `256` (all codes) | 33 | 14 | 1.031 | Proved (Voronoi law + NaN) |
+| `e4m3_exp` | `254` (finite) | 67 | 9 | 2.094 | Proved (exhaustive against the reference table) |
+| `e4m3_gelu` | `254` (finite) | 82 | 15 | 2.563 | Proved (exhaustive against the reference table + tight $y _ 6$) |
+| `e4m3_silu` | `254` (finite) | 93 | 16 | 2.906 | Proved (exhaustive against the reference table + tight $y _ 7$) |
+| `E4M3 × E2M1` aligned | `4,096` pairs | 28 | 8 | 0.875 | Proved (exact integer law) |
 
+Throughput and speedup figures against a hardware special-function unit that were quoted in earlier versions of this README (for example "2.95x" for `e4m3_rsqrt_pos`) were measurements made outside this repository; nothing here reproduces or backs them, so they were removed. The theorems below are about the circuits' input-output behaviour, not about speed.
 ---
 
 ## Main Theorems
@@ -68,7 +71,7 @@ Modern AI accelerators run low-precision 8-bit (`FP8-E4M3FN`) and 4-bit (`FP4-E2
 ## Prior-Art Context
 
 - **OCP FP8 (`E4M3FN`) & Microscaling Formats (`MXFP4` / `E2M1`, Micikevicius et al., 2022; Rouhani et al., 2023):** Standardizes 8-bit (`E4M3FN`, no infinities, max finite `±448`) and 4-bit (`E2M1`) inference/training formats; hardware transcendental units remain FP32-SFU bound.
-- **Bit-Sliced `LOP3` Synthesis (PTX `lop3.b32`, Wave 1C `sparse24-e2m1-lop3`):** Extends bit-sliced `LOP3` DAG synthesis from sub-byte unpackers to full 8-bit transcendental operators (`rsqrt`, `exp`, `gelu`, `silu`) and mixed-precision `E4M3 × E2M1` multiplication with machine-checked 0-ULP correctness and universal DAG fan-in bounds.
+- **Bit-Sliced `LOP3` Synthesis (PTX `lop3.b32`, the `sparse24-e2m1-lop3` package):** Extends bit-sliced `LOP3` DAG synthesis from sub-byte unpackers to full 8-bit transcendental operators (`rsqrt`, `exp`, `gelu`, `silu`) and mixed-precision `E4M3 × E2M1` multiplication with machine-checked 0-ULP correctness and universal DAG fan-in bounds.
 
 ## Build & Verification
 

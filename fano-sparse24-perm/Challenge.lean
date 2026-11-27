@@ -48,7 +48,8 @@ theorem structured_topk_ef21_contraction_exact :
   sorry
 
 /-- Theorem 2 (Joint `k:m + MXFP4` (`B = 32`) Worst-Case EF21 Contraction & Anchor-Group Dilution):
-    Proves universally over all rational blocks `x ∈ [0, 3]^{32}` with anchor `x 0 0 = 3` that
+    Proves universally over all rational blocks `x ∈ [0, 3]^{32}` (an already-scaled block; the E8M0
+    scale is not modelled) with anchor `x 0 0 = 3` that
     `4:8 + MXFP4` achieves exact contraction `18/37`, `2:4 + MXFP4` achieves exact contraction `72/151`,
     both attained by explicit witnesses, with strict anchor-group dilution advantage
     `72/151 < 18/37` (gap `54/5587`), plus the exact closed-form dense Ternary law `4 / (B + 3)`

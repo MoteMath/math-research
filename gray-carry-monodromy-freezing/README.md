@@ -48,7 +48,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 ## Prior-Art Context
 
 - **Classical T-function ergodicity:** Klimov–Shamir (2002, 2004) and Anashin–Khrennikov (2009) establish single-cycle criteria for bit-triangular T-functions, which covers `lgray_ge2_odd_single_cycle` (honestly noted as classical territory).
-- **Novel non-T-function & frozen-spectrum results:** Right-shift Gray-carry equations are bidirectionally coupled (non-T-functions); BDFTR, the $2^k$ twisted/fixed-point law, bit-exact $3k+1$ sharpness, sign-asymmetry carry-trap annihilation, and the CPMF frozen 5-cycle ($\bmod 32$) and 7-cycle ($\bmod 64$) infinite spectra are genuinely novel and audited as S-Tier.
+- **Non-T-function and frozen-spectrum results:** Right-shift Gray-carry equations are bidirectionally coupled (non-T-functions); BDFTR, the $2^k$ twisted/fixed-point law, bit-exact $3k+1$ sharpness, sign-asymmetry carry-trap annihilation, and the CPMF frozen 5-cycle ($\bmod 32$) and 7-cycle ($\bmod 64$) infinite spectra are the package's own statements. No prior record was found by the authors; the search was not recorded, and the package was not independently reviewed.
 
 ## Build & Verification
 

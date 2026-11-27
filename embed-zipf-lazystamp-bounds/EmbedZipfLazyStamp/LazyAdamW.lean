@@ -14,8 +14,8 @@ Pure-`Init` exact rational inductive proofs that for any absent interval of `Δ`
 2. Semigroup composition across consecutive absent intervals `Δ1, Δ2`.
 3. Exact equivalence of `O(log Δ)` binary exponentiation `lazyStampJumpFast` to `lazyStampJump`.
 4. Elimination of intermediate per-step `BF16` decay freeze: at `β2 = 999/1000`, a single
-   lazy jump of just `Δ = 4` steps clears the `BF16` half-ULP for **100% of all normal BF16
-   values** (`rneFloatBelow 7 e m (ratPow (999/1000) 4 * normalFloat 7 e m) ≠ normalFloat 7 e m`).
+   lazy jump of just `Δ = 4` steps clears the `BF16` half-ULP for **every normal BF16
+   value of the model** (`rneFloatBelow 7 e m (ratPow (999/1000) 4 * normalFloat 7 e m) ≠ normalFloat 7 e m`).
 -/
 
 namespace EmbedZipfLazyStamp
@@ -225,10 +225,10 @@ theorem bf16_lazy_jump_4_breaks_freeze (e : Int) (m : Nat) (hm : m < 128) :
 
 /-- Headline Theorem 4 (`lazy_stamp_adamw_exact_equivalence_to_dense_updates`):
     Exact rational inductive theorem proving that Lazy-Stamp AdamW (`O(1)` closed-form
-    or `O(log Δ)` binary-exponentiation jump across `Δ` absent steps) is 100% mathematically
-    identical to `Δ` dense per-step AdamW updates, satisfies semigroup composition across
-    consecutive gaps, and breaks the `BF16` `β_2 = 0.999` decay freeze across 100% of
-    normal `BF16` states in just `Δ = 4` steps. -/
+    or `O(log Δ)` binary-exponentiation jump across `Δ` absent steps) equals
+    `Δ` dense per-step AdamW updates over `Rat`, satisfies semigroup composition across
+    consecutive gaps, and, in the model, breaks the `BF16` `β_2 = 0.999` decay freeze for every
+    normal `BF16` value in just `Δ = 4` steps. -/
 theorem lazy_stamp_adamw_exact_equivalence_to_dense_updates :
     (∀ (β1 β2 η lam : Rat) (Δ : Nat) (s : AdamWState),
       denseAbsentSteps β1 β2 η lam Δ s = lazyStampJump β1 β2 η lam Δ s) ∧

@@ -56,7 +56,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of ex
 
 - **FCSR theory:** Klapper and Goresky (1997, *Feedback shift registers, 2-adic span, and combiners with memory*) introduced FCSRs and the carry bounds; Arnault and Berger developed the $2$-adic analysis of FCSR sequences. The $2$-adic expansion of $p / q$ and the shape of the periodic core are classical; this package gives an exact integer potential-bijection formulation with a constructive carry-bound proof in kernel-checked form.
 - **Zolotarev's lemma:** the parity of multiplication by $a$ modulo a prime is the Legendre symbol (Zolotarev 1872); for odd composite $q$ the even-period statement is also the Jacobi symbol $(2 / q) = -1$ for $q \equiv 3, 5 \pmod 8$. The packaged proof is a from-scratch inversion-parity argument that avoids quadratic reciprocity and is not claimed as a new theorem.
-- **Possibly new:** the half-period and $d$-section cyclotomic conservation laws for the full hardware state (bits and carries), the repunit section quantum, and the infinite family laws. Referee-2 `PASS` (swarm board #90); the referee-6 novelty audit was still pending when this package was cut, so these novelty claims are the packager's conservative reading.
+- **Possibly new:** the half-period and $d$-section cyclotomic conservation laws for the full hardware state (bits and carries), the repunit section quantum, and the infinite family laws. Not independently reviewed; no prior-art search is recorded, so "possibly new" means only that the authors did not locate these statements.
 
 ## Build & Verification
 

@@ -13,7 +13,7 @@ standard `β_2 = 0.999` since `1 - β_2 = 1/1000 < 1/512` and weight decay `η *
 1. `fl_F(β_2 * v) = v` for **EVERY** normal positive float `v = (2^p + m) * 2^(e - p)` (`m < 2^p`),
    including every binade boundary `v = 2^e` (`m = 0`) via RNE tie-to-even!
 2. By induction on `K : Nat`, `K` absent steps (`g_t = 0`) leave `v_K = v_0` identically
-   (`100%` permanent decay freeze).
+   (permanent decay freeze in the model).
 3. Sharpness: for any `1 - β` strictly above `2^(-(p+2))` (and `< 2^(-(p+1))`), binade
    boundaries `v = 2^e` (`m = 0`) strictly decay (`fl_F(β * 2^e) ≠ 2^e`).
 -/
@@ -203,7 +203,7 @@ theorem normalFloat_boundary_unfreezes (p : Nat) (e : Int) (β : Rat)
     (`1/512` for `BF16` `p = 7`, which traps standard `β_2 = 0.999` since `1/1000 < 1/512`,
     as well as `BF16` decoupled weight decay `η λ = 1/10000 < 1/512`) forces
     `fl_BF16(β_2 * v) = v` for EVERY normal `BF16` value `v` across all `K : Nat` steps
-    (exact `100%` permanent decay freeze), and proves `2^(-(p+2))` is exact and sharp. -/
+    (permanent decay freeze in the model), and shows that `2^(-(p+2))` cannot be raised. -/
 theorem bf16_sparse_adamw_v_decay_freeze_exact :
     (∀ (p : Nat) (e : Int) (m : Nat) (β : Rat),
       m < 2 ^ p → (0 : Rat) ≤ 1 - β → 1 - β ≤ pow2Int (-((p + 2 : Nat) : Int)) →

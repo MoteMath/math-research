@@ -31,12 +31,12 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `fenwickUQLap_spanning_tree_square` | Theorem 4b (Spanning-Tree Perfect-Square Law): By Kirchhoff's Matrix-Tree Theorem, the spanning-tree count `τ(G_{k+1}) = det(L(G_{k+1}) \ {0})` is ALWAYS a perfect square `(tauSeq k + dSeq k)^2` for ALL `k ≥ 1`! |
 | `inOrderHeap_charpoly_factorization` | Theorem 6b (Binary Heap `H_k` Characteristic Polynomial Factorization over ANY `CRing R`, `∀ k ≥ 1`): |
 | `witness_dyadic_inv_k2` | Witness 6: Exact 1/4-dyadic inverse `A(G_2) * J_2 = 4 * I_5` and `A(G_3) * J_3 = 4 * I_9`. |
-| `sharpness_asymmetric_weights_k2` | Sharpness 3 (Equal query/update base weights are sharp): giving query edges `(i, i - lowbit i)` weight `1` and update edges `(i, i + lowbit i)` weight `2` gives `det = -24 ≠ -4` already at `k = 2` (`5 × 5`)! |
+| `sharpness_asymmetric_weights_k2` | Counterexample 3 (query/update weights `1`/`2` instead of equal weights): giving query edges `(i, i - lowbit i)` weight `1` and update edges `(i, i + lowbit i)` weight `2` gives `det = -24 ≠ -4` already at `k = 2` (`5 × 5`)! |
 
 ## Prior-Art Context
 
 - Formalizes a pure-Init Lean 4 infinite proof engine with zero Mathlib dependencies and independent `nanoda` kernel verification.
-- Hostile-verified PASS by `referee-3`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

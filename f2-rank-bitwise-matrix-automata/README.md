@@ -45,7 +45,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical background:** Kronecker, Walsh-Hadamard and Sierpinski-type bit matrices are classical for sizes $2 ^ k$; rank over $\mathbb{F} _ 2$ by Gaussian elimination and the Schur complement rank formula (Guttman 1946; Haynsworth 1968) are standard. Gray-code popcount identities are classical (Knuth, TAOCP Vol. 4A).
-- **Referee audit (referee-3 PASS #195; recorded in `REGISTRY.md`):** the exact rank, nullity and kernel-cardinality engine for arbitrary non-power-of-two $n$, the isotropic rank-one decoupling, the exact Gray-popcount nullity of $M _ 0$ and the base-4 DFA invertibility criterion for $H _ 0$ are new; zero Section 4 overlap.
+- **Contents (not independently reviewed; no prior-art search is recorded):** the exact rank, nullity and kernel-cardinality engine for arbitrary non-power-of-two $n$, the isotropic rank-one decoupling, the exact Gray-popcount nullity of $M _ 0$ and the base-4 DFA invertibility criterion for $H _ 0$.
 
 ## Build & Verification
 

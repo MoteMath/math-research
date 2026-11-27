@@ -58,7 +58,7 @@ theorem radix_carry_whitening_law (B : Nat) (hB : 2 ≤ B) (w : Nat) (c0 : Bool)
   sorry
 
 open GrayTransducerEngine in
-/-- Theorem 7 (k-operand impossibility): for k at least 3 operands, the carry-sum slice counts of the multi-operand carry transducer are not all equal, so balanced whitening is impossible. -/
+/-- Theorem 7 (k-operand slice counts): for k at least 3 operands, the one-bit carry-sum slice counts `multiCarrySlice1 k 0`, `multiCarrySlice1 k 1` and `multiCarrySlice1 k 2` of the multi-operand carry transducer are not all equal. This is the only fact stated; it is the obstruction to the balanced-fiber lifting argument used for k = 2, not a formalized theorem about all fiber counts of k-operand addition. -/
 theorem k_operand_whitening_impossibility (k : Nat) (hk : 3 ≤ k) :
     multiCarrySlice1 k 0 ≠ multiCarrySlice1 k 2 ∨
     multiCarrySlice1 k 0 ≠ multiCarrySlice1 k 1 := by

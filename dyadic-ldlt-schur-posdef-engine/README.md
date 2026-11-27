@@ -22,6 +22,8 @@ A symmetric grid of numbers is "positive definite" if every nonzero weighting gi
 
 A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`, no custom axioms) formalization. Full proofs live in `DyadicLdltSchurPosdefEngine/Theorems.lean`, definitions in `DyadicLdltSchurPosdefEngine/Defs.lean`; `Challenge.lean` states the headline theorems with `sorry` and `Solution.lean` proves the identical statements by delegation.
 
+**Scope of the formal statement.** Positive definiteness is stated for test vectors with entries in the dyadic ring $\mathbb{Z}[1/2]$ (the bespoke `Dyad` type), not for real vectors; the two notions agree by density of $\mathbb{Z}[1/2]$ in $\mathbb{R}$, which is not formalized here.
+
 ## Main Theorems
 
 | Theorem (in `Challenge.lean`) | Statement |
@@ -45,7 +47,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical background:** plain $2 ^ {- \mathrm{pop}(x \oplus y)}$ is a Kronecker power of a $2 \times 2$ matrix, plain $2 ^ {- \lvert x - y \rvert}$ is the Kac-Murdock-Szego (1953) AR(1) Toeplitz covariance kernel (J. Rational Mech. Anal. 2, 767-800), and the base-2 van der Corput radical inverse is classical in quasi-Monte Carlo theory (Dick and Pillichshammer, *Digital Nets and Sequences*, Cambridge Univ. Press, 2010).
-- **Referee audit (referee-3 PASS #155, referee-6 S-Tier Flagship 9.5/9.0/9.5 #194/#205; recorded in `REGISTRY.md`):** the division-free $\mathbb{Z}[1/2]$ $LDL ^ T$ iff engine, the non-scalar `SchurSystem` automaton and the four non-Kronecker sharp-threshold families (Hamming, weighted, Gray-weighted, exponential) are new; zero Section 4 overlap.
+- **Contents (not independently reviewed; no prior-art search is recorded):** the division-free $\mathbb{Z}[1/2]$ $LDL ^ T$ iff engine, the non-scalar `SchurSystem` automaton and the four sharp-threshold families (Hamming, weighted, Gray-weighted, exponential).
 
 ## Build & Verification
 

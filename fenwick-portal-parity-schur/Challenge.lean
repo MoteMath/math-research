@@ -59,7 +59,7 @@ theorem witness_dyadic_inv_k2 {R : Type} [CRing R] {R : Type} [CRing R] {R : Typ
     fun i j => if i = j then (4 : Int) else 0 := by
   sorry
 
-/-- Sharpness 3 (Equal query/update base weights are sharp): giving query edges `(i, i - lowbit i)` weight `1` and update edges `(i, i + lowbit i)` weight `2` gives `det = -24 ≠ -4` already at `k = 2` (`5 × 5`)! -/
+/-- Counterexample 3 (query/update weights `1`/`2` instead of equal weights): giving query edges `(i, i - lowbit i)` weight `1` and update edges `(i, i + lowbit i)` weight `2` gives `det = -24 ≠ -4` already at `k = 2` (`5 × 5`)! -/
 theorem sharpness_asymmetric_weights_k2 :
     let st1 : PortalState Int := ⟨0, -4, -1, 0, 2, 2⟩
     let st1L := stepPerturb st1 0 1 1 0

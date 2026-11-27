@@ -52,7 +52,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 ## Prior-Art Context
 
 - **Weighted finite automata & tensor networks:** Berstel–Reutenauer (1988) develop rational series / weighted finite automata and Schollwöck (2011) surveys MPS/MPO tensor networks in physics.
-- **Novel contribution:** A denominator-free two-stage exact integer Ho-Kalman & gauge-intertwiner Lean 4 proof compiler at bond dimension $D \ge 2$, discharging genuinely new infinite-width binary identities: the parametric Rudin–Shapiro $q$-carry collapse, Carry–Walsh Fibonacci law, Carry $\perp$ Borrow orthogonality, all-odd-trace vanishing of $C _ w$, and pointwise Carry/Borrow complementarity on Thue–Morse.
+- **Contribution (no prior-art search is recorded; not independently reviewed):** A denominator-free two-stage exact integer Ho-Kalman & gauge-intertwiner Lean 4 proof compiler at bond dimension $D \ge 2$, discharging infinite-width binary identities that the authors did not locate elsewhere: the parametric Rudin–Shapiro $q$-carry collapse, Carry–Walsh Fibonacci law, Carry $\perp$ Borrow orthogonality, all-odd-trace vanishing of $C _ w$, and pointwise Carry/Borrow complementarity on Thue–Morse.
 
 ## Build & Verification
 

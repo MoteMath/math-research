@@ -7,8 +7,8 @@ project:
     A complete, sorry-free Lean 4 / Mathlib formalization establishing five exact universal compression
     and contraction theorems over R: the exact optimal ternary EF21 contraction law alpha_tern(d) and its
     Abel-summation tightness at w_i = sqrt(i+1) - sqrt(i), the exact harmonic sandwich
-    4/(4+H_{d-1}) <= alpha_tern(d) <= 4/(3+H_d), exact universal multi-regime EF21 contraction laws and
-    tightness for OCP E2M1 MXFP4 (3 regimes) and NVFP4 (2 regimes) across all block sizes B >= 1, the
+    4/(4+H_{d-1}) <= alpha_tern(d) <= 4/(3+H_d), exact multi-regime one-step contraction constants and
+    tightness for simplified models of E2M1 MXFP4 (3 regimes, assumed scaled regime) and NVFP4 (2 regimes, continuous scale) across all block sizes B >= 1, the
     symmetric 2-bit zero-omission collapse alpha <= 9/(d+8), and the exact m-bit mantissa stochastic
     rounding worst-case relative variance law 1/(4 * 2^m * (2^m + 1)).
   repository: https://github.com/MoteMath/math-research

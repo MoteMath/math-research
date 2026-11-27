@@ -45,7 +45,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of tr
 ## Prior-Art Context
 
 - **Bit-permutation + carry-increment orbits:** Distinct from `bitrev-increment-cycles` (which analyzes standard-basis `bitrev + 1`); here conjugating bit-permutation involutions by the binary Gray code yields exact parity-fiber collapse, universal order-4 collapse for `bitrev + 1`, and the MSB carry-kick Hamiltonian phase transition, while Feistel-carry maps yield universal Jacobsthal isospectrality.
-- **Verdict status:** Referee-2 `PASS` (swarm board #164); the referee-6 novelty audit was still pending when this package was cut, so the novelty summary above is the packager's conservative reading.
+- **Status:** not independently reviewed; no prior-art search is recorded.
 
 ## Build & Verification
 

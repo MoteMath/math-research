@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Kronecker-Woodbury Schur-Tower Riccati Engine (specmat-11)
+  name: Kronecker-Woodbury Schur-Tower Riccati Engine
   description: >-
     **Mechanism Name:** **Kronecker-Woodbury Schur-Tower Riccati Engine** (`GeneralSchurTower` + `affine_tower_lift` + `affine_tower_singular_of_core_kernel`). **Core Silicon Principle:** Every bit-serial $b \times b$ affine bit-pair transducer over bit-vectors of length $k$ updates an accumulator across digit positions $r = 0, \dots, k-1$ by producing a $b^k \times b^k$ matrix $M
   repository: https://github.com/MoteMath/math-research

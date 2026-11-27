@@ -311,7 +311,7 @@ theorem asymTree_non_self_inverse (d : Nat) :
 /-- **Sharpness 2 (`k = 3` Dyadic Inversion Impossibility — Exact Gap at `k = 3`):**
     NO full-affine-spanning ternary element on `F_2^3` is dyadically invertible (`f * g = 2^m • δ_0`).
     Combined with Theorem C (`∀ k ≥ 2, k ≠ 3`) and `baseA3` (`k = 3, D = 3`), this proves
-    the `k ≠ 3` exclusion in Theorem C is 100% sharp. -/
+    the `k = 3` exception cannot be removed from Theorem C for ternary elements with full affine span. -/
 theorem k3_no_spanning_ternary_dyadic {m : Nat} {f g : GR 3}
     (ht : IsTernary f) (hspan : AffineSpan f)
     (hinv : ∀ x, conv f g x = scaleDelta ((2 : Int) ^ m) x) : False := by

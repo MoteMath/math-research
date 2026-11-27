@@ -2,20 +2,21 @@
 version: v0.4
 
 project:
-  name: Exact Tied-Embedding Gradient Asymmetry, Rare-Token RNE Flush, BF16 AdamW Freeze, Lazy-Stamp Equivalence, Bandwidth Speedup, and Zipf Mixed-Precision Pareto Laws
+  name: Tied-Embedding Gradient Asymmetry, Rare-Token RNE Flush, BF16 AdamW Freeze, Lazy-Stamp Equivalence, Bandwidth Cost Ratio, and Zipf Mixed-Precision Allocation Laws (rational models)
   description: >-
-    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
-    arithmetic and algebraic laws for tied LLM embedding/unembedding layers:
-    exact column-sum conservation and sparse-vs-dense gradient asymmetry for tied weights
-    W_emb = W_lm^T, universal IEEE-754/OCP RNE half-ULP weight-update flush and FP8-E4M3FN/E5M2
-    subnormal gradient underflow with explicit Zipf-rank flush thresholds, the exact BF16
-    AdamW second-moment permanent decay freeze law at 1 - beta_2 <= 2^-(p+2) (trapping
-    beta_2 = 0.999 across 100% of normal BF16 states), exact mathematical equivalence of
-    O(1)/O(log Delta) Lazy-Stamp AdamW to Delta dense absent steps (breaking BF16 freeze),
-    exact V/U memory-bandwidth and FLOP speedup (32x at V = 131072, U = 4096), and the
-    exact rational AM-GM/Cauchy-Schwarz Lagrangian optimality law 4^(b_r - b_s) = p_r / p_s
-    with a certified 2.0 b/param tiered Zipf allocation strictly beating uniform 4-bit at
-    half the VRAM.
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six
+    arithmetic and algebraic laws about hand-written rational models of tied LLM
+    embedding/unembedding layers:
+    column-sum conservation and sparse-vs-dense gradient asymmetry for the gradient formulas of
+    tied weights, half-ULP weight-update flush for a model RNE rounding function and
+    FP8-E4M3FN/E5M2 subnormal gradient underflow with explicit Zipf-rank flush thresholds, the
+    BF16 AdamW second-moment decay freeze at 1 - beta_2 <= 2^-(p+2) in the model (trapping
+    beta_2 = 0.999 for every normal BF16 value of the model), equality of
+    O(1)/O(log Delta) Lazy-Stamp AdamW with Delta dense absent steps over the rationals
+    (breaking the model freeze), the cost-model ratio V/U (definitional; 32 at V = 131072,
+    U = 4096), and the rational AM-GM/Cauchy-Schwarz optimality law 4^(b_r - b_s) = p_r / p_s
+    for the modelled error c * 4^-b with a 2.0 b/param tiered Zipf allocation whose modelled
+    error is below stated uniform 4-bit and MXFP4 constants.
   repository: https://github.com/MoteMath/math-research
   subdirectory: embed-zipf-lazystamp-bounds
   license: Apache-2.0

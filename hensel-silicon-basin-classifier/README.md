@@ -45,7 +45,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical $p$-adic dynamics & Hensel lifting lineage:** discrete $2 ^ {w - m}$ clopen-ball attracting-basin lifting sits in the $p$-adic Banach-Hensel dynamical systems lineage of **Silverman** (*The Arithmetic of Dynamical Systems*, Springer 2007), **Anashin & Khrennikov** (*Applied Algebraic Dynamics*, De Gruyter 2009), and **Benedetto** (*Dynamics in One Non-Archimedean Variable*, AMS 2019).
-- **Referee audit (referee-2, referee-6 S-Tier 9.0/8.5/9.5; recorded in `REGISTRY.md`):** the 3-valued bit-derivative abstract-interpretation compiler unifying non-$\mathbb{Z} _ 2$-differentiable bitwise ops with both carried `*` and carry-less `clmul`, the contraction-free universal fixed-point depth law ($\le w$), the bitwise-quadratic 7-fixed-point and $3 \cdot 2 ^ {w - 3}$ basin phenomena, and the cycle-localized $2 w - 2$ transient depth separation are new.
+- **Contents (not independently reviewed; no prior-art search is recorded):** the 3-valued bit-derivative abstract-interpretation compiler for bitwise operations, carried `*` and carry-less `clmul`, the contraction-free universal fixed-point depth law ($\le w$), the bitwise-quadratic 7-fixed-point and $3 \cdot 2 ^ {w - 3}$ basin statements, and the cycle-localized $2 w - 2$ transient depth separation.
 
 ## Build & Verification
 

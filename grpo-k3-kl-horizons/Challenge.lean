@@ -10,8 +10,9 @@ import GrpoK3Kl.Defs
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. Exact Schulman `k3` KL non-negativity, quadratic Taylor sandwich, stabilized polynomial,
    and `[2/2]` Padé positivity.
-2. Bit-exact `BF16` and `FP16` Order A (`0x3b01 → -1/256`, `0x0c01 → -1/2048`) and Order B
-   (`(fl(exp d) - 1) - d = -d < 0` on the entire small-positive half-space, `0x3b7f → -255/65536`)
+2. Order A (`0x3b01 → -1/256`, `0x0c01 → -1/2048`) and Order B, two chosen evaluation orders of `k3` with the
+   model `BF16` / `FP16` RNE function of `Defs.lean` (not the kernel of any framework);
+   for Order B `(fl(exp d) - 1) - d = -d < 0` on the entire small-positive half-space, `0x3b7f → -255/65536`)
    negative-KL and dead-zero violations.
 3. Exact `FP8-E4M3` (`|log p| ≥ 2`) and `BF16` (`|log p| ≥ 32`) PPO/GRPO clip-window collapse.
 4. Direct logit-difference algebraic identity and binade-amplification elimination.

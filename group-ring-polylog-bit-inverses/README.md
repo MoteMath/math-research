@@ -1,4 +1,4 @@
-# `specmat-13`: Exact $\mathbb{Z}[\mathbb{F} _ 2^k]$ Group-Ring Inversion, Parseval Duality, and the Shared-Bit Idempotent Lifting Engine (`group-ring-polylog-bit-inverses`)
+# Exact $\mathbb{Z}[\mathbb{F} _ 2^k]$ Group-Ring Inversion, Parseval Duality, and the Shared-Bit Idempotent Lifting Engine (`group-ring-polylog-bit-inverses`)
 
 ## Synthetic Score
 
@@ -30,13 +30,13 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `treeElem_wht` | **Theorem A.1 (Dual Multiplexer Tree WHT Law):** Every single Walsh coefficient of `treeElem d` is `2^d * spectralSign d ω ∈ {-2^d, +2^d}`. |
 | `treeElem_polylog_identity` | Machine-checked infinite theorem `treeElem_polylog_identity` proved in pure Lean 4 `Init`. |
 | `asymTree_non_self_inverse` | Machine-checked infinite theorem `asymTree_non_self_inverse` proved in pure Lean 4 `Init`. |
-| `k3_no_spanning_ternary_dyadic` | **Sharpness 2 (`k = 3` Dyadic Inversion Impossibility — Exact Gap at `k = 3`):** NO full-affine-spanning ternary element on `F_2^3` is dyadically invertible (`f * g = 2^m • δ_0`). Combined with Theorem C (`∀ k ≥ 2, k ≠ 3`) and `baseA3` (`k = 3, D = 3`), this proves the `k ≠ 3` exclusion in Theorem C is 100% sharp. |
-| `unshiftedLift_breaks_ternary` | Machine-checked infinite theorem `unshiftedLift_breaks_ternary` proved in pure Lean 4 `Init`. |
+| `k3_no_spanning_ternary_dyadic` | **Sharpness 2 (`k = 3` Dyadic Inversion Impossibility — Exact Gap at `k = 3`):** NO full-affine-spanning ternary element on `F_2^3` is dyadically invertible (`f * g = 2^m • δ_0`). Combined with Theorem C (`∀ k ≥ 2, k ≠ 3`) and `baseA3` (`k = 3, D = 3`), this shows that the `k = 3` exception cannot be removed from Theorem C for ternary elements with full affine span. |
+| `unshiftedLift_breaks_ternary` | Machine-checked finite instance: `unshiftedLift (treeElem 1) (treeElem 1)` is not ternary (proved in pure Lean 4 `Init`). |
 
 ## Prior-Art Context
 
-- - **Classical Prior Art (Honest Distinction):** - *Higman (1940)* proved that all torsion units of $\mathbb{Z}[A]$ for an elementary abelian $2$-group $A = \mathbb{F} _ 2^k$ are trivial; our `higman_rigidity` gives a 15-line pure-silicon Parseval proof for all units of $\mathbb{Z}[\mathbb{F} _ 2^k]$. - *Dense Boolean Bent Functions* (Rothaus 1976; Maiorana–McFarland) satisfy $f * f = 2^{2m} \delta _ 0$ on $\mathbb{F} _ 2^{2m}$, but have **100% dense** support ($/\mathrm{supp}(f)/ = N$). - *Fourier-Sparse / Plateaued Boolean Functions & Address Functions* (Nisan–Szegedy 1994; Sanyal 2019; Chiarelli–Hatami–Saks 2020): by Walsh duality, a flat-s
-- Hostile-verified PASS by `referee-3`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- - **Classical Prior Art (Honest Distinction):** - *Higman (1940)* proved that all torsion units of $\mathbb{Z}[A]$ for an elementary abelian $2$-group $A = \mathbb{F} _ 2^k$ are trivial; the triviality of all units of $\mathbb{Z}[\mathbb{F} _ 2^k]$ is itself classical (Higman, *The units of group-rings*, Proc. London Math. Soc. 46 (1940)); `higman_rigidity` is a short Parseval proof of that known fact, mechanized here. - *Dense Boolean Bent Functions* (Rothaus 1976; Maiorana–McFarland) satisfy $f * f = 2^{2m} \delta _ 0$ on $\mathbb{F} _ 2^{2m}$, but have **100% dense** support ($/\mathrm{supp}(f)/ = N$). - *Fourier-Sparse / Plateaued Boolean Functions & Address Functions* (Nisan–Szegedy 1994; Sanyal 2019; Chiarelli–Hatami–Saks 2020).
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

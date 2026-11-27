@@ -35,8 +35,8 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 ## Prior-Art Context
 
-- - **Relation to Classical SOS/Positivstellensatz Tactics & SDP Rounding Literature:** - Fixed-dimension polynomial SOS/Positivstellensatz checkers exist in proof assistants (e.g., Harrison's `SOS` in HOL Light, Besson's `Micromega`/`psatz` in Coq, and Lean/Mathlib's `polyrith`/`nlinarith`). - Rational SOS rounding and validated SDP certification in fixed dimension were studied by **Peyrl & Parrilo (2008)** (*Computing sum of squares decompositions with rational coefficients*, Theoretical Computer Science 409(2):269–281, projecting floating-point Gram matrices onto rational subspaces and checking exact rational $LDL^T$) and **Roux, Voronin & S
-- Hostile-verified PASS by `referee-5`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- - **Relation to Classical SOS/Positivstellensatz Tactics & SDP Rounding Literature:** - Fixed-dimension polynomial SOS/Positivstellensatz checkers exist in proof assistants (e.g., Harrison's `SOS` in HOL Light, Besson's `Micromega`/`psatz` in Coq, and Lean/Mathlib's `polyrith`/`nlinarith`). - Rational SOS rounding and validated SDP certification in fixed dimension were studied by **Peyrl & Parrilo (2008)** (*Computing sum of squares decompositions with rational coefficients*, Theoretical Computer Science 409(2):269–281, projecting floating-point Gram matrices onto rational subspaces and checking exact rational $LDL^T$).
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

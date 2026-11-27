@@ -1018,7 +1018,7 @@ theorem testBit_sub_two_pow (a b i : Nat) (hba : b ≤ a) :
     For EVERY `k ≥ 1`, letting `d = 2^(2*k+1) - 2^k`, EVERY seed `r < 2^k` enters the
     absorbing carry-trap sink `⟨true, 1^k⟩` at step `2*k + 1`. Consequently, for EVERY `w ≥ 2*k + 1`,
     the carry-driven dual `(x ^^^ (x >>> k)) = (x + d) % 2^w` has **EXACTLY ZERO solutions**
-    (in stark contrast to `+d`, which has `2^k` solutions for all `w ≥ 4*k + 2`). -/
+    (in contrast, the variant `(x ^^^ (x >>> k)) = (x - d) % 2^w`, with `x - d` in place of `x + d`, has `2^k` solutions for all `w ≥ 4*k + 2`; checked by brute force for `k = 1, 2, 3`, not proved here). -/
 theorem grayRight_sub_complete_annihilation (k w : Nat) (hk : 0 < k) (hw : 2 * k + 1 ≤ w) :
     let d := 2 ^ (2 * k + 1) - 2 ^ k
     countBelow (fun x => decide ((x ^^^ (x >>> k)) = (x + d) % 2 ^ w)) (2 ^ w) = 0 := by

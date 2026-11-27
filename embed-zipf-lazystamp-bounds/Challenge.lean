@@ -7,19 +7,23 @@ import EmbedZipfLazyStamp.Defs
 /-!
 # Trusted Challenge Statements (`embed-zipf-lazystamp-bounds`)
 
-Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
+Pure-`Init` (zero Mathlib) Lean 4 statements about hand-written rational models (see `Defs.lean`;
+they are not statements about IEEE-754 hardware or a framework) for:
 1. Tied-embedding dense push-down zero-sum column conservation and sparse-vs-dense asymmetry.
-2. Universal IEEE-754 / OCP RNE half-ULP weight-update flush, over-rounding window,
+2. RNE half-ULP weight-update flush for the model rounding function `rneGrid`, over-rounding window,
    `FP8-E4M3FN` / `FP8-E5M2` subnormal gradient underflow, and explicit Zipf-rank flush thresholds.
-3. Universal `BF16` sparse AdamW second-moment (`v_t`) permanent decay-freeze law at
-   `1 - β_2 ≤ 2^(-(p+2))` (`1/512` for `BF16`, trapping `β_2 = 0.999` across 100% of normal states).
-4. Exact mathematical equivalence of `O(1)` / `O(log Δ)` Lazy-Stamp AdamW to `Δ` dense
-   absent-step updates (and breaking of intermediate `BF16` freeze in `Δ = 4` steps).
-5. Exact `V / U` memory-bandwidth and FLOP work speedup (`32×` at `V = 131,072, U = 4,096`;
-   `≥ 25×` for `U ≤ 5,242`).
-6. Exact rational Cauchy–Schwarz & AM-GM Lagrangian optimality `4^(b_r - b_s) = p_r / p_s`
-   for Zipf mixed-precision embedding quantization, plus certified `< 2.0 b/param` tiered
-   allocations strictly beating uniform `4-bit` / `MXFP4` at half the VRAM.
+3. `BF16` sparse AdamW second-moment (`v_t`) decay-freeze law for the model rounding function
+   `rneFloatBelow` at `1 - β_2 ≤ 2^(-(p+2))` (`1/512` for `BF16`, trapping `β_2 = 0.999` for every
+   normal value of the model).
+4. Equality over `Rat` of `O(1)` / `O(log Δ)` Lazy-Stamp AdamW with `Δ` dense
+   absent-step updates (and breaking of the model `BF16` freeze in `Δ = 4` steps).
+5. The ratio `V / U` of the model byte and FLOP counts, which are defined as `V*d*b` and `U*d*b`
+   (so the ratio holds by definition; it is not a measured speedup; `32` at `V = 131,072, U = 4,096`;
+   `≥ 25` for `U ≤ 5,242`).
+6. Rational Cauchy–Schwarz & AM-GM Lagrangian optimality `4^(b_r - b_s) = p_r / p_s`
+   for the modelled error `c * 4^(-b)` of Zipf mixed-precision embedding quantization, plus
+   `< 2.0 b/param` tiered allocations whose modelled weighted MSE is below the stated bare
+   constants for uniform `4-bit` and `MXFP4` (those constants are not derived here).
 -/
 
 namespace EmbedZipfLazyStampChallenge
@@ -51,7 +55,7 @@ theorem tied_embedding_dense_pushdown_zero_sum_and_asymmetry :
   sorry
 
 /-- Theorem 2 (`rare_token_rne_weight_flush_and_fp8_subnormal_underflow`):
-    Universal IEEE-754 / OCP RNE half-ULP weight-update flush, half-ULP over-rounding window,
+    RNE half-ULP weight-update flush for the model rounding function `rneGrid`, half-ULP over-rounding window,
     `FP8-E4M3FN` (`2^-10`) and `FP8-E5M2` (`2^-17`) subnormal gradient blackout, and exact
     Zipf-rank flush thresholds across `BF16`, `FP16`, `FP8-E5M2`, and `FP8-E4M3FN`. -/
 theorem rare_token_rne_weight_flush_and_fp8_subnormal_underflow :
@@ -84,11 +88,12 @@ theorem rare_token_rne_weight_flush_and_fp8_subnormal_underflow :
   sorry
 
 /-- Theorem 3 (`bf16_sparse_adamw_v_decay_freeze_exact`):
-    Universal IEEE-754 RNE decay-freeze theorem for AdamW's second-moment EMA
+    Decay-freeze theorem, for the model rounding function `rneFloatBelow`, for AdamW's second-moment EMA
     `v_{t+1} = β_2 * v_t` on absent rows (`g_t = 0`): proves that `1 - β_2 ≤ 2^(-(p+2))`
     (`1/512` for `BF16` `p = 7`, trapping `β_2 = 0.999` and `η λ = 1/10000`) forces
-    `fl_BF16(β_2 * v) = v` for EVERY normal `BF16` value `v` across all `K : Nat` steps,
-    and proves `2^(-(p+2))` is exact and sharp. -/
+    `fl_BF16(β_2 * v) = v` for every normal `BF16` value `v` of the model across all `K : Nat` steps,
+    and shows that `2^(-(p+2))` cannot be raised: for `1 - β` strictly between `2^(-(p+2))` and
+    `2^(-(p+1))` the binade-boundary value `2^e` decays. -/
 theorem bf16_sparse_adamw_v_decay_freeze_exact :
     (∀ (p : Nat) (e : Int) (m : Nat) (β : Rat),
       m < 2 ^ p → (0 : Rat) ≤ 1 - β → 1 - β ≤ pow2Int (-((p + 2 : Nat) : Int)) →
@@ -110,10 +115,10 @@ theorem bf16_sparse_adamw_v_decay_freeze_exact :
 
 /-- Theorem 4 (`lazy_stamp_adamw_exact_equivalence_to_dense_updates`):
     Exact rational inductive theorem proving that Lazy-Stamp AdamW (`O(1)` closed-form
-    or `O(log Δ)` binary-exponentiation jump across `Δ` absent steps) is 100% mathematically
-    identical to `Δ` dense per-step AdamW updates, satisfies semigroup composition across
-    consecutive gaps, and breaks the `BF16` `β_2 = 0.999` decay freeze across 100% of
-    normal `BF16` states in just `Δ = 4` steps. -/
+    or `O(log Δ)` binary-exponentiation jump across `Δ` absent steps) equals
+    `Δ` dense per-step AdamW updates over `Rat`, satisfies semigroup composition across
+    consecutive gaps, and, in the model, breaks the `BF16` `β_2 = 0.999` decay freeze for every
+    normal `BF16` value in just `Δ = 4` steps. -/
 theorem lazy_stamp_adamw_exact_equivalence_to_dense_updates :
     (∀ (β1 β2 η lam : Rat) (Δ : Nat) (s : AdamWState),
       denseAbsentSteps β1 β2 η lam Δ s = lazyStampJump β1 β2 η lam Δ s) ∧
@@ -128,10 +133,11 @@ theorem lazy_stamp_adamw_exact_equivalence_to_dense_updates :
   sorry
 
 /-- Theorem 5 (`lazy_stamp_bandwidth_and_work_speedup_exact`):
-    Exact rational work-complexity theorem proving that for vocabulary size `V` and
-    `U` unique active tokens per step (`0 < U`), Lazy-Stamp AdamW achieves exact
-    memory-traffic and FLOP speedup `V / U`, exact traffic reduction fraction `1 - U / V`,
-    exact `32×` speedup at `V = 131,072, U = 4,096`, and `≥ 25×` speedup for `0 < U ≤ 5,242`. -/
+    Cost-model theorem: for vocabulary size `V` and `U` unique active tokens per step (`0 < U`),
+    the model counts `denseBytes V d b = V * d * b` and `lazyBytes U d b = U * d * b` (and the FLOP
+    analogues) have ratio `V / U` and reduction fraction `1 - U / V`; this ratio holds by definition of
+    the counts and is not a measured speedup. At `V = 131,072, U = 4,096` the ratio is `32`, and it is
+    `≥ 25` for `0 < U ≤ 5,242`. -/
 theorem lazy_stamp_bandwidth_and_work_speedup_exact :
     (∀ (V U d bRow fRow T : Nat), 0 < U → 0 < d → 0 < bRow → 0 < fRow → 0 < T →
       (denseBytes V d bRow : Rat) / (lazyBytes U d bRow : Rat) = (V : Rat) / (U : Rat) ∧
@@ -148,13 +154,14 @@ theorem lazy_stamp_bandwidth_and_work_speedup_exact :
     (∀ U : Nat, 0 < U → U ≤ 5242 → (25 : Rat) ≤ (131072 : Rat) / (U : Rat)) := by
   sorry
 
-/-- Theorem 6 (`zipf_mixed_precision_embedding_allocation_pareto`):
-    Exact rational Cauchy–Schwarz & AM-GM Lagrangian optimality theorem for frequency-weighted
+/-- Theorem 6 (`zipf_mixed_precision_embedding_allocation_pareto`; the name is historical, the
+    statement is an optimality law for the modelled error, not Pareto optimality):
+    Rational Cauchy–Schwarz & AM-GM Lagrangian optimality theorem for the modelled frequency-weighted
     embedding quantization error `∑_r p_r * c * 4^(-b_r)` subject to fixed bit budget
-    `∑_r b_r = V * b̄`, proving exact optimal bit gap `4^(b_r - b_s) = p_r / p_s`, plus
-    explicit certified 3-tier Zipf mixed-precision allocations (`V = 131,072`,
-    `(899, 11952, 118221)`) averaging `< 2.0 b/param` strictly beating uniform `4-bit`
-    and uniform `MXFP4` at half the VRAM. -/
+    `∑_r b_r = V * b̄`, proving the optimal bit gap `4^(b_r - b_s) = p_r / p_s`, plus
+    explicit 3-tier Zipf mixed-precision allocations (`V = 131,072`, `(899, 11952, 118221)`)
+    averaging `< 2.0 b/param` whose modelled weighted MSE, computed from the bare constants written in
+    the statement, is below the stated constants for uniform `4-bit` and `MXFP4`. -/
 theorem zipf_mixed_precision_embedding_allocation_pareto :
     (∀ (V : Nat) (a b : Fin V → Rat),
       finSum (fun r => a r * b r) * finSum (fun r => a r * b r) ≤

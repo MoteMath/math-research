@@ -1,4 +1,4 @@
-# Kronecker-Woodbury Schur-Tower Riccati Engine (`specmat-11`) (`kronecker-woodbury-schur-riccati`)
+# Kronecker-Woodbury Schur-Tower Riccati Engine (`kronecker-woodbury-schur-riccati`)
 
 ## Synthetic Score
 
@@ -36,7 +36,8 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - Formalizes a pure-Init Lean 4 infinite proof engine with zero Mathlib dependencies and independent `nanoda` kernel verification.
-- Hostile-verified PASS by `referee-3`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- The matrix determinant lemma (`det_add_mul_of_inv`) and the Woodbury identity are classical; this package proves them over an arbitrary commutative ring in Lean and applies them to carry-perturbed bitwise matrices. No prior-art search is recorded.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 
