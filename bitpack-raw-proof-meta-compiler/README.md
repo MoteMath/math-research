@@ -25,18 +25,18 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | Theorem (in `Challenge.lean`) | Statement |
 |---|---|
 | `checkCert_sound` | General Soundness Meta-Theorem for `checkCert`. |
-| `soundness_verifyRawCert` | Machine-checked infinite theorem `soundness_verifyRawCert` proved in pure Lean 4 `Init`. |
+| `soundness_verifyRawCert` | If `verifyRawCert raw = true` for a `ByteArray` `raw`, then `raw` decodes to a certificate whose goal holds. |
 | `gray_3x_uncertainty` | Theorem 1 (13-byte cert, Schema 0): Exact Gray-Code / 3x Convex-Hull Uncertainty Principle. |
-| `pop_5x_9x_lower` | Theorem 3 (26-byte cert, Schema 0): Non-Subadditive (5, 9) Sharp 2/3 Lower Bound. |
-| `pop_3x_or_11x_sharp` | Theorem 5 (23-byte cert, Schema 0): Bitwise-OR Separation Law (3, 11) Sharp 2/3 Lower Bound. |
-| `pop_2var_3x_plus_y_xor` | Theorem 7 (14-byte cert, Schema 0): 2-Variable Mixed Carry-XOR Sharp 1/3 Lower Bound. |
+| `pop_5x_9x_lower` | Theorem 3 (26-byte cert, Schema 0): Non-Subadditive (5, 9) 2/3 Lower Bound: `2 * popcount x <= 3 * (popcount (5x) + popcount (9x))` for all `x` (the constant 2/3 is not proved optimal). |
+| `pop_3x_or_11x_sharp` | Theorem 5 (23-byte cert, Schema 0): Bitwise-OR Separation Law (3, 11) 2/3 Lower Bound: `2 * popcount x <= 3 * popcount (3x OR 11x)` for all `x` (the constant 2/3 is not proved optimal). |
+| `pop_2var_3x_plus_y_xor` | Theorem 7 (14-byte cert, Schema 0): 2-Variable Mixed Carry-XOR 1/3 Lower Bound: `popcount x + popcount y <= 3 * (popcount (3x + y) + popcount (x XOR y))` (the constant 1/3 is not proved optimal). |
 | `pop_eq_3x_plus_y_cascade` | Theorem 8 (29-byte cert, Schema 1): 2-Var Exact Carry-Cascade Popcount Conservation Law. |
 | `bit_eq_3x_plus_y_collapse` | Theorem 10 (19-byte cert, Schema 2): 2-Var Coupled Carry-Collapse Identity. |
 
 ## Prior-Art Context
 
 - - **Distinction from Classical Literature & Proof-Assistant Tactics:** - **Proof-Carrying Code & Compact Proof Formats:** Proof-carrying binary artifacts trace back to Necula (1997, *Proof-Carrying Code*), Appel (2001, *Foundational Proof-Carrying Code*), and compact SAT proof formats such as LRAT (Heule et al., 2017). BitPackMC v1 adapts this paradigm to *self-contained raw `ByteArray` certificates for infinite universally quantified number-theoretic/bitwise theorems* ($\forall x, y \in \mathbb{N}$), checked directly inside Lean 4's pure kernel (`decide`, zero `native_decide`) rather than validating finite propositional refutations or type-s
-- Hostile-verified PASS by `referee-5`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

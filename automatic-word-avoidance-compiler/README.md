@@ -53,7 +53,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 ## Prior-Art Context
 
 - **Classical combinatorics on words & Walnut:** Thue (1906) proved overlap-freeness of Thue–Morse, Allouche–Shallit / Rampersad analyzed Rudin–Shapiro, and Walnut (Mousavi 2016; Shallit 2022) decides automatic-sequence properties via external unverified Büchi automata.
-- **Novel contribution:** A 100% kernel-verified Lean 4 certificate compiler from raw `Nat` bitwise-carry arithmetic through DFAO compilation to universal $k$-power and overlap avoidance, discharging sharp new theorems for five distinct carry-bitwise and Gray automatic words (`carryXor 3/5`, `carryAnd 3/5`, `grayMod4`).
+- **Contribution (prior-art status not established):** A kernel-checked Lean 4 certificate compiler from raw `Nat` bitwise-carry arithmetic through DFAO compilation to universal $k$-power and overlap avoidance, discharging avoidance theorems (with finite sharpness witnesses) for five distinct carry-bitwise and Gray automatic words (`carryXor 3/5`, `carryAnd 3/5`, `grayMod4`).
 
 ## Build & Verification
 

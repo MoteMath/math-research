@@ -7,7 +7,7 @@ import BinaryMorphismAbelianBalance.Defs
 /-!
 # Trusted Challenge Statements (`binary-morphism-abelian-balance`)
 
-Statements of the pure-data modular-stratified quadratic-ring balance certificate soundness, the symbolic non-unimodular sigmaK k = 7 -> 8 phase transition and geometric prefix sharpness, same-matrix oscillating balance doubling (tauA vs tauB), and strict separation between unstratified Rauzy diameters and modular-stratified certificates (mu1, mu2).
+Statements of the pure-data modular-stratified quadratic-ring balance certificate soundness, the symbolic non-unimodular sigmaK balance upper bound phaseBound k and geometric prefix families, upper bounds 2 and 4 for tauA and tauB (same incidence matrix), and the stratified balance bounds for mu1, mu2 together with the rejection of one unstratified certificate for mu1.
 -/
 
 namespace BinaryMorphismAbelianBalanceChallenge
@@ -21,7 +21,7 @@ theorem stratCert_sound_balance (m : Morphism) (cert : StratCert)
   sorry
 
 open MSQRPAIE in
-/-- Theorem 2 (Symbolic sigmaK balance phase transition): for every k >= 1, the non-unimodular morphism sigmaK k is uniformly phaseBound(k)-balanced across all factors. -/
+/-- Theorem 2 (Symbolic sigmaK balance upper bound): for every k >= 1, the non-unimodular morphism sigmaK k is uniformly phaseBound(k)-balanced across all factors (upper bound only). -/
 theorem family_sigmaK_balance (k : Nat) (hk : 1 ≤ k) :
     ∀ i j n : Nat,
       Int.natAbs ((countOnes ((sigmaK k).wordFactor i n) : Int) -
@@ -46,7 +46,7 @@ theorem tauA_balance_infinite :
   sorry
 
 open MSQRPAIE in
-/-- Theorem 5 (Same-matrix balance doubling): tauB shares the exact incidence matrix of tauA yet has doubled uniform balance bound 4. -/
+/-- Theorem 5 (Same-matrix balance bound 4): tauB (same incidence matrix as tauA) is uniformly 4-balanced across all factor positions and lengths (upper bound only; no lower bound is stated). -/
 theorem tauB_balance_infinite :
     ∀ i j n : Nat,
       Int.natAbs ((countOnes (tauB.wordFactor i n) : Int) -
@@ -54,7 +54,7 @@ theorem tauB_balance_infinite :
   sorry
 
 open MSQRPAIE in
-/-- Theorem 6 (Unstratified Rauzy impossibility): no unstratified discrepancy interval can certify balance <= 2 for mu1. -/
+/-- Theorem 6 (Unstratified certificate rejected for mu1): a stated rational-ring inequality for mu1, and the specific unstratified (M = 1) certificate `mu1CertM1_failC2` with C = 2 fails `verifyCert`. This is about that certificate only, not all unstratified intervals. -/
 theorem mu1_unstrat_impossible :
     qLt mu1.mTr mu1.mDisc (qScale 9 mu1.mLambda) (qScale 2 (qSub (6, -1) (-9, 2))) = true ∧
     verifyCert mu1 mu1CertM1_failC2 = false := by

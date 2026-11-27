@@ -7,18 +7,19 @@ import BitnetContraction.Defs
 /-!
 # Trusted Challenge Statements (`bitnet-contraction-hierarchy`)
 
-Universal and exact pure-`Init` Lean 4 statements for Wave 4B (`w4-bitnet-scaling-norms`):
+Universal and exact pure-`Init` Lean 4 statements about a hand-written rational ternary-quantizer model:
 1. `ternary_nearest_nonneg_contraction`: Universal non-negativity of nearest-neighbor ternary
    rounding (`ternRound` and `ternRoundStrict`) over `Rat` for all `d`, `γ ≥ 0`, `x : Fin d → Rat`.
 2. `bitnet_absmean_contraction_exact`: Universal BitNet b1.58 `AbsMean` contraction law
    `(2d - 1) / d^2` with exact attainment on `unitE0 d = (1, 0, ..., 0)`.
 3. `bitnet_absmax_and_half_contraction_exact`: Universal `AbsMax` (`4 / (d + 3)`) and `AbsMax/2`
    (`12 / (d + 15)`) contraction laws with exact attainment witnesses.
-4. `bitnet_rms_contraction_exact_algebraic`: Universal algebraic `RMS` contraction law
+4. `bitnet_rms_contraction_exact_algebraic`: Universal algebraic `RMS` contraction lower bound
    `((d : Rat) * α + 1)^2 ≥ 3 * d + 1` with exact rational attainment at `d = 8` (`α = 1/2`)
    and `d = 16` (`α = 3/8`).
-5. `multilevel_shifted_sqrt_dcrit_exact`: Universal multi-level shifted-sqrt critical dimension
-   `d_crit(G_M) = 8 M^2 + 4` (`36` Quinary, `76` INT3, `396` INT4) and exact harmonic constants.
+5. `multilevel_shifted_sqrt_dcrit_exact`: integer sandwich and equivalence for the defined quantity
+   `dCrit M = 8 M^2 + 4` (`36` Quinary, `76` INT3, `396` INT4; not linked to any quantizer in Lean)
+   and exact harmonic constants.
 6. `two_stage_ternary_greedy_vs_disjoint_crossover`: Exact `d = 3` vs `d = 4` Greedy vs Joint
    Disjoint 2-stage residual ternary crossover.
 -/
@@ -66,7 +67,7 @@ theorem bitnet_absmax_and_half_contraction_exact (d : Nat) (hd : 1 ≤ d) :
         (1 - 12 / ((d : Rat) + 15)) * normSq (absMaxHalfWitness d)) := by
   sorry
 
-/-- Theorem 4 (Exact Algebraic `RMS` Contraction Law):
+/-- Theorem 4 (Algebraic `RMS` Contraction Lower Bound):
     For ALL `d ≥ 1`, EVERY `x : Fin d → Rat`, and EVERY `γ > 0` with `d * γ^2 = normSq x`,
     `((d : Rat) * ternAlpha γ x + 1)^2 ≥ 3 * d + 1`, with exact rational attainment at
     `d = 8` (`α = 1/2`) and `d = 16` (`α = 3/8`). -/
@@ -80,9 +81,10 @@ theorem bitnet_rms_contraction_exact_algebraic (d : Nat) (hd : 1 ≤ d) :
       ternAlpha 1 (rmsWitness 16 7) = (3 : Rat) / 8) := by
   sorry
 
-/-- Theorem 5 (Universal Multi-Level Shifted-Sqrt Critical Dimension & Harmonic Constants):
-    For ALL `M ≥ 2`, proves the exact integer sandwich `(4M^2+1)^2 < 16 M^2 (M^2+1) < (4M^2+2)^2`,
-    the exact feasibility boundary `dCrit M = 8 M^2 + 4`, concrete values (`36`, `76`, `396`),
+/-- Theorem 5 (Integer facts about the defined critical dimension `dCrit`, and Harmonic Constants):
+    For ALL `M ≥ 2`, proves the integer sandwich `(4M^2+1)^2 < 16 M^2 (M^2+1) < (4M^2+2)^2`,
+    an integer equivalence characterising `dCrit M ≤ d` (`dCrit M` is defined as `8 M^2 + 4`; the
+    statement is not linked to any quantizer), concrete values (`36`, `76`, `396`),
     and exact Codebook Harmonic Constants (`1`, `4/3`, `3/2`, `23/15`, `88069/45045`). -/
 theorem multilevel_shifted_sqrt_dcrit_exact (M : Nat) (hM : 2 ≤ M) :
     ((4 * M * M + 1) * (4 * M * M + 1) < 16 * M * M * (M * M + 1) ∧

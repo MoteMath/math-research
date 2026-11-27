@@ -879,7 +879,7 @@ theorem gray_3x_uncertainty (x : Nat) :
   rw [popcount_gray_shift] at h
   omega
 
-/-- Theorem 2 (25-byte cert, Schema 0): Non-Subadditive (3, 11) Sharp 3/4 Lower Bound. -/
+/-- Theorem 2 (25-byte cert, Schema 0): Non-Subadditive (3, 11) 3/4 Lower Bound (constant not proved optimal). -/
 theorem pop_3x_11x_sharp (x : Nat) :
     3 * popcount x ≤ 4 * (popcount (3 * x) + popcount (11 * x)) := by
   have h := soundness_verifyGoal cert3x11x
@@ -889,7 +889,7 @@ theorem pop_3x_11x_sharp (x : Nat) :
   simp only [weightedPop, weightedSum, evalSys, evalExpr, List.map, Int.ofNat_eq_natCast] at h
   omega
 
-/-- Theorem 3 (26-byte cert, Schema 0): Non-Subadditive (5, 9) Sharp 2/3 Lower Bound. -/
+/-- Theorem 3 (26-byte cert, Schema 0): Non-Subadditive (5, 9) 2/3 Lower Bound (constant not proved optimal). -/
 theorem pop_5x_9x_lower (x : Nat) :
     2 * popcount x ≤ 3 * (popcount (5 * x) + popcount (9 * x)) := by
   have h := soundness_verifyGoal cert5x9xLower
@@ -899,7 +899,7 @@ theorem pop_5x_9x_lower (x : Nat) :
   simp only [weightedPop, weightedSum, evalSys, evalExpr, List.map, Int.ofNat_eq_natCast] at h
   omega
 
-/-- Theorem 4 (23-byte cert, Schema 0): Zero-Slack Bitwise-AND (5, 9) Sharp 3/2 Upper Bound. -/
+/-- Theorem 4 (23-byte cert, Schema 0): Zero-Slack Bitwise-AND (5, 9) 3/2 Upper Bound (constant not proved optimal). -/
 theorem pop_5x_and_9x_upper (x : Nat) :
     2 * popcount ((5 * x) &&& (9 * x)) ≤ 3 * popcount x := by
   have h := soundness_verifyGoal cert5xAnd9xUpper
@@ -909,7 +909,7 @@ theorem pop_5x_and_9x_upper (x : Nat) :
   simp only [weightedPop, weightedSum, evalSys, evalExpr, List.map, Int.ofNat_eq_natCast] at h
   omega
 
-/-- Theorem 5 (23-byte cert, Schema 0): Bitwise-OR Separation Law (3, 11) Sharp 2/3 Lower Bound. -/
+/-- Theorem 5 (23-byte cert, Schema 0): Bitwise-OR Separation Law (3, 11) 2/3 Lower Bound (constant not proved optimal). -/
 theorem pop_3x_or_11x_sharp (x : Nat) :
     2 * popcount x ≤ 3 * popcount ((3 * x) ||| (11 * x)) := by
   have h := soundness_verifyGoal cert3xOr11x
@@ -919,7 +919,7 @@ theorem pop_3x_or_11x_sharp (x : Nat) :
   simp only [weightedPop, weightedSum, evalSys, evalExpr, List.map, Int.ofNat_eq_natCast] at h
   omega
 
-/-- Theorem 6 (42-byte cert, Schema 0): 3-Body Super-Linear Synergy (3, 7, 11) Sharp 4/3 Bound. -/
+/-- Theorem 6 (42-byte cert, Schema 0): 3-Body Super-Linear Synergy (3, 7, 11) 4/3 Bound (constant not proved optimal). -/
 theorem pop_3x_7x_11x_synergy (x : Nat) :
     4 * popcount x ≤ 3 * (popcount (3 * x) + popcount (7 * x) + popcount (11 * x)) := by
   have h := soundness_verifyGoal cert3x7x11x
@@ -929,7 +929,7 @@ theorem pop_3x_7x_11x_synergy (x : Nat) :
   simp only [weightedPop, weightedSum, evalSys, evalExpr, List.map, Int.ofNat_eq_natCast] at h
   omega
 
-/-- Theorem 7 (14-byte cert, Schema 0): 2-Variable Mixed Carry-XOR Sharp 1/3 Lower Bound. -/
+/-- Theorem 7 (14-byte cert, Schema 0): 2-Variable Mixed Carry-XOR 1/3 Lower Bound (constant not proved optimal). -/
 theorem pop_2var_3x_plus_y_xor (x y : Nat) :
     popcount x + popcount y ≤ 3 * (popcount (3 * x + y) + popcount (x ^^^ y)) := by
   have h := soundness_verifyGoal cert2Var3xY

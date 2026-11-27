@@ -1,5 +1,5 @@
 /-!
-# Pure-Silicon Walsh–Automaton Spectral-Gap Engine (`specmat-15`)
+# Pure-Silicon Walsh–Automaton Spectral-Gap Engine
 
 Standalone Lean 4.34.1 formalization (zero Mathlib, zero floats, zero reals,
 zero `sorry`, zero custom axioms) of a reusable pure-silicon infinite proof

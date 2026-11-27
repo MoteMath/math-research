@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Bit-Sliced Carry-Holonomy 2-Adic Lifting Engine (adic-17)
+  name: Bit-Sliced Carry-Holonomy 2-Adic Lifting Engine
   description: >-
     **Mechanism:** **Bit-Sliced Carry-Holonomy 2-Adic Lifting Engine (`CarryHolonomyEngine`)** Classical 2-adic Hensel lifting and Lifting-the-Exponent (LTE) rely on differentiability or constant Jacobian congruences modulo $4$. Carry-twisted recurrences mixing arithmetic addition (`+`, `*`) with bitwise operations (`^`, `&`, `<<`) at every bit scale violate constant-derivative hyp
   repository: https://github.com/MoteMath/math-research

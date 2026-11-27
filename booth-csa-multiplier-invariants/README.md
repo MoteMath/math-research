@@ -24,19 +24,19 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 | Theorem (in `Challenge.lean`) | Statement |
 |---|---|
-| `csa3to2_exact_mod` | Machine-checked infinite theorem `csa3to2_exact_mod` proved in pure Lean 4 `Init`. |
+| `csa3to2_exact_mod` | For all `W, a, b, c`: `(csaSum W a b c + csaCarry W a b c) mod 2^W = (a + b + c) mod 2^W` (correctness of the 3:2 carry-save compressor modulo `2^W`). |
 | `lift_all_widths` | INFINITE-WIDTH LIFTING THEOREM (Mechanism II): Any finite top-`g`-bit guard specification lifts to EXACT unwrapped integer conservation `signedVal W S' + signedVal W C' = V` for ALL bit-widths `W ≥ g` and ALL pairs `(S, C)` whose modular sum lies in the allowed slabs! |
 | `zeroCarryTop_exact` | THEOREM 1 (Exact g-Bit Zero-Carry-Top Normalizer, ∀ g ≥ 2, ∀ W ≥ g): For ANY `g ≥ 2`, ANY width `W ≥ g`, and ANY Carry-Save pair `(S, C)` whose modular sum `V` lies in the asymmetric range `[-2^(W-1) + 2^(W-g), 2^(W-1) - 1]`: 1. `signedVal W S' + signedVal W C' = V` EXACTLY IN `Int` (zero wraparound!) 2. `C' < 2^(W - g)` (top `g` bits of `C'` are identically zero, so `C'` is non-negative!). |
 | `unnormalized_csa_rshift_fails` | Sharpness Corollary: Naive unnormalized CSA right-shift fails with error `-2^(W-1)` at `V = 0` ∀ W ≥ 3. |
 | `sec_cancellation_exact` | THEOREM 6 (Universal 2-State Radix-`2^k` Sign-Extension Cancellation Law, ∀ k ≥ 1, ∀ W, ∀ m ≥ 1): Directly discharged by Mechanism I (`RadixTransducer.lift_sum`) on `secTransducer`: `∑_{j=0}^{m-1} secTerm_k(j > 0, s_j) * 2^(W + k*j) + ∑_{j=0}^{m-1} s_j * 2^(W + k*j) = 2^(W + k*m)`. |
 | `radix4_booth_tree_exact` | THEOREM 8 (Complete Pure-Silicon Radix-4 Booth Tree + SEC Theorem, ∀ w ≥ 1, ∀ m ≥ 1): Combines Booth Transducer (Theorem 5) + Silicon PP (Theorem 7) + 2-State SEC (Theorem 6): 1. `boothTreeSum w m x_u y_u = signedVal w x_u * signedVal (2*m) y_u + 2^(w + 1 + 2*m)` EXACTLY IN `Int`! 2. Modulo `2^(w + 2*m)`, `boothTreeSum` equals the exact `(w + 2*m)`-bit signed product! |
 | `booth_acc_endpoints_tight` | Sharpness / Tightness: BOTH `+2^(w+k-2)` and `-2^(w+k-2)` are attained by `A_j'`! |
-| `badGuardCert_g2_rejected` | Machine-checked infinite theorem `badGuardCert_g2_rejected` proved in pure Lean 4 `Init`. |
+| `badGuardCert_g2_rejected` | Machine-checked finite instance: the specific certificate `badGuardCert_g2_cutArc` (a deliberately wrong `g = 2` guard specification) is rejected by `check`. |
 
 ## Prior-Art Context
 
-- - **Classical Literature Distinguished:** - Radix-2 Booth recoding (Booth 1951), Radix-4 Modified Booth recoding (MacSorley 1961), sign-extension elimination for Radix-4 (Bewick 1994; Fadavi-Ardekani 1993; Kuang–Wang–Guo 2009), redundant carry-save / signed-digit recoding & normalization (Kornerup 1994, 2009; Ercegovac–Lang; Burgess; Nannarelli) are classical hardware design techniques. - **What is genuinely new here:** 1. **Unified Bipartite Finite-to-Infinite Proof Compilers (`RadixTransducer`/`FiniteRadixCert` + `GuardNormalizerSpec`/`FiniteGuardCert`):** Rather than hand-proving one fixed-width multiplier or transcribing prose proofs, fin
-- Hostile-verified PASS by thread referee; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- - **Classical Literature Distinguished:** - Radix-2 Booth recoding (Booth 1951), Radix-4 Modified Booth recoding (MacSorley 1961), sign-extension elimination for Radix-4 (Bewick 1994; Fadavi-Ardekani 1993; Kuang–Wang–Guo 2009), redundant carry-save / signed-digit recoding & normalization (Kornerup 1994, 2009; Ercegovac–Lang; Burgess; Nannarelli) are classical hardware design techniques. - **Contribution (prior-art status not established; no search was recorded):** 1. **Unified Bipartite Finite-to-Infinite Proof Compilers (`RadixTransducer`/`FiniteRadixCert` + `GuardNormalizerSpec`/`FiniteGuardCert`):** Rather than hand-proving one fixed-width multiplier or transcribing prose proofs, fin
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

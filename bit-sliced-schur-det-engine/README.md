@@ -1,5 +1,7 @@
 # Recursive Bit-Sliced Schur-Complement Determinant Engine (`bit-sliced-schur-det-engine`)
 
+**Scope of the formal statement.** the commutative-ring class `CRing`, the Leibniz `det` and the residue ring `ZMod m := Fin (m+1)` are the package's own definitions in `Defs.lean`, not Mathlib's; in particular `ZMod 5` is `Fin 6`, i.e. Z/6Z.
+
 ## Synthetic Score
 
 | Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
@@ -28,15 +30,15 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `det_block_schur_left_unimodular` | Exact unimodular left Block-Schur complement over ANY commutative ring `R`. |
 | `det_block_schur_right_scaled` | Exact division-free scaled right Block-Schur complement over ANY commutative ring `R`. |
 | `det_bitSliced_schur_zero_iff` | **AUTOMATIC INVERTIBILITY DICHOTOMY LIFTER** over any `IntDomain R`. |
-| `det_msbAnd_closed_form` | Machine-checked infinite theorem `det_msbAnd_closed_form` proved in pure Lean 4 `Init`. |
-| `det_subsetDisjMat_closed_form` | Machine-checked infinite theorem `det_subsetDisjMat_closed_form` proved in pure Lean 4 `Init`. |
-| `witness_zmod6_zero_divisors` | Witness 2 (Zero-Divisor Ring `ZMod 5` = Z/6Z Non-Vacuity — Invertible Unit Determinant!): In `Z/6Z`, `γ(1) = 2` and `γ(2) = 3` are BOTH zero divisors (`2 * 3 = 0`), yet our universal `CRing` closed-form theorem certifies `det H_2 = 1 (mod 6)` (a unit!)! |
+| `det_msbAnd_closed_form` | Over any `CRing R`, for all `k` and `f : Nat -> R`: `det (msbAndMat k f)` is `f 0` for `k = 0`, `f 0 * (f 1 - f 0)` for `k = 1`, and `-(f 0 * prod_{j<k} (f (j+1) - f 0)^(2^(k-1-j)))` for `k >= 2`. |
+| `det_subsetDisjMat_closed_form` | Over any `CRing R`, for all `k` and `a, c : R`: `det (subsetDisjMat (k+1) a c) = (a^2 - c^2)^(2^k)`. |
+| `witness_zmod6_zero_divisors` | Machine-checked finite instance in the package's own residue ring `ZMod 5 := Fin 6` (that is, Z/6Z, not a field of 5 elements): `2 * 3 = 0`, and a specific 2x2 `hcbMat` determinant evaluates to `1`. It is a computation, not an application of the universal theorems. |
 | `counterexample_bool_plus_superset_breaks` | Sharpness Counterexample C (Kernel-Checked!): Adding the superset term `[y ⊆ x]` to `subsetDisjMat` (`a = c = 1`) breaks the `(a^2 - c^2)^(2^(k-1))` law: at `k = 1`, `det = 2 ≠ 0`, while at `k = 2`, `det = 0`! |
 
 ## Prior-Art Context
 
 - 1. **Zero overlap with `CHARTER.md` Section 4:** - Distinct from `skew-thue-morse-pfaffian` (skew-symmetric Pfaffians / Walsh-Hadamard), `clmul-lift-determinants` (carryless polynomial multiplication / Hankel / Toeplitz over $\mathbb{F} _ 2[x]$), `zero-carry-spanning-trees` (Laplacian Kirchhoff trees of $x \mathbin{\&} y = 0$), `carry-determinants`, and `carry-blocks-determinants` (binary addition carry matrices). - Here we construct a **general, division-free commutative-ring block-Schur lifting compiler** and apply it to (i) nonlinear global highest-common-bit selection kernels $H _ k$ coupled with arbitrary non-uniform bit-pair weights and
-- Hostile-verified PASS by `referee-3`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

@@ -46,7 +46,7 @@ theorem det_subsetDisjMat_closed_form {R : Type u} [CRing R] {R : Type u} [CRing
     CRing.pow (CRing.sub (CRing.mul a a) (CRing.mul c c)) (pow2 k) := by
   sorry
 
-/-- Witness 2 (Zero-Divisor Ring `ZMod 5` = Z/6Z Non-Vacuity — Invertible Unit Determinant!): In `Z/6Z`, `γ(1) = 2` and `γ(2) = 3` are BOTH zero divisors (`2 * 3 = 0`), yet our universal `CRing` closed-form theorem certifies `det H_2 = 1 (mod 6)` (a unit!)! -/
+/-- Witness 2 (finite instance in the package's own `ZMod 5 := Fin 6`, i.e. Z/6Z): `2 * 3 = 0` and a specific 2x2 `hcbMat` determinant evaluates to `1`. This is a concrete computation, not an application of the universal theorems. -/
 theorem witness_zmod6_zero_divisors {R : Type u} [CRing R] {R : Type u} [CRing R] {R : Type u} [CRing R] {R : Type u} [CRing R] {R : Type u} [CRing R] {R : Type u} [CRing R] :
     CRing.mul (⟨2, by omega⟩ : ZMod 5) ⟨3, by omega⟩ = CRing.zero ∧
     det (hcbMat (R := ZMod 5)

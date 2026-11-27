@@ -36,7 +36,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - - **Distinction from classical literature:** - Unconstrained hyperbinary partitions ($D = \{0,1,2\}$, Stern's diatomic sequence, Reznick 1990), binary partition asymptotics via matrix products (**Protasov 2000**), and unconstrained $k$-way sums ($\binom{n+k-1}{k-1}$, Kummer's theorem) are classical. - Allouche–Shallit $2$-regular sequences and Christol's theorem establish finite-state automaticity for **fixed** modulus $m$, which cannot certify **unbounded** $2$-adic valuations $\nu _ 2(f(n)) \to \infty$ or odd-part congruences $\mathrm{odd} _ 2(f(n)) \bmod 4$. - Existing $p$-adic valuation studies of Stern-type and $k$-regular sequences (e.g
-- Hostile-verified PASS by `referee-4`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

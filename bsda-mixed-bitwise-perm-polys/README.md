@@ -51,7 +51,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of th
 
 - **Classical permutation polynomials & T-functions:** Rivest (2001) characterizes ordinary polynomials mod $2^w$ via $w = 2$ (recovered as `rivest_classical_mod4_iff`); Anashin (1994, 2002), Anashin–Khrennikov (2009), and Klimov–Shamir (2002–2004) develop 2-adic measure-preserving T-functions.
 - **Mixed Boolean-Arithmetic (MBA) permutations:** Zhou–Main–Gu–Johnson (2007) and Eyrolles (2017) study MBA identities and MBA permutations mod $2^w$, closely related to the algebraic bitwise-arithmetic cancellations (`complementBridge_bijective`, `addXorCancel_bijective_iff`).
-- **Novel contribution:** The unified pure-data BSDA compiler with computable BFS finite-slice horizon 3-way `iff`, the bit-by-bit generalized masked mixed-connective Rivest theorem, and the sharp carry-coupled congruence family are genuinely original.
+- **Contribution (prior-art status not established; no search was recorded):** The unified pure-data BSDA compiler with computable BFS finite-slice horizon 3-way `iff`, the bit-by-bit generalized masked mixed-connective Rivest theorem, and the sharp carry-coupled congruence family.
 
 ## Build & Verification
 

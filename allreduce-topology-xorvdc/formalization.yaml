@@ -4,13 +4,13 @@ version: v0.4
 project:
   name: Exact Quantized All-Reduce Topology Error Laws, Cross-Rank XOR-VDC Stochastic Rounding, and Deep BF16 Residual-Stream Freeze Theorems
   description: >-
-    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving the exact
-    pure-silicon laws of quantized collective communication and deep residual accumulation:
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving exact
+    statements about hand-written models of quantized collective communication and deep residual accumulation:
     exact (TP - 1)-fold Ring vs Binary-Tree/Direct sub-ULP drift separation (63x at TP = 64),
     exact combinatorial catastrophic-cancellation wipeout law (Ring 2/TP vs Tree TP/(2(TP-1)) > 1/2
     vs Direct 0, reaching 1024/63 > 16x worse for Tree at TP = 64), cross-rank zero-communication
-    XOR-VDC top-K bijection, exact zero bias, deterministic < 1 ULP worst-case bound, and exact
-    MSE scaling (TP^2/12 : TP/6 : TP/12 : 1/6, 64x over independent SR and 2048x over RNE at
+    XOR-VDC top-K bijection, exact zero bias, deterministic < 1 ULP worst-case bound, and the
+    ratios between MSE constants fixed in Defs (TP^2/12 : TP/6 : TP/12 : 1/6, 64x over independent SR and 2048x over RNE at
     TP = 64), exact BF16 residual-stream freeze depth L_freeze(p) = 2^(15 - 2p) with exact
     boundary tie-to-even stall, exact Kahan 2-word compensated recovery across arbitrary depth,
     and the fixed-scale ternary saturation barrier across Ring, Tree, and Direct topologies.

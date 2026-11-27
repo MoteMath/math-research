@@ -2,9 +2,9 @@
 version: v0.4
 
 project:
-  name: Binary Morphism Abelian Balance - zero-real Int x Int quadratic-ring modular-stratified balance compiler, k = 7 -> 8 phase transition, and unstratified Rauzy separation
+  name: Binary Morphism Abelian Balance - zero-real Int x Int quadratic-ring modular-stratified balance compiler, balance upper bounds for sigmaK (piecewise bound switching at k = 8), and an unstratified-certificate rejection for mu1
   description: >-
-    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a zero-real Int x Int quadratic-ring Brahmagupta compiler and modular-stratified abelian balance certificate engine (MS-QR-PAIE) for binary word morphisms. Proves uniform abelian balance across all factor lengths and positions for the symbolic non-unimodular family sigmaK (with exact k = 7 -> 8 discriminant phase transition and geometric prefix sharpness), same-matrix balance doubling (tauA 2 vs tauB 4), and formal impossibility of unstratified Rauzy bounds for mu1 and mu2.
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a zero-real Int x Int quadratic-ring Brahmagupta compiler and modular-stratified abelian balance certificate engine (MS-QR-PAIE) for binary word morphisms. Proves uniform abelian balance across all factor lengths and positions for the symbolic non-unimodular family sigmaK (upper bound phaseBound k, which switches form at k = 8, with explicit prefix families), upper bounds 2 and 4 for tauA and tauB (same incidence matrix), and the rejection of one specific unstratified certificate for mu1. All statements are upper bounds.
   repository: https://github.com/MoteMath/math-research
   subdirectory: binary-morphism-abelian-balance
   license: Apache-2.0

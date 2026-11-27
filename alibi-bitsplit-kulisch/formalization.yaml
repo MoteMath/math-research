@@ -5,7 +5,7 @@ project:
   name: Exact Quantized ALiBi Horizons, Bilinear Bit-Split Geometry, MXFP Parity, and Mixed-Format Kulisch Accumulator Laws
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
-    rational, integer, and IEEE-754 RNE laws for quantized LLM arithmetic: exact ALiBi
+    statements about hand-written rational and integer models of quantized LLM arithmetic (including a hand-written RNE predicate): exact ALiBi
     content-swamping thresholds and power-of-2 binade asymmetry across BF16/FP8-E4M3/FP16
     plus zero-error dyadic slopes, exact finite-level symmetric INT_b bilinear bit-split
     crossover thresholds (125/22, 24025/92, 10143/2350), absmax-pinned super-outlier bit-split

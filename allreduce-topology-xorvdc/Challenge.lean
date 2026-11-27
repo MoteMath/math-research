@@ -7,14 +7,15 @@ import AllReduceXorVdc.Defs
 /-!
 # Trusted Challenge Statements (`allreduce-topology-xorvdc`)
 
-Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for the six Wave 16A laws:
+Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for six statements about hand-written all-reduce models:
 1. Exact `(TP - 1)`-fold Ring vs Binary-Tree/Direct sub-ULP drift separation (`63x` at `TP = 64`).
 2. Exact combinatorial catastrophic-cancellation wipeout law (`Ring 2 / TP` vs
    `Tree TP / (2 * (TP - 1)) > 1/2`, strictly worse than Ring for all `TP = 2h ≥ 4`, reaching
    `1024 / 63 > 16x` at `TP = 64`, vs `Direct 0`).
 3. Cross-rank zero-communication XOR-VDC top-`K` bijection, exact zero bias, deterministic
    `< 1` ULP worst-case error, exact discrete MSE, and exact continuous-limit MSE ratios
-   (`64x` over independent SR and `2048x` over RNE at `TP = 64`).
+   (`64x` over independent SR and `2048x` over RNE at `TP = 64`; these are ratios of the constants
+   `mseIndSr`, `mseRne`, `mseXorVdc` fixed in `Defs.lean`).
 4. Exact BF16 residual-stream freeze depth `L_freeze(p) = 2^(15 - 2p)` (`32`, `128`, `512` at
    `p = 5, 4, 3`), complete sub-half-ULP freeze, and exact boundary tie-to-even stall.
 5. Exact 2-word compensated Kahan residual recovery with zero swamping loss and `≤ u / 2`

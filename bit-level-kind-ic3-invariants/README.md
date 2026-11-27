@@ -1,5 +1,7 @@
 # Bit-Level k-Induction and IC3 Invariant Engine - width-uniform finite certificates proving all-width, all-time hardware safety (`bit-level-kind-ic3-invariants`)
 
+**Scope of the formal statement.** the five hardware 'benchmarks' are specific hand-written recursive functions over `BitVec w` (`grayTrace`, `csaTrace`, `defectPipeTrace`, `hybridTrace`, `avgFilterTrace` in `Defs.lean`), and `thm1`-`thm5` are stated directly about those functions, not through the `Safe` predicate or any circuit/netlist semantics. The soundness theorems `checkOblig_sound` and `checkKIndIC3_sound` are general statements about the package's own `BVSystem` type. Nothing links the trace functions to RTL, a hardware description language or an existing model checker.
+
 ## Synthetic Score
 
 | Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
@@ -35,7 +37,8 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - - **Vs. Classical Hardware Verification ($k$-Induction & IC3/PDR):** Sheeran–Singh–Stålmarck (2000) and Bradley (2011) verify safety for a fixed bit-width $w$ via SAT unrolling; proof-producing SAT checkers (DRAT/LRAT) still only certify one fixed width $w$. Word-level / parametric model checking (e.g., regular model checking, Kesten et al. 2001; Bouajjani et al. 2000) typically checks automata externally without a kernel-verified soundness proof in a theorem prover. - **Vs. Existing Lean 4 `bv_decide` / `omega` / `BitVec` Tactics:** Lean 4's `bv_decide` (LRAT bit-blasting) decides fixed-width `BitVec w` goals (one fixed $w$ at a time) and do
-- Hostile-verified PASS by `referee-5`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- **Related work located by an independent novelty review:** KIC3 ([arXiv:2502.13605](https://arxiv.org/abs/2502.13605)), as well as the k-induction and IC3 references above. That review did not locate a kernel-checked width-uniform soundness theorem, but the soundness of k-induction itself is textbook, so the contribution here is engineering of the certificate checker, not a new proof principle.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

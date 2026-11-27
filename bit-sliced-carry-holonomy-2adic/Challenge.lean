@@ -35,7 +35,7 @@ theorem tower_to_min_period {f : Nat → Nat} (hf : TPerm f) (k0 L0 : Nat)
     ∀ d, 0 < d → d < L0 * 2 ^ m → iter f d 0 % 2 ^ (k0 + m) ≠ 0 := by
   sorry
 
-/-- **Theorem 1A (Gray-Carry Ergodicity for `s ≥ 2`, odd `c`)**: For ALL `s ≥ 2`, ALL odd `c`, and ALL `k : Nat`, the orbit modulo `2^k` has exact minimal period `2^k`, and for ALL `n ≥ 1`, `v2 (iter (grayCarryStep s c) n 0) = v2 n`! -/
+/-- **Theorem 1A (Gray-Carry Ergodicity for `s ≥ 2`, odd `c`)**: For ALL `s ≥ 2`, ALL odd `c`, and ALL `k : Nat`, the orbit of `0` modulo `2^k` has exact minimal period `2^k` (stated as: `iter (grayCarryStep s c) (2^k) 0 % 2^k = 0` and no smaller positive `d` returns to `0`). The valuation law `v2 (iter (grayCarryStep s c) n 0) = v2 n` is not part of this statement. -/
 theorem grayCarry_ge2_odd_period (s c k : Nat) (hs : 2 ≤ s) (hc : c % 2 = 1) :
     iter (grayCarryStep s c) (2 ^ k) 0 % 2 ^ k = 0 ∧
     ∀ d, 0 < d → d < 2 ^ k → iter (grayCarryStep s c) d 0 % 2 ^ k ≠ 0 := by

@@ -35,8 +35,8 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 ## Prior-Art Context
 
-- - **Classical prior art (explicitly credited):** Multiplicative Kronecker SNF (Newman 1972, *Integral Matrices*) and the binomial SNF $(2^j)^{\binom{k}{j}}$ of Sylvester/Walsh-Hadamard matrices are classical. Theorem 4 is included intentionally as a reusable Kronecker component and direct baseline against Theorem 1's carried counterpart. - **Anti-duplication check (CHARTER Section 4):** Distinct from `carry-determinants` and `carry-blocks-determinants` (base-$B$ Holte/Markov carry transition matrix determinants) and `clmul-lift-determinants` (carryless multiplication determinants; we do not use `clmul` at all). - **What is genuinely new:** 1.
-- Hostile-verified PASS by `referee-3`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- - **Classical prior art (explicitly credited):** Multiplicative Kronecker SNF (Newman 1972, *Integral Matrices*) and the binomial SNF $(2^j)^{\binom{k}{j}}$ of Sylvester/Walsh-Hadamard matrices are classical. Theorem 4 is included intentionally as a reusable Kronecker component and direct baseline against Theorem 1's carried counterpart. - **Anti-duplication check (CHARTER Section 4):** Distinct from `carry-determinants` and `carry-blocks-determinants` (base-$B$ Holte/Markov carry transition matrix determinants) and `clmul-lift-determinants` (carryless multiplication determinants; we do not use `clmul` at all). - **Contribution (prior-art status not established; no search was recorded):** 1.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

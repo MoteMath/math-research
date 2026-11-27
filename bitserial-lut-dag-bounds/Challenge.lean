@@ -10,9 +10,10 @@ import BitSerialLutDag.Defs
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. Universal 2-input linear DAG lower bound `2^(g-1) + g - 2` ops and `ceilLog2 g` depth
    for sign-folded binary LUT precomputation (`2, 5, 10, 19` ops for `g = 2, 3, 4, 5`).
-2. Exact soundness, completeness, and Pareto dominance of the GPU-discovered `g = 4`
+2. Exact soundness, completeness, and dominance of the `g = 4` (computer-searched)
    balanced `(12 ops, depth 2)` binary LUT circuit over naive T-MAC `(14 ops, depth 3)`
-   alongside the RDNA 3 `V_ADD_LSHL` `(11 ops, depth 3)` and `(10 ops, depth 4)` circuits.
+   alongside the RDNA 3 `V_ADD_LSHL` `(11 ops, depth 3)` and `(10 ops, depth 4)` circuits
+   (Pareto-optimality is not proved).
 3. Exact symmetry-halved ternary LUT size `(3^g - 1)/2` (`4, 13, 40, 121`), universal lower
    bound `(3^g - 1)/2 - g` ops and `ceilLog2 g` depth, minimal zero-waste ternary DAGs
    for `g = 2, 3, 4`, and structured `(≤2, 4)` ternary sparsity compression (`12 ops, depth 1`).
@@ -44,8 +45,8 @@ theorem binary_lut_dag_lower_bound_exact :
   sorry
 
 /-- Theorem 2 (`tmac_depth2_optimal_12_vs_14_circuit`):
-    Exact soundness, completeness, and Pareto dominance of the GPU-discovered `g = 4`
-    circuits: balanced `(12 ops, depth 2)` strictly beats naive T-MAC `(14 ops, depth 3)`
+    Exact soundness, completeness, and dominance of the (computer-searched) `g = 4`
+    circuits (Pareto-optimality is not proved): balanced `(12 ops, depth 2)` strictly beats naive T-MAC `(14 ops, depth 3)`
     in both op count (`-1/7 = -14.3%`) and depth (`-1/3 = -33.3%`) while matching `ceilLog2 4 = 2`,
     and the RDNA 3 `V_ADD_LSHL` circuits achieve `(11 ops, depth 3)` and lower-bound-tight
     `(10 ops, depth 4)` (= `binaryLowerBound 4`). -/
@@ -138,7 +139,8 @@ theorem popcnt_zero_lut_exact_bitserial_dot_identity :
     Exact symbolic amortization crossover `R* = (setupLut - setupPop) / (steadyPop - steadyLut)`
     explaining why zero-LUT `POPCNT` wins on small-batch LLM decode (`R < R*`), plus the
     exact RDNA 3 (`gfx1100`) no-crossover dominance theorem (`POPCNT` wins for all `M, N, K > 0`)
-    and exact `gfx1100` cost ratios (`1/2 < 3/4` steady-state, `3/2×` `g=6` vs `g=4` lookups). -/
+    and `gfx1100` cost ratios (`1/2 < 3/4` steady-state, `3/2×` `g=6` vs `g=4` lookups), all under
+    assumed cost-model constants (nothing is measured). -/
 theorem lut_vs_popcnt_amortization_crossover_exact :
     (∀ (setupPop setupLut steadyPop steadyLut R : Rat),
       (0 : Rat) < R → steadyLut < steadyPop →

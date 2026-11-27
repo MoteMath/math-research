@@ -8,7 +8,7 @@ import AlibiBitsplitKulisch.Defs
 # Trusted Challenge Statements (`alibi-bitsplit-kulisch`)
 
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
-1. Exact IEEE-754 RNE `ALiBi` content-swamping threshold, power-of-2 binade asymmetry, format
+1. `ALiBi` content-swamping threshold for the hand-written RNE predicate `rneSwampsAtNegB`, power-of-2 binade asymmetry, format
    overflows (`FP8-E4M3` at `d = 465`, `FP16` at `d = 65520 < 128K`), and zero-error dyadic slopes.
 2. Exact finite-level symmetric `INT_b` bilinear bit-split crossover thresholds
    (`W4A4 -> W3A5` at `125/22`, `W3A5 -> W2A6` at `24025/92`, `W6A6 -> W5A7` at `10143/2350`).
@@ -23,7 +23,8 @@ namespace AlibiBitsplitKulischChallenge
 open AlibiBitsplitKulisch
 
 /-- Theorem 1 (`alibi_content_swamping_and_dyadic_slope_exact`):
-    Universal IEEE-754 RNE ALiBi content-swamping threshold `B ≥ 2^{p+1} |x|`, exact power-of-2
+    Universal content-swamping threshold `B ≥ 2^{p+1} |x|` for the hand-written RNE predicate
+    `rneSwampsAtNegB` (a model of IEEE-754 round-to-nearest-even), exact power-of-2
     binade asymmetry for `+x` vs `-x`, concrete `BF16`, `FP8-E4M3` (`d = 19..23` swamping &
     `d = 465` overflow), and `FP16` (`d = 65520 < 131072` overflow) horizons, and exact zero
     multiplication rounding error for dyadic slopes `m = 2^{-k}`. -/

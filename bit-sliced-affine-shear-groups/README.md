@@ -52,7 +52,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of th
 ## Prior-Art Context
 
 - **1-lane T-functions & classical wreath products:** Klimov–Shamir (2002, 2004) and Anashin–Khrennikov (2009) study 1-lane T-functions via Mahler/van der Put coefficients, and $\langle +1, \oplus 1 \rangle \cong C _ {2^{w-1}} \wr C _ 2$ is a classical wreath product (formalized here with exact bijective normal form on fiber $a = 1$).
-- **Novel contribution:** The 2-lane Block-$r$ Differential Bit-Slice Affine Engine `IsBitAffine r M f` over $\mathrm{GL} _ 2(\mathbb{F} _ 2)^w$, unifying add/XOR/masked shears and cross-/intra-lane bit-swaps into one finite-to-infinite homomorphism, conjugacy-profile invariant, derived-series collapse, and strict 3-level $\mathrm{Sym}$-conjugacy hierarchy $\mathcal{U} _ w \subsetneq \mathcal{A} _ w^{(0)} \subsetneq \mathcal{A} _ w^{(2)} \subsetneq \mathrm{Sym}$.
+- **Contribution (prior-art status not established; no search was recorded):** The 2-lane Block-$r$ Differential Bit-Slice Affine Engine `IsBitAffine r M f` over $\mathrm{GL} _ 2(\mathbb{F} _ 2)^w$, unifying add/XOR/masked shears and cross-/intra-lane bit-swaps into one finite-to-infinite homomorphism, conjugacy-profile invariant, derived-series collapse, and strict 3-level $\mathrm{Sym}$-conjugacy hierarchy $\mathcal{U} _ w \subsetneq \mathcal{A} _ w^{(0)} \subsetneq \mathcal{A} _ w^{(2)} \subsetneq \mathrm{Sym}$.
 
 ## Build & Verification
 

@@ -17,17 +17,17 @@ theorem gray_3x_uncertainty (x : Nat) :
     2 * popcount x ≤ 2 * popcount (3 * x) + popcount (x ^^^ (x >>> 1)) := by
   sorry
 
-/-- Theorem 3 (26-byte cert, Schema 0): Non-Subadditive (5, 9) Sharp 2/3 Lower Bound. -/
+/-- Theorem 3 (26-byte cert, Schema 0): Non-Subadditive (5, 9) 2/3 Lower Bound (constant not proved optimal). -/
 theorem pop_5x_9x_lower (x : Nat) :
     2 * popcount x ≤ 3 * (popcount (5 * x) + popcount (9 * x)) := by
   sorry
 
-/-- Theorem 5 (23-byte cert, Schema 0): Bitwise-OR Separation Law (3, 11) Sharp 2/3 Lower Bound. -/
+/-- Theorem 5 (23-byte cert, Schema 0): Bitwise-OR Separation Law (3, 11) 2/3 Lower Bound (constant not proved optimal). -/
 theorem pop_3x_or_11x_sharp (x : Nat) :
     2 * popcount x ≤ 3 * popcount ((3 * x) ||| (11 * x)) := by
   sorry
 
-/-- Theorem 7 (14-byte cert, Schema 0): 2-Variable Mixed Carry-XOR Sharp 1/3 Lower Bound. -/
+/-- Theorem 7 (14-byte cert, Schema 0): 2-Variable Mixed Carry-XOR 1/3 Lower Bound (constant not proved optimal). -/
 theorem pop_2var_3x_plus_y_xor (x y : Nat) :
     popcount x + popcount y ≤ 3 * (popcount (3 * x + y) + popcount (x ^^^ y)) := by
   sorry

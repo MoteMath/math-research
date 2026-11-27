@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **10 / 10** | **9 / 10** | **7 / 10** | **10 / 10** | **89 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): unrecorded universal period-6 and period-12 Feistel carry-renormalization laws over unbounded $\mathbb{N} \times \mathbb{N}$ (for completely arbitrary odd-input round functions $h, g : \mathbb{N} \to \mathbb{N}$), together with an exact power-of-two `iff` dichotomy for the binary Lyness map $F _ c(x, y) = (y, x \oplus (y + c))$ and its bitwise-OR period-12 twin, formalized in pure Lean 4 `Init` (zero Mathlib).*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): universal period-6 and period-12 Feistel carry-renormalization laws over unbounded $\mathbb{N} \times \mathbb{N}$ (for completely arbitrary odd-input round functions $h, g : \mathbb{N} \to \mathbb{N}$), together with an exact power-of-two `iff` dichotomy for the binary Lyness map $F _ c(x, y) = (y, x \oplus (y + c))$ and its bitwise-OR period-12 twin, formalized in pure Lean 4 `Init` (zero Mathlib).*
 
 ## For Mathematicians
 
@@ -57,7 +57,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of un
 
 - **Classical Lyness & periodic rational recurrences:** The name echoes the classical rational Lyness map $(x, y) \mapsto (y, (y + 1)/x)$ of period $5$ (Lyness 1942) and its generalizations, though our map operates in mixed carry-free XOR and carry-propagating binary arithmetic over $\mathbb{N}$ rather than a field.
 - **Addition outside XOR (opposite order of operations):** The MathOverflow thread *"A Bitwise Xor Problem"* investigates the superficially similar recurrence $a _ i = (a _ {i-1} \oplus a _ {i-2}) + 1$ (addition *outside* XOR), which behaves completely differently and grows with periods scaling as $3 \cdot 2^{m-1}$ modulo $2^m$ rather than collapsing to finite period $6$ on unbounded $\mathbb{N}$.
-- **T-functions & 2-adic dynamics:** Invertible triangular maps mixing XOR and addition are studied in Klimov & Shamir (*A New Class of Invertible Mappings*, CHES 2002; *New Cryptographic Primitives Based on Multiword T-Functions*, FSE 2004) and Anashin & Khrennikov (*Applied Algebraic Dynamics*, De Gruyter 2009), primarily targeting maximal single-cycle lengths $2^n$ for stream ciphers. A web, literature, and OEIS search found no prior record of the universal even-carry period-6 and odd-carry period-12 Feistel carry-renormalization laws, the exact power-of-two period-6 dichotomy for $F _ c(x, y) = (y, x \oplus (y + c))$, or the period-12 bitwise-OR twin $H _ {2^r}$.
+- **T-functions & 2-adic dynamics:** Invertible triangular maps mixing XOR and addition are studied in Klimov & Shamir (*A New Class of Invertible Mappings*, CHES 2002; *New Cryptographic Primitives Based on Multiword T-Functions*, FSE 2004) and Anashin & Khrennikov (*Applied Algebraic Dynamics*, De Gruyter 2009), primarily targeting maximal single-cycle lengths $2^n$ for stream ciphers. No prior record of the universal even-carry period-6 and odd-carry period-12 Feistel carry-renormalization laws, the exact power-of-two period-6 dichotomy for $F _ c(x, y) = (y, x \oplus (y + c))$, or the period-12 bitwise-OR twin $H _ {2^r}$ was found by the authors; the search was not recorded.
 
 ## Build & Verification
 

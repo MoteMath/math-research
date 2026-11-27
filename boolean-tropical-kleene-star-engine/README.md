@@ -35,8 +35,8 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 
 ## Prior-Art Context
 
-- - **Classical foundations acknowledged:** Kozen's Kleene algebra axioms (1994), Conway's $2 \times 2$ block star-matrix identity (1971), and the classical Sherman–Morrison formula over fields are standard background. - **What is new and silicon-native here:** 1. **Kleene-Algebra Rank-1 Sherman–Morrison + Bit-Sliced Corner-Bridge Tower (`BSKSE`)** formalized polymorphically in core Lean 4 with zero Mathlib and zero `Fin` casts (`Fin (n * 2)` matching `2 ^ (k + 1)` definitionally), unifying **both** collapsing integral semirings (`Bool`, `TropNat`) and **non-collapsing** non-integral semirings (`XorSet` + diagonal gauge similarity). 2. **The BM
-- Hostile-verified PASS by `referee-3`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- - **Classical foundations acknowledged:** Kozen's Kleene algebra axioms (1994), Conway's $2 \times 2$ block star-matrix identity (1971), and the classical Sherman–Morrison formula over fields are standard background. - **Contribution (prior-art status not established; no search was recorded):** 1. **Kleene-Algebra Rank-1 Sherman–Morrison + Bit-Sliced Corner-Bridge Tower (`BSKSE`)** formalized polymorphically in core Lean 4 with zero Mathlib and zero `Fin` casts (`Fin (n * 2)` matching `2 ^ (k + 1)` definitionally), unifying **both** collapsing integral semirings (`Bool`, `TropNat`) and **non-collapsing** non-integral semirings (`XorSet` + diagonal gauge similarity). 2. **The BM
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

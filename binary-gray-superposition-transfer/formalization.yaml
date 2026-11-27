@@ -4,7 +4,7 @@ version: v0.4
 project:
   name: BitTransfer3  Bit-Boundary Transfer-Tensor & State-Invariant Compiler
   description: >-
-    `BitTransfer3`: Bit-Boundary Transfer-Tensor & State-Invariant Compiler
+    `BitTransfer3`: transfer-tensor engine for 3-terminal bit-sliced graph families, with exact perfect-matching, independence-number and chromatic-count results for the binary-path-plus-Gray-path graph family `GB_k`.
   repository: https://github.com/MoteMath/math-research
   subdirectory: binary-gray-superposition-transfer
   license: Apache-2.0

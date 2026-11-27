@@ -46,7 +46,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of Me
 ## Prior-Art Context
 
 - **ARX & invariant-subspace cryptanalysis:** Beaulieu et al. (2013) introduced the Speck block-cipher family; Leander et al. (2011) and Todo et al. (2016) studied invariant-subspace and nonlinear-invariant attacks on block ciphers.
-- **Verdict status:** Referee-2 `PASS` (swarm board #164); the referee-6 novelty audit was still pending when this package was cut, so the novelty summary (exact Fermat-Mersenne order classification, abstract rank-1 carry-defect cycle surgery, and the arbitrary-width Speck half-word carry-barrier period-3 quotient lock) is the packager's conservative reading.
+- **Verdict status:** not independently reviewed; no novelty audit has been done, so the novelty summary (exact Fermat-Mersenne order classification, abstract rank-1 carry-defect cycle surgery, and the arbitrary-width Speck half-word carry-barrier period-3 quotient lock) is the packager's conservative reading.
 
 ## Build & Verification
 

@@ -36,7 +36,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - - **Relation to Classical Literature & Proof Assistants:** - Decision procedures for Presburger/bit-vector arithmetic via LSB-first finite automata go back to Büchi (1960), Boudet–Comon, and Mona. In Lean 4 specifically, the closest prior art is LeanMLIR's `bv_automata` (width-polymorphic bit-vector decision via automata) alongside fixed-width SAT bit-blasters (`bv_decide`). For the 2-operand overflow-free average and Gray-code identities, classic references include Henry S. Warren Jr., *Hacker's Delight* (2nd ed., 2012, Ch. 2 & Ch. 13). - **What is new here:** 1. **Compositional Latency-Aligned Pipelining for Right Shifts (`ushr1`, `ashr1`)
-- Hostile-verified PASS by `referee-5`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

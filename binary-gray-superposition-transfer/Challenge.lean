@@ -26,14 +26,14 @@ theorem gb_doublyCyclic_exactChrom (k : Nat) (hk : 2 ≤ k) (q : Nat) :
     (exactChromCount (gbDoublyCyclic k hk) q : Int) = pEval (doublyCyclicChromPoly (gbChromVec k)) (q : Int) := by
   sorry
 
-/-- Sharp threshold boundary witnesses for Theorem 5: at `k = 2` multiplicity is `1` (lead `+2`), and at `k = 3` multiplicity is `3` (lead `+4`), showing `k ≥ 4` is exact! -/
+/-- Finite instance: `gbChromPoly 2` has Taylor expansion at `q = 2` with vanishing order `1` and leading coefficient `2`. (Only the `k = 2` case is stated here; nothing is claimed for `k ≥ 3`.) -/
 theorem gb_chrom_root_two_sharp_k2 : HasLeadAt (gbChromPoly 2) 2 1 2 := by
   sorry
 
 theorem sb_pm_const_one (d : Nat) : exactPM (recGraph sbSpec d).graph = 1 := by
   sorry
 
-/-- Non-Vacuity Concrete Witness: `GB_2`, `GB_3`, `GB_4` simultaneously realize all 5 theorems! -/
+/-- Finite instance (concrete computation on `GB_3` and `GB_4`): perfect-matching counts, independence numbers and two colouring counts. It does not instantiate the universal theorems above. -/
 theorem non_vacuity_witness :
     exactPM (gbGraph 4 (by omega)).graph = 5 ∧
     exactPM (gbDoublyCyclic 4 (by omega)) = 11 ∧
