@@ -20,19 +20,19 @@ theorem checkCert_sound_bv {Q : Type} [DecidableEq Q] (cert : FiniteTileCert Q)
   sorry
 
 open BidirectionalTransducer in
-/-- Theorem 2 (Universal period-3 law): the bidirectional skip-flip transducer skipFlip2TwoWay has exact period 3 on BitVec w for every width w. -/
+/-- Theorem 2 (Universal period-3 law): the bidirectional skip-flip transducer skipFlip2TwoWay satisfies iter T 3 x = x on BitVec w for every width w (period divides 3; least period is not stated). -/
 theorem skipFlip2_period3_bv {w : Nat} (x : BitVec w) :
     iter skipFlip2TwoWay 3 x = x := by
   sorry
 
 open BidirectionalTransducer in
-/-- Theorem 3 (Shifted period-6 law): the shifted bidirectional skip-flip transducer has exact period 6 on BitVec w for every width w. -/
+/-- Theorem 3 (Shifted period-6 law): the shifted bidirectional skip-flip transducer satisfies iter T 6 x = x on BitVec w for every width w (least period is not stated). -/
 theorem skipFlip2_shifted_period6_bv {w : Nat} (x : BitVec w) :
     iter skipFlip2Shifted 6 x = x := by
   sorry
 
 open BidirectionalTransducer in
-/-- Theorem 4 (Exponential forward period): the unidirectional forward sweep of skipFlip2 has period 2^w on BitVec w, contrasting the bidirectional period 3. -/
+/-- Theorem 4 (Exponential forward period): the unidirectional forward sweep of skipFlip2 satisfies iter T (2^w) x = x on BitVec w (a divisibility statement; least period is not stated here). -/
 theorem skipFlip2_fwd_period_pow2 {w : Nat} (x : BitVec w) :
     iter (fwdBV (skipFlip2 false)) (2 ^ w) x = x := by
   sorry
@@ -44,13 +44,13 @@ theorem runTriggerTwoWay_left_inv (m : Nat) {w : Nat} (x : BitVec w) :
   sorry
 
 open BidirectionalTransducer in
-/-- Theorem 6 (Coxeter-6 phase transition): for every threshold m >= 2 and every width w, runTriggerTwoWay m has universal period 6 on BitVec w. -/
+/-- Theorem 6 (Coxeter-6 phase transition): for every threshold m >= 2 and every width w, runTriggerTwoWay m satisfies iter T 6 x = x on BitVec w (least period is not stated). -/
 theorem runTrigger_period6_all_m_bv (m : Nat) (hm : 2 ≤ m) {w : Nat} (x : BitVec w) :
     iter (runTriggerTwoWay m) 6 x = x := by
   sorry
 
 open BidirectionalTransducer in
-/-- Theorem 7 (Parametric run-skip-flip period 6): for every m >= 2 and every width w, the symmetric two-way runSkipFlip m transducer has period 6 on BitVec w. -/
+/-- Theorem 7 (Parametric run-skip-flip period 6): for every m >= 2 and every width w, the symmetric two-way runSkipFlip m transducer satisfies iter T 6 x = x on BitVec w. -/
 theorem runSkipFlip_period6_all_m_bv (m : Nat) (hm : 2 ≤ m) {w : Nat} (x : BitVec w) :
     iter (twoWayBV (runSkipFlip m) (runSkipFlip m)) 6 x = x := by
   sorry

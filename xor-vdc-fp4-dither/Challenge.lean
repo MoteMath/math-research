@@ -10,8 +10,8 @@ import XorVdcFp4Dither.Defs
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 1. Exact discrete unbiasedness and closed-form pairwise covariance for 1-PRNG zero-carry XOR-VDC SR.
 2. Exact Walsh–Hadamard spectral diagonalization, `popcount ≥ 2` variance halving, universal trace
-   conservation, exact `14/16` (`B = 16`) & `29/32` (`B = 32`) mode counts, and exact `61/96` &
-   `359/576` OCP E2M1 variance ratios.
+   conservation, exact `14/16` (`B = 16`) & `29/32` (`B = 32`) mode counts, and the values `61/96` &
+   `359/576` of the function `e2m1XorMseRatio` (defined in `Defs.lean`, not derived from the spectrum).
 3. Universal harmonic-mean worst-case relative SR variance law `(r - l)^2 / (4 l r)` and exact
    bounds on all 6 positive OCP E2M1 intervals (`1/8`, `1/24`, `1/48`).
 4. Universal antithetic paired SR variance halving (`≤ 1/4` vs independent `1/2`) and exact zero
@@ -43,8 +43,9 @@ theorem xor_vdc_sr_unbiased_and_covariance_exact (m b : Nat) (hbm : b ≤ m) :
     For all `b`, `xorCovMatrix b` and `xorVdcCovMatrix b` are exactly diagonalized by the
     Walsh–Hadamard basis, every `popcount ≥ 2` mode achieves exact eigenvalue `1/12 < 1/6`,
     universal trace conservation `∑_k λ_k = B * (1/6)` holds, exact mode counts beating
-    independent SR are `14/16` (`B = 16`) and `29/32` (`B = 32`), and exact uncorrelated positive
-    E2M1 block MSE ratios are `61/96` (`B = 16`) and `359/576` (`B = 32`). -/
+    independent SR are `14/16` (`B = 16`) and `29/32` (`B = 32`), and the function
+    `e2m1XorMseRatio` (defined in `Defs.lean`, not derived from the spectrum) takes the values
+    `61/96` (`B = 16`) and `359/576` (`B = 32`). -/
 theorem xor_vdc_walsh_spectrum_and_trace_conservation :
     (∀ (b k i : Nat), k < 2 ^ b → i < 2 ^ b →
       matVec (2 ^ b) (xorCovMatrix b) (walshSign b k) i = xorWalshEig b k * walshSign b k i ∧

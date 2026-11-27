@@ -33,10 +33,12 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `theorem_n1_jump` | Theorem 7 (n = 1 jump): for the 1 x 1 hybrid matrix, v2(det) = 1 for all a, q. |
 | `sharpness_S3_infinite_breakdown_line` | Theorem 8 (Infinite breakdown line): for every e >= 3 the subcritical parameter 2^(2e - 2) u_a at n = 4 does not have valuation e * popSum(4) - e. |
 
+**Scope of the formal statement.** The determinants are those of the hand-written matrix family `hybridMat`/`fullHybridMat` defined in `Defs.lean`; the theorems say nothing about other matrix families. Theorem 7 (`theorem_n1_jump`) is a 1 x 1 computation.
+
 ## Prior-Art Context
 
 - - **Distinction from Lindström–Wilf (1969/1972) and Boolean-lattice determinants:** Classical Lindström–Wilf factorization yields exact $\mathbb{Z}$-determinants for meet-semilattice matrices $M(i, j) = f(i \,\&\, j)$ (such as $q^{\mathrm{pop}(i \,\&\, j)}$, whose determinant is identically $(q - 1)^{S(n)}$ with no non-trivial odd parts). Our family $M _ n(a, q, \lambda, c, d)$ destroys meet-semilattice factorizability by adding both the $2$-adic ultrametric kernel $a^{v _ 2((i \oplus j) + 1)}$ and the dense asymmetric kernel $2\lambda c^{\mathrm{pop}(j \setminus i)} d^{\mathrm{pop}(i \,\&\, j)}$. Under Möbius conjugation, the matrix does **n
-- Hostile-verified PASS by `referee-3`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

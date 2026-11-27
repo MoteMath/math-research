@@ -61,7 +61,7 @@ theorem hypercubeAdj_even_dvd {k : Nat} (hk : 4 ≤ k) (heven : k % 2 = 0) :
   sorry
 
 open SpecMat9 in
-/-- Theorem 8 (Hypercube matchings): for odd m >= 3, 2^(m + 1) divides the permanent of the hypercube bipartite adjacency matrix. -/
+/-- Theorem 8 (Hypercube matchings): for odd m >= 3, 2^(m + 1) divides the permanent of `hypercubeBiadj m`, the 2^m x 2^m matrix I + A(Q_m), which is the biadjacency matrix of the hypercube Q_(m+1). -/
 theorem hypercubeMatching_even_dvd {m : Nat} (hm : 3 ≤ m) (hodd : m % 2 = 1) :
     ((2 ^ (m + 1) : Nat) : Int) ∣ perm (2 ^ m) (hypercubeBiadj m) := by
   sorry

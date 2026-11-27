@@ -24,6 +24,8 @@ Let $v _ 2$ be the 2-adic valuation and $\mathrm{pop}$ the binary popcount. The 
 
 Computers often need the inverse of an odd number "modulo a power of two", for instance inside fast division and cryptography. A standard trick is Newton's iteration, which doubles the number of correct bits at every step. This package proves exactly how good such tricks can be. If you are only allowed a polynomial of a given degree, the number of correct bits you can possibly get is an exact formula involving the number of ones in the binary expansion of the degree plus one, and a matching polynomial exists. If you are allowed arbitrary circuits, then the number of multiplications performed one after another sets a hard ceiling on the correct bits. The Lean proofs cover every degree and every precision, not just examples.
 
+**Scope of the formal statement.** A "circuit" is the straight-line `PolyCircuit` of `Defs.lean` over the integers (multiplicative depth counts products); it is not a model of mod-$2^N$ hardware arithmetic.
+
 ## Headline Theorems
 
 The trusted statements are in [`Challenge.lean`](Challenge.lean) (namespace `TwoAdicNewtonPolyOptimalityChallenge`) and are proved in [`Solution.lean`](Solution.lean) with identical signatures.
@@ -47,9 +49,9 @@ The trusted statements are in [`Challenge.lean`](Challenge.lean) (namespace `Two
 
 ## Prior-Art Context
 
-- **Newton-Hensel inversion modulo $2^N$:** Hensel lifting and the classical bit-doubling iteration $x \mapsto x(2 - a x)$ (Montgomery 1985; Dumas, *On Newton-Raphson iteration for multiplicative inverses modulo prime powers*, 2014, for the Dumas seed).
-- **Valuation of factorials and odd-point interpolation:** Legendre's formula; the exact odd-unit polynomial threshold is Bhargava's theory of generalized factorials (*The factorial function and generalizations*, 1997 / 2000), as noted in the referee-4 audit (#40) and the calibration of board #85. The exact two-sided law in terms of $2(D+1) - \mathrm{pop}(D+1)$ for reciprocal-fit polynomials, the universal multiplicative-depth ceiling $2^{k+1}$, and the cubic and quartic inverse-square-root valuation laws are not recorded in the literature found by the swarm.
-- **Referee verdict:** `PASS` by `referee-4` (#40), Novelty 3.8/5 (Tier A), top-mechanism index score 84/100 (Class II, `TOP_MECHANISMS.md`).
+- **Newton-Hensel inversion modulo $2^N$:** Hensel lifting and the classical bit-doubling iteration $x \mapsto x(2 - a x)$ (Montgomery 1985; Dumas, *On Newton-Raphson iteration for multiplicative inverses modulo prime powers*, 2014, for the Dumas seed; see also Dumas, arXiv:1209.6626).
+- **Valuation of factorials and odd-point interpolation:** Legendre's formula; the exact odd-unit polynomial threshold is Bhargava's theory of generalized factorials (*The factorial function and generalizations*, 1997 / 2000), which the authors' proof does not cite directly. The threshold $2(D+1) - \mathrm{pop}(D+1)$ is the 2-adic valuation of $(2D+2)!$ (Legendre), and the integer sequence $2n - \mathrm{pop}(n)$ is [OEIS A005187](https://oeis.org/A005187), so the polynomial law is closely tied to factorial-valuation theory. The exact two-sided law for reciprocal-fit polynomials, the universal multiplicative-depth ceiling $2^{k+1}$, and the cubic and quartic inverse-square-root valuation laws were not found in the sources above; no search was recorded, and the polynomial law may be known in substance.
+- **Review status:** not independently reviewed.
 
 ## Build & Verification
 

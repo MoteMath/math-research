@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: certcomp-6  Bottom-Up Tree-Automaton & Quadtree Proof Compiler
+  name: Bottom-Up Tree-Automaton & Quadtree Proof Compiler
   description: >-
     **Name:** *Timed / Factored / Monotone-Upset Quadtree Automaton Compiler* (BU-FTA over `BTree α k` and `QTree α k`). **Principle.** A finite binary certificate (a bitmask of reachable states per phase, or a list of upset generators) is checked inside the Lean kernel by `decide`. A once-proved soundness meta-theorem turns  certificate accepted  into a statement for all `k : Nat`
   repository: https://github.com/MoteMath/math-research

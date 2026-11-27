@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Pure-Silicon Spectral Conjugacy Engine  Walsh–Defect, Weyl–Heisenberg & Hyperplane-Rotation Lifting (specmat-16)
+  name: Pure-Silicon Spectral Conjugacy Engine  Walsh–Defect, Weyl–Heisenberg & Hyperplane-Rotation Lifting
   description: >-
     **Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral`). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eige
   repository: https://github.com/MoteMath/math-research

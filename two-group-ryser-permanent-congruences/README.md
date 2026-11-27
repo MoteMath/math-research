@@ -12,7 +12,7 @@
 
 We first formalize the bitmask Ryser inclusion-exclusion formula $\mathrm{perm}(A) = \mathrm{ryserSum}(A)$ over all subsets encoded as bit masks (`perm_eq_ryserSum`). We then prove a **2-group orbit-collapse** divisibility principle (`twoGroup_sum_dvd`): if a group $G$ of order $2 ^ k$ acts on a finite set $X$ and $\Delta$ is $G$-invariant with $2 ^ {s + c} \mid \Delta(x)$ whenever the stabilizer of $x$ has order $2 ^ s$, then $2 ^ {k + c} \mid \sum _ x \Delta(x)$.
 
-Applied to the transversal-sum expansion of the permanent this gives, for any matrix equivariant under a free $2 ^ k$-group action, $\mathrm{perm}(A) \equiv \#\{\text{odd solutions}\} \pmod {2 ^ {k + 1}}$ (`perm_mod_two_pow_succ`, `xorCirc_perm_mod_two_pow_succ`), divisibility by $2 ^ {k + 1}$ for XOR-circulants with even row sum when $k \ge 3$ (`xorCirc_even_rowSum_dvd`), an explicit congruence modulo $2 ^ {k + 2}$ for odd row sum (`xorCirc_odd_mod_two_pow_add_two`), and exact laws for the hypercube $Q _ k$: $\mathrm{perm} \equiv 1 + 2 ^ k (k - 1) \pmod {2 ^ {k + 2}}$ for odd $k$, $2 ^ {k + 1} \mid \mathrm{perm}$ for even $k \ge 4$, and $2 ^ {m + 1} \mid \mathrm{perm}$ of the bipartite adjacency of $Q _ m$ for odd $m \ge 3$.
+Applied to the transversal-sum expansion of the permanent this gives, for any matrix equivariant under a free $2 ^ k$-group action, $\mathrm{perm}(A) \equiv \#\{\text{odd solutions}\} \pmod {2 ^ {k + 1}}$ (`perm_mod_two_pow_succ`, `xorCirc_perm_mod_two_pow_succ`), divisibility by $2 ^ {k + 1}$ for XOR-circulants with even row sum when $k \ge 3$ (`xorCirc_even_rowSum_dvd`), an explicit congruence modulo $2 ^ {k + 2}$ for odd row sum (`xorCirc_odd_mod_two_pow_add_two`), and exact laws for the hypercube $Q _ k$: $\mathrm{perm} \equiv 1 + 2 ^ k (k - 1) \pmod {2 ^ {k + 2}}$ for odd $k$, $2 ^ {k + 1} \mid \mathrm{perm}$ for even $k \ge 4$, and $2 ^ {m + 1} \mid \mathrm{perm}(I + A(Q _ m))$ for odd $m \ge 3$, where $I + A(Q _ m)$ is the $2 ^ m \times 2 ^ m$ biadjacency matrix of the hypercube $Q _ {m+1}$ (so the permanent counts perfect matchings of $Q _ {m+1}$; it equals $272 = 16 \cdot 17$ for $m = 3$).
 
 ## For Non-Mathematicians
 
@@ -33,7 +33,9 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 | `xorCirc_odd_mod_two_pow_add_two` | For $k \ge 1$ and odd row sum, $\mathrm{perm}$ of the XOR-circulant is congruent modulo $2 ^ {k + 2}$ to $1 + 2 ^ k ((\mathrm{oddCount} - 1) + \mathrm{evenSum})$. |
 | `hypercubeAdj_odd_mod` | For odd $k$, the permanent of the hypercube adjacency matrix is congruent to $1 + 2 ^ k (k - 1)$ modulo $2 ^ {k + 2}$. |
 | `hypercubeAdj_even_dvd` | For even $k \ge 4$, $2 ^ {k + 1}$ divides the permanent of the hypercube adjacency matrix. |
-| `hypercubeMatching_even_dvd` | For odd $m \ge 3$, $2 ^ {m + 1}$ divides the permanent of the bipartite adjacency matrix of the hypercube $Q _ m$. |
+| `hypercubeMatching_even_dvd` | For odd $m \ge 3$, $2 ^ {m + 1}$ divides the permanent of `hypercubeBiadj m`, the $2 ^ m \times 2 ^ m$ matrix $I + A(Q _ m)$ (the biadjacency matrix of $Q _ {m+1}$). The name says `even` but the hypothesis is `m` odd; the name `hypercubeAdj_even_dvd` refers to even `k`. |
+
+**Scope of the formal statement.** `hypercubeAdj k` is the XOR-circulant of the indicator of single-bit differences (the adjacency matrix of $Q _ k$); `hypercubeBiadj m` is the XOR-circulant of the indicator of $\{0\} \cup \{2^b\}$, i.e. $I + A(Q _ m)$, which is the biadjacency matrix of $Q _ {m+1}$, not of $Q _ m$.
 
 ## Proof Architecture
 
@@ -45,7 +47,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical background:** Ryser's inclusion-exclusion formula (Ryser 1963); permanents modulo powers of two and Valiant's hardness of the permanent (Valiant 1979); Kummer-style 2-adic orbit arguments for group actions; permanents of hypercube adjacency matrices relate to counts of perfect matchings and 2-factors of $Q _ k$.
-- **Referee audit (referee-3 PASS #177; recorded in `REGISTRY.md`):** the 2-group Ryser orbit-collapse engine, the mod $2 ^ {k + 2}$ XOR-circulant defect law and the exact hypercube permanent congruences are new; zero Section 4 overlap.
+- **Novelty:** the authors did not find the 2-group Ryser orbit-collapse engine, the mod $2 ^ {k + 2}$ XOR-circulant defect law or the hypercube permanent congruences in the sources above; no search was recorded and the claim is not independently reviewed.
 
 ## Build & Verification
 

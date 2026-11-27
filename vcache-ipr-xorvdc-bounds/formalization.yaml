@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Exact Attention Value-Cache IPR Phase Transition, Cross-Format SR-vs-RNE Inversion, XOR-VDC Stratified Super-Convergence, Rank-1 Sink/WHT Orthogonality, and 128K Bit-Packing Bounds
+  name: Attention Value-Cache IPR Crossover Formulas, Cross-Format SR-vs-RNE Inversion, XOR-VDC Stratified Super-Convergence, Rank-1 Sink/WHT Orthogonality, and 128K Bit-Packing Bounds
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization proving six exact
     algebraic and discrete laws governing long-context multi-head attention Value-cache

@@ -1,4 +1,4 @@
-# Zeckendorf-to-Binary Carry-Bridge Transducer Engine (`adic-7`) (`zeckendorf-binary-carry-bridge`)
+# Zeckendorf-to-Binary Carry-Bridge Transducer Engine (`zeckendorf-binary-carry-bridge`)
 
 ## Synthetic Score
 
@@ -36,7 +36,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - - **Classical foundations (explicitly distinguished):** - Ostrowski (1922) and Berthé (2001): Ostrowski numeration systems associated with continued fractions and Sturmian words. - Zeckendorf (1972) and Fraenkel (1985): existence/uniqueness of canonical $r$-bonacci / linear-recurrence representations. - Frougny (1992) and Shallit (1994): automaticity and finite-state bimachine (two-pass transducer) normalization/addition in Fibonacci, Pisot, and linear-recurrence numeration systems. - Arndt (*Matters Computational*) / OEIS A003714: fibbinary bitmask test $x \mathbin{\&} 2x = 0$ and successor formula via `x / (x >> 1)`. - Kummer (1852) / Legen
-- Hostile-verified PASS by `referee-4`; pure `leanprover/lean4:v4.34.1` `Init` stack with `enable_nanoda: true` and exact integer Python replay in `scripts/explore_and_verify.py`.
+- Built against `leanprover/lean4:v4.34.1` (pure `Init` stack; `enable_nanoda: true` in `comparator.json`); `scripts/explore_and_verify.py` re-evaluates small instances in exact integer arithmetic (it proves nothing by itself).
 
 ## Build & Verification
 

@@ -10,7 +10,7 @@ import WalnutProphecySkolemLifter.Defs
 Soundness of the four pure-data base-2 automatic predicate certificate lifters
 (`HomCert`, `ExistsCert`, `ProphecyCert`, `UniversalCert`), the arithmetic-to-automaton
 bridge for the Gray-Sum Parity word `grayAddParity`, and its exact square spectrum,
-exact cube spectrum, and unconditional fifth-power-freeness over `Nat`.
+exact cube spectrum, and fifth-power-freeness over `Nat`.
 -/
 
 namespace WalnutProphecySkolemLifterChallenge

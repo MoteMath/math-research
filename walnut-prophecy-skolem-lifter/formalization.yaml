@@ -2,16 +2,16 @@
 version: v0.4
 
 project:
-  name: Walnut Prophecy Skolem Lifter — zero-trust base-2 automatic predicate certificate engine and exact power spectra of the Gray-Sum Parity word
+  name: Walnut Prophecy Skolem Lifter — base-2 automatic predicate certificate engine and exact power spectra of the Gray-Sum Parity word
   description: >-
     A complete, sorry-free, pure-Init (zero Mathlib, zero native_decide) Lean 4 formalization of a
     Walnut-style base-2 automatic predicate decision-certificate lifter combining four pure-data
     certificate checkers (HomCert, bidirectional ExistsCert with rank-certified trailing-zero
     saturation, UniversalCert, and the Backward-Prophecy / Bimachine Skolem lifter ProphecyCert
-    achieving 80x-197x state compression over forward subset determinization). Applied to the
+    with certificate sizes about 80x-197x smaller than reported forward subset determinization counts; a count from the authors' script, not a Lean statement). Applied to the
     non-classical 2-automatic Gray-Sum Parity word w(n) = popcount(n + (n XOR floor(n/2))) mod 2,
     it proves the exact finite square-period spectrum {1..7}, the exact cube-period spectrum {1},
-    and unconditional fifth-power-freeness over all of N.
+    and fifth-power-freeness over all of N.
   repository: https://github.com/MoteMath/math-research
   subdirectory: walnut-prophecy-skolem-lifter
   license: Apache-2.0

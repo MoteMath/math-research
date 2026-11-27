@@ -80,7 +80,7 @@ theorem proportional_attention_zero_dispersion_exact_invariance :
     strictly under-weights the merged cluster under both 2nd-order and 4th-order exponential
     models, while adding the Cumulant-2 bonus (`+ln s + σ²/2`) cancels the entire `O(σ²)`
     partition residual identically (leaving only 3rd/4th cumulants, e.g. `301×` reduction at
-    `s = 4, σ = 0.20`). -/
+    `s = 4, σ = 0.20`); here the exponential is modelled by truncated Taylor polynomials. -/
 theorem within_cluster_dispersion_jensen_underweight_and_cumulant2_bonus :
     (∀ (s : Nat) (η : Fin s → Rat), 1 ≤ s → finSum η = 0 →
       finSum (fun j => expTaylor2 (η j)) / (s : Rat) = 1 + clusterVar η / 2 ∧
@@ -178,8 +178,9 @@ theorem vit_front_loaded_dominates_constant_r_schedule :
 /-- Theorem 6 (`late_loaded_merging_flop_infeasibility_ceiling`):
     Pure late-loaded merging (zero merges in the first `k` layers with `2 L ≤ 3 k`, i.e.,
     merging only in the final `L / 3` layers) has total attention and ViT FLOPs strictly
-    `> (2/3) * baseline` whenever at least 1 token survives in the final third, proving
-    mathematical infeasibility of any FLOP reduction `≥ 3/2 = 1.5×` (let alone `2×, 4×, 8×`). -/
+    `> (2/3) * baseline` whenever at least 1 token survives in the final third; in this FLOP model
+    (FLOPs = sum of squared token counts) no FLOP reduction `≥ 3/2 = 1.5×` is possible (let alone
+    `2×, 4×, 8×`). -/
 theorem late_loaded_merging_flop_infeasibility_ceiling :
     (∀ (L k N0 c : Nat) (r : Fin L → Nat),
       k ≤ L → 1 ≤ k → 1 ≤ N0 → 2 * L ≤ 3 * k →

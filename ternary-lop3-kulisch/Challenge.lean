@@ -7,7 +7,7 @@ import TernaryLop3Kulisch.Defs
 /-!
 # Trusted Challenge Statements (`ternary-lop3-kulisch`)
 
-Statements of the six headline theorems for Wave 4A (`w4-int-ternary-matmul`) pure-`Init`
+Statements of the six headline theorems of the pure-`Init`
 Lean 4 formalization:
 1. `ternary_k2_4_lop3_exact_and_lb`: Exact 4-`LOP3` depth-3 `K=2` balanced-ternary counter
    (all 9 valid states) + exact general-DAG minimum gate-count lower bound (`dag.length ≥ 4`).

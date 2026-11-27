@@ -12,7 +12,7 @@
 
 For $f : \mathbb{N} \to \mathbb{Z}$, the XOR-convolution matrix $C _ f (x, y) = f(x \oplus y)$ on $[0, 2 ^ k)$ is diagonalized by the Walsh-Hadamard transform, and we prove $\det C _ f = \prod _ u \mathrm{wht} _ k (f)(u)$ and $\det(\lambda I - C _ f) = \prod _ u (\lambda - \mathrm{wht} _ k (f)(u))$ with a purely integer Leibniz determinant (`det_xorConv`, `charPoly_xorConv`). Likewise the AND-lattice (meet) matrix $g(x \mathbin{\&} y)$ has determinant equal to the product of the Mobius down-transform values (`det_andLattice`).
 
-The new ingredient is a **bit-automaton transfer compiler** (`wht_transfer_compiler`, `mobiusDown_transfer_compiler`, `scaledDihedral_collapse`): if $f$ is computed by a $d$-state bit-automaton then so is its Walsh transform, with a state count independent of $k$. Applied to the runs kernel (number of runs of the bit string) this yields the closed-form spectrum $\prod _ u (1 - q) ^ r \cdot \mathrm{pellQ}(q, k + 1 - 2 r)$ (`det_runs_xorConv`), singularity at $q = -1$ for every odd exponent (`runs_xorConv_neg_one_singular_odd`), unimodularity $\det = -1$ of the two-runs AND-lattice for all $k \ge 2$ (`det_two_runs_andLattice_unimodular`), and a proof that the runs AND-lattice is never positive definite (`runs_andLattice_never_posdef`).
+The main construction is a **bit-automaton transfer compiler** (a standard automaton construction) (`wht_transfer_compiler`, `mobiusDown_transfer_compiler`, `scaledDihedral_collapse`): if $f$ is computed by a $d$-state bit-automaton then so is its Walsh transform, with a state count independent of $k$. Applied to the runs kernel (`runs` counts the maximal runs of 1-bits; an alternative definition counting all runs does not satisfy the formula, so the definition matters) this yields the closed-form spectrum $\prod _ u (1 - q) ^ r \cdot \mathrm{pellQ}(q, k + 1 - 2 r)$ (`det_runs_xorConv`), singularity at $q = -1$ for every odd exponent (`runs_xorConv_neg_one_singular_odd`), unimodularity $\det = -1$ of the two-runs AND-lattice for all $k \ge 2$ (`det_two_runs_andLattice_unimodular`), and a proof that the runs AND-lattice is never positive definite (`runs_andLattice_never_posdef`).
 
 ## For Non-Mathematicians
 
@@ -45,7 +45,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical foundations:** diagonalization of XOR-convolution (dyadic circulant) matrices by Sylvester-Walsh-Hadamard matrices (Sylvester 1867; Walsh 1923), and determinant factorization of meet matrices $g(x \wedge y)$ on finite posets via the zeta-matrix congruence and Mobius function, the Smith-Lindstrom-Wilf theorem (Smith 1875; Wilf 1968; Lindstrom 1969).
-- **Referee audit (referee-3 PASS #195; recorded in `REGISTRY.md`):** the bit-automaton Walsh and Mobius transfer compilers, the scaled-dihedral collapse certificate, the closed-form runs-kernel spectrum, odd-dimension singularity and unimodular two-runs AND-lattice are new; zero Section 4 overlap.
+- **Novelty:** the authors did not find the bit-automaton Walsh and Mobius transfer compilers, the scaled-dihedral collapse certificate, the closed-form runs-kernel spectrum, the odd-dimension singularity or the unimodular two-runs AND-lattice in the sources above; no search was recorded and the claim is not independently reviewed. Theorems 1 to 3 (`det_xorConv`, `charPoly_xorConv`, `det_andLattice`) are classical; the transfer compiler is a standard automaton construction.
 
 ## Build & Verification
 

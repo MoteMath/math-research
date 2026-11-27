@@ -9,8 +9,9 @@ import UniversalVertexInvroot.Defs
 
 Statements of the six headline theorems for the universal all-`p` coupled `G^{-1/p}` vertex law,
 universal all-`p` cubic convergence, 4-matmul shared-square degree-9 identity and rounding-floor
-dominance of degree-5 over degree-9, and continuous 6-step BF16 (`u = 1/256`) worst-case
-confinement certificates for `p ∈ {2, 3, 8}`.
+dominance of degree-5 over degree-9 in a scalar relative-error model, and 6-step confinement
+certificates in that scalar model (unit roundoff `u = 1/256`, the BF16 value, as a number only)
+for `p ∈ {2, 3, 8}`.
 -/
 
 namespace UniversalVertexInvrootChallenge
@@ -53,9 +54,10 @@ theorem universal_invroot_cubic_convergence (p : Nat) (hp : 1 ≤ p) (m : Rat) :
 1. Exact 4-matmul shared-square algebraic identity expressing `c + d * (a - μ2)^2` in terms of
    `a - μ1` and `(a - μ1)^2`;
 2. Algebraic degree-per-matmul edge `5^4 < 9^3` (`625 < 729`, i.e., `5^(1/3) < 9^(1/4)`);
-3. Yet under adversarial fixed-point rounding envelopes at `x = 1`, `(1 + u)^6 < (1 + u)^10`
-   for every `0 < u`, with exact `> 1.65×` worse degree-9 rounding floor across BF16 (`u = 1/256`),
-   Hybrid FP8 (`u = 1/32`), and Pure FP8 (`u = 1/16`). -/
+3. Yet in the model where the degree-5 path has six relative roundings and the degree-9 path ten
+   (an assumption of the model), `(1 + u)^6 < (1 + u)^10` for every `0 < u`, and the numeric
+   inequality `165/100 * ((1+u)^6 - 1) < (1+u)^10 - 1` holds at `u = 1/256`, `1/32` and `1/16`
+   (these values are numbers; `1/32` is not a real FP8 format). -/
 theorem deg9_shared_square_and_rounding_floor_dominance
     (a c d μ1 μ2 u : Rat) (hu : (0 : Rat) < u) :
     (c + d * (a - μ2) * (a - μ2) =
@@ -69,27 +71,27 @@ theorem deg9_shared_square_and_rounding_floor_dominance
      (165 / 100 : Rat) * (ratPow (1 + uFP8Pure) 6 - 1) < ratPow (1 + uFP8Pure) 10 - 1) := by
   sorry
 
-/-- Theorem 4 (Certified BF16 6-Step Vertex `G^{-1/2}` Stationary Confinement, `p = 2`):
-the exact Q32.32 `quad_vertex` BF16 (`u = 1/256`) schedule confines every adversarial 6-step
-trajectory from `[85/100, 115/100]` inside `[982/1000, 1018/1000]` (`δ_M ≤ 0.018`). -/
+/-- Theorem 4 (6-Step Vertex `G^{-1/2}` Confinement in the scalar relative-error model, `p = 2`):
+for the Q32.32 `quad_vertex` parameters `bf16InvSqrtParams` and `u = 1/256`, every `NoisyVertexTraj6_2`
+trajectory (a scalar model, not IEEE arithmetic) from `[85/100, 115/100]` inside `[982/1000, 1018/1000]` (`δ_M ≤ 0.018`). -/
 theorem bf16_inv_sqrt_vertex_certified (m0 m6 : Rat)
     (hlo : (85 / 100 : Rat) ≤ m0) (hhi : m0 ≤ (115 / 100 : Rat))
     (htraj : NoisyVertexTraj6_2 bf16InvSqrtParams uBF16 m0 m6) :
     (982 / 1000 : Rat) ≤ m6 ∧ m6 ≤ (1018 / 1000 : Rat) := by
   sorry
 
-/-- Theorem 5 (Certified BF16 6-Step Vertex `G^{-1/3}` Stationary Confinement, `p = 3`):
-the exact Q32.32 `quad_vertex` BF16 (`u = 1/256`) schedule confines every adversarial 6-step
-trajectory from `[85/100, 115/100]` inside `[974/1000, 1026/1000]` (`δ_M ≤ 0.026`). -/
+/-- Theorem 5 (6-Step Vertex `G^{-1/3}` Confinement in the scalar relative-error model, `p = 3`):
+for the Q32.32 `quad_vertex` parameters `bf16InvCbrtParams` and `u = 1/256`, every `NoisyVertexTraj6_3`
+trajectory (a scalar model, not IEEE arithmetic) from `[85/100, 115/100]` inside `[974/1000, 1026/1000]` (`δ_M ≤ 0.026`). -/
 theorem bf16_inv_cbrt_vertex_certified (m0 m6 : Rat)
     (hlo : (85 / 100 : Rat) ≤ m0) (hhi : m0 ≤ (115 / 100 : Rat))
     (htraj : NoisyVertexTraj6_3 bf16InvCbrtParams uBF16 m0 m6) :
     (974 / 1000 : Rat) ≤ m6 ∧ m6 ≤ (1026 / 1000 : Rat) := by
   sorry
 
-/-- Theorem 6 (Certified BF16 6-Step Vertex `G^{-1/8}` Stationary Confinement, `p = 8`):
-the exact Q32.32 `quad_vertex` BF16 (`u = 1/256`) schedule confines every adversarial 6-step
-trajectory from `[85/100, 115/100]` inside `[932/1000, 1068/1000]` (`δ_M ≤ 0.068`). -/
+/-- Theorem 6 (6-Step Vertex `G^{-1/8}` Confinement in the scalar relative-error model, `p = 8`):
+for the Q32.32 `quad_vertex` parameters `bf16InvEighthParams` and `u = 1/256`, every `NoisyVertexTraj6_8`
+trajectory (a scalar model, not IEEE arithmetic) from `[85/100, 115/100]` inside `[932/1000, 1068/1000]` (`δ_M ≤ 0.068`). -/
 theorem bf16_inv_eighth_vertex_certified (m0 m6 : Rat)
     (hlo : (85 / 100 : Rat) ≤ m0) (hhi : m0 ≤ (115 / 100 : Rat))
     (htraj : NoisyVertexTraj6_8 bf16InvEighthParams uBF16 m0 m6) :

@@ -20,12 +20,12 @@ theorem coverTree_sound {L : Type} {P : Nat → Prop}
     ∀ n : Nat, P n := by
   sorry
 
-/-- Bit-4-cleared Collatz map (4 prefix bits certify 7 steps): every `n` reaches `{0, 1}`. -/
+/-- The modified Collatz-type map `TCollatz 4` (odd step `clearBitNat (3n+1) 4 / 2`; not the Collatz map; 4 prefix bits certify 7 steps): every `n` reaches `{0, 1}`. -/
 theorem T4_global_convergence :
     ∀ n : Nat, ∃ m : Nat, iterNat (TCollatz 4) m n ≤ 1 := by
   sorry
 
-/-- Bit-5-cleared Collatz map, certified by a 506-leaf depth-15 cover tree (64.8x compression). -/
+/-- The modified Collatz-type map `TCollatz 5` (not the Collatz map), certified by a 506-leaf depth-15 cover tree (leaf-count ratio 2^15/506, about 64.8). -/
 theorem T5_global_convergence :
     ∀ n : Nat, ∃ m : Nat, iterNat (TCollatz 5) m n ≤ 1 := by
   sorry
@@ -40,7 +40,7 @@ theorem X33_global_convergence_to_zero :
     ∀ n : Nat, ∃ m : Nat, iterNat (TXorCollatz 3 3) m n = 0 := by
   sorry
 
-/-- 2-adic valuation ceiling of the Gray-quadratic, 88-leaf depth-16 tree (744.7x compression). -/
+/-- 2-adic valuation ceiling of the Gray-quadratic, 88-leaf depth-16 tree (leaf-count ratio 2^16/88, about 744.7). -/
 theorem grayQuad2_val_ceiling :
     ∀ n : Nat, ¬ (2 ^ 15 ∣ (n ^^^ (n >>> 1)) * (n ^^^ (n >>> 1)) + 3 * n + 60) := by
   sorry

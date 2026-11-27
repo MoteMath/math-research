@@ -49,7 +49,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of ex
 ## Prior-Art Context
 
 - **T-functions:** Klimov and Shamir (*A New Class of Invertible Mappings*, CHES 2002; *New Cryptographic Primitives Based on Multiword T-Functions*, FSE 2004) introduced single-cycle T-functions such as $x + (x^2 \mathbin{|} 1)$; Anashin and Khrennikov (*Applied Algebraic Dynamics*, De Gruyter 2009) give the $2$-adic ergodicity theory; Larin (2002) gives the mod-$8$ criterion for integer polynomials. The width-by-width doubling criterion and the curvature-holonomy transport law in exact integer form, the universal carry-mask XOR symmetry, the complete hybrid and run-family classifications and the no-universal-finite-threshold theorem are, to our knowledge, not recorded in these sources.
-- **Verdict status:** Referee-2 `PASS` (swarm board #90); the referee-6 novelty audit of this mechanism was still pending when this package was cut, so the novelty claim above is the packager's conservative reading and is not yet independently audited.
+- **Review status:** not independently reviewed. No recorded novelty search was made, so the novelty claim above is the authors' reading only.
 
 ## Build & Verification
 

@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **8 / 10** | **9 / 10** | **8 / 10** | **10 / 10** | **87 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): a reusable pure-`Init` Lean 4 compiler that turns a finite, non-uniform 2-adic prefix tree into a kernel-checked proof of a universal statement over all of $\mathbb{N}$, with a single-wire "carry firewall" that lets a depth-$d$ prefix certify more than $d$ dynamical steps. Referee verdict: PASS, S-tier novelty.*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): a reusable pure-`Init` Lean 4 compiler that turns a finite, non-uniform 2-adic prefix tree into a kernel-checked proof of a universal statement over all of $\mathbb{N}$, with a single-wire "carry firewall" that lets a depth-$d$ prefix certify more than $d$ dynamical steps.*
 
 ## For Mathematicians
 
@@ -18,13 +18,15 @@ Every $n \in \mathbb{N}$ embeds in the compact ring $\mathbb{Z} _ 2$. A finite f
 
 Discharged infinite theorems (headline subset in `Challenge.lean`):
 
-* Bit-$k$-cleared Collatz $T _ k$ (odd core $3n + 1$, bit $k$ cleared) converges to $\{0, 1\}$ for $k = 1, \dots, 5$ (`T5_global_convergence`: a 506-leaf depth-15 tree replaces $2^{15} = 32768$ uniform residues, a $64.8\times$ compression).
+* The modified Collatz-type map $T _ k$ (odd step $n \mapsto \mathrm{clearBit}(3n + 1, k)/2$; this is **not** the Collatz map, and nothing here concerns the Collatz conjecture) converges to $\{0, 1\}$ for $k = 1, \dots, 5$ (`T5_global_convergence`: a 506-leaf depth-15 tree replaces $2^{15} = 32768$ uniform residues; the ratio $2^{15}/506 \approx 64.8$ is a leaf count, not a theorem).
 * Nonlinear XOR-Collatz maps $X _ {k,c}$ (odd core $(n \oplus 2n) + c$) converge to $0$ for $(k, c) = (2, 1)$ and $(3, 3)$.
-* For the Gray code $G(n) = n \oplus (n \gg 1)$: $2^{15} \nmid G(n)^2 + 3n + 60$ and $G(n)^2 + 3n + 60 \ne n \ll 15$ for all $n$ (88-leaf depth-16 tree, $744.7\times$ compression).
+* For the Gray code $G(n) = n \oplus (n \gg 1)$: $2^{15} \nmid G(n)^2 + 3n + 60$ and $G(n)^2 + 3n + 60 \ne n \ll 15$ for all $n$ (88-leaf depth-16 tree; the ratio $2^{16}/88 \approx 744.7$ is a leaf count, not a theorem).
 * **Sharp phase transition in $k$.** Contraction holds for $k \le 5$, breaks at $k = 6$ (explicit expanding orbit from $290743719$, `T6_no_drop_48`), and breaks again at $k = 8$ with a positive integer 6-cycle $975 \to 1335 \to 1875 \to 2685 \to 3900 \to 1950 \to 975$ (`T8_nontrivial_6cycle_never_drops`).
 * Seven hostile certificate mutations (`neg_test_*`) are rejected by `decide`.
 
-**Prior art.** Stopping-time and residue-tree analysis of generalized $3n + 1$ maps over $\mathbb{Z} _ 2$ goes back to Terras (1976), Everett (1977), Matthews and Watts (1984) and Lagarias (1985); 1-Lipschitz T-functions over $\mathbb{Z} _ 2$ are due to Anashin (1994) and Klimov and Shamir (2002). What we claim as new is the single-wire carry-firewall precision-preservation law, the reusable kernel-checked cover-tree compiler for reflected bitwise expressions with exact lookahead (including right shifts), and the non-monotone $k = 5, 6, 7, 8$ transition inside the family. Findings of the referee (referee-5) are incorporated: all 25 audited theorems depend only on the standard axioms.
+**Prior art.** Stopping-time and residue-tree analysis of generalized $3n + 1$ maps over $\mathbb{Z} _ 2$ goes back to Terras (1976), Everett (1977), Matthews and Watts (1984) and Lagarias (1985); 1-Lipschitz T-functions over $\mathbb{Z} _ 2$ are due to Anashin (1994) and Klimov and Shamir (2002). The single-wire carry-firewall precision-preservation law, the reusable kernel-checked cover-tree compiler for reflected bitwise expressions with exact lookahead (including right shifts), and the non-monotone $k = 5, 6, 7, 8$ transition inside the family are not recorded in the sources above, to the authors' knowledge; no search was recorded. The comparator theorems depend only on the standard axioms (see [AUDIT.md](AUDIT.md)).
+
+**Scope of the formal statement.** $T _ k$ is the map `TCollatz k` of `Defs.lean` (odd step `clearBitNat (3n+1) k / 2`), a modified Collatz-type map; the Challenge names `T4_global_convergence` etc. refer to it, not to the Collatz map.
 
 ## For Non-Mathematicians
 

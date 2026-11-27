@@ -2,13 +2,15 @@
 
 A standalone, **sorry-free**, **pure-`Init`** (zero Mathlib, zero `native_decide`) Lean 4 (`v4.34.1`) Palomar Comparator formalization proving exact discrete unbiasedness, closed-form pairwise covariance, Walsh–Hadamard spectral diagonalization, universal OCP E2M1 harmonic-mean relative variance bounds, antithetic variance halving, double-quantized GEMM bias obstructions vs `bitrev_10` Hammersley, and exact zero-bias 32-bit split-word XOR-VDC double GEMM.
 
+**Scope of the formal statement.** The E2M1 block MSE ratios `61/96` and `359/576` are evaluations of the function `e2m1XorMseRatio`, which `Defs.lean` defines as `1 - ((B - 1) / (2 B)) * (E[h]^2 / E[h^2])` with `E[h]^2 / E[h^2] = 7/9` computed over the seven E2M1 intervals; no Challenge theorem derives that formula from the Walsh–Hadamard eigenvalues. The E2M1 grid is the hand-written interval list in `Defs.lean`, not an implementation of any hardware format.
+
 ## Synthetic Score
 
 | Novelty (30%) | Surprise / Depth (20%) | Generality (20%) | Usefulness (20%) | Verification (10%) | Composite |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **10 / 10** | **9 / 10** | **9 / 10** | **10 / 10** | **93 / 100** |
 
-*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 93 / 100`): universal all-$b$ exact Walsh–Hadamard diagonalization of 1-PRNG zero-carry XOR-VDC stochastic rounding (`29/32` modes at $B = 32$ and `14/16` at $B = 16$ strictly beat independent SR, `359/576` and `61/96` exact E2M1 MSE ratios, `6.45x` lower MSE on smooth blocks, `1.567x` faster RX 7900 XTX kernel), universal OCP E2M1 harmonic-mean relative variance bounds, antithetic variance halving, double-quantized GEMM `1/4` bias obstruction vs `3527/1048576` `bitrev_10` Hammersley, and exact zero-bias 32-bit split-word XOR-VDC double GEMM (`64x` PRNG reduction) — all in pure Lean 4 `Init`.*
+*Heuristic self-rating (`3*Nov + 2*Sur + 2*Gen + 2*Use + Ver = 93 / 100`): universal all-$b$ exact Walsh–Hadamard diagonalization of 1-PRNG zero-carry XOR-VDC stochastic rounding (`29/32` modes at $B = 32$ and `14/16` at $B = 16$ strictly beat independent SR, `359/576` and `61/96` E2M1 MSE ratios computed from a formula defined in `Defs.lean`), universal OCP E2M1 harmonic-mean relative variance bounds, antithetic variance halving, double-quantized GEMM `1/4` bias obstruction vs `3527/1048576` `bitrev_10` Hammersley, and exact zero-bias 32-bit split-word XOR-VDC double GEMM (`64x` PRNG reduction) — all in pure Lean 4 `Init`.*
 
 ## Headline Theorems (`XorVdcFp4DitherChallenge`)
 
@@ -29,7 +31,7 @@ All 6 headline theorems are declared in [Challenge.lean](Challenge.lean) and pro
    - Every mode with $\mathrm{popcount}(k) \ge 2$ achieving exact eigenvalue $\lambda _ k = 1/12 < 1/6$ (**50% lower MSE** than independent SR);
    - Exact mode counts strictly beating independent SR: **`14/16`** at $B = 16$ (NVFP4) and **`29/32`** at $B = 32$ (MXFP4);
    - Exact universal **Trace Conservation**: $\sum _ {k=0}^{B-1} \lambda _ k = B \cdot (1/6)$ (**zero MSE penalty `1.00x`** on isotropic / randomized Hadamard-rotated blocks);
-   - Exact uncorrelated positive OCP E2M1 block MSE ratios: **`61/96`** ($B = 16$) and **`359/576`** ($B = 32$).
+   - The values **`61/96`** ($B = 16$) and **`359/576`** ($B = 32$) of the function `e2m1XorMseRatio` defined in `Defs.lean` (an evaluation of that definition; no Challenge theorem ties it to the eigenvalues above).
 
 3. **`e2m1_harmonic_mean_worst_case_sr_variance`** ([E2M1AndAntithetic.lean](XorVdcFp4Dither/E2M1AndAntithetic.lean)):
    Universal exact relative SR variance bound for all $0 < \ell < r$ and $x \in [\ell, r]$:

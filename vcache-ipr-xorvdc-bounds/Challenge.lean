@@ -8,12 +8,13 @@ import VcacheIprXorvdc.Defs
 # Trusted Challenge Statements (`vcache-ipr-xorvdc-bounds`)
 
 Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
-1. `ipr_attention_averaging_sr_vs_rne_exact`: Simplex IPR/N_eff bounds, exact SR vs RNE output
-   MSE decomposition, exact RNE-vs-SR phase transition threshold `N_eff*`, and exact `2.000×`
-   peaked-head RNE advantage on zero-mean IID uniform quantization.
-2. `cross_format_int2_sr_beats_int4_mxfp4_rne`: Exact cross-format inversion proving when
-   lower-bit SR (`INT2-SR` / `Ternary-SR`) strictly beats higher-bit RNE (`INT4-RNE` /
-   `MXFP4-RNE`) at half VRAM, with exact certified witness inequalities at `L = 16384`.
+1. `ipr_attention_averaging_sr_vs_rne_exact`: Simplex IPR/N_eff bounds, SR vs RNE output
+   MSE decomposition, RNE-vs-SR threshold `N_eff*`, and the `2.000×` peaked-head RNE ratio, all for
+   MSE expressions that are definitions in `Defs.lean` (not derived from a random-variable model).
+2. `cross_format_int2_sr_beats_int4_mxfp4_rne`: Cross-format inequality (in the model whose MSEs
+   are defined in `Defs.lean`) for when lower-bit SR (`INT2-SR` / `Ternary-SR`) beats higher-bit
+   RNE (`INT4-RNE` / `MXFP4-RNE`), with inequalities between hard-coded rational constants
+   (GPU measurements not included in this repository) labelled `L = 16384`.
 3. `xor_vdc_stratified_sr_superconvergence_and_iid_halving`: Exact discrete bijection on
    `Fin (2^K)`, exact zero bias, `< 1` ULP worst-case deterministic sum error yielding
    `O(1/L^2)` super-convergence, consecutive MSB-flip pairing, and exact `2×` variance halving
@@ -24,8 +25,8 @@ Universal and exact pure-`Init` (zero Mathlib) Lean 4 statements for:
 5. `rank1_split_wht_orthogonality_and_output_inversion`: Universal Sylvester WHT orthogonality
    `H_{2^m}^T H_{2^m} = 2^m I`, attention-WHT commutation, single output-side inverse WHT,
    Rank-1 mean-split invariance, and dynamic-range elimination.
-6. `sub4bit_vcache_packing_density_and_exact_int64_bounds`: Exact `128K` V-cache VRAM ratios
-   (`1 : 4 : 8 : 64/7 > 9.14×`), lossless 5-trit/byte bijection (`3^5 = 243 < 256`), and exact
+6. `sub4bit_vcache_packing_density_and_exact_int64_bounds`: `128K` V-cache VRAM ratios from
+   hard-coded per-vector byte counts (`1 : 4 : 8 : 64/7 > 9.14×`; ternary count includes 2 bytes of overhead, INT4/INT2 do not), lossless 5-trit/byte bijection (`3^5 = 243 < 256`), and exact
    zero-overflow `int64` accumulator bounds for `128K` `P * V` dot products.
 -/
 
@@ -34,7 +35,7 @@ namespace VcacheIprXorvdcChallenge
 open VcacheIprXorvdc
 
 /-- Theorem 1 (`ipr_attention_averaging_sr_vs_rne_exact`):
-    Exact rational attention-output MSE decomposition for simplex weights `p_j ≥ 0, ∑ p_j = 1`
+    Rational attention-output MSE decomposition (for the MSE expressions defined in `Defs.lean`) for simplex weights `p_j ≥ 0, ∑ p_j = 1`
     with `IPR(p) = ∑ p_j^2 = 1 / N_eff(p)`: proves exact SR variance `IPR(p) * σ_SR^2`,
     exact RNE bias + variance `μ_bias^2 + IPR(p) * σ_RNE^2`, exact RNE-vs-SR phase transition
     threshold `N_eff* = (σ_SR^2 - σ_RNE^2) / μ_bias^2`, and exact `2.000×` RNE advantage at
@@ -74,8 +75,10 @@ theorem ipr_attention_averaging_sr_vs_rne_exact :
 /-- Theorem 2 (`cross_format_int2_sr_beats_int4_mxfp4_rne`):
     Exact rational cross-format inversion theorem proving when a lower-bit SR format
     (`INT2-SR` / `Ternary-SR`) strictly beats a higher-bit RNE format (`INT4-RNE` / `MXFP4-RNE`)
-    once `N_eff > σ_SR,low^2 / μ_bias,high^2`, with exact witness inequalities matching the
-    GPU-certified `INT2-SR < Ternary-SR < INT4-RNE < MXFP4-RNE` inversion at `L = 16384`. -/
+    once `N_eff > σ_SR,low^2 / μ_bias,high^2` (in the model whose MSEs are defined in `Defs.lean`),
+    with inequalities between hard-coded rational constants (GPU measurements not included in this
+    repository; no Lean object links them to `INT2`, `Ternary`, `INT4`, `MXFP4`) labelled
+    `L = 16384`. -/
 theorem cross_format_int2_sr_beats_int4_mxfp4_rne :
     (∀ (L : Nat) (p : Fin L → Rat) (sigmaSrLowSq muBiasHigh sigmaRneHighSq : Rat),
       finSum p = 1 → (0 : Rat) < ipr p → muBiasHigh ≠ 0 → (0 : Rat) ≤ sigmaRneHighSq →
@@ -190,8 +193,8 @@ theorem rank1_split_wht_orthogonality_and_output_inversion :
   sorry
 
 /-- Theorem 6 (`sub4bit_vcache_packing_density_and_exact_int64_bounds`):
-    Exact bit-packing density ratios (`INT16 : INT4 : INT2 : Ternary 5-trit/B = 1 : 4 : 8 : 64/7
-    > 9.14×` VRAM cut), lossless 5-trit/byte bijection (`3^5 = 243 < 256`), and exact
+    Bit-packing density ratios from hard-coded byte counts (`INT16 : INT4 : INT2 : Ternary 5-trit/B = 1 : 4 : 8 : 64/7
+    > 9.14×` VRAM cut; the ternary count 28 = 26 + 2 bytes of overhead, INT4/INT2 have none), lossless 5-trit/byte bijection (`3^5 = 243 < 256`), and exact
     zero-overflow `int64` accumulator width bounds for `128K`-context `P * V` dot products. -/
 theorem sub4bit_vcache_packing_density_and_exact_int64_bounds :
     (vcacheMiB vcacheBytesPerTokenInt16 = 1024 ∧

@@ -8,7 +8,7 @@ import UnsignedFp4SoftmaxV.Defs
 # Trusted Challenge Statements (`unsigned-fp4-softmax-v`)
 
 Universal and exact pure-`Init` (zero Mathlib, zero `native_decide`) Lean 4 statements for:
-1. IEEE `U-E1M3 == UINT4` exact bit-level collapse (`decodeUnsignedIEEE 1 3 c = c`).
+1. `U-E1M3 == UINT4` collapse in the model's integer decoder (`decodeUnsignedIEEE 1 3 c = c`; true by definition of that decoder).
 2. Universal all-`B ≥ 2` unsigned 4-bit EF21 contraction law and complete regime classification
    (`U-E0M4` `[2..9]` → `U-E2M2` `[10..130]` → `U-E3M1` `[131..18431]` → `U-E4M0` `[≥ 18432]`),
    plus exact `> 5x`, `> 7.7x`, `> 16x` gains over signed `S-E2M1`.
@@ -26,8 +26,9 @@ namespace UnsignedFp4SoftmaxVChallenge
 
 open UnsignedFp4SoftmaxV
 
-/-- Theorem 1 (Exact IEEE `U-E1M3 == UINT4` Bit-Level Collapse):
-    Proves standard IEEE/OCP subnormal `U-E1M3` decodes identically to `U-E0M4` (`UINT4`)
+/-- Theorem 1 (`U-E1M3 == UINT4` collapse in the model's integer decoder):
+    Proves that, in the hand-written decoder `decodeUnsignedIEEE` (no exponent bias; not the OCP
+    specification), `U-E1M3` decodes identically to `U-E0M4` (`UINT4`), by definition of the decoder,
     with integer levels `{0, ..., 15}`, identical normalized rational levels, identical EF21
     contraction `1 - α` for all `B`, and identical Softmax simplex drift for all `N`, alongside
     the exact 16-level integer codebooks of `U-E2M2`, `U-E3M1`, and `U-E4M0`. -/
@@ -49,7 +50,7 @@ theorem unsigned_fp4_e1m3_collapse_to_uint4 :
 /-- Theorem 2 (Universal All-`B` Unsigned 4-Bit EF21 Contraction & Regime Classification):
     Proves the universal EF21 contraction upper bound and midpoint attainment
     `1 - α(U, B) = max_k ((B-1) h_k^2) / (1 + (B-1) m_k^2)` for all `B ≥ 2`, proves the
-    complete all-`B` optimal unsigned 4-bit regimes (`U-E0M4` on `[2..9]`, `U-E2M2` on `[10..130]`,
+    complete all-`B` classification of which unsigned 4-bit format has the smallest contraction measure (`U-E0M4` on `[2..9]`, `U-E2M2` on `[10..130]`,
     `U-E3M1` on `[131..18431]` with exact tie at `18431`, `U-E4M0` on `[≥ 18432]`), and proves
     exact improvement ratios over signed `S-E2M1` (`> 5x` at `B = 64`, `> 7.7x` at `B = 256`,
     `> 16x` at `B = 1024`). -/
@@ -156,7 +157,8 @@ theorem stratified_xor_vdc_simplex_zero_drift :
     (`∑ pHat_j = 1 + δ_P`), value vector `v`, constant shift `μ_V`, and centered `v_c = v - μ_V`,
     proves exact centering invariance, the raw dual-quantization error decomposition carrying
     first-order simplex-drift bias `δ_P * μ_V`, and the centered identity
-    `(pHat^T Q(v_c) + μ_V) - p^T v = pHat^T Q(v_c) - p^T v_c` annihilating `δ_P * μ_V ≡ 0`. -/
+    `(pHat^T Q(v_c) + μ_V) - p^T v = pHat^T Q(v_c) - p^T v_c` annihilating `δ_P * μ_V ≡ 0`
+    (a linear identity using `∑ p_j = 1`). -/
 theorem attention_v_centering_simplex_drift_annihilation :
     ∀ (n : Nat) (p pHat v qV qVc : Fin n → Rat) (μV : Rat),
       sumFin p = 1 →

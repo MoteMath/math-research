@@ -2,7 +2,7 @@
 version: v0.4
 
 project:
-  name: Zeckendorf-to-Binary Carry-Bridge Transducer Engine (adic-7)
+  name: Zeckendorf-to-Binary Carry-Bridge Transducer Engine
   description: >-
     **Mechanism:** **The $(r + 1)$-State Carry-Bridge Transducer & Difference-Basis Certificate Compiler (`CarryBridgeEngine`)** Every bitmask $x \in \mathbb{N}$ can be read simultaneously in base $2$ ($\sum b _ i 2^i$) and in any binary-weight linear-recurrence numeration system $G _ {k+r} = \sum _ {j \in S} G _ {k+j}$ specified by a finite bitmask certificate `RecCert = (r, maskS
   repository: https://github.com/MoteMath/math-research

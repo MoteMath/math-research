@@ -6,7 +6,7 @@
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **9 / 10** | **9 / 10** | **9 / 10** | **7 / 10** | **9 / 10** | **86 / 100** |
 
-*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): unrecorded exact spanning-tree sequence and alternating-harmonic spectrum on non-cograph mixed-radix carry-free graphs, proved over arbitrary commutative rings.*
+*Heuristic self-rating (see the [root scoring rubric](../README.md#synthetic-score-matrix)): exact spanning-tree sequence and alternating-harmonic spectrum (no prior record was found by the authors; the search was not recorded) on non-cograph mixed-radix carry-free graphs, proved over arbitrary commutative rings.*
 
 ## For Mathematicians
 
@@ -60,7 +60,7 @@ The key observation is that the self-loop at $i = j$ cancels identically between
 ## Prior art and related work
 
 - **Single-radix ($k = 1$) threshold graphs:** For $k = 1$, the graph $G _ {(B)}$ ($i \sim j \iff i + j < B$) is a threshold graph; Laplacian spectra and spanning-tree counts of threshold graphs are studied in P. L. Hammer and A. K. Kelmans, *"Laplacian spectra and spanning trees of threshold graphs"*, *Discrete Appl. Math.* **65** (1996), 255–273. For $k \ge 2$ (e.g., $G _ {2^3}$), $G _ b$ contains induced $P _ 4$ subgraphs (such as `011 - 100 - 010 - 101`) and is neither a threshold graph nor a cograph.
-- **Spanning trees on fractal / self-similar graphs:** Spanning-tree enumerations on Sierpiński-type graphs are studied in E. Teufl and S. Wagner, *"Spanning trees on Sierpiński graphs"* (2006) and related works. No OEIS entry or prior closed form was found for the binary zero-carry spanning-tree sequence $3, 243, 71\,744\,535, \dots$ or its mixed-radix generalization.
+- **Spanning trees on fractal / self-similar graphs:** Spanning-tree enumerations on Sierpiński-type graphs are studied in E. Teufl and S. Wagner, *"Spanning trees on Sierpiński graphs"* (2006) and related works. No prior record of the binary zero-carry spanning-tree sequence $3, 243, 71\,744\,535, \dots$ or its mixed-radix generalization was found by the authors; the search was not recorded.
 
 ## Layout
 

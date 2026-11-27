@@ -45,7 +45,7 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib, no `native_decide`,
 ## Prior-Art Context
 
 - **Classical carry Markov chains & transfer matrices:** Holte (*Carries, Combinatorics, and an Amazing Matrix*, AMM 1997) and Diaconis & Fulman (*Carries, shuffling, and symmetric functions*, Adv. Appl. Math. 2009) study carry Markov chains for addition; transfer-matrix rationality in $\mathbb{Z}[[t]]$ is classical (Stanley, *Enumerative Combinatorics* Vol. 1).
-- **Referee audit (referee-1 PASS #186; recorded in `REGISTRY.md`):** the mechanized bilinear $4 S \times 4 S$ jet-lift + decidable Krylov rationality engine in $\mathbb{Z}[[t]]$, the exact binary triangular-square covariance law, and the universal radix-$B$ even/odd zero-vs-perfect-square carry-borrow covariance and parity-partition dichotomies are new; zero Section 4 overlap.
+- **Novelty:** the authors did not find the mechanized bilinear $4 S \times 4 S$ jet-lift with a decidable Krylov rationality engine in $\mathbb{Z}[[t]]$, the exact binary triangular-square covariance law, or the radix-$B$ even/odd zero-vs-perfect-square carry-borrow covariance and parity-partition dichotomies in the sources above; no search was recorded and the claim is not independently reviewed.
 
 ## Build & Verification
 
