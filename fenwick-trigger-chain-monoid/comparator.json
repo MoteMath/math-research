@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FenwickTriggerChainMonoidChallenge.evalWord_mod_eq_compile",
+    "FenwickTriggerChainMonoidChallenge.compileTC_minimal",
+    "FenwickTriggerChainMonoidChallenge.fenwick_free_monoid",
+    "FenwickTriggerChainMonoidChallenge.fenwick_finite_monoid_card",
+    "FenwickTriggerChainMonoidChallenge.evalWord_D_spine",
+    "FenwickTriggerChainMonoidChallenge.evalWord_U_spine",
+    "FenwickTriggerChainMonoidChallenge.evalWord_twos_complement_duality",
+    "FenwickTriggerChainMonoidChallenge.fenwick_depth_duality"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

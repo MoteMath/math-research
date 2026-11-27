@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ValuationTowerPoincareRecurrencesChallenge.poincare_return",
+    "ValuationTowerPoincareRecurrencesChallenge.poincareR_linearization",
+    "ValuationTowerPoincareRecurrencesChallenge.vtpr_full_period",
+    "ValuationTowerPoincareRecurrencesChallenge.vtpr_universal_exact_minimal_period",
+    "ValuationTowerPoincareRecurrencesChallenge.twistedLSB_exact_minimal_period",
+    "ValuationTowerPoincareRecurrencesChallenge.wildQuad_exact_minimal_period"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

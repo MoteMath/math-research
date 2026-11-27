@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "WeightedCarryJetRationalityChallenge.jetMat_pow_sound",
+    "WeightedCarryJetRationalityChallenge.fps_rational_of_recurrence",
+    "WeightedCarryJetRationalityChallenge.binary_carry_borrow_gf",
+    "WeightedCarryJetRationalityChallenge.binary_parity_corr_gf",
+    "WeightedCarryJetRationalityChallenge.binary_triangular_square_covariance",
+    "WeightedCarryJetRationalityChallenge.odd_radix_zero_covariance",
+    "WeightedCarryJetRationalityChallenge.even_radix_perfect_square_covariance",
+    "WeightedCarryJetRationalityChallenge.radix_parity_partition_formula"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

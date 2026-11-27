@@ -1,0 +1,12 @@
+name = "two-way-bit-transducer-inverses"
+version = "0.1.0"
+defaultTargets = ["TwoWayBitTransducerInverses", "Solution"]
+
+[[lean_lib]]
+name = "TwoWayBitTransducerInverses"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

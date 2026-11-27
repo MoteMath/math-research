@@ -1,0 +1,12 @@
+name = "feistel-aff2-monodromy-locks"
+version = "0.1.0"
+defaultTargets = ["FeistelAff2MonodromyLocks", "Solution"]
+
+[[lean_lib]]
+name = "FeistelAff2MonodromyLocks"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitSlicedAffineShearGroupsChallenge.bsasce_master_order_bound",
+    "BitSlicedAffineShearGroupsChallenge.bsasce_derived_series_collapse",
+    "BitSlicedAffineShearGroupsChallenge.theorem1_circuitE_exact_order",
+    "BitSlicedAffineShearGroupsChallenge.theorem2_circuitP_exact_order",
+    "BitSlicedAffineShearGroupsChallenge.theorem2_circuitFm_pairwise_non_conjugate",
+    "BitSlicedAffineShearGroupsChallenge.theorem3_addXorShear_exact_order",
+    "BitSlicedAffineShearGroupsChallenge.theorem3_fiber1_wreath_normal_form",
+    "BitSlicedAffineShearGroupsChallenge.theorem4_circuitH_prime5_obstruction"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

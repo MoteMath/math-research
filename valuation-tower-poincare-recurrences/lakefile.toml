@@ -1,0 +1,12 @@
+name = "valuation-tower-poincare-recurrences"
+version = "0.1.0"
+defaultTargets = ["ValuationTowerPoincareRecurrences", "Solution"]
+
+[[lean_lib]]
+name = "ValuationTowerPoincareRecurrences"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

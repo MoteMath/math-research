@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BsdaMixedBitwisePermPolysChallenge.bijective_iff_forall_bitDeriv",
+    "BsdaMixedBitwisePermPolysChallenge.bsda_bijective_iff",
+    "BsdaMixedBitwisePermPolysChallenge.bsda_finite_slice_iff",
+    "BsdaMixedBitwisePermPolysChallenge.maskedPoly_bijective_iff",
+    "BsdaMixedBitwisePermPolysChallenge.rivest_classical_mod4_iff",
+    "BsdaMixedBitwisePermPolysChallenge.carryPair_bijective_iff",
+    "BsdaMixedBitwisePermPolysChallenge.addXorCancel_bijective_iff",
+    "BsdaMixedBitwisePermPolysChallenge.klimovShamir_general_iff"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,12 @@
+name = "binary-morphism-abelian-balance"
+version = "0.1.0"
+defaultTargets = ["BinaryMorphismAbelianBalance", "Solution"]
+
+[[lean_lib]]
+name = "BinaryMorphismAbelianBalance"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

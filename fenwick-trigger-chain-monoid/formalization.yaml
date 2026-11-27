@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Fenwick Trigger Chain Monoid - minimal LSB trigger-chain compiler, free vs nilpotent 2^w monoid dichotomy, ancestor-spine collapse, and two's-complement duality
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a Fenwick / binary-indexed low-bit transducer engine. Compiles arbitrary words in {U, D}* into exact Myhill-Nerode minimal LSB Mealy transducers of linear size, proves the exact dichotomy between the free monoid on Nat and the 2^w-element nilpotent monoid on BitVec w, proves universal D- and U-spine collapse, and establishes two's-complement word-conjugation and depth dualities.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: fenwick-trigger-chain-monoid
+  license: Apache-2.0

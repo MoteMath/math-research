@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FeistelAff2MonodromyLocksChallenge.feistel_universal_2_3_period",
+    "FeistelAff2MonodromyLocksChallenge.theorem_I_universal_period12_lock",
+    "FeistelAff2MonodromyLocksChallenge.theorem_IIa_add_one_period6_lock",
+    "FeistelAff2MonodromyLocksChallenge.theorem_IIb_sub_one_exponential_escape",
+    "FeistelAff2MonodromyLocksChallenge.theorem_IIIa_lsb_binomial_spectrum",
+    "FeistelAff2MonodromyLocksChallenge.theorem_IIIb_ctz_period_lock",
+    "FeistelAff2MonodromyLocksChallenge.theorem_IV_universal_isoperiodic"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

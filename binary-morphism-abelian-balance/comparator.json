@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BinaryMorphismAbelianBalanceChallenge.stratCert_sound_balance",
+    "BinaryMorphismAbelianBalanceChallenge.family_sigmaK_balance",
+    "BinaryMorphismAbelianBalanceChallenge.family_sigmaK_prefix_sharp",
+    "BinaryMorphismAbelianBalanceChallenge.tauA_balance_infinite",
+    "BinaryMorphismAbelianBalanceChallenge.tauB_balance_infinite",
+    "BinaryMorphismAbelianBalanceChallenge.mu1_unstrat_impossible",
+    "BinaryMorphismAbelianBalanceChallenge.mu1_strat_balance_infinite",
+    "BinaryMorphismAbelianBalanceChallenge.mu2_strat_balance_infinite"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

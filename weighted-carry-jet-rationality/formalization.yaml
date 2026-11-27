@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Weighted Carry Jet Rationality - bilinear jet-lift transducer compiler, Krylov rational generating function engine, and arbitrary-radix carry-borrow covariance dichotomy
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a weighted carry-transducer bilinear jet-lift and decidable Krylov-annihilator rationality engine in Z[[t]]. Proves exact rational generating functions for binary carry-borrow and parity-twisted sums, the exact binary triangular-square covariance law, and the universal radix-B (B >= 2) dichotomy: carry and borrow counts have exact zero covariance in every odd base B and exact negative/positive perfect-square covariance in every even base B.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: weighted-carry-jet-rationality
+  license: Apache-2.0

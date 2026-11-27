@@ -1,0 +1,12 @@
+name = "weighted-carry-jet-rationality"
+version = "0.1.0"
+defaultTargets = ["WeightedCarryJetRationality", "Solution"]
+
+[[lean_lib]]
+name = "WeightedCarryJetRationality"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

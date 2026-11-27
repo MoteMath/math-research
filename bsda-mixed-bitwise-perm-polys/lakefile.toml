@@ -1,0 +1,12 @@
+name = "bsda-mixed-bitwise-perm-polys"
+version = "0.1.0"
+defaultTargets = ["BsdaMixedBitwisePermPolys", "Solution"]
+
+[[lean_lib]]
+name = "BsdaMixedBitwisePermPolys"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

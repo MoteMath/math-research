@@ -1,0 +1,12 @@
+name = "fenwick-trigger-chain-monoid"
+version = "0.1.0"
+defaultTargets = ["FenwickTriggerChainMonoid", "Solution"]
+
+[[lean_lib]]
+name = "FenwickTriggerChainMonoid"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

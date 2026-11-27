@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms FenwickTriggerChainMonoidChallenge.evalWord_mod_eq_compile
+#print axioms FenwickTriggerChainMonoidChallenge.compileTC_minimal
+#print axioms FenwickTriggerChainMonoidChallenge.fenwick_free_monoid
+#print axioms FenwickTriggerChainMonoidChallenge.fenwick_finite_monoid_card
+#print axioms FenwickTriggerChainMonoidChallenge.evalWord_D_spine
+#print axioms FenwickTriggerChainMonoidChallenge.evalWord_U_spine
+#print axioms FenwickTriggerChainMonoidChallenge.evalWord_twos_complement_duality
+#print axioms FenwickTriggerChainMonoidChallenge.fenwick_depth_duality

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Two-Way Bit Transducer Inverses - finite tile-witness crossing-sequence compiler for all-width bidirectional bit-transducer inversion and period-3/6 laws
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a pure-data finite tile-witness crossing-sequence certificate engine for two-way bit-transducers. Certifies all-width exact inversion and finite periodicity on BitVec w: proves skipFlip2TwoWay has universal period 3 (while its forward sweep has exponential period 2^w), shifted skipFlip2 and parametric runTriggerTwoWay m (m >= 2) have universal period 6 across all widths, and coupled parity-delay has an exact Gray-difference two-way inverse.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: two-way-bit-transducer-inverses
+  license: Apache-2.0

@@ -1394,3 +1394,120 @@ Pure Lean 4 Init formalization (zero Mathlib, toolchain v4.34.1): four pure-data
 | `WalnutProphecySkolemLifterChallenge.grayAddParity_exact_square_spectrum` | `WalnutProphecySkolemLifter.Theorems` | The Gray-Sum Parity word has a square of period $p \ge 1$ if and only if $1 \le p \le 7$. |
 | `WalnutProphecySkolemLifterChallenge.grayAddParity_exact_cube_spectrum` | `WalnutProphecySkolemLifter.Theorems` | The Gray-Sum Parity word has a cube of period $p \ge 1$ if and only if $p = 1$. |
 | `WalnutProphecySkolemLifterChallenge.grayAddParity_fifth_power_free` | `WalnutProphecySkolemLifter.Theorems` | The Gray-Sum Parity word contains no 5th power of any period $p \ge 1$ anywhere on $\mathbb{N}$. |
+
+## 103. [`binary-morphism-abelian-balance/`](binary-morphism-abelian-balance/)
+
+Zero-real Int x Int quadratic-ring modular-stratified abelian balance compiler: k = 7 -> 8 phase transition, geometric prefix sharpness, and unstratified Rauzy separation.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `stratCert_sound_balance` | `BinaryMorphismAbelianBalance.Theorems` | Any `StratCert` passing `verifyCert m cert = true` certifies uniform abelian balance $\le C$ across all factor positions $i, j$ and all lengths $n$. |
+| `family_sigmaK_balance` | `BinaryMorphismAbelianBalance.Theorems` | For every $k \ge 1$, the non-unimodular morphism $\sigma _ k$ is uniformly `phaseBound k`-balanced across all factor positions and lengths (exact $k = 7 \to 8$ phase transition). |
+| `family_sigmaK_prefix_sharp` | `BinaryMorphismAbelianBalance.Theorems` | For every $k \ge 2$ and $m \in \mathbb{N}$, explicit infinite geometric prefixes `uMin k m` and `vMax k m` achieve the exact quadratic-ring discrepancy extrema of $\sigma _ k$. |
+| `tauA_balance_infinite` | `BinaryMorphismAbelianBalance.Theorems` | The morphism `tauA` is uniformly 2-balanced across all factor positions $i, j$ and lengths $n$. |
+| `tauB_balance_infinite` | `BinaryMorphismAbelianBalance.Theorems` | The morphism `tauB` (sharing the exact incidence matrix of `tauA`) has doubled uniform balance bound $4$ across all factor positions and lengths. |
+| `mu1_unstrat_impossible` | `BinaryMorphismAbelianBalance.Theorems` | No unstratified Rauzy discrepancy interval can certify balance $\le 2$ for `mu1`. |
+| `mu1_strat_balance_infinite` | `BinaryMorphismAbelianBalance.Theorems` | Modular length stratification certifies uniform balance $\le 2$ for `mu1` across all factor positions and lengths. |
+| `mu2_strat_balance_infinite` | `BinaryMorphismAbelianBalance.Theorems` | Modular length stratification certifies uniform balance $\le 4$ for `mu2` across all factor positions and lengths. |
+
+## 104. [`bit-sliced-affine-shear-groups/`](bit-sliced-affine-shear-groups/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of the **Bit-Sliced Affine Shear-Group & Commutator Engine (`BSAS-CE`)**, proving master order bounds, derived-series collapse, exact circuit orders, $2^w$ conjugacy classes, wreath normal forms, and the strict 3-level hierarchy $\mathcal{U} _ w \subsetneq \mathcal{A} _ w^{(0)} \subsetneq \mathcal{A} _ w^{(2)} \subsetneq \mathrm{Sym}$.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `bsasce_master_order_bound` | `Challenge` | For any $f \in \mathcal{A} _ w^{(r)}$ ($w \ge r$) with base-block period $D$ and $M _ f(k)^D = I _ 2$ for $k \in [r, w)$, $f^{D \cdot 2^{w-r}}(x) = x$ for all $x \in (\mathrm{BitVec}\; w)^2$. |
+| `bsasce_derived_series_collapse` | `Challenge` | For every $w \ge 1$, every circuit in the $(w+1)$-th derived subgroup $(\mathcal{A} _ w^{(0)})^{(w+1)}$ is identically the identity map. |
+| `theorem1_circuitE_exact_order` | `Challenge` | For every $w \ge 2$, the masked add-shear $E = A _ R(0) \circ A _ {L, \{0\}}$ has exact order $3 \cdot 2^w$, saturating the universal $\mathcal{A} _ w^{(0)}$ ceiling. |
+| `theorem2_circuitP_exact_order` | `Challenge` | For every $w \ge 2$, the bit-0 cross-swap shear $P = S _ {\{0\}} \circ A _ R(0)$ has exact order $3 \cdot 2^{w-1}$. |
+| `theorem2_circuitFm_pairwise_non_conjugate` | `Challenge` | For every $w \ge 1$ and all $m _ 1 \ne m _ 2 \in \mathrm{BitVec}\; w$, the 3-gate circuits $F _ {m _ 1}, F _ {m _ 2}$ are pairwise non-conjugate in $\mathcal{A} _ w^{(0)}$ ($2^w$ distinct classes). |
+| `theorem3_addXorShear_exact_order` | `Challenge` | For every $w \ge 2$, the add-XOR shear $A _ R(0) \circ X _ R(0)$ has exact order $2^{w-1}$. |
+| `theorem3_fiber1_wreath_normal_form` | `Challenge` | For every $w \ge 2$, the fiber-$1$ group $\langle +1, \oplus 1 \rangle$ is in exact canonical bijection with $\mathrm{Bool} \times (\mathrm{BitVec}\; (w-1))^2 \cong C _ {2^{w-1}} \wr C _ 2$ (size $2^{2w-1}$). |
+| `theorem4_circuitH_prime5_obstruction` | `Challenge` | For every $w \ge 2$, the block-2 swap circuit $H = B _ {0, 1} \circ A _ R(0) \circ X _ L(0)$ satisfies $H^{3 \cdot 2^w}(0, 1) \ne (0, 1)$, separating $\mathcal{A} _ w^{(2)}$ from $\mathcal{A} _ w^{(0)}$ even in $\mathrm{Sym}$. |
+
+## 105. [`bsda-mixed-bitwise-perm-polys/`](bsda-mixed-bitwise-perm-polys/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of the **Bit-Slice Derivative Automaton (BSDA)** compiler and finite-slice lifting engine for mixed bitwise-arithmetic permutation polynomials modulo $2^w$.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `bijective_iff_forall_bitDeriv` | `Challenge` | For any truncation-coherent family $f$, $f _ w$ is bijective on $\mathrm{BitVec}\; w$ iff $\partial _ i f(x) = \mathrm{true}$ for all $i < w$ and $x : \mathrm{BitVec}\; i$. |
+| `bsda_bijective_iff` | `Challenge` | For any expression `e` compiled by `compileBSDA e = some D`, `eval_w e` is bijective for all $w \ge 2$ iff `D.checkBijective = true`. |
+| `bsda_finite_slice_iff` | `Challenge` | Computable BFS finite-slice horizon: for `compileBSDA e = some D`, bijectivity for all $w \ge 2$ holds iff `eval_{W*(D)} e` is bijective at the single finite width $W^*(D)$. |
+| `maskedPoly_bijective_iff` | `Challenge` | Generalized Rivest `iff`: exact bit-by-bit parity conditions characterizing bijectivity for all $w \ge 2$ of arbitrary masked, shifted, mixed-connective ($+, -, \oplus$) polynomials. |
+| `rivest_classical_mod4_iff` | `Challenge` | Classical Rivest (2001) recovered as a corollary: an ordinary integer polynomial is bijective mod $2^w$ for all $w \ge 2$ iff it is bijective mod $4$ ($W^* = 2$). |
+| `carryPair_bijective_iff` | `Challenge` | For all $c, d \in \mathbb{Z}$ and $w \in \mathbb{N}$, $x + (x \mathbin{\&} (x+c)) + (x \mathbin{\&} (x+d))$ is bijective on $\mathrm{BitVec}\; w$ iff $c \equiv d \pmod{2^w}$. |
+| `addXorCancel_bijective_iff` | `Challenge` | For any coherent $f, g$, $(f(x) + g(x)) \oplus g(x)$ is bijective on $\mathrm{BitVec}\; w$ iff $f(x)$ is bijective on $\mathrm{BitVec}\; w$. |
+| `klimovShamir_general_iff` | `Challenge` | For any coherent $g$ and $c \in \mathbb{Z}$, $x + (g(x)^2 \mathbin{|} c)$ is bijective for all $w \ge 2$ iff $c$ is odd or $\mathrm{bit} _ 0(g(0)) = \mathrm{bit} _ 0(g(1))$. |
+
+## 106. [`feistel-aff2-monodromy-locks/`](feistel-aff2-monodromy-locks/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of the **Bit-Slice $\mathrm{Aff}(\mathbb{F} _ 2^2)$-Monodromy Tower Engine**, proving the universal $2^a 3^b$ period law for all triangular XOR-Feistel networks and four infinite-width hardware period-lock and phase-transition theorems.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `feistel_universal_2_3_period` | `Challenge` | For every `TriangularRoundFn` $f$, bit-width $w \in \mathbb{N}$, and state $s \in (\mathrm{BitVec}\; w)^2$, $s$ has exact minimal period $2^a 3^b$ ($a \le 2w, b \le w$). |
+| `theorem_I_universal_period12_lock` | `Challenge` | For every 2-adic trigger stream $\tau$ and $w \ge 1$, Rule-$(1,0,0,1)$ Feistel locks universally to period $12$ (every state has exact period $4$ or $12$). |
+| `theorem_IIa_add_one_period6_lock` | `Challenge` | For every $w \ge 1$ and $(L, R) \in (\mathrm{BitVec}\; w)^2$, $(L, R) \mapsto (R, L \oplus (R+1))$ has exact minimal period in $\{1, 3, 6\}$ and satisfies $F _ w^6(L, R) = (L, R)$. |
+| `theorem_IIb_sub_one_exponential_escape` | `Challenge` | For every $w \ge 1$, $(0, 0)$ under $(L, R) \mapsto (R, L \oplus (R-1))$ has exact minimal period $3 \cdot 2^{w-1}$. |
+| `theorem_IIIa_lsb_binomial_spectrum` | `Challenge` | For every $w, j \in \mathbb{N}$, $(L, R) \mapsto (R, L \oplus (R \mathbin{\&} (-R)))$ has exactly $\binom{w}{j} 3^j$ states of exact minimal period $3^j$ and maximum period $3^w$. |
+| `theorem_IIIb_ctz_period_lock` | `Challenge` | If trigger stream $\tau$ has its first `true` bit at index $m$, Rule-$(0,0,1,0)$ Feistel locks universally to constant period $2 \cdot 3^{m+1}$ for all $w \ge 1$. |
+| `theorem_IV_universal_isoperiodic` | `Challenge` | Universal isoperiodic law for Rule-$(0,0,0,1)$ Feistel (covering $R \oplus (R+1)$ and $R \oplus (R-1)$) across all $w \ge 1$. |
+
+## 107. [`fenwick-trigger-chain-monoid/`](fenwick-trigger-chain-monoid/)
+
+Minimal LSB trigger-chain compiler for Fenwick {U, D}* words: free-vs-2^w nilpotent monoid dichotomy, ancestor-spine collapse, and two's-complement duality.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `evalWord_mod_eq_compile` | `FenwickTriggerChainMonoid.Theorems` | For every Fenwick word $w \in \{U, D\} ^ *$, width $n$, and $x \in \mathbb{N}$, `evalWord w x % 2 ^ n` equals the compiled LSB Mealy transducer `(compileTC w).evalMod n x`. |
+| `compileTC_minimal` | `FenwickTriggerChainMonoid.Theorems` | No LSB Mealy transducer with fewer than `(compileSpec w).1.length + 1` states can compute `evalWord w x % 2 ^ n` for all $n, x \in \mathbb{N}$ (exact Myhill-Nerode minimality). |
+| `fenwick_free_monoid` | `FenwickTriggerChainMonoid.Theorems` | Two Fenwick words $w _ 1, w _ 2 \in \{U, D\} ^ *$ induce the same function on all of $\mathbb{N}$ if and only if $w _ 1 = w _ 2$. |
+| `fenwick_finite_monoid_card` | `FenwickTriggerChainMonoid.Theorems` | Modulo $2 ^ w$, the monoid generated by $U$ and $D$ has exact cardinality $2 ^ w$ for every width $w$. |
+| `evalWord_D_spine` | `FenwickTriggerChainMonoid.Theorems` | Any word starting with $D$ collapses to an iterate of $D$ and satisfies $\mathrm{evalWord}(D :: v, x) \mathbin{\&} x = \mathrm{evalWord}(D :: v, x)$. |
+| `evalWord_U_spine` | `FenwickTriggerChainMonoid.Theorems` | Any word starting with $U$ either vanishes or collapses to a positive iterate of $U$ bracketing $x$ with $\mathrm{evalWord}(U :: v, x) \mathbin{\&} x = D(\mathrm{evalWord}(U :: v, x))$. |
+| `evalWord_twos_complement_duality` | `FenwickTriggerChainMonoid.Theorems` | Conjugating `evalWord w` by two's-complement negation modulo $2 ^ n$ equals `evalWord (dualWord w)` modulo $2 ^ n$. |
+| `fenwick_depth_duality` | `FenwickTriggerChainMonoid.Theorems` | For all $0 < x < 2 ^ n$, $\mathrm{depthU}(x, 2 ^ n) = \mathrm{popcount}(2 ^ n - x)$ and $\mathrm{depthU}(x, 2 ^ n) + \mathrm{popcount}(x) = n + 1 - \mathrm{ctz}(x)$. |
+
+## 108. [`two-way-bit-transducer-inverses/`](two-way-bit-transducer-inverses/)
+
+Pure-data finite tile-witness crossing-sequence compiler for two-way bit-transducers: all-width inversion, period-3 vs 2^w collapse, and parametric Coxeter-6 phase transition.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `checkCert_sound_bv` | `TwoWayBitTransducerInverses.Theorems` | Any finite tile-witness certificate `cert` passing `checkCert cert = true` proves `sweepsBV cert.sws x = x` on `BitVec w` for every width $w$. |
+| `skipFlip2_period3_bv` | `TwoWayBitTransducerInverses.Theorems` | The bidirectional skip-flip transducer `skipFlip2TwoWay` satisfies $T ^ 3(x) = x$ on `BitVec w` for every width $w$. |
+| `skipFlip2_shifted_period6_bv` | `TwoWayBitTransducerInverses.Theorems` | The shifted bidirectional skip-flip transducer satisfies $T ^ 6(x) = x$ on `BitVec w` for every width $w$. |
+| `skipFlip2_fwd_period_pow2` | `TwoWayBitTransducerInverses.Theorems` | The unidirectional forward sweep of `skipFlip2` has period $2 ^ w$ on `BitVec w`, contrasting the bidirectional period 3. |
+| `runTriggerTwoWay_left_inv` | `TwoWayBitTransducerInverses.Theorems` | For every threshold $m$ and width $w$, `runTriggerTwoWay m` admits an explicit two-way left inverse. |
+| `runTrigger_period6_all_m_bv` | `TwoWayBitTransducerInverses.Theorems` | For every threshold $m \ge 2$ and every width $w$, `runTriggerTwoWay m` has exact universal period 6 on `BitVec w`. |
+| `runSkipFlip_period6_all_m_bv` | `TwoWayBitTransducerInverses.Theorems` | For every $m \ge 2$ and every width $w$, the symmetric two-way `runSkipFlip m` transducer has universal period 6 on `BitVec w`. |
+| `coupled_parityDelay_exact_inv` | `TwoWayBitTransducerInverses.Theorems` | The coupled parity-delay forward sweep is inverted on every bit list by the Gray-difference backward sweep. |
+
+## 109. [`valuation-tower-poincare-recurrences/`](valuation-tower-poincare-recurrences/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **2-Adic Valuation-Tower Poincaré Reduction (VTPR)**, proving exact two-stage nonlinear cancellation, joint-LSB conservation, and the universal non-monotone period law $Q(d) = \mathrm{lcm}(2d, d+1)(2d-1)$ across all dimensions $d \ge 2$ and bit-widths $w$.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `poincare_return` | `Challenge` | Stage-1 exact $(2d-1)$-step Poincaré return conjugacy on the even-window section $\mathcal{S}$ to the even-coordinate map $\mathcal{R}$ for any `ValuationTowerSpec`. |
+| `poincareR_linearization` | `Challenge` | Stage-2 exact $(d+1)$-step nonlinear cancellation on `allDiv4`, collapsing $\mathcal{R}^{d+1}$ identically to the pure linear monodromy $M = -\mathrm{negShift}$. |
+| `vtpr_full_period` | `Challenge` | For any `ValuationHomogeneousSpec m Φ c`, all $w \in \mathbb{N}$, and all $x \in (\mathrm{BitVec}\; w)^{m+2}$, $F _ {\Phi _ w}^{Q(m+2)}(x) = x$. |
+| `vtpr_universal_exact_minimal_period` | `Challenge` | For every $d = m+2 \ge 2$, $w \ge 4$, and any `ValuationTowerSpec m w Φ 1#w`, the state $(1, 0, \dots, 0, 4)$ has exact minimal period $Q(d) = \mathrm{lcm}(2d, d+1)(2d-1)$. |
+| `twistedLSB_exact_minimal_period` | `Challenge` | For every $d \ge 2$ and $w \ge 4$, the twisted joint-LSB subtraction recurrence $x _ {n+d} = \mathrm{lsb}(x _ {n+1} \mid \cdots \mid x _ {n+d-1}) - x _ n$ attains exact minimal period $Q(d)$. |
+| `wildQuad_exact_minimal_period` | `Challenge` | For every $d \ge 2$ and $w \ge 4$, the non-transducer wild quadratic family ($4 \sum v _ j^2$ at valuation $\ge 2$) attains exact minimal period $Q(d)$. |
+
+## 110. [`weighted-carry-jet-rationality/`](weighted-carry-jet-rationality/)
+
+Bilinear jet-lift and Krylov rationality engine in Z[[t]]: exact binary carry-borrow rational GFs and the universal radix-B even/odd covariance dichotomy.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `jetMat_pow_sound` | `WeightedCarryJetRationality.Theorems` | The $w$-th power of the $4 S \times 4 S$ bilinear jet matrix applied to `jetBeta` computes all four exact weighted carry-borrow moments at width $w$. |
+| `fps_rational_of_recurrence` | `WeightedCarryJetRationality.Theorems` | Any integer sequence satisfying a finite linear recurrence satisfies an exact rational generating-function identity in $\mathbb{Z}[[t]]$. |
+| `binary_carry_borrow_gf` | `WeightedCarryJetRationality.Theorems` | The binary carry-borrow joint moment sequence satisfies the exact degree-5 rational generating function identity with denominator $[1, -16, 100, -304, 448, -256]$ in $\mathbb{Z}[[t]]$. |
+| `binary_parity_corr_gf` | `WeightedCarryJetRationality.Theorems` | The parity-twisted binary carry-borrow correlation satisfies the exact degree-3 rational generating function identity with denominator $[1, -2, -4, 8]$ in $\mathbb{Z}[[t]]$. |
+| `binary_triangular_square_covariance` | `WeightedCarryJetRationality.Theorems` | For every width $w \ge 1$ and initial flags $c _ 0, b _ 0$, binary carry and borrow counts have exact signed squared-triangular covariance $\mp (2 ^ {w - 1}(2 ^ w - 1)) ^ 2$. |
+| `odd_radix_zero_covariance` | `WeightedCarryJetRationality.Theorems` | In every odd base $B = 2 m + 1$ ($m \ge 1$) and every width $w$, carry and borrow counts have exact zero covariance. |
+| `even_radix_perfect_square_covariance` | `WeightedCarryJetRationality.Theorems` | In every even base $B = 2 m$ ($m \ge 1$) and width $w \ge 1$, carry-borrow covariance is an exact signed perfect square. |
+| `radix_parity_partition_formula` | `WeightedCarryJetRationality.Theorems` | The parity-twisted partition sum vanishes identically in every even base $B$ and equals $\pm B ^ {2 \lfloor w / 2 \rfloor}$ in every odd base $B$. |

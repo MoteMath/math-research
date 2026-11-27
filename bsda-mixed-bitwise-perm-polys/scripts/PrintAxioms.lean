@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BsdaMixedBitwisePermPolysChallenge.bijective_iff_forall_bitDeriv
+#print axioms BsdaMixedBitwisePermPolysChallenge.bsda_bijective_iff
+#print axioms BsdaMixedBitwisePermPolysChallenge.bsda_finite_slice_iff
+#print axioms BsdaMixedBitwisePermPolysChallenge.maskedPoly_bijective_iff
+#print axioms BsdaMixedBitwisePermPolysChallenge.rivest_classical_mod4_iff
+#print axioms BsdaMixedBitwisePermPolysChallenge.carryPair_bijective_iff
+#print axioms BsdaMixedBitwisePermPolysChallenge.addXorCancel_bijective_iff
+#print axioms BsdaMixedBitwisePermPolysChallenge.klimovShamir_general_iff

@@ -1,0 +1,12 @@
+name = "bit-sliced-affine-shear-groups"
+version = "0.1.0"
+defaultTargets = ["BitSlicedAffineShearGroups", "Solution"]
+
+[[lean_lib]]
+name = "BitSlicedAffineShearGroups"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
