@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FenwickPortalParitySchurChallenge.portalTuple_perturb",
+    "FenwickPortalParitySchurChallenge.bordered_schur_inv",
+    "FenwickPortalParitySchurChallenge.fenwickUQ_unimodular",
+    "FenwickPortalParitySchurChallenge.fenwickUQLap_charpoly_fps",
+    "FenwickPortalParitySchurChallenge.fenwickUQLap_spanning_tree_square",
+    "FenwickPortalParitySchurChallenge.inOrderHeap_charpoly_factorization",
+    "FenwickPortalParitySchurChallenge.witness_dyadic_inv_k2",
+    "FenwickPortalParitySchurChallenge.sharpness_asymmetric_weights_k2"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

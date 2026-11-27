@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Dual Pure-Silicon Mechanisms for Bit-Indexed Spectral & Inversion Towers  Division-Free 6-Tuple Portal-Transfer & Even/Odd Bit-Parity Schur 
+  description: >-
+    We introduce **two composable, division-free pure-silicon infinite proof mechanisms** formalized over an arbitrary commutative ring $R$ (instantiated on $\mathbb{Z}$ and the exact polynomial / formal power series ring $\mathbb{Z}[[X]]$):
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: fenwick-portal-parity-schur
+  license: Apache-2.0

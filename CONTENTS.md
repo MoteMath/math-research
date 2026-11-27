@@ -2170,3 +2170,33 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `hilbert_D4_mod15_annihilation` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `hilbert_D4_mod15_annihilation` proved in pure Lean 4 `Init`. |
 | `nonvacuity_barrier_witnesses` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `nonvacuity_barrier_witnesses` proved in pure Lean 4 `Init`. |
 | `sharpness_and_nonvacuity_family3` | `TreeQuadtreeAutomatonCompiler.Theorems` | Machine-checked infinite theorem `sharpness_and_nonvacuity_family3` proved in pure Lean 4 `Init`. |
+
+## 155. [`fenwick-portal-parity-schur/`](fenwick-portal-parity-schur/)
+
+We introduce **two composable, division-free pure-silicon infinite proof mechanisms** formalized over an arbitrary commutative ring $R$ (instantiated on $\mathbb{Z}$ and the exact polynomial / formal power series ring $\mathbb{Z}[[X]]$):
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `portalTuple_perturb` | `FenwickPortalParitySchur.Theorems` | Machine-checked infinite theorem `portalTuple_perturb` proved in pure Lean 4 `Init`. |
+| `bordered_schur_inv` | `FenwickPortalParitySchur.Theorems` | Bordered Dyadic/Scaled Inverse Lemma (Theorem B2): If `A` is a symmetric bordered matrix `[[0, u^T], [u, B]]` of size `n + 1`, `B * Binv = I_n`, `w = Binv * u`, and `u^T * w = σ`, then `J = [[-1, w^T], [w, σ * Binv - w * w^T]]` satisfies `A * J = σ * I_{n+1}`! |
+| `fenwickUQ_unimodular` | `FenwickPortalParitySchur.Theorems` | Theorem 1b (Unimodularity): Deleting portal `0` yields `det(A(G_k(c)) \ {0}) = 1` for ALL `k ≥ 2`! |
+| `fenwickUQLap_charpoly_fps` | `FenwickPortalParitySchur.Theorems` | Theorem 2d (Exact Laplacian Polynomial-Ring `Z[X]` Instantiation via `FPS`): |
+| `fenwickUQLap_spanning_tree_square` | `FenwickPortalParitySchur.Theorems` | Theorem 4b (Spanning-Tree Perfect-Square Law): By Kirchhoff's Matrix-Tree Theorem, the spanning-tree count `τ(G_{k+1}) = det(L(G_{k+1}) \ {0})` is ALWAYS a perfect square `(tauSeq k + dSeq k)^2` for ALL `k ≥ 1`! |
+| `inOrderHeap_charpoly_factorization` | `FenwickPortalParitySchur.Theorems` | Theorem 6b (Binary Heap `H_k` Characteristic Polynomial Factorization over ANY `CRing R`, `∀ k ≥ 1`): |
+| `witness_dyadic_inv_k2` | `FenwickPortalParitySchur.Theorems` | Witness 6: Exact 1/4-dyadic inverse `A(G_2) * J_2 = 4 * I_5` and `A(G_3) * J_3 = 4 * I_9`. |
+| `sharpness_asymmetric_weights_k2` | `FenwickPortalParitySchur.Theorems` | Sharpness 3 (Equal query/update base weights are sharp): giving query edges `(i, i - lowbit i)` weight `1` and update edges `(i, i + lowbit i)` weight `2` gives `det = -24 ≠ -4` already at `k = 2` (`5 × 5`)! |
+
+## 156. [`kronecker-woodbury-schur-riccati/`](kronecker-woodbury-schur-riccati/)
+
+**Mechanism Name:** **Kronecker-Woodbury Schur-Tower Riccati Engine** (`GeneralSchurTower` + `affine_tower_lift` + `affine_tower_singular_of_core_kernel`). **Core Silicon Principle:** Every bit-serial $b \times b$ affine bit-pair transducer over bit-vectors of length $k$ updates an accumulator across digit positions $r = 0, \dots, k-1$ by producing a $b^k \times b^k$ matrix $M
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `alt_multilin_eq_det_mul` | `KroneckerWoodburySchurRiccati.Theorems` | Alternating multilinear uniqueness over any commutative ring `R`. |
+| `det_add_mul_of_inv` | `KroneckerWoodburySchurRiccati.Theorems` | Matrix Determinant Lemma over any commutative ring `R` given an inverse `Ainv`. |
+| `schur_tower_step_general` | `KroneckerWoodburySchurRiccati.Theorems` | General rank-`r` probe-bank Kronecker-plus-low-rank Schur-tower step over arbitrary `CRing R`. |
+| `bitTransducerMat_eq_affineTower` | `KroneckerWoodburySchurRiccati.Theorems` | Bitwise bridge: entrywise equality between `bitTransducerMat` and `affineTower` for all `k`. |
+| `theorem1_carryGenWalsh_det` | `KroneckerWoodburySchurRiccati.Theorems` | Theorem 1 (Fixed-Point Regime): exact determinant of carry-generate Walsh-Hadamard `carryGenWalshMat lam k` for all `lam` and `k`. |
+| `theorem3_bitEqWalsh_inv_and_zerosum` | `KroneckerWoodburySchurRiccati.Theorems` | Theorem 3 (Zero Absorption): exact Woodbury inverse and zero-sum inverse capacitance law for `bitEqWalshMat k` for all `k`. |
+| `theorem4_programmable_depth_N_singularity` | `KroneckerWoodburySchurRiccati.Theorems` | Theorem 4 (Programmable Depth-N Singularity): `prefixWalshMat N (-1) k` is invertible for all `k < N` and identically singular at exact depth `k = N`. |
+| `nonvacuity_witness_all_theorems` | `KroneckerWoodburySchurRiccati.Theorems` | Nine-conjunct concrete non-vacuity and sharpness witness across all four Riccati regimes. |

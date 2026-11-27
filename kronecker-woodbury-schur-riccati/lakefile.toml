@@ -1,0 +1,12 @@
+name = "kronecker-woodbury-schur-riccati"
+version = "0.1.0"
+defaultTargets = ["KroneckerWoodburySchurRiccati", "Solution"]
+
+[[lean_lib]]
+name = "KroneckerWoodburySchurRiccati"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

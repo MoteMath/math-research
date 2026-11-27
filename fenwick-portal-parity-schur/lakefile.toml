@@ -1,0 +1,12 @@
+name = "fenwick-portal-parity-schur"
+version = "0.1.0"
+defaultTargets = ["FenwickPortalParitySchur", "Solution"]
+
+[[lean_lib]]
+name = "FenwickPortalParitySchur"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

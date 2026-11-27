@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms FenwickPortalParitySchurChallenge.portalTuple_perturb
+#print axioms FenwickPortalParitySchurChallenge.bordered_schur_inv
+#print axioms FenwickPortalParitySchurChallenge.fenwickUQ_unimodular
+#print axioms FenwickPortalParitySchurChallenge.fenwickUQLap_charpoly_fps
+#print axioms FenwickPortalParitySchurChallenge.fenwickUQLap_spanning_tree_square
+#print axioms FenwickPortalParitySchurChallenge.inOrderHeap_charpoly_factorization
+#print axioms FenwickPortalParitySchurChallenge.witness_dyadic_inv_k2
+#print axioms FenwickPortalParitySchurChallenge.sharpness_asymmetric_weights_k2

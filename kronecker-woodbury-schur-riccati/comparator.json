@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "KroneckerWoodburySchurRiccatiChallenge.alt_multilin_eq_det_mul",
+    "KroneckerWoodburySchurRiccatiChallenge.det_add_mul_of_inv",
+    "KroneckerWoodburySchurRiccatiChallenge.schur_tower_step_general",
+    "KroneckerWoodburySchurRiccatiChallenge.bitTransducerMat_eq_affineTower",
+    "KroneckerWoodburySchurRiccatiChallenge.theorem1_carryGenWalsh_det",
+    "KroneckerWoodburySchurRiccatiChallenge.theorem3_bitEqWalsh_inv_and_zerosum",
+    "KroneckerWoodburySchurRiccatiChallenge.theorem4_programmable_depth_N_singularity",
+    "KroneckerWoodburySchurRiccatiChallenge.nonvacuity_witness_all_theorems"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
