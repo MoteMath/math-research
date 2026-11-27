@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carry Defect Weight Spectra - exact Hamming-weight spectra of the carry defect of binary constant multiplication for every multiplier class
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of exact weight spectra of the binary carry defect between carried and carry-less multiplication by a constant c, over unbounded inputs. Includes the exact Mersenne zero-defect characterization and gap at weight one, the complete spectrum for every multiplier congruent to 1 mod 4, a finite potential-certificate checker lifting to all inputs, and certified spectra for 23, 175 and 211.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: carry-defect-weight-spectra
+  license: Apache-2.0

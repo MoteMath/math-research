@@ -1,0 +1,12 @@
+name = "carry-defect-weight-spectra"
+version = "0.1.0"
+defaultTargets = ["CarryDefectWeightSpectra", "Solution"]
+
+[[lean_lib]]
+name = "CarryDefectWeightSpectra"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

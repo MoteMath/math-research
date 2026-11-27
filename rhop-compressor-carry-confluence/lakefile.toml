@@ -1,0 +1,12 @@
+name = "rhop-compressor-carry-confluence"
+version = "0.1.0"
+defaultTargets = ["RhopCompressorCarryConfluence", "Solution"]
+
+[[lean_lib]]
+name = "RhopCompressorCarryConfluence"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

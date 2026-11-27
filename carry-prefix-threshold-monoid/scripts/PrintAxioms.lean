@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms CarryPrefixThresholdMonoidChallenge.collapse_tree_universality
+#print axioms CarryPrefixThresholdMonoidChallenge.collapse_sharpness_obstruction
+#print axioms CarryPrefixThresholdMonoidChallenge.aperiodic
+#print axioms CarryPrefixThresholdMonoidChallenge.enumBounded_length
+#print axioms CarryPrefixThresholdMonoidChallenge.tree_exact_carry_absorption
+#print axioms CarryPrefixThresholdMonoidChallenge.three_input_exact_absorption
+#print axioms CarryPrefixThresholdMonoidChallenge.three_input_resonant_triple_count
+#print axioms CarryPrefixThresholdMonoidChallenge.odd_modulus_never_absorbs

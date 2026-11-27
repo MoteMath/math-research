@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarryDefectWeightSpectraChallenge.spectrum_one_mod_four",
+    "CarryDefectWeightSpectraChallenge.mersenne_zero_defect_iff",
+    "CarryDefectWeightSpectraChallenge.mersenne_spectrum_classify",
+    "CarryDefectWeightSpectraChallenge.defectWeight_shift_add",
+    "CarryDefectWeightSpectraChallenge.potentialCert_sound",
+    "CarryDefectWeightSpectraChallenge.spectrum_23",
+    "CarryDefectWeightSpectraChallenge.spectrum_175",
+    "CarryDefectWeightSpectraChallenge.spectrum_211"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

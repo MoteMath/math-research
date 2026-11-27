@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Gray Carry Whitening Transducer - exact 3-to-the-(w minus popcount) fiber law for Gray-coded carry words of binary addition at every width
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of exact fiber counts of the Gray-coded carry word of binary addition. A balanced-slice transducer lifts a finite check to an exact count at every word width, giving the whitening law 3^(w - popcount z), the joint carry-borrow count, Gray orthogonality of carry and borrow words, the radix-B generalization and an impossibility result for three or more operands.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: gray-carry-whitening-transducer
+  license: Apache-2.0

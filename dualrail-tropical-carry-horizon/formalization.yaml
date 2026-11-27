@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Dualrail Tropical Carry Horizon - dual-rail redundant binary addition with exact horizon-2 locality and all-width certificates
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of dual-rail redundant binary addition on infinite streams. A finite potential certificate lifts to an exact integer identity at every width, a relational invariant lifts to equality modulo 2^w, addition is exactly associative modulo 2^w, every output bit depends only on a window of two input positions, expression compilation to right chains is exact at all widths, the horizon bound is attained, and ripple carry has no finite horizon certificate.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: dualrail-tropical-carry-horizon
+  license: Apache-2.0

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carry Prefix Threshold Monoid - finite aperiodic carry-lookahead monoid for multi-input signed-borrow and modular binary arithmetic at every word width
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a generalized carry-lookahead prefix monoid. Floor-division carry maps collapse faithfully into the finite aperiodic threshold-step semigroup of cardinality N^2 - N + 1 on every super-critical block, lifting to every parallel-prefix tree shape and every word width, with exact carry-absorption laws, exact resonant string counts, sharpness obstructions and a modular odd-modulus non-absorption law.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: carry-prefix-threshold-monoid
+  license: Apache-2.0

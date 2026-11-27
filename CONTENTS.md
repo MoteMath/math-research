@@ -962,3 +962,78 @@ Pure-Init Lean 4 dual MSB-Euclid / LSB-2-adic carry-transducer engine with resid
 | `ModularCarryResidueDualityChallenge.mersenne_reciprocal_popcount_law` | `ModularCarryResidueDuality.Theorems` | $s _ 2(Q _ {t k}(r)) = t (k - s _ 2(r)) + 1 - v _ 2(r)$ for $0 < r < 2 ^ k - 1$. |
 | `ModularCarryResidueDualityChallenge.negacyclic_reciprocal_popcount_law` | `ModularCarryResidueDuality.Theorems` | For odd $m \ge 3$ with $m \mid 2 ^ d + 1$: $s _ 2(Q _ {2 t d}(r)) = t d + 1 - v _ 2(r)$ for $0 < r < m$, independent of $s _ 2(r)$. |
 | `ModularCarryResidueDualityChallenge.fermat_reciprocal_popcount_law` | `ModularCarryResidueDuality.Theorems` | $s _ 2(Q _ {2 t k}(r)) = t k + 1 - v _ 2(r)$ for $m = 2 ^ k + 1$ and $0 < r < m$. |
+
+## 74. [`carry-defect-weight-spectra/`](carry-defect-weight-spectra/)
+
+Exact Hamming-weight spectra of the carry defect between integer and carry-less multiplication: complete for multipliers 1 mod 4, the Mersenne gap law, and a certificate compiler.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `spectrum_one_mod_four` | `CarryDefectWeightSpectra.Theorems` | For every $c \ge 5$ with $c \bmod 4 = 1$ and every $w \in \mathbb{N}$ there is an $x$ with $W _ c (x) = w$, i.e. $\mathcal{W}(c) = \mathbb{N}$. |
+| `mersenne_zero_defect_iff` | `CarryDefectWeightSpectra.Theorems` | For $m \ge 1$ and every $x$, $\Delta(2 ^ m - 1, x) = 0$ if and only if $x$ is $m$-sparse (the $m$-fold generalization of Fibbinary numbers). |
+| `mersenne_spectrum_classify` | `CarryDefectWeightSpectra.Theorems` | For $m \ge 2$ and every $w$, a weight-$w$ defect exists if and only if $w \ne 1$. |
+| `defectWeight_shift_add` | `CarryDefectWeightSpectra.Theorems` | If $x < 2 ^ K$ and $c x < 2 ^ K$ then $W _ c (x + 2 ^ K y) = W _ c (x) + W _ c (y)$ for every $y$. |
+| `potentialCert_sound` | `CarryDefectWeightSpectra.Theorems` | If a finite state-table certificate passes the executable check and its root has pending tails $(0, 0)$, then $\Delta(c, x) \ne 0$ implies $\mu \le W _ c (x)$ for every $x \in \mathbb{N}$, where $\mu$ is the certified bound. |
+| `spectrum_23` | `CarryDefectWeightSpectra.Theorems` | A defect of weight $w$ exists for $c = 23$ if and only if $w \ne 1$. |
+| `spectrum_175` | `CarryDefectWeightSpectra.Theorems` | A defect of weight $w$ exists for $c = 175$ if and only if $w = 0$ or $w \ge 3$. |
+| `spectrum_211` | `CarryDefectWeightSpectra.Theorems` | Every weight $w \in \mathbb{N}$ is attained for $c = 211$, including weight $1$. |
+
+## 75. [`carry-prefix-threshold-monoid/`](carry-prefix-threshold-monoid/)
+
+Carry-lookahead prefix monoid: a sharp width threshold collapses all multi-input, signed-borrow and modular carry maps into a finite aperiodic threshold-step semigroup.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `collapse_tree_universality` | `CarryPrefixThresholdMonoid.Theorems` | For every prefix tree whose leaf blocks have modulus at least $U - L$ and preserve the window $[L, U]$, evaluating the tree in the finite threshold-step semigroup and applying it to any carry $c \in [L, U]$ equals the exact floor-division carry action. |
+| `collapse_sharpness_obstruction` | `CarryPrefixThresholdMonoid.Theorems` | If $0 < M < U - L$ there is a block of modulus $M$ whose action on $[L, U]$ is represented by no threshold-step element, so the width threshold is sharp. |
+| `aperiodic` | `CarryPrefixThresholdMonoid.Theorems` | Every threshold-step element satisfies $e ^ 3 = e ^ 2$ (the semigroup is aperiodic of index at most $2$). |
+| `enumBounded_length` | `CarryPrefixThresholdMonoid.Theorems` | The bounded threshold-step semigroup on $N \ge 1$ carry states has exactly $N ^ 2 - N + 1$ elements. |
+| `tree_exact_carry_absorption` | `CarryPrefixThresholdMonoid.Theorems` | A prefix tree of threshold-step elements evaluates to a constant (absorbs every incoming carry) if and only if its fringe is not a resonant chain. |
+| `three_input_exact_absorption` | `CarryPrefixThresholdMonoid.Theorems` | For every prefix tree of three-operand digit sums $s \le 3$, absorption holds iff the digit string is not bit-resonant, for both the unsigned and the signed-borrow encodings. |
+| `three_input_resonant_triple_count` | `CarryPrefixThresholdMonoid.Theorems` | For every width $w \ge 1$ the resonant digit strings carry total weight $2 \cdot 4 ^ w$ (out of $8 ^ w$ operand triples). |
+| `odd_modulus_never_absorbs` | `CarryPrefixThresholdMonoid.Theorems` | For every odd $m > 1$, every width $w$ and residue $r < m$, the base-$2$ block of width $w$ is not carry-absorbing modulo $m$. |
+
+## 76. [`dualrail-tropical-carry-horizon/`](dualrail-tropical-carry-horizon/)
+
+Dual-rail redundant binary addition: finite potential and relational certificates lift to exact all-width identities, with an exactly tight horizon-2 bound and no horizon for ripple carry.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `potential_lift_all_widths` | `DualrailTropicalCarryHorizon.Theorems` | A valid finite potential certificate $\varphi$ for a dual-rail transducer gives, at every width $w$, $\mathrm{prefixVal} _ w (\text{out}) + 2 ^ w \varphi(\text{state} _ w) = \mathrm{prefixSum} _ w (\text{target}) + \varphi(q)$. |
+| `relational_bisim_mod_eq` | `DualrailTropicalCarryHorizon.Theorems` | A valid finite relational invariant between two transducers, vanishing on the initial pair, forces equal prefix values modulo $2 ^ w$ at every width $w$. |
+| `avizAdd_exact_int` | `DualrailTropicalCarryHorizon.Theorems` | For every width $w$ and all streams $x, y$: $\mathrm{prefixVal} _ w (x \boxplus y) + 2 ^ w \varphi(\text{state} _ w) = \mathrm{prefixVal} _ w (x) + \mathrm{prefixVal} _ w (y)$ for the dual-rail adder $\boxplus$. |
+| `avizAdd_assoc_mod` | `DualrailTropicalCarryHorizon.Theorems` | For every width $w$ and all streams $x, y, z$, $(x \boxplus y) \boxplus z$ and $x \boxplus (y \boxplus z)$ have equal prefix values modulo $2 ^ w$. |
+| `avizAdd_horizon2` | `DualrailTropicalCarryHorizon.Theorems` | If two pairs of input streams agree on positions $i - 2, i - 1, i$ then the adder outputs agree at position $i$. |
+| `compileRight_equiv_all_widths` | `DualrailTropicalCarryHorizon.Theorems` | For every width $w$, environment and dual-rail expression $e$, the right-chain compilation of $e$ has the same prefix value modulo $2 ^ w$ as the direct evaluation. |
+| `exact_horizon_achieved` | `DualrailTropicalCarryHorizon.Theorems` | For every outer port word and inner port, two streams differing only at position $0$ give chain outputs that differ at the computed maximal lag, so the horizon bound is attained. |
+| `no_horizon_cert_for_ripple` | `DualrailTropicalCarryHorizon.Theorems` | For every $H$ and rank table $R$, the ripple-carry transducer admits no valid horizon certificate. |
+
+## 77. [`gray-carry-whitening-transducer/`](gray-carry-whitening-transducer/)
+
+Exact fiber counts for the Gray-coded carry word of binary addition at every width, carry-borrow Gray orthogonality, radix-B generalization and a k-operand impossibility.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `gray_carry_whitening_binary` | `GrayCarryWhiteningTransducer.Theorems` | For every $w$, $c _ 0$ and $z < 2 ^ w$, exactly $3 ^ {w - \lvert z \rvert}$ pairs of $w$-bit operands have Gray-coded carry word equal to $z$ modulo $2 ^ w$. |
+| `gray_carry_whitening_gray_coords` | `GrayCarryWhiteningTransducer.Theorems` | The same count $3 ^ {w - \lvert z \rvert}$ holds for the carry defect of Gray-code addition, computed in Gray coordinates. |
+| `gray_carry_full_fiber_count` | `GrayCarryWhiteningTransducer.Theorems` | For $z < 2 ^ {w + 1}$ the number of pairs with Gray-coded carry word exactly $z$ is $3 ^ {w - \lvert z \bmod 2 ^ w \rvert}$ if the parity of $z$ equals $c _ 0$, and $0$ otherwise. |
+| `gray_joint_carry_borrow_fiber_count` | `GrayCarryWhiteningTransducer.Theorems` | For $u, v < 2 ^ w$ the number of pairs with Gray carry word $u$ and Gray borrow word $v$ (mod $2 ^ w$) is $2 ^ {w - \lvert u \rvert - \lvert v \rvert}$ if $u \mathbin{\&} v = 0$ and $0$ otherwise. |
+| `gray_carry_borrow_orthogonal` | `GrayCarryWhiteningTransducer.Theorems` | If $b + b _ 0 \le a$ then the Gray-coded carry word of $a + b + c _ 0$ and the Gray-coded borrow word of $a - b - b _ 0$ have disjoint bits. |
+| `radix_carry_whitening_law` | `GrayCarryWhiteningTransducer.Theorems` | For every base $B \ge 2$, width $w$ and $z < 2 ^ w$, the carry-difference word has fiber count $\binom{B + 1}{2} ^ {w - \lvert z \rvert} \binom{B}{2} ^ {\lvert z \rvert}$. |
+| `k_operand_whitening_impossibility` | `GrayCarryWhiteningTransducer.Theorems` | For every arity $k \ge 3$ the multi-operand carry slice counts are not all equal, so balanced whitening is impossible. |
+| `radix_carry_borrow_orthogonality_binary_unique` | `GrayCarryWhiteningTransducer.Theorems` | For every base $B \ge 3$ there are digits $d _ 1, d _ 2 < B$ producing a carry and a borrow at the same position, so $B = 2$ is the unique radix of carry-borrow orthogonality. |
+
+## 78. [`rhop-compressor-carry-confluence/`](rhop-compressor-carry-confluence/)
+
+Exact capacity dichotomies for carry-free binary compressor cells at every hop depth, an exact classification of 1-hop carry-free 4:2 compressors, a carry-ledger popcount conservation law for arbitrary compressor networks, and a minimal carry-defect transducer certifying carry-save confluence.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `carry_free_capacity_dichotomy` | `RhopCompressorCarryConfluence.Defs` | $\mathrm{Nonempty}(\mathrm{CarryFreeCell}\; p\; v\; M) \iff M \le 2 v \land p \le M + 2 v + 1$ for all $p \ge 1$ and all $v, M$. |
+| `rhop_capacity_dichotomy` | `RhopCompressorCarryConfluence.Defs` | $\mathrm{Nonempty}(\mathrm{RHopCompressor}\; p\; v\; r) \iff p \le 2 v \cdot 2 ^ r + 1$ for all $p \ge 1$ and all $v, r$. |
+| `no_carry_free_6_2` | `RhopCompressorCarryConfluence.Defs` | No 1-hop carry-free 6:2 compressor exists for any horizontal carry bound $M$. |
+| `no_3hop_18_2` | `RhopCompressorCarryConfluence.Defs` | No 3-hop 18:2 compressor exists (while 3-hop 17:2 does). |
+| `cell42_bijection_right` | `RhopCompressorCarryConfluence.Defs` | Every valid 1-hop carry-free 4:2 horizontal-carry function equals $h _ m$ for some mask $m$ in $\mathrm{Fin}\; 64$ (exact 64-cell classification). |
+| `netW_popcount_carry_conservation` | `RhopCompressorCarryConfluence.Defs` | For any mixed compressor network with carry ledger $K$ and width $w \ge 1$: $\mathrm{popListW}(Y, w) + \sum _ {k < w - 1} K(k) + 2 K(w - 1) = \mathrm{popListW}(X, w)$. |
+| `confluence_csa_3state` | `RhopCompressorCarryConfluence.Theorems` | Two networks reaching column height at most 2 are accepted by the 3-state transducer with state equal to the carry-ledger difference in $\{-1, 0, 1\}$ at every prefix. |
+| `transducer_state_minimality` | `RhopCompressorCarryConfluence.Theorems` | For every $h \ge 1$ every state $q$ in $\{-(h-1), \dots, h-1\}$ is reached by some pair of equal-sum height-$h$ word lists, so $2h - 1$ states are necessary. |

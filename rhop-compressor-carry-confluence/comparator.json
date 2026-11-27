@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "RhopCompressorCarryConfluenceChallenge.carry_free_capacity_dichotomy",
+    "RhopCompressorCarryConfluenceChallenge.rhop_capacity_dichotomy",
+    "RhopCompressorCarryConfluenceChallenge.no_carry_free_6_2",
+    "RhopCompressorCarryConfluenceChallenge.no_3hop_18_2",
+    "RhopCompressorCarryConfluenceChallenge.cell42_bijection_right",
+    "RhopCompressorCarryConfluenceChallenge.netW_popcount_carry_conservation",
+    "RhopCompressorCarryConfluenceChallenge.confluence_csa_3state",
+    "RhopCompressorCarryConfluenceChallenge.transducer_state_minimality"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

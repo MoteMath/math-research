@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "GrayCarryWhiteningTransducerChallenge.gray_carry_whitening_binary",
+    "GrayCarryWhiteningTransducerChallenge.gray_carry_whitening_gray_coords",
+    "GrayCarryWhiteningTransducerChallenge.gray_carry_full_fiber_count",
+    "GrayCarryWhiteningTransducerChallenge.gray_joint_carry_borrow_fiber_count",
+    "GrayCarryWhiteningTransducerChallenge.gray_carry_borrow_orthogonal",
+    "GrayCarryWhiteningTransducerChallenge.radix_carry_whitening_law",
+    "GrayCarryWhiteningTransducerChallenge.k_operand_whitening_impossibility",
+    "GrayCarryWhiteningTransducerChallenge.radix_carry_borrow_orthogonality_binary_unique"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

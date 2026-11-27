@@ -1,0 +1,12 @@
+name = "gray-carry-whitening-transducer"
+version = "0.1.0"
+defaultTargets = ["GrayCarryWhiteningTransducer", "Solution"]
+
+[[lean_lib]]
+name = "GrayCarryWhiteningTransducer"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

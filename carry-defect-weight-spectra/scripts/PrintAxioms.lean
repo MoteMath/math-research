@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms CarryDefectWeightSpectraChallenge.spectrum_one_mod_four
+#print axioms CarryDefectWeightSpectraChallenge.mersenne_zero_defect_iff
+#print axioms CarryDefectWeightSpectraChallenge.mersenne_spectrum_classify
+#print axioms CarryDefectWeightSpectraChallenge.defectWeight_shift_add
+#print axioms CarryDefectWeightSpectraChallenge.potentialCert_sound
+#print axioms CarryDefectWeightSpectraChallenge.spectrum_23
+#print axioms CarryDefectWeightSpectraChallenge.spectrum_175
+#print axioms CarryDefectWeightSpectraChallenge.spectrum_211

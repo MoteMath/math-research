@@ -1,0 +1,12 @@
+name = "carry-prefix-threshold-monoid"
+version = "0.1.0"
+defaultTargets = ["CarryPrefixThresholdMonoid", "Solution"]
+
+[[lean_lib]]
+name = "CarryPrefixThresholdMonoid"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

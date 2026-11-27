@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarryPrefixThresholdMonoidChallenge.collapse_tree_universality",
+    "CarryPrefixThresholdMonoidChallenge.collapse_sharpness_obstruction",
+    "CarryPrefixThresholdMonoidChallenge.aperiodic",
+    "CarryPrefixThresholdMonoidChallenge.enumBounded_length",
+    "CarryPrefixThresholdMonoidChallenge.tree_exact_carry_absorption",
+    "CarryPrefixThresholdMonoidChallenge.three_input_exact_absorption",
+    "CarryPrefixThresholdMonoidChallenge.three_input_resonant_triple_count",
+    "CarryPrefixThresholdMonoidChallenge.odd_modulus_never_absorbs"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

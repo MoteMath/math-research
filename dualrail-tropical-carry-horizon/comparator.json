@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "DualrailTropicalCarryHorizonChallenge.potential_lift_all_widths",
+    "DualrailTropicalCarryHorizonChallenge.relational_bisim_mod_eq",
+    "DualrailTropicalCarryHorizonChallenge.avizAdd_exact_int",
+    "DualrailTropicalCarryHorizonChallenge.avizAdd_assoc_mod",
+    "DualrailTropicalCarryHorizonChallenge.avizAdd_horizon2",
+    "DualrailTropicalCarryHorizonChallenge.compileRight_equiv_all_widths",
+    "DualrailTropicalCarryHorizonChallenge.exact_horizon_achieved",
+    "DualrailTropicalCarryHorizonChallenge.no_horizon_cert_for_ripple"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

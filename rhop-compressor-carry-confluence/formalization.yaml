@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: r-Hop Compressor Capacity and Carry-Save Confluence - exact capacity dichotomies for carry-free binary compressors and a minimal (2h-1)-state confluence transducer
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the sharp 1-hop and r-hop capacity dichotomies for carry-free binary compressor cells (p <= 2v*2^r + 1), the exact 64-cell classification of 1-hop carry-free 4:2 compressors, the exact carry-ledger popcount conservation law for arbitrary mixed compressor networks at every width, arity and depth, and the minimal (2h-1)-state carry-defect transducer certifying confluence of carry-save trees.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: rhop-compressor-carry-confluence
+  license: Apache-2.0
