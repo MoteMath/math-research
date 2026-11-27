@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "TwoAdicNewtonPolyOptimalityChallenge.fact_exactVal2",
+    "TwoAdicNewtonPolyOptimalityChallenge.exact_2adic_poly_reciprocal_optimality",
+    "TwoAdicNewtonPolyOptimalityChallenge.exact_2adic_poly_optimality_pow2_sub_one",
+    "TwoAdicNewtonPolyOptimalityChallenge.circuit_mulDepth_optimality_pos",
+    "TwoAdicNewtonPolyOptimalityChallenge.cert_minimal_step_optimality_closed",
+    "TwoAdicNewtonPolyOptimalityChallenge.recip_minimal_step_dumas",
+    "TwoAdicNewtonPolyOptimalityChallenge.invSqrtS3_popcount_supergain",
+    "TwoAdicNewtonPolyOptimalityChallenge.invSqrtS4_eq_S2_double_valuation"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1097,3 +1097,48 @@ Pure-Init Lean 4 exact single-cycle lifting laws for 1-Lipschitz 2-adic T-functi
 | `runT_singleCycle_iff` | `TfunctionCurvatureHolonomy.Theorems` | For every $d \ge 2$ and $C$, $R _ {d,C}(x) = x + ((2 \cdot \mathrm{run} _ d(x)) \mathbin{|} C)$ is single-cycle at every width if and only if $C _ 0 = 1$ and $C _ d = 1$. |
 | `runT_sharp_threshold` | `TfunctionCurvatureHolonomy.Theorems` | For every $d \ge 2$, $R _ {d,1}$ is single-cycle at every width $1 \le w \le d$ but not at width $d + 1$. |
 | `no_universal_finite_threshold` | `TfunctionCurvatureHolonomy.Theorems` | For every $W \ge 1$ there is a $1$-Lipschitz T-function that is single-cycle at all widths $1 \le w \le W$ but not at width $W + 1$. |
+
+## 83. [`carryless-carried-resonance-curve/`](carryless-carried-resonance-curve/)
+
+Carried versus carry-less power valuations, resonance curve and Hensel-bridge lifter (pure `Init`).
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `henselLift_iff_dvd` | `CarrylessCarriedResonanceCurve.Theorems` | For a scaled isometry $F$ at scale $L$: $2^{L+t} \mid F(n)$ if and only if $n \bmod 2^t$ equals the Hensel lift of $F$ at precision $t$. |
+| `regime_I_carried_dominated` | `CarrylessCarriedResonanceCurve.Theorems` | If $v _ 2(a - 1) = r \ge 2$, $e \ge 1$, $m$ odd, then $v _ 2(a^{2^e m} - \mathrm{clpow}(a, 2^e m)) = r + e$. |
+| `regime_II_carryless_dominated` | `CarrylessCarriedResonanceCurve.Theorems` | If $v _ 2(a + 1) = s \ge 2$, $e \ge 1$, $m$ odd and $2^e < s + e$, then the valuation is $2^e$. |
+| `regime_III_carried_dominated` | `CarrylessCarriedResonanceCurve.Theorems` | If $v _ 2(a + 1) = s \ge 2$, $e \ge 1$, $m$ odd and $s + e < 2^e$, then the valuation is $s + e$. |
+| `resonant_bridge_master` | `CarrylessCarriedResonanceCurve.Theorems` | On the resonance curve $v _ 2(a + 1) = 2^e - e$ with $e \ge 2$ and odd $B$, the bridge has a Hensel root below $2^t$ at every precision, an exact divisibility characterization, and an unbounded root. |
+| `resonant_root_invariance_below_threshold` | `CarrylessCarriedResonanceCurve.Theorems` | The Hensel roots of the bridge are the same for every odd $B < 2^{2^e}$ as for $B = 1$. |
+| `resonant_bit_root_shift_law` | `CarrylessCarriedResonanceCurve.Theorems` | The first root bit for odd $B$ equals the first root bit for $B = 1$ XOR bit $2^e$ of $B$. |
+| `resonance_curve_infinitely_inhabited` | `CarrylessCarriedResonanceCurve.Theorems` | For all $e, q$, the number $x = (2q + 1) 2^{2^e - e} - 1$ lies on the resonance curve: $v _ 2(x + 1) = 2^e - e$. |
+
+## 84. [`stern-walsh-carry-resonance/`](stern-walsh-carry-resonance/)
+
+Stern diatomic Walsh-Hadamard spectrum and mod-3 carry-shift resonance (pure `Init`, certificate lifters).
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `stern_cw_bridge` | `SternWalshCarryResonance.Theorems` | For every $k$ and $x < 2^k$, the Calkin-Wilf matrix word of $x$ applied to $(1, 0)$ equals $(s(2^k + x),\, s(2^k + x + 1))$. |
+| `stern_walsh_spectrum` | `SternWalshCarryResonance.Theorems` | For all $k$ and $m < 2^k$: $\sum _ {x < 2^k} (-1)^{\mathrm{pop}(x \,\&\, m)}\, s(2^k + x) = (-1)^{p(p+1)/2} \cdot 3^{k - \mathrm{pop}(m \,\mathrm{OR}\, \mathrm{igray}(m))}$ with $p = \mathrm{pop}(m)$. |
+| `aStern_walsh_spectrum` | `SternWalshCarryResonance.Theorems` | For every integer $a$, the first coordinate of the $a$-Stern Walsh sum is $(-1)^{p(p+1)/2}\, a^{p}\, (2 + a)^{e _ +}\, (2 - a)^{e _ -}$. |
+| `twoStern_walsh_vanishing` | `SternWalshCarryResonance.Theorems` | At $a = 2$ the Walsh vector at mask $m$ is zero if and only if $e _ -(m) > 0$. |
+| `carryStern_mod0_periodic` | `SternWalshCarryResonance.Theorems` | For $c = 3q$ and $2^k \ge c$: $F _ c(k+4) = F _ c(k)$, $G _ c(k+4) = G _ c(k)$ and $F _ c(k+2) \ne F _ c(k)$. |
+| `carryStern_mod1_affine` | `SternWalshCarryResonance.Theorems` | For $c = 3q + 1$ and $2^k \ge c$: $F _ c(k+1) - F _ c(k) = -2\,(-1)^{\mathrm{pop}(q)}$ and $G _ c(k+4) = G _ c(k)$. |
+| `carryStern_mod2_affine_dual` | `SternWalshCarryResonance.Theorems` | For $c = 3q + 2$ and $2^k \ge c$: $F _ c(k+4) = F _ c(k)$ and $G _ c(k+1) - G _ c(k) = -2\,(-1)^{\mathrm{pop}(q)}$. |
+| `quadStern_tm_closed_form` | `SternWalshCarryResonance.Theorems` | For every $k \ge 1$ the quadratic Thue-Morse Stern vector has $x$-coordinate $-3 \cdot (-5)^{\lfloor (k-1)/2 \rfloor}$ and an explicit $y$-coordinate. |
+
+## 85. [`two-adic-newton-poly-optimality/`](two-adic-newton-poly-optimality/)
+
+Exact 2-adic Newton, polynomial and circuit optimality laws (pure `Init`).
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `fact_exactVal2` | `TwoAdicNewtonPolyOptimality.Theorems` | For every $n$, $v _ 2(n!) = n - \mathrm{pop}(n)$ exactly (Legendre). |
+| `exact_2adic_poly_reciprocal_optimality` | `TwoAdicNewtonPolyOptimality.Theorems` | For all $D, N$: some integer polynomial $p$ of degree at most $D$ satisfies $2^N \mid 1 - a\, p(a)$ for every odd $a$ if and only if $N \le 2(D+1) - \mathrm{pop}(D+1)$. |
+| `exact_2adic_poly_optimality_pow2_sub_one` | `TwoAdicNewtonPolyOptimality.Theorems` | With at most $2^k$ coefficients the exact optimal precision is $2^{k+1} - 1$ bits. |
+| `circuit_mulDepth_optimality_pos` | `TwoAdicNewtonPolyOptimality.Theorems` | An integer circuit of multiplicative depth $k \ge 1$ that inverts every odd $a$ modulo $2^N$ has $N \le 2^{k+1}$. |
+| `cert_minimal_step_optimality_closed` | `TwoAdicNewtonPolyOptimality.Theorems` | For any affine contraction certificate, the universal precision after $k$ steps is exactly the closed form $(d - 1) N \le d^k ((d - 1) m _ 0 - s) + s$. |
+| `recip_minimal_step_dumas` | `TwoAdicNewtonPolyOptimality.Theorems` | The order-$d$ reciprocal iteration seeded by the Dumas seed inverts every odd $a$ modulo $2^N$ after $k$ steps if and only if $N \le 5 d^k$. |
+| `invSqrtS3_popcount_supergain` | `TwoAdicNewtonPolyOptimality.Theorems` | The cubic inverse-square-root step has exact error valuation $(3^k (2 m _ 0 - 3) + 3) / 2$, which exceeds the quadratic one by $(3^k - 1)/2$. |
+| `invSqrtS4_eq_S2_double_valuation` | `TwoAdicNewtonPolyOptimality.Theorems` | The quartic inverse-square-root step after $k$ steps has the same exact valuation $4^k (m _ 0 - 2) + 2$ as the quadratic step after $2k$ steps. |

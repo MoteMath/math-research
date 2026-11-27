@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Two-Adic Newton Poly Optimality - exact precision laws for 2-adic reciprocals and inverse square roots
+  description: >-
+    A sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of exact valuation-contraction laws for 2-adic Newton-Hensel iterations, an exact two-sided optimality law for polynomial reciprocal precision modulo 2^N, a universal multiplicative-depth ceiling for integer circuits, and the popcount super-gain of the cubic inverse square root.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: two-adic-newton-poly-optimality
+  license: Apache-2.0

@@ -1,0 +1,12 @@
+name = "carryless-carried-resonance-curve"
+version = "0.1.0"
+defaultTargets = ["CarrylessCarriedResonanceCurve", "Solution"]
+
+[[lean_lib]]
+name = "CarrylessCarriedResonanceCurve"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

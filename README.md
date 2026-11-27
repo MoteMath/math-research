@@ -96,6 +96,9 @@ Each project carries a heuristic self-rating out of `100` across five `1–10` d
 | [`ca-torsion-lyapunov-flux-compiler/`](ca-torsion-lyapunov-flux-compiler/) | 8 | 8 | 8 | 7 | 10 | **80** |
 | [`tfunction-curvature-holonomy/`](tfunction-curvature-holonomy/) | 8 | 8 | 8 | 7 | 10 | **80** |
 | [`fcsr-cyclotomic-zolotarev/`](fcsr-cyclotomic-zolotarev/) | 7 | 8 | 8 | 8 | 10 | **79** |
+| [`two-adic-newton-poly-optimality/`](two-adic-newton-poly-optimality/) | 7 | 8 | 8 | 8 | 10 | **79** |
+| [`carryless-carried-resonance-curve/`](carryless-carried-resonance-curve/) | 8 | 9 | 7 | 6 | 10 | **78** |
+| [`stern-walsh-carry-resonance/`](stern-walsh-carry-resonance/) | 8 | 8 | 8 | 6 | 10 | **78** |
 | [`weak-bruhat-commutators/`](weak-bruhat-commutators/) | 7 | 8 | 8 | 7 | 10 | **77** |
 | [`popcount-clock-borrow-accel/`](popcount-clock-borrow-accel/) | 8 | 8 | 7 | 6 | 10 | **76** |
 | [`carry-blocks-determinants/`](carry-blocks-determinants/) | 6 | 7 | 9 | 7 | 9 | **73** |
@@ -485,39 +488,54 @@ Each project carries a heuristic self-rating out of `100` across five `1–10` d
 - **For Mathematicians:** Pure-Init Lean 4 development of the exact 2-adic potential P_q(a, m) of Fibonacci FCSRs of every odd connection integer q >= 3, a global bijection conjugating the clock tick to p -> (p - q (p mod 2))/2, with the exact word representation q W_n + 2^n P(step^n s) = P(s), bijectivity on the periodic core, constructive Goresky-Klapper carry bounds via a complement involution, universal carry-bit conservation over periodic orbits, half-period complementation certificates (q | (2^h + 1) P), the d-section cyclotomic engine (q | repunit(d, k) gives section quantum c(t) in [1, d-1], period k), a from-scratch inversion-parity Zolotarev proof that 2^T = 1 mod q forces T even for q = 3, 5 mod 8 (prime or composite), and infinite families such as q = 2^k + 3.
 - **Prior art & stack:** FCSR theory (Klapper-Goresky 1997; Arnault-Berger); Zolotarev lemma (1872) and the Jacobi symbol for q = 3, 5 mod 8 (classical, not claimed new). Referee-2 PASS (#90); referee-6 novelty audit pending at packaging time. Possibly new: exact integer potential bijection with constructive carry bounds, half-period and d-section cyclotomic conservation laws on the full state, from-scratch inversion-parity proof of the even-period law, infinite q = 2^k +- const families.
 
-### 77. [`weak-bruhat-commutators/`](weak-bruhat-commutators/) — **77 / 100**
+### 77. [`two-adic-newton-poly-optimality/`](two-adic-newton-poly-optimality/) — **79 / 100**
+- **Plain English:** To compute $1/a$ modulo $2^N$ for odd $a$ one can use Newton's iteration, or a fixed polynomial in $a$, or an arbitrary arithmetic circuit. We prove exact optimality laws for all three: the best precision a polynomial of degree $D$ can reach is exactly $2(D+1) - \mathrm{popcount}(D+1)$ bits, and no circuit with multiplicative depth $k$ beats $2^{k+1}$ bits.
+- **For Mathematicians:** Exact two-sided law $N \le 2(D+1) - \mathrm{pop}(D+1)$ for degree-$D$ polynomial 2-adic reciprocals, a universal multiplicative-depth ceiling $2^{k+1}$ for integer circuits, exact valuation orbits for reciprocal and inverse-square-root Newton steps (cubic popcount super-gain), certified from finite affine contraction certificates.
+- **Prior art & stack:** Hensel lifting and Newton iteration (Montgomery 1985); Dumas (2014) seed; Legendre factorial valuation; Bhargava (1997) generalized factorials (nearest prior art for the odd-unit threshold). New: exact $2(D+1) - \mathrm{pop}(D+1)$ law, depth ceiling $2^{k+1}$, cubic and quartic inverse-square-root laws.
+
+### 78. [`carryless-carried-resonance-curve/`](carryless-carried-resonance-curve/) — **78 / 100**
+- **Plain English:** Multiplying numbers with carries (the ordinary way) and without carries (the way a binary polynomial multiplier over $\mathbb{F} _ 2$ does) give different answers. We prove exactly how many trailing binary digits the two answers share for the powers $a^n$, in every case, and find an exact "resonance curve" where the ordinary and carry-free worlds interlock perfectly.
+- **For Mathematicians:** Exact four-regime law for $v _ 2(a^n - \mathrm{clpow}(a, n))$ comparing carried and carry-less ($\mathbb{F} _ 2[x]$) powers, an infinitely inhabited resonance curve where the bridge is a scaled 2-adic isometry with a unique non-natural root, and a reusable Hensel-bridge lifter.
+- **Prior art & stack:** Carry-less multiplication (CLMUL, Gueron-Kounavis 2010) and Frobenius dilation; Hensel lifting and 2-adic isometries (Anashin-Khrennikov 2009). New: four-regime law, resonance-curve scaled isometry with non-natural root, bit-$2^e$ root shift.
+
+### 79. [`stern-walsh-carry-resonance/`](stern-walsh-carry-resonance/) — **78 / 100**
+- **Plain English:** Stern's diatomic sequence $s(n)$ (1, 1, 2, 1, 3, 2, 3, 1, 4, ...) counts hyperbinary representations and sits at the heart of the Calkin-Wilf tree of all positive fractions. We prove that every one of its $2^k$ Walsh-Hadamard coefficients at level $k$ is a signed pure power of $3$ with an explicit exponent, for every $k$ at once, and that adding a carry shift inside the Thue-Morse sign turns the level sums into an exact period-4 or affine pattern decided by $c$ modulo $3$.
+- **For Mathematicians:** Exact Walsh-Hadamard spectrum of Stern's diatomic sequence ($\pm 3^e$ with Gray-code exponent), the parametric $a$-Stern law with the $a = 2$ vanishing criterion, and an exact mod-3 carry-shift resonance, all lifted from finite integer certificates to every level $k$.
+- **Prior art & stack:** Stern (1858) and Calkin-Wilf (2000) tree; Reznick (1990) binary partition functions (nearest prior art); Walsh-Hadamard transform; Thue-Morse sign; inverse Gray code. New: closed-form Gray-code Walsh spectrum, $a = 2$ vanishing law, mod-3 carry-shift resonance.
+
+### 80. [`weak-bruhat-commutators/`](weak-bruhat-commutators/) — **77 / 100**
 - **Plain English:** Running stack-sort or pop-stack-sort **before** $k$ bubble-sort passes always leaves cards at least as sorted as running them **after**, for every deck and every $k$.
 - **For Mathematicians:** Introduces the Bubble-Refined Order ($\preceq _ B$: value-inversion inclusion plus descent-bottom inclusion), proves $\preceq _ B$-monotonicity of $B$, and establishes all-$k$ commutators $B^k(S(xs)) \preceq _ B S(B^k(xs))$ and $B^k(P(xs)) \preceq _ B P(B^k(xs))$ with inversion and descent corollaries.
 - **Prior art & stack:** Builds on Knuth (TAOCP Vol. 3, §5.2.2), West (1990), Ungar (1982), Chung–Claesson–Dukes–Graham (2010), Albert et al. (`1008.5299`), and Defant (`2104.02675`, `2104.03215`). Lean `v4.34.1` / pure `Init` (`propext`, `Classical.choice`, `Quot.sound`).
 
-### 78. [`popcount-clock-borrow-accel/`](popcount-clock-borrow-accel/) — **76 / 100**
+### 81. [`popcount-clock-borrow-accel/`](popcount-clock-borrow-accel/) — **76 / 100**
 - **Plain English:** Take a whole number, count the 1s in its binary form, and flip the bit at that position; repeat. The count of 1s feeds back from the whole number to one far-away bit, yet this package proves the process is a perfect clock: one formula of the number drops by exactly one every step, so nothing ever repeats and the number turns into all 1s after a step count readable from the start. Real binary subtraction with long borrow chains behaves the same way, and on fixed-width words there is exactly one cycle everything runs into, for every width.
 - **For Mathematicians:** Pure-Init Lean 4 development for the anti-causal popcount-addressed flows T_xor(x) = x XOR 2^{s_2(x)} and T_sub(x) = x - 2^{s_2(x)}: a reusable ClockCert compiler lifting pointwise finite-difference equations to the global bit-moment V(x) = 2 sum i x_i - s_2(x)^2, the exact unit clock V(T^t x) = V(x) - t with exact Mersenne hitting time V(x) + m, the synchronous-collision iff V(x) = V(y), the borrow-acceleration identity T_sub = T_xor^{1 + ctz} with Phi decreasing by exactly 1 (exact Mersenne hitting time Phi(x)), unique global attractor cycles of length 2w and w+1 for the wrapped modular flows, and the exact complement carry-borrow conjugacy.
 - **Prior art & stack:** Binary inversion statistic / Young-diagram area (q-binomial theory), Hamming-weight and Thue-Morse literature, Collatz-like popcount maps. Referee-2 PASS (#90); referee-6 novelty audit pending at packaging time. New: exact unit bit-moment clock and synchronous-collision criterion for the anti-causal flow x XOR 2^popcount(x), hardware borrow-acceleration identity with exact Mersenne hitting time Phi(x), and unique 2w / (w+1)-cycle attractors for the wrapped modular flows with exact complement carry-borrow conjugacy.
 
-### 79. [`carry-blocks-determinants/`](carry-blocks-determinants/) — **73 / 100**
+### 82. [`carry-blocks-determinants/`](carry-blocks-determinants/) — **73 / 100**
 - **Plain English:** Tables counting separate carry streaks in mixed-radix addition always have determinant $\pm 1$, alongside a plateau rule where determinants ignore the top-left corner and an exact XOR bit-length formula.
 - **For Mathematicians:** Division-free determinant formulas over arbitrary commutative rings $R$ for exponential and linear mixed-radix carry-blocks, binary Gray-code carry transitions, 0-based and 1-based plateau Hankel matrices, mixed-radix digit lengths, and shifted ultrametric matrices $(\mathrm{bitlen}(i \oplus j) + t) _ {2^k}$.
 - **Prior art & stack:** Carry-blocks build on `carry-determinants/`; `bitlen(i ^^^ j)` sits in the classical tree-distance / ultrametric / $(\mathbb{Z}/2\mathbb{Z})^k$-circulant lineage (Graham & Pollak 1971; Martínez–Michon–San Martín 1994; Nabben & Varga 1994). Lean `v4.34.1` / Mathlib (`propext`, `Classical.choice`, `Quot.sound`).
 
-### 80. [`grh-ultra-compact-lean/`](grh-ultra-compact-lean/) — **71 / 100**
+### 83. [`grh-ultra-compact-lean/`](grh-ultra-compact-lean/) — **71 / 100**
 - **Plain English:** Compresses the already-short `grh-compact` Lean 4 formalization of the Riemann Hypothesis and Dirichlet GRH from `796` files (`76,166` lines of code, `112,854` total lines) down to **`490` files and `53,691` lines of pure code (`54,986` total lines)** without altering a single byte of the theorem statements.
 - **For Mathematicians:** Source-compacted derivative of `lsernau/grh-lean` (`grh-compact`, commit `72fead10`) proving Mathlib's `RiemannHypothesis` and critical-strip zero localization $\mathrm{Re}(s) = 1/2$ for all Dirichlet $L$-functions $L(s, \chi)$ ($N \ge 1$), achieving `-38.44%` modules, `-29.51%` pure LoC, and `-51.28%` total lines with `src/Statements.lean`, `Challenge.lean`, `src/Main.lean`, and `comparator.json` preserved byte-for-byte unchanged.
 - **Prior art & stack:** Strictly derived from `lsernau/grh-lean` (`grh-compact/`, Apache-2.0, Copyright 2026 Anthropic, PBC; mathematical proof by Levent Alpöge, formalized with Claude; see <https://alpo.ge/remark.pdf>). Lean `v4.35.0` / Mathlib `56a005855ea` (`propext`, `Classical.choice`, `Quot.sound`).
 
-### 81. [`combinatorial-inequalities/`](combinatorial-inequalities/) — **66 / 100**
+### 84. [`combinatorial-inequalities/`](combinatorial-inequalities/) — **66 / 100**
 - **Plain English:** Four universal "speed limits" on stack-sorting, permutation displacement, and integer difference sets proved for every size without exception.
 - **For Mathematicians:** Four universal bounds for all $n, N \in \mathbb{N}$: $3\,\mathrm{inv}(S^2(p)) \le \mathrm{pat} _ {231}(p)$ on $\mathrm{Av}(321)$, $\mathrm{des}(S(p)) \le \mathrm{peaks}(p)$, $2\,\mathrm{inv}(p) \le \mathrm{disp2}(p) + \mathrm{des}(p)(\mathrm{des}(p) + 1)$ on $\mathrm{Av}(231)$, and $3|A - A| \le 2|2A - A| + 1$.
 - **Prior art & stack:** Adjacent to West (1990), Zeilberger (1992), Defant (`1809.03123`), Diaconis & Graham (1977), and Freiman / Ruzsa / Bukh sumset-dilate bounds. Lean `v4.34.1` / pure `Std` (`propext`, `Classical.choice`, `Quot.sound`).
 
-### 82. [`sorting-operators/`](sorting-operators/) — **61 / 100**
+### 85. [`sorting-operators/`](sorting-operators/) — **61 / 100**
 - **Plain English:** One pass of stack-sort always beats or ties one pass of bubble-sort on every list, producing the exact same output whenever there is no 3-step decreasing chain.
 - **For Mathematicians:** Constructive cross-operator comparison of West stack-sort $S$ and single-pass bubble sort $B$: $\mathrm{inv}(S) \le \mathrm{inv}(B)$, $\mathrm{des}(S) \le \mathrm{des}(B)$, $S = B$ on $\mathrm{Av}(321)$ with strictness witness `[2, 1, 3, 0]`, and $\mathrm{inv}(B) \le \mathrm{pat} _ {321} + \mathrm{pat} _ {231}$.
 - **Prior art & stack:** Adjacent to West (1990), Chung–Claesson–Dukes–Graham (2010), Albert et al. (`1008.5299`), and Defant (`1809.03123`, `2104.02675`). Lean `v4.34.1` / pure `Init` (`propext`, `Quot.sound` only — no `Classical.choice`).
 
 ## Navigating the collection
 
-- Use [CONTENTS.md](CONTENTS.md) for a theorem-by-theorem map across all 82 projects.
+- Use [CONTENTS.md](CONTENTS.md) for a theorem-by-theorem map across all 85 projects.
 - Inside each project folder:
   - Read `README.md` for its **Synthetic Score**, **For Mathematicians** summary, **For Non-Mathematicians** plain-English overview, and prior-art citations.
   - Read `Challenge.lean` (and its small definitions module) to inspect the exact statements being proved without reading any proof code.

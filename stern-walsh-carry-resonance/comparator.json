@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SternWalshCarryResonanceChallenge.stern_cw_bridge",
+    "SternWalshCarryResonanceChallenge.stern_walsh_spectrum",
+    "SternWalshCarryResonanceChallenge.aStern_walsh_spectrum",
+    "SternWalshCarryResonanceChallenge.twoStern_walsh_vanishing",
+    "SternWalshCarryResonanceChallenge.carryStern_mod0_periodic",
+    "SternWalshCarryResonanceChallenge.carryStern_mod1_affine",
+    "SternWalshCarryResonanceChallenge.carryStern_mod2_affine_dual",
+    "SternWalshCarryResonanceChallenge.quadStern_tm_closed_form"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

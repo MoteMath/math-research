@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms SternWalshCarryResonanceChallenge.stern_cw_bridge
+#print axioms SternWalshCarryResonanceChallenge.stern_walsh_spectrum
+#print axioms SternWalshCarryResonanceChallenge.aStern_walsh_spectrum
+#print axioms SternWalshCarryResonanceChallenge.twoStern_walsh_vanishing
+#print axioms SternWalshCarryResonanceChallenge.carryStern_mod0_periodic
+#print axioms SternWalshCarryResonanceChallenge.carryStern_mod1_affine
+#print axioms SternWalshCarryResonanceChallenge.carryStern_mod2_affine_dual
+#print axioms SternWalshCarryResonanceChallenge.quadStern_tm_closed_form
