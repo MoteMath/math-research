@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "TwoAdicBiscaledDetValuationChallenge.v2_det_biscaled_elimination_engine",
+    "TwoAdicBiscaledDetValuationChallenge.v2_det_perturbation_stability",
+    "TwoAdicBiscaledDetValuationChallenge.mob2_pop_and",
+    "TwoAdicBiscaledDetValuationChallenge.theorem_1A_supercritical",
+    "TwoAdicBiscaledDetValuationChallenge.theorem_1B_critical_I",
+    "TwoAdicBiscaledDetValuationChallenge.theorem_1C_critical_II",
+    "TwoAdicBiscaledDetValuationChallenge.theorem_n1_jump",
+    "TwoAdicBiscaledDetValuationChallenge.sharpness_S3_infinite_breakdown_line"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

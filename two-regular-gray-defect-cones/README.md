@@ -46,7 +46,7 @@ Gray code is a way of counting in binary so that consecutive numbers differ in o
 
 ## Prior Art
 
-- Linear representations of $k$-regular sequences were introduced by Allouche & Shallit (1992). Automatic decision tools such as Walnut (Mousavi 2016) handle bounded-value automatic predicates via DFAs, while classical cumulative binary bit-sum bounds use Trollope-Delange (1968, 1975) Takagi fractal analysis.
+- Linear representations of $k$-regular sequences were introduced by Allouche & Shallit (1992). Automatic decision tools such as Walnut (Mousavi 2016) handle bounded-value automatic predicates via DFAs, while classical cumulative binary and Gray-code digital-sum / Gray-Takagi analyses are due to Trollope-Delange (1968, 1975), Flajolet & Ramshaw (1980, *SIAM J. Comput.*), and Kobayashi (2002).
 - What is formalized here beyond that baseline: a pure-Init Lean 4 2-regular algebra compiler (`mul`, `shift1`, `prefixSum`) coupled with exact integer-scaled polyhedral invariant-cone and modular-subspace certifiers (`ConePosCert`, `ModCert`), and the five infinite Gray-Binary defect laws (sharp $2/5$ ceiling with parity offset, aperiodic Thue-Morse parity, period-8 mod-4 law, dyadic parabolic sandwich, and $q$-independent second-difference law).
 - Independently audited and `PASS`ed by `referee-1` (156/156 theorems on standard axioms, zero floats).
 

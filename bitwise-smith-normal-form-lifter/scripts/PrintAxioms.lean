@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BitwiseSmithNormalFormLifterChallenge.hasSNF_torsion_obstruction
+#print axioms BitwiseSmithNormalFormLifterChallenge.carriesK_kummer
+#print axioms BitwiseSmithNormalFormLifterChallenge.snf_affine_carry_parity
+#print axioms BitwiseSmithNormalFormLifterChallenge.snf_carry_sign_flat
+#print axioms BitwiseSmithNormalFormLifterChallenge.snf_carry_parity_one_dichotomy
+#print axioms BitwiseSmithNormalFormLifterChallenge.snf_DMat
+#print axioms BitwiseSmithNormalFormLifterChallenge.snf_bitwise_and
+#print axioms BitwiseSmithNormalFormLifterChallenge.snf_two_pow_popcount_and_unimod

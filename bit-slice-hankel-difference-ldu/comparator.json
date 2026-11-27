@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitSliceHankelDifferenceLduChallenge.hankel_affine_shift",
+    "BitSliceHankelDifferenceLduChallenge.ecSeq_odd_master_invariant",
+    "BitSliceHankelDifferenceLduChallenge.ecSeq_odd_mod8_periodic",
+    "BitSliceHankelDifferenceLduChallenge.ecSeq_odd_nonsingular",
+    "BitSliceHankelDifferenceLduChallenge.ruler_family_odd_zero",
+    "BitSliceHankelDifferenceLduChallenge.ruler_family_even_signed_square",
+    "BitSliceHankelDifferenceLduChallenge.signed_ruler_v2_exact",
+    "BitSliceHankelDifferenceLduChallenge.popPow_hankel_factorization"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,12 @@
+name = "two-adic-biscaled-det-valuation"
+version = "0.1.0"
+defaultTargets = ["TwoAdicBiscaledDetValuation", "Solution"]
+
+[[lean_lib]]
+name = "TwoAdicBiscaledDetValuation"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

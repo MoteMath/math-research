@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitwiseSmithNormalFormLifterChallenge.hasSNF_torsion_obstruction",
+    "BitwiseSmithNormalFormLifterChallenge.carriesK_kummer",
+    "BitwiseSmithNormalFormLifterChallenge.snf_affine_carry_parity",
+    "BitwiseSmithNormalFormLifterChallenge.snf_carry_sign_flat",
+    "BitwiseSmithNormalFormLifterChallenge.snf_carry_parity_one_dichotomy",
+    "BitwiseSmithNormalFormLifterChallenge.snf_DMat",
+    "BitwiseSmithNormalFormLifterChallenge.snf_bitwise_and",
+    "BitwiseSmithNormalFormLifterChallenge.snf_two_pow_popcount_and_unimod"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

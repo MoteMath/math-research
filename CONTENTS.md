@@ -1631,3 +1631,122 @@ Exact all-dimension determinants and characteristic polynomials of XOR-convoluti
 | `runs_xorConv_neg_one_singular_odd` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $m$, the XOR-convolution matrix of the runs kernel at $q = -1$ on $2 ^ {2 m + 1}$ points is singular. |
 | `det_two_runs_andLattice_unimodular` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $k \ge 2$, the AND-lattice matrix of the runs kernel at $q = 2$ has determinant exactly $-1$. |
 | `runs_andLattice_never_posdef` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $q$ and $k \ge 2$ there is a nonzero integer vector with nonpositive quadratic form for the runs-kernel AND-lattice matrix. |
+
+## 119. [`bit-level-kind-ic3-invariants/`](bit-level-kind-ic3-invariants/)
+
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a width-uniform bit-level k-induction and IC3 invariant-certificate engine (checkKIndIC3_sound), lifting finite kernel-decidable proof obligations to all bit-widths w >= 1 and all time steps t for wrap-safe Gray counters, carry-save accumulators, 3-stage carry-defect pipelines, hybrid sparse adders, and 1-ULP averaging filters.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `checkOblig_sound` | `BitLevelKindIc3Invariants.Theorems` | Theorem 1 (width-uniform obligation checker soundness across all `w ≥ 1`, initial states, and input streams). |
+| `checkKIndIC3_sound` | `BitLevelKindIc3Invariants.Theorems` | Theorem 2 (master k-induction + IC3 soundness meta-theorem: finite certificate certifies `Safe sys prop` for all `w ≥ 1` and all `t`). |
+| `thm1_wrapSafeGray_safety` | `BitLevelKindIc3Invariants.Theorems` | Theorem 3 (wrap-safe Gray counter safety for all `w ≥ 1` and all `t`). |
+| `thm2_carrySave_safety` | `BitLevelKindIc3Invariants.Theorems` | Theorem 4 (carry-save accumulator equivalence against reference adder for all `w ≥ 1`, all input streams `u`, and all `t`). |
+| `thm3_carryDefectPipeline_zero` | `BitLevelKindIc3Invariants.Theorems` | Theorem 5 (3-stage carry-defect pipeline zero-defect invariant via pure `k = 3` induction for all `w ≥ 1` and all `t`). |
+| `thm4_hybridSparseAdder_msb` | `BitLevelKindIc3Invariants.Theorems` | Theorem 6 (hybrid sparse adder MSB equivalence via combined IC3 + `k = 2` induction for all `w ≥ 1`, all `u`, and all `t`). |
+| `thm5_avgFilter_oneULP` | `BitLevelKindIc3Invariants.Theorems` | Theorem 7 (averaging filter exact 1-ULP tracking bound `L ≤ M ∧ M - L ≤ 1` for all `w ≥ 1`, all `u`, and all `t`). |
+
+## 120. [`bit-slice-hankel-difference-ldu/`](bit-slice-hankel-difference-ldu/)
+
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of Laplace-type Hankel determinant operators over exact integers, applied to bitwise automatic sequences. Proves an affine-shift identity, the closed system of three Hankel families with odd-parameter master invariants (mod-8 period 8 and nonsingularity for every n), vanishing at odd sizes and signed-square values at even sizes for the ruler family, the exact 2-adic valuation 2 floor(n/2) of the signed ruler Hankel determinant, and a popcount-power Hankel factorization.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `hankel_affine_shift` | `BitSliceHankelDifferenceLdu.Theorems` | Theorem 1 (Affine-shift Laplace identity): det Hankel(alpha a + beta) of size m + 1 equals alpha^(m+1) det Hankel(a) + beta alpha^m det Hankel(second difference of a) of size m. |
+| `ecSeq_odd_master_invariant` | `BitSliceHankelDifferenceLdu.Theorems` | Theorem 2 (Odd-parameter master invariant): for odd c, alpha, beta, the three Hankel determinant families satisfy explicit parity, mod-4 and mod-8 invariants for every n. |
+| `ecSeq_odd_mod8_periodic` | `BitSliceHankelDifferenceLdu.Theorems` | Theorem 3 (Period-8 law): for odd parameters the Hankel determinant of ecSeq is periodic modulo 8 in n with period 8. |
+| `ecSeq_odd_nonsingular` | `BitSliceHankelDifferenceLdu.Theorems` | Theorem 4 (Nonsingularity): for odd parameters every Hankel determinant of ecSeq is nonzero. |
+| `ruler_family_odd_zero` | `BitSliceHankelDifferenceLdu.Theorems` | Theorem 5 (Ruler odd vanishing): the Hankel determinant of the ruler family ecSeq 0 alpha beta vanishes at every odd size 2m + 1. |
+| `ruler_family_even_signed_square` | `BitSliceHankelDifferenceLdu.Theorems` | Theorem 6 (Ruler even signed square): at every even size 2(m + 1) the ruler-family Hankel determinant is altSign(m + 1) times a perfect square. |
+| `signed_ruler_v2_exact` | `BitSliceHankelDifferenceLdu.Theorems` | Theorem 7 (Exact 2-adic valuation): for n not congruent to 2 modulo 4, the Hankel determinant of the signed ruler sequence is nonzero with 2-adic valuation exactly 2 floor(n/2). |
+| `popPow_hankel_factorization` | `BitSliceHankelDifferenceLdu.Theorems` | Theorem 8 (Popcount-power factorization): the Hankel determinant of r^popcount factors into two Hankel determinants of half size. |
+
+## 121. [`bit-sliced-synchronous-automata/`](bit-sliced-synchronous-automata/)
+
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a bit-sliced synchronous automaton reflection compiler (SyncAutomaton, AutomatonCert, bvProp_cert_sound) lifting finite kernel-decidable reachability certificates to universally quantified all-width BitVec w theorems for 3-operand carry-save quarter-sums, nested-average sandwiches, Gray-code Zeckendorf sparsity, and signed/unsigned floor averages.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `checkCert_sound` | `BitSlicedSynchronousAutomata.Theorems` | Theorem 1 (generic synchronous automaton certificate soundness across all stream lengths `w`). |
+| `bvProp_cert_sound` | `BitSlicedSynchronousAutomata.Theorems` | Theorem 2 (master reflection soundness meta-theorem: finite certificate proves `φ.eval w env = true` for all `w` and all `BitVec w` tuples). |
+| `thm_signed_quarter_sum_net_overflow_iff` | `BitSlicedSynchronousAutomata.Theorems` | Theorem 3 (3-operand signed carry-save quarter-sum exact net-overflow biconditional for all `w ≥ 2`). |
+| `thm_unsigned_quarter_sum_no_overflow_iff` | `BitSlicedSynchronousAutomata.Theorems` | Theorem 4 (3-operand unsigned carry-save quarter-sum exact no-overflow biconditional for all `w ≥ 2`). |
+| `thm_signed_eq_unsigned_quarter_sum_iff` | `BitSlicedSynchronousAutomata.Theorems` | Theorem 5 (3-operand signed vs. unsigned quarter-sum equality iff all three operands are non-negative). |
+| `thm_signed_quarter_sum_mod_reconstruction` | `BitSlicedSynchronousAutomata.Theorems` | Theorem 6 (exact mod-`2^w` Euclidean reconstruction of 3-operand signed quarter-sum under arbitrary overflow). |
+| `thm_nested_avg_vs_quarter_sum_sandwich` | `BitSlicedSynchronousAutomata.Theorems` | Theorem 7 (nested overflow-free average minus unsigned quarter-sum trapped in `[z >>> 2, (z >>> 2) + 1]`). |
+| `thm_gray_triple_zeckendorf_iff` | `BitSlicedSynchronousAutomata.Theorems` | Theorem 8 (Gray-code `3 * x` exact Zeckendorf-sparsity biconditional for all `w`). |
+
+## 122. [`bitwise-smith-normal-form-lifter/`](bitwise-smith-normal-form-lifter/)
+
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a constructive Smith normal form engine (explicit GL_n(Z) unimodular equivalences, canonical divisibility chains) with five composable bit-slice lifters. Proves exact Smith normal forms for every k of carry-parity matrices (flat sign case with invariants 1 and 2), the add-XOR collapse matrix, the bitwise-AND matrix with invariants 2^i, and unimodularity of the 2^popcount(x AND y) matrix, together with the torsion obstruction and the Kummer carry identity.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `hasSNF_torsion_obstruction` | `BitwiseSmithNormalFormLifter.Theorems` | Theorem 1 (Torsion obstruction): if M has Smith normal form d and some invariant d i exceeds 1, there is a right-hand side b not hit by M while d i times b is hit. |
+| `carriesK_kummer` | `BitwiseSmithNormalFormLifter.Theorems` | Theorem 2 (Kummer carry identity): for x, y < 2^k and carry-in c <= 1, carries + popcount(x + y + c) = popcount x + popcount y + c. |
+| `snf_affine_carry_parity` | `BitwiseSmithNormalFormLifter.Theorems` | Theorem 3 (Affine carry-parity SNF): for every k >= 1 and integers a, b, the affine carry-parity matrix has the explicit Smith normal form affineCarrySNFDiag. |
+| `snf_carry_sign_flat` | `BitwiseSmithNormalFormLifter.Theorems` | Theorem 4 (Flat carry-sign SNF): for k >= 1 the (-1)^carries matrix has Smith normal form (1, 2, 2, ..., 2) on 2^k indices. |
+| `snf_carry_parity_one_dichotomy` | `BitwiseSmithNormalFormLifter.Theorems` | Theorem 5 (Odd/even dichotomy): the carry-parity matrix at parameter 1 is unimodular for odd k and has a single zero invariant for even k. |
+| `snf_DMat` | `BitwiseSmithNormalFormLifter.Theorems` | Theorem 6 (Add-XOR collapse): the add-XOR matrix DMat k has Smith normal form given by addXorSNFDiag for every k. |
+| `snf_bitwise_and` | `BitwiseSmithNormalFormLifter.Theorems` | Theorem 7 (Bitwise-AND SNF): the 2^k x 2^k matrix x AND y has Smith normal form with invariants 2^i for i < k and 0 otherwise. |
+| `snf_two_pow_popcount_and_unimod` | `BitwiseSmithNormalFormLifter.Theorems` | Theorem 8 (Unimodular popcount-AND): the matrix 2^popcount(x AND y) is unimodular (all invariants 1) for every k. |
+
+## 123. [`boolean-tropical-kleene-star-engine/`](boolean-tropical-kleene-star-engine/)
+
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a polymorphic Kozen Kleene-semiring matrix-star engine (block Conway-Schur and rank-one Sherman-Morrison star) with a reusable bit-doubling tower, instantiated on tropical, Boolean and XOR-set semirings for exact all-dimension results on bit-twiddle graphs, the asymmetric ripple-carry ALU graph (diameter 2^(k+1) - k - 2) and the non-collapsing active XOR-walk star with cycle subspace and max-XOR bottleneck.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `block_conway_schur_star` | `BooleanTropicalKleeneStarEngine.Theorems` | Theorem 1 (Block Conway-Schur star): over any Kozen Kleene semiring, the Kleene star of a 2x2 block matrix is given by the Conway-Schur block formula from the stars of D and the Schur complement. |
+| `bmi_trop_star_exact` | `BooleanTropicalKleeneStarEngine.Theorems` | Theorem 2 (Tropical bit-twiddle star): for every k and cost function c, the tropical Kleene star of the bit-twiddle graph is its exact weighted distance matrix. |
+| `bmiBoolPow_iff` | `BooleanTropicalKleeneStarEngine.Theorems` | Theorem 3 (Boolean power law): for k >= 1, entry (x, y) of the t-th Boolean power is true iff the distance is at most t and the parity popcount x + popcount y + t is even. |
+| `bmi_bool_star_eq_allTrue` | `BooleanTropicalKleeneStarEngine.Theorems` | Theorem 4 (Boolean star): the Boolean Kleene star of the bit-twiddle graph is the all-true matrix. |
+| `alu_exact_diameter_and_asymmetry` | `BooleanTropicalKleeneStarEngine.Theorems` | Theorem 5 (ALU exact diameter and asymmetry): the ripple-carry ALU graph has distances bounded by 2^(k+1) - k - 2, attained from 0 to the maximum word, while the reverse distance is only k. |
+| `bmi_xor_star_exact` | `BooleanTropicalKleeneStarEngine.Theorems` | Theorem 6 (Active XOR-walk star): the active Sherman-Morrison XOR-walk matrix star equals the explicit non-collapsing star bmiXorStar for every k. |
+| `bmi_xor_cycle_subspace` | `BooleanTropicalKleeneStarEngine.Theorems` | Theorem 7 (XOR cycle subspace): v is reachable by a closed XOR walk at the origin iff v lies in the explicit subspace V_k. |
+| `bmi_xor_max_bottleneck_exact` | `BooleanTropicalKleeneStarEngine.Theorems` | Theorem 8 (Max-XOR bottleneck): the bottleneck of the XOR-walk star equals the alternating even mask, exactly attained and exactly maximal. |
+
+## 124. [`cauchy-hadamard-frobenius-reflect/`](cauchy-hadamard-frobenius-reflect/)
+
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a finite-certificate carryless (F_2[x]) reflection compiler with dyadic lane-replication lifting (reflect_all_scales_and_widths), discharging the triple-infinite n-variable Binary Ito-Leibniz / quasi-shuffle law, dyadic scale-ladder identities, universal Z/2^r Z-graded carryless-Hadamard convolution splitting, Frobenius-Hadamard orthogonality, and Sierpinski carryless inverses.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `reflect_all_bitvec` | `CauchyHadamardFrobeniusReflect.Theorems` | Theorem 1 (finite certificate lifts to all bit-widths `w` and all `BitVec w` assignments). |
+| `reflect_all_scales_and_widths` | `CauchyHadamardFrobeniusReflect.Theorems` | Theorem 2 (dyadic lane-replication lifting: one finite certificate proves `dilate r e1 = dilate r e2` for all scales `r` and all widths `w`). |
+| `binary_ito2_all_scales_widths` | `CauchyHadamardFrobeniusReflect.Theorems` | Theorem 3 (doubly-infinite weight-1 Rota-Baxter / Binary Ito law for `bvPr r`). |
+| `binary_ito_general_n` | `CauchyHadamardFrobeniusReflect.Theorems` | Theorem 4 (triple-infinite `n`-variable Binary Ito-Leibniz / quasi-shuffle law for all `n ≥ 1`, `r`, `w`). |
+| `self_scale_ladder_all_scales_widths` | `CauchyHadamardFrobeniusReflect.Theorems` | Theorem 5 (doubly-infinite dyadic self-scale ladder identity). |
+| `two_scale_ladder_all_scales_widths` | `CauchyHadamardFrobeniusReflect.Theorems` | Theorem 6 (doubly-infinite two-scale dyadic ladder identity). |
+| `residue_conv_split_all_r_w` | `CauchyHadamardFrobeniusReflect.Theorems` | Theorem 7 (universal `Z/2^r Z`-graded carryless-Hadamard convolution splitting for all `r`, `t < 2^r`, `w`). |
+| `frob_hadamard_orthogonal_all` | `CauchyHadamardFrobeniusReflect.Theorems` | Theorem 8 (universal Frobenius-Hadamard residue orthogonality for all `r`, `s1 % 2^r ≠ s2 % 2^r`, `w`). |
+
+## 125. [`dyadic-sos-farkas-flux-compiler/`](dyadic-sos-farkas-flux-compiler/)
+
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of an exact dyadic Sum-of-Squares, Schmudgen-Farkas Positivstellensatz, and cyclic/open telescoping flux compiler discharging infinite-dimensional polynomial, hypercube 3-pattern density, Boolean frustrated-triangle, and parametric/open-boundary discrete biharmonic inequalities for all n >= 1, plus nonlinear Positivstellensatz refutations.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `farkasSOS_sound` | `DyadicSosFarkasFluxCompiler.Theorems` | Theorem 1 (exact dyadic Schmüdgen-Farkas Positivstellensatz soundness over all dyadic assignments). |
+| `cyclic_flux_sound_int` | `DyadicSosFarkasFluxCompiler.Theorems` | Theorem 2 (infinite-dimensional cyclic telescoping flux soundness over `Int` for all `n ≥ 1`). |
+| `thm1_asym_skew_quartic_cyclic_int` | `DyadicSosFarkasFluxCompiler.Theorems` | Theorem 3 (infinite-dimensional asymmetric skew-quartic cyclic inequality for all `n ≥ 1`). |
+| `thm3b_hypercube_asym_3pattern` | `DyadicSosFarkasFluxCompiler.Theorems` | Theorem 4 (sharp genuinely-cubic hypercube `[0, 1]^n` asymmetric 3-pattern density inequality for all `n ≥ 1`). |
+| `thm4_boolean_frustrated_triangle` | `DyadicSosFarkasFluxCompiler.Theorems` | Theorem 5 (sharp Boolean `{0, 1}^n` frustrated-triangle inequality using all four compiler layers). |
+| `thm5a_parametric_biharmonic_cyclic_int` | `DyadicSosFarkasFluxCompiler.Theorems` | Theorem 6 (doubly-infinite parametric discrete biharmonic-Sobolev cyclic inequality for all `n ≥ 1` and all `t : Int`). |
+| `thm5b_open_biharmonic_stabilized_int` | `DyadicSosFarkasFluxCompiler.Theorems` | Theorem 7 (sharp open-boundary discrete biharmonic stabilization inequality for all `n` and `x : Nat → Int`). |
+| `thm6_nonlinear_farkas_refutation` | `DyadicSosFarkasFluxCompiler.Theorems` | Theorem 8 (nonlinear exact dyadic Positivstellensatz refutation of `x^2 + y^2 ≤ 1 ∧ x + y ≥ 23/16`). |
+
+## 126. [`two-adic-biscaled-det-valuation/`](two-adic-biscaled-det-valuation/)
+
+A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a biscaled unimodular elimination engine giving the exact 2-adic valuation of determinants, with perturbation stability and a Mobius compiler for popcount-AND matrices, applied to the five-parameter hybrid matrix family to prove exact valuations in the supercritical regime e*popSum(n) - e, critical regimes popSum(n) - 1 and 2*popSum(n) - 2, the n = 1 jump, and an infinite breakdown line.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `v2_det_biscaled_elimination_engine` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 1 (Biscaled elimination engine): if unimodular U, V factor M into biscaled form 2^(a i + b j) times an odd-outside matrix Omega with invertible mod-2 leading block, then v2(det M) = sum (a i + b i). |
+| `v2_det_perturbation_stability` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 2 (Perturbation stability): adding a perturbation divisible by one extra power of 2 in the biscaled frame leaves v2(det) unchanged. |
+| `mob2_pop_and` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 3 (Mobius of popcount-AND): the Mobius transform of q^popcount(u AND v) is diagonal with entries (q - 1)^popcount(i). |
+| `theorem_1A_supercritical` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 4 (Supercritical regime): for parameters 2^r u_a, 1 + 2^e u_q with r >= 2e - 1, v2(det) = e * popSum(n) - e for every n >= 2. |
+| `theorem_1B_critical_I` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 5 (Critical regime I): at e = 1, v2(det) = popSum(n) - 1 for every n >= 2. |
+| `theorem_1C_critical_II` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 6 (Critical regime II): at e = 2 with 4 u_a, v2(det) = 2 * popSum(n) - 2 for every n >= 2. |
+| `theorem_n1_jump` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 7 (n = 1 jump): for the 1 x 1 hybrid matrix, v2(det) = 1 for all a, q. |
+| `sharpness_S3_infinite_breakdown_line` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 8 (Infinite breakdown line): for every e >= 3 the subcritical parameter 2^(2e - 2) u_a at n = 4 does not have valuation e * popSum(4) - e. |

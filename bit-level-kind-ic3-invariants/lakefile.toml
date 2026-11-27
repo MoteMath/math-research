@@ -1,0 +1,12 @@
+name = "bit-level-kind-ic3-invariants"
+version = "0.1.0"
+defaultTargets = ["BitLevelKindIc3Invariants", "Solution"]
+
+[[lean_lib]]
+name = "BitLevelKindIc3Invariants"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

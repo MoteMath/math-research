@@ -1,0 +1,12 @@
+name = "bit-slice-hankel-difference-ldu"
+version = "0.1.0"
+defaultTargets = ["BitSliceHankelDifferenceLdu", "Solution"]
+
+[[lean_lib]]
+name = "BitSliceHankelDifferenceLdu"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

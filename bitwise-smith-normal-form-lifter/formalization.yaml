@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Bitwise Smith Normal Form Lifter - exact Smith normal forms of 2^k x 2^k carry, add-XOR and bitwise-AND matrices lifted from bit-slice engines
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a constructive Smith normal form engine (explicit GL_n(Z) unimodular equivalences, canonical divisibility chains) with five composable bit-slice lifters. Proves exact Smith normal forms for every k of carry-parity matrices (flat sign case with invariants 1 and 2), the add-XOR collapse matrix, the bitwise-AND matrix with invariants 2^i, and unimodularity of the 2^popcount(x AND y) matrix, together with the torsion obstruction and the Kummer carry identity.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bitwise-smith-normal-form-lifter
+  license: Apache-2.0

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Bit Slice Hankel Difference LDU - Laplace difference identities and exact mod-8 and 2-adic laws for Hankel determinants of bitwise automatic sequences
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of Laplace-type Hankel determinant operators over exact integers, applied to bitwise automatic sequences. Proves an affine-shift identity, the closed system of three Hankel families with odd-parameter master invariants (mod-8 period 8 and nonsingularity for every n), vanishing at odd sizes and signed-square values at even sizes for the ruler family, the exact 2-adic valuation 2 floor(n/2) of the signed ruler Hankel determinant, and a popcount-power Hankel factorization.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bit-slice-hankel-difference-ldu
+  license: Apache-2.0

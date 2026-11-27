@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "DyadicSosFarkasFluxCompilerChallenge.farkasSOS_sound",
+    "DyadicSosFarkasFluxCompilerChallenge.cyclic_flux_sound_int",
+    "DyadicSosFarkasFluxCompilerChallenge.thm1_asym_skew_quartic_cyclic_int",
+    "DyadicSosFarkasFluxCompilerChallenge.thm3b_hypercube_asym_3pattern",
+    "DyadicSosFarkasFluxCompilerChallenge.thm4_boolean_frustrated_triangle",
+    "DyadicSosFarkasFluxCompilerChallenge.thm5a_parametric_biharmonic_cyclic_int",
+    "DyadicSosFarkasFluxCompilerChallenge.thm5b_open_biharmonic_stabilized_int",
+    "DyadicSosFarkasFluxCompilerChallenge.thm6_nonlinear_farkas_refutation"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

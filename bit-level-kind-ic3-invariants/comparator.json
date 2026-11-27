@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitLevelKindIc3InvariantsChallenge.checkOblig_sound",
+    "BitLevelKindIc3InvariantsChallenge.checkKIndIC3_sound",
+    "BitLevelKindIc3InvariantsChallenge.thm1_wrapSafeGray_safety",
+    "BitLevelKindIc3InvariantsChallenge.thm2_carrySave_safety",
+    "BitLevelKindIc3InvariantsChallenge.thm3_carryDefectPipeline_zero",
+    "BitLevelKindIc3InvariantsChallenge.thm4_hybridSparseAdder_msb",
+    "BitLevelKindIc3InvariantsChallenge.thm5_avgFilter_oneULP"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BooleanTropicalKleeneStarEngineChallenge.block_conway_schur_star",
+    "BooleanTropicalKleeneStarEngineChallenge.bmi_trop_star_exact",
+    "BooleanTropicalKleeneStarEngineChallenge.bmiBoolPow_iff",
+    "BooleanTropicalKleeneStarEngineChallenge.bmi_bool_star_eq_allTrue",
+    "BooleanTropicalKleeneStarEngineChallenge.alu_exact_diameter_and_asymmetry",
+    "BooleanTropicalKleeneStarEngineChallenge.bmi_xor_star_exact",
+    "BooleanTropicalKleeneStarEngineChallenge.bmi_xor_cycle_subspace",
+    "BooleanTropicalKleeneStarEngineChallenge.bmi_xor_max_bottleneck_exact"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

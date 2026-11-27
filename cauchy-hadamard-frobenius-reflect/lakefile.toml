@@ -1,0 +1,12 @@
+name = "cauchy-hadamard-frobenius-reflect"
+version = "0.1.0"
+defaultTargets = ["CauchyHadamardFrobeniusReflect", "Solution"]
+
+[[lean_lib]]
+name = "CauchyHadamardFrobeniusReflect"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

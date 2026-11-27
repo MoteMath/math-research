@@ -1,0 +1,12 @@
+name = "boolean-tropical-kleene-star-engine"
+version = "0.1.0"
+defaultTargets = ["BooleanTropicalKleeneStarEngine", "Solution"]
+
+[[lean_lib]]
+name = "BooleanTropicalKleeneStarEngine"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

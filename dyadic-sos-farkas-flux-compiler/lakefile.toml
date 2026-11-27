@@ -1,0 +1,12 @@
+name = "dyadic-sos-farkas-flux-compiler"
+version = "0.1.0"
+defaultTargets = ["DyadicSosFarkasFluxCompiler", "Solution"]
+
+[[lean_lib]]
+name = "DyadicSosFarkasFluxCompiler"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

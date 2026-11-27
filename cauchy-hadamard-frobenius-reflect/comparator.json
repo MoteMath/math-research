@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CauchyHadamardFrobeniusReflectChallenge.reflect_all_bitvec",
+    "CauchyHadamardFrobeniusReflectChallenge.reflect_all_scales_and_widths",
+    "CauchyHadamardFrobeniusReflectChallenge.binary_ito2_all_scales_widths",
+    "CauchyHadamardFrobeniusReflectChallenge.binary_ito_general_n",
+    "CauchyHadamardFrobeniusReflectChallenge.self_scale_ladder_all_scales_widths",
+    "CauchyHadamardFrobeniusReflectChallenge.two_scale_ladder_all_scales_widths",
+    "CauchyHadamardFrobeniusReflectChallenge.residue_conv_split_all_r_w",
+    "CauchyHadamardFrobeniusReflectChallenge.frob_hadamard_orthogonal_all"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Boolean Tropical Kleene Star Engine - Conway-Schur Kleene stars over Kozen semirings applied to bit-twiddle graphs, ripple-carry ALU graphs and XOR walks for every dimension 2^k
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a polymorphic Kozen Kleene-semiring matrix-star engine (block Conway-Schur and rank-one Sherman-Morrison star) with a reusable bit-doubling tower, instantiated on tropical, Boolean and XOR-set semirings for exact all-dimension results on bit-twiddle graphs, the asymmetric ripple-carry ALU graph (diameter 2^(k+1) - k - 2) and the non-collapsing active XOR-walk star with cycle subspace and max-XOR bottleneck.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: boolean-tropical-kleene-star-engine
+  license: Apache-2.0

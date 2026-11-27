@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Bit-Level k-Induction and IC3 Invariant Engine - width-uniform finite certificates proving all-width, all-time hardware safety
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a width-uniform bit-level k-induction and IC3 invariant-certificate engine (checkKIndIC3_sound), lifting finite kernel-decidable proof obligations to all bit-widths w >= 1 and all time steps t for wrap-safe Gray counters, carry-save accumulators, 3-stage carry-defect pipelines, hybrid sparse adders, and 1-ULP averaging filters.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bit-level-kind-ic3-invariants
+  license: Apache-2.0
