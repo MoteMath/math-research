@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "IntegerMpsMpoTensorVerifierChallenge.sound_rightReductionCert",
+    "IntegerMpsMpoTensorVerifierChallenge.sound_orthogonalityCert",
+    "IntegerMpsMpoTensorVerifierChallenge.sound_recurrenceCert",
+    "IntegerMpsMpoTensorVerifierChallenge.thm_rs_carry_parametric_closed",
+    "IntegerMpsMpoTensorVerifierChallenge.thm_carry_hadamard_fibonacci",
+    "IntegerMpsMpoTensorVerifierChallenge.thm_carry_borrow_orthogonal",
+    "IntegerMpsMpoTensorVerifierChallenge.thm_carry_all_odd_traces_zero",
+    "IntegerMpsMpoTensorVerifierChallenge.thm_carry_plus_borrow_tm"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

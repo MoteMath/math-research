@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BitSlicedSchurDetEngineChallenge.det_mul",
+    "BitSlicedSchurDetEngineChallenge.det_block_schur_left_unimodular",
+    "BitSlicedSchurDetEngineChallenge.det_block_schur_right_scaled",
+    "BitSlicedSchurDetEngineChallenge.det_bitSliced_schur_zero_iff",
+    "BitSlicedSchurDetEngineChallenge.det_msbAnd_closed_form",
+    "BitSlicedSchurDetEngineChallenge.det_subsetDisjMat_closed_form",
+    "BitSlicedSchurDetEngineChallenge.witness_zmod6_zero_divisors",
+    "BitSlicedSchurDetEngineChallenge.counterexample_bool_plus_superset_breaks"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

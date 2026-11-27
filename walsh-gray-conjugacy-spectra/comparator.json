@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "WalshGrayConjugacySpectraChallenge.walsh_perm_conj",
+    "WalshGrayConjugacySpectraChallenge.spectral_period_lift",
+    "WalshGrayConjugacySpectraChallenge.even_symmetric_projectors",
+    "WalshGrayConjugacySpectraChallenge.hyperplane_even_trace_lift",
+    "WalshGrayConjugacySpectraChallenge.walsh_gray_mod4_antisym",
+    "WalshGrayConjugacySpectraChallenge.walsh_bitrev_parity_dichotomy_odd",
+    "WalshGrayConjugacySpectraChallenge.walsh_gray_rot_period",
+    "WalshGrayConjugacySpectraChallenge.sharp_nonlinear_inc2_not_scaled_perm"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

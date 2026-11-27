@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: SiliconMetaBridge (referee-8)  Unified 5-Thread Cross-Thread Infinite Proof Mechanism
+  description: >-
+    **Mechanism Name:** **SiliconMetaBridge — Weighted Bit-Slice Tensor (`BitMPS` / `BitMPO`) & Bond-Dimension-Preserving Walsh–Hadamard Involution Reflection Meta-Engine**
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: cross-thread-silicon-meta-bridge
+  license: Apache-2.0

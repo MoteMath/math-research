@@ -1750,3 +1750,78 @@ A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a bisca
 | `theorem_1C_critical_II` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 6 (Critical regime II): at e = 2 with 4 u_a, v2(det) = 2 * popSum(n) - 2 for every n >= 2. |
 | `theorem_n1_jump` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 7 (n = 1 jump): for the 1 x 1 hybrid matrix, v2(det) = 1 for all a, q. |
 | `sharpness_S3_infinite_breakdown_line` | `TwoAdicBiscaledDetValuation.Theorems` | Theorem 8 (Infinite breakdown line): for every e >= 3 the subcritical parameter 2^(2e - 2) u_a at n = 4 does not have valuation e * popSum(4) - e. |
+
+## 127. [`bit-sliced-schur-det-engine/`](bit-sliced-schur-det-engine/)
+
+**Mechanism Name:** **Division-Free Bit-Sliced Block-Schur Lifting Compiler** (`det_block_schur_proportional` + `det_block_schur_right_unimodular` + `det_bitSliced_schur_lift`) **Silicon Principle:** For any $2^k \times 2^k$ matrix indexed by $k$-bit words $x, y \in \{0, \dots, 2^k - 1\}$, splitting row and column indices by their most significant bit (MSB, bit $k - 1$) partiti
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `det_mul` | `BitSlicedSchurDetEngine.Theorems` | Multiplicativity of the classical Leibniz determinant over ANY commutative ring `R`. |
+| `det_block_schur_left_unimodular` | `BitSlicedSchurDetEngine.Theorems` | Exact unimodular left Block-Schur complement over ANY commutative ring `R`. |
+| `det_block_schur_right_scaled` | `BitSlicedSchurDetEngine.Theorems` | Exact division-free scaled right Block-Schur complement over ANY commutative ring `R`. |
+| `det_bitSliced_schur_zero_iff` | `BitSlicedSchurDetEngine.Theorems` | **AUTOMATIC INVERTIBILITY DICHOTOMY LIFTER** over any `IntDomain R`. |
+| `det_msbAnd_closed_form` | `BitSlicedSchurDetEngine.Theorems` | Machine-checked infinite theorem `det_msbAnd_closed_form` proved in pure Lean 4 `Init`. |
+| `det_subsetDisjMat_closed_form` | `BitSlicedSchurDetEngine.Theorems` | Machine-checked infinite theorem `det_subsetDisjMat_closed_form` proved in pure Lean 4 `Init`. |
+| `witness_zmod6_zero_divisors` | `BitSlicedSchurDetEngine.Theorems` | Witness 2 (Zero-Divisor Ring `ZMod 5` = Z/6Z Non-Vacuity — Invertible Unit Determinant!): In `Z/6Z`, `γ(1) = 2` and `γ(2) = 3` are BOTH zero divisors (`2 * 3 = 0`), yet our universal `CRing` closed-form theorem certifies `det H_2 = 1 (mod 6)` (a unit!)! |
+| `counterexample_bool_plus_superset_breaks` | `BitSlicedSchurDetEngine.Theorems` | Sharpness Counterexample C (Kernel-Checked!): Adding the superset term `[y ⊆ x]` to `subsetDisjMat` (`a = c = 1`) breaks the `(a^2 - c^2)^(2^(k-1))` law: at `k = 1`, `det = 2 ≠ 0`, while at `k = 2`, `det = 0`! |
+
+## 128. [`booth-csa-multiplier-invariants/`](booth-csa-multiplier-invariants/)
+
+We construct a **two-engine pure-silicon infinite proof compiler** for arbitrary-width, arbitrary-depth Booth and Carry-Save multiplier architectures ($\forall k \ge 1,\; \forall w \ge 1,\; \forall m \ge 1$): 1. **Mechanism I — `RadixTransducer` & `FiniteRadixCert` (Finite-State Affine-Potential Compiler):** - A finite-state base-$B$ transducer $(Q, A, \mathrm{step}, \delta, \p
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `csa3to2_exact_mod` | `BoothCsaMultiplierInvariants.Theorems` | Machine-checked infinite theorem `csa3to2_exact_mod` proved in pure Lean 4 `Init`. |
+| `lift_all_widths` | `BoothCsaMultiplierInvariants.Theorems` | INFINITE-WIDTH LIFTING THEOREM (Mechanism II): Any finite top-`g`-bit guard specification lifts to EXACT unwrapped integer conservation `signedVal W S' + signedVal W C' = V` for ALL bit-widths `W ≥ g` and ALL pairs `(S, C)` whose modular sum lies in the allowed slabs! |
+| `zeroCarryTop_exact` | `BoothCsaMultiplierInvariants.Theorems` | THEOREM 1 (Exact g-Bit Zero-Carry-Top Normalizer, ∀ g ≥ 2, ∀ W ≥ g): For ANY `g ≥ 2`, ANY width `W ≥ g`, and ANY Carry-Save pair `(S, C)` whose modular sum `V` lies in the asymmetric range `[-2^(W-1) + 2^(W-g), 2^(W-1) - 1]`: 1. `signedVal W S' + signedVal W C' = V` EXACTLY IN `Int` (zero wraparound!) 2. `C' < 2^(W - g)` (top `g` bits of `C'` are identically zero, so `C'` is non-negative!). |
+| `unnormalized_csa_rshift_fails` | `BoothCsaMultiplierInvariants.Theorems` | Sharpness Corollary: Naive unnormalized CSA right-shift fails with error `-2^(W-1)` at `V = 0` ∀ W ≥ 3. |
+| `sec_cancellation_exact` | `BoothCsaMultiplierInvariants.Theorems` | THEOREM 6 (Universal 2-State Radix-`2^k` Sign-Extension Cancellation Law, ∀ k ≥ 1, ∀ W, ∀ m ≥ 1): Directly discharged by Mechanism I (`RadixTransducer.lift_sum`) on `secTransducer`: `∑_{j=0}^{m-1} secTerm_k(j > 0, s_j) * 2^(W + k*j) + ∑_{j=0}^{m-1} s_j * 2^(W + k*j) = 2^(W + k*m)`. |
+| `radix4_booth_tree_exact` | `BoothCsaMultiplierInvariants.Theorems` | THEOREM 8 (Complete Pure-Silicon Radix-4 Booth Tree + SEC Theorem, ∀ w ≥ 1, ∀ m ≥ 1): Combines Booth Transducer (Theorem 5) + Silicon PP (Theorem 7) + 2-State SEC (Theorem 6): 1. `boothTreeSum w m x_u y_u = signedVal w x_u * signedVal (2*m) y_u + 2^(w + 1 + 2*m)` EXACTLY IN `Int`! 2. Modulo `2^(w + 2*m)`, `boothTreeSum` equals the exact `(w + 2*m)`-bit signed product! |
+| `booth_acc_endpoints_tight` | `BoothCsaMultiplierInvariants.Theorems` | Sharpness / Tightness: BOTH `+2^(w+k-2)` and `-2^(w+k-2)` are attained by `A_j'`! |
+| `badGuardCert_g2_rejected` | `BoothCsaMultiplierInvariants.Theorems` | Machine-checked infinite theorem `badGuardCert_g2_rejected` proved in pure Lean 4 `Init`. |
+
+## 129. [`cross-thread-silicon-meta-bridge/`](cross-thread-silicon-meta-bridge/)
+
+**Mechanism Name:** **SiliconMetaBridge — Weighted Bit-Slice Tensor (`BitMPS` / `BitMPO`) & Bond-Dimension-Preserving Walsh–Hadamard Involution Reflection Meta-Engine**
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `sumPow2_eq_sumRange` | `CrossThreadSiliconMetaBridge.Theorems` | Exact equivalence: `sumPow2 w f` equals the standard sequential sum `∑_{x=0}^{2^w - 1} f(x)`. |
+| `xorConv_quadForm_eq_wht` | `CrossThreadSiliconMetaBridge.Theorems` | **Exact Integer XOR-Convolution Spectral Diagonalization**: `2^w * ∑_{x, y < 2^w} v(x) f(x ^^^ y) v(y) = ∑_{xi < 2^w} W_w(f)(xi) * W_w(v)(xi)^2`. |
+| `prefixTree_walsh_bandlimited` | `CrossThreadSiliconMetaBridge.Theorems` | **Bridge III Master Theorem (2-Adic Compactness <-> Walsh Band-Limit Duality)**: Every finite binary prefix-tree cover `t` of depth `d` has ZERO Walsh-Hadamard energy at ALL high frequencies `2^d ≤ xi < 2^w` for EVERY bit-width `w ≥ d`! |
+| `transferRec2_sound` | `CrossThreadSiliconMetaBridge.Theorems` | Machine-checked infinite theorem `transferRec2_sound` proved in pure Lean 4 `Init`. |
+| `rawCarry_c1_indefinite_all_w` | `CrossThreadSiliconMetaBridge.Theorems` | Machine-checked infinite theorem `rawCarry_c1_indefinite_all_w` proved in pure Lean 4 `Init`. |
+| `thueMorse_inc_mod4_all_w` | `CrossThreadSiliconMetaBridge.Theorems` | Machine-checked infinite theorem `thueMorse_inc_mod4_all_w` proved in pure Lean 4 `Init`. |
+| `demoAdicTree_sharp_at_freq4` | `CrossThreadSiliconMetaBridge.Theorems` | Sharpness for Bridge III: at frequency `xi = 4 = 2^(depth - 1)`, Walsh energy is NON-ZERO (`12 ≠ 0`). |
+| `mutation_reject_modSubspace` | `CrossThreadSiliconMetaBridge.Theorems` | Machine-checked infinite theorem `mutation_reject_modSubspace` proved in pure Lean 4 `Init`. |
+
+## 130. [`integer-mps-mpo-tensor-verifier/`](integer-mps-mpo-tensor-verifier/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **`SiliconTensorEngine`**, a two-stage exact integer Ho-Kalman / gauge-intertwiner MPS/MPO tensor-network proof compiler discharging infinite-width carry, borrow, Rudin–Shapiro, Thue–Morse, and Walsh–Hadamard identities.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `sound_rightReductionCert` | `Challenge` | Stage-1 exact integer Krylov projection soundness: $TP = P M _ 1$ lifts finite matrix checks to exact transfer-system equality for all $w \in \mathbb{N}$. |
+| `sound_orthogonalityCert` | `Challenge` | Two-stage orthogonality soundness: certifies exact vanishing $\forall w \ge w _ 0$, including non-nilpotent invariant-subspace orthogonality. |
+| `sound_recurrenceCert` | `Challenge` | Minimal-order recurrence soundness: certifies exact integer linear recurrences (even with irrational spectra) purely over $\mathbb{Z}$ for all $w \in \mathbb{N}$. |
+| `thm_rs_carry_parametric_closed` | `Challenge` | For all $q \in \mathbb{Z}$ and $w \in \mathbb{N}$, $(q+3) \sum _ {x,y < 2^w} \mathrm{RS} _ w(x) \mathrm{RS} _ w(y) q^{\mathrm{carries}(w,x,y)} = (q+2) 2^{w+1} + (-(q+1))^{w+1}$. |
+| `thm_carry_hadamard_fibonacci` | `Challenge` | For all $w \in \mathbb{N}$, the Carry–Walsh Hilbert–Schmidt trace equals $\mathrm{Tr}(C _ w H _ w) = 2^w \cdot F _ {w+2}$. |
+| `thm_carry_borrow_orthogonal` | `Challenge` | For all $w \ge 1$, the binary carry-parity and borrow-parity operators are strictly Hilbert–Schmidt orthogonal: $\mathrm{Tr}(C _ w B _ w) = 0$. |
+| `thm_carry_all_odd_traces_zero` | `Challenge` | For all $w \ge 1$ and $m \in \mathbb{N}$, every odd spectral moment of the binary carry-parity matrix vanishes: $\mathrm{Tr}(C _ w^{2m+1}) = 0$. |
+| `thm_carry_plus_borrow_tm` | `Challenge` | Pointwise complementarity on Thue–Morse: for all $w \ge 1$ and $x \in \mathbb{N}$, $((C _ w + B _ w) \cdot \mathrm{TM} _ w)(x) = 2$. |
+
+## 131. [`walsh-gray-conjugacy-spectra/`](walsh-gray-conjugacy-spectra/)
+
+**Mechanism Name:** *The Walsh–Defect, Binary Weyl–Heisenberg & Hyperplane-Rotation Spectral Conjugacy Engine* (`SiliconSpectral` in [Proof.lean](file:///c:/Users/devin/Desktop/math/silicon-infinite-mechanisms-20261126/specmat-16/Proof.lean)). **Silicon Principle (Finite-Width Circuit $\to$ Infinite-Width $2^k \times 2^k$ Spectral Lift):** Directly computing matrix powers, eige
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `walsh_perm_conj` | `WalshGrayConjugacySpectra.Theorems` | Contragredient Law: W_k P_A = P_{A^{-T}} W_k (exact over ℤ, ∀ k). |
+| `spectral_period_lift` | `WalshGrayConjugacySpectra.Theorems` | Finite-to-Infinite Periodicity Lift: if Δ(A)^d = id on V_k, then (W_k P_A)^{2d} = 2^{kd} I. |
+| `even_symmetric_projectors` | `WalshGrayConjugacySpectra.Theorems` | Machine-checked infinite theorem `even_symmetric_projectors` proved in pure Lean 4 `Init`. |
+| `hyperplane_even_trace_lift` | `WalshGrayConjugacySpectra.Theorems` | Pillar 3c: Exact Even-Power Necklace Trace Formula! For any HyperplaneRotCert k n r A (n ≥ 1) and any m ∈ ℕ, letting g = gcd(m, n) and q = n / g: Tr((W_k P_A)^{2m}) = 2^{km + r + (if q % 2 = 0 then g else g - 1)}. |
+| `walsh_gray_mod4_antisym` | `WalshGrayConjugacySpectra.Theorems` | THEOREM A4 (Gray–Walsh Mod-4 Spectral Symmetry & Odd-Trace Vanishing): ∀ r ∈ ℕ, at width k = 4r + 1, the explicit Weyl–Heisenberg operator U = D_{G_k b} T_b (with alternating b) anticommutes with W_k P_{G_k}, forcing Tr((W_k P_{G_k})^{2m+1}) = 0 ∀ m ∈ ℕ and E_λ ≅ E_{-λ}. |
+| `walsh_bitrev_parity_dichotomy_odd` | `WalshGrayConjugacySpectra.Theorems` | THEOREM C1 (Bit-Reversal Spectral Parity Dichotomy): (W_k P_{R_k})^2 = 2^k I ∀ k, with: - Odd width k = 2r + 1: balanced (Tr = 0 via Weyl–Heisenberg anticommutator); - Even width k = 2r (r ≥ 1): asymmetric by 2^r, with exact integer projector traces giving m_+ = 2^{2r-1} + 2^{r-1} and m_- = 2^{2r-1} - 2^{r-1}. |
+| `walsh_gray_rot_period` | `WalshGrayConjugacySpectra.Theorems` | THEOREM D1 (Gray ∘ Butterfly-Rotation 2k-Cycle Periodicity): ∀ k ≥ 2, (W_k P_{G_k C_k})^{2k} = 2^{k^2} I_{2^k}. |
+| `sharp_nonlinear_inc2_not_scaled_perm` | `WalshGrayConjugacySpectra.Theorems` | Machine-checked infinite theorem `sharp_nonlinear_inc2_not_scaled_perm` proved in pure Lean 4 `Init`. |

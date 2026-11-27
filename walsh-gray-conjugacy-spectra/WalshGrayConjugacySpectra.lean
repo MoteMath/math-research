@@ -1,0 +1,2 @@
+import WalshGrayConjugacySpectra.Defs
+import WalshGrayConjugacySpectra.Theorems

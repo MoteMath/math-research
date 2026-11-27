@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CrossThreadSiliconMetaBridgeChallenge.sumPow2_eq_sumRange",
+    "CrossThreadSiliconMetaBridgeChallenge.xorConv_quadForm_eq_wht",
+    "CrossThreadSiliconMetaBridgeChallenge.prefixTree_walsh_bandlimited",
+    "CrossThreadSiliconMetaBridgeChallenge.transferRec2_sound",
+    "CrossThreadSiliconMetaBridgeChallenge.rawCarry_c1_indefinite_all_w",
+    "CrossThreadSiliconMetaBridgeChallenge.thueMorse_inc_mod4_all_w",
+    "CrossThreadSiliconMetaBridgeChallenge.demoAdicTree_sharp_at_freq4",
+    "CrossThreadSiliconMetaBridgeChallenge.mutation_reject_modSubspace"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,12 @@
+name = "bit-sliced-schur-det-engine"
+version = "0.1.0"
+defaultTargets = ["BitSlicedSchurDetEngine", "Solution"]
+
+[[lean_lib]]
+name = "BitSlicedSchurDetEngine"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,12 @@
+name = "walsh-gray-conjugacy-spectra"
+version = "0.1.0"
+defaultTargets = ["WalshGrayConjugacySpectra", "Solution"]
+
+[[lean_lib]]
+name = "WalshGrayConjugacySpectra"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

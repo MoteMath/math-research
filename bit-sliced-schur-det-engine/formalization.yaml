@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Recursive Bit-Sliced Schur-Complement Determinant Engine
+  description: >-
+    **Mechanism Name:** **Division-Free Bit-Sliced Block-Schur Lifting Compiler** (`det_block_schur_proportional` + `det_block_schur_right_unimodular` + `det_bitSliced_schur_lift`) **Silicon Principle:** For any $2^k \times 2^k$ matrix indexed by $k$-bit words $x, y \in \{0, \dots, 2^k - 1\}$, splitting row and column indices by their most significant bit (MSB, bit $k - 1$) partiti
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: bit-sliced-schur-det-engine
+  license: Apache-2.0

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Bipartite Booth–CSA Infinite Proof Engine (RadixTransducer + GuardNormalizerSpec)
+  description: >-
+    We construct a **two-engine pure-silicon infinite proof compiler** for arbitrary-width, arbitrary-depth Booth and Carry-Save multiplier architectures ($\forall k \ge 1,\; \forall w \ge 1,\; \forall m \ge 1$): 1. **Mechanism I — `RadixTransducer` & `FiniteRadixCert` (Finite-State Affine-Potential Compiler):** - A finite-state base-$B$ transducer $(Q, A, \mathrm{step}, \delta, \p
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: booth-csa-multiplier-invariants
+  license: Apache-2.0

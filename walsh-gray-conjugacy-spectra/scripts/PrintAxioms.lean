@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms WalshGrayConjugacySpectraChallenge.walsh_perm_conj
+#print axioms WalshGrayConjugacySpectraChallenge.spectral_period_lift
+#print axioms WalshGrayConjugacySpectraChallenge.even_symmetric_projectors
+#print axioms WalshGrayConjugacySpectraChallenge.hyperplane_even_trace_lift
+#print axioms WalshGrayConjugacySpectraChallenge.walsh_gray_mod4_antisym
+#print axioms WalshGrayConjugacySpectraChallenge.walsh_bitrev_parity_dichotomy_odd
+#print axioms WalshGrayConjugacySpectraChallenge.walsh_gray_rot_period
+#print axioms WalshGrayConjugacySpectraChallenge.sharp_nonlinear_inc2_not_scaled_perm

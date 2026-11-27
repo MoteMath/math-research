@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BoothCsaMultiplierInvariantsChallenge.csa3to2_exact_mod",
+    "BoothCsaMultiplierInvariantsChallenge.lift_all_widths",
+    "BoothCsaMultiplierInvariantsChallenge.zeroCarryTop_exact",
+    "BoothCsaMultiplierInvariantsChallenge.unnormalized_csa_rshift_fails",
+    "BoothCsaMultiplierInvariantsChallenge.sec_cancellation_exact",
+    "BoothCsaMultiplierInvariantsChallenge.radix4_booth_tree_exact",
+    "BoothCsaMultiplierInvariantsChallenge.booth_acc_endpoints_tight",
+    "BoothCsaMultiplierInvariantsChallenge.badGuardCert_g2_rejected"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

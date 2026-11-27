@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Integer MPS/MPO Tensor Verifier - gauge-certified binary tensor contractions and traces
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the infinite
+    pure-silicon mechanism "Integer MPS/MPO Tensor Verifier - gauge-certified binary tensor contractions and traces", with headline theorems stated in Challenge.lean and
+    discharged in Solution.lean.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: integer-mps-mpo-tensor-verifier
+  license: Apache-2.0

@@ -1,0 +1,12 @@
+name = "booth-csa-multiplier-invariants"
+version = "0.1.0"
+defaultTargets = ["BoothCsaMultiplierInvariants", "Solution"]
+
+[[lean_lib]]
+name = "BoothCsaMultiplierInvariants"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,12 @@
+name = "integer-mps-mpo-tensor-verifier"
+version = "0.1.0"
+defaultTargets = ["IntegerMpsMpoTensorVerifier", "Solution"]
+
+[[lean_lib]]
+name = "IntegerMpsMpoTensorVerifier"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

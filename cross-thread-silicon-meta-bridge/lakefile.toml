@@ -1,0 +1,12 @@
+name = "cross-thread-silicon-meta-bridge"
+version = "0.1.0"
+defaultTargets = ["CrossThreadSiliconMetaBridge", "Solution"]
+
+[[lean_lib]]
+name = "CrossThreadSiliconMetaBridge"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

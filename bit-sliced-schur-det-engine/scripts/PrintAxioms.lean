@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms BitSlicedSchurDetEngineChallenge.det_mul
+#print axioms BitSlicedSchurDetEngineChallenge.det_block_schur_left_unimodular
+#print axioms BitSlicedSchurDetEngineChallenge.det_block_schur_right_scaled
+#print axioms BitSlicedSchurDetEngineChallenge.det_bitSliced_schur_zero_iff
+#print axioms BitSlicedSchurDetEngineChallenge.det_msbAnd_closed_form
+#print axioms BitSlicedSchurDetEngineChallenge.det_subsetDisjMat_closed_form
+#print axioms BitSlicedSchurDetEngineChallenge.witness_zmod6_zero_divisors
+#print axioms BitSlicedSchurDetEngineChallenge.counterexample_bool_plus_superset_breaks
