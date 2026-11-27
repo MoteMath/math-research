@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "HilbertMooreCornerGlueLocalityChallenge.hilbert2D_bijective_bv",
+    "HilbertMooreCornerGlueLocalityChallenge.hilbert2D_unit_step_and_hamming",
+    "HilbertMooreCornerGlueLocalityChallenge.hilbert2D_total_switching_energy",
+    "HilbertMooreCornerGlueLocalityChallenge.hilbert2D_holder_l1_locality",
+    "HilbertMooreCornerGlueLocalityChallenge.hilbert2D_twoCycle_binomial",
+    "HilbertMooreCornerGlueLocalityChallenge.hilbert2D_orbit_3smooth",
+    "HilbertMooreCornerGlueLocalityChallenge.moore2D_hamiltonian_cycle",
+    "HilbertMooreCornerGlueLocalityChallenge.hilbert3D_fixCount_fibonacci"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

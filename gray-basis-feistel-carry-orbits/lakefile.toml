@@ -1,0 +1,12 @@
+name = "gray-basis-feistel-carry-orbits"
+version = "0.1.0"
+defaultTargets = ["GrayBasisFeistelCarryOrbits", "Solution"]
+
+[[lean_lib]]
+name = "GrayBasisFeistelCarryOrbits"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

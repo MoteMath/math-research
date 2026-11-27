@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Hybrid Carry-AND NLFSR Holonomy and De Bruijn Engine - finite F_2 lasso period-doubling, hermetic carry-barrier coexistence and non-prefix De Bruijn completeness
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of an F_2 carry-transducer lasso period-doubling engine for bit-sliced invertible hybrid carry-AND NLFSRs, proving exact 2-cycle splitting of H111, De Bruijn completeness of K_map and H121, universal Frobenius carry-pump giant cycles coexisting with hermetic carry-barrier collapse, exact logarithmic periods on the carry-barrier sector, and universal De Bruijn completeness for non-prefix taps with sharp prefix-tap cycle splitting.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: nlfsr-holonomy-lasso-debruijn
+  license: Apache-2.0

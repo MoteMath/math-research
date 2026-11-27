@@ -1,0 +1,12 @@
+name = "arx-rank1-surgery-quotient-locks"
+version = "0.1.0"
+defaultTargets = ["ArxRank1SurgeryQuotientLocks", "Solution"]
+
+[[lean_lib]]
+name = "ArxRank1SurgeryQuotientLocks"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

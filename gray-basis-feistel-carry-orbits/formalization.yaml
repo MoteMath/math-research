@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Gray-Basis and Feistel-Carry Orbits - exact orbit collapse, MSB carry-kick Hamiltonian phase transitions and universal Jacobsthal isospectrality
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of exact infinite-width orbit decompositions for Gray-basis bit-permutation involutions plus carry increment (universal order-4 collapse of Gray bitrev + 1 and the exact MSB carry-kick single-cycle phase transition) and Feistel-carry maps (exact single-cycle dichotomy and universal Jacobsthal giant-cycle isospectrality 3 L0 = 2^(2k+1) + 1 for every bijection h).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: gray-basis-feistel-carry-orbits
+  license: Apache-2.0

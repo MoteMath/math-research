@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "WalnutProphecySkolemLifterChallenge.homCert_sound",
+    "WalnutProphecySkolemLifterChallenge.existsCert_sound",
+    "WalnutProphecySkolemLifterChallenge.prophecyCert_sound",
+    "WalnutProphecySkolemLifterChallenge.universalCert_sound",
+    "WalnutProphecySkolemLifterChallenge.dfaGrayAdd_sound",
+    "WalnutProphecySkolemLifterChallenge.grayAddParity_exact_square_spectrum",
+    "WalnutProphecySkolemLifterChallenge.grayAddParity_exact_cube_spectrum",
+    "WalnutProphecySkolemLifterChallenge.grayAddParity_fifth_power_free"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

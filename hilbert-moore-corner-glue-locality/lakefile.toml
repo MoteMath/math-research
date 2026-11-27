@@ -1,0 +1,12 @@
+name = "hilbert-moore-corner-glue-locality"
+version = "0.1.0"
+defaultTargets = ["HilbertMooreCornerGlueLocality", "Solution"]
+
+[[lean_lib]]
+name = "HilbertMooreCornerGlueLocality"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

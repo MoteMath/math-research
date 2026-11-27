@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "GrayBasisFeistelCarryOrbitsChallenge.phi_singleCycle_iff_even",
+    "GrayBasisFeistelCarryOrbitsChallenge.grayInvMap_singleCycle_iff",
+    "GrayBasisFeistelCarryOrbitsChallenge.grayBitPermInvolution_plusOne_universal",
+    "GrayBasisFeistelCarryOrbitsChallenge.grayBitrev_plusOne_order4",
+    "GrayBasisFeistelCarryOrbitsChallenge.grayBitPermInvolution_msbKick_singleCycle_iff",
+    "GrayBasisFeistelCarryOrbitsChallenge.grayBitrev_msbKick_singleCycle",
+    "GrayBasisFeistelCarryOrbitsChallenge.feistelCarry_singleCycle_iff",
+    "GrayBasisFeistelCarryOrbitsChallenge.feistelCarry_bijection_jacobsthal"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

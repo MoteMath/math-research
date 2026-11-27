@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms WalnutProphecySkolemLifterChallenge.homCert_sound
+#print axioms WalnutProphecySkolemLifterChallenge.existsCert_sound
+#print axioms WalnutProphecySkolemLifterChallenge.prophecyCert_sound
+#print axioms WalnutProphecySkolemLifterChallenge.universalCert_sound
+#print axioms WalnutProphecySkolemLifterChallenge.dfaGrayAdd_sound
+#print axioms WalnutProphecySkolemLifterChallenge.grayAddParity_exact_square_spectrum
+#print axioms WalnutProphecySkolemLifterChallenge.grayAddParity_exact_cube_spectrum
+#print axioms WalnutProphecySkolemLifterChallenge.grayAddParity_fifth_power_free

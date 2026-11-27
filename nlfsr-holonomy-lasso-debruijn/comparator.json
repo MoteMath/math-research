@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "NlfsrHolonomyLassoDebruijnChallenge.transducer_cert_period_doubling",
+    "NlfsrHolonomyLassoDebruijnChallenge.theorem1_H111_exact_two_cycles",
+    "NlfsrHolonomyLassoDebruijnChallenge.theorem1b_H121_debruijn",
+    "NlfsrHolonomyLassoDebruijnChallenge.theorem2a_carry_pump_universal_giant_cycle",
+    "NlfsrHolonomyLassoDebruijnChallenge.theorem2b_carry_barrier_hermetic",
+    "NlfsrHolonomyLassoDebruijnChallenge.theorem2c_linear_carry_barrier_exact_log_period",
+    "NlfsrHolonomyLassoDebruijnChallenge.theorem3a_nonprefix_hybrid_nlfsr_debruijn",
+    "NlfsrHolonomyLassoDebruijnChallenge.theorem3b_prefix_tap_exact_cycle_splitting"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

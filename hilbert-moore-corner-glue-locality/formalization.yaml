@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Hilbert-Moore Corner-Glue Locality - exact infinite-width bijectivity, L1-locality, switching-energy conservation, Fibonacci-square orbits and 3-smoothness for 2D/3D Hilbert and Moore curves
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of finite-certificate BitBlockTransducer lifting for 2D/3D Hilbert and 2D Moore space-filling curves: infinite-width BitVec bijectivity, exact unit L1-adjacency and pointwise Hamming switching, exact switching-energy conservation, discrete Holder-1/2 L1-locality, exact Fibonacci and Fibonacci-square fixed-point and 2-cycle counts, universal 3-smoothness of 2D Hilbert-Morton orbits, and 2D Moore closed Hamiltonian cycles.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: hilbert-moore-corner-glue-locality
+  license: Apache-2.0

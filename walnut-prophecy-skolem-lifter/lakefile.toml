@@ -1,0 +1,12 @@
+name = "walnut-prophecy-skolem-lifter"
+version = "0.1.0"
+defaultTargets = ["WalnutProphecySkolemLifter", "Solution"]
+
+[[lean_lib]]
+name = "WalnutProphecySkolemLifter"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

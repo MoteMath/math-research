@@ -1,0 +1,12 @@
+name = "nlfsr-holonomy-lasso-debruijn"
+version = "0.1.0"
+defaultTargets = ["NlfsrHolonomyLassoDebruijn", "Solution"]
+
+[[lean_lib]]
+name = "NlfsrHolonomyLassoDebruijn"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

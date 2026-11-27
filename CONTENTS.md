@@ -1319,3 +1319,78 @@ Pure Lean 4 `Init` formalization (zero Mathlib, toolchain `v4.34.1`): 2-regular 
 | `TwoRegularGrayDefectConesChallenge.E_G_mod4_law` | `TwoRegularGrayDefectCones.Theorems` | For every $n \in \mathbb{N}$, $4 \mid (E _ G(n) - (n \bmod 2)(\lfloor n / 2 \rfloor \bmod 4))$ (exact period-8 law). |
 | `TwoRegularGrayDefectConesChallenge.E_G_dyadic_parabolic_sandwich` | `TwoRegularGrayDefectCones.Theorems` | For every $n \in \mathbb{N}$, the cumulative Gray value excess satisfies $Q _ {\mathrm{dyadic}}(n) \le 2\,E _ G(n) \le 2\,Q _ {\mathrm{dyadic}}(n)$. |
 | `TwoRegularGrayDefectConesChallenge.S_q_second_diff_identity` | `TwoRegularGrayDefectCones.Theorems` | For every $q \in \mathbb{Z}$ and every $n \in \mathbb{N}$, $S _ q(q, 2n) + S _ q(q, 2n + 2) - 2\,S _ q(q, 2n + 1) = -2\,(n \bmod 2)$, independent of $q$. |
+
+## 98. [`arx-rank1-surgery-quotient-locks/`](arx-rank1-surgery-quotient-locks/)
+
+Pure-Init Lean 4 infinite-width ARX period-lock and invariant-subspace mechanisms: exact Fermat-Mersenne permutation orders, rank-1 carry-defect cycle surgery, and round-varying period-3 quotient locks on Speck.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `rank1Surgery_spliced_minPeriod` | `ArxRank1SurgeryQuotientLocks.Theorems` | Abstract rank-1 surgery $\tau _ {(a, \top)} \circ \psi$ splices fixed point $\top$ into $a$'s $B$-cycle to yield exact minimal period $B + 1$.' |
+| `rank1Surgery_global_order` | `ArxRank1SurgeryQuotientLocks.Theorems` | If $\psi^B = \mathrm{id}$ globally, rank-1 surgery $\tau _ {(a, \top)} \circ \psi$ has global period dividing $B(B + 1)$. |
+| `arx_fermat_mersenne_odd` | `ArxRank1SurgeryQuotientLocks.Theorems` | For $w \ge 2$ and odd $q = w / \gcd(w, r)$, `arxFermatMap w r` has global period $2q$ realized minimally at $0$. |
+| `arx_fermat_mersenne_even` | `ArxRank1SurgeryQuotientLocks.Theorems` | For $w \ge 3$ and even $q = w / \gcd(w, r)$ with $g = \gcd(w, r)$, `arxFermatMap w r` has global period $q(2^g + 1)$ realized minimally at $0$. |
+| `arx_fermat_number_order` | `ArxRank1SurgeryQuotientLocks.Theorems` | For $w = 2^k$ ($k \ge 2$) and $r = 2^j$ ($j < k$), `arxFermatMap w r` has exact permutation order $2^{k-j}(2^{2^j} + 1) = 2^{k-j} F _ j$. |
+| `arx_rank1_surgery_theorem` | `ArxRank1SurgeryQuotientLocks.Theorems` | For $w \ge 2$ and $B = q(2^g - 1)$, `arxAddRot w r` has one anomalous $(B + 1)$-cycle at $0$, period dividing $B$ everywhere outside it, and global order dividing $B(B + 1)$. |
+| `arx_rank1_surgery_nontrivial_xor` | `ArxRank1SurgeryQuotientLocks.Theorems` | Conjugacy transports the exact $(B + 1)$ minimal period and $B(B + 1)$ global lock to the genuine Add+Rotate+XOR map $G(x) = \mathrm{rotL} _ r(x + (1 \oplus 2^{w-1})) \oplus 2^{w-1}$. |
+| `speck_period3_quotient_lock` | `ArxRank1SurgeryQuotientLocks.Theorems` | For every $h \ge 1$ and any three independent Speck keys whose low $h$ bits vanish, 3 Speck rounds preserve $V _ h$ and lock the 2-bit quotient $\pi _ h$ back to its starting value. |
+
+## 99. [`gray-basis-feistel-carry-orbits/`](gray-basis-feistel-carry-orbits/)
+
+Pure-Init Lean 4 trailing-ones renormalization and orbit compilers for Gray-basis bit-permutation involutions + carry increment and Feistel-carry maps, proving order-4 collapse, MSB carry-kick Hamiltonian phase transitions, and universal Jacobsthal isospectrality.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `phi_singleCycle_iff_even` | `GrayBasisFeistelCarryOrbits.Theorems` | Core engine: for $n \ge 1$, $\Phi _ \gamma(v) = (v \oplus \gamma) + 1 \pmod{2^n}$ is a single Hamiltonian cycle if and only if $\gamma$ is even. |
+| `grayInvMap_singleCycle_iff` | `GrayBasisFeistelCarryOrbits.Theorems` | Compiler A: for any `GrayInvolutionSpec P δ m` at width $n + 1 \ge 2$, `grayInvMap P δ` is single-cycle if and only if `compiledDefect δ m` is even. |
+| `grayBitPermInvolution_plusOne_universal` | `GrayBasisFeistelCarryOrbits.Theorems` | For every bit-permutation involution $\pi$ on $n + 1 \ge 2$ bits with $j = \pi(0)$, Gray-basis $\pi + 1$ has zero-orbit length $2^{n + 1 - j}$, is single-cycle iff $j = 0$, and every state has period in $\{2, 4, 2^{n + 1 - j}\}$. |
+| `grayBitrev_plusOne_order4` | `GrayBasisFeistelCarryOrbits.Theorems` | For every width $w \ge 2$, Gray-basis `bitrev + 1` has minimal period $2$ at $0$ and satisfies $F^4(x) = x$ for every $x \in \mathrm{BitVec}\ w$. |
+| `grayBitPermInvolution_msbKick_singleCycle_iff` | `GrayBasisFeistelCarryOrbits.Theorems` | For every $w \ge 3$ and bit-permutation involution $\pi$, Gray-basis $\pi + (2^{w-1} + 1)$ is a single Hamiltonian cycle if and only if $\pi(0) \in \{0, w - 2, w - 1\}$. |
+| `grayBitrev_msbKick_singleCycle` | `GrayBasisFeistelCarryOrbits.Theorems` | For every width $w \ge 3$, Gray-basis `bitrev + (2^{w-1} + 1)` is a single full-period Hamiltonian cycle of length $2^w$. |
+| `feistelCarry_singleCycle_iff` | `GrayBasisFeistelCarryOrbits.Theorems` | Compiler B: for $m, k \ge 1$ and any $h : \mathrm{BitVec}\ m \to \mathrm{BitVec}\ k$, `feistelCarry m k h` is a single Hamiltonian cycle if and only if $h(a)$ is even for all $a$. |
+| `feistelCarry_bijection_jacobsthal` | `GrayBasisFeistelCarryOrbits.Theorems` | For every $k \ge 1$ and every bijection $h$ on $\mathrm{BitVec}\ k$, `feistelCarry k k h` has giant zero-orbit length $L _ 0$ with $3 L _ 0 = 2^{2k+1} + 1$ (independent of $h$) and all other periods in $\{1, 2\}$. |
+
+## 100. [`hilbert-moore-corner-glue-locality/`](hilbert-moore-corner-glue-locality/)
+
+Pure-Init Lean 4 finite-certificate BitBlockTransducer engine for 2D/3D Hilbert and 2D Moore space-filling curves: bijectivity, unit L1-adjacency, switching-energy conservation, Holder-1/2 locality, Fibonacci-square 2-cycles, universal 3-smoothness, and 3D lumpability.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `hilbert2D_bijective_bv` | `HilbertMooreCornerGlueLocality.Theorems` | For every width $w$ and $x \in \mathrm{BitVec}(2w)$, `hilbert2D` and its synthesized dual inverse transducer are exact two-sided inverses. |
+| `hilbert2D_unit_step_and_hamming` | `HilbertMooreCornerGlueLocality.Theorems` | For all $w$ and $t + 1 < 4^w$, 2D Hilbert moves by exact $L _ 1$ distance $1$ and flips exactly $1 + \nu _ 4(t + 1)$ bits. |
+| `hilbert2D_total_switching_energy` | `HilbertMooreCornerGlueLocality.Theorems` | For every width $w$, $3 \sum _ {t < 4^w - 1} \mathrm{hammingDist}(t, t+1) + 3w = 4(4^w - 1)$. |
+| `hilbert2D_holder_l1_locality` | `HilbertMooreCornerGlueLocality.Theorems` | For every $w$ and $u \le v < 4^w$, $\|H _ w(v) - H _ w(u)\| _ 1^2 \le 16(v - u)$. |
+| `hilbert2D_twoCycle_binomial` | `HilbertMooreCornerGlueLocality.Theorems` | For every $w \ge 1$, $|\mathrm{Fix}(\Pi _ {w,0})| = F _ {w+1}$, $|\mathrm{Fix}(\Pi _ {w,0}^2)| = F _ {w+1}^2$, and there are $F _ {w+1}(F _ {w+1}-1)$ strict 2-cycle points. |
+| `hilbert2D_orbit_3smooth` | `HilbertMooreCornerGlueLocality.Theorems` | For every $w$, $s \in \mathrm{Fin}\ 4$, and $x \in \mathrm{BitVec}(2w)$, $\Pi _ {w, s}^{12^w}(x) = x$ (all 2D Hilbert-Morton orbits are 3-smooth). |
+| `moore2D_hamiltonian_cycle` | `HilbertMooreCornerGlueLocality.Theorems` | For every width $w + 1 \ge 1$, the 2D Moore curve is bijective and cyclically $L _ 1$-adjacent modulo $4^{w+1}$ (including wrap-around). |
+| `hilbert3D_fixCount_fibonacci` | `HilbertMooreCornerGlueLocality.Theorems` | For every width $w$, the 24-state 3D Hamilton-Hilbert automaton satisfies $|\mathrm{Fix}(\Pi^{(3)} _ {w, 0})| = F _ {w+2}$. |
+
+## 101. [`nlfsr-holonomy-lasso-debruijn/`](nlfsr-holonomy-lasso-debruijn/)
+
+Pure-Init Lean 4 F_2 carry-transducer lasso compiler and carry-barrier bifurcation engine for hybrid carry-AND NLFSRs: De Bruijn completeness, exact 2-cycle splitting, and exponential/logarithmic sector coexistence.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `transducer_cert_period_doubling` | `NlfsrHolonomyLassoDebruijn.Theorems` | End-to-end engine: a finite `decide`-checked `LassoCert` for a valid `CarryTransducer` lifts base period $L _ 0$ at width $w _ 0$ to exact period $L _ 0 \cdot 2^d$ at width $w _ 0 + d$ for all $d$. |
+| `theorem1_H111_exact_two_cycles` | `NlfsrHolonomyLassoDebruijn.Theorems` | For every $w \ge 3$, $H _ {1,1,1}(x) = x + 2(x \mathbin{\&} (x \ll 1)) + 1$ partitions mod $2^w$ into two disjoint cycles of exact minimal period $2^{w-1}$ separated by bit $2$. |
+| `theorem1b_H121_debruijn` | `NlfsrHolonomyLassoDebruijn.Theorems` | For every $w \ge 1$, $H _ {1,2,1}(x) = x + 2(x \mathbin{\&} (x \ll 2)) + 1$ is De Bruijn complete (single cycle of length $2^w$). |
+| `theorem2a_carry_pump_universal_giant_cycle` | `NlfsrHolonomyLassoDebruijn.Theorems` | For any 2-delayed nonlinear feedback $N$ with $\mathrm{bit} _ 2(N(0)) = \mathrm{bit} _ 2(N(1))$ and $c \equiv 1 \pmod 4$, every state with $\mathrm{bit} _ 1(x) = 0$ has exact period $2^{w-1}$ for all $w \ge 2$. |
+| `theorem2b_carry_barrier_hermetic` | `NlfsrHolonomyLassoDebruijn.Theorems` | For any 2-delayed $N$ and every $x$ with $\mathrm{bit} _ 1(x) = 1$, bit 1 stays $1$ and zero carries propagate past bit 1 under `hybridCarryNLFSR N 1`. |
+| `theorem2c_linear_carry_barrier_exact_log_period` | `NlfsrHolonomyLassoDebruijn.Theorems` | For every $w \ge 3$ and $k = \lceil \log _ 2(w - 1) \rceil$, every state with $\mathrm{bit} _ 1(x) = 1$ has exact minimal period $2^k$ under $F _ 0(x) = (x \oplus (x \ll 1)) + 1$. |
+| `theorem3a_nonprefix_hybrid_nlfsr_debruijn` | `NlfsrHolonomyLassoDebruijn.Theorems` | For every finite list $M$ of non-prefix multi-way shift-AND taps, every odd $c$, and every $w \ge 1$, `hybridTapNLFSR M c` is De Bruijn complete. |
+| `theorem3b_prefix_tap_exact_cycle_splitting` | `NlfsrHolonomyLassoDebruijn.Theorems` | For every $d \ge 1$ and odd $c$, the contiguous prefix tap $\{1, \dots, d\}$ is De Bruijn complete for $1 \le w \le d$ and splits into two disjoint $2^d$-cycles at $w = d + 1$. |
+
+## 102. [`walnut-prophecy-skolem-lifter/`](walnut-prophecy-skolem-lifter/)
+
+Pure Lean 4 Init formalization (zero Mathlib, toolchain v4.34.1): four pure-data base-2 automatic predicate certificate lifters (`HomCert`, `ExistsCert`, `ProphecyCert`, `UniversalCert`) and exact square/cube/fifth-power spectra of the Gray-Sum Parity word.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `WalnutProphecySkolemLifterChallenge.homCert_sound` | `WalnutProphecySkolemLifter.Theorems` | A verified `HomCert` preserves word acceptance, trailing-zero pad invariance, and canonical evaluation on all $\mathbb{N}^k$. |
+| `WalnutProphecySkolemLifterChallenge.existsCert_sound` | `WalnutProphecySkolemLifter.Theorems` | A verified `ExistsCert` preserves pad invariance and characterizes $D.\mathrm{eval}(x) \iff \exists y \in \mathbb{N},\; M.\mathrm{eval}(y, x)$. |
+| `WalnutProphecySkolemLifterChallenge.prophecyCert_sound` | `WalnutProphecySkolemLifter.Theorems` | A verified `ProphecyCert` constructively extracts a natural-number witness $y \in \mathbb{N}$ whenever the reversed premise DFA accepts. |
+| `WalnutProphecySkolemLifterChallenge.universalCert_sound` | `WalnutProphecySkolemLifter.Theorems` | A verified `UniversalCert` establishes global validity or emptiness $\forall x \in \mathbb{N}^k,\; M.\mathrm{eval}(x) = \mathrm{target}$. |
+| `WalnutProphecySkolemLifterChallenge.dfaGrayAdd_sound` | `WalnutProphecySkolemLifter.Theorems` | The 9-state pad-invariant DFA `dfaGrayAdd` computes `grayAddParity n` for every $n \in \mathbb{N}$. |
+| `WalnutProphecySkolemLifterChallenge.grayAddParity_exact_square_spectrum` | `WalnutProphecySkolemLifter.Theorems` | The Gray-Sum Parity word has a square of period $p \ge 1$ if and only if $1 \le p \le 7$. |
+| `WalnutProphecySkolemLifterChallenge.grayAddParity_exact_cube_spectrum` | `WalnutProphecySkolemLifter.Theorems` | The Gray-Sum Parity word has a cube of period $p \ge 1$ if and only if $p = 1$. |
+| `WalnutProphecySkolemLifterChallenge.grayAddParity_fifth_power_free` | `WalnutProphecySkolemLifter.Theorems` | The Gray-Sum Parity word contains no 5th power of any period $p \ge 1$ anywhere on $\mathbb{N}$. |

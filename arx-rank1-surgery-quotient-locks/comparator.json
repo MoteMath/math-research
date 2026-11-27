@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ArxRank1SurgeryQuotientLocksChallenge.rank1Surgery_spliced_minPeriod",
+    "ArxRank1SurgeryQuotientLocksChallenge.rank1Surgery_global_order",
+    "ArxRank1SurgeryQuotientLocksChallenge.arx_fermat_mersenne_odd",
+    "ArxRank1SurgeryQuotientLocksChallenge.arx_fermat_mersenne_even",
+    "ArxRank1SurgeryQuotientLocksChallenge.arx_fermat_number_order",
+    "ArxRank1SurgeryQuotientLocksChallenge.arx_rank1_surgery_theorem",
+    "ArxRank1SurgeryQuotientLocksChallenge.arx_rank1_surgery_nontrivial_xor",
+    "ArxRank1SurgeryQuotientLocksChallenge.speck_period3_quotient_lock"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
