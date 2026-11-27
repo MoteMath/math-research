@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Automatic Word Avoidance Compiler - carry-coupled power-free and abelian pattern certificates
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the infinite
+    pure-silicon mechanism "Automatic Word Avoidance Compiler - carry-coupled power-free and abelian pattern certificates", with headline theorems stated in Challenge.lean and
+    discharged in Solution.lean.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: automatic-word-avoidance-compiler
+  license: Apache-2.0

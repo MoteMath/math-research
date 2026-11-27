@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SelfDelimitingPrefixTransducersChallenge.accepts_prefix_free",
+    "SelfDelimitingPrefixTransducersChallenge.layer0_conservation",
+    "SelfDelimitingPrefixTransducersChallenge.order_type_omega_obstruction",
+    "SelfDelimitingPrefixTransducersChallenge.fibAut_kraft_conservation",
+    "SelfDelimitingPrefixTransducersChallenge.fibAut_zero_bias",
+    "SelfDelimitingPrefixTransducersChallenge.fibAut_parity_duality_embedding",
+    "SelfDelimitingPrefixTransducersChallenge.runAut_bias_symmetric",
+    "SelfDelimitingPrefixTransducersChallenge.eliasLift_orderPreserving"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

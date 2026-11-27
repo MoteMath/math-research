@@ -1511,3 +1511,63 @@ Bilinear jet-lift and Krylov rationality engine in Z[[t]]: exact binary carry-bo
 | `odd_radix_zero_covariance` | `WeightedCarryJetRationality.Theorems` | In every odd base $B = 2 m + 1$ ($m \ge 1$) and every width $w$, carry and borrow counts have exact zero covariance. |
 | `even_radix_perfect_square_covariance` | `WeightedCarryJetRationality.Theorems` | In every even base $B = 2 m$ ($m \ge 1$) and width $w \ge 1$, carry-borrow covariance is an exact signed perfect square. |
 | `radix_parity_partition_formula` | `WeightedCarryJetRationality.Theorems` | The parity-twisted partition sum vanishes identically in every even base $B$ and equals $\pm B ^ {2 \lfloor w / 2 \rfloor}$ in every odd base $B$. |
+
+## 111. [`automatic-word-avoidance-compiler/`](automatic-word-avoidance-compiler/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **`SiliconAvoidance`**, a four-layer carry-offset DFAO and synchronized overlap-graph certificate compiler discharging sharp unbounded power-avoidance, overlap-freeness, and abelian balance theorems.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `windowCert_sound` | `Challenge` | Layer-1 soundness: an LSB-indexed `BTree` overlap-graph certificate `WindowCert` certifies $\forall n \in \mathbb{N},\; \mathrm{ok}(\mathrm{outputWindow}\; M\; W\; n) = \mathrm{true}$. |
+| `powerAvoidCert_sound` | `Challenge` | Layer-2 soundness: a `PowerAvoidCert` (sync graph + even-halving decoder + base periods) certifies $k$-power-freeness $\forall n, p \ge 1$. |
+| `overlapAvoidCert_sound` | `Challenge` | Layer-3 soundness: an `OverlapAvoidCert` (parity-conditioned both-bit halving) certifies full overlap-freeness $\forall n, p \ge 1$. |
+| `carryXor3_four_power_free` | `Challenge` | For all $n \in \mathbb{N}$ and $p \ge 1$, $\mathrm{carryXor}(3, \cdot)$ avoids all 4th powers (sharp: attains cube `000` at $n=5, p=1$). |
+| `carryAnd3_five_power_free` | `Challenge` | For all $n \in \mathbb{N}$ and $p \ge 1$, $\mathrm{carryAnd}(3, \cdot)$ avoids all 5th powers (sharp: attains 4th power `1111` at $n=1, p=1$). |
+| `carryAnd5_four_power_free` | `Challenge` | For all $n \in \mathbb{N}$ and $p \ge 1$, $\mathrm{carryAnd}(5, \cdot)$ avoids all 4th powers (sharp: attains $(7/2)$-power at $n=37, p=2$). |
+| `carryXor5_six_power_free` | `Challenge` | For all $n \in \mathbb{N}$ and $p \ge 1$, $\mathrm{carryXor}(5, \cdot)$ avoids all 6th powers (sharp: avoids 4-runs at $p=1$ yet attains 5th power `(010)^5` at $n=153, p=3$). |
+| `grayMod4_overlap_free` | `Challenge` | For all $n \in \mathbb{N}$ and $p \ge 1$, $\mathrm{grayMod4}(n) = \mathrm{popcount}(n \oplus \lfloor n/2 \rfloor) \bmod 4$ is overlap-free (sharp: attains square `1212`). |
+
+## 112. [`carry-presburger-skolem-compiler/`](carry-presburger-skolem-compiler/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **CPRTE** (Exact Carry-Presburger Residue-Transition Elimination), combining a pure-data finite-certificate reflection engine, an executable 2-pass Skolem transducer, and 20 discharged infinite arithmetic-bitwise theorems.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `cert_sound` | `Challenge` | General existential soundness meta-theorem: if `checkCert cert = true`, then $\forall \vec{x} \in \mathbb{N}^d,\; \exists \vec{y} \in \mathbb{N}^e,\; \Phi _ 0(\vec{x}, \vec{y})$. |
+| `synthesizeY_sound` | `Challenge` | Executable 2-pass Skolem transducer soundness: `synthesizeY cert x` constructs a valid witness $\vec{y}$ satisfying $\Phi _ 0(\vec{x}, \vec{y})$ for every $\vec{x} \in \mathbb{N}^d$. |
+| `cert_sound_univ` | `Challenge` | Universal soundness meta-theorem ($e = 0$): if `checkCert cert = true`, then $\forall \vec{x} \in \mathbb{N}^d,\; \Phi _ 0(\vec{x})$. |
+| `carryCount_eq_popcount_defect` | `Challenge` | Kummer's popcount defect bridge: $\kappa(a, b, \gamma) + s _ 2(a + b + \gamma) = s _ 2(a) + s _ 2(b) + \gamma$ for all $a, b \in \mathbb{N}$ and carry-in $\gamma$. |
+| `ternary_zero_carry_r0` | `Challenge` | For all $x \in \mathbb{N}$, there exists $y \in \mathbb{N}$ with $x \mathbin{\&} y = 0$, $3 \mid (x+y)$, and sharp bound $3y \le 5x + 5$. |
+| `ternary_carry1_r2` | `Challenge` | At carry budget $K = 1, r = 2$: for all $x \in \mathbb{N}$, there exists $y$ with $\kappa(x, y) \le 1$, $(x+y) \equiv 2 \pmod 3$, and $2y \le x + 4$ ($4\times$ slope collapse). |
+| `ternary_carry2_r0` | `Challenge` | At carry budget $K = 2, r = 0$: for all $x \in \mathbb{N}$, there exists $y$ with $\kappa(x, y) \le 2$, $3 \mid (x+y)$, and $4y \le x + 7$ (parity-inversion phase transition). |
+| `mersenne_collatz_rigidity_15` | `Challenge` | Mersenne-Collatz zero-carry rigidity: for all $x \in \mathbb{N}$, $x \mathbin{\&} (15x+1) = 0 \iff (15x+1) \mathbin{\&} (15x) = 0$. |
+
+## 113. [`self-delimiting-prefix-transducers/`](self-delimiting-prefix-transducers/)
+
+Exact-integer Kirchhoff-Bellman potential engine for prefix-code automata: k-bonacci Jacobsthal parity duality, order-type omega obstruction, and Elias-lift tower.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `accepts_prefix_free` | `SelfDelimitingPrefixTransducers.Theorems` | Every language accepted by a finite-state `PrefixAut` is strictly prefix-free. |
+| `layer0_conservation` | `SelfDelimitingPrefixTransducers.Theorems` | Any integer Kirchhoff-0 potential $\kappa$ certifies exact conservation $D \cdot \mathrm{charSum} + \mathrm{activePot} = B ^ N \cdot \kappa(q)$ at every length $N$. |
+| `order_type_omega_obstruction` | `SelfDelimitingPrefixTransducers.Theorems` | Any prefix automaton with a `0`-cycle reaching an accepting `1`-branch has an infinite lexicographically descending chain and no order-preserving enumeration by $\mathbb{N}$. |
+| `fibAut_kraft_conservation` | `SelfDelimitingPrefixTransducers.Theorems` | For every $k \ge 1$ and length $N$, the $k$-bonacci prefix automaton satisfies exact dyadic Kraft conservation. |
+| `fibAut_zero_bias` | `SelfDelimitingPrefixTransducers.Theorems` | For every $k \ge 1$ and length $N$, the $k$-bonacci prefix automaton has exact zero signed Hamming bias. |
+| `fibAut_parity_duality_embedding` | `SelfDelimitingPrefixTransducers.Theorems` | The popcount-parity potential of `fibAut (k + 1)` embeds the length-parity potential of `fibAut k` with negated root. |
+| `runAut_bias_symmetric` | `SelfDelimitingPrefixTransducers.Theorems` | For all $a, b \in \mathbb{N}$, the signed Hamming bias numerator and denominator of `runAut a b` are strictly symmetric in $(a, b)$ despite asymmetric Kraft measures. |
+| `eliasLift_orderPreserving` | `SelfDelimitingPrefixTransducers.Theorems` | The compositional Elias lift preserves strict lexicographic order-preservation on every order-preserving prefix code. |
+
+## 114. [`silicon-circuit-bisim-compiler/`](silicon-circuit-bisim-compiler/)
+
+A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **`SiliconBisim`**, a four-engine gate-DAG bisimulation compiler certifying infinite-width equivalences for adders, 4-topology parallel-prefix trees, shifters, butterfly/Omega networks, and Batcher sorting networks.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `slice_bisim_sound` | `Challenge` | Engine 1 soundness: a finite binary relation mask `SliceBisimCert` certifies bit-for-bit equivalence of two gate-level slice generators (even with different state widths) for all input lengths $w \in \mathbb{N}$. |
+| `prefix_all_topologies_sound` | `Challenge` | Engine 2 soundness: a reachable-token mask `PrefixToSliceCert` certifies Serial, Sklansky, Brent–Kung, and Kogge–Stone prefix trees simultaneously for all $k \in \mathbb{N}$ (width $2^k$). |
+| `four_way_prefix_adder_equiv` | `Challenge` | 4-way cross-encoding equivalence of Sklansky (XOR-prop + glitched cell), Brent–Kung (OR-prop), Kogge–Stone (active-low NAND), and Ripple-Carry adders for all $k \in \mathbb{N}$. |
+| `parallel_gray_decoder_equiv` | `Challenge` | For all $k \in \mathbb{N}$, Sklansky, Brent–Kung, Kogge–Stone, and Serial XOR-chain Gray-to-Binary decoders are bit-for-bit identical. |
+| `three_way_shifter_equiv` | `Challenge` | For all $k \in \mathbb{N}$, the NAND-only recursive tree rotator, XOR-AND barrel rotator, and unary iterated rotator are bit-for-bit identical. |
+| `reed_muller_anf_butterfly_all_k` | `Challenge` | For all $k \in \mathbb{N}$, the Fast Reed–Muller / ANF butterfly satisfies `omegaNet = fwdButterfly = bwdButterfly` and `fwdButterfly ∘ fwdButterfly = id`. |
+| `gf4_butterfly_inverse_all_k` | `Challenge` | For all $k \in \mathbb{N}$, the non-involutive order-3 $\mathrm{GF}(4)$ linear butterfly and its inverse satisfy `fwdButterfly inv ∘ fwdButterfly fwd = id` and `omegaNet = bwdButterfly`. |
+| `bitonic_andOr_eq_oddEven_nand_all_k` | `Challenge` | For all $k \in \mathbb{N}$, Batcher Bitonic Sort (AND/OR comparators) $\equiv$ Batcher Odd-Even Mergesort (5-gate NAND-only comparators) $\equiv$ Threshold Sort. |

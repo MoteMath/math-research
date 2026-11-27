@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Self-Delimiting Prefix Transducers - exact-integer Kirchhoff-Bellman potential engine, k-bonacci Jacobsthal parity duality, order-type omega obstruction, and Elias-lift tower
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of an exact-integer Kirchhoff-Bellman potential engine over leaky prefix-code automata and a compositional order-preserving Elias-lift engine. Proves exact Kraft and signed-character conservation across all word lengths, the order-type omega obstruction, k-bonacci zero Hamming bias and Jacobsthal popcount-vs-length parity reciprocal duality, run-length asymmetric-Kraft symmetric-bias laws, and order-preservation of iterated Elias lifts.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: self-delimiting-prefix-transducers
+  license: Apache-2.0

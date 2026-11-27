@@ -1,0 +1,12 @@
+name = "carry-presburger-skolem-compiler"
+version = "0.1.0"
+defaultTargets = ["CarryPresburgerSkolemCompiler", "Solution"]
+
+[[lean_lib]]
+name = "CarryPresburgerSkolemCompiler"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

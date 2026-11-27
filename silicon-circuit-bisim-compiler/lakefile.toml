@@ -1,0 +1,12 @@
+name = "silicon-circuit-bisim-compiler"
+version = "0.1.0"
+defaultTargets = ["SiliconCircuitBisimCompiler", "Solution"]
+
+[[lean_lib]]
+name = "SiliconCircuitBisimCompiler"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

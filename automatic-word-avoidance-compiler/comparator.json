@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "AutomaticWordAvoidanceCompilerChallenge.windowCert_sound",
+    "AutomaticWordAvoidanceCompilerChallenge.powerAvoidCert_sound",
+    "AutomaticWordAvoidanceCompilerChallenge.overlapAvoidCert_sound",
+    "AutomaticWordAvoidanceCompilerChallenge.carryXor3_four_power_free",
+    "AutomaticWordAvoidanceCompilerChallenge.carryAnd3_five_power_free",
+    "AutomaticWordAvoidanceCompilerChallenge.carryAnd5_four_power_free",
+    "AutomaticWordAvoidanceCompilerChallenge.carryXor5_six_power_free",
+    "AutomaticWordAvoidanceCompilerChallenge.grayMod4_overlap_free"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

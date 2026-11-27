@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carry-Presburger Skolem Compiler - residue-transition elimination and bounded-carry phase transitions
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the infinite
+    pure-silicon mechanism "Carry-Presburger Skolem Compiler - residue-transition elimination and bounded-carry phase transitions", with headline theorems stated in Challenge.lean and
+    discharged in Solution.lean.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: carry-presburger-skolem-compiler
+  license: Apache-2.0

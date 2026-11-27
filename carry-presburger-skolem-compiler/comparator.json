@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarryPresburgerSkolemCompilerChallenge.cert_sound",
+    "CarryPresburgerSkolemCompilerChallenge.synthesizeY_sound",
+    "CarryPresburgerSkolemCompilerChallenge.cert_sound_univ",
+    "CarryPresburgerSkolemCompilerChallenge.carryCount_eq_popcount_defect",
+    "CarryPresburgerSkolemCompilerChallenge.ternary_zero_carry_r0",
+    "CarryPresburgerSkolemCompilerChallenge.ternary_carry1_r2",
+    "CarryPresburgerSkolemCompilerChallenge.ternary_carry2_r0",
+    "CarryPresburgerSkolemCompilerChallenge.mersenne_collatz_rigidity_15"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

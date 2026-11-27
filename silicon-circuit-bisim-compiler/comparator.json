@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SiliconCircuitBisimCompilerChallenge.slice_bisim_sound",
+    "SiliconCircuitBisimCompilerChallenge.prefix_all_topologies_sound",
+    "SiliconCircuitBisimCompilerChallenge.four_way_prefix_adder_equiv",
+    "SiliconCircuitBisimCompilerChallenge.parallel_gray_decoder_equiv",
+    "SiliconCircuitBisimCompilerChallenge.three_way_shifter_equiv",
+    "SiliconCircuitBisimCompilerChallenge.reed_muller_anf_butterfly_all_k",
+    "SiliconCircuitBisimCompilerChallenge.gf4_butterfly_inverse_all_k",
+    "SiliconCircuitBisimCompilerChallenge.bitonic_andOr_eq_oddEven_nand_all_k"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
