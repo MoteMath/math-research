@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ShellWalshNestedJoinSpectraChallenge.det_mul",
+    "ShellWalshNestedJoinSpectraChallenge.orthogonal_eigenbasis_kirchhoff",
+    "ShellWalshNestedJoinSpectraChallenge.shellLaplacian_kirchhoff",
+    "ShellWalshNestedJoinSpectraChallenge.carryXorLaplacian_kirchhoff",
+    "ShellWalshNestedJoinSpectraChallenge.dyadic_spanning_trees",
+    "ShellWalshNestedJoinSpectraChallenge.evenSum_kirchhoff",
+    "ShellWalshNestedJoinSpectraChallenge.sharpness_c3_charpoly",
+    "ShellWalshNestedJoinSpectraChallenge.witness_nonvacuous_engine"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -2080,3 +2080,63 @@ This work introduces and machine-checks **two reusable finite-to-infinite pure-s
 | `counterexample_non_bijective_mul2` | `SiliconTfunctionBentDuality.Theorems` | Counterexample 1: Breaking `BitFlip` (`π(y) = 2*y`, even multiplier) destroys Walsh flatness and vanishing autocorrelation immediately at `k = 1` (`W = 4 ≠ ±2`, `Δ(1) = 4 ≠ 0`). |
 | `counterexample_non_causal_shift` | `SiliconTfunctionBentDuality.Theorems` | Counterexample 3: Breaking `Causal` (`φ(y) = y / 2`, right-shift) causes `π(y) = y ^^^ (2 * (y / 2))` to collide mod 4 at `y = 0` and `y = 2` (not a bijection!). |
 | `nonvacuity_carletT_nonzero_pi0` | `SiliconTfunctionBentDuality.Theorems` | Non-vacuity witness for Carlet-T with `π(0) ≠ 0` (`π(y) = 3*y + 1`, `r = 2 ≤ k`). |
+
+## 149. [`dyadic-bilinear-schur-positivity/`](dyadic-bilinear-schur-positivity/)
+
+**Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Hierarchical Bilinear-Schur SOS Lifter** (`DyadicPDEngine`: `BQS`, `PDCert`, `checkStrictPD`, `checkBoundaryStrictPD`).
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `soundness_strict_pd` | `DyadicBilinearSchurPositivity.Theorems` | Mode 1 UNIVERSAL INFINITE SOUNDNESS THEOREM: If the finite Z[1/2] certificate passes `checkStrictPD`, then for EVERY `k : Nat` and EVERY nonzero `x : Fin (2^k) → ZHalf`, the target quadratic form is strictly positive! |
+| `v2Nat_xor_eq_absDiff` | `DyadicBilinearSchurPositivity.Theorems` | Pure-silicon 2-adic identity: `v_2(/i - j/) = ctz(i ^^^ j)` for ALL `i, j : Nat`! |
+| `thm_monnaArch_strict_pd` | `DyadicBilinearSchurPositivity.Theorems` | THEOREM 2 (Sharp Discrete Archimedean-Monna Distance Form Strict Positivity): For ALL `k : Nat` and ALL nonzero `x : Fin (2^k) → ZHalf`: `(1/2) * μ_k(x)^2 - A_k(x) > 0`. |
+| `monnaArch_direct_induction_fails` | `DyadicBilinearSchurPositivity.Theorems` | Direct-induction obstruction: naive `W = [[1/2, 0], [0, 0]]` produces an INDEFINITE `Δ` (principal 2×2 minor on indices `{0, 3}` has determinant `-1/64 < 0`)! |
+| `adelic_kernels_noncommuting` | `DyadicBilinearSchurPositivity.Theorems` | Non-commutativity witness at `k = 2` (4×4 matrices): `[R_2^{(1)}, A_2] ≠ 0`! |
+| `thm_adelic_sharp_dipole_k1` | `DyadicBilinearSchurPositivity.Theorems` | Machine-checked infinite theorem `thm_adelic_sharp_dipole_k1` proved in pure Lean 4 `Init`. |
+| `asym_nondiag_asymmetric_diag` | `DyadicBilinearSchurPositivity.Theorems` | Machine-checked infinite theorem `asym_nondiag_asymmetric_diag` proved in pure Lean 4 `Init`. |
+| `thm_asym_nondiag_sharp_W00` | `DyadicBilinearSchurPositivity.Theorems` | Machine-checked infinite theorem `thm_asym_nondiag_sharp_W00` proved in pure Lean 4 `Init`. |
+
+## 150. [`group-ring-polylog-bit-inverses/`](group-ring-polylog-bit-inverses/)
+
+**Mechanism Name:** **$\mathbb{Z}[\mathbb{F} _ 2^k]$ Group-Ring Inversion, Parseval Rigidity, and the Shared-Bit Idempotent Lifting Engine (`sharedLift`)**
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `parseval_plancherel` | `GroupRingPolylogBitInverses.Theorems` | **Core Engine Theorem 3 (Exact Parseval / Plancherel Duality):** `∑_ω wht(f)(ω) * wht(g)(ω) = 2^k * ∑_x f(x) * g(x)`. |
+| `higman_rigidity` | `GroupRingPolylogBitInverses.Theorems` | **Obstruction Theorem 1 (Pure-Silicon Higman Rigidity):** In `Z[F_2^k]` for ALL `k ≥ 0`, every exact `Z`-unit (`f * g = δ_0`) satisfies `∑_x f(x)^2 = 1`, i.e., `f = ± δ_a` (no non-trivial `Z`-units exist). |
+| `binary01_no_self_inverse` | `GroupRingPolylogBitInverses.Theorems` | **Obstruction Theorem 5 (Pure `{0, 1}` Self-Inversion Impossibility):** No non-negative binary element `f : BVec k → {0, 1}` with `/supp(f)/ ≥ 2` can satisfy `f * f = c • δ_0` for ANY integer `c`. |
+| `treeElem_wht` | `GroupRingPolylogBitInverses.Theorems` | **Theorem A.1 (Dual Multiplexer Tree WHT Law):** Every single Walsh coefficient of `treeElem d` is `2^d * spectralSign d ω ∈ {-2^d, +2^d}`. |
+| `treeElem_polylog_identity` | `GroupRingPolylogBitInverses.Theorems` | Machine-checked infinite theorem `treeElem_polylog_identity` proved in pure Lean 4 `Init`. |
+| `asymTree_non_self_inverse` | `GroupRingPolylogBitInverses.Theorems` | Machine-checked infinite theorem `asymTree_non_self_inverse` proved in pure Lean 4 `Init`. |
+| `k3_no_spanning_ternary_dyadic` | `GroupRingPolylogBitInverses.Theorems` | **Sharpness 2 (`k = 3` Dyadic Inversion Impossibility — Exact Gap at `k = 3`):** NO full-affine-spanning ternary element on `F_2^3` is dyadically invertible (`f * g = 2^m • δ_0`). Combined with Theorem C (`∀ k ≥ 2, k ≠ 3`) and `baseA3` (`k = 3, D = 3`), this proves the `k ≠ 3` exclusion in Theorem C is 100% sharp. |
+| `unshiftedLift_breaks_ternary` | `GroupRingPolylogBitInverses.Theorems` | Machine-checked infinite theorem `unshiftedLift_breaks_ternary` proved in pure Lean 4 `Init`. |
+
+## 151. [`minkowski-raney-singularity-engine/`](minkowski-raney-singularity-engine/)
+
+**Mechanism:** **Certified Raney-Minkowski Finite-State Bit-Transducer Lifting Engine** (`RaneyCert n` + `HellingerCert`, `StationaryCert`, `IntegralCert` in [`Proof.lean`](Proof.lean)). **Pure-Silicon Principle (Finite Binary Object $\to \infty$ Bridge):** Every positive rational $p/q \in \mathbb{Q} _ {>0}$ is represented canonically as a finite bitstring $w \in \{0, 1\}^*$ vi
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `minkowskiQ_sbMat_mediant` | `MinkowskiRaneySingularityEngine.Theorems` | **Theorem 1 (Stern-Brocot / Minkowski Bijection)**: For every bitstring `w`, `?(med(sbMat w)) ≈q dyadMid w = (2 · bitsToNat w + 1) / 2^(/w/+1)`. |
+| `hellinger_tv_singularity` | `MinkowskiRaneySingularityEngine.Theorems` | **Meta-Theorem B1 (Infinite Exponential Total-Variation / Hellinger Overlap Decay ∀ k : Nat)** |
+| `singularity_D2` | `MinkowskiRaneySingularityEngine.Theorems` | **Theorem 2a (Constructive Mutual Singularity μ_? ⊥ 2_* μ_? ∀ k : Nat)**: For every depth `k`, the total-variation overlap between `μ_?` and `2_* μ_?` decays as `≤ (65/57) · (63/64)^k`. |
+| `bit_expansion_D2` | `MinkowskiRaneySingularityEngine.Theorems` | **Theorem 3a (Exact Infinite Bit-Expansion Law for D = 2, rate α(2) = 7/6, ∀ k : Nat)** |
+| `integral_convergence_D2` | `MinkowskiRaneySingularityEngine.Theorems` | **Theorem 4a (Exact Rational Integral ∫ ?(2x) dμ_?(x) = 9/13, ∀ k : Nat)** |
+| `exact_closed_form_D2` | `MinkowskiRaneySingularityEngine.Theorems` | **Corollary (Theorem 5 specialized to x ↦ 2x)**: `∀ k : Nat, (1 / 2^k) ∑_{/w/=k} ?(2 · q(w)) ≈q 9/13 + a_k / (52 · 8^k)`. |
+| `row_col_duality_D5` | `MinkowskiRaneySingularityEngine.Theorems` | Machine-checked infinite theorem `row_col_duality_D5` proved in pure Lean 4 `Init`. |
+| `sharpness_hellinger_const_counterexample` | `MinkowskiRaneySingularityEngine.Theorems` | **Sharpness Counterexample 3 (Dyadic Hellinger Threshold `2 * c^2 ≥ 1`)**: Relaxing `c = 91/128` (`2*91^2 = 16562 ≥ 16384`) to `c = 181/256` (`2*181^2 = 65522 < 65536`) falsifies sub-multiplicativity `hWeight(c, 1 + 1) ≤ hWeight(c, 1) * hWeight(c, 1)`! |
+
+## 152. [`shell-walsh-nested-join-spectra/`](shell-walsh-nested-join-spectra/)
+
+**Mechanism Name:** *The 2-Adic Shell-Walsh Nested-Join & Carry-Butterfly Spectral/Kirchhoff Engine*.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `det_mul` | `ShellWalshNestedJoinSpectra.Theorems` | Multiplicativity of the exact integer determinant: `det (A * B) = det A * det B`. |
+| `orthogonal_eigenbasis_kirchhoff` | `ShellWalshNestedJoinSpectra.Theorems` | **Master Orthogonal-Eigenbasis Kirchhoff Spanning-Tree Lifting Theorem**: For ANY `(m+1) x (m+1)` Laplacian `L` (zero row & column sums) diagonalized by an orthogonal integer matrix `Q` (`Q^T Q = diag d`, `d i ≠ 0`) whose column 0 is all 1s and `lam 0 = 0`, the exact Kirchhoff spanning-tree cofactor satisfies: `(m + 1) * det (L^{(0,0)}) = ∏_{j=1}^m lam j`. |
+| `shellLaplacian_kirchhoff` | `ShellWalshNestedJoinSpectra.Theorems` | **REUSABLE ENGINE COROLLARY 2 (Exact Kirchhoff Spanning-Tree Cofactor of ALL 2-Adic Shell-Walsh Graphs)**: For ALL `k : Nat`, ALL `c : Nat -> Int`, ALL `phi : Nat -> Nat -> Int` (with `m = 2^k - 1` so `m + 1 = 2^k`): `2^k * det (minor00 (shellLaplacian k c phi)) = ∏_{j=1}^{2^k - 1} shellEig k c phi j`. |
+| `carryXorLaplacian_kirchhoff` | `ShellWalshNestedJoinSpectra.Theorems` | **UNIVERSAL 2-VARIABLE CARRY-XOR KIRCHHOFF SPANNING-TREE THEOREM**: For EVERY `k : Nat` and EVERY arbitrary 2-variable weight function `h : Nat -> Nat -> Int`: `2^k * det (minor00 (carryXorLaplacian k h)) = ∏_{j=1}^{2^k - 1} shellEig k (carryXorC h) (carryXorPhi h) j`. |
+| `dyadic_spanning_trees` | `ShellWalshNestedJoinSpectra.Theorems` | **THEOREM A2 (Exact Kirchhoff Spanning-Tree Weight Formula for `w(x,y) = 2^{v2(x+y)}`, ∀ k ≥ 1)**: `det (minor00 (dyadicLaplacian k)) = ∏_{j=1}^{k-1} ((j + 2) * (2k + 2 - j) * (2^{k-1})^2)^{2^{j-1}}`. |
+| `evenSum_kirchhoff` | `ShellWalshNestedJoinSpectra.Theorems` | Machine-checked infinite theorem `evenSum_kirchhoff` proved in pure Lean 4 `Init`. |
+| `sharpness_c3_charpoly` | `ShellWalshNestedJoinSpectra.Theorems` | Machine-checked infinite theorem `sharpness_c3_charpoly` proved in pure Lean 4 `Init`. |
+| `witness_nonvacuous_engine` | `ShellWalshNestedJoinSpectra.Theorems` | Non-vacuity witness 4: constructive `Nonempty` witness inhabiting all hypotheses of `orthogonal_eigenbasis_kirchhoff`. |

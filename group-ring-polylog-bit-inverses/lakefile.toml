@@ -1,0 +1,12 @@
+name = "group-ring-polylog-bit-inverses"
+version = "0.1.0"
+defaultTargets = ["GroupRingPolylogBitInverses", "Solution"]
+
+[[lean_lib]]
+name = "GroupRingPolylogBitInverses"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: The 2-Adic Shell-Walsh Nested-Join & Carry-Butterfly Spectral/Kirchhoff Engine
+  description: >-
+    **Mechanism Name:** *The 2-Adic Shell-Walsh Nested-Join & Carry-Butterfly Spectral/Kirchhoff Engine*.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: shell-walsh-nested-join-spectra
+  license: Apache-2.0

@@ -1,0 +1,12 @@
+name = "minkowski-raney-singularity-engine"
+version = "0.1.0"
+defaultTargets = ["MinkowskiRaneySingularityEngine", "Solution"]
+
+[[lean_lib]]
+name = "MinkowskiRaneySingularityEngine"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

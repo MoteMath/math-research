@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms GroupRingPolylogBitInversesChallenge.parseval_plancherel
+#print axioms GroupRingPolylogBitInversesChallenge.higman_rigidity
+#print axioms GroupRingPolylogBitInversesChallenge.binary01_no_self_inverse
+#print axioms GroupRingPolylogBitInversesChallenge.treeElem_wht
+#print axioms GroupRingPolylogBitInversesChallenge.treeElem_polylog_identity
+#print axioms GroupRingPolylogBitInversesChallenge.asymTree_non_self_inverse
+#print axioms GroupRingPolylogBitInversesChallenge.k3_no_spanning_ternary_dyadic
+#print axioms GroupRingPolylogBitInversesChallenge.unshiftedLift_breaks_ternary

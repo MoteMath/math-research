@@ -1,0 +1,2 @@
+import ShellWalshNestedJoinSpectra.Defs
+import ShellWalshNestedJoinSpectra.Theorems

@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "DyadicBilinearSchurPositivityChallenge.soundness_strict_pd",
+    "DyadicBilinearSchurPositivityChallenge.v2Nat_xor_eq_absDiff",
+    "DyadicBilinearSchurPositivityChallenge.thm_monnaArch_strict_pd",
+    "DyadicBilinearSchurPositivityChallenge.monnaArch_direct_induction_fails",
+    "DyadicBilinearSchurPositivityChallenge.adelic_kernels_noncommuting",
+    "DyadicBilinearSchurPositivityChallenge.thm_adelic_sharp_dipole_k1",
+    "DyadicBilinearSchurPositivityChallenge.asym_nondiag_asymmetric_diag",
+    "DyadicBilinearSchurPositivityChallenge.thm_asym_nondiag_sharp_W00"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

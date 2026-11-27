@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MinkowskiRaneySingularityEngineChallenge.minkowskiQ_sbMat_mediant",
+    "MinkowskiRaneySingularityEngineChallenge.hellinger_tv_singularity",
+    "MinkowskiRaneySingularityEngineChallenge.singularity_D2",
+    "MinkowskiRaneySingularityEngineChallenge.bit_expansion_D2",
+    "MinkowskiRaneySingularityEngineChallenge.integral_convergence_D2",
+    "MinkowskiRaneySingularityEngineChallenge.exact_closed_form_D2",
+    "MinkowskiRaneySingularityEngineChallenge.row_col_duality_D5",
+    "MinkowskiRaneySingularityEngineChallenge.sharpness_hellinger_const_counterexample"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

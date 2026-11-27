@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: specmat-13  Exact mathbb{Z}[mathbb{F} _ 2^k] Group-Ring Inversion, Parseval Duality, and the Shared-Bit Idempotent Lifting Engine
+  description: >-
+    **Mechanism Name:** **$\mathbb{Z}[\mathbb{F} _ 2^k]$ Group-Ring Inversion, Parseval Rigidity, and the Shared-Bit Idempotent Lifting Engine (`sharedLift`)**
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: group-ring-polylog-bit-inverses
+  license: Apache-2.0

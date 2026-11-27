@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "GroupRingPolylogBitInversesChallenge.parseval_plancherel",
+    "GroupRingPolylogBitInversesChallenge.higman_rigidity",
+    "GroupRingPolylogBitInversesChallenge.binary01_no_self_inverse",
+    "GroupRingPolylogBitInversesChallenge.treeElem_wht",
+    "GroupRingPolylogBitInversesChallenge.treeElem_polylog_identity",
+    "GroupRingPolylogBitInversesChallenge.asymTree_non_self_inverse",
+    "GroupRingPolylogBitInversesChallenge.k3_no_spanning_ternary_dyadic",
+    "GroupRingPolylogBitInversesChallenge.unshiftedLift_breaks_ternary"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

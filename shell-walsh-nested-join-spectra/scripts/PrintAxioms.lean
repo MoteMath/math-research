@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms ShellWalshNestedJoinSpectraChallenge.det_mul
+#print axioms ShellWalshNestedJoinSpectraChallenge.orthogonal_eigenbasis_kirchhoff
+#print axioms ShellWalshNestedJoinSpectraChallenge.shellLaplacian_kirchhoff
+#print axioms ShellWalshNestedJoinSpectraChallenge.carryXorLaplacian_kirchhoff
+#print axioms ShellWalshNestedJoinSpectraChallenge.dyadic_spanning_trees
+#print axioms ShellWalshNestedJoinSpectraChallenge.evenSum_kirchhoff
+#print axioms ShellWalshNestedJoinSpectraChallenge.sharpness_c3_charpoly
+#print axioms ShellWalshNestedJoinSpectraChallenge.witness_nonvacuous_engine

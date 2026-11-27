@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Exact Dyadic-Rational (mathbb{Z}[1/2]) Hierarchical Bilinear-Schur Infinite Positive-Definite Form Engine
+  description: >-
+    **Mechanism Name:** **Exact $\mathbb{Z}[1/2]$ Hierarchical Bilinear-Schur SOS Lifter** (`DyadicPDEngine`: `BQS`, `PDCert`, `checkStrictPD`, `checkBoundaryStrictPD`).
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: dyadic-bilinear-schur-positivity
+  license: Apache-2.0
