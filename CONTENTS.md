@@ -1571,3 +1571,63 @@ A complete, sorry-free **pure Lean 4 `Init`** (zero Mathlib) formalization of **
 | `reed_muller_anf_butterfly_all_k` | `Challenge` | For all $k \in \mathbb{N}$, the Fast Reed–Muller / ANF butterfly satisfies `omegaNet = fwdButterfly = bwdButterfly` and `fwdButterfly ∘ fwdButterfly = id`. |
 | `gf4_butterfly_inverse_all_k` | `Challenge` | For all $k \in \mathbb{N}$, the non-involutive order-3 $\mathrm{GF}(4)$ linear butterfly and its inverse satisfy `fwdButterfly inv ∘ fwdButterfly fwd = id` and `omegaNet = bwdButterfly`. |
 | `bitonic_andOr_eq_oddEven_nand_all_k` | `Challenge` | For all $k \in \mathbb{N}$, Batcher Bitonic Sort (AND/OR comparators) $\equiv$ Batcher Odd-Even Mergesort (5-gate NAND-only comparators) $\equiv$ Threshold Sort. |
+
+## 115. [`dyadic-ldlt-schur-posdef-engine/`](dyadic-ldlt-schur-posdef-engine/)
+
+Division-free exact dyadic LDL^T positive-definiteness engine with a non-scalar Schur automaton lifting to all dimensions, and sharp thresholds for four van der Corput-type families.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `ldlt_strictlyPosDef_iff` | `DyadicLdltSchurPosdefEngine.Theorems` | Given an exact dyadic factorization $M = L D L ^ T$, $M$ is strictly positive definite if and only if every pivot $D(r)$ with $r < N$ is positive. |
+| `ldlt_quadForm_lower_bound` | `DyadicLdltSchurPosdefEngine.Theorems` | If every pivot satisfies $\delta \le D(r)$, then $\delta \sum _ r ((L ^ T v) _ r) ^ 2 \le v ^ T M v$ for every vector $v$. |
+| `schurSystem_nested_iff` | `DyadicLdltSchurPosdefEngine.Theorems` | For a nested Schur system agreeing with $M$ on all dyadic prefixes, every $n \times n$ leading block is strictly positive definite if and only if all Schur pivots up to $n$ are positive. |
+| `vdcHamming_strictlyPosDef_all_n_iff` | `DyadicLdltSchurPosdefEngine.Theorems` | For $\beta > 0$, the van der Corput Hamming matrix with parameters $(c, \beta)$ is strictly positive definite for every $n$ if and only if $4 \beta \le 3 c$. |
+| `vdcHamming_critical_4_3_all_n` | `DyadicLdltSchurPosdefEngine.Theorems` | At the critical parameters $(c, \beta) = (4, 3)$ the van der Corput Hamming matrix is strictly positive definite for every $n$. |
+| `vdcHamming_sharp_15_4_fails_16` | `DyadicLdltSchurPosdefEngine.Theorems` | At the parameters $(15/4, 3)$ the matrix is not strictly positive definite at $n = 16$ (although all smaller sizes pass). |
+| `grayWeighted_strictlyPosDef_all_n` | `DyadicLdltSchurPosdefEngine.Theorems` | The Gray-weighted dyadic matrix is strictly positive definite for every $n$. |
+| `expVdc_critical_7_6_all_n` | `DyadicLdltSchurPosdefEngine.Theorems` | The exponential van der Corput matrix with parameters $(7, 6)$ is strictly positive definite for every $n$. |
+
+## 116. [`f2-rank-bitwise-matrix-automata/`](f2-rank-bitwise-matrix-automata/)
+
+Exact F2 rank, nullity and kernel cardinality of bit-indexed n x n matrices via block elimination: Gray-popcount nullity of the carry-free parity matrix and a base-4 automaton invertibility criterion.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `hasRank_kerCount` | `F2RankBitwiseMatrixAutomata.Theorems` | If an $m \times n$ matrix $M$ over $\mathbb{F} _ 2$ has rank $r$, then it has exactly $2 ^ {n - r}$ kernel vectors. |
+| `hasRank_unique` | `F2RankBitwiseMatrixAutomata.Theorems` | The $\mathbb{F} _ 2$ rank of a matrix is unique: $\mathrm{HasRank}(M, r _ 1)$ and $\mathrm{HasRank}(M, r _ 2)$ imply $r _ 1 = r _ 2$. |
+| `hasRank_isotropic_rank1_decouple` | `F2RankBitwiseMatrixAutomata.Theorems` | For a symmetric $A$ with $A x = u$ and $u \cdot x = 0$, the block matrix with off-diagonal rank-one blocks $u v ^ T$ and $v u ^ T$ has rank $r _ A + r _ B$. |
+| `M0_gray_nullity` | `F2RankBitwiseMatrixAutomata.Theorems` | For every $n \ge 2$, the carry-free XOR-sum parity matrix $M _ 0 (n)$ has nullity $\mathrm{popcount}(\mathrm{gray}(n - 1)) - 1$. |
+| `M0_kerCount` | `F2RankBitwiseMatrixAutomata.Theorems` | For every $n \ge 2$, $M _ 0 (n)$ has exactly $2 ^ {\mathrm{popcount}(\mathrm{gray}(n - 1)) - 1}$ kernel vectors. |
+| `M0_invertible_iff_pow2` | `F2RankBitwiseMatrixAutomata.Theorems` | For every $n \ge 1$, $M _ 0 (n)$ has full rank over $\mathbb{F} _ 2$ if and only if $n = 2 ^ k$ for some $k \ge 1$. |
+| `H_kerCount` | `F2RankBitwiseMatrixAutomata.Theorems` | For every flag $d$ and every $n$, the kernel of the Hamming-type matrix $H _ d (n)$ has exactly $2 ^ {\mathrm{hcNullity}(d, n)}$ vectors. |
+| `H0_invertible_iff_base4` | `F2RankBitwiseMatrixAutomata.Theorems` | For every $n$, $H _ 0 (n)$ has full rank if and only if the base-4 digit automaton accepts $n$. |
+
+## 117. [`two-group-ryser-permanent-congruences/`](two-group-ryser-permanent-congruences/)
+
+Bitmask Ryser permanent formula and 2-group orbit-collapse congruences modulo 2^(k+1) and 2^(k+2) for equivariant, XOR-circulant and hypercube matrices.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `perm_eq_ryserSum` | `TwoGroupRyserPermanentCongruences.Theorems` | For every $n$ and every $n \times n$ integer matrix $A$, $\mathrm{perm}(A)$ equals the Ryser bitmask inclusion-exclusion sum $\mathrm{ryserSum}(A)$. |
+| `perm_mod_two_pow_succ` | `TwoGroupRyserPermanentCongruences.Theorems` | If $A$ is equivariant under a free action of a $2 ^ k$-group ($k \ge 1$), then $2 ^ {k + 1}$ divides $\mathrm{perm}(A) - \#\mathrm{oddSol}(A)$. |
+| `xorCirc_perm_mod_two_pow_succ` | `TwoGroupRyserPermanentCongruences.Theorems` | For every $k \ge 1$ and $f$, $2 ^ {k + 1}$ divides $\mathrm{perm}$ of the XOR-circulant of $f$ minus its odd-solution count. |
+| `xorCirc_even_rowSum_dvd` | `TwoGroupRyserPermanentCongruences.Theorems` | For $k \ge 3$ and even total row sum, $2 ^ {k + 1}$ divides the permanent of the $2 ^ k \times 2 ^ k$ XOR-circulant. |
+| `xorCirc_odd_mod_two_pow_add_two` | `TwoGroupRyserPermanentCongruences.Theorems` | For $k \ge 1$ and odd row sum, $\mathrm{perm}$ of the XOR-circulant is congruent modulo $2 ^ {k + 2}$ to $1 + 2 ^ k ((\mathrm{oddCount} - 1) + \mathrm{evenSum})$. |
+| `hypercubeAdj_odd_mod` | `TwoGroupRyserPermanentCongruences.Theorems` | For odd $k$, the permanent of the hypercube adjacency matrix is congruent to $1 + 2 ^ k (k - 1)$ modulo $2 ^ {k + 2}$. |
+| `hypercubeAdj_even_dvd` | `TwoGroupRyserPermanentCongruences.Theorems` | For even $k \ge 4$, $2 ^ {k + 1}$ divides the permanent of the hypercube adjacency matrix. |
+| `hypercubeMatching_even_dvd` | `TwoGroupRyserPermanentCongruences.Theorems` | For odd $m \ge 3$, $2 ^ {m + 1}$ divides the permanent of the bipartite adjacency matrix of the hypercube $Q _ m$. |
+
+## 118. [`walsh-mobius-runs-dihedral-spectra/`](walsh-mobius-runs-dihedral-spectra/)
+
+Exact all-dimension determinants and characteristic polynomials of XOR-convolution and AND-lattice matrices via bit-automaton Walsh and Mobius transfer compilers, with a closed-form runs-kernel spectrum.
+
+| Theorem | Module | Statement |
+|---|---|---|
+| `det_xorConv` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $k$ and $f$, the determinant of the XOR-convolution matrix of $f$ on $2 ^ k$ points equals the product of the Walsh-Hadamard transform values of $f$. |
+| `charPoly_xorConv` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $k$, $f$ and $\lambda$, $\det(\lambda I - C _ f) = \prod _ u (\lambda - \mathrm{wht} _ k (f)(u))$. |
+| `det_andLattice` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $k$ and $g$, the determinant of the AND-lattice matrix of $g$ equals the product of the Mobius down-transform values of $g$. |
+| `wht_transfer_compiler` | `WalshMobiusRunsDihedralSpectra.Theorems` | For any bit-automaton $A$ with $d$ states and every width $k$, the Walsh-Hadamard transform of the sequence computed by $A$ is computed by an explicit bit-automaton of the same size. |
+| `det_runs_xorConv` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $q$ and $k$, the determinant of the XOR-convolution matrix of the runs kernel is the explicit product of Pell-type factors $(1 - q) ^ r \cdot \mathrm{pellQ}(q, k + 1 - 2 r)$ over $u$. |
+| `runs_xorConv_neg_one_singular_odd` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $m$, the XOR-convolution matrix of the runs kernel at $q = -1$ on $2 ^ {2 m + 1}$ points is singular. |
+| `det_two_runs_andLattice_unimodular` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $k \ge 2$, the AND-lattice matrix of the runs kernel at $q = 2$ has determinant exactly $-1$. |
+| `runs_andLattice_never_posdef` | `WalshMobiusRunsDihedralSpectra.Theorems` | For every $q$ and $k \ge 2$ there is a nonzero integer vector with nonpositive quadratic form for the runs-kernel AND-lattice matrix. |

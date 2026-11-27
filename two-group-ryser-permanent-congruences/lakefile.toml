@@ -1,0 +1,12 @@
+name = "two-group-ryser-permanent-congruences"
+version = "0.1.0"
+defaultTargets = ["TwoGroupRyserPermanentCongruences", "Solution"]
+
+[[lean_lib]]
+name = "TwoGroupRyserPermanentCongruences"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: F2 Rank Bitwise Matrix Automata - exact F2-rank, nullity and kernel cardinality of arbitrary n x n bit-indexed matrices via block elimination and automata
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of an exact F2-rank and corank block-elimination engine for arbitrary (non-power-of-two) n x n bit-indexed matrices. Proves rank uniqueness and the kernel-count law 2^(n - r), isotropic rank-one block decoupling, the exact nullity popcount(gray(n - 1)) - 1 of the carry-free XOR-sum parity matrix, its invertibility exactly at powers of two, and a base-4 DFA decision of invertibility for the Hamming-type matrix.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: f2-rank-bitwise-matrix-automata
+  license: Apache-2.0

@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "DyadicLdltSchurPosdefEngineChallenge.ldlt_strictlyPosDef_iff",
+    "DyadicLdltSchurPosdefEngineChallenge.ldlt_quadForm_lower_bound",
+    "DyadicLdltSchurPosdefEngineChallenge.schurSystem_nested_iff",
+    "DyadicLdltSchurPosdefEngineChallenge.vdcHamming_strictlyPosDef_all_n_iff",
+    "DyadicLdltSchurPosdefEngineChallenge.vdcHamming_critical_4_3_all_n",
+    "DyadicLdltSchurPosdefEngineChallenge.vdcHamming_sharp_15_4_fails_16",
+    "DyadicLdltSchurPosdefEngineChallenge.grayWeighted_strictlyPosDef_all_n",
+    "DyadicLdltSchurPosdefEngineChallenge.expVdc_critical_7_6_all_n"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Two-Group Ryser Permanent Congruences - bitmask Ryser formula and 2-group orbit-collapse congruences of permanents modulo powers of two
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of the bitmask Ryser permanent formula and a 2-group orbit-collapse engine proving that permanents of matrices equivariant under a 2^k-element group agree with their count of odd solutions modulo 2^(k + 1), with sharper mod 2^(k + 2) laws for XOR-circulants and exact divisibility and congruence laws for hypercube adjacency and matching matrices.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: two-group-ryser-permanent-congruences
+  license: Apache-2.0

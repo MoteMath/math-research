@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "F2RankBitwiseMatrixAutomataChallenge.hasRank_kerCount",
+    "F2RankBitwiseMatrixAutomataChallenge.hasRank_unique",
+    "F2RankBitwiseMatrixAutomataChallenge.hasRank_isotropic_rank1_decouple",
+    "F2RankBitwiseMatrixAutomataChallenge.M0_gray_nullity",
+    "F2RankBitwiseMatrixAutomataChallenge.M0_kerCount",
+    "F2RankBitwiseMatrixAutomataChallenge.M0_invertible_iff_pow2",
+    "F2RankBitwiseMatrixAutomataChallenge.H_kerCount",
+    "F2RankBitwiseMatrixAutomataChallenge.H0_invertible_iff_base4"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

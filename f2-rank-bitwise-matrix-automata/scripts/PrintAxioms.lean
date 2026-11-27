@@ -1,0 +1,10 @@
+import Solution
+
+#print axioms F2RankBitwiseMatrixAutomataChallenge.hasRank_kerCount
+#print axioms F2RankBitwiseMatrixAutomataChallenge.hasRank_unique
+#print axioms F2RankBitwiseMatrixAutomataChallenge.hasRank_isotropic_rank1_decouple
+#print axioms F2RankBitwiseMatrixAutomataChallenge.M0_gray_nullity
+#print axioms F2RankBitwiseMatrixAutomataChallenge.M0_kerCount
+#print axioms F2RankBitwiseMatrixAutomataChallenge.M0_invertible_iff_pow2
+#print axioms F2RankBitwiseMatrixAutomataChallenge.H_kerCount
+#print axioms F2RankBitwiseMatrixAutomataChallenge.H0_invertible_iff_base4

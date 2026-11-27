@@ -1,0 +1,12 @@
+name = "f2-rank-bitwise-matrix-automata"
+version = "0.1.0"
+defaultTargets = ["F2RankBitwiseMatrixAutomata", "Solution"]
+
+[[lean_lib]]
+name = "F2RankBitwiseMatrixAutomata"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

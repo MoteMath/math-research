@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Dyadic LDLT Schur Positive-Definite Engine - division-free exact LDL^T positive-definiteness certificates over Z[1/2] lifted to all dimensions by Schur automata
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of a division-free exact LDL^T engine over the dyadic ring Z[1/2]: strict positive definiteness iff all pivots are positive, an explicit quadratic-form lower bound, and a non-scalar Schur-system automaton lifting a finite pivot recursion to every dimension n, applied to four infinite families (van der Corput Hamming, weighted, Gray-weighted and exponential) with sharp thresholds and explicit failing witnesses.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: dyadic-ldlt-schur-posdef-engine
+  license: Apache-2.0

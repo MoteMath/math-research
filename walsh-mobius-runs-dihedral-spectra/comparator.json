@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "WalshMobiusRunsDihedralSpectraChallenge.det_xorConv",
+    "WalshMobiusRunsDihedralSpectraChallenge.charPoly_xorConv",
+    "WalshMobiusRunsDihedralSpectraChallenge.det_andLattice",
+    "WalshMobiusRunsDihedralSpectraChallenge.wht_transfer_compiler",
+    "WalshMobiusRunsDihedralSpectraChallenge.det_runs_xorConv",
+    "WalshMobiusRunsDihedralSpectraChallenge.runs_xorConv_neg_one_singular_odd",
+    "WalshMobiusRunsDihedralSpectraChallenge.det_two_runs_andLattice_unimodular",
+    "WalshMobiusRunsDihedralSpectraChallenge.runs_andLattice_never_posdef"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

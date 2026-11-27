@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Walsh Mobius Runs Dihedral Spectra - exact all-dimension spectra of XOR-convolution and AND-lattice matrices via Walsh-Hadamard and Mobius transfer compilers
+  description: >-
+    A complete, sorry-free, pure-Init (zero Mathlib) Lean 4 formalization of exact determinants and characteristic polynomials of 2^k x 2^k XOR-convolution and AND-lattice matrices (Leibniz determinant, no reals). Includes a bit-automaton Walsh-Hadamard transfer compiler, a scaled-dihedral collapse certificate, the closed-form spectrum of the runs kernel with Pell-type factors, odd-dimension singularity at q = -1, determinant -1 for the two-runs AND-lattice, and failure of positive definiteness.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: walsh-mobius-runs-dihedral-spectra
+  license: Apache-2.0

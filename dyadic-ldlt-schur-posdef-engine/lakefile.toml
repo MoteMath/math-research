@@ -1,0 +1,12 @@
+name = "dyadic-ldlt-schur-posdef-engine"
+version = "0.1.0"
+defaultTargets = ["DyadicLdltSchurPosdefEngine", "Solution"]
+
+[[lean_lib]]
+name = "DyadicLdltSchurPosdefEngine"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
