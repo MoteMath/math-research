@@ -1,0 +1,39 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "NegabinaryCarryParityBias.negabinParitySum_step",
+    "NegabinaryCarryParityBias.negabinParitySum_zero",
+    "NegabinaryCarryParityBias.negabinParitySum_spectral",
+    "NegabinaryCarryParityBias.negabinBias_abs_le_one_third",
+    "NegabinaryCarryParityBias.negabinBias_eq_pos_one_third_iff",
+    "NegabinaryCarryParityBias.negabinBias_eq_neg_one_third_iff",
+    "NegabinaryCarryParityBias.negabinZeroBias_bounded_family",
+    "NegabinaryCarryParityBias.base2ParitySum_spectral",
+    "NegabinaryCarryParityBias.base2Bias_asymmetric_barrier",
+    "NegabinaryCarryParityBias.base2Bias_eq_pos_one_third_iff"
+  ],
+  "definition_names": [
+    "NegabinaryCarryParityBias.NegCarry",
+    "NegabinaryCarryParityBias.BinCarry",
+    "NegabinaryCarryParityBias.negabinStep",
+    "NegabinaryCarryParityBias.negabinDrain",
+    "NegabinaryCarryParityBias.negabinCarries",
+    "NegabinaryCarryParityBias.base2Step",
+    "NegabinaryCarryParityBias.base2Carries",
+    "NegabinaryCarryParityBias.signOfNat",
+    "NegabinaryCarryParityBias.sumRange",
+    "NegabinaryCarryParityBias.negabinParitySum",
+    "NegabinaryCarryParityBias.base2ParitySum",
+    "NegabinaryCarryParityBias.bitLen",
+    "NegabinaryCarryParityBias.jacobsthal",
+    "NegabinaryCarryParityBias.negabinSpec",
+    "NegabinaryCarryParityBias.base2Spec"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,16 @@
+name: negabinary-carry-parity-bias
+title: "Negabinary vs. Binary Carry-Parity Bias: Exact Spectral Decomposition, the ±1/3 Classification, and the Asymmetric (-1/9, +1/3] Barrier"
+toolchain: leanprover/lean4:v4.34.1
+status: verified
+source: "Hour 7 of the 8-hour pure-silicon GPU hunt (alien-silicon-hunt-20261128, Track C carry-twin sweep on AMD RX 7900 XTX gfx1100, 0 FP ISA ops, bit-identical CPU verification)"
+theorems:
+  - NegabinaryCarryParityBias.negabinParitySum_step
+  - NegabinaryCarryParityBias.negabinParitySum_zero
+  - NegabinaryCarryParityBias.negabinParitySum_spectral
+  - NegabinaryCarryParityBias.negabinBias_abs_le_one_third
+  - NegabinaryCarryParityBias.negabinBias_eq_pos_one_third_iff
+  - NegabinaryCarryParityBias.negabinBias_eq_neg_one_third_iff
+  - NegabinaryCarryParityBias.negabinZeroBias_bounded_family
+  - NegabinaryCarryParityBias.base2ParitySum_spectral
+  - NegabinaryCarryParityBias.base2Bias_asymmetric_barrier
+  - NegabinaryCarryParityBias.base2Bias_eq_pos_one_third_iff
