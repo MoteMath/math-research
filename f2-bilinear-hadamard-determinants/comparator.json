@@ -1,0 +1,35 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "F2BilinearHadamard.f2Bilin_xor_left_right",
+    "F2BilinearHadamard.bilinCharMat_det_block_elimination",
+    "F2BilinearHadamard.walshCharMat_det_symmetric",
+    "F2BilinearHadamard.bilinCharMat_det_symmetric",
+    "F2BilinearHadamard.walshStandard_det",
+    "F2BilinearHadamard.sierpinskiBitMat_cholesky_pivots",
+    "F2BilinearHadamard.sierpinskiCharMat_det_all_n",
+    "F2BilinearHadamard.nimCharMat_det_256",
+    "F2BilinearHadamard.clmulBitMat_rank_collapse"
+  ],
+  "definition_names": [
+    "F2BilinearHadamard.popcount",
+    "F2BilinearHadamard.bitXorSum",
+    "F2BilinearHadamard.f2Bilin",
+    "F2BilinearHadamard.diagSign",
+    "F2BilinearHadamard.bilinCharMat",
+    "F2BilinearHadamard.walshCharMat",
+    "F2BilinearHadamard.stdBitMat",
+    "F2BilinearHadamard.sierpinskiBitMat",
+    "F2BilinearHadamard.sierpinskiPivot",
+    "F2BilinearHadamard.nimMul",
+    "F2BilinearHadamard.nimBitMat",
+    "F2BilinearHadamard.clmulBitMat"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

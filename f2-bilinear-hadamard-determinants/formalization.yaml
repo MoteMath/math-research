@@ -1,0 +1,15 @@
+name: f2-bilinear-hadamard-determinants
+title: "Universal F2-Bilinear Hadamard Determinants: Integer Block Schur Elimination, Sierpinski-Lucas-Pascal All-n Law, and Conway Nimber Character Matrices"
+toolchain: leanprover/lean4:v4.34.1
+status: verified
+source: "Hour 8 Grand Finale of the 8-hour pure-silicon GPU hunt (alien-silicon-hunt-20261128, Track A nim_sign_pop_0 score 125 NO_EXACT_OEIS_MATCH on AMD RX 7900 XTX gfx1100, 0 FP ISA ops, bit-identical CPU verification)"
+theorems:
+  - F2BilinearHadamard.f2Bilin_xor_left_right
+  - F2BilinearHadamard.bilinCharMat_det_block_elimination
+  - F2BilinearHadamard.walshCharMat_det_symmetric
+  - F2BilinearHadamard.bilinCharMat_det_symmetric
+  - F2BilinearHadamard.walshStandard_det
+  - F2BilinearHadamard.sierpinskiBitMat_cholesky_pivots
+  - F2BilinearHadamard.sierpinskiCharMat_det_all_n
+  - F2BilinearHadamard.nimCharMat_det_256
+  - F2BilinearHadamard.clmulBitMat_rank_collapse

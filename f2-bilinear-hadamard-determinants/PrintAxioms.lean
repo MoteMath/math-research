@@ -1,0 +1,11 @@
+import Solution
+
+#print axioms F2BilinearHadamard.f2Bilin_xor_left_right
+#print axioms F2BilinearHadamard.bilinCharMat_det_block_elimination
+#print axioms F2BilinearHadamard.walshCharMat_det_symmetric
+#print axioms F2BilinearHadamard.bilinCharMat_det_symmetric
+#print axioms F2BilinearHadamard.walshStandard_det
+#print axioms F2BilinearHadamard.sierpinskiBitMat_cholesky_pivots
+#print axioms F2BilinearHadamard.sierpinskiCharMat_det_all_n
+#print axioms F2BilinearHadamard.nimCharMat_det_256
+#print axioms F2BilinearHadamard.clmulBitMat_rank_collapse
