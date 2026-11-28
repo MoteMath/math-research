@@ -1,0 +1,47 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SiliconNativeCert.quadForm_pos_of_strictDiagDom",
+    "SiliconNativeCert.psync4_sound",
+    "SiliconNativeCert.universal_carry_decomp",
+    "SiliconNativeCert.universal_step_envelope_implies_target",
+    "SiliconNativeCert.finite_window_blindness",
+    "SiliconNativeCert.bounded_envelope_obstruction",
+    "SiliconNativeCert.carryMove_flips_parity",
+    "SiliconNativeCert.oneStepSplit_preserves_valid"
+  ],
+  "definition_names": [
+    "SiliconNativeCert.sumFin",
+    "SiliconNativeCert.quadForm",
+    "SiliconNativeCert.rowAbsResidual",
+    "SiliconNativeCert.IsStrictlyScaledDiagDom",
+    "SiliconNativeCert.Transducer4",
+    "SiliconNativeCert.Transducer4.idx",
+    "SiliconNativeCert.Transducer4.stepOut",
+    "SiliconNativeCert.Transducer4.stepNext",
+    "SiliconNativeCert.Transducer4.evalFrom",
+    "SiliconNativeCert.Transducer4.eval",
+    "SiliconNativeCert.prodIdx",
+    "SiliconNativeCert.maskHas",
+    "SiliconNativeCert.checkPairState",
+    "SiliconNativeCert.checkPsyncInv4",
+    "SiliconNativeCert.packTransducer4",
+    "SiliconNativeCert.tAdd",
+    "SiliconNativeCert.tXorPlusTwiceAnd",
+    "SiliconNativeCert.sqrtBit",
+    "SiliconNativeCert.SqrtScaleTarget",
+    "SiliconNativeCert.listProd",
+    "SiliconNativeCert.validFactorList",
+    "SiliconNativeCert.listParity",
+    "SiliconNativeCert.isSplitPair",
+    "SiliconNativeCert.isOneStepSplit",
+    "SiliconNativeCert.isCarryMove"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

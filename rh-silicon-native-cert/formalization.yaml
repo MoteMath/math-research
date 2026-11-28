@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Pure-Silicon Binary Transducer Soundness, Scaled Diagonal Dominance, and Finite-Window Obstructions
+  description: >-
+    A self-contained, sorry-free, pure-Init (zero external package) Lean 4.34.1 Palomar
+    certification bundle proving eight atomic discrete theorems on exact integer and binary
+    bit-stream models: scaled strict diagonal dominance implies strict positivity of symmetric
+    integer quadratic forms, universal O(1) bitmask invariant soundness for 4-state binary
+    carry transducers across all unbounded bit-widths, the concrete carry-decomposition law
+    x + y = (x XOR y) + 2*(x AND y) for all bit-widths, step-envelope induction to square-root
+    scale bounds, unconditional finite-window blindness and bounded-envelope obstruction theorems
+    for finite-width empirical searches, carry-move parity flips, and factor-list validity
+    preservation under one-step splits. All 25 definitions and 8 theorems are 100% pinned in
+    comparator.json with nanoda enabled and only standard Lean axioms.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: rh-silicon-native-cert
+  license: Apache-2.0
