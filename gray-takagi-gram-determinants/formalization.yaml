@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Gray-Code Bitwise Gram Determinants and the Discrete Takagi Blancmange Law
+  description: >-
+    Unconditional Lean 4 formalization of the exact symbolic q-deformed Gray-code bitwise
+    Gram determinant theorems over any commutative ring R for all matrix sizes n in N:
+    (1) det(q^(popcount(gray(i) & gray(j)))) = q^(T(n)) * (q - 1)^(S(n) - T(n)),
+    (2) det(q^(popcount(gray(i) | gray(j)))) = q^(S(n)) * (1 - q)^(S(n) - T(n)),
+    (3) det(q^(popcount(gray(i) ^ gray(j)))) = (1 - q^2)^(S(n) - T(n)),
+    where gray(k) = k XOR (k / 2), S(n) = sum_{i < n} popcount(gray(i)), and T(n) is the
+    discrete Takagi (Blancmange) fractal function T(2^m + k) = T(k) + min(k, 2^m - k).
+    Includes the q = 2 pure Blancmange power-of-2 determinant law (OEIS-novel GPU discovery),
+    the q = 0 Gray disjointness power-of-2 singularity dichotomy, and the exact Takagi zero-set
+    characterization T(n) = 0 <-> n = 0 \/ exists m, n = 2^m.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: gray-takagi-gram-determinants
+  license: Apache-2.0
