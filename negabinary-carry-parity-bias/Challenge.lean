@@ -35,13 +35,15 @@ For EVERY integer `m` and EVERY excess width `k ≥ 0`, `3 * S_{bitLen m + k}(m,
 decomposes identically into an exponential bias mode `b * 2^k`, a period-2
 oscillation `o * (-1)^k`, and a constant offset `3 * d`, given by `negabinSpec m`. -/
 theorem negabinParitySum_spectral (m k : Nat) :
-    let ((b0, bp, bm), (o0, op, om), (d0, dp, dm)) := negabinSpec m
     3 * negabinParitySum (bitLen m + k) m .zero =
-      b0 * (2 ^ k : Int) + o0 * (-1 : Int) ^ k + 3 * d0 ∧
+      (negabinSpec m).1.1 * (2 ^ k : Int) + (negabinSpec m).2.1.1 * (-1 : Int) ^ k +
+        3 * (negabinSpec m).2.2.1 ∧
     3 * negabinParitySum (bitLen m + k) m .pos =
-      bp * (2 ^ k : Int) + op * (-1 : Int) ^ k + 3 * dp ∧
+      (negabinSpec m).1.2.1 * (2 ^ k : Int) + (negabinSpec m).2.1.2.1 * (-1 : Int) ^ k +
+        3 * (negabinSpec m).2.2.2.1 ∧
     3 * negabinParitySum (bitLen m + k) m .neg =
-      bm * (2 ^ k : Int) + om * (-1 : Int) ^ k + 3 * dm := by
+      (negabinSpec m).1.2.2 * (2 ^ k : Int) + (negabinSpec m).2.1.2.2 * (-1 : Int) ^ k +
+        3 * (negabinSpec m).2.2.2.2 := by
   sorry
 
 /-- **Theorem 4 — Universal `±1/3` Negabinary Extremal Barrier:**
@@ -87,9 +89,10 @@ theorem negabinZeroBias_bounded_family (r k : Nat) :
 For EVERY `m, k : Nat` and carry `c ∈ {0, 1}`, `3 * S^{+2}_{bitLen m + k}(m, c)`
 decomposes identically into `g * 2^k + u * (-1)^k` (with zero constant mode!). -/
 theorem base2ParitySum_spectral (m k : Nat) :
-    let ((g0, g1), (u0, u1)) := base2Spec m
-    3 * base2ParitySum (bitLen m + k) m .zero = g0 * (2 ^ k : Int) + u0 * (-1 : Int) ^ k ∧
-    3 * base2ParitySum (bitLen m + k) m .one = g1 * (2 ^ k : Int) + u1 * (-1 : Int) ^ k := by
+    3 * base2ParitySum (bitLen m + k) m .zero =
+      (base2Spec m).1.1 * (2 ^ k : Int) + (base2Spec m).2.1 * (-1 : Int) ^ k ∧
+    3 * base2ParitySum (bitLen m + k) m .one =
+      (base2Spec m).1.2 * (2 ^ k : Int) + (base2Spec m).2.2 * (-1 : Int) ^ k := by
   sorry
 
 /-- **Theorem 9 — Base-`(+2)` Asymmetric `(-1/9, +1/3]` Barrier & Sharp Infimum Family:**
