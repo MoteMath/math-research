@@ -14,8 +14,6 @@
     "NegabinaryCarryParityBias.base2Bias_eq_pos_one_third_iff"
   ],
   "definition_names": [
-    "NegabinaryCarryParityBias.NegCarry",
-    "NegabinaryCarryParityBias.BinCarry",
     "NegabinaryCarryParityBias.negabinStep",
     "NegabinaryCarryParityBias.negabinDrain",
     "NegabinaryCarryParityBias.negabinCarries",
