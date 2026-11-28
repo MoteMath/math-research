@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Negabinary Carry Determinants — Base-(-2) Run-Prefix LDL^T, Thue-Morse Unimodularity, and the n=34 Parity Anomaly
+  description: >-
+    Machine-checked Lean 4 / Mathlib formalization of base-(-2) (negabinary) carry-borrow
+    matrix theory over arbitrary commutative rings: exact digit-sum conservation mod 3,
+    an explicit bitwise run-prefix lower-unitriangular LDL^T factorization proving that the
+    zero-positive-carry matrix has exact Thue-Morse determinant prod_{k<n} (-1)^{s_2(k)} for
+    every n in N (matching the disjoint-bit Sierpinski determinant despite differing entries),
+    and an exact recursive even/odd block-decoupling theorem for the negabinary positive-carry
+    parity matrix H_n showing det(H_n) = 2^{n-1} prod_{k<n} (-1)^{s_2(k)} for all 1 <= n <= 33
+    before spontaneously acquiring a prime factor of 3 at n = 34.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: negabinary-carry-determinants
+  license: Apache-2.0

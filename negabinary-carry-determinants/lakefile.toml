@@ -1,0 +1,17 @@
+name = "negabinary-carry-determinants"
+version = "0.1.0"
+defaultTargets = ["NegabinaryCarryDet", "Solution"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.34.1"
+
+[[lean_lib]]
+name = "NegabinaryCarryDet"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

@@ -1,0 +1,11 @@
+import Solution
+
+#print axioms NegabinaryCarryDetChallenge.negAdd_popcount_conservation
+#print axioms NegabinaryCarryDetChallenge.runPrefix_iff_bits
+#print axioms NegabinaryCarryDetChallenge.negZeroPosCarryMat_eq_LDL
+#print axioms NegabinaryCarryDetChallenge.det_negZeroPosCarryMat
+#print axioms NegabinaryCarryDetChallenge.det_negZeroBorrowMat
+#print axioms NegabinaryCarryDetChallenge.negZeroPosCarry_ne_disjointBit
+#print axioms NegabinaryCarryDetChallenge.det_negParityMat_decouple
+#print axioms NegabinaryCarryDetChallenge.det_negKMat_decouple
+#print axioms NegabinaryCarryDetChallenge.negParityMat_n34_anomaly

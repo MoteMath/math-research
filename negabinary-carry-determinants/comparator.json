@@ -1,0 +1,22 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "NegabinaryCarryDetChallenge.negAdd_popcount_conservation",
+    "NegabinaryCarryDetChallenge.runPrefix_iff_bits",
+    "NegabinaryCarryDetChallenge.negZeroPosCarryMat_eq_LDL",
+    "NegabinaryCarryDetChallenge.det_negZeroPosCarryMat",
+    "NegabinaryCarryDetChallenge.det_negZeroBorrowMat",
+    "NegabinaryCarryDetChallenge.negZeroPosCarry_ne_disjointBit",
+    "NegabinaryCarryDetChallenge.det_negParityMat_decouple",
+    "NegabinaryCarryDetChallenge.det_negKMat_decouple",
+    "NegabinaryCarryDetChallenge.negParityMat_n34_anomaly"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
