@@ -1,0 +1,12 @@
+name = "silicon-bitrev-ld-and-quandles"
+version = "0.1.0"
+defaultTargets = ["Solution"]
+
+[[lean_lib]]
+name = "Defs"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"

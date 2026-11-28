@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Pure-Silicon Bit-Reversal LD-Systems and Non-Alexander XOR-Carry Knot Quandles
+  description: >-
+    Zero-dependency Lean 4 formalization of two non-classical, non-associative pure-silicon
+    algebraic families discovered by GPU algebraic-law mining on Z / 2^w Z:
+    (1) Partial-involution left self-distributive (LD) algebras X * Y = X u tau(Y \ X) and their
+    shifted bit-reversal realization x ||| (bitrev(y &&& ~~~x) <<< s) = x + ((bitrev(y &&& ~~~x) <<< s) &&& ~~~x)
+    over BitVec w for all bit-widths w and shifts s; and
+    (2) Non-Alexander, non-involutive both-sided knot quandles x * y = y + g(y - x) over Z / 2^w Z
+    and their concrete bitwise XOR-carry realization (2*x - y) - ((2*(y - x)) ^^^ c) + c
+    for all bit-widths w and 2-bit-span inverted masks.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: silicon-bitrev-ld-and-quandles
+  license: Apache-2.0

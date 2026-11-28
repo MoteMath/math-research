@@ -1,0 +1,31 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SiliconLDQuandles.partialInvLD_idemp",
+    "SiliconLDQuandles.partialInvLD_left_distrib",
+    "SiliconLDQuandles.partialInvLD_flexible",
+    "SiliconLDQuandles.partialInvLD_non_assoc_non_comm",
+    "SiliconLDQuandles.bitrevShiftOp_eq_add",
+    "SiliconLDQuandles.bitrevShiftOp_ld_laws",
+    "SiliconLDQuandles.cosetJump_quandle_laws",
+    "SiliconLDQuandles.xorCarryOp_eq_and_not",
+    "SiliconLDQuandles.xorCarryQuandle_twoBitMask",
+    "SiliconLDQuandles.xorCarryQuandle_nonAlexander_nonInvolutive"
+  ],
+  "definition_names": [
+    "SiliconLDQuandles.IsPartialInvolution",
+    "SiliconLDQuandles.partialInvLD",
+    "SiliconLDQuandles.bitrev",
+    "SiliconLDQuandles.bitrevShiftOp",
+    "SiliconLDQuandles.cosetJump",
+    "SiliconLDQuandles.cosetJumpInv",
+    "SiliconLDQuandles.xorCarryOp"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

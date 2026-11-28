@@ -1,0 +1,12 @@
+import Solution
+
+#print axioms SiliconLDQuandles.partialInvLD_idemp
+#print axioms SiliconLDQuandles.partialInvLD_left_distrib
+#print axioms SiliconLDQuandles.partialInvLD_flexible
+#print axioms SiliconLDQuandles.partialInvLD_non_assoc_non_comm
+#print axioms SiliconLDQuandles.bitrevShiftOp_eq_add
+#print axioms SiliconLDQuandles.bitrevShiftOp_ld_laws
+#print axioms SiliconLDQuandles.cosetJump_quandle_laws
+#print axioms SiliconLDQuandles.xorCarryOp_eq_and_not
+#print axioms SiliconLDQuandles.xorCarryQuandle_twoBitMask
+#print axioms SiliconLDQuandles.xorCarryQuandle_nonAlexander_nonInvolutive
