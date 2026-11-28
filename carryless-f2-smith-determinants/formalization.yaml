@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carryless F_2[X] Smith GCD Determinants and Binary Carry-Collision Singularity Paradoxes
+  description: >-
+    Unconditional Lean 4 formalization of the pure-silicon carry-less F_2[X] Smith determinant
+    theory over arbitrary commutative rings R:
+    (1) the exact ring isomorphism between binary carry-less multiplication (clmul) on N and
+    polynomial multiplication in (ZMod 2)[X];
+    (2) the Universal Carryless Smith-Mobius Factorization Theorem
+    det(f(clgcd(i+1, j+1))) = prod_{k=1}^n (clMobiusInv f)(k);
+    (3) exact positivity and F_2[X] Euler totient factorization det(2^(deg clgcd(i+1, j+1))) =
+    prod_{k=1}^n Phi_{F_2[X]}(k) > 0 for all n; and
+    (4) three sharp singularity collapse paradoxes contrasting with classical integer Smith theory:
+    the raw integer carry-less GCD matrix det(clgcd(i+1, j+1)) = 384 at n = 8 yet vanishes
+    identically for all n >= 9 due to the carry-collision 9 = clmul 3 7 (9 - 7 - 3 + 1 = 0);
+    the carry-less coprimality matrix collapses at n >= 4 (4 = clmul 2 2); and the carry-less
+    Hamming-weight matrix collapses at n >= 2.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: carryless-f2-smith-determinants
+  license: Apache-2.0

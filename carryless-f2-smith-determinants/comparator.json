@@ -1,0 +1,33 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarrylessSmithDet.natToPoly_clmul",
+    "CarrylessSmithDet.polyToNat_natToPoly",
+    "CarrylessSmithDet.natToPoly_polyToNat",
+    "CarrylessSmithDet.det_clgcdMat_of_divisorSum",
+    "CarrylessSmithDet.det_clgcdMat",
+    "CarrylessSmithDet.sum_clTotient_divisors",
+    "CarrylessSmithDet.det_clgcd_pow2_deg",
+    "CarrylessSmithDet.det_clgcd_id_collapse_nine",
+    "CarrylessSmithDet.det_clgcd_coprime_collapse_four",
+    "CarrylessSmithDet.det_clgcd_popcount_collapse_two"
+  ],
+  "definition_names": [
+    "CarrylessSmithDet.clmul",
+    "CarrylessSmithDet.popcount",
+    "CarrylessSmithDet.natToPoly",
+    "CarrylessSmithDet.polyToNat",
+    "CarrylessSmithDet.clgcd",
+    "CarrylessSmithDet.clDivisors",
+    "CarrylessSmithDet.clMobiusInv",
+    "CarrylessSmithDet.clTotient",
+    "CarrylessSmithDet.clgcdMat"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

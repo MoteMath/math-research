@@ -1,0 +1,12 @@
+import Solution
+
+#print axioms CarrylessSmithDet.natToPoly_clmul
+#print axioms CarrylessSmithDet.polyToNat_natToPoly
+#print axioms CarrylessSmithDet.natToPoly_polyToNat
+#print axioms CarrylessSmithDet.det_clgcdMat_of_divisorSum
+#print axioms CarrylessSmithDet.det_clgcdMat
+#print axioms CarrylessSmithDet.sum_clTotient_divisors
+#print axioms CarrylessSmithDet.det_clgcd_pow2_deg
+#print axioms CarrylessSmithDet.det_clgcd_id_collapse_nine
+#print axioms CarrylessSmithDet.det_clgcd_coprime_collapse_four
+#print axioms CarrylessSmithDet.det_clgcd_popcount_collapse_two
