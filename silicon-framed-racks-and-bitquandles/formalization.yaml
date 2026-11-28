@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Pure-Silicon Non-Idempotent Framed-Link Racks and Single-Bit Conjugated Knot Quandles
+  description: >-
+    Zero-dependency pure Lean 4 Init formalization of three non-classical, non-Alexander
+    algebraic families over BitVec w discovered by GPU algebraic-law mining on Z / 2^w Z:
+    (1) universal coset-shift framed-link racks y + g(y - x) and their concrete single-bit
+    carry-XOR realization x + ((y - x) ^^^ 2^k) + 2^k (strictly one-sided, non-idempotent);
+    (2) involutive non-idempotent zero-borrow core-XOR framed-link racks (x ^^^ (2^k - 1)) + (x - y);
+    and (3) single-bit conjugated both-sided (LSD + RSD) non-involutive, non-Alexander knot
+    quandles ((x ^^^ 2^k) + (y - x)) ^^^ 2^k for all bit-widths w >= 3 and bit positions k < w - 1.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: silicon-framed-racks-and-bitquandles
+  license: Apache-2.0

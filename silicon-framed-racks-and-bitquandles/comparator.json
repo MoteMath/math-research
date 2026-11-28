@@ -1,0 +1,30 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SiliconRacksQuandles.cosetRack_laws",
+    "SiliconRacksQuandles.carryXorRack_eq",
+    "SiliconRacksQuandles.carryXorRack_framed_laws",
+    "SiliconRacksQuandles.coreXorRack_eq",
+    "SiliconRacksQuandles.coreXorRack_involutive_framed_laws",
+    "SiliconRacksQuandles.coreXorRack_nonAlexander",
+    "SiliconRacksQuandles.conjBitQuandle_eq",
+    "SiliconRacksQuandles.conjBitQuandle_bothSided_laws",
+    "SiliconRacksQuandles.conjBitQuandle_nonInvolutive_nonAlexander"
+  ],
+  "definition_names": [
+    "SiliconRacksQuandles.cosetRack",
+    "SiliconRacksQuandles.cosetRackInv",
+    "SiliconRacksQuandles.carryXorRack",
+    "SiliconRacksQuandles.lowMask",
+    "SiliconRacksQuandles.coreXorRack",
+    "SiliconRacksQuandles.conjBitQuandle",
+    "SiliconRacksQuandles.conjBitQuandleInv"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,11 @@
+import Solution
+
+#print axioms SiliconRacksQuandles.cosetRack_laws
+#print axioms SiliconRacksQuandles.carryXorRack_eq
+#print axioms SiliconRacksQuandles.carryXorRack_framed_laws
+#print axioms SiliconRacksQuandles.coreXorRack_eq
+#print axioms SiliconRacksQuandles.coreXorRack_involutive_framed_laws
+#print axioms SiliconRacksQuandles.coreXorRack_nonAlexander
+#print axioms SiliconRacksQuandles.conjBitQuandle_eq
+#print axioms SiliconRacksQuandles.conjBitQuandle_bothSided_laws
+#print axioms SiliconRacksQuandles.conjBitQuandle_nonInvolutive_nonAlexander
