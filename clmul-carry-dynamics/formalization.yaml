@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: Carryless-Carried Hybrid Hull-Dobell Dynamics, Rotation Kaprekar Sinks, and Exact m=3 Twin Laws
+  description: >-
+    Zero-dependency Lean 4 formalization of three pure-silicon binary dynamical and carry-twin
+    laws discovered by GPU scanning on Z / 2^w Z:
+    (1) the Carryless-Carried Hybrid Hull-Dobell Theorem characterizing full 2^w-cycles of
+    x -> (clmul a x + b) mod 2^w for all w >= 2 by a = 1 (mod 4) and b = 1 (mod 2);
+    (2) the exact w-step Carry-Vector Rotation Kaprekar Sink g_w(x) = (((x+1) ^ x ^ 1) + rotl(x,1) + 1)
+    with exact step-t image characterization and universal collapse to ~~~1#w in diameter w for all w >= 3
+    (and sharpness at w = 2); and
+    (3) the exact m = 3 carried-vs-carryless twin laws: Fibonacci zero-carry count F_{w+2} and exact
+    3^(floor(w/2)) parity correlation sum for all w >= 1.
+  repository: https://github.com/MoteMath/math-research
+  subdirectory: clmul-carry-dynamics
+  license: Apache-2.0

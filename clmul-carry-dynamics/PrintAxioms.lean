@@ -1,0 +1,12 @@
+import Solution
+
+#print axioms ClmulCarryDynamics.clmul_xor
+#print axioms ClmulCarryDynamics.clmul_mod_injective_of_odd
+#print axioms ClmulCarryDynamics.hybrid_hull_dobell_iff
+#print axioms ClmulCarryDynamics.kaprekarStep_add_one_eq
+#print axioms ClmulCarryDynamics.kaprekarStep_image_char
+#print axioms ClmulCarryDynamics.kaprekarStep_universal_sink
+#print axioms ClmulCarryDynamics.kaprekarStep_w2_sharpness
+#print axioms ClmulCarryDynamics.carried_eq_clmul3_iff
+#print axioms ClmulCarryDynamics.zeroCarry3Count_eq_fib
+#print axioms ClmulCarryDynamics.carried_clmul3_parity_sum

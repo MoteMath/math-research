@@ -1,0 +1,36 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ClmulCarryDynamics.clmul_xor",
+    "ClmulCarryDynamics.clmul_mod_injective_of_odd",
+    "ClmulCarryDynamics.hybrid_hull_dobell_iff",
+    "ClmulCarryDynamics.kaprekarStep_add_one_eq",
+    "ClmulCarryDynamics.kaprekarStep_image_char",
+    "ClmulCarryDynamics.kaprekarStep_universal_sink",
+    "ClmulCarryDynamics.kaprekarStep_w2_sharpness",
+    "ClmulCarryDynamics.carried_eq_clmul3_iff",
+    "ClmulCarryDynamics.zeroCarry3Count_eq_fib",
+    "ClmulCarryDynamics.carried_clmul3_parity_sum"
+  ],
+  "definition_names": [
+    "ClmulCarryDynamics.clmul",
+    "ClmulCarryDynamics.iterate",
+    "ClmulCarryDynamics.hybridStep",
+    "ClmulCarryDynamics.IsFullCycle",
+    "ClmulCarryDynamics.kaprekarStep",
+    "ClmulCarryDynamics.popcount",
+    "ClmulCarryDynamics.paritySign",
+    "ClmulCarryDynamics.fib",
+    "ClmulCarryDynamics.sumNat",
+    "ClmulCarryDynamics.sumInt",
+    "ClmulCarryDynamics.zeroCarry3Count",
+    "ClmulCarryDynamics.clmul3ParitySum"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}
