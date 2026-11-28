@@ -1,0 +1,19 @@
+{
+  "file": "reductions/Erdos470.erdos_470.parts.i.R2.lean",
+  "type": "reduction",
+  "problem": "Erdos470.erdos_470.parts.i.R2",
+  "hypotheses": [
+    "∀ m t E : ℕ, Odd m → Odd t → Nat.Coprime m t → 0 < E →\n    (∑ d ∈ m.divisors, d) * (∑ d ∈ t.divisors, d) = 2 * m * t + E →\n    (∀ p ∈ t.primeFactors, E < p) →\n    (∀ s ⊆ m.divisors, ∑ d ∈ s, d ≠ E) →\n    (m * t).Weird ∧ Odd (m * t)",
+    "∃ m t E : ℕ, Odd m ∧ Odd t ∧ Nat.Coprime m t ∧ 0 < E ∧\n    (∑ d ∈ m.divisors, d) * (∑ d ∈ t.divisors, d) = 2 * m * t + E ∧\n    (∀ p ∈ t.primeFactors, E < p) ∧\n    (∀ s ⊆ m.divisors, ∑ d ∈ s, d ≠ E)"
+  ],
+  "module": "OMAReductions.R_Erdos470_erdos_470_parts_i_R2",
+  "ok": true,
+  "kind": "open",
+  "polarity": "proof",
+  "theorem": "OMA.R_Erdos470_erdos_470_parts_i_R2.main",
+  "imports": "FormalConjectures.ErdosProblems.«470»",
+  "errors": [],
+  "decl": "Erdos470.erdos_470.parts.i",
+  "verdict": "accepted",
+  "reason": "kernel accepted; axioms within propext, Classical.choice, Quot.sound"
+}

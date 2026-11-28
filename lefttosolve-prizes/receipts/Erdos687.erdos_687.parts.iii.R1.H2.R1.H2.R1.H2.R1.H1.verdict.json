@@ -1,0 +1,14 @@
+{
+  "file": "proofs/Erdos687.erdos_687.parts.iii.R1.H2.R1.H2.R1.H2.R1.H1.lean",
+  "type": "step",
+  "problem": "Erdos687.erdos_687.parts.iii.R1.H2.R1.H2.R1.H2.R1.H1",
+  "ok": true,
+  "kind": "open",
+  "polarity": "proof",
+  "theorem": "OMA.solution",
+  "imports": "OMAReductions.R_Erdos687_erdos_687_parts_iii_R1_H2_R1_H2_R1_H2_R1",
+  "errors": [],
+  "needsReduction": "Erdos687.erdos_687.parts.iii.R1.H2.R1.H2.R1.H2.R1",
+  "verdict": "accepted",
+  "reason": "kernel accepted; axioms=['Classical.choice', 'Quot.sound', 'propext']"
+}

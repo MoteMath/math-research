@@ -1,0 +1,14 @@
+{
+  "file": "proofs/Erdos211.erdos_211.variants.one_sixth.R1.H2.lean",
+  "type": "step",
+  "problem": "Erdos211.erdos_211.variants.one_sixth.R1.H2",
+  "ok": true,
+  "kind": "open",
+  "polarity": "proof",
+  "theorem": "OMA.solution",
+  "imports": "OMAReductions.R_Erdos211_erdos_211_variants_one_sixth_R1",
+  "errors": [],
+  "needsReduction": "Erdos211.erdos_211.variants.one_sixth.R1",
+  "verdict": "accepted",
+  "reason": "kernel accepted; axioms=['Classical.choice', 'Quot.sound', 'propext']"
+}

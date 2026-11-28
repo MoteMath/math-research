@@ -1,0 +1,21 @@
+{
+  "file": "reductions/Erdos107.erdos_107.R1.H1.R1.H2.R1.H2.R1.lean",
+  "type": "reduction",
+  "problem": "Erdos107.erdos_107.R1.H1.R1.H2.R1.H2.R1",
+  "hypotheses": [
+    "let C := Fin 16 → Fin 16 → Fin 16 → Bool\n  let packet (h : C) : Prop := ∀ a b c d, a < b → b < c → c < d →\n    (h a b c = h a b d ∧ h a b d = h a c d) ∨\n    (h a b c = h a b d ∧ h a c d = h b c d) ∨\n    (h a b d = h a c d ∧ h a c d = h b c d)\n  let cupCap6 (h : C) : Prop :=\n    (∃ a b c d e, a < b ∧ b < c ∧ c < d ∧ d < e ∧\n      h a b c = true ∧ h b c d = true ∧ h c d e = true) ∨\n    (∃ a b c d e f, a < b ∧ b < c ∧ c < d ∧ d < e ∧ e < f ∧\n      h a b c = false ∧ h b c d = false ∧ h c d e = false ∧ h d e f = false) ∨\n    (∃ a b x y u v, a < x ∧ x < y ∧ y < b ∧ a < u ∧ u < v ∧ v < b ∧\n      h a x y = true ∧ h x y b = true ∧ h a u v = false ∧ h u v b = false) ∨\n    (∃ a b x u v w, a < x ∧ x < b ∧ a < u ∧ u < v ∧ v < w ∧ w < b ∧\n      h a x b = true ∧ h a u v = false ∧ h u v w = false ∧ h v w b = false)\n  ∀ h : C, packet h → h 6 7 8 = false → h 7 8 9 = false → cupCap6 h",
+    "let C := Fin 16 → Fin 16 → Fin 16 → Bool\n  let packet (h : C) : Prop := ∀ a b c d, a < b → b < c → c < d →\n    (h a b c = h a b d ∧ h a b d = h a c d) ∨\n    (h a b c = h a b d ∧ h a c d = h b c d) ∨\n    (h a b d = h a c d ∧ h a c d = h b c d)\n  let cupCap6 (h : C) : Prop :=\n    (∃ a b c d e, a < b ∧ b < c ∧ c < d ∧ d < e ∧\n      h a b c = true ∧ h b c d = true ∧ h c d e = true) ∨\n    (∃ a b c d e f, a < b ∧ b < c ∧ c < d ∧ d < e ∧ e < f ∧\n      h a b c = false ∧ h b c d = false ∧ h c d e = false ∧ h d e f = false) ∨\n    (∃ a b x y u v, a < x ∧ x < y ∧ y < b ∧ a < u ∧ u < v ∧ v < b ∧\n      h a x y = true ∧ h x y b = true ∧ h a u v = false ∧ h u v b = false) ∨\n    (∃ a b x u v w, a < x ∧ x < b ∧ a < u ∧ u < v ∧ v < w ∧ w < b ∧\n      h a x b = true ∧ h a u v = false ∧ h u v w = false ∧ h v w b = false)\n  ∀ h : C, packet h → h 6 7 8 = true → h 7 8 9 = true → cupCap6 h",
+    "let C := Fin 16 → Fin 16 → Fin 16 → Bool\n  let packet (h : C) : Prop := ∀ a b c d, a < b → b < c → c < d →\n    (h a b c = h a b d ∧ h a b d = h a c d) ∨\n    (h a b c = h a b d ∧ h a c d = h b c d) ∨\n    (h a b d = h a c d ∧ h a c d = h b c d)\n  let cupCap6 (h : C) : Prop :=\n    (∃ a b c d e, a < b ∧ b < c ∧ c < d ∧ d < e ∧\n      h a b c = true ∧ h b c d = true ∧ h c d e = true) ∨\n    (∃ a b c d e f, a < b ∧ b < c ∧ c < d ∧ d < e ∧ e < f ∧\n      h a b c = false ∧ h b c d = false ∧ h c d e = false ∧ h d e f = false) ∨\n    (∃ a b x y u v, a < x ∧ x < y ∧ y < b ∧ a < u ∧ u < v ∧ v < b ∧\n      h a x y = true ∧ h x y b = true ∧ h a u v = false ∧ h u v b = false) ∨\n    (∃ a b x u v w, a < x ∧ x < b ∧ a < u ∧ u < v ∧ v < w ∧ w < b ∧\n      h a x b = true ∧ h a u v = false ∧ h u v w = false ∧ h v w b = false)\n  ∀ h : C, packet h → h 6 7 8 = true → h 6 7 9 = true → h 7 8 9 = false → cupCap6 h",
+    "let C := Fin 16 → Fin 16 → Fin 16 → Bool\n  let packet (h : C) : Prop := ∀ a b c d, a < b → b < c → c < d →\n    (h a b c = h a b d ∧ h a b d = h a c d) ∨\n    (h a b c = h a b d ∧ h a c d = h b c d) ∨\n    (h a b d = h a c d ∧ h a c d = h b c d)\n  let cupCap6 (h : C) : Prop :=\n    (∃ a b c d e, a < b ∧ b < c ∧ c < d ∧ d < e ∧\n      h a b c = true ∧ h b c d = true ∧ h c d e = true) ∨\n    (∃ a b c d e f, a < b ∧ b < c ∧ c < d ∧ d < e ∧ e < f ∧\n      h a b c = false ∧ h b c d = false ∧ h c d e = false ∧ h d e f = false) ∨\n    (∃ a b x y u v, a < x ∧ x < y ∧ y < b ∧ a < u ∧ u < v ∧ v < b ∧\n      h a x y = true ∧ h x y b = true ∧ h a u v = false ∧ h u v b = false) ∨\n    (∃ a b x u v w, a < x ∧ x < b ∧ a < u ∧ u < v ∧ v < w ∧ w < b ∧\n      h a x b = true ∧ h a u v = false ∧ h u v w = false ∧ h v w b = false)\n  ∀ h : C, packet h → h 6 7 8 = true → h 6 7 9 = false → h 7 8 9 = false → cupCap6 h"
+  ],
+  "module": "OMAReductions.R_Erdos107_erdos_107_R1_H1_R1_H2_R1_H2_R1",
+  "ok": true,
+  "kind": "open",
+  "polarity": "proof",
+  "theorem": "OMA.R_Erdos107_erdos_107_R1_H1_R1_H2_R1_H2_R1.main",
+  "imports": "OMAReductions.R_Erdos107_erdos_107_R1_H1_R1_H2_R1",
+  "errors": [],
+  "needsReduction": "Erdos107.erdos_107.R1.H1.R1.H2.R1",
+  "verdict": "accepted",
+  "reason": "kernel accepted; axioms within propext, Classical.choice, Quot.sound"
+}

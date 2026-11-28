@@ -1,0 +1,19 @@
+{
+  "file": "reductions/Erdos128.erdos_128.R2.H2.R2.H2.R1.H1.R1.lean",
+  "type": "reduction",
+  "problem": "Erdos128.erdos_128.R2.H2.R2.H2.R1.H1.R1",
+  "hypotheses": [
+    "let adj : Fin 5 ⊕ Fin 8 → Fin 5 ⊕ Fin 8 → Prop := fun x y => match x, y with\n    | .inl p, .inl q => 2 ≤ (q.val + 5 - p.val) % 5 ∧ (q.val + 5 - p.val) % 5 ≤ 3\n    | .inl p, .inr t | .inr t, .inl p =>\n        ((t.val = 0 ∨ t.val = 3) ∧ p.val < 2) ∨\n        ((t.val = 4 ∨ t.val = 1) ∧ 2 ≤ p.val ∧ p.val < 4) ∨\n        ((t.val = 2 ∨ t.val = 5) ∧ 4 ≤ p.val)\n    | .inr t₁, .inr t₂ =>\n        (t₁.val < 6 ∧ t₂.val < 6 ∧ ((t₁.val + 1) % 6 = t₂.val ∨ (t₂.val + 1) % 6 = t₁.val)) ∨\n        (t₁.val = 6 ∧ (t₂.val = 0 ∨ t₂.val = 4 ∨ t₂.val = 2 ∨ t₂.val = 7)) ∨\n        (t₂.val = 6 ∧ (t₁.val = 0 ∨ t₁.val = 4 ∨ t₁.val = 2 ∨ t₁.val = 7)) ∨\n        (t₁.val = 7 ∧ (t₂.val = 3 ∨ t₂.val = 1 ∨ t₂.val = 5 ∨ t₂.val = 6)) ∨\n        (t₂.val = 7 ∧ (t₁.val = 3 ∨ t₁.val = 1 ∨ t₁.val = 5 ∨ t₁.val = 6))\n  ∀ [DecidableRel adj], ∀ w : Fin 5 ⊕ Fin 8 → ℝ,\n    (∀ z, 0 ≤ w z) → (∑ z, w z) = 1 →\n    (∀ I : Finset (Fin 5 ⊕ Fin 8), (∀ x ∈ I, ∀ y ∈ I, ¬ adj x y) → (∑ z ∈ I, w z) < 2 / 5) →\n    4 < 25 * (∑ x, ∑ y, if adj x y then w x * w y else 0) →\n    w (.inr 0) + w (.inr 2) + w (.inr 4) + w (.inr 7) ≤\n      w (.inr 1) + w (.inr 3) + w (.inr 5) + w (.inr 6) →\n    w (.inl 0) + w (.inl 1) ≤ w (.inl 2) + w (.inl 3) →\n    (∑ p : Fin 5, w (.inl p)) ≤ 1 / 3 →\n    ∃ s : Fin 5 ⊕ Fin 8 → ℝ, (∀ z, 0 ≤ s z ∧ s z ≤ w z) ∧ (∑ z, s z) = 1 / 2 ∧\n      25 * (∑ x, ∑ y, if adj x y then s x * s y else 0) ≤ 1",
+    "let adj : Fin 5 ⊕ Fin 8 → Fin 5 ⊕ Fin 8 → Prop := fun x y => match x, y with\n    | .inl p, .inl q => 2 ≤ (q.val + 5 - p.val) % 5 ∧ (q.val + 5 - p.val) % 5 ≤ 3\n    | .inl p, .inr t | .inr t, .inl p =>\n        ((t.val = 0 ∨ t.val = 3) ∧ p.val < 2) ∨\n        ((t.val = 4 ∨ t.val = 1) ∧ 2 ≤ p.val ∧ p.val < 4) ∨\n        ((t.val = 2 ∨ t.val = 5) ∧ 4 ≤ p.val)\n    | .inr t₁, .inr t₂ =>\n        (t₁.val < 6 ∧ t₂.val < 6 ∧ ((t₁.val + 1) % 6 = t₂.val ∨ (t₂.val + 1) % 6 = t₁.val)) ∨\n        (t₁.val = 6 ∧ (t₂.val = 0 ∨ t₂.val = 4 ∨ t₂.val = 2 ∨ t₂.val = 7)) ∨\n        (t₂.val = 6 ∧ (t₁.val = 0 ∨ t₁.val = 4 ∨ t₁.val = 2 ∨ t₁.val = 7)) ∨\n        (t₁.val = 7 ∧ (t₂.val = 3 ∨ t₂.val = 1 ∨ t₂.val = 5 ∨ t₂.val = 6)) ∨\n        (t₂.val = 7 ∧ (t₁.val = 3 ∨ t₁.val = 1 ∨ t₁.val = 5 ∨ t₁.val = 6))\n  ∀ [DecidableRel adj], ∀ w : Fin 5 ⊕ Fin 8 → ℝ,\n    (∀ z, 0 ≤ w z) → (∑ z, w z) = 1 →\n    (∀ I : Finset (Fin 5 ⊕ Fin 8), (∀ x ∈ I, ∀ y ∈ I, ¬ adj x y) → (∑ z ∈ I, w z) < 2 / 5) →\n    4 < 25 * (∑ x, ∑ y, if adj x y then w x * w y else 0) →\n    w (.inr 0) + w (.inr 2) + w (.inr 4) + w (.inr 7) ≤\n      w (.inr 1) + w (.inr 3) + w (.inr 5) + w (.inr 6) →\n    w (.inl 0) + w (.inl 1) ≤ w (.inl 2) + w (.inl 3) →\n    1 / 3 < (∑ p : Fin 5, w (.inl p)) →\n    ∃ s : Fin 5 ⊕ Fin 8 → ℝ, (∀ z, 0 ≤ s z ∧ s z ≤ w z) ∧ (∑ z, s z) = 1 / 2 ∧\n      25 * (∑ x, ∑ y, if adj x y then s x * s y else 0) ≤ 1"
+  ],
+  "module": "OMAReductions.R_Erdos128_erdos_128_R2_H2_R2_H2_R1_H1_R1",
+  "ok": true,
+  "kind": "open",
+  "polarity": "proof",
+  "theorem": "OMA.R_Erdos128_erdos_128_R2_H2_R2_H2_R1_H1_R1.main",
+  "imports": "OMAReductions.R_Erdos128_erdos_128_R2_H2_R2_H2_R1",
+  "errors": [],
+  "needsReduction": "Erdos128.erdos_128.R2.H2.R2.H2.R1",
+  "verdict": "accepted",
+  "reason": "kernel accepted; axioms within propext, Classical.choice, Quot.sound"
+}

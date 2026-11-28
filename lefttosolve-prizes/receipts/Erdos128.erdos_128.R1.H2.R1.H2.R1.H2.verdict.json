@@ -1,0 +1,14 @@
+{
+  "file": "proofs/Erdos128.erdos_128.R1.H2.R1.H2.R1.H2.lean",
+  "type": "step",
+  "problem": "Erdos128.erdos_128.R1.H2.R1.H2.R1.H2",
+  "ok": true,
+  "kind": "open",
+  "polarity": "proof",
+  "theorem": "OMA.solution",
+  "imports": "OMAReductions.R_Erdos128_erdos_128_R1_H2_R1_H2_R1",
+  "errors": [],
+  "needsReduction": "Erdos128.erdos_128.R1.H2.R1.H2.R1",
+  "verdict": "accepted",
+  "reason": "kernel accepted; axioms=['Classical.choice', 'Quot.sound', 'propext']"
+}

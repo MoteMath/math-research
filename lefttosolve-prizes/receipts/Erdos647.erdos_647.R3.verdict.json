@@ -1,0 +1,19 @@
+{
+  "file": "reductions/Erdos647.erdos_647.R3.lean",
+  "type": "reduction",
+  "problem": "Erdos647.erdos_647.R3",
+  "hypotheses": [
+    "∀ m : ℕ,\n    (σ 0 m) ^ 6 ≤\n      (if 2 ∣ m then\n        (if 3 ∣ m then (if 5 ∣ m then 139 else 78)\n         else (if 5 ∣ m then 58 else 33))\n       else\n        (if 3 ∣ m then (if 5 ∣ m then 39 else 22)\n         else (if 5 ∣ m then 17 else 10))) ^ 6 * m",
+    "∃ n : ℕ,\n    24 < n ∧\n    360360 ∣ n ∧\n    (16 ∣ n ∨ n % 64 = 56) ∧\n    (∀ j ∈ ({1, 2, 3, 4, 6, 12} : Finset ℕ), ((n - j) / j).Prime) ∧\n    ∀ k : ℕ, 0 < k → k ≤ n →\n      (k + 3) ^ 6 ≤\n        (if 2 ∣ k then\n          (if 3 ∣ k then (if 5 ∣ k then 139 else 78)\n           else (if 5 ∣ k then 58 else 33))\n         else\n          (if 3 ∣ k then (if 5 ∣ k then 39 else 22)\n           else (if 5 ∣ k then 17 else 10))) ^ 6 * (n - k) →\n      σ 0 (n - k) ≤ k + 2"
+  ],
+  "module": "OMAReductions.R_Erdos647_erdos_647_R3",
+  "ok": true,
+  "kind": "open",
+  "polarity": "proof",
+  "theorem": "OMA.R_Erdos647_erdos_647_R3.main",
+  "imports": "FormalConjectures.ErdosProblems.«647»",
+  "errors": [],
+  "decl": "Erdos647.erdos_647",
+  "verdict": "accepted",
+  "reason": "kernel accepted; axioms within propext, Classical.choice, Quot.sound"
+}

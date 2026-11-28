@@ -1,0 +1,19 @@
+{
+  "file": "reductions/Erdos1052.erdos_1052.R2.H2.R1.H2.R1.lean",
+  "type": "reduction",
+  "problem": "Erdos1052.erdos_1052.R2.H2.R1.H2.R1",
+  "hypotheses": [
+    "∀ c : ℕ, Odd c → (∀ p ∈ c.primeFactors, 2 ≤ c.factorization p) →\n    c.primeFactors.card = 1 → c ≠ 9 →\n    (∀ r : ℕ, r.Prime → r ≠ 2 → ¬ r ^ 2 ∣ 1 + c) →\n    (∀ r₁ r₂ : ℕ, r₁.Prime → r₁ ≠ 2 → r₁ ∣ 1 + c →\n      r₂.Prime → r₂ ≠ 2 → ¬ r₂ ∣ c →\n      ¬ r₂ ^ 2 ∣ 1 + r₁ ∧ ¬ (r₂ ∣ 1 + c ∧ r₂ ∣ 1 + r₁)) →\n    (∀ p ∈ c.primeFactors, Even (c.factorization p)) →\n    {a : ℕ | let b := 2 ^ a * c\n             let u := ∏ q ∈ b.primeFactors, (1 + q ^ b.factorization q)\n             5 ≤ a ∧ ∃ S : Finset ℕ, 4 ≤ S.card ∧ S ⊆ Finset.Icc 3 u ∧\n               (∀ p ∈ S, p.Prime ∧ ¬ p ∣ b) ∧\n               u * (∏ p ∈ S, (1 + p)) = (2 * b) * ∏ p ∈ S, p}.Finite",
+    "∀ c : ℕ, Odd c → (∀ p ∈ c.primeFactors, 2 ≤ c.factorization p) →\n    c.primeFactors.card = 1 → c ≠ 9 →\n    (∀ r : ℕ, r.Prime → r ≠ 2 → ¬ r ^ 2 ∣ 1 + c) →\n    (∀ r₁ r₂ : ℕ, r₁.Prime → r₁ ≠ 2 → r₁ ∣ 1 + c →\n      r₂.Prime → r₂ ≠ 2 → ¬ r₂ ∣ c →\n      ¬ r₂ ^ 2 ∣ 1 + r₁ ∧ ¬ (r₂ ∣ 1 + c ∧ r₂ ∣ 1 + r₁)) →\n    (∀ p ∈ c.primeFactors, Odd (c.factorization p)) →\n    {a : ℕ | let b := 2 ^ a * c\n             let u := ∏ q ∈ b.primeFactors, (1 + q ^ b.factorization q)\n             5 ≤ a ∧ ∃ S : Finset ℕ, 4 ≤ S.card ∧ S ⊆ Finset.Icc 3 u ∧\n               (∀ p ∈ S, p.Prime ∧ ¬ p ∣ b) ∧\n               u * (∏ p ∈ S, (1 + p)) = (2 * b) * ∏ p ∈ S, p}.Finite"
+  ],
+  "module": "OMAReductions.R_Erdos1052_erdos_1052_R2_H2_R1_H2_R1",
+  "ok": true,
+  "kind": "open",
+  "polarity": "proof",
+  "theorem": "OMA.R_Erdos1052_erdos_1052_R2_H2_R1_H2_R1.main",
+  "imports": "OMAReductions.R_Erdos1052_erdos_1052_R2_H2_R1",
+  "errors": [],
+  "needsReduction": "Erdos1052.erdos_1052.R2.H2.R1",
+  "verdict": "accepted",
+  "reason": "kernel accepted; axioms within propext, Classical.choice, Quot.sound"
+}
